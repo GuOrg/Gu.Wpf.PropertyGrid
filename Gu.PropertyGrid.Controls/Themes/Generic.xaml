@@ -13,7 +13,49 @@
                 <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static local:SharedSizeGroups.LabelColumn}" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <ContentPresenter Grid.Column="0" ContentSource="Header" />
+            <ContentPresenter Grid.Column="0" ContentSource="Header" Margin="0,0,6,0"/>
+
+            <ContentPresenter Grid.Column="1" ContentSource="Content" />
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="{x:Static local:Keys.RowStyleKey}" TargetType="{x:Type HeaderedContentControl}">
+        <Setter Property="Template" Value="{DynamicResource {x:Static local:Keys.RowTemplateKey}}" />
+    </Style>
+    
+    <Style x:Key="{x:Static local:Keys.PropertyGridStyleKey}" TargetType="{x:Type ItemsControl}">
+        <Setter Property="Grid.IsSharedSizeScope" Value="True" />
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="Cycle" />
+        <Setter Property="KeyboardNavigation.AcceptsReturn" Value="True" />
+        <Setter Property="ItemContainerStyle" Value="{DynamicResource {x:Static local:Keys.RowStyleKey}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ItemsControl}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static local:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Row="0"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="2"
+                                    Grid.IsSharedSizeScope="True"
+                                    IsItemsHost="True" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{x:Static local:Keys.NestedPropertyGridStyleKey}"
+           BasedOn="{StaticResource {x:Static local:Keys.PropertyGridStyleKey}}"
+           TargetType="{x:Type ItemsControl}">
+        <Setter Property="Grid.IsSharedSizeScope" Value="False" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="Continue" />
+    </Style>
+</ResourceDictionary>
+
 
             <ContentPresenter Grid.Column="1" ContentSource="Content" />
         </Grid>

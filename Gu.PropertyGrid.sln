@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{BDA08917-18E6-497A-9E7A-8FA395BF2741}"
 	ProjectSection(SolutionItems) = preProject
 		paket.dependencies = paket.dependencies
+		Readme.paket.md = Readme.paket.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.PropertyGrid.Demo", "Gu.PropertyGrid.Demo\Gu.PropertyGrid.Demo.csproj", "{917C1338-E809-43D8-A10D-AA2629891258}"
