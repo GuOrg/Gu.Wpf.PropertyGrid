@@ -13,9 +13,11 @@
                 <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static local:SharedSizeGroups.LabelColumn}" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <ContentPresenter Grid.Column="0"
-                              Margin="0,0,6,0"
-                              ContentSource="Header" />
+<<<<<<< HEAD
+            <ContentPresenter Grid.Column="0" ContentSource="Header" />
+=======
+            <ContentPresenter Grid.Column="0" ContentSource="Header" Margin="0,0,6,0"/>
+>>>>>>> Initial
 
             <ContentPresenter Grid.Column="1" ContentSource="Content" />
         </Grid>
@@ -24,7 +26,7 @@
     <Style x:Key="{x:Static local:Keys.RowStyleKey}" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="Template" Value="{DynamicResource {x:Static local:Keys.RowTemplateKey}}" />
     </Style>
-
+    
     <Style x:Key="{x:Static local:Keys.PropertyGridStyleKey}" TargetType="{x:Type ItemsControl}">
         <Setter Property="Grid.IsSharedSizeScope" Value="True" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="Cycle" />
