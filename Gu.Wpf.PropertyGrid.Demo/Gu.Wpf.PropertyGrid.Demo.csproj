@@ -88,7 +88,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gu.PropertyGrid.Controls\Gu.PropertyGrid.csproj">
+    <ProjectReference Include="..\Gu.Wpf.PropertyGrid.Controls\Gu.Wpf.PropertyGrid.csproj">
       <Project>{7ddab84f-2416-413b-ae7a-6f2d75b2882d}</Project>
       <Name>Gu.PropertyGrid</Name>
     </ProjectReference>
