@@ -1,8 +1,10 @@
-﻿using System;
-using System.Windows;
-
-namespace Gu.PropertyGrid
+﻿namespace Gu.PropertyGrid
 {
+    using System;
+    using System.Windows;
+
+    using Gu.Wpf.NumericInput;
+
     public abstract class NumericSettingControl<T> : SettingControlBase<T>
         where T : struct, IComparable<T>
     {

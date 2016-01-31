@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\UnitSettingControl.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Internals\BooleanBoxes.cs" />
     <Compile Include="Controls\BoolSettingControl.cs" />
     <Compile Include="Controls\DoubleSettingControl.cs" />

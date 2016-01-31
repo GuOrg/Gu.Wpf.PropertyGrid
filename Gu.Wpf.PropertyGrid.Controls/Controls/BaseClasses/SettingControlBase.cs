@@ -161,32 +161,32 @@ namespace Gu.PropertyGrid
         protected override void OnInitialized(EventArgs e)
         {
             base.OnInitialized(e);
-            var valueBinding = BindingOperations.GetBinding(this, this.ValueDependencyProperty);
-            if (valueBinding != null)
-            {
-                var oldValueBinding = BindingOperations.GetBinding(this, OldValueProperty);
-                if (oldValueBinding != null)
-                {
-                    return;
-                }
+            //var valueBinding = BindingOperations.GetBinding(this, this.ValueDependencyProperty);
+            //if (valueBinding != null)
+            //{
+            //    var oldValueBinding = BindingOperations.GetBinding(this, OldValueProperty);
+            //    if (oldValueBinding != null)
+            //    {
+            //        return;
+            //    }
 
-                var editableCopyName = nameof(SettingsViewModel<INotifyPropertyChanged, ISettingsRepository>.EditableCopy);
-                if (!valueBinding.Path.Path.Contains(editableCopyName))
-                {
-                    return;
-                }
+            //    var editableCopyName = nameof(SettingsViewModel<INotifyPropertyChanged, ISettingsRepository>.EditableCopy);
+            //    if (!valueBinding.Path.Path.Contains(editableCopyName))
+            //    {
+            //        return;
+            //    }
 
-                var lastSavedCopyName = nameof(SettingsViewModel<INotifyPropertyChanged, ISettingsRepository>.LastSavedCopy);
+            //    var lastSavedCopyName = nameof(SettingsViewModel<INotifyPropertyChanged, ISettingsRepository>.LastSavedCopy);
 
-                var path = valueBinding.Path.Path.Replace(editableCopyName, lastSavedCopyName);
-                oldValueBinding = new Binding(path)
-                {
-                    Mode = BindingMode.OneWay,
-                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
-                };
+            //    var path = valueBinding.Path.Path.Replace(editableCopyName, lastSavedCopyName);
+            //    oldValueBinding = new Binding(path)
+            //    {
+            //        Mode = BindingMode.OneWay,
+            //        UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+            //    };
 
-                BindingOperations.SetBinding(this, OldValueProperty, oldValueBinding);
-            }
+            //    BindingOperations.SetBinding(this, OldValueProperty, oldValueBinding);
+            //}
         }
     }
 }
