@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Gu.PropertyGrid.Demo.Properties
+namespace Gu.Wpf.PropertyGrid.Demo.Properties
 {
 
 
@@ -44,7 +44,7 @@ namespace Gu.PropertyGrid.Demo.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Gu.PropertyGrid.Demo.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Gu.Wpf.PropertyGrid.Demo.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

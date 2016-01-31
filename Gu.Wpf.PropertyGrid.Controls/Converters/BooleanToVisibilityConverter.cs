@@ -1,4 +1,4 @@
-﻿namespace Gu.PropertyGrid
+﻿namespace Gu.Wpf.PropertyGrid
 {
     using System;
     using System.Globalization;

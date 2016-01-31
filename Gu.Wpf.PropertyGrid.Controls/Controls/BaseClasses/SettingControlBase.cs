@@ -1,18 +1,17 @@
-using System;
-using System.ComponentModel;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-
-namespace Gu.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
+    using System;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Data;
+
     public abstract class SettingControlBase : Control
     {
         public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(
             "Header",
             typeof(string),
             typeof(SettingControlBase),
-            new PropertyMetadata(default(string)));
+            new PropertyMetadata(string.Empty));
 
         public static readonly DependencyProperty SuffixProperty = DependencyProperty.Register(
             "Suffix",
@@ -39,12 +38,6 @@ namespace Gu.PropertyGrid
                 BindsTwoWayByDefault = false,
                 DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
             });
-
-        public static readonly DependencyProperty OldStringValueProperty = DependencyProperty.Register(
-            "OldStringValue",
-            typeof(string),
-            typeof(SettingControlBase),
-            new PropertyMetadata(default(string)));
 
         public static readonly DependencyProperty ValueTemplateProperty = DependencyProperty.Register(
             "ValueTemplate",
@@ -100,12 +93,6 @@ namespace Gu.PropertyGrid
         {
             get { return (object)this.GetValue(OldValueProperty); }
             set { this.SetValue(OldValueProperty, value); }
-        }
-
-        public string OldStringValue
-        {
-            get { return (string)this.GetValue(OldStringValueProperty); }
-            set { this.SetValue(OldStringValueProperty, value); }
         }
 
         public DataTemplate ValueTemplate

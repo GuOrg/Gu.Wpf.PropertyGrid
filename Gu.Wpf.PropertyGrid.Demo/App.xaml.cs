@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Gu.PropertyGrid.Demo
+namespace Gu.Wpf.PropertyGrid.Demo
 {
     /// <summary>
     /// Interaction logic for App.xaml

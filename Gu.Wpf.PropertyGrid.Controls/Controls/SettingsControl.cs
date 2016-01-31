@@ -1,8 +1,7 @@
-﻿namespace Gu.PropertyGrid
+﻿namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
     using System.Windows.Controls;
-    using Gu.Units;
 
     public class SettingsControl : ItemsControl
     {
@@ -13,10 +12,6 @@
         public static readonly DependencyProperty SuffixWidthProperty = SettingControl.SuffixWidthProperty.AddOwner(
             typeof(SettingsControl),
             new FrameworkPropertyMetadata(75.0, FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty SymbolFormatProperty = UnitSettingControl.SymbolFormatProperty.AddOwner(
-            typeof(UnitSettingControl),
-            new FrameworkPropertyMetadata(UnitSettingControl.DefaultSymbolFormat, FrameworkPropertyMetadataOptions.Inherits));
 
         static SettingsControl()
         {
@@ -34,12 +29,6 @@
         {
             get { return (double)this.GetValue(SuffixWidthProperty); }
             set { this.SetValue(SuffixWidthProperty, value); }
-        }
-
-        public SymbolFormat SymbolFormat
-        {
-            get { return (SymbolFormat)this.GetValue(SymbolFormatProperty); }
-            set { this.SetValue(SymbolFormatProperty, value); }
         }
     }
 }

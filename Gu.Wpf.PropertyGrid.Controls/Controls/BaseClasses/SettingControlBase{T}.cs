@@ -1,8 +1,8 @@
-using System.Windows;
-using System.Windows.Data;
-
-namespace Gu.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
+    using System.Windows;
+    using System.Windows.Data;
+
     public abstract class SettingControlBase<T> : SettingControlBase
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(

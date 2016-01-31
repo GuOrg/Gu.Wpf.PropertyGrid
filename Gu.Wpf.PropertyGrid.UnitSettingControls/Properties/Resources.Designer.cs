@@ -8,7 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Gu.Wpf.PropertyGrid.UnitSettingControls.Properties {
+namespace Gu.Wpf.PropertyGrid.Properties {
+    using System;
     
     
     /// <summary>
@@ -37,8 +38,8 @@ namespace Gu.Wpf.PropertyGrid.UnitSettingControls.Properties {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
-                if ((resourceMan == null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Gu.Wpf.PropertyGrid.UnitSettingControls.Properties.Resources", typeof(Resources).Assembly);
+                if (object.ReferenceEquals(resourceMan, null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Gu.Wpf.PropertyGrid.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

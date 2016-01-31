@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Gu.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
     public class BoolSettingControl : SettingControlBase<bool>
     {

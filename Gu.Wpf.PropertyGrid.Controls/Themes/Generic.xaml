@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Gu.PropertyGrid">
+                    xmlns:local="clr-namespace:Gu.Wpf.PropertyGrid">
     <Style x:Key="{x:Static local:Keys.HeaderTextBlockStyleKey}" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="24" />
         <Setter Property="FontWeight" Value="Bold" />

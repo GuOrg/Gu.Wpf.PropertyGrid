@@ -1,8 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:l="clr-namespace:Gu.PropertyGrid">
-    <Style x:Key="{x:Static l:Keys.ItemsControlSettingListStyleKey}"
-           TargetType="{x:Type ItemsControl}">
+                    xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid">
+    <Style x:Key="{x:Static l:Keys.ItemsControlSettingListStyleKey}" TargetType="{x:Type ItemsControl}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Grid.IsSharedSizeScope" Value="True" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="Cycle" />
@@ -12,12 +11,9 @@
                 <ControlTemplate TargetType="{x:Type ItemsControl}">
                     <Grid IsSharedSizeScope="True">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
-                            <ColumnDefinition Width="Auto"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="Auto"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Row="0"
                                     Grid.Column="0"
@@ -37,8 +33,7 @@
         <Setter Property="KeyboardNavigation.TabNavigation" Value="Continue" />
     </Style>
 
-    <Style BasedOn="{StaticResource {x:Static l:Keys.ItemsControlSettingListStyleKey}}"
-           TargetType="{x:Type l:SettingsControl}" />
+    <Style BasedOn="{StaticResource {x:Static l:Keys.ItemsControlSettingListStyleKey}}" TargetType="{x:Type l:SettingsControl}" />
 
     <Style x:Key="{x:Static l:Keys.NestedSettingListStyle}"
            BasedOn="{StaticResource {x:Static l:Keys.ItemsControlNestedSettingListStyleKey}}"

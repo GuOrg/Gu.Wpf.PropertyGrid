@@ -7,7 +7,7 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="Gu.Units" #>
 <#@ output extension=".generated.cs" #>
-namespace Gu.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
     using Gu.Units;
@@ -23,13 +23,18 @@ namespace Gu.PropertyGrid
 
     public class <#= className #> : UnitSettingControl<<#= quantity.Name #>, <#= quantity.Name #>Unit>
     {
-        private static readonly <#= quantity.Name #>Unit DefaultUnit = <#= quantity.Name #>Unit.<#= defaultUnit #>;
+        public static readonly <#= quantity.Name #>Unit DefaultUnit = <#= quantity.Name #>Unit.<#= defaultUnit #>;
 
         static <#= className #>()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(<#= className #>), new FrameworkPropertyMetadata(typeof(<#= className #>)));
             UnitProperty.OverrideMetadata(typeof(<#= className #>), new PropertyMetadata(DefaultUnit, OnUnitChanged));
-            SuffixProperty.OverrideMetadata(typeof(<#= className #>), new PropertyMetadata(DefaultUnit.Symbol));
+            SuffixProperty.OverrideMetadata(
+                typeof(<#= className #>),
+                new FrameworkPropertyMetadata(
+                    GetSuffix(DefaultUnit, 
+                    UnitSettingControl.DefaultSymbolFormat),
+                    FrameworkPropertyMetadataOptions.NotDataBindable));
         }
     }
 <#

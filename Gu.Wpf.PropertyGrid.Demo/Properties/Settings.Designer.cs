@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Gu.PropertyGrid.Demo.Properties
+namespace Gu.Wpf.PropertyGrid.Demo.Properties
 {
 
 
