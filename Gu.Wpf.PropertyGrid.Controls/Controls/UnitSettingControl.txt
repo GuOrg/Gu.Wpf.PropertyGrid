@@ -1,0 +1,608 @@
+﻿namespace Gu.PropertyGrid
+{
+    using System;
+    using System.Windows;
+    using Gu.Units;
+
+
+    public class AccelerationSettingControl : UnitSettingControl<Acceleration, AccelerationUnit>
+    {
+        private static readonly AccelerationUnit DefaultUnit = AccelerationUnit.MetresPerSecondSquared;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(AccelerationSettingControl, new FrameworkPropertyMetadata(AccelerationSettingControl));
+            UnitProperty.OverrideMetadata(AccelerationSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(AccelerationSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class AmountOfSubstanceSettingControl : UnitSettingControl<AmountOfSubstance, AmountOfSubstanceUnit>
+    {
+        private static readonly AmountOfSubstanceUnit DefaultUnit = AmountOfSubstanceUnit.Moles;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(AmountOfSubstanceSettingControl, new FrameworkPropertyMetadata(AmountOfSubstanceSettingControl));
+            UnitProperty.OverrideMetadata(AmountOfSubstanceSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(AmountOfSubstanceSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class AngleSettingControl : UnitSettingControl<Angle, AngleUnit>
+    {
+        private static readonly AngleUnit DefaultUnit = AngleUnit.Degrees;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(AngleSettingControl, new FrameworkPropertyMetadata(AngleSettingControl));
+            UnitProperty.OverrideMetadata(AngleSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(AngleSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class AnglePerUnitlessSettingControl : UnitSettingControl<AnglePerUnitless, AnglePerUnitlessUnit>
+    {
+        private static readonly AnglePerUnitlessUnit DefaultUnit = AnglePerUnitlessUnit.RadiansPerUnitless;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(AnglePerUnitlessSettingControl, new FrameworkPropertyMetadata(AnglePerUnitlessSettingControl));
+            UnitProperty.OverrideMetadata(AnglePerUnitlessSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(AnglePerUnitlessSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class AngularAccelerationSettingControl : UnitSettingControl<AngularAcceleration, AngularAccelerationUnit>
+    {
+        private static readonly AngularAccelerationUnit DefaultUnit = AngularAccelerationUnit.RadiansPerSecondSquared;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(AngularAccelerationSettingControl, new FrameworkPropertyMetadata(AngularAccelerationSettingControl));
+            UnitProperty.OverrideMetadata(AngularAccelerationSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(AngularAccelerationSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class AngularJerkSettingControl : UnitSettingControl<AngularJerk, AngularJerkUnit>
+    {
+        private static readonly AngularJerkUnit DefaultUnit = AngularJerkUnit.RadiansPerSecondCubed;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(AngularJerkSettingControl, new FrameworkPropertyMetadata(AngularJerkSettingControl));
+            UnitProperty.OverrideMetadata(AngularJerkSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(AngularJerkSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class AngularSpeedSettingControl : UnitSettingControl<AngularSpeed, AngularSpeedUnit>
+    {
+        private static readonly AngularSpeedUnit DefaultUnit = AngularSpeedUnit.RadiansPerSecond;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(AngularSpeedSettingControl, new FrameworkPropertyMetadata(AngularSpeedSettingControl));
+            UnitProperty.OverrideMetadata(AngularSpeedSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(AngularSpeedSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class AreaSettingControl : UnitSettingControl<Area, AreaUnit>
+    {
+        private static readonly AreaUnit DefaultUnit = AreaUnit.SquareMetres;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(AreaSettingControl, new FrameworkPropertyMetadata(AreaSettingControl));
+            UnitProperty.OverrideMetadata(AreaSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(AreaSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class AreaDensitySettingControl : UnitSettingControl<AreaDensity, AreaDensityUnit>
+    {
+        private static readonly AreaDensityUnit DefaultUnit = AreaDensityUnit.KilogramsPerSquareMetre;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(AreaDensitySettingControl, new FrameworkPropertyMetadata(AreaDensitySettingControl));
+            UnitProperty.OverrideMetadata(AreaDensitySettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(AreaDensitySettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class CapacitanceSettingControl : UnitSettingControl<Capacitance, CapacitanceUnit>
+    {
+        private static readonly CapacitanceUnit DefaultUnit = CapacitanceUnit.Farads;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(CapacitanceSettingControl, new FrameworkPropertyMetadata(CapacitanceSettingControl));
+            UnitProperty.OverrideMetadata(CapacitanceSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(CapacitanceSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class CatalyticActivitySettingControl : UnitSettingControl<CatalyticActivity, CatalyticActivityUnit>
+    {
+        private static readonly CatalyticActivityUnit DefaultUnit = CatalyticActivityUnit.Katals;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(CatalyticActivitySettingControl, new FrameworkPropertyMetadata(CatalyticActivitySettingControl));
+            UnitProperty.OverrideMetadata(CatalyticActivitySettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(CatalyticActivitySettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class CurrentSettingControl : UnitSettingControl<Current, CurrentUnit>
+    {
+        private static readonly CurrentUnit DefaultUnit = CurrentUnit.Amperes;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(CurrentSettingControl, new FrameworkPropertyMetadata(CurrentSettingControl));
+            UnitProperty.OverrideMetadata(CurrentSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(CurrentSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class DataSettingControl : UnitSettingControl<Data, DataUnit>
+    {
+        private static readonly DataUnit DefaultUnit = DataUnit.Bits;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(DataSettingControl, new FrameworkPropertyMetadata(DataSettingControl));
+            UnitProperty.OverrideMetadata(DataSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(DataSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class DensitySettingControl : UnitSettingControl<Density, DensityUnit>
+    {
+        private static readonly DensityUnit DefaultUnit = DensityUnit.KilogramsPerCubicMetre;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(DensitySettingControl, new FrameworkPropertyMetadata(DensitySettingControl));
+            UnitProperty.OverrideMetadata(DensitySettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(DensitySettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class ElectricalConductanceSettingControl : UnitSettingControl<ElectricalConductance, ElectricalConductanceUnit>
+    {
+        private static readonly ElectricalConductanceUnit DefaultUnit = ElectricalConductanceUnit.Siemens;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(ElectricalConductanceSettingControl, new FrameworkPropertyMetadata(ElectricalConductanceSettingControl));
+            UnitProperty.OverrideMetadata(ElectricalConductanceSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(ElectricalConductanceSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class ElectricChargeSettingControl : UnitSettingControl<ElectricCharge, ElectricChargeUnit>
+    {
+        private static readonly ElectricChargeUnit DefaultUnit = ElectricChargeUnit.Coulombs;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(ElectricChargeSettingControl, new FrameworkPropertyMetadata(ElectricChargeSettingControl));
+            UnitProperty.OverrideMetadata(ElectricChargeSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(ElectricChargeSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class EnergySettingControl : UnitSettingControl<Energy, EnergyUnit>
+    {
+        private static readonly EnergyUnit DefaultUnit = EnergyUnit.Joules;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(EnergySettingControl, new FrameworkPropertyMetadata(EnergySettingControl));
+            UnitProperty.OverrideMetadata(EnergySettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(EnergySettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class FlexibilitySettingControl : UnitSettingControl<Flexibility, FlexibilityUnit>
+    {
+        private static readonly FlexibilityUnit DefaultUnit = FlexibilityUnit.MetresPerNewton;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(FlexibilitySettingControl, new FrameworkPropertyMetadata(FlexibilitySettingControl));
+            UnitProperty.OverrideMetadata(FlexibilitySettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(FlexibilitySettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class ForceSettingControl : UnitSettingControl<Force, ForceUnit>
+    {
+        private static readonly ForceUnit DefaultUnit = ForceUnit.Newtons;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(ForceSettingControl, new FrameworkPropertyMetadata(ForceSettingControl));
+            UnitProperty.OverrideMetadata(ForceSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(ForceSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class ForcePerUnitlessSettingControl : UnitSettingControl<ForcePerUnitless, ForcePerUnitlessUnit>
+    {
+        private static readonly ForcePerUnitlessUnit DefaultUnit = ForcePerUnitlessUnit.NewtonsPerUnitless;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(ForcePerUnitlessSettingControl, new FrameworkPropertyMetadata(ForcePerUnitlessSettingControl));
+            UnitProperty.OverrideMetadata(ForcePerUnitlessSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(ForcePerUnitlessSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class FrequencySettingControl : UnitSettingControl<Frequency, FrequencyUnit>
+    {
+        private static readonly FrequencyUnit DefaultUnit = FrequencyUnit.Hertz;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(FrequencySettingControl, new FrameworkPropertyMetadata(FrequencySettingControl));
+            UnitProperty.OverrideMetadata(FrequencySettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(FrequencySettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class IlluminanceSettingControl : UnitSettingControl<Illuminance, IlluminanceUnit>
+    {
+        private static readonly IlluminanceUnit DefaultUnit = IlluminanceUnit.Lux;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(IlluminanceSettingControl, new FrameworkPropertyMetadata(IlluminanceSettingControl));
+            UnitProperty.OverrideMetadata(IlluminanceSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(IlluminanceSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class InductanceSettingControl : UnitSettingControl<Inductance, InductanceUnit>
+    {
+        private static readonly InductanceUnit DefaultUnit = InductanceUnit.Henrys;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(InductanceSettingControl, new FrameworkPropertyMetadata(InductanceSettingControl));
+            UnitProperty.OverrideMetadata(InductanceSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(InductanceSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class JerkSettingControl : UnitSettingControl<Jerk, JerkUnit>
+    {
+        private static readonly JerkUnit DefaultUnit = JerkUnit.MetresPerSecondCubed;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(JerkSettingControl, new FrameworkPropertyMetadata(JerkSettingControl));
+            UnitProperty.OverrideMetadata(JerkSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(JerkSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class KinematicViscositySettingControl : UnitSettingControl<KinematicViscosity, KinematicViscosityUnit>
+    {
+        private static readonly KinematicViscosityUnit DefaultUnit = KinematicViscosityUnit.SquareMetresPerSecond;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(KinematicViscositySettingControl, new FrameworkPropertyMetadata(KinematicViscositySettingControl));
+            UnitProperty.OverrideMetadata(KinematicViscositySettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(KinematicViscositySettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class LengthSettingControl : UnitSettingControl<Length, LengthUnit>
+    {
+        private static readonly LengthUnit DefaultUnit = LengthUnit.Millimetres;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(LengthSettingControl, new FrameworkPropertyMetadata(LengthSettingControl));
+            UnitProperty.OverrideMetadata(LengthSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(LengthSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class LengthPerUnitlessSettingControl : UnitSettingControl<LengthPerUnitless, LengthPerUnitlessUnit>
+    {
+        private static readonly LengthPerUnitlessUnit DefaultUnit = LengthPerUnitlessUnit.MetresPerUnitless;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(LengthPerUnitlessSettingControl, new FrameworkPropertyMetadata(LengthPerUnitlessSettingControl));
+            UnitProperty.OverrideMetadata(LengthPerUnitlessSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(LengthPerUnitlessSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class LuminousFluxSettingControl : UnitSettingControl<LuminousFlux, LuminousFluxUnit>
+    {
+        private static readonly LuminousFluxUnit DefaultUnit = LuminousFluxUnit.Lumens;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(LuminousFluxSettingControl, new FrameworkPropertyMetadata(LuminousFluxSettingControl));
+            UnitProperty.OverrideMetadata(LuminousFluxSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(LuminousFluxSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class LuminousIntensitySettingControl : UnitSettingControl<LuminousIntensity, LuminousIntensityUnit>
+    {
+        private static readonly LuminousIntensityUnit DefaultUnit = LuminousIntensityUnit.Candelas;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(LuminousIntensitySettingControl, new FrameworkPropertyMetadata(LuminousIntensitySettingControl));
+            UnitProperty.OverrideMetadata(LuminousIntensitySettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(LuminousIntensitySettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class MagneticFieldStrengthSettingControl : UnitSettingControl<MagneticFieldStrength, MagneticFieldStrengthUnit>
+    {
+        private static readonly MagneticFieldStrengthUnit DefaultUnit = MagneticFieldStrengthUnit.Teslas;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(MagneticFieldStrengthSettingControl, new FrameworkPropertyMetadata(MagneticFieldStrengthSettingControl));
+            UnitProperty.OverrideMetadata(MagneticFieldStrengthSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(MagneticFieldStrengthSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class MagneticFluxSettingControl : UnitSettingControl<MagneticFlux, MagneticFluxUnit>
+    {
+        private static readonly MagneticFluxUnit DefaultUnit = MagneticFluxUnit.Webers;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(MagneticFluxSettingControl, new FrameworkPropertyMetadata(MagneticFluxSettingControl));
+            UnitProperty.OverrideMetadata(MagneticFluxSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(MagneticFluxSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class MassSettingControl : UnitSettingControl<Mass, MassUnit>
+    {
+        private static readonly MassUnit DefaultUnit = MassUnit.Kilograms;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(MassSettingControl, new FrameworkPropertyMetadata(MassSettingControl));
+            UnitProperty.OverrideMetadata(MassSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(MassSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class MassFlowSettingControl : UnitSettingControl<MassFlow, MassFlowUnit>
+    {
+        private static readonly MassFlowUnit DefaultUnit = MassFlowUnit.KilogramsPerSecond;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(MassFlowSettingControl, new FrameworkPropertyMetadata(MassFlowSettingControl));
+            UnitProperty.OverrideMetadata(MassFlowSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(MassFlowSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class MomentumSettingControl : UnitSettingControl<Momentum, MomentumUnit>
+    {
+        private static readonly MomentumUnit DefaultUnit = MomentumUnit.NewtonSecond;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(MomentumSettingControl, new FrameworkPropertyMetadata(MomentumSettingControl));
+            UnitProperty.OverrideMetadata(MomentumSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(MomentumSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class PowerSettingControl : UnitSettingControl<Power, PowerUnit>
+    {
+        private static readonly PowerUnit DefaultUnit = PowerUnit.Watts;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(PowerSettingControl, new FrameworkPropertyMetadata(PowerSettingControl));
+            UnitProperty.OverrideMetadata(PowerSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(PowerSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class PressureSettingControl : UnitSettingControl<Pressure, PressureUnit>
+    {
+        private static readonly PressureUnit DefaultUnit = PressureUnit.Megapascals;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(PressureSettingControl, new FrameworkPropertyMetadata(PressureSettingControl));
+            UnitProperty.OverrideMetadata(PressureSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(PressureSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class ResistanceSettingControl : UnitSettingControl<Resistance, ResistanceUnit>
+    {
+        private static readonly ResistanceUnit DefaultUnit = ResistanceUnit.Ohm;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(ResistanceSettingControl, new FrameworkPropertyMetadata(ResistanceSettingControl));
+            UnitProperty.OverrideMetadata(ResistanceSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(ResistanceSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class SolidAngleSettingControl : UnitSettingControl<SolidAngle, SolidAngleUnit>
+    {
+        private static readonly SolidAngleUnit DefaultUnit = SolidAngleUnit.Steradians;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(SolidAngleSettingControl, new FrameworkPropertyMetadata(SolidAngleSettingControl));
+            UnitProperty.OverrideMetadata(SolidAngleSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(SolidAngleSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class SpecificEnergySettingControl : UnitSettingControl<SpecificEnergy, SpecificEnergyUnit>
+    {
+        private static readonly SpecificEnergyUnit DefaultUnit = SpecificEnergyUnit.JoulesPerKilogram;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(SpecificEnergySettingControl, new FrameworkPropertyMetadata(SpecificEnergySettingControl));
+            UnitProperty.OverrideMetadata(SpecificEnergySettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(SpecificEnergySettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class SpecificVolumeSettingControl : UnitSettingControl<SpecificVolume, SpecificVolumeUnit>
+    {
+        private static readonly SpecificVolumeUnit DefaultUnit = SpecificVolumeUnit.CubicMetresPerKilogram;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(SpecificVolumeSettingControl, new FrameworkPropertyMetadata(SpecificVolumeSettingControl));
+            UnitProperty.OverrideMetadata(SpecificVolumeSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(SpecificVolumeSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class SpeedSettingControl : UnitSettingControl<Speed, SpeedUnit>
+    {
+        private static readonly SpeedUnit DefaultUnit = SpeedUnit.MetresPerSecond;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(SpeedSettingControl, new FrameworkPropertyMetadata(SpeedSettingControl));
+            UnitProperty.OverrideMetadata(SpeedSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(SpeedSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class StiffnessSettingControl : UnitSettingControl<Stiffness, StiffnessUnit>
+    {
+        private static readonly StiffnessUnit DefaultUnit = StiffnessUnit.NewtonsPerMetre;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(StiffnessSettingControl, new FrameworkPropertyMetadata(StiffnessSettingControl));
+            UnitProperty.OverrideMetadata(StiffnessSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(StiffnessSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class TemperatureSettingControl : UnitSettingControl<Temperature, TemperatureUnit>
+    {
+        private static readonly TemperatureUnit DefaultUnit = TemperatureUnit.Kelvin;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(TemperatureSettingControl, new FrameworkPropertyMetadata(TemperatureSettingControl));
+            UnitProperty.OverrideMetadata(TemperatureSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(TemperatureSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class TimeSettingControl : UnitSettingControl<Time, TimeUnit>
+    {
+        private static readonly TimeUnit DefaultUnit = TimeUnit.Seconds;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(TimeSettingControl, new FrameworkPropertyMetadata(TimeSettingControl));
+            UnitProperty.OverrideMetadata(TimeSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(TimeSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class TorqueSettingControl : UnitSettingControl<Torque, TorqueUnit>
+    {
+        private static readonly TorqueUnit DefaultUnit = TorqueUnit.NewtonMetres;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(TorqueSettingControl, new FrameworkPropertyMetadata(TorqueSettingControl));
+            UnitProperty.OverrideMetadata(TorqueSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(TorqueSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class UnitlessSettingControl : UnitSettingControl<Unitless, UnitlessUnit>
+    {
+        private static readonly UnitlessUnit DefaultUnit = UnitlessUnit.Scalar;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(UnitlessSettingControl, new FrameworkPropertyMetadata(UnitlessSettingControl));
+            UnitProperty.OverrideMetadata(UnitlessSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(UnitlessSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class VoltageSettingControl : UnitSettingControl<Voltage, VoltageUnit>
+    {
+        private static readonly VoltageUnit DefaultUnit = VoltageUnit.Volts;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(VoltageSettingControl, new FrameworkPropertyMetadata(VoltageSettingControl));
+            UnitProperty.OverrideMetadata(VoltageSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(VoltageSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class VolumeSettingControl : UnitSettingControl<Volume, VolumeUnit>
+    {
+        private static readonly VolumeUnit DefaultUnit = VolumeUnit.CubicMetres;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(VolumeSettingControl, new FrameworkPropertyMetadata(VolumeSettingControl));
+            UnitProperty.OverrideMetadata(VolumeSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(VolumeSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class VolumetricFlowSettingControl : UnitSettingControl<VolumetricFlow, VolumetricFlowUnit>
+    {
+        private static readonly VolumetricFlowUnit DefaultUnit = VolumetricFlowUnit.CubicMetresPerSecond;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(VolumetricFlowSettingControl, new FrameworkPropertyMetadata(VolumetricFlowSettingControl));
+            UnitProperty.OverrideMetadata(VolumetricFlowSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(VolumetricFlowSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+
+    public class WavenumberSettingControl : UnitSettingControl<Wavenumber, WavenumberUnit>
+    {
+        private static readonly WavenumberUnit DefaultUnit = WavenumberUnit.ReciprocalMetres;
+
+        static AngleSettingControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(WavenumberSettingControl, new FrameworkPropertyMetadata(WavenumberSettingControl));
+            UnitProperty.OverrideMetadata(WavenumberSettingControl, new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(WavenumberSettingControl, new PropertyMetadata(DefaultUnit.Symbol));
+        }
+    }
+}
+

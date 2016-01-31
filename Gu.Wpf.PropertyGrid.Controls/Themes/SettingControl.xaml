@@ -1,0 +1,374 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mui="http://gu.com/ModernUI"
+                    xmlns:numericInput="clr-namespace:Gu.Wpf.NumericInput;assembly=Gu.Wpf.NumericInput"
+                    xmlns:toggleSwitch="clr-namespace:Gu.Wpf.ToggleSwitch;assembly=Gu.Wpf.ToggleSwitch"
+                    xmlns:units="clr-namespace:Gu.Units;assembly=Gu.Units"
+                    xmlns:validation="clr-namespace:Map.Client"
+                    xmlns:views="clr-namespace:Map.Client.Views"
+                    xmlns:wpf="http://Gu.com/Units"
+                    xmlns:converters="clr-namespace:Map.Client.Converters">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Map.Client;component/Resources/Converters.xaml" />
+        <ResourceDictionary Source="/Map.Client;component/Resources/Geometry.xaml" />
+        <ResourceDictionary Source="/Map.Client;component/Resources/ToggleSwitch.xaml" />
+        <ResourceDictionary Source="/Map.Client;component/Resources/Converters.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="SettingRowHeaderStyle"
+           TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="25,0" />
+    </Style>
+
+    <Style x:Key="SettingRowSuffixStyle"
+           TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="8,0" />
+    </Style>
+
+    <Style x:Key="SettingOldValueStyle"
+           TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="{DynamicResource Accent}" />
+        <Setter Property="Visibility" Value="" />
+    </Style>
+
+    <Style x:Key="SettingRowBaseStyle"
+           TargetType="{x:Type Control}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="Padding" Value="0,12" />
+    </Style>
+
+    <Style x:Key="HeaderedContentControlSettingStyle"
+           BasedOn="{StaticResource SettingRowBaseStyle}"
+           TargetType="{x:Type HeaderedContentControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
+                    <Grid Margin="{TemplateBinding Padding}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"
+                                              SharedSizeGroup="{x:Static validation:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition Width="Auto"
+                                              MinWidth="{Binding Path=(views:SettingControl.ValueWidth),
+                                                                 RelativeSource={RelativeSource TemplatedParent}}"
+                                              SharedSizeGroup="{x:Static validation:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition Width="Auto"
+                                              MinWidth="{Binding Path=(views:SettingControl.SuffixWidth),
+                                                                 RelativeSource={RelativeSource TemplatedParent}}"
+                                              SharedSizeGroup="{x:Static validation:SharedSizeGroups.SuffixColumn}" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Name="Header"
+                                   Grid.Row="0"
+                                   Grid.Column="0"
+                                   Style="{StaticResource SettingRowHeaderStyle}"
+                                   Text="{TemplateBinding Header}" />
+
+                        <ContentPresenter x:Name="ValuePresenter"
+                                          Grid.Row="0"
+                                          Grid.Column="1"
+                                          ContentSource="Content" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="SettingRowTemplate">
+        <Grid Margin="{TemplateBinding Padding}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"
+                                  SharedSizeGroup="{x:Static validation:SharedSizeGroups.LabelColumn}" />
+                <ColumnDefinition Width="Auto"
+                                  MinWidth="{Binding Path=(views:SettingControl.ValueWidth),
+                                                     RelativeSource={RelativeSource TemplatedParent}}"
+                                  SharedSizeGroup="{x:Static validation:SharedSizeGroups.ValueColumn}" />
+                <ColumnDefinition Width="Auto"
+                                  MinWidth="{Binding Path=(views:SettingControl.SuffixWidth),
+                                                     RelativeSource={RelativeSource TemplatedParent}}"
+                                  SharedSizeGroup="{x:Static validation:SharedSizeGroups.SuffixColumn}" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="Header"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Style="{StaticResource SettingRowHeaderStyle}"
+                       Text="{Binding Header,
+                                      RelativeSource={RelativeSource TemplatedParent}}" />
+
+            <ContentPresenter x:Name="ValuePresenter"
+                              Grid.Row="0"
+                              Grid.Column="1"
+                              ContentTemplate="{Binding ValueTemplate,
+                                                        RelativeSource={RelativeSource TemplatedParent}}"
+                              numericInput:NumericBox.DecimalDigits="{Binding Path=(numericInput:NumericBox.DecimalDigits),
+                                                                              RelativeSource={RelativeSource TemplatedParent}}" />
+
+            <TextBlock x:Name="SuffixBox"
+                       Grid.Row="0"
+                       Grid.Column="2"
+                       Style="{StaticResource SettingRowSuffixStyle}"
+                       Text="{Binding Suffix,
+                                      RelativeSource={RelativeSource TemplatedParent}}" />
+            <Grid x:Name="InfoGrid"
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2"
+                  HorizontalAlignment="Right"
+                  TextElement.FontSize="12">
+                <TextBlock HorizontalAlignment="Right"
+                           Foreground="LightGray"
+                           Text="missing"
+                           Visibility="{Binding Path=IsDirty,
+                                                RelativeSource={RelativeSource AncestorType={x:Type views:SettingControlBase}},
+                                                Converter={mui:BooleanToVisibilityConverter WhenTrue=Collapsed,
+                                                                                            WhenNull=Visible,
+                                                                                            WhenFalse=Collapsed}}" />
+
+                <!--<TextBlock x:Name="ErrorTextBox"
+                           DataContext="{Binding ElementName=ValueBox}"
+                           HorizontalAlignment="Right"
+                           Foreground="Red"
+                           Text="error"
+                           Visibility="{Binding HasError,
+                                                Converter={mui:BooleanToVisibilityConverter WhenTrue=Visible,
+                                                                                            WhenNull=Collapsed,
+                                                                                            WhenFalse=Collapsed}}" />-->
+
+                <TextBlock x:Name="OldValueBox"
+                           HorizontalAlignment="Right"
+                           Foreground="{DynamicResource Accent}"
+                           Visibility="{Binding Path=IsDirty,
+                                                RelativeSource={RelativeSource AncestorType={x:Type views:SettingControlBase}},
+                                                Converter={mui:BooleanToVisibilityConverter WhenTrue=Visible,
+                                                                                            WhenNull=Hidden,
+                                                                                            WhenFalse=Hidden}}">
+                    <Run Text="OldValue: " />
+                    <Run Text="{Binding OldStringValue, RelativeSource={RelativeSource TemplatedParent}}" />
+                </TextBlock>
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <Style BasedOn="{StaticResource SettingRowBaseStyle}"
+           TargetType="{x:Type views:DoubleSettingControl}">
+        <Setter Property="Template" Value="{StaticResource SettingRowTemplate}" />
+        <Setter Property="OldStringValue" Value="{Binding OldValue, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="ValueTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <numericInput:DoubleBox x:Name="ValueBox"
+                                            MaxValue="{Binding MaxValue,
+                                                               RelativeSource={RelativeSource AncestorType={x:Type views:DoubleSettingControl}}}"
+                                            MinValue="{Binding MinValue,
+                                                               RelativeSource={RelativeSource AncestorType={x:Type views:DoubleSettingControl}}}"
+                                            Value="{Binding Value,
+                                                            RelativeSource={RelativeSource AncestorType={x:Type views:DoubleSettingControl}}}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource SettingRowBaseStyle}"
+           TargetType="{x:Type views:IntSettingControl}">
+        <Setter Property="Template" Value="{StaticResource SettingRowTemplate}" />
+        <Setter Property="OldStringValue" Value="{Binding OldValue, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="ValueTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <numericInput:IntBox x:Name="ValueBox"
+                                         MaxValue="{Binding MaxValue,
+                                                            RelativeSource={RelativeSource AncestorType={x:Type views:IntSettingControl}}}"
+                                         MinValue="{Binding MinValue,
+                                                            RelativeSource={RelativeSource AncestorType={x:Type views:IntSettingControl}}}"
+                                         Value="{Binding Value,
+                                                         RelativeSource={RelativeSource AncestorType={x:Type views:IntSettingControl}}}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="OldValueTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Style="{StaticResource SettingOldValueStyle}"
+                               Text="{Binding OldValue,
+                                              RelativeSource={RelativeSource AncestorType={x:Type views:IntSettingControl}}}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource SettingRowBaseStyle}"
+           TargetType="{x:Type views:BoolSettingControl}">
+        <Setter Property="Template" Value="{StaticResource SettingRowTemplate}" />
+        <Setter Property="OldStringValue" Value="{Binding OldValue, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="ValueTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <toggleSwitch:HorizontalToggleSwitch x:Name="ValueBox"
+                                                         IsChecked="{Binding Value,
+                                                                             RelativeSource={RelativeSource AncestorType={x:Type views:BoolSettingControl}}}"
+                                                         Style="{StaticResource ModernUIToggleSwitch}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource SettingRowBaseStyle}"
+           TargetType="{x:Type views:StringSettingControl}">
+        <Setter Property="Template" Value="{StaticResource SettingRowTemplate}" />
+        <Setter Property="OldStringValue" Value="{Binding OldValue, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="ValueTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBox x:Name="ValueBox"
+                             Text="{Binding Value,
+                                            RelativeSource={RelativeSource AncestorType={x:Type views:IntSettingControl}}}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <wpf:LengthConverter x:Key="MillimetresConverter"
+                         Unit="{x:Static units:LengthUnit.Millimetres}" />
+
+    <wpf:LengthConverter x:Key="MicrometresConverter"
+                         Unit="{x:Static units:LengthUnit.Micrometres}" />
+
+    <Style BasedOn="{StaticResource SettingRowBaseStyle}"
+           TargetType="{x:Type views:LengthSettingControl}">
+        <Setter Property="Template" Value="{StaticResource SettingRowTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="Unit" Value="{x:Static units:LengthUnit.Millimetres}">
+                <Setter Property="ValueTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <numericInput:DoubleBox x:Name="ValueBox"
+                                                    MaxValue="{Binding MaxValue,
+                                                                       Converter={StaticResource MillimetresConverter},
+                                                                       RelativeSource={RelativeSource AncestorType={x:Type views:LengthSettingControl}}}"
+                                                    MinValue="{Binding MinValue,
+                                                                       Converter={StaticResource MillimetresConverter},
+                                                                       RelativeSource={RelativeSource AncestorType={x:Type views:LengthSettingControl}}}"
+                                                    Value="{Binding Value,
+                                                                    Converter={StaticResource MillimetresConverter},
+                                                                    RelativeSource={RelativeSource AncestorType={x:Type views:LengthSettingControl}}}" />
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="OldStringValue" Value="{Binding OldValue, Converter={wpf:LengthConverter Unit={x:Static units:LengthUnit.Millimetres}, UnitInput=SymbolRequired}, RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+
+            <Trigger Property="Unit" Value="{x:Static units:LengthUnit.Micrometres}">
+                <Setter Property="ValueTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <numericInput:DoubleBox x:Name="ValueBox"
+                                                    MaxValue="{Binding MaxValue,
+                                                                       Converter={StaticResource MicrometresConverter},
+                                                                       RelativeSource={RelativeSource AncestorType={x:Type views:LengthSettingControl}}}"
+                                                    MinValue="{Binding MinValue,
+                                                                       Converter={StaticResource MicrometresConverter},
+                                                                       RelativeSource={RelativeSource AncestorType={x:Type views:LengthSettingControl}}}"
+                                                    Value="{Binding Value,
+                                                                    Converter={StaticResource MicrometresConverter},
+                                                                    RelativeSource={RelativeSource AncestorType={x:Type views:LengthSettingControl}}}" />
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="OldStringValue" Value="{Binding OldValue, Converter={wpf:LengthConverter Unit={x:Static units:LengthUnit.Micrometres}, UnitInput=SymbolRequired}, RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <wpf:AngleConverter x:Key="DegreesConverter"
+                        Unit="{x:Static units:AngleUnit.Degrees}" />
+    <wpf:AngleConverter x:Key="RadiansConverter"
+                        Unit="{x:Static units:AngleUnit.Radians}" />
+
+    <Style BasedOn="{StaticResource SettingRowBaseStyle}"
+           TargetType="{x:Type views:AngleSettingControl}">
+        <Setter Property="Template" Value="{StaticResource SettingRowTemplate}" />
+
+        <Style.Triggers>
+            <Trigger Property="Unit" Value="{x:Static units:AngleUnit.Degrees}">
+                <Setter Property="ValueTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <numericInput:DoubleBox x:Name="ValueBox"
+                                                    MaxValue="{Binding MaxValue,
+                                                                       Converter={StaticResource DegreesConverter},
+                                                                       RelativeSource={RelativeSource AncestorType={x:Type views:AngleSettingControl}}}"
+                                                    MinValue="{Binding MinValue,
+                                                                       Converter={StaticResource DegreesConverter},
+                                                                       RelativeSource={RelativeSource AncestorType={x:Type views:AngleSettingControl}}}"
+                                                    Value="{Binding Value,
+                                                                    Converter={StaticResource DegreesConverter},
+                                                                    RelativeSource={RelativeSource AncestorType={x:Type views:AngleSettingControl}}}" />
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="OldStringValue" Value="{Binding OldValue, Converter={wpf:AngleConverter Unit={x:Static units:AngleUnit.Degrees}, UnitInput=SymbolRequired}, RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+
+            <Trigger Property="Unit" Value="{x:Static units:AngleUnit.Radians}">
+                <Setter Property="ValueTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <numericInput:DoubleBox x:Name="ValueBox"
+                                                    MaxValue="{Binding MaxValue,
+                                                                       Converter={StaticResource RadiansConverter},
+                                                                       RelativeSource={RelativeSource AncestorType={x:Type views:AngleSettingControl}}}"
+                                                    MinValue="{Binding MinValue,
+                                                                       Converter={StaticResource RadiansConverter},
+                                                                       RelativeSource={RelativeSource AncestorType={x:Type views:AngleSettingControl}}}"
+                                                    Value="{Binding Value,
+                                                                    Converter={StaticResource RadiansConverter},
+                                                                    RelativeSource={RelativeSource AncestorType={x:Type views:AngleSettingControl}}}" />
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="OldStringValue" Value="{Binding OldValue, Converter={wpf:AngleConverter Unit={x:Static units:AngleUnit.Radians}, UnitInput=SymbolRequired}, RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <wpf:PressureConverter x:Key="MegapascalsConverter"
+                           Unit="{x:Static units:PressureUnit.Megapascals}" />
+
+    <Style BasedOn="{StaticResource SettingRowBaseStyle}"
+           TargetType="{x:Type views:PressureSettingControl}">
+        <Setter Property="Template" Value="{StaticResource SettingRowTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="Unit" Value="{x:Static units:PressureUnit.Megapascals}">
+                <Setter Property="ValueTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <numericInput:DoubleBox x:Name="ValueBox"
+                                                    MaxValue="{Binding MaxValue,
+                                                                       Converter={StaticResource MegapascalsConverter},
+                                                                       RelativeSource={RelativeSource AncestorType={x:Type views:PressureSettingControl}}}"
+                                                    MinValue="{Binding MinValue,
+                                                                       Converter={StaticResource MegapascalsConverter},
+                                                                       RelativeSource={RelativeSource AncestorType={x:Type views:PressureSettingControl}}}"
+                                                    Value="{Binding Value,
+                                                                    Converter={StaticResource MegapascalsConverter},
+                                                                    RelativeSource={RelativeSource AncestorType={x:Type views:PressureSettingControl}}}" />
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="OldStringValue" Value="{Binding OldValue, Converter={wpf:PressureConverter Unit={x:Static units:PressureUnit.Megapascals}, UnitInput=SymbolRequired}, RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

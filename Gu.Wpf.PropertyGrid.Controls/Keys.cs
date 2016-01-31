@@ -5,6 +5,12 @@ namespace Gu.PropertyGrid
 {
     public static class Keys
     {
+        public static ResourceKey ItemsControlSettingListStyle { get; } = CreateKey();
+
+        public static ResourceKey ItemsControlNestedSettingListStyle { get; } = CreateKey();
+
+        public static ResourceKey NestedSettingListStyle { get; } = CreateKey();
+        
         public static ResourceKey HeaderTextBlockStyleKey { get; } = CreateKey();
 
         public static ResourceKey RowStyleKey { get; } = CreateKey();
@@ -13,7 +19,6 @@ namespace Gu.PropertyGrid
 
         public static ResourceKey PropertyGridStyleKey { get; } = CreateKey();
 
-        public static ResourceKey NestedPropertyGridStyleKey { get; } = CreateKey();
 
         private static ComponentResourceKey CreateKey([CallerMemberName] string caller = null)
         {

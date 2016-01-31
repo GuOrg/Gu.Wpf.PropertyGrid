@@ -1,1 +1,11 @@
-source https://www.nuget.org/api/v2/
+source http://www.nuget.org/api/v2/
+
+nuget Moq
+nuget XUnit
+
+nuget Gu.ChangeTracking
+nuget Gu.Wpf.NumericInput
+nuget Gu.Units.Wpf
+
+nuget JetBrains.Annotations
+nuget StyleCop.Analyzers

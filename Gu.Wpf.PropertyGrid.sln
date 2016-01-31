@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid", "Gu.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.Demo", "Gu.Wpf.PropertyGrid.Demo\Gu.Wpf.PropertyGrid.Demo.csproj", "{917C1338-E809-43D8-A10D-AA2629891258}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.Tests", "Gu.Wpf.PropertyGrid.Tests\Gu.Wpf.PropertyGrid.Tests.csproj", "{3E9EF147-E92A-46EE-8A4A-886935AD1560}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{917C1338-E809-43D8-A10D-AA2629891258}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{917C1338-E809-43D8-A10D-AA2629891258}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{917C1338-E809-43D8-A10D-AA2629891258}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E9EF147-E92A-46EE-8A4A-886935AD1560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E9EF147-E92A-46EE-8A4A-886935AD1560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E9EF147-E92A-46EE-8A4A-886935AD1560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E9EF147-E92A-46EE-8A4A-886935AD1560}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
