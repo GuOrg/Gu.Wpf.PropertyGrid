@@ -33,7 +33,8 @@ namespace Gu.PropertyGrid
         protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var control = (UnitSettingControl<TQuantity, TUnit>)d;
-            if (Equals(control.Suffix, ((TUnit)e.OldValue).Symbol))
+            var oldSuffix = GetSuffix((TUnit)e.OldValue, control.SymbolFormat);
+            if (Equals(control.Suffix, oldSuffix))
             {
                 control.Suffix = GetSuffix((TUnit)e.NewValue, control.SymbolFormat);
             }
@@ -42,7 +43,11 @@ namespace Gu.PropertyGrid
         private static void OnSymbolFormatChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var control = (UnitSettingControl<TQuantity, TUnit>)d;
-            control.Suffix = GetSuffix((TUnit)e.NewValue, control.SymbolFormat);
+            var oldSuffix = GetSuffix(control.Unit, (SymbolFormat)e.OldValue);
+            if (Equals(control.Suffix, oldSuffix))
+            {
+                control.Suffix = GetSuffix(control.Unit, (SymbolFormat)e.NewValue);
+            }
         }
 
         protected static string GetSuffix(TUnit unit, SymbolFormat symbolFormat)

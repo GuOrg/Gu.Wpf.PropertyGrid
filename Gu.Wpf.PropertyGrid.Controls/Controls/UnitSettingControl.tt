@@ -6,13 +6,11 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="Gu.Units" #>
-<#@ output extension=".txt" #>
+<#@ output extension=".generated.cs" #>
 namespace Gu.PropertyGrid
 {
-    using System;
     using System.Windows;
     using Gu.Units;
-
 <#
 	    var quantities = typeof (Length).Assembly.GetTypes()
 											     .Where(x => !x.IsInterface)
@@ -27,11 +25,11 @@ namespace Gu.PropertyGrid
     {
         private static readonly <#= quantity.Name #>Unit DefaultUnit = <#= quantity.Name #>Unit.<#= defaultUnit #>;
 
-        static AngleSettingControl()
+        static <#= className #>()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(<#= className #>, new FrameworkPropertyMetadata(<#= className #>));
-            UnitProperty.OverrideMetadata(<#= className #>, new PropertyMetadata(DefaultUnit, OnUnitChanged));
-            SuffixProperty.OverrideMetadata(<#= className #>, new PropertyMetadata(DefaultUnit.Symbol));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(<#= className #>), new FrameworkPropertyMetadata(typeof(<#= className #>)));
+            UnitProperty.OverrideMetadata(typeof(<#= className #>), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            SuffixProperty.OverrideMetadata(typeof(<#= className #>), new PropertyMetadata(DefaultUnit.Symbol));
         }
     }
 <#

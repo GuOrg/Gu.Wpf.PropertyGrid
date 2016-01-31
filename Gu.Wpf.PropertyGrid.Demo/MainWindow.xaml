@@ -5,6 +5,7 @@
         xmlns:local="clr-namespace:Gu.PropertyGrid.Demo"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:propertyGrid="http://gu.se/PropertyGrid"
+        xmlns:propertyGrid1="clr-namespace:Gu.PropertyGrid;assembly=Gu.PropertyGrid"
         Title="MainWindow"
         Width="525"
         Height="350"
@@ -14,7 +15,7 @@
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <ItemsControl Style="{StaticResource {x:Static propertyGrid:Keys.PropertyGridStyleKey}}">
+        <ItemsControl Style="{StaticResource {x:Static propertyGrid:Keys.ItemsControlSettingListStyleKey}}">
             <TextBlock Style="{StaticResource {x:Static propertyGrid:Keys.HeaderTextBlockStyleKey}}" Text="Sample header text" />
 
             <HeaderedContentControl Header="SomeProperty">
@@ -25,7 +26,7 @@
                 <CheckBox />
             </HeaderedContentControl>
 
-            <ItemsControl Style="{StaticResource {x:Static propertyGrid:Keys.PropertyGridStyleKey}}">
+            <ItemsControl Style="{StaticResource {x:Static propertyGrid1:Keys.ItemsControlNestedSettingListStyleKey}}">
                 <TextBlock Style="{StaticResource {x:Static propertyGrid:Keys.HeaderTextBlockStyleKey}}" Text="Nested header text" />
 
                 <HeaderedContentControl Header="SomeProperty">

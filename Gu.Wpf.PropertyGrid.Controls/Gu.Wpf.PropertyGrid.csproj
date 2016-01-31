@@ -43,7 +43,11 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\UnitSettingControl.cs" />
+    <Compile Include="Controls\UnitSettingControl.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitSettingControl.tt</DependentUpon>
+    </Compile>
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Internals\BooleanBoxes.cs" />
     <Compile Include="Controls\BoolSettingControl.cs" />
@@ -108,12 +112,16 @@
   <ItemGroup>
     <Content Include="Controls\UnitSettingControl.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UnitSettingControl.txt</LastGenOutput>
+      <LastGenOutput>UnitSettingControl.generated.cs</LastGenOutput>
     </Content>
-    <Resource Include="Controls\UnitSettingControl.txt">
+    <Content Include="Themes\UnitSettingControls.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UnitSettingControls.txt</LastGenOutput>
+    </Content>
+    <Resource Include="Themes\UnitSettingControls.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UnitSettingControl.tt</DependentUpon>
+      <DependentUpon>UnitSettingControls.tt</DependentUpon>
     </Resource>
   </ItemGroup>
   <ItemGroup>
