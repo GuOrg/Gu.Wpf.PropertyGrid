@@ -15,7 +15,7 @@ namespace Gu.Wpf.PropertyGrid
             new PropertyMetadata(default(TUnit), OnUnitChanged));
 
         public static readonly DependencyProperty SymbolFormatProperty = UnitSettingControl.SymbolFormatProperty.AddOwner(
-            typeof(UnitSettingControl),
+            typeof(UnitSettingControl<TQuantity, TUnit>),
             new FrameworkPropertyMetadata(UnitSettingControl.DefaultSymbolFormat, FrameworkPropertyMetadataOptions.Inherits, OnSymbolFormatChanged));
 
         public TUnit Unit

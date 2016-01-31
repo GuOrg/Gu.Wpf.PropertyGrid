@@ -3,30 +3,14 @@
                     xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid"
                     xmlns:numeric="http://gu.se/NumericInput">
 
-    <Style x:Key="SettingRowHeaderStyle" TargetType="{x:Type TextBlock}">
-        <Setter Property="Margin" Value="25,0" />
-    </Style>
-
-    <Style x:Key="SettingRowSuffixStyle" TargetType="{x:Type TextBlock}">
-        <Setter Property="Margin" Value="8,0" />
-    </Style>
-
-    <Style x:Key="SettingOldValueStyle" TargetType="{x:Type TextBlock}">
-        <Setter Property="HorizontalAlignment" Value="Right" />
-        <Setter Property="FontSize" Value="12" />
-        <Setter Property="Foreground" Value="{DynamicResource Accent}" />
-        <!--<Setter Property="Visibility" Value="" />-->
-    </Style>
-
-    <Style x:Key="SettingRowBaseStyle" TargetType="{x:Type Control}">
+    <Style x:Key="{x:Static l:Keys.SettingRowBaseStyle}" TargetType="{x:Type Control}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="FontSize" Value="24" />
         <Setter Property="Padding" Value="0,12" />
     </Style>
 
     <Style x:Key="HeaderedContentControlSettingStyle"
-           BasedOn="{StaticResource SettingRowBaseStyle}"
+           BasedOn="{StaticResource {x:Static l:Keys.SettingRowBaseStyle}}"
            TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="Template">
             <Setter.Value>
@@ -85,7 +69,7 @@
             <TextBlock x:Name="Header"
                        Grid.Row="0"
                        Grid.Column="0"
-                       Style="{StaticResource SettingRowHeaderStyle}"
+                       Style="{StaticResource {x:Static l:Keys.SettingRowHeaderStyleKey}}"
                        Text="{Binding Header,
                                       RelativeSource={RelativeSource TemplatedParent}}" />
 
@@ -100,9 +84,10 @@
             <TextBlock x:Name="SuffixBox"
                        Grid.Row="0"
                        Grid.Column="2"
-                       Style="{StaticResource SettingRowSuffixStyle}"
+                       Style="{StaticResource {x:Static l:Keys.SettingRowSuffixStyle}}"
                        Text="{Binding Suffix,
                                       RelativeSource={RelativeSource TemplatedParent}}" />
+
             <Grid x:Name="InfoGrid"
                   Grid.Row="1"
                   Grid.Column="0"
@@ -137,15 +122,14 @@
                                                                                           WhenNull=Hidden,
                                                                                           WhenFalse=Hidden}}">
                     <Run Text="OldValue: " />
-                    <Run Text="{Binding OldStringValue, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <Run Text="{Binding OldValue, RelativeSource={RelativeSource TemplatedParent}}" />
                 </TextBlock>
             </Grid>
         </Grid>
     </ControlTemplate>
 
-    <Style BasedOn="{StaticResource SettingRowBaseStyle}" TargetType="{x:Type l:DoubleSettingControl}">
+    <!--<Style BasedOn="{StaticResource SettingRowBaseStyle}" TargetType="{x:Type l:DoubleSettingControl}">
         <Setter Property="Template" Value="{StaticResource SettingRowTemplate}" />
-        <Setter Property="OldStringValue" Value="{Binding OldValue, RelativeSource={RelativeSource Self}}" />
         <Setter Property="ValueTemplate">
             <Setter.Value>
                 <DataTemplate>
@@ -159,7 +143,7 @@
                 </DataTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
+    </Style>-->
 
     <!--<Style BasedOn="{StaticResource SettingRowBaseStyle}" TargetType="{x:Type l:IntSettingControl}">
         <Setter Property="Template" Value="{StaticResource SettingRowTemplate}" />
@@ -192,10 +176,12 @@
         <Setter Property="ValueTemplate">
             <Setter.Value>
                 <DataTemplate>
-                    --><!--<toggleSwitch:HorizontalToggleSwitch x:Name="ValueBox"
+    -->
+    <!--<toggleSwitch:HorizontalToggleSwitch x:Name="ValueBox"
                                                          IsChecked="{Binding Value,
                                                                              RelativeSource={RelativeSource AncestorType={x:Type views:BoolSettingControl}}}"
-                                                         Style="{StaticResource ModernUIToggleSwitch}" />--><!--
+                                                         Style="{StaticResource ModernUIToggleSwitch}" />-->
+    <!--
                 </DataTemplate>
             </Setter.Value>
         </Setter>

@@ -11,13 +11,15 @@ namespace Gu.Wpf.PropertyGrid
 
         public static ResourceKey NestedSettingListStyle { get; } = CreateKey();
 
-        public static ResourceKey HeaderTextBlockStyleKey { get; } = CreateKey();
+        public static ResourceKey SettingRowBaseStyle { get; } = CreateKey();
 
-        public static ResourceKey RowStyleKey { get; } = CreateKey();
+        public static ResourceKey UnitSettingBaseStyleKey { get; } = CreateKey();
 
-        public static ResourceKey RowTemplateKey { get; } = CreateKey();
+        public static ResourceKey SettingRowHeaderStyleKey { get; } = CreateKey();
 
-        public static ResourceKey PropertyGridStyleKey { get; } = CreateKey();
+        public static ResourceKey SettingRowOldValueStyle { get; } = CreateKey();
+
+        public static ResourceKey SettingRowSuffixStyle { get; } = CreateKey();
 
         private static ComponentResourceKey CreateKey([CallerMemberName] string caller = null)
         {

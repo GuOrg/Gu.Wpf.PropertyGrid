@@ -48,13 +48,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\UnitSettingControls.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UnitSettingControls.tt</DependentUpon>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -92,8 +85,13 @@
   <ItemGroup>
     <Content Include="Themes\UnitSettingControls.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UnitSettingControls.xaml</LastGenOutput>
+      <LastGenOutput>UnitSettingControls.xaml.txt</LastGenOutput>
     </Content>
+    <Resource Include="Themes\UnitSettingControls.xaml.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitSettingControls.tt</DependentUpon>
+    </Resource>
     <Content Include="UnitSettingControl.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UnitSettingControl.generated.cs</LastGenOutput>

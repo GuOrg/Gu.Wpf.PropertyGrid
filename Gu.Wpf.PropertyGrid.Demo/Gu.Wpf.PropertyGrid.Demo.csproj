@@ -7,8 +7,8 @@
     <ProjectGuid>{917C1338-E809-43D8-A10D-AA2629891258}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gu.PropertyGrid.Demo</RootNamespace>
-    <AssemblyName>Gu.PropertyGrid.Demo</AssemblyName>
+    <RootNamespace>Gu.Wpf.PropertyGrid.Demo</RootNamespace>
+    <AssemblyName>Gu.Wpf.PropertyGrid.Demo</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -38,6 +38,7 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -47,6 +48,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ItemsControlSettingsView.xaml.cs">
+      <DependentUpon>ItemsControlSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsVm.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ItemsControlSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -59,6 +73,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -92,6 +110,10 @@
     <ProjectReference Include="..\Gu.Wpf.PropertyGrid.Controls\Gu.Wpf.PropertyGrid.csproj">
       <Project>{7ddab84f-2416-413b-ae7a-6f2d75b2882d}</Project>
       <Name>Gu.PropertyGrid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gu.Wpf.PropertyGrid.UnitSettingControls\Gu.Wpf.PropertyGrid.UnitSettingControls.csproj">
+      <Project>{CEAFB9FB-D606-4A98-B8DF-81A14AE6EE35}</Project>
+      <Name>Gu.Wpf.PropertyGrid.UnitSettingControls</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
