@@ -61,9 +61,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IQuantityScalarConverter.cs" />
-    <Compile Include="QuantityBindingExtensionConverter.cs" />
-    <Compile Include="QuantityBindingExtension.cs" />
+    <Compile Include="Scalar.cs" />
+    <Compile Include="IScalarQuantities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

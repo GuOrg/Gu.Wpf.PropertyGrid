@@ -4,7 +4,7 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows;
     using Gu.Units;
 
-    public abstract class UnitSettingControl<TQuantity, TUnit> : NumericSettingControl<TQuantity>, IQuantityScalarConverter
+    public abstract class UnitSettingControl<TQuantity, TUnit> : NumericSettingControl<TQuantity>, IScalarQuantities
         where TQuantity : struct, IComparable<TQuantity>, IQuantity<TUnit>
         where TUnit : IUnit<TQuantity>
     {
@@ -45,6 +45,16 @@ namespace Gu.Wpf.PropertyGrid
                 control.Suffix = CreateSuffix((TUnit)e.NewValue, control.SymbolFormat);
             }
 
+            if (control.Value == null)
+            {
+                Scalar.SetValue(control, null);
+            }
+            else
+            {
+                var scalarValue = control.Unit.GetScalarValue(control.Value.Value);
+                Scalar.SetValue(control, scalarValue);
+            }
+
             control.RaiseEvent(UnitSettingControl.UnitChangedEventArgs);
         }
 
@@ -63,14 +73,32 @@ namespace Gu.Wpf.PropertyGrid
             return unit.ToString(symbolFormat);
         }
 
-        public double GetScalarValue(IQuantity quantity)
+        protected override void OnValueChanged(object oldValue, object newValue)
         {
-            return this.Unit.GetScalarValue((TQuantity)quantity);
+            if (newValue != null)
+            {
+                var scalarValue = this.Unit.GetScalarValue((TQuantity)newValue);
+                Scalar.SetValue(this, scalarValue);
+            }
+            else
+            {
+                Scalar.SetValue(this, null);
+            }
+
+            base.OnValueChanged(oldValue, newValue);
         }
 
-        public IQuantity GetQuantityValue(double value)
+        void IScalarQuantities.SetValue(double? value)
         {
-            return this.Unit.CreateQuantity(value);
+            if (value == null)
+            {
+                this.SetCurrentValue(ValueProperty, null);
+            }
+            else
+            {
+                var quantity = this.Unit.CreateQuantity(value.Value);
+                this.SetCurrentValue(ValueProperty, quantity);
+            }
         }
     }
 }

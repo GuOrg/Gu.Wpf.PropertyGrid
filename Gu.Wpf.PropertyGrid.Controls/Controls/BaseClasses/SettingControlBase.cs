@@ -46,7 +46,7 @@ namespace Gu.Wpf.PropertyGrid
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty SuffixMinWidthProperty = SettingControl.SuffixMinWidthProperty.AddOwner(
-            typeof(SettingControlBase), 
+            typeof(SettingControlBase),
             new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty OldValueStyleProperty = SettingControl.OldValueStyleProperty.AddOwner(
@@ -145,14 +145,19 @@ namespace Gu.Wpf.PropertyGrid
 
         protected abstract DependencyProperty ValueDependencyProperty { get; }
 
+        protected virtual void OnValueChanged(object oldValue, object newValue)
+        {
+        }
+
         protected static void OnValueChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
+            var c = (SettingControlBase)o;
+            c.OnValueChanged(e.OldValue, e.NewValue);
             if (BindingOperations.GetBinding(o, OldValueProperty) == null)
             {
                 return;
             }
 
-            var c = (SettingControlBase)o;
             c.IsDirty = !Equals(c.OldValue, e.NewValue);
         }
 

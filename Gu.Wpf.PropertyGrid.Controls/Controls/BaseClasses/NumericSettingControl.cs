@@ -5,7 +5,7 @@
 
     using Gu.Wpf.NumericInput;
 
-    public abstract class NumericSettingControl<T> : SettingControlBase<T>
+    public abstract class NumericSettingControl<T> : SettingControlBase<T?>
         where T : struct, IComparable<T>
     {
         public static readonly DependencyProperty DecimalDigitsProperty = NumericBox.DecimalDigitsProperty.AddOwner(
