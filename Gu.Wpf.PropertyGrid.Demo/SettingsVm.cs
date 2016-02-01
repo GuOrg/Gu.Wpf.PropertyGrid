@@ -1,5 +1,6 @@
 ﻿namespace Gu.Wpf.PropertyGrid.Demo
 {
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
     using Gu.Units;
@@ -7,7 +8,10 @@
 
     public class SettingsVm : INotifyPropertyChanged
     {
+        public static IReadOnlyList<LengthUnit> LengthUnits = new[] { LengthUnit.Centimetres, LengthUnit.Inches, };
+
         private Length lengthValue = Length.FromMillimetres(12.3456);
+        private LengthUnit currentLengthUnit = LengthUnits[0];
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -22,6 +26,21 @@
                 }
 
                 this.lengthValue = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public LengthUnit CurrentLengthUnit
+        {
+            get { return this.currentLengthUnit; }
+            set
+            {
+                if (value.Equals(this.currentLengthUnit))
+                {
+                    return;
+                }
+
+                this.currentLengthUnit = value;
                 this.OnPropertyChanged();
             }
         }

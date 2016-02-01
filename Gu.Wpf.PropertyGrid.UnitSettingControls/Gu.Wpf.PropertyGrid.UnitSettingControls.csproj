@@ -50,6 +50,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IQuantityScalarConverter.cs" />
     <Compile Include="QuantityBindingExtensionConverter.cs" />
     <Compile Include="QuantityBindingExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

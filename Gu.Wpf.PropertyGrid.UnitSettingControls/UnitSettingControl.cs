@@ -9,6 +9,14 @@ namespace Gu.Wpf.PropertyGrid
         public static readonly Type UnitSettingControlType = typeof(UnitSettingControl<,>);
         public static readonly SymbolFormat DefaultSymbolFormat = SymbolFormat.Default;
 
+        internal static readonly RoutedEvent UnitChangedEvent = EventManager.RegisterRoutedEvent(
+            "UnitChanged",
+            RoutingStrategy.Direct,
+            typeof (RoutedEventHandler),
+            typeof (UnitSettingControl));
+
+        internal static readonly RoutedEventArgs UnitChangedEventArgs = new RoutedEventArgs(UnitChangedEvent);
+
         public static readonly DependencyProperty SymbolFormatProperty = DependencyProperty.RegisterAttached(
             "SymbolFormat",
             typeof(SymbolFormat),

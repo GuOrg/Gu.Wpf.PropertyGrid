@@ -4,7 +4,7 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows;
     using Gu.Units;
 
-    public abstract class UnitSettingControl<TQuantity, TUnit> : NumericSettingControl<TQuantity>
+    public abstract class UnitSettingControl<TQuantity, TUnit> : NumericSettingControl<TQuantity>, IQuantityScalarConverter
         where TQuantity : struct, IComparable<TQuantity>, IQuantity<TUnit>
         where TUnit : IUnit<TQuantity>
     {
@@ -17,6 +17,12 @@ namespace Gu.Wpf.PropertyGrid
         public static readonly DependencyProperty SymbolFormatProperty = UnitSettingControl.SymbolFormatProperty.AddOwner(
             typeof(UnitSettingControl<TQuantity, TUnit>),
             new FrameworkPropertyMetadata(UnitSettingControl.DefaultSymbolFormat, FrameworkPropertyMetadataOptions.Inherits, OnSymbolFormatChanged));
+
+        internal event RoutedEventHandler UnitChanged
+        {
+            add { this.AddHandler(UnitSettingControl.UnitChangedEvent, value); }
+            remove { this.RemoveHandler(UnitSettingControl.UnitChangedEvent, value); }
+        }
 
         public TUnit Unit
         {
@@ -38,6 +44,8 @@ namespace Gu.Wpf.PropertyGrid
             {
                 control.Suffix = CreateSuffix((TUnit)e.NewValue, control.SymbolFormat);
             }
+
+            control.RaiseEvent(UnitSettingControl.UnitChangedEventArgs);
         }
 
         private static void OnSymbolFormatChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -53,6 +61,16 @@ namespace Gu.Wpf.PropertyGrid
         protected static string CreateSuffix(TUnit unit, SymbolFormat symbolFormat)
         {
             return unit.ToString(symbolFormat);
+        }
+
+        public double GetScalarValue(IQuantity quantity)
+        {
+            return this.Unit.GetScalarValue((TQuantity)quantity);
+        }
+
+        public IQuantity GetQuantityValue(double value)
+        {
+            return this.Unit.CreateQuantity(value);
         }
     }
 }

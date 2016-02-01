@@ -1,12 +1,16 @@
 ﻿namespace Gu.Wpf.PropertyGrid
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Globalization;
+    using System.Linq;
+    using System.Reflection;
     using System.Windows;
     using System.Windows.Data;
     using System.Windows.Markup;
+    using Gu.Units;
 
     [TypeConverter(typeof(QuantityBindingExtensionConverter))]
     [MarkupExtensionReturnType(typeof(BindingExpression))]
@@ -73,7 +77,7 @@
                 return this;
             }
 
-            var paramater = new Paramater();
+            var paramater = new Parameter();
             var binding = new Binding
             {
                 Path = this.Path,
@@ -87,9 +91,35 @@
             return expression;
         }
 
-        private class Paramater
+        private class Parameter
         {
+            internal static readonly DependencyProperty ParametersProperty = DependencyProperty.RegisterAttached(
+                "Parameters",
+                typeof(IList),
+                typeof(Parameter),
+                new PropertyMetadata(default(IList)));
+
+            static Parameter()
+            {
+                EventManager.RegisterClassHandler(typeof(SettingControlBase), UnitSettingControl.UnitChangedEvent, new RoutedEventHandler(OnUnitChanged));
+            }
+
             public BindingExpression Expression { get; set; }
+
+            private static void OnUnitChanged(object sender, RoutedEventArgs e)
+            {
+                var settingControl = (SettingControlBase) sender;
+                var parameters = (IReadOnlyList<Parameter>)settingControl.GetValue(ParametersProperty);
+                if (parameters == null)
+                {
+                    return;
+                }
+
+                foreach (var parameter in parameters)
+                {
+                    parameter.Expression.UpdateTarget();
+                }
+            }
         }
 
         private class UnitConverter : IValueConverter
@@ -102,12 +132,40 @@
 
             public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             {
-                return value;
+                if (value == null)
+                {
+                    return null;
+                }
+
+                var converter = GetConverter(parameter);
+                return converter.GetScalarValue((IQuantity)value);
             }
 
             public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
             {
-                return null;
+                var converter = GetConverter(parameter);
+                var d = System.Convert.ToDouble(value, culture);
+                return converter.GetQuantityValue(d);
+            }
+
+            private static IQuantityScalarConverter GetConverter(object parameter)
+            {
+                var paramater = (Parameter)parameter;
+                var source = (SettingControlBase)paramater.Expression.ResolvedSource;
+                var parameters = (List<Parameter>)source.GetValue(Parameter.ParametersProperty);
+                if (parameters == null)
+                {
+                    parameters = new List<Parameter>();
+                    source.SetValue(Parameter.ParametersProperty, parameters);
+                }
+
+                if (!parameters.Contains(paramater))
+                {
+                    parameters.Add(paramater);
+                }
+
+                var converter = (IQuantityScalarConverter)source;
+                return converter;
             }
         }
     }
