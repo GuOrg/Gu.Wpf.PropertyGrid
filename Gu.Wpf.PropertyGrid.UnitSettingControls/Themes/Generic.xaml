@@ -12,9 +12,15 @@
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
         <!--<ResourceDictionary Source="/Gu.Wpf.PropertyGrid.UnitSettingControls;component/Themes/UnitSettingControls.xaml" />-->
     </ResourceDictionary.MergedDictionaries>
-
+    <Style x:Key="{x:Static propertyGrid:Keys.SettingRowUnitValueStyleKey}"
+           TargetType="{x:Type numeric:DoubleBox}" />
     <Style x:Key="{x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}"
            TargetType="{x:Type propertyGrid:SettingControlBase}">
+        <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowHeaderStyleKey}}" />
+        <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowSuffixStyleKey}}" />
+        <Setter Property="OldValue" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowSuffixStyleKey}}" />
+        <Setter Property="ValueStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowUnitValueStyleKey}}" />
+        <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowSuffixStyleKey}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type propertyGrid:SettingControlBase}">
@@ -27,19 +33,17 @@
                             <ColumnDefinition Width="Auto"
                                               SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.LabelColumn}" />
                             <ColumnDefinition Width="Auto"
-                                              MinWidth="{Binding ValueWidth,
-                                                                 RelativeSource={RelativeSource TemplatedParent}}"
+                                              MinWidth="{TemplateBinding ValueMinWidth}"
                                               SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
                             <ColumnDefinition Width="Auto"
-                                              MinWidth="{Binding SuffixWidth,
-                                                                 RelativeSource={RelativeSource TemplatedParent}}"
+                                              MinWidth="{TemplateBinding SuffixMinWidth}"
                                               SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
 
                         <TextBlock x:Name="Header"
                                    Grid.Row="0"
                                    Grid.Column="0"
-                                   Style="{StaticResource {x:Static propertyGrid:Keys.SettingRowHeaderStyleKey}}"
+                                   Style="{TemplateBinding HeaderStyle}"
                                    Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="ValueBox"
@@ -47,15 +51,16 @@
                                            Grid.Column="1"
                                            MaxValue="{l:QuantityBinding MaxValue}"
                                            MinValue="{l:QuantityBinding MinValue}"
+                                           Style="{TemplateBinding ValueStyle}"
                                            Value="{l:QuantityBinding Value}" />
 
                         <TextBlock x:Name="SuffixBox"
                                    Grid.Row="0"
                                    Grid.Column="2"
-                                   Style="{StaticResource {x:Static propertyGrid:Keys.SettingRowSuffixStyle}}"
+                                   Style="{TemplateBinding SuffixStyle}"
                                    Text="{TemplateBinding Suffix}" />
 
-                        <Grid x:Name="InfoGrid"
+                        <!--<Grid x:Name="InfoGrid"
                               Grid.Row="1"
                               Grid.Column="0"
                               Grid.ColumnSpan="2"
@@ -70,7 +75,7 @@
                                                                                                                  WhenNull=Visible,
                                                                                                                  WhenFalse=Collapsed}}" />
 
-                            <!--<TextBlock x:Name="ErrorTextBox"
+                            --><!--<TextBlock x:Name="ErrorTextBox"
                                        HorizontalAlignment="Right"
                                        DataContext="{Binding ElementName=ValueBox}"
                                        Foreground="Red"
@@ -79,20 +84,19 @@
                                                             ElementName=ValueBox,
                                                             Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
                                                                                                                  WhenNull=Collapsed,
-                                                                                                                 WhenFalse=Collapsed}}" />-->
+                                                                                                                 WhenFalse=Collapsed}}" />--><!--
 
                             <TextBlock x:Name="OldValueBox"
                                        HorizontalAlignment="Right"
-                                       Foreground="{DynamicResource Accent}"
-                                       Visibility="{Binding Path=IsDirty,
-                                                            RelativeSource={RelativeSource TemplatedParent},
-                                                            Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
-                                                                                                                 WhenNull=Hidden,
-                                                                                                                 WhenFalse=Hidden}}">
+                                       Style="{TemplateBinding OldValueStyle}"
+                                       Visibility="{TemplateBinding IsDirty,
+                                                                    Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
+                                                                                                                         WhenNull=Hidden,
+                                                                                                                         WhenFalse=Hidden}}">
                                 <Run Text="OldValue: " />
-                                <Run Text="{Binding OldValue, RelativeSource={RelativeSource TemplatedParent}}" />
+                                <Run Text="{TemplateBinding OldValue}" />
                             </TextBlock>
-                        </Grid>
+                        </Grid>-->
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

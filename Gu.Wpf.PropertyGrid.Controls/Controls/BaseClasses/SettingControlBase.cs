@@ -19,43 +19,43 @@ namespace Gu.Wpf.PropertyGrid
             typeof(SettingControlBase),
             new PropertyMetadata(string.Empty));
 
-        public static readonly DependencyProperty ValueWidthProperty = SettingControl.ValueWidthProperty.AddOwner(
-            typeof(SettingControlBase),
-            new FrameworkPropertyMetadata(130.0, FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty SuffixWidthProperty = SettingControl.SuffixWidthProperty.AddOwner(
-            typeof(SettingControlBase),
-            new FrameworkPropertyMetadata(75.0, FrameworkPropertyMetadataOptions.Inherits));
-
         public static readonly DependencyProperty OldValueProperty = DependencyProperty.Register(
             "OldValue",
             typeof(object),
             typeof(SettingControlBase),
-            new FrameworkPropertyMetadata
-            {
-                PropertyChangedCallback = OnOldValueChanged,
-                DefaultValue = default(object),
-                BindsTwoWayByDefault = false,
-                DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
-            });
+            new PropertyMetadata(null, OnOldValueChanged));
 
-        public static readonly DependencyProperty ValueTemplateProperty = DependencyProperty.Register(
-            "ValueTemplate",
-            typeof(DataTemplate),
+        public static readonly DependencyProperty IsReadOnlyProperty = SettingControl.IsReadOnlyProperty.AddOwner(
             typeof(SettingControlBase),
-            new PropertyMetadata(default(DataTemplate)));
+            new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty OldValueTemplateProperty = DependencyProperty.Register(
-            "OldValueTemplate",
-            typeof(DataTemplate),
+        public static readonly DependencyProperty HeaderStyleProperty = SettingControl.HeaderStyleProperty.AddOwner(
             typeof(SettingControlBase),
-            new PropertyMetadata(default(DataTemplate)));
+            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty ReadOnlyProperty = DependencyProperty.Register(
-            "ReadOnly",
-            typeof(bool),
+        public static readonly DependencyProperty ValueStyleProperty = SettingControl.ValueStyleProperty.AddOwner(
             typeof(SettingControlBase),
-            new PropertyMetadata(false));
+            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+
+        public static readonly DependencyProperty ValueMinWidthProperty = SettingControl.ValueMinWidthProperty.AddOwner(
+            typeof(SettingControlBase),
+            new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
+
+        public static readonly DependencyProperty SuffixStyleProperty = SettingControl.SuffixStyleProperty.AddOwner(
+            typeof(SettingControlBase),
+            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+
+        public static readonly DependencyProperty SuffixMinWidthProperty = SettingControl.SuffixMinWidthProperty.AddOwner(
+            typeof(SettingControlBase), 
+            new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
+
+        public static readonly DependencyProperty OldValueStyleProperty = SettingControl.OldValueStyleProperty.AddOwner(
+            typeof(SettingControlBase),
+            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+
+        public static readonly DependencyProperty ErrorStyleProperty = SettingControl.ErrorStyleProperty.AddOwner(
+            typeof(SettingControlBase),
+            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
         private static readonly DependencyPropertyKey IsDirtyPropertyKey = DependencyProperty.RegisterReadOnly(
             "IsDirty",
@@ -77,10 +77,10 @@ namespace Gu.Wpf.PropertyGrid
             set { this.SetValue(HeaderProperty, value); }
         }
 
-        public double ValueWidth
+        public double ValueMinWidth
         {
-            get { return (double)this.GetValue(ValueWidthProperty); }
-            set { this.SetValue(ValueWidthProperty, value); }
+            get { return (double)this.GetValue(ValueMinWidthProperty); }
+            set { this.SetValue(ValueMinWidthProperty, value); }
         }
 
         public string Suffix
@@ -95,28 +95,46 @@ namespace Gu.Wpf.PropertyGrid
             set { this.SetValue(OldValueProperty, value); }
         }
 
-        public DataTemplate ValueTemplate
+        public double SuffixMinWidth
         {
-            get { return (DataTemplate)this.GetValue(ValueTemplateProperty); }
-            set { this.SetValue(ValueTemplateProperty, value); }
+            get { return (double)this.GetValue(SuffixMinWidthProperty); }
+            set { this.SetValue(SuffixMinWidthProperty, value); }
         }
 
-        public DataTemplate OldValueTemplate
+        public bool IsReadOnly
         {
-            get { return (DataTemplate)this.GetValue(OldValueTemplateProperty); }
-            set { this.SetValue(OldValueTemplateProperty, value); }
+            get { return (bool)this.GetValue(IsReadOnlyProperty); }
+            set { this.SetValue(IsReadOnlyProperty, value); }
         }
 
-        public double SuffixWidth
+        public Style HeaderStyle
         {
-            get { return (double)this.GetValue(SuffixWidthProperty); }
-            set { this.SetValue(SuffixWidthProperty, value); }
+            get { return (Style)this.GetValue(HeaderStyleProperty); }
+            set { this.SetValue(HeaderStyleProperty, value); }
         }
 
-        public bool ReadOnly
+        public Style ValueStyle
         {
-            get { return (bool)this.GetValue(ReadOnlyProperty); }
-            set { this.SetValue(ReadOnlyProperty, value); }
+            get { return (Style)this.GetValue(ValueStyleProperty); }
+            set { this.SetValue(ValueStyleProperty, value); }
+        }
+
+        public Style SuffixStyle
+        {
+            get { return (Style)this.GetValue(SuffixStyleProperty); }
+            set { this.SetValue(SuffixStyleProperty, value); }
+        }
+
+        public Style OldValueStyle
+        {
+            get { return (Style)this.GetValue(OldValueStyleProperty); }
+            set { this.SetValue(OldValueStyleProperty, value); }
+        }
+
+        public Style ErrorStyle
+        {
+            get { return (Style)this.GetValue(ErrorStyleProperty); }
+            set { this.SetValue(ErrorStyleProperty, value); }
         }
 
         public bool? IsDirty

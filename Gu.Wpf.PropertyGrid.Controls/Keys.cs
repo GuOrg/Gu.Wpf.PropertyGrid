@@ -17,9 +17,15 @@ namespace Gu.Wpf.PropertyGrid
 
         public static ResourceKey SettingRowHeaderStyleKey { get; } = CreateKey();
 
+        public static ResourceKey SettingRowValueStyle { get; } = CreateKey();
+
+        public static ResourceKey SettingRowUnitValueStyleKey { get; } = CreateKey();
+
         public static ResourceKey SettingRowOldValueStyle { get; } = CreateKey();
 
-        public static ResourceKey SettingRowSuffixStyle { get; } = CreateKey();
+        public static ResourceKey SettingRowErrorStyleKey { get; } = CreateKey();
+
+        public static ResourceKey SettingRowSuffixStyleKey { get; } = CreateKey();
 
         private static ComponentResourceKey CreateKey([CallerMemberName] string caller = null)
         {

@@ -12,8 +12,8 @@ namespace Gu.Wpf.PropertyGrid
         internal static readonly RoutedEvent UnitChangedEvent = EventManager.RegisterRoutedEvent(
             "UnitChanged",
             RoutingStrategy.Direct,
-            typeof (RoutedEventHandler),
-            typeof (UnitSettingControl));
+            typeof(RoutedEventHandler),
+            typeof(UnitSettingControl));
 
         internal static readonly RoutedEventArgs UnitChangedEventArgs = new RoutedEventArgs(UnitChangedEvent);
 

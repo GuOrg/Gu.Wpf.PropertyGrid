@@ -23,11 +23,11 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
                             <ColumnDefinition Width="Auto"
-                                              MinWidth="{Binding Path=(l:SettingControl.ValueWidth),
+                                              MinWidth="{Binding Path=(l:SettingControl.ValueMinWidth),
                                                                  RelativeSource={RelativeSource TemplatedParent}}"
                                               SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
                             <ColumnDefinition Width="Auto"
-                                              MinWidth="{Binding Path=(l:SettingControl.SuffixWidth),
+                                              MinWidth="{Binding Path=(l:SettingControl.SuffixMinWidth),
                                                                  RelativeSource={RelativeSource TemplatedParent}}"
                                               SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
@@ -57,11 +57,11 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
                 <ColumnDefinition Width="Auto"
-                                  MinWidth="{Binding Path=(l:SettingControl.ValueWidth),
+                                  MinWidth="{Binding Path=(l:SettingControl.ValueMinWidth),
                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
                 <ColumnDefinition Width="Auto"
-                                  MinWidth="{Binding Path=(l:SettingControl.SuffixWidth),
+                                  MinWidth="{Binding Path=(l:SettingControl.SuffixMinWidth),
                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
             </Grid.ColumnDefinitions>
@@ -84,7 +84,7 @@
             <TextBlock x:Name="SuffixBox"
                        Grid.Row="0"
                        Grid.Column="2"
-                       Style="{StaticResource {x:Static l:Keys.SettingRowSuffixStyle}}"
+                       Style="{StaticResource {x:Static l:Keys.SettingRowSuffixStyleKey}}"
                        Text="{Binding Suffix,
                                       RelativeSource={RelativeSource TemplatedParent}}" />
 

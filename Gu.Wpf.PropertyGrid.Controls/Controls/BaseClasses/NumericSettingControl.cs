@@ -10,7 +10,7 @@
     {
         public static readonly DependencyProperty DecimalDigitsProperty = NumericBox.DecimalDigitsProperty.AddOwner(
             typeof(NumericSettingControl<T>),
-            new FrameworkPropertyMetadata(3, FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",

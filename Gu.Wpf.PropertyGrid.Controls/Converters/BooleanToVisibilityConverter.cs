@@ -23,17 +23,17 @@
         {
             if (value == null)
             {
-                return WhenNull;
+                return this.WhenNull;
             }
 
             if (value == BooleanBoxes.True)
             {
-                return WhenTrue;
+                return this.WhenTrue;
             }
 
             if (value == BooleanBoxes.False)
             {
-                return WhenFalse;
+                return this.WhenFalse;
             }
 
             throw new ArgumentOutOfRangeException("Expected value to be of type Nullable<bool>");
