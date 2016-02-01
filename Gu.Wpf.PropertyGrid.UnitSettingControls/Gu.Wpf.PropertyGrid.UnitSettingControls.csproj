@@ -44,8 +44,19 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Themes\BaseStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\UnitSettingControls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitSettingControls.tt</DependentUpon>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
@@ -88,13 +99,8 @@
   <ItemGroup>
     <Content Include="Themes\UnitSettingControls.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UnitSettingControls.xaml.txt</LastGenOutput>
+      <LastGenOutput>UnitSettingControls.xaml</LastGenOutput>
     </Content>
-    <Resource Include="Themes\UnitSettingControls.xaml.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UnitSettingControls.tt</DependentUpon>
-    </Resource>
     <Content Include="UnitSettingControl.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UnitSettingControl.generated.cs</LastGenOutput>

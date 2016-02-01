@@ -1,7 +1,7 @@
-using System.Windows;
-
 namespace Gu.Wpf.PropertyGrid
 {
+    using System.Windows;
+
     public static class SettingControl
     {
         public static readonly DependencyProperty HeaderStyleProperty = DependencyProperty.RegisterAttached(

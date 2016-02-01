@@ -14,10 +14,11 @@
         <propertyGrid:SettingsControl>
             <propertyGrid:LengthSettingControl Header="Length (mm)"
                                                Value="{Binding LengthValue}" />
-            
-            <ComboBox ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
-                      SelectedItem="{Binding CurrentLengthUnit}" />
-            
+
+            <propertyGrid:SelectorSettingControl Header="Units"
+                                                 ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
+                                                 Value="{Binding CurrentLengthUnit}" />
+
             <propertyGrid:LengthSettingControl Header="Length (cm)"
                                                Unit="{Binding CurrentLengthUnit}"
                                                Value="{Binding LengthValue}" />

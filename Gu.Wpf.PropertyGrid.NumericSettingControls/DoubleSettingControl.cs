@@ -1,7 +1,7 @@
-﻿using System.Windows;
-
-namespace Gu.Wpf.PropertyGrid
+﻿namespace Gu.Wpf.PropertyGrid
 {
+    using System.Windows;
+
     public class DoubleSettingControl : NumericSettingControl<double>
     {
         static DoubleSettingControl()

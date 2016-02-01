@@ -1,5 +1,4 @@
 ﻿type project
-title Gu.Wpf.PropertyGrid
 tags wpf xaml propertygrid styles itemscontrol
 projectUrl https://github.com/JohanLarsson/Gu.Wpf.PropertyGrid
 licenseUrl http://opensource.org/licenses/MIT

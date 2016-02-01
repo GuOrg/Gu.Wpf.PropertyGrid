@@ -6,72 +6,24 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ output extension=".xaml.txt" #>
+<#@ output extension=".xaml" #>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid"
-                    xmlns:numeric="http://gu.se/NumericInput"
-                    xmlns:unit="clr-namespace:Gu.Units;assembly=Gu.Units"
-                    xmlns:units="http://Gu.com/Units">
+                    xmlns:propertyGrid="http://gu.se/PropertyGrid">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.UnitSettingControls;component/Themes/BaseStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
 <#
 	    var quantities = typeof (Length).Assembly.GetTypes()
 											     .Where(x => !x.IsInterface)
 											     .Where(x => x.GetInterfaces().Any(i => i == typeof (IQuantity))).ToArray();
 		foreach(var quantity in quantities)
 		{
-		    // var className = quantity.Name + "SettingControl";
-		    // var defaultUnit = GetDefaultUnitName(quantity);
 		#>
-	<!--
-    <units:LengthConverter x:Key="MillimetresConverter" Unit="{x:Static unit:LengthUnit.Millimetres}" />
 
-    <units:LengthConverter x:Key="MicrometresConverter" Unit="{x:Static unit:LengthUnit.Micrometres}" />
-
-    <Style BasedOn="{StaticResource SettingRowBaseStyle}" TargetType="{x:Type l:LengthSettingControl}">
-        <Setter Property="Template" Value="{StaticResource SettingRowTemplate}" />
-        <Style.Triggers>
-            <Trigger Property="Unit" Value="{x:Static unit:LengthUnit.Millimetres}">
-                <Setter Property="ValueTemplate">
-                    <Setter.Value>
-                        <DataTemplate>
-                            <numeric:DoubleBox x:Name="ValueBox"
-                                               MaxValue="{Binding MaxValue,
-                                                                  Converter={StaticResource MillimetresConverter},
-                                                                  RelativeSource={RelativeSource AncestorType={x:Type l:LengthSettingControl}}}"
-                                               MinValue="{Binding MinValue,
-                                                                  Converter={StaticResource MillimetresConverter},
-                                                                  RelativeSource={RelativeSource AncestorType={x:Type l:LengthSettingControl}}}"
-                                               Value="{Binding Value,
-                                                               Converter={StaticResource MillimetresConverter},
-                                                               RelativeSource={RelativeSource AncestorType={x:Type l:LengthSettingControl}}}" />
-                        </DataTemplate>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="OldStringValue" Value="{Binding OldValue, Converter={unit:LengthConverter Unit={x:Static unit:LengthUnit.Millimetres}, UnitInput=SymbolRequired}, RelativeSource={RelativeSource Self}}" />
-            </Trigger>
-
-            <Trigger Property="Unit" Value="{x:Static unit:LengthUnit.Micrometres}">
-                <Setter Property="ValueTemplate">
-                    <Setter.Value>
-                        <DataTemplate>
-                            <numeric:DoubleBox x:Name="ValueBox"
-                                               MaxValue="{Binding MaxValue,
-                                                                  Converter={StaticResource MicrometresConverter},
-                                                                  RelativeSource={RelativeSource AncestorType={x:Type l:LengthSettingControl}}}"
-                                               MinValue="{Binding MinValue,
-                                                                  Converter={StaticResource MicrometresConverter},
-                                                                  RelativeSource={RelativeSource AncestorType={x:Type l:LengthSettingControl}}}"
-                                               Value="{Binding Value,
-                                                               Converter={StaticResource MicrometresConverter},
-                                                               RelativeSource={RelativeSource AncestorType={x:Type l:LengthSettingControl}}}" />
-                        </DataTemplate>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="OldStringValue" Value="{Binding OldValue, Converter={unit:LengthConverter Unit={x:Static unit:LengthUnit.Micrometres}, UnitInput=SymbolRequired}, RelativeSource={RelativeSource Self}}" />
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-	-->
+	<Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}}"
+           TargetType="{x:Type l:<#= quantity.Name #>SettingControl}" />
 	<#
 		} 
 		#>
