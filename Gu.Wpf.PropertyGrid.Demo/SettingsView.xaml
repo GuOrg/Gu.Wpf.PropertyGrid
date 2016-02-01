@@ -11,10 +11,10 @@
     </UserControl.DataContext>
     <Grid>
         <propertyGrid:SettingsControl>
-            <propertyGrid:LengthSettingControl Header="Length" 
+            <propertyGrid:LengthSettingControl Header="Length (mm)" 
                                                Value="{Binding LengthValue}" />
 
-            <propertyGrid:LengthSettingControl Header="Length" 
+            <propertyGrid:LengthSettingControl Header="Length (cm)" 
                                                Unit="cm"
                                                Value="{Binding LengthValue}" />
         </propertyGrid:SettingsControl>

@@ -6,12 +6,11 @@
                     xmlns:unit="clr-namespace:Gu.Units;assembly=Gu.Units"
                     xmlns:units="http://Gu.com/Units">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
         <!--<ResourceDictionary Source="/Gu.Wpf.PropertyGrid.UnitSettingControls;component/Themes/UnitSettingControls.xaml" />-->
     </ResourceDictionary.MergedDictionaries>
     
-    <Style x:Key="{x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}" 
-           TargetType="{x:Type propertyGrid:SettingControlBase}">
+    <Style x:Key="{x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}" TargetType="{x:Type propertyGrid:SettingControlBase}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -45,6 +44,7 @@
                                            DecimalDigits="{Binding DecimalDigits,
                                                                    RelativeSource={RelativeSource TemplatedParent}}"
                                            Value="{Binding Value,
+                                                           Converter={l:Fuu},
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
                         <TextBlock x:Name="SuffixBox"

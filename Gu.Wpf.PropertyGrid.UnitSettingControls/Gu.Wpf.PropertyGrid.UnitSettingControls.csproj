@@ -63,6 +63,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Fuu.cs" />
     <Compile Include="UnitSettingControl.cs" />
     <Compile Include="UnitSettingControl.generated.cs">
       <DependentUpon>UnitSettingControl.tt</DependentUpon>

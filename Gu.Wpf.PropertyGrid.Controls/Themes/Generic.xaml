@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/Gu.Wpf.PropertyGrid;component/Themes/SettingsControl.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/SettingsControl.xaml" />
         <!--<ResourceDictionary Source="/Gu.Wpf.PropertyGrid;component/Themes/SettingControl.xaml" />-->
     </ResourceDictionary.MergedDictionaries>
     
