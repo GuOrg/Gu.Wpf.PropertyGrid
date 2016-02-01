@@ -33,24 +33,24 @@ namespace Gu.Wpf.PropertyGrid
         protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var control = (UnitSettingControl<TQuantity, TUnit>)d;
-            var oldSuffix = GetSuffix((TUnit)e.OldValue, control.SymbolFormat);
+            var oldSuffix = CreateSuffix((TUnit)e.OldValue, control.SymbolFormat);
             if (Equals(control.Suffix, oldSuffix))
             {
-                control.Suffix = GetSuffix((TUnit)e.NewValue, control.SymbolFormat);
+                control.Suffix = CreateSuffix((TUnit)e.NewValue, control.SymbolFormat);
             }
         }
 
         private static void OnSymbolFormatChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var control = (UnitSettingControl<TQuantity, TUnit>)d;
-            var oldSuffix = GetSuffix(control.Unit, (SymbolFormat)e.OldValue);
+            var oldSuffix = CreateSuffix(control.Unit, (SymbolFormat)e.OldValue);
             if (Equals(control.Suffix, oldSuffix))
             {
-                control.Suffix = GetSuffix(control.Unit, (SymbolFormat)e.NewValue);
+                control.Suffix = CreateSuffix(control.Unit, (SymbolFormat)e.NewValue);
             }
         }
 
-        protected static string GetSuffix(TUnit unit, SymbolFormat symbolFormat)
+        protected static string CreateSuffix(TUnit unit, SymbolFormat symbolFormat)
         {
             return unit.ToString(symbolFormat);
         }

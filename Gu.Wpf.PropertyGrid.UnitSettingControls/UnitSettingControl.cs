@@ -1,11 +1,14 @@
 namespace Gu.Wpf.PropertyGrid
 {
+    using System;
     using System.Windows;
     using Gu.Units;
 
     public static class UnitSettingControl
     {
+        public static readonly Type UnitSettingControlType = typeof(UnitSettingControl<,>);
         public static readonly SymbolFormat DefaultSymbolFormat = SymbolFormat.Default;
+
         public static readonly DependencyProperty SymbolFormatProperty = DependencyProperty.RegisterAttached(
             "SymbolFormat",
             typeof(SymbolFormat),

@@ -14,7 +14,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AccelerationSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -31,7 +31,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AmountOfSubstanceSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -48,7 +48,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AngleSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -65,7 +65,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AnglePerUnitlessSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -82,7 +82,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AngularAccelerationSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -99,7 +99,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AngularJerkSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -116,7 +116,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AngularSpeedSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -133,7 +133,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AreaSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -150,7 +150,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AreaDensitySettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -167,7 +167,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(CapacitanceSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -184,7 +184,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(CatalyticActivitySettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -201,7 +201,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(CurrentSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -218,7 +218,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(DataSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -235,7 +235,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(DensitySettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -252,7 +252,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(ElectricalConductanceSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -269,7 +269,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(ElectricChargeSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -286,7 +286,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(EnergySettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -303,7 +303,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(FlexibilitySettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -320,7 +320,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(ForceSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -337,7 +337,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(ForcePerUnitlessSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -354,7 +354,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(FrequencySettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -371,7 +371,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(IlluminanceSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -388,7 +388,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(InductanceSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -405,7 +405,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(JerkSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -422,7 +422,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(KinematicViscositySettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -439,7 +439,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(LengthSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -456,7 +456,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(LengthPerUnitlessSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -473,7 +473,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(LuminousFluxSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -490,7 +490,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(LuminousIntensitySettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -507,7 +507,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(MagneticFieldStrengthSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -524,7 +524,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(MagneticFluxSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -541,7 +541,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(MassSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -558,7 +558,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(MassFlowSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -575,7 +575,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(MomentumSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -592,7 +592,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(PowerSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -609,7 +609,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(PressureSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -626,7 +626,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(ResistanceSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -643,7 +643,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(SolidAngleSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -660,7 +660,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(SpecificEnergySettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -677,7 +677,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(SpecificVolumeSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -694,7 +694,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(SpeedSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -711,7 +711,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(StiffnessSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -728,7 +728,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(TemperatureSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -745,7 +745,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(TimeSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -762,7 +762,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(TorqueSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -779,7 +779,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(UnitlessSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -796,7 +796,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(VoltageSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -813,7 +813,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(VolumeSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -830,7 +830,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(VolumetricFlowSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
@@ -847,7 +847,7 @@
             SuffixProperty.OverrideMetadata(
                 typeof(WavenumberSettingControl),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }

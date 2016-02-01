@@ -2,25 +2,27 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid"
                     xmlns:numeric="http://gu.se/NumericInput"
-                    xmlns:propertyGrid="http://gu.se/PropertyGrid"
                     xmlns:unit="clr-namespace:Gu.Units;assembly=Gu.Units"
-                    xmlns:units="http://Gu.com/Units">
+                    xmlns:units="http://Gu.com/Units"
+                    xmlns:propertyGrid="http://gu.se/PropertyGrid">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
         <!--<ResourceDictionary Source="/Gu.Wpf.PropertyGrid.UnitSettingControls;component/Themes/UnitSettingControls.xaml" />-->
     </ResourceDictionary.MergedDictionaries>
-    
-    <Style x:Key="{x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}" TargetType="{x:Type propertyGrid:SettingControlBase}">
+
+    <Style x:Key="{x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}"
+           TargetType="{x:Type propertyGrid:SettingControlBase}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate>
+                <ControlTemplate TargetType="{x:Type propertyGrid:SettingControlBase}">
                     <Grid Margin="{TemplateBinding Padding}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition Width="Auto"
+                                              SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.LabelColumn}" />
                             <ColumnDefinition Width="Auto"
                                               MinWidth="{Binding ValueWidth,
                                                                  RelativeSource={RelativeSource TemplatedParent}}"
@@ -35,24 +37,25 @@
                                    Grid.Row="0"
                                    Grid.Column="0"
                                    Style="{StaticResource {x:Static propertyGrid:Keys.SettingRowHeaderStyleKey}}"
-                                   Text="{Binding Header,
-                                                  RelativeSource={RelativeSource TemplatedParent}}" />
+                                   Text="{TemplateBinding Header}" />
 
-                        <numeric:DoubleBox x:Name="ValueBox"
+                        <!--<numeric:DoubleBox x:Name="ValueBox"
                                            Grid.Row="0"
                                            Grid.Column="1"
                                            DecimalDigits="{Binding DecimalDigits,
                                                                    RelativeSource={RelativeSource TemplatedParent}}"
                                            Value="{Binding Value,
-                                                           Converter={l:Fuu},
-                                                           RelativeSource={RelativeSource TemplatedParent}}" />
+                                                           RelativeSource={RelativeSource TemplatedParent}}" />-->
+                        <TextBox x:Name="ValueBox"
+                                 Grid.Row="0"
+                                 Grid.Column="1"
+                                 Text="{l:QuantityBinding Value}" />
 
                         <TextBlock x:Name="SuffixBox"
                                    Grid.Row="0"
                                    Grid.Column="2"
                                    Style="{StaticResource {x:Static propertyGrid:Keys.SettingRowSuffixStyle}}"
-                                   Text="{Binding Suffix,
-                                                  RelativeSource={RelativeSource TemplatedParent}}" />
+                                   Text="{TemplateBinding Suffix}" />
 
                         <Grid x:Name="InfoGrid"
                               Grid.Row="1"
@@ -69,15 +72,16 @@
                                                                                                                  WhenNull=Visible,
                                                                                                                  WhenFalse=Collapsed}}" />
 
-                            <TextBlock x:Name="ErrorTextBox"
+                            <!--<TextBlock x:Name="ErrorTextBox"
                                        HorizontalAlignment="Right"
                                        DataContext="{Binding ElementName=ValueBox}"
                                        Foreground="Red"
                                        Text="error"
-                                       Visibility="{Binding HasError,
+                                       Visibility="{Binding Path=(Validation.HasError),
+                                                            ElementName=ValueBox,
                                                             Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
                                                                                                                  WhenNull=Collapsed,
-                                                                                                                 WhenFalse=Collapsed}}" />
+                                                                                                                 WhenFalse=Collapsed}}" />-->
 
                             <TextBlock x:Name="OldValueBox"
                                        HorizontalAlignment="Right"
@@ -97,7 +101,8 @@
         </Setter>
     </Style>
 
-    <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}}" TargetType="{x:Type l:LengthSettingControl}" />
+    <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}}"
+           TargetType="{x:Type l:LengthSettingControl}" />
     <!--
     <units:LengthConverter x:Key="MillimetresConverter" Unit="{x:Static unit:LengthUnit.Millimetres}" />
 
