@@ -7,16 +7,15 @@
     <Style x:Key="{x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}" TargetType="{x:Type propertyGrid:SettingControlBase}">
         <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowHeaderStyleKey}}" />
         <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowSuffixStyleKey}}" />
-        <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowSuffixStyleKey}}" />
+        <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" />
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type numeric:DoubleBox}">
-                    <!--<Setter Property="Value" Value="{Binding Path=(l:Scalar.Value),
-                                                             RelativeSource={RelativeSource TemplatedParent}}" />-->
+                    <Setter Property="Value" Value="{Binding Path=(l:Scalar.Value), RelativeSource={RelativeSource TemplatedParent}}" />
                 </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowSuffixStyleKey}}" />
+        <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowErrorStyleKey}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type propertyGrid:SettingControlBase}">
@@ -44,8 +43,7 @@
                         <numeric:DoubleBox x:Name="ValueBox"
                                            Grid.Row="0"
                                            Grid.Column="1"
-                                           Value="{Binding Path=(l:Scalar.Value),
-                                                           RelativeSource={RelativeSource TemplatedParent}}" />
+                                           Style="{TemplateBinding ValueStyle}" />
 
                         <TextBlock x:Name="SuffixBox"
                                    Grid.Row="0"
