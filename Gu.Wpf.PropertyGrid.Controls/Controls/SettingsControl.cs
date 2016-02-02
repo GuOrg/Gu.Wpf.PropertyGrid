@@ -5,6 +5,22 @@
 
     public class SettingsControl : ItemsControl
     {
+        public static readonly DependencyProperty ValueMinWidthProperty = SettingControl.ValueMinWidthProperty.AddOwner(
+     typeof(SettingsControl),
+     new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
+
+        public static readonly DependencyProperty ValueMaxWidthProperty = SettingControl.ValueMaxWidthProperty.AddOwner(
+            typeof(SettingsControl),
+            new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.Inherits));
+
+        public static readonly DependencyProperty SuffixMinWidthProperty = SettingControl.SuffixMinWidthProperty.AddOwner(
+             typeof(SettingsControl),
+             new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
+
+        public static readonly DependencyProperty SuffixMaxWidthProperty = SettingControl.SuffixMaxWidthProperty.AddOwner(
+             typeof(SettingsControl),
+             new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.Inherits));
+
         public static readonly DependencyProperty UsePropertyNameAsHeaderProperty = SettingControl.UsePropertyNameAsHeaderProperty.AddOwner(
                 typeof(SettingsControl),
                 new FrameworkPropertyMetadata(
@@ -47,6 +63,30 @@
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SettingsControl), new FrameworkPropertyMetadata(typeof(SettingsControl)));
             FocusableProperty.OverrideMetadata(typeof(SettingsControl), new FrameworkPropertyMetadata(BooleanBoxes.False));
+        }
+
+        public double ValueMinWidth
+        {
+            get { return (double)this.GetValue(ValueMinWidthProperty); }
+            set { this.SetValue(ValueMinWidthProperty, value); }
+        }
+
+        public double ValueMaxWidth
+        {
+            get { return (double)this.GetValue(ValueMaxWidthProperty); }
+            set { this.SetValue(ValueMaxWidthProperty, value); }
+        }
+
+        public double SuffixMinWidth
+        {
+            get { return (double)this.GetValue(SuffixMinWidthProperty); }
+            set { this.SetValue(SuffixMinWidthProperty, value); }
+        }
+
+        public double SuffixMaxWidth
+        {
+            get { return (double)this.GetValue(SuffixMaxWidthProperty); }
+            set { this.SetValue(SuffixMaxWidthProperty, value); }
         }
 
         public bool UsePropertyNameAsHeader

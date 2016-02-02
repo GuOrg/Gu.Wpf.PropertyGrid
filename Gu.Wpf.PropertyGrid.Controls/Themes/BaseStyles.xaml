@@ -31,25 +31,28 @@
         <Setter Property="TextAlignment" Value="Right" />
     </Style>
 
-    <Style x:Key="{x:Static propertyGrid:Keys.RootGridStyleKey}" TargetType="{x:Type Grid}" x:Shared="False">
-        <Setter Property="propertyGrid:Grid.RowDefinitions">
-            <Setter.Value>
-                <propertyGrid:RowDefinitions>
-                    <RowDefinition Height="Auto"  />
-                    <RowDefinition Height="Auto" />
-                </propertyGrid:RowDefinitions>
-            </Setter.Value>
-        </Setter>
+    <propertyGrid:RowDefinitions x:Key="RowDefinitions" x:Shared="False">
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+    </propertyGrid:RowDefinitions>
 
-        <Setter Property="propertyGrid:Grid.ColumnDefinitions">
-            <Setter.Value>
-                <propertyGrid:ColumnDefinitions>
-                    <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.LabelColumn}" />
-                    <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
-                    <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.SuffixColumn}" />
-                </propertyGrid:ColumnDefinitions>
-            </Setter.Value>
-        </Setter>
+    <propertyGrid:ColumnDefinitions x:Key="ColumnDefinitions" x:Shared="False">
+        <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.LabelColumn}" />
+        <ColumnDefinition MinWidth="{Binding Path=(propertyGrid:SettingControl.ValueMinWidth),
+                                             RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
+                          MaxWidth="{Binding Path=(propertyGrid:SettingControl.ValueMaxWidth),
+                                             RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
+                          SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
+        <ColumnDefinition MinWidth="{Binding Path=(propertyGrid:SettingControl.SuffixMinWidth),
+                                             RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
+                          MaxWidth="{Binding Path=(propertyGrid:SettingControl.SuffixMaxWidth),
+                                             RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
+                          SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.SuffixColumn}" />
+    </propertyGrid:ColumnDefinitions>
+
+    <Style x:Key="{x:Static propertyGrid:Keys.RootGridStyleKey}" TargetType="{x:Type Grid}">
+        <Setter Property="propertyGrid:Grid.RowDefinitions" Value="{StaticResource RowDefinitions}" />
+        <Setter Property="propertyGrid:Grid.ColumnDefinitions" Value="{StaticResource ColumnDefinitions}" />
     </Style>
 
     <Grid x:Key="InfoGrid"

@@ -16,6 +16,8 @@
         </Grid.RowDefinitions>
         <propertyGrid:SettingsControl Grid.Row="0"
                                       DataContext="{Binding EditableCopy}"
+                                      SuffixMinWidth="20"
+                                      ValueMinWidth="150"
                                       propertyGrid:SettingControl.OldDataContext="{Binding DataContext.LastSaved,
                                                                                            RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
             <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Core" />
