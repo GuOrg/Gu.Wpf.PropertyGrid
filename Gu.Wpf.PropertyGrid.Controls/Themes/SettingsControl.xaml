@@ -41,7 +41,6 @@
            BasedOn="{StaticResource {x:Static l:Keys.ItemsControlSettingListStyleKey}}"
            TargetType="{x:Type ItemsControl}">
         <Setter Property="Grid.IsSharedSizeScope" Value="False" />
-        <Setter Property="Focusable" Value="False" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="Continue" />
     </Style>
 

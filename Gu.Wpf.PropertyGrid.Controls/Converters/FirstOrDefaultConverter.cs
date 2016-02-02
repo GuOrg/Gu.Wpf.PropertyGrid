@@ -7,6 +7,7 @@
     using System.Windows.Data;
     using System.Windows.Markup;
 
+    [MarkupExtensionReturnType(typeof(IValueConverter))]
     public class FirstOrDefaultConverter : MarkupExtension, IValueConverter
     {
         public static readonly FirstOrDefaultConverter Default = new FirstOrDefaultConverter();

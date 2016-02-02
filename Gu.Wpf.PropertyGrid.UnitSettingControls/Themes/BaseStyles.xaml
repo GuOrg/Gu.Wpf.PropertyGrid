@@ -5,13 +5,15 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/SettingControl.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <Style x:Key="{x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}"
-           TargetType="{x:Type propertyGrid:SettingControlBase}"
-           BasedOn="{StaticResource {x:Type propertyGrid:SettingControlBase}}">
+           BasedOn="{StaticResource {x:Type propertyGrid:SettingControlBase}}"
+           TargetType="{x:Type propertyGrid:SettingControlBase}">
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type numeric:DoubleBox}">
+                    <Setter Property="Grid.Row" Value="0" />
+                    <Setter Property="Grid.Column" Value="1" />
                     <Setter Property="DecimalDigits" Value="{Binding DecimalDigits, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="ValidationTrigger" Value="PropertyChanged" />
                     <Setter Property="Value" Value="{Binding ScalarValue, RelativeSource={RelativeSource TemplatedParent}}" />
@@ -34,29 +36,20 @@
                             <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
                             <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
-
+                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility) -->
                         <TextBlock x:Name="Header"
-                                   Grid.Row="0"
-                                   Grid.Column="0"
-                                   Style="{TemplateBinding HeaderStyle}"
-                                   Text="{TemplateBinding Header}" />
+                                   Style="{TemplateBinding HeaderStyle}" />
+
 
                         <numeric:DoubleBox x:Name="ValueBox"
-                                           Grid.Row="0"
-                                           Grid.Column="1"
                                            Style="{TemplateBinding ValueStyle}" />
 
                         <TextBlock x:Name="SuffixBox"
-                                   Grid.Row="0"
-                                   Grid.Column="2"
-                                   Style="{TemplateBinding SuffixStyle}"
-                                   Text="{TemplateBinding Suffix}" />
+                                   Style="{TemplateBinding SuffixStyle}" />
 
                         <ContentPresenter x:Name="InfoPresenter"
-                                          Grid.Row="1"
-                                          Grid.Column="0"
-                                          Grid.ColumnSpan="2"
                                           Style="{TemplateBinding InfoPresenterStyle}" />
+                        <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

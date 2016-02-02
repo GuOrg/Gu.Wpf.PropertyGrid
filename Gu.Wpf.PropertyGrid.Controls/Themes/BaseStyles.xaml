@@ -3,12 +3,18 @@
                     xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid">
     <Style x:Key="{x:Static propertyGrid:Keys.SettingRowHeaderStyleKey}"
            TargetType="{x:Type TextBlock}">
+        <Setter Property="Text" Value="{Binding Header, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
+        <Setter Property="Grid.Row" Value="0" />
+        <Setter Property="Grid.Column" Value="0" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="0,0,8,0" />
     </Style>
 
     <Style x:Key="{x:Static propertyGrid:Keys.SettingRowSuffixStyleKey}"
            TargetType="{x:Type TextBlock}">
+        <Setter Property="Text" Value="{Binding Suffix, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
+        <Setter Property="Grid.Row" Value="0" />
+        <Setter Property="Grid.Column" Value="2" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="2,0" />
     </Style>
@@ -17,8 +23,8 @@
            TargetType="{x:Type TextBlock}">
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Foreground" Value="Red" />
         <Setter Property="TextAlignment" Value="Right" />
-        <Setter Property="FontSize" Value="12" />
     </Style>
 
     <Style x:Key="{x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}"
@@ -26,18 +32,18 @@
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="TextAlignment" Value="Right" />
-        <Setter Property="FontSize" Value="12" />
     </Style>
 
     <Grid x:Key="InfoGrid"
-          x:Name="InfoGrid"
           HorizontalAlignment="Right"
-          TextElement.FontSize="12"
+          TextElement.FontSize="{Binding FontSize,
+                                         ElementName=ValueBox,
+                                         Converter={propertyGrid:MultiplyConverter 0.8}}"
           x:Shared="False">
 
         <TextBlock x:Name="ErrorTextBox"
-                   HorizontalAlignment="Right"
-                   Foreground="Red"
+                   Style="{Binding ErrorStyle,
+                                   RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
                    Text="{Binding Path=(Validation.Errors),
                                   Converter={propertyGrid:FirstOrDefaultConverter},
                                   ElementName=ValueBox}"
@@ -49,7 +55,6 @@
 
 
         <TextBlock x:Name="OldValueBox"
-                   HorizontalAlignment="Right"
                    Style="{Binding OldValueStyle,
                                    RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
                    Visibility="{Binding IsDirty,
@@ -65,5 +70,8 @@
     <Style x:Key="{x:Static propertyGrid:Keys.SettingRowInfoPresenterStyleKey}"
            TargetType="{x:Type ContentPresenter}">
         <Setter Property="Content" Value="{StaticResource InfoGrid}" />
+        <Setter Property="Grid.Row" Value="1" />
+        <Setter Property="Grid.Column" Value="0" />
+        <Setter Property="Grid.ColumnSpan" Value="2" />
     </Style>
 </ResourceDictionary>
