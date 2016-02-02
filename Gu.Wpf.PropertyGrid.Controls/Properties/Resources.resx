@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,105 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="StyleTemplate" xml:space="preserve">
+    <value>&lt;Style x:Key="{x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}" TargetType="{x:Type propertyGrid:SettingControlBase}"&gt;
+        &lt;Setter Property="HeaderStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowHeaderStyleKey}}" /&gt;
+        &lt;Setter Property="ValueStyle"&gt;
+            &lt;Setter.Value&gt;
+                &lt;Style TargetType="{x:Type numeric:DoubleBox}"&gt;
+                    &lt;Setter Property="DecimalDigits" Value="{Binding DecimalDigits, RelativeSource={RelativeSource TemplatedParent}}" /&gt;
+                    &lt;Setter Property="Value" Value="{Binding ScalarValue, RelativeSource={RelativeSource TemplatedParent}}" /&gt;
+                    &lt;Setter Property="MinValue" Value="{Binding ScalarMinValue, RelativeSource={RelativeSource TemplatedParent}}" /&gt;
+                    &lt;Setter Property="MaxValue" Value="{Binding ScalarMaxValue, RelativeSource={RelativeSource TemplatedParent}}" /&gt;
+                &lt;/Style&gt;
+            &lt;/Setter.Value&gt;
+        &lt;/Setter&gt;
+        &lt;Setter Property="SuffixStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowSuffixStyleKey}}" /&gt;
+        &lt;Setter Property="OldValueStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" /&gt;
+        &lt;Setter Property="ErrorStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowErrorStyleKey}}" /&gt;
+        &lt;Setter Property="Template"&gt;
+            &lt;Setter.Value&gt;
+                &lt;ControlTemplate TargetType="{x:Type propertyGrid:SettingControlBase}"&gt;
+                    &lt;Grid Margin="{TemplateBinding Padding}"&gt;
+                        &lt;Grid.RowDefinitions&gt;
+                            &lt;RowDefinition Height="Auto" /&gt;
+                            &lt;RowDefinition Height="Auto" /&gt;
+                        &lt;/Grid.RowDefinitions&gt;
+                        &lt;Grid.ColumnDefinitions&gt;
+                            &lt;ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.LabelColumn}" /&gt;
+                            &lt;ColumnDefinition Width="Auto"
+                                              MinWidth="{TemplateBinding ValueMinWidth}"
+                                              SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" /&gt;
+                            &lt;ColumnDefinition Width="Auto"
+                                              MinWidth="{TemplateBinding SuffixMinWidth}"
+                                              SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.SuffixColumn}" /&gt;
+                        &lt;/Grid.ColumnDefinitions&gt;
+
+                        &lt;TextBlock x:Name="Header"
+                                   Grid.Row="0"
+                                   Grid.Column="0"
+                                   Style="{TemplateBinding HeaderStyle}"
+                                   Text="{TemplateBinding Header}" /&gt;
+
+                        &lt;numeric:DoubleBox x:Name="ValueBox"
+                                           Grid.Row="0"
+                                           Grid.Column="1"
+                                           Style="{TemplateBinding ValueStyle}" /&gt;
+
+                        &lt;TextBlock x:Name="SuffixBox"
+                                   Grid.Row="0"
+                                   Grid.Column="2"
+                                   Style="{TemplateBinding SuffixStyle}"
+                                   Text="{TemplateBinding Suffix}" /&gt;
+
+                        &lt;!--&lt;Grid x:Name="InfoGrid"
+                              Grid.Row="1"
+                              Grid.Column="0"
+                              Grid.ColumnSpan="2"
+                              HorizontalAlignment="Right"
+                              TextElement.FontSize="12"&gt;
+                            &lt;TextBlock HorizontalAlignment="Right"
+                                       Foreground="LightGray"
+                                       Text="missing"
+                                       Visibility="{Binding Path=IsDirty,
+                                                            RelativeSource={RelativeSource TemplatedParent},
+                                                            Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Collapsed,
+                                                                                                                 WhenNull=Visible,
+                                                                                                                 WhenFalse=Collapsed}}" /&gt;
+
+                        --&gt;
+                        &lt;!--&lt;TextBlock x:Name="ErrorTextBox"
+                                       HorizontalAlignment="Right"
+                                       DataContext="{Binding ElementName=ValueBox}"
+                                       Foreground="Red"
+                                       Text="error"
+                                       Visibility="{Binding Path=(Validation.HasError),
+                                                            ElementName=ValueBox,
+                                                            Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
+                                                                                                                 WhenNull=Collapsed,
+                                                                                                                 WhenFalse=Collapsed}}" /&gt;--&gt;
+                        &lt;!--
+
+                            &lt;TextBlock x:Name="OldValueBox"
+                                       HorizontalAlignment="Right"
+                                       Style="{TemplateBinding OldValueStyle}"
+                                       Visibility="{TemplateBinding IsDirty,
+                                                                    Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
+                                                                                                                         WhenNull=Hidden,
+                                                                                                                         WhenFalse=Hidden}}"&gt;
+                                &lt;Run Text="OldValue: " /&gt;
+                                &lt;Run Text="{TemplateBinding OldValue}" /&gt;
+                            &lt;/TextBlock&gt;
+                        &lt;/Grid&gt;--&gt;
+                    &lt;/Grid&gt;
+                &lt;/ControlTemplate&gt;
+            &lt;/Setter.Value&gt;
+        &lt;/Setter&gt;
+    &lt;/Style&gt;</value>
+  </data>
 </root>

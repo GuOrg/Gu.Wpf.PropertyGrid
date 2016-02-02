@@ -1,4 +1,4 @@
-﻿namespace Gu.PropertyGrid.Demo
+﻿namespace Gu.Wpf.PropertyGrid.Demo
 {
     using System.Windows;
 
@@ -9,7 +9,7 @@
     {
         public MainWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

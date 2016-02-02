@@ -6,12 +6,23 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{BDA08917-18E6-497A-9E7A-8FA395BF2741}"
 	ProjectSection(SolutionItems) = preProject
 		paket.dependencies = paket.dependencies
+		paket.lock = paket.lock
 		Readme.paket.md = Readme.paket.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid", "Gu.Wpf.PropertyGrid.Controls\Gu.Wpf.PropertyGrid.csproj", "{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.Demo", "Gu.Wpf.PropertyGrid.Demo\Gu.Wpf.PropertyGrid.Demo.csproj", "{917C1338-E809-43D8-A10D-AA2629891258}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.Tests", "Gu.Wpf.PropertyGrid.Tests\Gu.Wpf.PropertyGrid.Tests.csproj", "{3E9EF147-E92A-46EE-8A4A-886935AD1560}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.UnitSettingControls", "Gu.Wpf.PropertyGrid.UnitSettingControls\Gu.Wpf.PropertyGrid.UnitSettingControls.csproj", "{CEAFB9FB-D606-4A98-B8DF-81A14AE6EE35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.UnitSettingControls.Tests", "Gu.Wpf.PropertyGrid.UnitSettingControls.Tests\Gu.Wpf.PropertyGrid.UnitSettingControls.Tests.csproj", "{4B86294B-EAD2-42CD-B78C-9F47FDE34456}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xunit.wpf", "xunit.wpf\xunit.wpf.csproj", "{05C15C25-FC14-4521-9CB4-650FF1BACFFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.NumericSettingControls", "Gu.Wpf.PropertyGrid.NumericSettingControls\Gu.Wpf.PropertyGrid.NumericSettingControls.csproj", "{AABF74D2-2282-4899-915D-409B1A6735C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +38,26 @@ Global
 		{917C1338-E809-43D8-A10D-AA2629891258}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{917C1338-E809-43D8-A10D-AA2629891258}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{917C1338-E809-43D8-A10D-AA2629891258}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E9EF147-E92A-46EE-8A4A-886935AD1560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E9EF147-E92A-46EE-8A4A-886935AD1560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E9EF147-E92A-46EE-8A4A-886935AD1560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E9EF147-E92A-46EE-8A4A-886935AD1560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEAFB9FB-D606-4A98-B8DF-81A14AE6EE35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEAFB9FB-D606-4A98-B8DF-81A14AE6EE35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEAFB9FB-D606-4A98-B8DF-81A14AE6EE35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEAFB9FB-D606-4A98-B8DF-81A14AE6EE35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B86294B-EAD2-42CD-B78C-9F47FDE34456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B86294B-EAD2-42CD-B78C-9F47FDE34456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B86294B-EAD2-42CD-B78C-9F47FDE34456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B86294B-EAD2-42CD-B78C-9F47FDE34456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05C15C25-FC14-4521-9CB4-650FF1BACFFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05C15C25-FC14-4521-9CB4-650FF1BACFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05C15C25-FC14-4521-9CB4-650FF1BACFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05C15C25-FC14-4521-9CB4-650FF1BACFFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AABF74D2-2282-4899-915D-409B1A6735C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AABF74D2-2282-4899-915D-409B1A6735C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AABF74D2-2282-4899-915D-409B1A6735C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AABF74D2-2282-4899-915D-409B1A6735C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

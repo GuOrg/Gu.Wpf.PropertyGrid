@@ -6,11 +6,11 @@ using System.Windows.Markup;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Gu.PropertyGrid")]
+[assembly: AssemblyTitle("Gu.Wpf.PropertyGrid")]
 [assembly: AssemblyDescription("Small project with styles for using ItemsControl as a PropertyGrid")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Johan Larsson")]
-[assembly: AssemblyProduct("Gu.PropertyGrid")]
+[assembly: AssemblyProduct("Gu.Wpf.PropertyGrid")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -39,11 +39,10 @@ using System.Windows.Markup;
                                       // app, or any theme specific resource dictionaries)
 )]
 
-
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version
-//      Minor Version 
+//      Minor Version
 //      Build Number
 //      Revision
 //
@@ -53,5 +52,5 @@ using System.Windows.Markup;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
-[assembly: XmlnsDefinition("http://gu.se/PropertyGrid", "Gu.PropertyGrid")]
+[assembly: XmlnsDefinition("http://gu.se/PropertyGrid", "Gu.Wpf.PropertyGrid")]
 [assembly: XmlnsPrefix("http://gu.se/PropertyGrid", "propertyGrid")]
