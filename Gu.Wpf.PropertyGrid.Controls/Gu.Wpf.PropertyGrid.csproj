@@ -55,6 +55,10 @@
     <Compile Include="Controls\SettingsControl.cs" />
     <Compile Include="SharedSizeGroups.cs" />
     <Compile Include="Controls\StringSettingControl.cs" />
+    <Page Include="Themes\BaseStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

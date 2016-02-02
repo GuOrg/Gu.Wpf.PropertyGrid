@@ -1,6 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/BaseStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
     <Style x:Key="{x:Static l:Keys.ItemsControlSettingListStyleKey}" TargetType="{x:Type ItemsControl}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Grid.IsSharedSizeScope" Value="True" />
@@ -33,9 +37,19 @@
         <Setter Property="KeyboardNavigation.TabNavigation" Value="Continue" />
     </Style>
 
-    <Style BasedOn="{StaticResource {x:Static l:Keys.ItemsControlSettingListStyleKey}}" TargetType="{x:Type l:SettingsControl}" />
+    <Style BasedOn="{StaticResource {x:Static l:Keys.ItemsControlSettingListStyleKey}}" TargetType="{x:Type l:SettingsControl}" >
+        <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}"></Setter>
+        <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}"></Setter>
+        <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}"></Setter>
+        <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowErrorStyleKey}}"></Setter>
+    </Style>
 
     <Style x:Key="{x:Static l:Keys.NestedSettingListStyle}"
            BasedOn="{StaticResource {x:Static l:Keys.ItemsControlNestedSettingListStyleKey}}"
-           TargetType="{x:Type l:SettingsControl}" />
+           TargetType="{x:Type l:SettingsControl}" >
+        <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}"></Setter>
+        <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}"></Setter>
+        <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}"></Setter>
+        <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowErrorStyleKey}}"></Setter>
+    </Style>
 </ResourceDictionary>

@@ -18,12 +18,6 @@ namespace Gu.Wpf.PropertyGrid
             typeof(UnitSettingControl<TQuantity, TUnit>),
             new FrameworkPropertyMetadata(UnitSettingControl.DefaultSymbolFormat, FrameworkPropertyMetadataOptions.Inherits, OnSymbolFormatChanged));
 
-        internal event RoutedEventHandler UnitChanged
-        {
-            add { this.AddHandler(UnitSettingControl.UnitChangedEvent, value); }
-            remove { this.RemoveHandler(UnitSettingControl.UnitChangedEvent, value); }
-        }
-
         public TUnit Unit
         {
             get { return (TUnit)this.GetValue(UnitProperty); }
@@ -54,8 +48,6 @@ namespace Gu.Wpf.PropertyGrid
                 var scalarValue = control.Unit.GetScalarValue(control.Value.Value);
                 Scalar.SetValue(control, scalarValue);
             }
-
-            control.RaiseEvent(UnitSettingControl.UnitChangedEventArgs);
         }
 
         private static void OnSymbolFormatChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
