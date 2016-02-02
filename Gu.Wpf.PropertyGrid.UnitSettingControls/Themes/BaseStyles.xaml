@@ -9,6 +9,7 @@
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type numeric:DoubleBox}">
+                    <Setter Property="DecimalDigits" Value="{Binding DecimalDigits, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="Value" Value="{Binding ScalarValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MinValue" Value="{Binding ScalarMinValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MaxValue" Value="{Binding ScalarMaxValue, RelativeSource={RelativeSource TemplatedParent}}" />

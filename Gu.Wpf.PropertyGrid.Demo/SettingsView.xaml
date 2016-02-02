@@ -12,13 +12,18 @@
     </UserControl.DataContext>
     <Grid>
         <propertyGrid:SettingsControl>
-            <propertyGrid:LengthSettingControl Header="Length (mm)" Value="{Binding LengthValue}" />
+            <propertyGrid:LengthSettingControl Header="Length" Value="{Binding LengthValue}" />
+
+            <propertyGrid:EnumSettingControl Header="StringFormat" Value="{Binding CurrentStringComparison}" />
 
             <propertyGrid:SelectorSettingControl Header="Units"
                                                  ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
                                                  Value="{Binding CurrentLengthUnit}" />
 
-            <propertyGrid:LengthSettingControl Header="Length (cm)"
+            <propertyGrid:LengthSettingControl DecimalDigits="1"
+                                               Header="Length"
+                                               MaxValue="12 mm"
+                                               MinValue="-12 mm"
                                                Unit="{Binding CurrentLengthUnit}"
                                                Value="{Binding LengthValue}" />
         </propertyGrid:SettingsControl>

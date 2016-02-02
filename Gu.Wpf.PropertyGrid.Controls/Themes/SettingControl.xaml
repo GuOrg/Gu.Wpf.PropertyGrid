@@ -105,7 +105,8 @@
                                                                                           WhenNull=Visible,
                                                                                           WhenFalse=Collapsed}}" />
 
-                --><!--<TextBlock x:Name="ErrorTextBox"
+    -->
+    <!--<TextBlock x:Name="ErrorTextBox"
                            DataContext="{Binding ElementName=ValueBox}"
                            HorizontalAlignment="Right"
                            Foreground="Red"
@@ -113,7 +114,8 @@
                            Visibility="{Binding HasError,
                                                 Converter={mui:BooleanToVisibilityConverter WhenTrue=Visible,
                                                                                             WhenNull=Collapsed,
-                                                                                            WhenFalse=Collapsed}}" />--><!--
+                                                                                            WhenFalse=Collapsed}}" />-->
+    <!--
 
                 <TextBlock x:Name="OldValueBox"
                            HorizontalAlignment="Right"

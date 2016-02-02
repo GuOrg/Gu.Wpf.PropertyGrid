@@ -1,5 +1,6 @@
 ﻿namespace Gu.Wpf.PropertyGrid.Demo
 {
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
@@ -43,6 +44,11 @@
                 this.currentLengthUnit = value;
                 this.OnPropertyChanged();
             }
+        }
+
+        public StringComparison CurrentStringComparison
+        {
+            get { throw new System.NotImplementedException(); }
         }
 
         [NotifyPropertyChangedInvocator]
