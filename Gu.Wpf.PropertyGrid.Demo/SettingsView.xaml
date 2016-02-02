@@ -18,23 +18,35 @@
                                       DataContext="{Binding EditableCopy}"
                                       propertyGrid:SettingControl.OldDataContext="{Binding DataContext.LastSaved,
                                                                                            RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
-            <propertyGrid:LengthSettingControl Header="Length"
-                                               Value="{Binding LengthValue}" />
+            <propertyGrid:IntSettingControl Header="int"
+                                            Value="{Binding IntValue}" />
 
-            <propertyGrid:LengthSettingControl Header="Length"
-                                               IsReadOnly="True"
-                                               Value="{Binding LengthValue}" />
+            <propertyGrid:IntSettingControl Header="int?"
+                                            Value="{Binding NullableIntValue}" />
+
+            <propertyGrid:DoubleSettingControl Header="double"
+                                               Value="{Binding DoubleValue}" />
+
+            <propertyGrid:DoubleSettingControl Header="double?"
+                                               Value="{Binding NullableDoubleValue}" />
+
+            <propertyGrid:EnumSettingControl Header="enum"
+                                             Value="{Binding CurrentStringComparison}" />
+
+            <propertyGrid:SelectorSettingControl Header="selector"
+                                                 ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
+                                                 Value="{Binding CurrentLengthUnit}" />
 
             <propertyGrid:LengthSettingControl Header="Length"
                                                IsEnabled="False"
                                                Value="{Binding LengthValue}" />
 
-            <propertyGrid:EnumSettingControl Header="StringFormat"
-                                             Value="{Binding CurrentStringComparison}" />
+            <propertyGrid:LengthSettingControl Header="Nullable length"
+                                               Value="{Binding NullableLengthValue}" />
 
-            <propertyGrid:SelectorSettingControl Header="Units"
-                                                 ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
-                                                 Value="{Binding CurrentLengthUnit}" />
+            <propertyGrid:SpeedSettingControl Header="Speed (readonly)"
+                                              IsReadOnly="True"
+                                              Value="{Binding SpeedValue}" />
 
             <propertyGrid:LengthSettingControl DecimalDigits="1"
                                                Header="Length"

@@ -1,8 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-using System.Windows;
-
-namespace Gu.Wpf.PropertyGrid
+﻿namespace Gu.Wpf.PropertyGrid
 {
+    using System.Runtime.CompilerServices;
+    using System.Windows;
+
     public static class Keys
     {
         public static ResourceKey ItemsControlSettingListStyleKey { get; } = CreateKey();
@@ -11,12 +11,10 @@ namespace Gu.Wpf.PropertyGrid
 
         public static ResourceKey NestedSettingListStyle { get; } = CreateKey();
 
-        //public static ResourceKey SettingRowBaseStyle { get; } = CreateKey();
-
         public static ResourceKey UnitSettingBaseStyleKey { get; } = CreateKey();
 
         public static ResourceKey SettingRowHeaderStyleKey { get; } = CreateKey();
-        
+
         public static ResourceKey SettingRowInfoPresenterStyleKey { get; } = CreateKey();
 
         public static ResourceKey SettingRowOldValueStyleKey { get; } = CreateKey();

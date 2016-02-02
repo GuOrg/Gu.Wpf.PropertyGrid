@@ -6,7 +6,7 @@
     public class DoubleSettingControl : NumericSettingControl<double>
     {
         public static readonly DependencyProperty DecimalDigitsProperty = NumericBox.DecimalDigitsProperty.AddOwner(
-            typeof (DoubleSettingControl),
+            typeof(DoubleSettingControl),
             new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.Inherits));
 
         static DoubleSettingControl()

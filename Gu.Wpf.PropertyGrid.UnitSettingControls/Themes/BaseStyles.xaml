@@ -40,7 +40,6 @@
                         <TextBlock x:Name="Header"
                                    Style="{TemplateBinding HeaderStyle}" />
 
-
                         <numeric:DoubleBox x:Name="ValueBox"
                                            Style="{TemplateBinding ValueStyle}" />
 

@@ -113,6 +113,10 @@
       <Project>{7ddab84f-2416-413b-ae7a-6f2d75b2882d}</Project>
       <Name>Gu.PropertyGrid</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Gu.Wpf.PropertyGrid.NumericSettingControls\Gu.Wpf.PropertyGrid.NumericSettingControls.csproj">
+      <Project>{AABF74D2-2282-4899-915D-409B1A6735C4}</Project>
+      <Name>Gu.Wpf.PropertyGrid.NumericSettingControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gu.Wpf.PropertyGrid.UnitSettingControls\Gu.Wpf.PropertyGrid.UnitSettingControls.csproj">
       <Project>{CEAFB9FB-D606-4A98-B8DF-81A14AE6EE35}</Project>
       <Name>Gu.Wpf.PropertyGrid.UnitSettingControls</Name>

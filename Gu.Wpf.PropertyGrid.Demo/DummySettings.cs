@@ -13,6 +13,12 @@
         private Length lengthValue = Length.FromMillimetres(12.3456);
         private LengthUnit currentLengthUnit = LengthUnit.Centimetres;
         private StringComparison currentStringComparison;
+        private int intValue;
+        private int? nullableIntValue;
+        private double doubleValue;
+        private double? nullableDoubleValue;
+        private Speed speedValue;
+        private Length? nullableLengthValue;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -27,6 +33,72 @@
                 }
 
                 this.lengthValue = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public Length? NullableLengthValue
+        {
+            get { return this.nullableLengthValue; }
+            set
+            {
+                if (value.Equals(this.nullableLengthValue)) return;
+                this.nullableLengthValue = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public Speed SpeedValue
+        {
+            get { return this.speedValue; }
+            set
+            {
+                if (value.Equals(this.speedValue)) return;
+                this.speedValue = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public int IntValue
+        {
+            get { return this.intValue; }
+            set
+            {
+                if (value == this.intValue) return;
+                this.intValue = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public int? NullableIntValue
+        {
+            get { return this.nullableIntValue; }
+            set
+            {
+                if (value == this.nullableIntValue) return;
+                this.nullableIntValue = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public double DoubleValue
+        {
+            get { return this.doubleValue; }
+            set
+            {
+                if (value.Equals(this.doubleValue)) return;
+                this.doubleValue = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public double? NullableDoubleValue
+        {
+            get { return this.nullableDoubleValue; }
+            set
+            {
+                if (value.Equals(this.nullableDoubleValue)) return;
+                this.nullableDoubleValue = value;
                 this.OnPropertyChanged();
             }
         }

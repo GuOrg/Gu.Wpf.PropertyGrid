@@ -8,7 +8,6 @@
     <Style TargetType="{x:Type l:SettingControlBase}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="Padding" Value="12,12" />
         <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}" />
         <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
         <Setter Property="InfoPresenterStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowInfoPresenterStyleKey}}" />
