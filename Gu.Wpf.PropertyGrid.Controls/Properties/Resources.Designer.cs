@@ -22,7 +22,7 @@ namespace Gu.Wpf.PropertyGrid.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Gu.Wpf.PropertyGrid.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Gu.Wpf.PropertyGrid.Properties.Resources", typeof(Resources).Assembly);
@@ -51,12 +51,26 @@ namespace Gu.Wpf.PropertyGrid.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;Style x:Key=&quot;{x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}&quot; TargetType=&quot;{x:Type propertyGrid:SettingControlBase}&quot;&gt;
+        ///        &lt;Setter Property=&quot;HeaderStyle&quot; Value=&quot;{DynamicResource {x:Static propertyGrid:Keys.SettingRowHeaderStyleKey}}&quot; /&gt;
+        ///        &lt;Setter Property=&quot;ValueStyle&quot;&gt;
+        ///            &lt;Setter.Value&gt;
+        ///                &lt;Style TargetType=&quot;{x:Type numeric:DoubleBox}&quot;&gt;
+        ///                    &lt;Setter Property=&quot;DecimalDigits&quot; Value=&quot;{Binding DecimalDigits, RelativeSource={RelativeSource TemplatedParent}} [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string StyleTemplate {
+            get {
+                return ResourceManager.GetString("StyleTemplate", resourceCulture);
             }
         }
     }

@@ -13,6 +13,7 @@
 
         private Length lengthValue = Length.FromMillimetres(12.3456);
         private LengthUnit currentLengthUnit = LengthUnits[0];
+        private StringComparison currentStringComparison;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -48,7 +49,13 @@
 
         public StringComparison CurrentStringComparison
         {
-            get { throw new System.NotImplementedException(); }
+            get { return currentStringComparison; }
+            set
+            {
+                if (value == currentStringComparison) return;
+                currentStringComparison = value;
+                OnPropertyChanged();
+            }
         }
 
         [NotifyPropertyChangedInvocator]

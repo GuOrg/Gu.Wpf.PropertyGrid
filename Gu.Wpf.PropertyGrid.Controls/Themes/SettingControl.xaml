@@ -37,7 +37,7 @@
                         <TextBlock x:Name="Header"
                                    Grid.Row="0"
                                    Grid.Column="0"
-                                   Style="{StaticResource SettingRowHeaderStyle}"
+                                   Style="{StaticResource {x:Static l:Keys.SettingRowHeaderStyleKey}}"
                                    Text="{TemplateBinding Header}" />
 
                         <ContentPresenter x:Name="ValuePresenter"
@@ -50,85 +50,189 @@
         </Setter>
     </Style>
 
-    <!--<ControlTemplate x:Key="SettingRowTemplate">
-        <Grid Margin="{TemplateBinding Padding}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
-                <ColumnDefinition Width="Auto"
-                                  MinWidth="{Binding Path=(l:SettingControl.ValueMinWidth),
-                                                     RelativeSource={RelativeSource TemplatedParent}}"
-                                  SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                <ColumnDefinition Width="Auto"
-                                  MinWidth="{Binding Path=(l:SettingControl.SuffixMinWidth),
-                                                     RelativeSource={RelativeSource TemplatedParent}}"
-                                  SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
-            </Grid.ColumnDefinitions>
+    <Style TargetType="{x:Type l:EnumSettingControl}">
+        <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}" />
+        <Setter Property="ValueStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ComboBox}">
+                    <Setter Property="SelectedItem" Value="{Binding Value, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <Setter Property="ItemsSource" Value="{Binding ItemsSource, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
+        <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
+        <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowErrorStyleKey}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type l:SettingControlBase}">
+                    <Grid Margin="{TemplateBinding Padding}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition Width="Auto"
+                                              MinWidth="{TemplateBinding ValueMinWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition Width="Auto"
+                                              MinWidth="{TemplateBinding SuffixMinWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                        </Grid.ColumnDefinitions>
 
-            <TextBlock x:Name="Header"
-                       Grid.Row="0"
-                       Grid.Column="0"
-                       Style="{StaticResource {x:Static l:Keys.SettingRowHeaderStyleKey}}"
-                       Text="{Binding Header,
-                                      RelativeSource={RelativeSource TemplatedParent}}" />
+                        <TextBlock x:Name="Header"
+                                   Grid.Row="0"
+                                   Grid.Column="0"
+                                   Style="{TemplateBinding HeaderStyle}"
+                                   Text="{TemplateBinding Header}" />
 
-            <ContentPresenter x:Name="ValuePresenter"
-                              Grid.Row="0"
-                              Grid.Column="1"
-                              ContentTemplate="{Binding ValueTemplate,
-                                                        RelativeSource={RelativeSource TemplatedParent}}"
-                              numeric:NumericBox.DecimalDigits="{Binding Path=(numeric:NumericBox.DecimalDigits),
-                                                                         RelativeSource={RelativeSource TemplatedParent}}" />
+                        <ComboBox x:Name="ValueBox"
+                                  Grid.Row="0"
+                                  Grid.Column="1"
+                                  Style="{TemplateBinding ValueStyle}" />
 
-            <TextBlock x:Name="SuffixBox"
-                       Grid.Row="0"
-                       Grid.Column="2"
-                       Style="{StaticResource {x:Static l:Keys.SettingRowSuffixStyleKey}}"
-                       Text="{Binding Suffix,
-                                      RelativeSource={RelativeSource TemplatedParent}}" />
+                        <TextBlock x:Name="SuffixBox"
+                                   Grid.Row="0"
+                                   Grid.Column="2"
+                                   Style="{TemplateBinding SuffixStyle}"
+                                   Text="{TemplateBinding Suffix}" />
 
-            <Grid x:Name="InfoGrid"
-                  Grid.Row="1"
-                  Grid.Column="0"
-                  Grid.ColumnSpan="2"
-                  HorizontalAlignment="Right"
-                  TextElement.FontSize="12">
-                <TextBlock HorizontalAlignment="Right"
-                           Foreground="LightGray"
-                           Text="missing"
-                           Visibility="{Binding Path=IsDirty,
-                                                RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}},
-                                                Converter={l:BooleanToVisibilityConverter WhenTrue=Collapsed,
-                                                                                          WhenNull=Visible,
-                                                                                          WhenFalse=Collapsed}}" />
+                        <!--<Grid x:Name="InfoGrid"
+                              Grid.Row="1"
+                              Grid.Column="0"
+                              Grid.ColumnSpan="2"
+                              HorizontalAlignment="Right"
+                              TextElement.FontSize="12">
+                            <TextBlock HorizontalAlignment="Right"
+                                       Foreground="LightGray"
+                                       Text="missing"
+                                       Visibility="{Binding Path=IsDirty,
+                                                            RelativeSource={RelativeSource TemplatedParent},
+                                                            Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Collapsed,
+                                                                                                                 WhenNull=Visible,
+                                                                                                                 WhenFalse=Collapsed}}" />
 
-    -->
-    <!--<TextBlock x:Name="ErrorTextBox"
-                           DataContext="{Binding ElementName=ValueBox}"
-                           HorizontalAlignment="Right"
-                           Foreground="Red"
-                           Text="error"
-                           Visibility="{Binding HasError,
-                                                Converter={mui:BooleanToVisibilityConverter WhenTrue=Visible,
-                                                                                            WhenNull=Collapsed,
-                                                                                            WhenFalse=Collapsed}}" />-->
-    <!--
+                        -->
+                        <!--<TextBlock x:Name="ErrorTextBox"
+                                       HorizontalAlignment="Right"
+                                       DataContext="{Binding ElementName=ValueBox}"
+                                       Foreground="Red"
+                                       Text="error"
+                                       Visibility="{Binding Path=(Validation.HasError),
+                                                            ElementName=ValueBox,
+                                                            Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
+                                                                                                                 WhenNull=Collapsed,
+                                                                                                                 WhenFalse=Collapsed}}" />-->
+                        <!--
 
-                <TextBlock x:Name="OldValueBox"
-                           HorizontalAlignment="Right"
-                           Foreground="{DynamicResource Accent}"
-                           Visibility="{Binding Path=IsDirty,
-                                                RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}},
-                                                Converter={l:BooleanToVisibilityConverter WhenTrue=Visible,
-                                                                                          WhenNull=Hidden,
-                                                                                          WhenFalse=Hidden}}">
-                    <Run Text="OldValue: " />
-                    <Run Text="{Binding OldValue, RelativeSource={RelativeSource TemplatedParent}}" />
-                </TextBlock>
-            </Grid>
-        </Grid>
-    </ControlTemplate>-->
+                            <TextBlock x:Name="OldValueBox"
+                                       HorizontalAlignment="Right"
+                                       Style="{TemplateBinding OldValueStyle}"
+                                       Visibility="{TemplateBinding IsDirty,
+                                                                    Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
+                                                                                                                         WhenNull=Hidden,
+                                                                                                                         WhenFalse=Hidden}}">
+                                <Run Text="OldValue: " />
+                                <Run Text="{TemplateBinding OldValue}" />
+                            </TextBlock>
+                        </Grid>-->
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type l:SelectorSettingControl}">
+        <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}" />
+        <Setter Property="ValueStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ComboBox}">
+                    <Setter Property="SelectedItem" Value="{Binding Value, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <Setter Property="ItemsSource" Value="{Binding ItemsSource, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
+        <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
+        <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowErrorStyleKey}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type l:SettingControlBase}">
+                    <Grid Margin="{TemplateBinding Padding}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition Width="Auto"
+                                              MinWidth="{TemplateBinding ValueMinWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition Width="Auto"
+                                              MinWidth="{TemplateBinding SuffixMinWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Name="Header"
+                                   Grid.Row="0"
+                                   Grid.Column="0"
+                                   Style="{TemplateBinding HeaderStyle}"
+                                   Text="{TemplateBinding Header}" />
+
+                        <ComboBox x:Name="ValueBox"
+                                  Grid.Row="0"
+                                  Grid.Column="1"
+                                  Style="{TemplateBinding ValueStyle}" />
+
+                        <TextBlock x:Name="SuffixBox"
+                                   Grid.Row="0"
+                                   Grid.Column="2"
+                                   Style="{TemplateBinding SuffixStyle}"
+                                   Text="{TemplateBinding Suffix}" />
+
+                        <!--<Grid x:Name="InfoGrid"
+                              Grid.Row="1"
+                              Grid.Column="0"
+                              Grid.ColumnSpan="2"
+                              HorizontalAlignment="Right"
+                              TextElement.FontSize="12">
+                            <TextBlock HorizontalAlignment="Right"
+                                       Foreground="LightGray"
+                                       Text="missing"
+                                       Visibility="{Binding Path=IsDirty,
+                                                            RelativeSource={RelativeSource TemplatedParent},
+                                                            Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Collapsed,
+                                                                                                                 WhenNull=Visible,
+                                                                                                                 WhenFalse=Collapsed}}" />
+
+                        -->
+                        <!--<TextBlock x:Name="ErrorTextBox"
+                                       HorizontalAlignment="Right"
+                                       DataContext="{Binding ElementName=ValueBox}"
+                                       Foreground="Red"
+                                       Text="error"
+                                       Visibility="{Binding Path=(Validation.HasError),
+                                                            ElementName=ValueBox,
+                                                            Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
+                                                                                                                 WhenNull=Collapsed,
+                                                                                                                 WhenFalse=Collapsed}}" />-->
+                        <!--
+
+                            <TextBlock x:Name="OldValueBox"
+                                       HorizontalAlignment="Right"
+                                       Style="{TemplateBinding OldValueStyle}"
+                                       Visibility="{TemplateBinding IsDirty,
+                                                                    Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
+                                                                                                                         WhenNull=Hidden,
+                                                                                                                         WhenFalse=Hidden}}">
+                                <Run Text="OldValue: " />
+                                <Run Text="{TemplateBinding OldValue}" />
+                            </TextBlock>
+                        </Grid>-->
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
