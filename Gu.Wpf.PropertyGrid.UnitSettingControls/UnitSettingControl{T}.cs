@@ -13,6 +13,10 @@ namespace Gu.Wpf.PropertyGrid
             typeof(UnitSettingControl<TQuantity, TUnit>),
             new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.Inherits));
 
+        public static readonly DependencyProperty CanValueBeNullProperty = NumericBox.CanValueBeNullProperty.AddOwner(
+            typeof (UnitSettingControl<TQuantity, TUnit>),
+            new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
+
         public static readonly DependencyProperty ScalarValueProperty = DependencyProperty.Register(
             "ScalarValue",
             typeof(double?),
@@ -47,6 +51,12 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (int?)this.GetValue(DecimalDigitsProperty); }
             set { this.SetValue(DecimalDigitsProperty, value); }
+        }
+
+        public bool CanValueBeNull
+        {
+            get { return (bool)this.GetValue(CanValueBeNullProperty); }
+            set { this.SetValue(CanValueBeNullProperty, value); }
         }
 
         public double? ScalarValue

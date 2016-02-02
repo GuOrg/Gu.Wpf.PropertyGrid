@@ -50,7 +50,7 @@
     <Compile Include="Converters\MultiplyConverter.cs" />
     <Compile Include="Internals\BooleanBoxes.cs" />
     <Compile Include="Controls\BoolSettingControl.cs" />
-    <Compile Include="Controls\BaseClasses\NumericSettingControl.cs" />
+    <Compile Include="Controls\BaseClasses\NumericSettingControl{T}.cs" />
     <Compile Include="Controls\SettingControl.cs" />
     <Compile Include="Controls\BaseClasses\SettingControlBase.cs" />
     <Compile Include="Controls\BaseClasses\SettingControlBase{T}.cs" />

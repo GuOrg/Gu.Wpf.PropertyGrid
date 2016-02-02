@@ -21,13 +21,15 @@
             <propertyGrid:IntSettingControl Header="int"
                                             Value="{Binding IntValue}" />
 
-            <propertyGrid:IntSettingControl Header="int?"
+            <propertyGrid:IntSettingControl CanValueBeNull="True"
+                                            Header="int?"
                                             Value="{Binding NullableIntValue}" />
 
             <propertyGrid:DoubleSettingControl Header="double"
                                                Value="{Binding DoubleValue}" />
 
-            <propertyGrid:DoubleSettingControl Header="double?"
+            <propertyGrid:DoubleSettingControl CanValueBeNull="True"
+                                               Header="double?"
                                                Value="{Binding NullableDoubleValue}" />
 
             <propertyGrid:EnumSettingControl Header="enum"
@@ -41,7 +43,8 @@
                                                IsEnabled="False"
                                                Value="{Binding LengthValue}" />
 
-            <propertyGrid:LengthSettingControl Header="Nullable length"
+            <propertyGrid:LengthSettingControl CanValueBeNull="True"
+                                               Header="Nullable length"
                                                Value="{Binding NullableLengthValue}" />
 
             <propertyGrid:SpeedSettingControl Header="Speed (readonly)"
