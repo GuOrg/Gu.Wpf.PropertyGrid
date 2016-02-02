@@ -6,6 +6,12 @@
 
     public static class Grid
     {
+        public static readonly DependencyProperty CellProperty = DependencyProperty.RegisterAttached(
+            "Cell",
+            typeof(GridCell),
+            typeof(Grid),
+            new PropertyMetadata(default(GridCell), OnCellChanged));
+
         public static readonly DependencyProperty RowDefinitionsProperty = DependencyProperty.RegisterAttached(
             "RowDefinitions",
             typeof(RowDefinitions),
@@ -29,6 +35,18 @@
             typeof(bool),
             typeof(Grid),
             new PropertyMetadata(BooleanBoxes.False));
+
+        public static void SetCell(UIElement element, GridCell value)
+        {
+            element.SetValue(CellProperty, value);
+        }
+
+        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
+        [AttachedPropertyBrowsableForType(typeof(UIElement))]
+        public static GridCell GetCell(UIElement element)
+        {
+            return (GridCell)element.GetValue(CellProperty);
+        }
 
         public static void SetRowDefinitions(System.Windows.Controls.Grid element, RowDefinitions value)
         {
@@ -58,6 +76,19 @@
         private static bool GetIsAuto(this DefinitionBase element)
         {
             return (bool)element.GetValue(IsAutoProperty);
+        }
+
+        private static void OnCellChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var cell = (GridCell)e.NewValue;
+            if (cell == null)
+            {
+                // ??
+                return;
+            }
+
+            d.SetValue(System.Windows.Controls.Grid.RowProperty, cell.Row);
+            d.SetValue(System.Windows.Controls.Grid.ColumnProperty, cell.Column);
         }
 
         private static void OnRowDefinitionsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

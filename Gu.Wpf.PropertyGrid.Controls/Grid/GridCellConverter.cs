@@ -1,4 +1,4 @@
-namespace Gu.Wpf.PropertyGrid
+﻿namespace Gu.Wpf.PropertyGrid
 {
     using System;
     using System.ComponentModel;
@@ -7,8 +7,10 @@ namespace Gu.Wpf.PropertyGrid
     using System.Security;
     using System.Windows.Controls;
 
-    public class ColumnDefinitionsConverter : TypeConverter
+    public class GridCellConverter : TypeConverter
     {
+        private static readonly char[] SeparatorChars = { ',', ' ' };
+
         public override bool CanConvertFrom(
             ITypeDescriptorContext typeDescriptorContext,
             Type sourceType)
@@ -31,9 +33,14 @@ namespace Gu.Wpf.PropertyGrid
             var text = source as string;
             if (text != null)
             {
-                var lengths = GridLengthsParser.Parse(typeDescriptorContext, cultureInfo, text);
-                var columnDefinitions = lengths.Select(gl => new ColumnDefinition { Width = gl });
-                return new ColumnDefinitions(columnDefinitions);
+                var strings = text.Split(SeparatorChars, StringSplitOptions.RemoveEmptyEntries);
+                if (strings.Length != 2)
+                {
+                    var message = $"Could not parse {text} to a grid cell. Expected two ints";
+                    throw new FormatException(message);
+                }
+
+                return new GridCell(int.Parse(strings[0]), int.Parse(strings[1]));
             }
 
             return base.ConvertFrom(typeDescriptorContext, cultureInfo, source);
