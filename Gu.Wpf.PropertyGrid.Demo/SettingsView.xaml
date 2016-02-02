@@ -5,16 +5,24 @@
              xmlns:demo="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:propertyGrid="http://gu.se/PropertyGrid"
-             xmlns:units="http://Gu.com/Units"
              mc:Ignorable="d">
     <UserControl.DataContext>
         <demo:SettingsVm />
     </UserControl.DataContext>
     <Grid>
-        <propertyGrid:SettingsControl>
-            <propertyGrid:LengthSettingControl Header="Length" Value="{Binding LengthValue}" />
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <propertyGrid:SettingsControl Grid.Row="0"
+                                      DataContext="{Binding EditableCopy}"
+                                      propertyGrid:SettingControl.OldDataContext="{Binding DataContext.LastSaved,
+                                                                                           RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
+            <propertyGrid:LengthSettingControl Header="Length"
+                                               Value="{Binding LengthValue}" />
 
-            <propertyGrid:EnumSettingControl Header="StringFormat" Value="{Binding CurrentStringComparison}" />
+            <propertyGrid:EnumSettingControl Header="StringFormat"
+                                             Value="{Binding CurrentStringComparison}" />
 
             <propertyGrid:SelectorSettingControl Header="Units"
                                                  ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
@@ -22,10 +30,22 @@
 
             <propertyGrid:LengthSettingControl DecimalDigits="1"
                                                Header="Length"
-                                               MaxValue="12 mm"
-                                               MinValue="-12 mm"
+                                               MaxValue="15 mm"
+                                               MinValue="-15 mm"
                                                Unit="{Binding CurrentLengthUnit}"
                                                Value="{Binding LengthValue}" />
         </propertyGrid:SettingsControl>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"
+                    Command="{Binding SaveCommand}"
+                    Content="Save" />
+            <Button Grid.Column="1"
+                    Command="{Binding UndoAllCommand}"
+                    Content="Undo" />
+        </Grid>
     </Grid>
 </UserControl>

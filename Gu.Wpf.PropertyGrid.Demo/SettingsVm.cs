@@ -1,62 +1,38 @@
 ﻿namespace Gu.Wpf.PropertyGrid.Demo
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
+    using System.Windows.Input;
+    using Gu.ChangeTracking;
     using Gu.Units;
     using JetBrains.Annotations;
 
     public class SettingsVm : INotifyPropertyChanged
     {
-        public static IReadOnlyList<LengthUnit> LengthUnits = new[] { LengthUnit.Centimetres, LengthUnit.Inches, };
+        public static readonly IReadOnlyList<LengthUnit> LengthUnits = new[] { LengthUnit.Centimetres, LengthUnit.Inches, };
 
-        private Length lengthValue = Length.FromMillimetres(12.3456);
-        private LengthUnit currentLengthUnit = LengthUnits[0];
-        private StringComparison currentStringComparison;
+        public SettingsVm()
+        {
+            // simulating saving
+            this.SaveCommand = new RelayCommand(
+                _ => Copy.PropertyValues(this.EditableCopy, this.LastSaved),
+                _ => !EqualBy.PropertyValues(this.EditableCopy, this.LastSaved));
+
+            this.UndoAllCommand = new RelayCommand(
+                _ => Copy.PropertyValues(this.LastSaved, this.EditableCopy),
+                _ => !EqualBy.PropertyValues(this.EditableCopy, this.LastSaved));
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Length LengthValue
-        {
-            get { return this.lengthValue; }
-            set
-            {
-                if (value.Equals(this.lengthValue))
-                {
-                    return;
-                }
+        public DummySettings EditableCopy { get; } = new DummySettings();
 
-                this.lengthValue = value;
-                this.OnPropertyChanged();
-            }
-        }
+        public DummySettings LastSaved { get; } = new DummySettings();
 
-        public LengthUnit CurrentLengthUnit
-        {
-            get { return this.currentLengthUnit; }
-            set
-            {
-                if (value.Equals(this.currentLengthUnit))
-                {
-                    return;
-                }
+        public ICommand SaveCommand { get; }
 
-                this.currentLengthUnit = value;
-                this.OnPropertyChanged();
-            }
-        }
-
-        public StringComparison CurrentStringComparison
-        {
-            get { return currentStringComparison; }
-            set
-            {
-                if (value == currentStringComparison) return;
-                currentStringComparison = value;
-                OnPropertyChanged();
-            }
-        }
+        public ICommand UndoAllCommand { get; }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

@@ -1,12 +1,17 @@
 namespace Gu.Wpf.PropertyGrid
 {
-    using System;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Data;
 
     public abstract class SettingControlBase : Control
     {
+        protected static readonly string OldValueNotSet = nameof(OldValueNotSet);
+
+        public static readonly DependencyProperty OldDataContextProperty = SettingControl.OldDataContextProperty.AddOwner(
+                typeof(SettingControlBase),
+                new FrameworkPropertyMetadata(default(object), FrameworkPropertyMetadataOptions.Inherits, OnOldDataContextChanged));
+
         public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(
             "Header",
             typeof(string),
@@ -23,7 +28,7 @@ namespace Gu.Wpf.PropertyGrid
             "OldValue",
             typeof(object),
             typeof(SettingControlBase),
-            new PropertyMetadata(null, OnOldValueChanged));
+            new PropertyMetadata(OldValueNotSet, OnOldValueChanged));
 
         public static readonly DependencyProperty IsReadOnlyProperty = SettingControl.IsReadOnlyProperty.AddOwner(
             typeof(SettingControlBase),
@@ -69,6 +74,12 @@ namespace Gu.Wpf.PropertyGrid
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SettingControlBase), new FrameworkPropertyMetadata(typeof(SettingControlBase)));
             FocusableProperty.OverrideMetadata(typeof(SettingControlBase), new FrameworkPropertyMetadata(false));
+        }
+
+        public object OldDataContext
+        {
+            get { return (object)this.GetValue(OldDataContextProperty); }
+            set { this.SetValue(OldDataContextProperty, value); }
         }
 
         public string Header
@@ -145,6 +156,31 @@ namespace Gu.Wpf.PropertyGrid
 
         protected abstract DependencyProperty ValueDependencyProperty { get; }
 
+        private static void OnOldDataContextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var controlBase = (SettingControlBase)d;
+            var oldValueBinding = BindingOperations.GetBinding(controlBase, OldValueProperty);
+            if (oldValueBinding != null)
+            {
+                // We don't replace any bindings.
+                return;
+            }
+
+            var valueBinding = BindingOperations.GetBinding(controlBase, controlBase.ValueDependencyProperty);
+            if (valueBinding != null)
+            {
+                var path = $"{OldDataContextProperty.Name}.{valueBinding.Path.Path}";
+                oldValueBinding = new Binding(path)
+                {
+                    Mode = BindingMode.OneWay,
+                    Source = controlBase,
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+                };
+
+                BindingOperations.SetBinding(controlBase, OldValueProperty, oldValueBinding);
+            }
+        }
+
         protected virtual void OnValueChanged(object oldValue, object newValue)
         {
         }
@@ -153,12 +189,10 @@ namespace Gu.Wpf.PropertyGrid
         {
             var c = (SettingControlBase)o;
             c.OnValueChanged(e.OldValue, e.NewValue);
-            if (BindingOperations.GetBinding(o, OldValueProperty) == null)
+            if (!Equals(c.OldValue, OldValueNotSet))
             {
-                return;
+                c.IsDirty = !Equals(c.OldValue, e.NewValue);
             }
-
-            c.IsDirty = !Equals(c.OldValue, e.NewValue);
         }
 
         private static void OnOldValueChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
@@ -166,37 +200,6 @@ namespace Gu.Wpf.PropertyGrid
             var sc = (SettingControlBase)o;
             var value = sc.GetValue(sc.ValueDependencyProperty);
             sc.IsDirty = !Equals(sc.OldValue, value);
-        }
-
-        protected override void OnInitialized(EventArgs e)
-        {
-            base.OnInitialized(e);
-            //var valueBinding = BindingOperations.GetBinding(this, this.ValueDependencyProperty);
-            //if (valueBinding != null)
-            //{
-            //    var oldValueBinding = BindingOperations.GetBinding(this, OldValueProperty);
-            //    if (oldValueBinding != null)
-            //    {
-            //        return;
-            //    }
-
-            //    var editableCopyName = nameof(SettingsViewModel<INotifyPropertyChanged, ISettingsRepository>.EditableCopy);
-            //    if (!valueBinding.Path.Path.Contains(editableCopyName))
-            //    {
-            //        return;
-            //    }
-
-            //    var lastSavedCopyName = nameof(SettingsViewModel<INotifyPropertyChanged, ISettingsRepository>.LastSavedCopy);
-
-            //    var path = valueBinding.Path.Path.Replace(editableCopyName, lastSavedCopyName);
-            //    oldValueBinding = new Binding(path)
-            //    {
-            //        Mode = BindingMode.OneWay,
-            //        UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
-            //    };
-
-            //    BindingOperations.SetBinding(this, OldValueProperty, oldValueBinding);
-            //}
         }
     }
 }

@@ -26,12 +26,12 @@
                 return this.WhenNull;
             }
 
-            if (value == BooleanBoxes.True)
+            if (Equals(value, BooleanBoxes.True))
             {
                 return this.WhenTrue;
             }
 
-            if (value == BooleanBoxes.False)
+            if (Equals(value, BooleanBoxes.False))
             {
                 return this.WhenFalse;
             }

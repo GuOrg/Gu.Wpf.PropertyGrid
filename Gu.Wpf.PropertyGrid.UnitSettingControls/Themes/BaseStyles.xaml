@@ -51,7 +51,7 @@
                                    Style="{TemplateBinding SuffixStyle}"
                                    Text="{TemplateBinding Suffix}" />
 
-                        <!--<Grid x:Name="InfoGrid"
+                        <Grid x:Name="InfoGrid"
                               Grid.Row="1"
                               Grid.Column="0"
                               Grid.ColumnSpan="2"
@@ -66,8 +66,8 @@
                                                                                                                  WhenNull=Visible,
                                                                                                                  WhenFalse=Collapsed}}" />
 
-                        -->
-                        <!--<TextBlock x:Name="ErrorTextBox"
+
+                            <!--<TextBlock x:Name="ErrorTextBox"
                                        HorizontalAlignment="Right"
                                        DataContext="{Binding ElementName=ValueBox}"
                                        Foreground="Red"
@@ -77,7 +77,7 @@
                                                             Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
                                                                                                                  WhenNull=Collapsed,
                                                                                                                  WhenFalse=Collapsed}}" />-->
-                        <!--
+
 
                             <TextBlock x:Name="OldValueBox"
                                        HorizontalAlignment="Right"
@@ -87,9 +87,9 @@
                                                                                                                          WhenNull=Hidden,
                                                                                                                          WhenFalse=Hidden}}">
                                 <Run Text="OldValue: " />
-                                <Run Text="{TemplateBinding OldValue}" />
+                                <Run Text="{Binding OldValue, RelativeSource={RelativeSource TemplatedParent}}" />
                             </TextBlock>
-                        </Grid>-->
+                        </Grid>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

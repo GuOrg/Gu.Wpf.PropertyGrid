@@ -4,6 +4,12 @@ namespace Gu.Wpf.PropertyGrid
 
     public static class SettingControl
     {
+        public static readonly DependencyProperty OldDataContextProperty = DependencyProperty.RegisterAttached(
+            "OldDataContext",
+            typeof(object),
+            typeof(SettingControl),
+            new FrameworkPropertyMetadata(default(object), FrameworkPropertyMetadataOptions.Inherits));
+
         public static readonly DependencyProperty HeaderStyleProperty = DependencyProperty.RegisterAttached(
             "HeaderStyle",
             typeof(Style),
@@ -51,6 +57,18 @@ namespace Gu.Wpf.PropertyGrid
             typeof(bool),
             typeof(SettingControl),
             new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
+
+        public static void SetOldDataContext(this UIElement element, object value)
+        {
+            element.SetValue(OldDataContextProperty, value);
+        }
+
+        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
+        [AttachedPropertyBrowsableForType(typeof(UIElement))]
+        public static object GetOldDataContext(this UIElement element)
+        {
+            return (object)element.GetValue(OldDataContextProperty);
+        }
 
         public static void SetHeaderStyle(this UIElement element, Style value)
         {

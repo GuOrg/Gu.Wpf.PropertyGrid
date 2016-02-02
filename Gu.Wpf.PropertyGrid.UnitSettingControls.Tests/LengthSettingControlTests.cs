@@ -7,6 +7,28 @@
     public class LengthSettingControlTests
     {
         [WpfFact]
+        public void IsDirty()
+        {
+            var control = new LengthSettingControl();
+            Assert.Null(control.IsDirty);
+
+            control.Value = Length.FromMillimetres(1);
+            Assert.Null(control.IsDirty);
+
+            control.OldValue = Length.FromMillimetres(2);
+            Assert.True(control.IsDirty);
+
+            control.OldValue = Length.FromMillimetres(1);
+            Assert.False(control.IsDirty);
+
+            control.Value = Length.FromMillimetres(3);
+            Assert.True(control.IsDirty);
+
+            control.OldValue = Length.FromMillimetres(3);
+            Assert.False(control.IsDirty);
+        }
+
+        [WpfFact]
         public void UnitUpdatesSuffix()
         {
             var control = new LengthSettingControl();

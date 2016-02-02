@@ -1,7 +1,6 @@
 namespace Gu.Wpf.PropertyGrid
 {
     using System;
-    using System.Runtime.CompilerServices;
     using System.Windows;
     using Gu.Units;
     using Gu.Wpf.NumericInput;
@@ -41,6 +40,8 @@ namespace Gu.Wpf.PropertyGrid
         public static readonly DependencyProperty SymbolFormatProperty = UnitSettingControl.SymbolFormatProperty.AddOwner(
             typeof(UnitSettingControl<TQuantity, TUnit>),
             new FrameworkPropertyMetadata(UnitSettingControl.DefaultSymbolFormat, FrameworkPropertyMetadataOptions.Inherits, OnSymbolFormatChanged));
+
+        private bool isUpdatingScalarValue;
 
         public int? DecimalDigits
         {
@@ -143,6 +144,11 @@ namespace Gu.Wpf.PropertyGrid
         private static void SetQuantityValue(DependencyObject o, DependencyProperty property, double? value)
         {
             var control = (UnitSettingControl<TQuantity, TUnit>)o;
+            if (control.isUpdatingScalarValue)
+            {
+                return;
+            }
+
             var qty = value != null
                 ? control.Unit.CreateQuantity(value.Value)
                 : (TQuantity?)null;
@@ -152,10 +158,12 @@ namespace Gu.Wpf.PropertyGrid
         private static void SetScalarValue(DependencyObject o, DependencyProperty property, TQuantity? quantity)
         {
             var control = (UnitSettingControl<TQuantity, TUnit>)o;
+            control.isUpdatingScalarValue = true;
             var value = quantity != null
                 ? control.Unit.GetScalarValue(quantity.Value)
                 : (double?)null;
             control.SetCurrentValue(property, value);
+            control.isUpdatingScalarValue = false;
         }
     }
 }

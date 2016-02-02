@@ -5,6 +5,10 @@
 
     public class SettingsControl : ItemsControl
     {
+        public static readonly DependencyProperty OldDataContextProperty = SettingControl.OldDataContextProperty.AddOwner(
+                typeof(SettingsControl),
+                new FrameworkPropertyMetadata(default(object), FrameworkPropertyMetadataOptions.Inherits));
+
         public static readonly DependencyProperty IsReadOnlyProperty = SettingControl.IsReadOnlyProperty.AddOwner(
             typeof(SettingsControl),
             new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
@@ -41,6 +45,12 @@
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SettingsControl), new FrameworkPropertyMetadata(typeof(SettingsControl)));
             FocusableProperty.OverrideMetadata(typeof(SettingsControl), new FrameworkPropertyMetadata(BooleanBoxes.False));
+        }
+
+        public object OldDataContext
+        {
+            get { return (object)this.GetValue(OldDataContextProperty); }
+            set { this.SetValue(OldDataContextProperty, value); }
         }
 
         public bool IsReadOnly
