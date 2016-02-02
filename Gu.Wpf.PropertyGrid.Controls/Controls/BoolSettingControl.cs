@@ -2,7 +2,7 @@
 {
     using System.Windows;
 
-    public class BoolSettingControl : SettingControlBase<bool>
+    public abstract class BoolSettingControl : SettingControlBase<bool>
     {
         static BoolSettingControl()
         {

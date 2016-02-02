@@ -59,19 +59,5 @@ namespace Gu.Wpf.PropertyGrid.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;Style x:Key=&quot;{x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}&quot; TargetType=&quot;{x:Type propertyGrid:SettingControlBase}&quot;&gt;
-        ///        &lt;Setter Property=&quot;HeaderStyle&quot; Value=&quot;{DynamicResource {x:Static propertyGrid:Keys.SettingRowHeaderStyleKey}}&quot; /&gt;
-        ///        &lt;Setter Property=&quot;ValueStyle&quot;&gt;
-        ///            &lt;Setter.Value&gt;
-        ///                &lt;Style TargetType=&quot;{x:Type numeric:DoubleBox}&quot;&gt;
-        ///                    &lt;Setter Property=&quot;DecimalDigits&quot; Value=&quot;{Binding DecimalDigits, RelativeSource={RelativeSource TemplatedParent}} [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string StyleTemplate {
-            get {
-                return ResourceManager.GetString("StyleTemplate", resourceCulture);
-            }
-        }
     }
 }

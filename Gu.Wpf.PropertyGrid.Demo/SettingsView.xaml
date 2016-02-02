@@ -24,8 +24,11 @@
             <propertyGrid:StringSettingControl Header="string"
                                                Value="{Binding StringValue}" />
 
-            <propertyGrid:BoolSettingControl Header="bool"
-                                             Value="{Binding BoolValue}" />
+            <propertyGrid:CheckBoxSettingControl Header="check box"
+                                                 Value="{Binding BoolValue}" />
+
+            <propertyGrid:ToggleButtonSettingControl Header="toggle button"
+                                                     Value="{Binding BoolValue}" />
 
             <propertyGrid:EnumSettingControl Header="enum"
                                              Value="{Binding CurrentStringComparison}" />
