@@ -15,10 +15,97 @@
         <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowErrorStyleKey}}" />
     </Style>
 
+    <Style TargetType="{x:Type l:StringSettingControl}">
+        <Setter Property="ValueStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Grid.Row" Value="0" />
+                    <Setter Property="Grid.Column" Value="1" />
+                    <Setter Property="Text" Value="{Binding Value, RelativeSource={RelativeSource AncestorType={x:Type l:StringSettingControl}}}" />
+                    <Setter Property="IsReadOnly" Value="{Binding IsReadOnly, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}, Mode=OneWay}" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type l:SettingControlBase}">
+                    <Grid Margin="{TemplateBinding Padding}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                        </Grid.ColumnDefinitions>
+                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility) -->
+                        <TextBlock x:Name="Header"
+                                   Style="{TemplateBinding HeaderStyle}" />
+
+                        <TextBox x:Name="ValueBox"
+                                  Style="{TemplateBinding ValueStyle}" />
+
+                        <TextBlock x:Name="SuffixBox"
+                                   Style="{TemplateBinding SuffixStyle}" />
+
+                        <ContentPresenter x:Name="InfoPresenter"
+                                          Style="{TemplateBinding InfoPresenterStyle}" />
+                        <!--  ReSharper restore Xaml.MissingGridIndex  -->
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type l:BoolSettingControl}">
+        <Setter Property="ValueStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type CheckBox}">
+                    <Setter Property="Grid.Row" Value="0" />
+                    <Setter Property="Grid.Column" Value="1" />
+                    <Setter Property="IsChecked" Value="{Binding Value, RelativeSource={RelativeSource AncestorType={x:Type l:BoolSettingControl}}}" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type l:SettingControlBase}">
+                    <Grid Margin="{TemplateBinding Padding}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                        </Grid.ColumnDefinitions>
+                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility) -->
+                        <TextBlock x:Name="Header"
+                                   Style="{TemplateBinding HeaderStyle}" />
+
+                        <CheckBox x:Name="ValueBox"
+                                  Style="{TemplateBinding ValueStyle}" />
+
+                        <TextBlock x:Name="SuffixBox"
+                                   Style="{TemplateBinding SuffixStyle}" />
+
+                        <ContentPresenter x:Name="InfoPresenter"
+                                          Style="{TemplateBinding InfoPresenterStyle}" />
+                        <!--  ReSharper restore Xaml.MissingGridIndex  -->
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style TargetType="{x:Type l:EnumSettingControl}">
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type ComboBox}">
+                    <Setter Property="Grid.Row" Value="0" />
+                    <Setter Property="Grid.Column" Value="1" />
                     <Setter Property="SelectedItem" Value="{Binding Value, RelativeSource={RelativeSource AncestorType={x:Type l:EnumSettingControl}}}" />
                     <Setter Property="ItemsSource" Value="{Binding EnumValues, RelativeSource={RelativeSource AncestorType={x:Type l:EnumSettingControl}}, Mode=OneWay}" />
                 </Style>
@@ -33,72 +120,23 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
-                            <ColumnDefinition Width="Auto"
-                                              MinWidth="{TemplateBinding ValueMinWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="Auto"
-                                              MinWidth="{TemplateBinding SuffixMinWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
-
+                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility) -->
                         <TextBlock x:Name="Header"
-                                   Grid.Row="0"
-                                   Grid.Column="0"
-                                   Style="{TemplateBinding HeaderStyle}"
-                                   Text="{TemplateBinding Header}" />
+                                   Style="{TemplateBinding HeaderStyle}" />
 
                         <ComboBox x:Name="ValueBox"
-                                  Grid.Row="0"
-                                  Grid.Column="1"
                                   Style="{TemplateBinding ValueStyle}" />
 
                         <TextBlock x:Name="SuffixBox"
-                                   Grid.Row="0"
-                                   Grid.Column="2"
-                                   Style="{TemplateBinding SuffixStyle}"
-                                   Text="{TemplateBinding Suffix}" />
+                                   Style="{TemplateBinding SuffixStyle}" />
 
-                        <!--<Grid x:Name="InfoGrid"
-                              Grid.Row="1"
-                              Grid.Column="0"
-                              Grid.ColumnSpan="2"
-                              HorizontalAlignment="Right"
-                              TextElement.FontSize="12">
-                            <TextBlock HorizontalAlignment="Right"
-                                       Foreground="LightGray"
-                                       Text="missing"
-                                       Visibility="{Binding Path=IsDirty,
-                                                            RelativeSource={RelativeSource TemplatedParent},
-                                                            Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Collapsed,
-                                                                                                                 WhenNull=Visible,
-                                                                                                                 WhenFalse=Collapsed}}" />
-
-                        -->
-                        <!--<TextBlock x:Name="ErrorTextBox"
-                                       HorizontalAlignment="Right"
-                                       DataContext="{Binding ElementName=ValueBox}"
-                                       Foreground="Red"
-                                       Text="error"
-                                       Visibility="{Binding Path=(Validation.HasError),
-                                                            ElementName=ValueBox,
-                                                            Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
-                                                                                                                 WhenNull=Collapsed,
-                                                                                                                 WhenFalse=Collapsed}}" />-->
-                        <!--
-
-                            <TextBlock x:Name="OldValueBox"
-                                       HorizontalAlignment="Right"
-                                       Style="{TemplateBinding OldValueStyle}"
-                                       Visibility="{TemplateBinding IsDirty,
-                                                                    Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
-                                                                                                                         WhenNull=Hidden,
-                                                                                                                         WhenFalse=Hidden}}">
-                                <Run Text="OldValue: " />
-                                <Run Text="{TemplateBinding OldValue}" />
-                            </TextBlock>
-                        </Grid>-->
+                        <ContentPresenter x:Name="InfoPresenter"
+                                          Style="{TemplateBinding InfoPresenterStyle}" />
+                        <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -109,6 +147,8 @@
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type ComboBox}">
+                    <Setter Property="Grid.Row" Value="0" />
+                    <Setter Property="Grid.Column" Value="1" />                    
                     <Setter Property="SelectedItem" Value="{Binding Value, RelativeSource={RelativeSource AncestorType={x:Type l:SelectorSettingControl}}}" />
                     <Setter Property="ItemsSource" Value="{Binding ItemsSource, RelativeSource={RelativeSource AncestorType={x:Type l:SelectorSettingControl}}, Mode=OneWay}" />
                 </Style>
@@ -124,72 +164,23 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
-                            <ColumnDefinition Width="Auto"
-                                              MinWidth="{TemplateBinding ValueMinWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="Auto"
-                                              MinWidth="{TemplateBinding SuffixMinWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
-
+                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility) -->
                         <TextBlock x:Name="Header"
-                                   Grid.Row="0"
-                                   Grid.Column="0"
-                                   Style="{TemplateBinding HeaderStyle}"
-                                   Text="{TemplateBinding Header}" />
+                                   Style="{TemplateBinding HeaderStyle}" />
 
                         <ComboBox x:Name="ValueBox"
-                                  Grid.Row="0"
-                                  Grid.Column="1"
                                   Style="{TemplateBinding ValueStyle}" />
 
                         <TextBlock x:Name="SuffixBox"
-                                   Grid.Row="0"
-                                   Grid.Column="2"
-                                   Style="{TemplateBinding SuffixStyle}"
-                                   Text="{TemplateBinding Suffix}" />
+                                   Style="{TemplateBinding SuffixStyle}" />
 
-                        <!--<Grid x:Name="InfoGrid"
-                              Grid.Row="1"
-                              Grid.Column="0"
-                              Grid.ColumnSpan="2"
-                              HorizontalAlignment="Right"
-                              TextElement.FontSize="12">
-                            <TextBlock HorizontalAlignment="Right"
-                                       Foreground="LightGray"
-                                       Text="missing"
-                                       Visibility="{Binding Path=IsDirty,
-                                                            RelativeSource={RelativeSource TemplatedParent},
-                                                            Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Collapsed,
-                                                                                                                 WhenNull=Visible,
-                                                                                                                 WhenFalse=Collapsed}}" />
-
-                        -->
-                        <!--<TextBlock x:Name="ErrorTextBox"
-                                       HorizontalAlignment="Right"
-                                       DataContext="{Binding ElementName=ValueBox}"
-                                       Foreground="Red"
-                                       Text="error"
-                                       Visibility="{Binding Path=(Validation.HasError),
-                                                            ElementName=ValueBox,
-                                                            Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
-                                                                                                                 WhenNull=Collapsed,
-                                                                                                                 WhenFalse=Collapsed}}" />-->
-                        <!--
-
-                            <TextBlock x:Name="OldValueBox"
-                                       HorizontalAlignment="Right"
-                                       Style="{TemplateBinding OldValueStyle}"
-                                       Visibility="{TemplateBinding IsDirty,
-                                                                    Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
-                                                                                                                         WhenNull=Hidden,
-                                                                                                                         WhenFalse=Hidden}}">
-                                <Run Text="OldValue: " />
-                                <Run Text="{TemplateBinding OldValue}" />
-                            </TextBlock>
-                        </Grid>-->
+                        <ContentPresenter x:Name="InfoPresenter"
+                                          Style="{TemplateBinding InfoPresenterStyle}" />
+                        <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

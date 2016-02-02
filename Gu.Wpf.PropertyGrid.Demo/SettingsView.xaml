@@ -18,6 +18,25 @@
                                       DataContext="{Binding EditableCopy}"
                                       propertyGrid:SettingControl.OldDataContext="{Binding DataContext.LastSaved,
                                                                                            RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
+            <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
+                       Text="Core" />
+
+            <propertyGrid:StringSettingControl Header="string"
+                                               Value="{Binding StringValue}" />
+
+            <propertyGrid:BoolSettingControl Header="bool"
+                                             Value="{Binding BoolValue}" />
+
+            <propertyGrid:EnumSettingControl Header="enum"
+                                             Value="{Binding CurrentStringComparison}" />
+
+            <propertyGrid:SelectorSettingControl Header="selector"
+                                                 ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
+                                                 Value="{Binding CurrentLengthUnit}" />
+
+            <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
+                       Text="NumericSettingControls" />
+
             <propertyGrid:IntSettingControl Header="int"
                                             Value="{Binding IntValue}" />
 
@@ -32,13 +51,9 @@
                                                Header="double?"
                                                Value="{Binding NullableDoubleValue}" />
 
-            <propertyGrid:EnumSettingControl Header="enum"
-                                             Value="{Binding CurrentStringComparison}" />
 
-            <propertyGrid:SelectorSettingControl Header="selector"
-                                                 ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
-                                                 Value="{Binding CurrentLengthUnit}" />
-
+            <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
+                       Text="UnitSettingControls" />
             <propertyGrid:LengthSettingControl Header="Length"
                                                IsEnabled="False"
                                                Value="{Binding LengthValue}" />

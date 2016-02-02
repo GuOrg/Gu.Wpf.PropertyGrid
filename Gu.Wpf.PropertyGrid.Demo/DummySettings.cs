@@ -10,51 +10,38 @@
 
     public class DummySettings : INotifyPropertyChanged
     {
-        private Length lengthValue = Length.FromMillimetres(12.3456);
-        private LengthUnit currentLengthUnit = LengthUnit.Centimetres;
-        private StringComparison currentStringComparison;
         private int intValue;
         private int? nullableIntValue;
         private double doubleValue;
         private double? nullableDoubleValue;
+        private Length lengthValue = Length.FromMillimetres(12.3456);
+        private LengthUnit currentLengthUnit = LengthUnit.Centimetres;
+        private StringComparison currentStringComparison;
         private Speed speedValue;
         private Length? nullableLengthValue;
+        private string stringValue;
+        private bool boolValue;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Length LengthValue
+        public string StringValue
         {
-            get { return this.lengthValue; }
+            get { return this.stringValue; }
             set
             {
-                if (value.Equals(this.lengthValue))
-                {
-                    return;
-                }
-
-                this.lengthValue = value;
+                if (value == this.stringValue) return;
+                this.stringValue = value;
                 this.OnPropertyChanged();
             }
         }
 
-        public Length? NullableLengthValue
+        public bool BoolValue
         {
-            get { return this.nullableLengthValue; }
+            get { return this.boolValue; }
             set
             {
-                if (value.Equals(this.nullableLengthValue)) return;
-                this.nullableLengthValue = value;
-                this.OnPropertyChanged();
-            }
-        }
-
-        public Speed SpeedValue
-        {
-            get { return this.speedValue; }
-            set
-            {
-                if (value.Equals(this.speedValue)) return;
-                this.speedValue = value;
+                if (value == this.boolValue) return;
+                this.boolValue = value;
                 this.OnPropertyChanged();
             }
         }
@@ -99,6 +86,43 @@
             {
                 if (value.Equals(this.nullableDoubleValue)) return;
                 this.nullableDoubleValue = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public Length LengthValue
+        {
+            get { return this.lengthValue; }
+            set
+            {
+                if (value.Equals(this.lengthValue))
+                {
+                    return;
+                }
+
+                this.lengthValue = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public Length? NullableLengthValue
+        {
+            get { return this.nullableLengthValue; }
+            set
+            {
+                if (value.Equals(this.nullableLengthValue)) return;
+                this.nullableLengthValue = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public Speed SpeedValue
+        {
+            get { return this.speedValue; }
+            set
+            {
+                if (value.Equals(this.speedValue)) return;
+                this.speedValue = value;
                 this.OnPropertyChanged();
             }
         }
