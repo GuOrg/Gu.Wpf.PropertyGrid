@@ -48,17 +48,9 @@ namespace Gu.Wpf.PropertyGrid
             typeof(SettingControlBase),
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty ValueMinWidthProperty = SettingControl.ValueMinWidthProperty.AddOwner(
-            typeof(SettingControlBase),
-            new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
-
         public static readonly DependencyProperty SuffixStyleProperty = SettingControl.SuffixStyleProperty.AddOwner(
             typeof(SettingControlBase),
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty SuffixMinWidthProperty = SettingControl.SuffixMinWidthProperty.AddOwner(
-            typeof(SettingControlBase),
-            new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty InfoPresenterStyleProperty = SettingControl.InfoPresenterStyleProperty.AddOwner(
             typeof(SettingControlBase),
@@ -104,12 +96,6 @@ namespace Gu.Wpf.PropertyGrid
             set { this.SetValue(HeaderProperty, value); }
         }
 
-        public double ValueMinWidth
-        {
-            get { return (double)this.GetValue(ValueMinWidthProperty); }
-            set { this.SetValue(ValueMinWidthProperty, value); }
-        }
-
         public string Suffix
         {
             get { return (string)this.GetValue(SuffixProperty); }
@@ -120,12 +106,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (object)this.GetValue(OldValueProperty); }
             set { this.SetValue(OldValueProperty, value); }
-        }
-
-        public double SuffixMinWidth
-        {
-            get { return (double)this.GetValue(SuffixMinWidthProperty); }
-            set { this.SetValue(SuffixMinWidthProperty, value); }
         }
 
         public bool IsReadOnly

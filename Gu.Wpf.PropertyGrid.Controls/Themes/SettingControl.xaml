@@ -39,18 +39,14 @@
                             <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
                             <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
-                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility) -->
-                        <TextBlock x:Name="Header"
-                                   Style="{TemplateBinding HeaderStyle}" />
+                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
+                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
-                        <TextBox x:Name="ValueBox"
-                                  Style="{TemplateBinding ValueStyle}" />
+                        <TextBox x:Name="ValueBox" Style="{TemplateBinding ValueStyle}" />
 
-                        <TextBlock x:Name="SuffixBox"
-                                   Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
 
-                        <ContentPresenter x:Name="InfoPresenter"
-                                          Style="{TemplateBinding InfoPresenterStyle}" />
+                        <ContentPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>
@@ -81,18 +77,14 @@
                             <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
                             <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
-                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility) -->
-                        <TextBlock x:Name="Header"
-                                   Style="{TemplateBinding HeaderStyle}" />
+                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
+                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
-                        <CheckBox x:Name="ValueBox"
-                                  Style="{TemplateBinding ValueStyle}" />
+                        <CheckBox x:Name="ValueBox" Style="{TemplateBinding ValueStyle}" />
 
-                        <TextBlock x:Name="SuffixBox"
-                                   Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
 
-                        <ContentPresenter x:Name="InfoPresenter"
-                                          Style="{TemplateBinding InfoPresenterStyle}" />
+                        <ContentPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>
@@ -123,25 +115,21 @@
                             <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
                             <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
-                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility) -->
-                        <TextBlock x:Name="Header"
-                                   Style="{TemplateBinding HeaderStyle}" />
+                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
+                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
-                        <ToggleButton x:Name="ValueBox"
-                                  Style="{TemplateBinding ValueStyle}" />
+                        <ToggleButton x:Name="ValueBox" Style="{TemplateBinding ValueStyle}" />
 
-                        <TextBlock x:Name="SuffixBox"
-                                   Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
 
-                        <ContentPresenter x:Name="InfoPresenter"
-                                          Style="{TemplateBinding InfoPresenterStyle}" />
+                        <ContentPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style TargetType="{x:Type l:EnumSettingControl}">
         <Setter Property="ValueStyle">
             <Setter.Value>
@@ -166,18 +154,14 @@
                             <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
                             <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
-                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility) -->
-                        <TextBlock x:Name="Header"
-                                   Style="{TemplateBinding HeaderStyle}" />
+                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
+                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
-                        <ComboBox x:Name="ValueBox"
-                                  Style="{TemplateBinding ValueStyle}" />
+                        <ComboBox x:Name="ValueBox" Style="{TemplateBinding ValueStyle}" />
 
-                        <TextBlock x:Name="SuffixBox"
-                                   Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
 
-                        <ContentPresenter x:Name="InfoPresenter"
-                                          Style="{TemplateBinding InfoPresenterStyle}" />
+                        <ContentPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>
@@ -190,7 +174,7 @@
             <Setter.Value>
                 <Style TargetType="{x:Type ComboBox}">
                     <Setter Property="Grid.Row" Value="0" />
-                    <Setter Property="Grid.Column" Value="1" />                    
+                    <Setter Property="Grid.Column" Value="1" />
                     <Setter Property="SelectedItem" Value="{Binding Value, RelativeSource={RelativeSource AncestorType={x:Type l:SelectorSettingControl}}}" />
                     <Setter Property="ItemsSource" Value="{Binding ItemsSource, RelativeSource={RelativeSource AncestorType={x:Type l:SelectorSettingControl}}, Mode=OneWay}" />
                 </Style>
@@ -210,18 +194,67 @@
                             <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
                             <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
-                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility) -->
-                        <TextBlock x:Name="Header"
-                                   Style="{TemplateBinding HeaderStyle}" />
+                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
+                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
-                        <ComboBox x:Name="ValueBox"
-                                  Style="{TemplateBinding ValueStyle}" />
+                        <ComboBox x:Name="ValueBox" Style="{TemplateBinding ValueStyle}" />
+
+                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
+
+                        <ContentPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
+                        <!--  ReSharper restore Xaml.MissingGridIndex  -->
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type l:ContentSettingControl}">
+        <Setter Property="ContentStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ContentPresenter}">
+                    <Setter Property="Grid.Row" Value="0" />
+                    <Setter Property="Grid.Column" Value="1" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="HeaderStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ContentPresenter}">
+                    <Setter Property="Grid.Row" Value="0" />
+                    <Setter Property="Grid.Column" Value="0" />
+                    <Setter Property="Focusable" Value="False" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type l:ContentSettingControl}">
+                    <Grid Margin="{TemplateBinding Padding}">
+                        <!--<Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>-->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                        </Grid.ColumnDefinitions>
+                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
+                        <ContentPresenter x:Name="HeaderPresenter"
+                                          ContentSource="Header"
+                                          Style="{TemplateBinding HeaderStyle}" />
+
+                        <ContentPresenter x:Name="ContentPresenter"
+                                          ContentSource="Content"
+                                          Style="{TemplateBinding ContentStyle}" />
 
                         <TextBlock x:Name="SuffixBox"
                                    Style="{TemplateBinding SuffixStyle}" />
 
-                        <ContentPresenter x:Name="InfoPresenter"
-                                          Style="{TemplateBinding InfoPresenterStyle}" />
+                        <!--<ContentPresenter x:Name="InfoPresenter" 
+                                          Style="{TemplateBinding InfoPresenterStyle}" />-->
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>
