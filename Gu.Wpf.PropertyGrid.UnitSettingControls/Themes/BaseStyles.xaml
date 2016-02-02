@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:numeric="http://gu.se/NumericInput"
                     xmlns:propertyGrid="http://gu.se/PropertyGrid">
-    <Style x:Key="{x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}" TargetType="{x:Type propertyGrid:SettingControlBase}">
-        <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowHeaderStyleKey}}" />
+    <Style x:Key="{x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}"
+           TargetType="{x:Type propertyGrid:SettingControlBase}">
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type numeric:DoubleBox}">
@@ -14,9 +14,7 @@
                 </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowSuffixStyleKey}}" />
-        <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" />
-        <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowErrorStyleKey}}" />
+
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type propertyGrid:SettingControlBase}">
@@ -26,7 +24,8 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition Width="Auto"
+                                              SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.LabelColumn}" />
                             <ColumnDefinition Width="Auto"
                                               MinWidth="{TemplateBinding ValueMinWidth}"
                                               SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />

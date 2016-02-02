@@ -5,53 +5,17 @@
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="{x:Static l:Keys.SettingRowBaseStyle}" TargetType="{x:Type Control}">
+    <Style TargetType="{x:Type l:SettingControlBase}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Padding" Value="0,12" />
-    </Style>
-
-    <Style x:Key="HeaderedContentControlSettingStyle"
-           BasedOn="{StaticResource {x:Static l:Keys.SettingRowBaseStyle}}"
-           TargetType="{x:Type HeaderedContentControl}">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
-                    <Grid Margin="{TemplateBinding Padding}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
-                            <ColumnDefinition Width="Auto"
-                                              MinWidth="{Binding Path=(l:SettingControl.ValueMinWidth),
-                                                                 RelativeSource={RelativeSource TemplatedParent}}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="Auto"
-                                              MinWidth="{Binding Path=(l:SettingControl.SuffixMinWidth),
-                                                                 RelativeSource={RelativeSource TemplatedParent}}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
-                        </Grid.ColumnDefinitions>
-
-                        <TextBlock x:Name="Header"
-                                   Grid.Row="0"
-                                   Grid.Column="0"
-                                   Style="{StaticResource {x:Static l:Keys.SettingRowHeaderStyleKey}}"
-                                   Text="{TemplateBinding Header}" />
-
-                        <ContentPresenter x:Name="ValuePresenter"
-                                          Grid.Row="0"
-                                          Grid.Column="1"
-                                          ContentSource="Content" />
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}" />
+        <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
+        <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
+        <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowErrorStyleKey}}" />
     </Style>
 
     <Style TargetType="{x:Type l:EnumSettingControl}">
-        <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}" />
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type ComboBox}">
@@ -60,9 +24,6 @@
                 </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
-        <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
-        <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowErrorStyleKey}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SettingControlBase}">
@@ -72,7 +33,8 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition Width="Auto"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
                             <ColumnDefinition Width="Auto"
                                               MinWidth="{TemplateBinding ValueMinWidth}"
                                               SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
@@ -144,7 +106,6 @@
     </Style>
 
     <Style TargetType="{x:Type l:SelectorSettingControl}">
-        <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}" />
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type ComboBox}">
@@ -153,9 +114,7 @@
                 </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
-        <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
-        <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowErrorStyleKey}}" />
+
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SettingControlBase}">
@@ -165,7 +124,8 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition Width="Auto"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
                             <ColumnDefinition Width="Auto"
                                               MinWidth="{TemplateBinding ValueMinWidth}"
                                               SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
