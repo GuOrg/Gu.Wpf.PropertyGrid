@@ -67,6 +67,7 @@
 
             <propertyGrid:SpeedSettingControl Header="Speed (readonly)"
                                               IsReadOnly="True"
+                                              Unit="km/h"
                                               Value="{Binding SpeedValue}" />
 
             <propertyGrid:LengthSettingControl DecimalDigits="1"

@@ -14,7 +14,7 @@ namespace Gu.Wpf.PropertyGrid
             new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty CanValueBeNullProperty = NumericBox.CanValueBeNullProperty.AddOwner(
-            typeof (UnitSettingControl<TQuantity, TUnit>),
+            typeof(UnitSettingControl<TQuantity, TUnit>),
             new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty ScalarValueProperty = DependencyProperty.Register(
@@ -34,6 +34,14 @@ namespace Gu.Wpf.PropertyGrid
             typeof(double?),
             typeof(UnitSettingControl<TQuantity, TUnit>),
             new PropertyMetadata(default(double?), OnScalarMaxValueChanged));
+
+        private static readonly DependencyPropertyKey OldStringValuePropertyKey = DependencyProperty.RegisterReadOnly(
+            "OldStringValue",
+            typeof(string),
+            typeof(UnitSettingControl<TQuantity, TUnit>),
+            new PropertyMetadata(default(string)));
+
+        public static readonly DependencyProperty OldStringValueProperty = OldStringValuePropertyKey.DependencyProperty;
 
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
@@ -77,6 +85,12 @@ namespace Gu.Wpf.PropertyGrid
             set { this.SetValue(ScalarMaxValueProperty, value); }
         }
 
+        public string OldStringValue
+        {
+            get { return (string)this.GetValue(OldStringValueProperty); }
+            protected set { this.SetValue(OldStringValuePropertyKey, value); }
+        }
+
         public TUnit Unit
         {
             get { return (TUnit)this.GetValue(UnitProperty); }
@@ -101,6 +115,7 @@ namespace Gu.Wpf.PropertyGrid
             SetScalarValue(d, ScalarValueProperty, (TQuantity?)d.GetValue(ValueProperty));
             SetScalarValue(d, ScalarMinValueProperty, (TQuantity?)d.GetValue(MinValueProperty));
             SetScalarValue(d, ScalarMaxValueProperty, (TQuantity?)d.GetValue(MaxValueProperty));
+            control.UpdateOldText();
         }
 
         private static void OnSymbolFormatChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -122,6 +137,12 @@ namespace Gu.Wpf.PropertyGrid
         {
             SetScalarValue(this, ScalarValueProperty, (TQuantity?)newValue);
             base.OnValueChanged(oldValue, newValue);
+        }
+
+        protected override void OnOldValueChanged(object oldValue, object newValue)
+        {
+            base.OnOldValueChanged(oldValue, newValue);
+            this.UpdateOldText();
         }
 
         protected override void OnMinValueChanged(TQuantity? oldValue, TQuantity? newValue)
@@ -174,6 +195,12 @@ namespace Gu.Wpf.PropertyGrid
                 : (double?)null;
             control.SetCurrentValue(property, value);
             control.isUpdatingScalarValue = false;
+        }
+
+        private void UpdateOldText()
+        {
+            var text = (this.OldValue as TQuantity?)?.ToString(this.Unit, this.SymbolFormat) ?? string.Empty;
+            this.OldStringValue = text;
         }
     }
 }

@@ -164,6 +164,24 @@ namespace Gu.Wpf.PropertyGrid
 
         protected abstract DependencyProperty ValueDependencyProperty { get; }
 
+        protected static void OnValueChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
+        {
+            var c = (SettingControlBase)o;
+            c.OnValueChanged(e.OldValue, e.NewValue);
+            if (!Equals(c.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            {
+                c.IsDirty = !Equals(c.OldValue, e.NewValue);
+            }
+        }
+
+        protected virtual void OnValueChanged(object oldValue, object newValue)
+        {
+        }
+
+        protected virtual void OnOldValueChanged(object oldValue, object newValue)
+        {
+        }
+
         private static void OnOldDataContextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var controlBase = (SettingControlBase)d;
@@ -189,25 +207,12 @@ namespace Gu.Wpf.PropertyGrid
             }
         }
 
-        protected virtual void OnValueChanged(object oldValue, object newValue)
-        {
-        }
-
-        protected static void OnValueChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
-        {
-            var c = (SettingControlBase)o;
-            c.OnValueChanged(e.OldValue, e.NewValue);
-            if (!Equals(c.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
-            {
-                c.IsDirty = !Equals(c.OldValue, e.NewValue);
-            }
-        }
-
         private static void OnOldValueChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
             var sc = (SettingControlBase)o;
             var value = sc.GetValue(sc.ValueDependencyProperty);
             sc.IsDirty = !Equals(sc.OldValue, value);
+            sc.OnOldValueChanged(e.OldValue, e.NewValue);
         }
     }
 }

@@ -23,7 +23,14 @@
                 </Style>
             </Setter.Value>
         </Setter>
-
+        <Setter Property="OldValueStyle">
+            <Setter.Value>
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}"
+                       TargetType="{x:Type TextBlock}">
+                    <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}, StringFormat='Old value: {0}'}" />
+                </Style>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type propertyGrid:SettingControlBase}">
@@ -37,7 +44,7 @@
                             <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
                             <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
-                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility) -->
+                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header"
                                    Style="{TemplateBinding HeaderStyle}" />
 

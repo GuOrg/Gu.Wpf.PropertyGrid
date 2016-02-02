@@ -29,6 +29,7 @@
 
     <Style x:Key="{x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}"
            TargetType="{x:Type TextBlock}">
+        <Setter Property="Text" Value="{Binding OldValue, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}, StringFormat='Old value: {0}'}" />
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="TextAlignment" Value="Right" />
@@ -53,18 +54,13 @@
                                                                                              WhenNull=Collapsed,
                                                                                              WhenFalse=Collapsed}}" />
 
-
-        <TextBlock x:Name="OldValueBox"
-                   Style="{Binding OldValueStyle,
-                                   RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
-                   Visibility="{Binding IsDirty,
-                                        RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}},
-                                        Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
-                                                                                             WhenNull=Hidden,
-                                                                                             WhenFalse=Hidden}}">
-            <Run Text="OldValue: " />
-            <Run Text="{Binding OldValue, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
-        </TextBlock>
+        <TextBlock Style="{Binding OldValueStyle,
+                                 RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
+                 Visibility="{Binding IsDirty,
+                                      RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}},
+                                      Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
+                                                                                           WhenNull=Hidden,
+                                                                                           WhenFalse=Hidden}}" />
     </Grid>
 
     <Style x:Key="{x:Static propertyGrid:Keys.SettingRowInfoPresenterStyleKey}"

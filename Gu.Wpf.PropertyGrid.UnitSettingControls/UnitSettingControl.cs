@@ -1,6 +1,5 @@
 namespace Gu.Wpf.PropertyGrid
 {
-    using System;
     using System.Windows;
     using Gu.Units;
 
