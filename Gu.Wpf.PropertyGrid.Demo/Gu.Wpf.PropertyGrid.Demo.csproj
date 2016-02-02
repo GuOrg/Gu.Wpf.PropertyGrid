@@ -59,6 +59,9 @@
     <Compile Include="SettingsVm.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UsePropertyNamesAsHeadersView.xaml.cs">
+      <DependentUpon>UsePropertyNamesAsHeadersView.xaml</DependentUpon>
+    </Compile>
     <Page Include="ItemsControlSettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -76,6 +79,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsePropertyNamesAsHeadersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

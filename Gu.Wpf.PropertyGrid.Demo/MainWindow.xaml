@@ -4,15 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:propertyGrid="http://gu.se/PropertyGrid"
-        xmlns:propertyGrid1="clr-namespace:Gu.Wpf.PropertyGrid;assembly=Gu.Wpf.PropertyGrid"
         Title="MainWindow"
         Width="525"
         Height="350"
         mc:Ignorable="d">
     <TabControl>
-        <TabItem Header="">
-            <local:SettingsView></local:SettingsView>
+        <TabItem Header="Meh">
+            <local:SettingsView />
+        </TabItem>
+
+        <TabItem Header="Props as headers">
+            <local:UsePropertyNamesAsHeadersView />
         </TabItem>
     </TabControl>
 </Window>

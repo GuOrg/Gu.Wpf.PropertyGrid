@@ -5,6 +5,12 @@
 
     public class SettingsControl : ItemsControl
     {
+        public static readonly DependencyProperty UsePropertyNameAsHeaderProperty = SettingControl.UsePropertyNameAsHeaderProperty.AddOwner(
+                typeof(SettingsControl),
+                new FrameworkPropertyMetadata(
+                    BooleanBoxes.False,
+                    FrameworkPropertyMetadataOptions.Inherits | FrameworkPropertyMetadataOptions.NotDataBindable));
+
         public static readonly DependencyProperty OldDataContextProperty = SettingControl.OldDataContextProperty.AddOwner(
                 typeof(SettingsControl),
                 new FrameworkPropertyMetadata(default(object), FrameworkPropertyMetadataOptions.Inherits));
@@ -41,6 +47,12 @@
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SettingsControl), new FrameworkPropertyMetadata(typeof(SettingsControl)));
             FocusableProperty.OverrideMetadata(typeof(SettingsControl), new FrameworkPropertyMetadata(BooleanBoxes.False));
+        }
+
+        public bool UsePropertyNameAsHeader
+        {
+            get { return (bool)this.GetValue(UsePropertyNameAsHeaderProperty); }
+            set { this.SetValue(UsePropertyNameAsHeaderProperty, value); }
         }
 
         public object OldDataContext

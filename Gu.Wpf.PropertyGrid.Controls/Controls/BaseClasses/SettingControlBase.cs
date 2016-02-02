@@ -1,11 +1,19 @@
 namespace Gu.Wpf.PropertyGrid
 {
+    using System;
+    using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Data;
 
     public abstract class SettingControlBase : Control
     {
+        public static readonly DependencyProperty UsePropertyNameAsHeaderProperty = SettingControl.UsePropertyNameAsHeaderProperty.AddOwner(
+                typeof(SettingControlBase),
+                new FrameworkPropertyMetadata(
+                    BooleanBoxes.False,
+                    FrameworkPropertyMetadataOptions.Inherits | FrameworkPropertyMetadataOptions.NotDataBindable));
+
         public static readonly DependencyProperty OldDataContextProperty = SettingControl.OldDataContextProperty.AddOwner(
                 typeof(SettingControlBase),
                 new FrameworkPropertyMetadata(default(object), FrameworkPropertyMetadataOptions.Inherits, OnOldDataContextChanged));
@@ -76,6 +84,12 @@ namespace Gu.Wpf.PropertyGrid
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SettingControlBase), new FrameworkPropertyMetadata(typeof(SettingControlBase)));
             FocusableProperty.OverrideMetadata(typeof(SettingControlBase), new FrameworkPropertyMetadata(false));
+        }
+
+        public bool UsePropertyNameAsHeader
+        {
+            get { return (bool)this.GetValue(UsePropertyNameAsHeaderProperty); }
+            set { this.SetValue(UsePropertyNameAsHeaderProperty, value); }
         }
 
         public object OldDataContext
@@ -180,6 +194,20 @@ namespace Gu.Wpf.PropertyGrid
 
         protected virtual void OnOldValueChanged(object oldValue, object newValue)
         {
+        }
+
+        protected override void OnInitialized(EventArgs e)
+        {
+            base.OnInitialized(e);
+            if (string.IsNullOrEmpty(this.Header) && this.UsePropertyNameAsHeader)
+            {
+                var binding = BindingOperations.GetBinding(this, this.ValueDependencyProperty);
+                if (binding != null)
+                {
+                    var value = binding?.Path.Path.Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries).Last();
+                    this.SetCurrentValue(HeaderProperty, value);
+                }
+            }
         }
 
         private static void OnOldDataContextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

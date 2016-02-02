@@ -4,6 +4,14 @@ namespace Gu.Wpf.PropertyGrid
 
     public static class SettingControl
     {
+        public static readonly DependencyProperty UsePropertyNameAsHeaderProperty = DependencyProperty.RegisterAttached(
+            "UsePropertyNameAsHeader",
+            typeof(bool),
+            typeof(SettingControl),
+            new FrameworkPropertyMetadata(
+                BooleanBoxes.False,
+                FrameworkPropertyMetadataOptions.Inherits | FrameworkPropertyMetadataOptions.NotDataBindable));
+
         public static readonly DependencyProperty OldDataContextProperty = DependencyProperty.RegisterAttached(
             "OldDataContext",
             typeof(object),
@@ -63,6 +71,18 @@ namespace Gu.Wpf.PropertyGrid
             typeof(bool),
             typeof(SettingControl),
             new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
+
+        public static void SetUsePropertyNameAsHeader(this UIElement element, bool value)
+        {
+            element.SetValue(UsePropertyNameAsHeaderProperty, value);
+        }
+
+        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
+        [AttachedPropertyBrowsableForType(typeof(UIElement))]
+        public static bool GetUsePropertyNameAsHeader(this UIElement element)
+        {
+            return (bool)element.GetValue(UsePropertyNameAsHeaderProperty);
+        }
 
         public static void SetOldDataContext(this UIElement element, object value)
         {
