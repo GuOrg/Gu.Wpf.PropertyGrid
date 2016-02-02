@@ -5,6 +5,8 @@
 
     public static class Keys
     {
+        public static ResourceKey RootGridStyleKey { get; } = CreateKey();
+
         public static ResourceKey ItemsControlSettingListStyleKey { get; } = CreateKey();
 
         public static ResourceKey ItemsControlNestedSettingListStyleKey { get; } = CreateKey();
