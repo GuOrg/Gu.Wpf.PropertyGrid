@@ -30,14 +30,9 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"
-                                              SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.LabelColumn}" />
-                            <ColumnDefinition Width="Auto"
-                                              MinWidth="{TemplateBinding ValueMinWidth}"
-                                              SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="Auto"
-                                              MinWidth="{TemplateBinding SuffixMinWidth}"
-                                              SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.SuffixColumn}" />
+                            <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
 
                         <TextBlock x:Name="Header"

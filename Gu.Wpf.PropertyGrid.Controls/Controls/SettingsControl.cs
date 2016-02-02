@@ -21,17 +21,9 @@
             typeof(SettingsControl),
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty ValueMinWidthProperty = SettingControl.ValueMinWidthProperty.AddOwner(
-            typeof(SettingsControl),
-            new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
-
         public static readonly DependencyProperty SuffixStyleProperty = SettingControl.SuffixStyleProperty.AddOwner(
             typeof(SettingsControl),
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty SuffixMinWidthProperty = SettingControl.SuffixMinWidthProperty.AddOwner(
-            typeof(SettingsControl),
-            new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty InfoPresenterStyleProperty = SettingControl.InfoPresenterStyleProperty.AddOwner(
                 typeof(SettingsControl),
@@ -75,22 +67,10 @@
             set { this.SetValue(ValueStyleProperty, value); }
         }
 
-        public double ValueMinWidth
-        {
-            get { return (double)this.GetValue(ValueMinWidthProperty); }
-            set { this.SetValue(ValueMinWidthProperty, value); }
-        }
-
         public Style SuffixStyle
         {
             get { return (Style)this.GetValue(SuffixStyleProperty); }
             set { this.SetValue(SuffixStyleProperty, value); }
-        }
-
-        public double SuffixMinWidth
-        {
-            get { return (double)this.GetValue(SuffixMinWidthProperty); }
-            set { this.SetValue(SuffixMinWidthProperty, value); }
         }
 
         public Style InfoPresenterStyle
