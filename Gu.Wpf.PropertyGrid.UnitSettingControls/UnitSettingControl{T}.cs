@@ -1,13 +1,32 @@
 namespace Gu.Wpf.PropertyGrid
 {
     using System;
+    using System.Runtime.CompilerServices;
     using System.Windows;
     using Gu.Units;
 
-    public abstract class UnitSettingControl<TQuantity, TUnit> : NumericSettingControl<TQuantity>, IScalarQuantities
+    public abstract class UnitSettingControl<TQuantity, TUnit> : NumericSettingControl<TQuantity>
         where TQuantity : struct, IComparable<TQuantity>, IQuantity<TUnit>
         where TUnit : IUnit<TQuantity>
     {
+        public static readonly DependencyProperty ScalarValueProperty = DependencyProperty.Register(
+            "ScalarValue",
+            typeof(double?),
+            typeof(UnitSettingControl<TQuantity, TUnit>),
+            new PropertyMetadata(default(double?), OnScalarValueChanged));
+
+        public static readonly DependencyProperty ScalarMinValueProperty = DependencyProperty.Register(
+            "ScalarMinValue",
+            typeof(double?),
+            typeof(UnitSettingControl<TQuantity, TUnit>),
+            new PropertyMetadata(default(double?), OnScalarMinValueChanged));
+
+        public static readonly DependencyProperty ScalarMaxValueProperty = DependencyProperty.Register(
+            "ScalarMaxValue",
+            typeof(double?),
+            typeof(UnitSettingControl<TQuantity, TUnit>),
+            new PropertyMetadata(default(double?), OnScalarMaxValueChanged));
+
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(TUnit),
@@ -17,6 +36,24 @@ namespace Gu.Wpf.PropertyGrid
         public static readonly DependencyProperty SymbolFormatProperty = UnitSettingControl.SymbolFormatProperty.AddOwner(
             typeof(UnitSettingControl<TQuantity, TUnit>),
             new FrameworkPropertyMetadata(UnitSettingControl.DefaultSymbolFormat, FrameworkPropertyMetadataOptions.Inherits, OnSymbolFormatChanged));
+
+        public double? ScalarValue
+        {
+            get { return (double?)this.GetValue(ScalarValueProperty); }
+            set { this.SetValue(ScalarValueProperty, value); }
+        }
+
+        public double? ScalarMinValue
+        {
+            get { return (double?)this.GetValue(ScalarMinValueProperty); }
+            set { this.SetValue(ScalarMinValueProperty, value); }
+        }
+
+        public double? ScalarMaxValue
+        {
+            get { return (double?)this.GetValue(ScalarMaxValueProperty); }
+            set { this.SetValue(ScalarMaxValueProperty, value); }
+        }
 
         public TUnit Unit
         {
@@ -39,15 +76,9 @@ namespace Gu.Wpf.PropertyGrid
                 control.Suffix = CreateSuffix((TUnit)e.NewValue, control.SymbolFormat);
             }
 
-            if (control.Value == null)
-            {
-                Scalar.SetValue(control, null);
-            }
-            else
-            {
-                var scalarValue = control.Unit.GetScalarValue(control.Value.Value);
-                Scalar.SetValue(control, scalarValue);
-            }
+            SetScalarValue(d, ScalarValueProperty, (TQuantity?)d.GetValue(ValueProperty));
+            SetScalarValue(d, ScalarMinValueProperty, (TQuantity?)d.GetValue(MinValueProperty));
+            SetScalarValue(d, ScalarMaxValueProperty, (TQuantity?)d.GetValue(MaxValueProperty));
         }
 
         private static void OnSymbolFormatChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -67,30 +98,53 @@ namespace Gu.Wpf.PropertyGrid
 
         protected override void OnValueChanged(object oldValue, object newValue)
         {
-            if (newValue != null)
-            {
-                var scalarValue = this.Unit.GetScalarValue((TQuantity)newValue);
-                Scalar.SetValue(this, scalarValue);
-            }
-            else
-            {
-                Scalar.SetValue(this, null);
-            }
-
+            SetScalarValue(this, ScalarValueProperty, (TQuantity?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
-        void IScalarQuantities.SetValue(double? value)
+        protected override void OnMinValueChanged(TQuantity? oldValue, TQuantity? newValue)
         {
-            if (value == null)
-            {
-                this.SetCurrentValue(ValueProperty, null);
-            }
-            else
-            {
-                var quantity = this.Unit.CreateQuantity(value.Value);
-                this.SetCurrentValue(ValueProperty, quantity);
-            }
+            SetScalarValue(this, ScalarMinValueProperty, newValue);
+            base.OnMinValueChanged(oldValue, newValue);
+        }
+
+        protected override void OnMaxValueChanged(TQuantity? oldValue, TQuantity? newValue)
+        {
+            SetScalarValue(this, ScalarMaxValueProperty, newValue);
+            base.OnMaxValueChanged(oldValue, newValue);
+        }
+
+        private static void OnScalarValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            SetQuantityValue(d, ValueProperty, (double?)e.NewValue);
+        }
+
+        private static void OnScalarMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            SetQuantityValue(d, MinValueProperty, (double?)e.NewValue);
+        }
+
+        private static void OnScalarMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            SetQuantityValue(d, MaxValueProperty, (double?)e.NewValue);
+        }
+
+        private static void SetQuantityValue(DependencyObject o, DependencyProperty property, double? value)
+        {
+            var control = (UnitSettingControl<TQuantity, TUnit>)o;
+            var qty = value != null
+                ? control.Unit.CreateQuantity(value.Value)
+                : (TQuantity?)null;
+            control.SetCurrentValue(property, qty);
+        }
+
+        private static void SetScalarValue(DependencyObject o, DependencyProperty property, TQuantity? quantity)
+        {
+            var control = (UnitSettingControl<TQuantity, TUnit>)o;
+            var value = quantity != null
+                ? control.Unit.GetScalarValue(quantity.Value)
+                : (double?)null;
+            control.SetCurrentValue(property, value);
         }
     }
 }

@@ -12,8 +12,7 @@
     </UserControl.DataContext>
     <Grid>
         <propertyGrid:SettingsControl>
-            <propertyGrid:LengthSettingControl Header="Length (mm)"
-                                               Value="{Binding LengthValue}" />
+            <propertyGrid:LengthSettingControl Header="Length (mm)" Value="{Binding LengthValue}" />
 
             <propertyGrid:SelectorSettingControl Header="Units"
                                                  ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"

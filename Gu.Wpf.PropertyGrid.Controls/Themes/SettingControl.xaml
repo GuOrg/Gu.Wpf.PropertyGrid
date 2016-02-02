@@ -5,7 +5,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <Style x:Key="{x:Static l:Keys.SettingRowBaseStyle}" TargetType="{x:Type Control}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Focusable" Value="False" />

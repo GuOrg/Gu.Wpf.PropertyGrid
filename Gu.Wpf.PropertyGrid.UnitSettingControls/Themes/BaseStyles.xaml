@@ -6,15 +6,17 @@
 
     <Style x:Key="{x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}" TargetType="{x:Type propertyGrid:SettingControlBase}">
         <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowHeaderStyleKey}}" />
-        <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowSuffixStyleKey}}" />
-        <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" />
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type numeric:DoubleBox}">
-                    <Setter Property="Value" Value="{Binding Path=(l:Scalar.Value), RelativeSource={RelativeSource TemplatedParent}}" />
+                    <Setter Property="Value" Value="{Binding ScalarValue, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <Setter Property="MinValue" Value="{Binding ScalarMinValue, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <Setter Property="MaxValue" Value="{Binding ScalarMaxValue, RelativeSource={RelativeSource TemplatedParent}}" />
                 </Style>
             </Setter.Value>
         </Setter>
+        <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowSuffixStyleKey}}" />
+        <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" />
         <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static propertyGrid:Keys.SettingRowErrorStyleKey}}" />
         <Setter Property="Template">
             <Setter.Value>

@@ -61,8 +61,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Scalar.cs" />
-    <Compile Include="IScalarQuantities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

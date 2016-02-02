@@ -12,22 +12,28 @@
             typeof(NumericSettingControl<T>),
             new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
-            "MaxValue",
-            typeof(T?),
-            typeof(NumericSettingControl<T>),
-            new PropertyMetadata(null));
-
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(T?),
             typeof(NumericSettingControl<T>),
-            new PropertyMetadata(null));
+            new PropertyMetadata(null, OnMinValueChanged));
+
+        public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
+            "MaxValue",
+            typeof(T?),
+            typeof(NumericSettingControl<T>),
+            new PropertyMetadata(null, OnMaxValueChanged));
 
         public int DecimalDigits
         {
             get { return (int)this.GetValue(DecimalDigitsProperty); }
             set { this.SetValue(DecimalDigitsProperty, value); }
+        }
+
+        public T? MinValue
+        {
+            get { return (T?)this.GetValue(MinValueProperty); }
+            set { this.SetValue(MinValueProperty, value); }
         }
 
         public T? MaxValue
@@ -36,10 +42,23 @@
             set { this.SetValue(MaxValueProperty, value); }
         }
 
-        public T? MinValue
+        protected virtual void OnMinValueChanged(T? oldValue, T? newValue)
         {
-            get { return (T?)this.GetValue(MinValueProperty); }
-            set { this.SetValue(MinValueProperty, value); }
+        }
+
+        protected virtual void OnMaxValueChanged(T? oldValue, T? newValue)
+        {
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((NumericSettingControl<T>)d).OnMinValueChanged((T?)e.OldValue, (T?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((NumericSettingControl<T>)d).OnMaxValueChanged((T?)e.OldValue, (T?)e.NewValue);
+
         }
     }
 }
