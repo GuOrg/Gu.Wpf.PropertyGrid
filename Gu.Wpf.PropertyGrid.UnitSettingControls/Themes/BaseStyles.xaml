@@ -2,12 +2,18 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:numeric="http://gu.se/NumericInput"
                     xmlns:propertyGrid="http://gu.se/PropertyGrid">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/SettingControl.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
     <Style x:Key="{x:Static propertyGrid:Keys.UnitSettingBaseStyleKey}"
-           TargetType="{x:Type propertyGrid:SettingControlBase}">
+           TargetType="{x:Type propertyGrid:SettingControlBase}"
+           BasedOn="{StaticResource {x:Type propertyGrid:SettingControlBase}}">
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type numeric:DoubleBox}">
                     <Setter Property="DecimalDigits" Value="{Binding DecimalDigits, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <Setter Property="ValidationTrigger" Value="PropertyChanged" />
                     <Setter Property="Value" Value="{Binding ScalarValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MinValue" Value="{Binding ScalarMinValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MaxValue" Value="{Binding ScalarMaxValue, RelativeSource={RelativeSource TemplatedParent}}" />
@@ -51,45 +57,11 @@
                                    Style="{TemplateBinding SuffixStyle}"
                                    Text="{TemplateBinding Suffix}" />
 
-                        <Grid x:Name="InfoGrid"
-                              Grid.Row="1"
-                              Grid.Column="0"
-                              Grid.ColumnSpan="2"
-                              HorizontalAlignment="Right"
-                              TextElement.FontSize="12">
-                            <TextBlock HorizontalAlignment="Right"
-                                       Foreground="LightGray"
-                                       Text="missing"
-                                       Visibility="{Binding Path=IsDirty,
-                                                            RelativeSource={RelativeSource TemplatedParent},
-                                                            Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Collapsed,
-                                                                                                                 WhenNull=Visible,
-                                                                                                                 WhenFalse=Collapsed}}" />
-
-
-                            <!--<TextBlock x:Name="ErrorTextBox"
-                                       HorizontalAlignment="Right"
-                                       DataContext="{Binding ElementName=ValueBox}"
-                                       Foreground="Red"
-                                       Text="error"
-                                       Visibility="{Binding Path=(Validation.HasError),
-                                                            ElementName=ValueBox,
-                                                            Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
-                                                                                                                 WhenNull=Collapsed,
-                                                                                                                 WhenFalse=Collapsed}}" />-->
-
-
-                            <TextBlock x:Name="OldValueBox"
-                                       HorizontalAlignment="Right"
-                                       Style="{TemplateBinding OldValueStyle}"
-                                       Visibility="{TemplateBinding IsDirty,
-                                                                    Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
-                                                                                                                         WhenNull=Hidden,
-                                                                                                                         WhenFalse=Hidden}}">
-                                <Run Text="OldValue: " />
-                                <Run Text="{Binding OldValue, RelativeSource={RelativeSource TemplatedParent}}" />
-                            </TextBlock>
-                        </Grid>
+                        <ContentPresenter x:Name="InfoPresenter"
+                                          Grid.Row="1"
+                                          Grid.Column="0"
+                                          Grid.ColumnSpan="2"
+                                          Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

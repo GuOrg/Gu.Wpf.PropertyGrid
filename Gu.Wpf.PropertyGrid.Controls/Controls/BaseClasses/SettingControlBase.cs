@@ -6,8 +6,6 @@ namespace Gu.Wpf.PropertyGrid
 
     public abstract class SettingControlBase : Control
     {
-        protected static readonly string OldValueNotSet = nameof(OldValueNotSet);
-
         public static readonly DependencyProperty OldDataContextProperty = SettingControl.OldDataContextProperty.AddOwner(
                 typeof(SettingControlBase),
                 new FrameworkPropertyMetadata(default(object), FrameworkPropertyMetadataOptions.Inherits, OnOldDataContextChanged));
@@ -28,7 +26,7 @@ namespace Gu.Wpf.PropertyGrid
             "OldValue",
             typeof(object),
             typeof(SettingControlBase),
-            new PropertyMetadata(OldValueNotSet, OnOldValueChanged));
+            new PropertyMetadata("OldValueNotSet", OnOldValueChanged));
 
         public static readonly DependencyProperty IsReadOnlyProperty = SettingControl.IsReadOnlyProperty.AddOwner(
             typeof(SettingControlBase),
@@ -53,6 +51,10 @@ namespace Gu.Wpf.PropertyGrid
         public static readonly DependencyProperty SuffixMinWidthProperty = SettingControl.SuffixMinWidthProperty.AddOwner(
             typeof(SettingControlBase),
             new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
+
+        public static readonly DependencyProperty InfoPresenterStyleProperty = SettingControl.InfoPresenterStyleProperty.AddOwner(
+            typeof(SettingControlBase),
+            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty OldValueStyleProperty = SettingControl.OldValueStyleProperty.AddOwner(
             typeof(SettingControlBase),
@@ -136,6 +138,12 @@ namespace Gu.Wpf.PropertyGrid
             set { this.SetValue(SuffixStyleProperty, value); }
         }
 
+        public Style InfoPresenterStyle
+        {
+            get { return (Style)this.GetValue(InfoPresenterStyleProperty); }
+            set { this.SetValue(InfoPresenterStyleProperty, value); }
+        }
+
         public Style OldValueStyle
         {
             get { return (Style)this.GetValue(OldValueStyleProperty); }
@@ -189,7 +197,7 @@ namespace Gu.Wpf.PropertyGrid
         {
             var c = (SettingControlBase)o;
             c.OnValueChanged(e.OldValue, e.NewValue);
-            if (!Equals(c.OldValue, OldValueNotSet))
+            if (!Equals(c.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
             {
                 c.IsDirty = !Equals(c.OldValue, e.NewValue);
             }

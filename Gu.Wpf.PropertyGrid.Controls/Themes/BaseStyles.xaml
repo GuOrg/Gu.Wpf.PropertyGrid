@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid">
     <Style x:Key="{x:Static propertyGrid:Keys.SettingRowHeaderStyleKey}"
-           TargetType="{x:Type TextBlock}" >
+           TargetType="{x:Type TextBlock}">
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="0,0,8,0" />
     </Style>
@@ -27,5 +27,43 @@
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="TextAlignment" Value="Right" />
         <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <Grid x:Key="InfoGrid"
+          x:Name="InfoGrid"
+          HorizontalAlignment="Right"
+          TextElement.FontSize="12"
+          x:Shared="False">
+
+        <TextBlock x:Name="ErrorTextBox"
+                   HorizontalAlignment="Right"
+                   Foreground="Red"
+                   Text="{Binding Path=(Validation.Errors),
+                                  Converter={propertyGrid:FirstOrDefaultConverter},
+                                  ElementName=ValueBox}"
+                   Visibility="{Binding Path=(Validation.HasError),
+                                        ElementName=ValueBox,
+                                        Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
+                                                                                             WhenNull=Collapsed,
+                                                                                             WhenFalse=Collapsed}}" />
+
+
+        <TextBlock x:Name="OldValueBox"
+                   HorizontalAlignment="Right"
+                   Style="{Binding OldValueStyle,
+                                   RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
+                   Visibility="{Binding IsDirty,
+                                        RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}},
+                                        Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
+                                                                                             WhenNull=Hidden,
+                                                                                             WhenFalse=Hidden}}">
+            <Run Text="OldValue: " />
+            <Run Text="{Binding OldValue, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
+        </TextBlock>
+    </Grid>
+
+    <Style x:Key="{x:Static propertyGrid:Keys.SettingRowInfoPresenterStyleKey}"
+           TargetType="{x:Type ContentPresenter}">
+        <Setter Property="Content" Value="{StaticResource InfoGrid}" />
     </Style>
 </ResourceDictionary>

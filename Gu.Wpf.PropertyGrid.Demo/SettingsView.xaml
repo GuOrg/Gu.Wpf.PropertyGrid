@@ -21,6 +21,14 @@
             <propertyGrid:LengthSettingControl Header="Length"
                                                Value="{Binding LengthValue}" />
 
+            <propertyGrid:LengthSettingControl Header="Length"
+                                               IsReadOnly="True"
+                                               Value="{Binding LengthValue}" />
+
+            <propertyGrid:LengthSettingControl Header="Length"
+                                               IsEnabled="False"
+                                               Value="{Binding LengthValue}" />
+
             <propertyGrid:EnumSettingControl Header="StringFormat"
                                              Value="{Binding CurrentStringComparison}" />
 

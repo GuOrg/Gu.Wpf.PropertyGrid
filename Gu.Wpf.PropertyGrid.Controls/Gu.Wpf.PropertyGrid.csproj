@@ -46,6 +46,7 @@
     <Compile Include="Controls\EnumSettingControl.cs" />
     <Compile Include="Controls\SelectorSettingControl.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\FirstOrDefaultConverter.cs" />
     <Compile Include="Internals\BooleanBoxes.cs" />
     <Compile Include="Controls\BoolSettingControl.cs" />
     <Compile Include="Controls\BaseClasses\NumericSettingControl.cs" />

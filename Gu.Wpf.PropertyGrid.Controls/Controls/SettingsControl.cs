@@ -33,6 +33,10 @@
             typeof(SettingsControl),
             new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
 
+        public static readonly DependencyProperty InfoPresenterStyleProperty = SettingControl.InfoPresenterStyleProperty.AddOwner(
+                typeof(SettingsControl),
+                new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+
         public static readonly DependencyProperty OldValueStyleProperty = SettingControl.OldValueStyleProperty.AddOwner(
             typeof(SettingsControl),
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
@@ -87,6 +91,12 @@
         {
             get { return (double)this.GetValue(SuffixMinWidthProperty); }
             set { this.SetValue(SuffixMinWidthProperty, value); }
+        }
+
+        public Style InfoPresenterStyle
+        {
+            get { return (Style)this.GetValue(InfoPresenterStyleProperty); }
+            set { this.SetValue(InfoPresenterStyleProperty, value); }
         }
 
         public Style OldValueStyle

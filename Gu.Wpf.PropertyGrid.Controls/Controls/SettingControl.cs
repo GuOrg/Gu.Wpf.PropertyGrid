@@ -40,6 +40,12 @@ namespace Gu.Wpf.PropertyGrid
             typeof(SettingControl),
             new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
 
+        public static readonly DependencyProperty InfoPresenterStyleProperty = DependencyProperty.RegisterAttached(
+            "InfoPresenterStyle",
+            typeof(Style),
+            typeof(SettingControl),
+            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+
         public static readonly DependencyProperty OldValueStyleProperty = DependencyProperty.RegisterAttached(
             "OldValueStyle",
             typeof(Style),
@@ -128,6 +134,17 @@ namespace Gu.Wpf.PropertyGrid
         public static double GetSuffixMinWidth(this UIElement element)
         {
             return (double)element.GetValue(SuffixMinWidthProperty);
+        }
+        public static void SetInfoPresenterStyle(this UIElement element, Style value)
+        {
+            element.SetValue(InfoPresenterStyleProperty, value);
+        }
+
+        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
+        [AttachedPropertyBrowsableForType(typeof(UIElement))]
+        public static Style GetInfoPresenterStyle(this UIElement element)
+        {
+            return (Style)element.GetValue(InfoPresenterStyleProperty);
         }
 
         public static void SetOldValueStyle(this UIElement element, Style value)
