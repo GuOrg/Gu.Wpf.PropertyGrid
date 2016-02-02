@@ -47,7 +47,8 @@ Renders:
 ```
 
 ##### Style
-When used in a style either the style must have `x:Shared` or the rows and columns can be declared with `x:Shared` like this:
+When used in a style either the style must have `x:Shared="False"` or the rows and columns can be declared with `x:Shared="False"` like this:
+About [x:Shared](https://msdn.microsoft.com/en-us/library/aa970778(v=vs.110).aspx) in short it means that instances in resources are not reused.
 
 ```
 <propertyGrid:RowDefinitions x:Key="RowDefinitions" x:Shared="False">
