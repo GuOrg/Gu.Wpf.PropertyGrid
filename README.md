@@ -32,3 +32,45 @@ Small lib with styles for using ItemsControl as a property grid.
 Renders:
 
 ![Render](http://i.imgur.com/uUQ5flQ.png)
+
+## AttachedProperties
+### Grid
+##### Xaml sample
+```
+<Grid p:Grid.ColumnDefinitions="* *" p:Grid.RowDefinitions="* *">
+    <Rectangle Grid.Row="0"
+                Grid.Column="0"
+                Fill="Blue" />
+    <Rectangle p:Grid.Cell="1 1"
+                Fill="Yellow" />
+</Grid>
+```
+
+##### Style
+When used in a style either the style must have `x:Shared` or the rows and columns can be declared with `x:Shared` like this:
+
+```
+<propertyGrid:RowDefinitions x:Key="RowDefinitions" x:Shared="False">
+    <RowDefinition Height="Auto" />
+    <RowDefinition Height="Auto" />
+</propertyGrid:RowDefinitions>
+
+<propertyGrid:ColumnDefinitions x:Key="ColumnDefinitions" x:Shared="False">
+    <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.LabelColumn}" />
+    <ColumnDefinition MinWidth="{Binding Path=(propertyGrid:SettingControl.ValueMinWidth),
+                                            RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
+                        MaxWidth="{Binding Path=(propertyGrid:SettingControl.ValueMaxWidth),
+                                            RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
+                        SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
+    <ColumnDefinition MinWidth="{Binding Path=(propertyGrid:SettingControl.SuffixMinWidth),
+                                            RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
+                        MaxWidth="{Binding Path=(propertyGrid:SettingControl.SuffixMaxWidth),
+                                            RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
+                        SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.SuffixColumn}" />
+</propertyGrid:ColumnDefinitions>
+
+<Style x:Key="{x:Static propertyGrid:Keys.RootGridStyleKey}" TargetType="{x:Type Grid}">
+    <Setter Property="propertyGrid:Grid.RowDefinitions" Value="{StaticResource RowDefinitions}" />
+    <Setter Property="propertyGrid:Grid.ColumnDefinitions" Value="{StaticResource ColumnDefinitions}" />
+</Style>
+```
