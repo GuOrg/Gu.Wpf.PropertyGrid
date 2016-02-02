@@ -53,6 +53,8 @@
             element.SetValue(RowDefinitionsProperty, value);
         }
 
+        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
+        [AttachedPropertyBrowsableForType(typeof(Grid))]
         public static RowDefinitions GetRowDefinitions(System.Windows.Controls.Grid element)
         {
             return (RowDefinitions)element.GetValue(RowDefinitionsProperty);
@@ -63,6 +65,8 @@
             element.SetValue(ColumnDefinitionsProperty, value);
         }
 
+        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
+        [AttachedPropertyBrowsableForType(typeof(Grid))]
         public static ColumnDefinitions GetColumnDefinitions(System.Windows.Controls.Grid element)
         {
             return (ColumnDefinitions)element.GetValue(ColumnDefinitionsProperty);
