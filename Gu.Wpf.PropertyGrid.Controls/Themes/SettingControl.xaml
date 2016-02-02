@@ -55,8 +55,8 @@
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type ComboBox}">
-                    <Setter Property="SelectedItem" Value="{Binding Value, RelativeSource={RelativeSource TemplatedParent}}" />
-                    <Setter Property="ItemsSource" Value="{Binding ItemsSource, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" />
+                    <Setter Property="SelectedItem" Value="{Binding Value, RelativeSource={RelativeSource AncestorType={x:Type l:EnumSettingControl}}}" />
+                    <Setter Property="ItemsSource" Value="{Binding EnumValues, RelativeSource={RelativeSource AncestorType={x:Type l:EnumSettingControl}}, Mode=OneWay}" />
                 </Style>
             </Setter.Value>
         </Setter>
@@ -148,8 +148,8 @@
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type ComboBox}">
-                    <Setter Property="SelectedItem" Value="{Binding Value, RelativeSource={RelativeSource TemplatedParent}}" />
-                    <Setter Property="ItemsSource" Value="{Binding ItemsSource, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" />
+                    <Setter Property="SelectedItem" Value="{Binding Value, RelativeSource={RelativeSource AncestorType={x:Type l:SelectorSettingControl}}}" />
+                    <Setter Property="ItemsSource" Value="{Binding ItemsSource, RelativeSource={RelativeSource AncestorType={x:Type l:SelectorSettingControl}}, Mode=OneWay}" />
                 </Style>
             </Setter.Value>
         </Setter>
