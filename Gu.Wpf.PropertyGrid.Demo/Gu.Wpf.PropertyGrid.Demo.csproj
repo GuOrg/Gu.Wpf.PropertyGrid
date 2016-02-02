@@ -49,6 +49,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DummySettings.cs" />
+    <Compile Include="GridSandBoxView.xaml.cs">
+      <DependentUpon>GridSandBoxView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ItemsControlSettingsView.xaml.cs">
       <DependentUpon>ItemsControlSettingsView.xaml</DependentUpon>
     </Compile>
@@ -62,6 +65,10 @@
     <Compile Include="UsePropertyNamesAsHeadersView.xaml.cs">
       <DependentUpon>UsePropertyNamesAsHeadersView.xaml</DependentUpon>
     </Compile>
+    <Page Include="GridSandBoxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ItemsControlSettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

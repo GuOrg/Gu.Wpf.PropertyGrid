@@ -1,6 +1,8 @@
 ﻿namespace Gu.Wpf.PropertyGrid
 {
+    using System.Collections.Generic;
     using System.Windows;
+    using System.Windows.Controls;
 
     public static class Grid
     {
@@ -22,6 +24,12 @@
                 FrameworkPropertyMetadataOptions.NotDataBindable,
                 OnColumnDefinitionsChanged));
 
+        private static readonly DependencyProperty IsAutoProperty = DependencyProperty.RegisterAttached(
+            "IsAuto",
+            typeof(bool),
+            typeof(Grid),
+            new PropertyMetadata(BooleanBoxes.False));
+
         public static void SetRowDefinitions(System.Windows.Controls.Grid element, RowDefinitions value)
         {
             element.SetValue(RowDefinitionsProperty, value);
@@ -42,9 +50,21 @@
             return (ColumnDefinitions)element.GetValue(ColumnDefinitionsProperty);
         }
 
+        private static void SetIsAuto(this DefinitionBase element, bool value)
+        {
+            element.SetValue(IsAutoProperty, BooleanBoxes.Box(value));
+        }
+
+        private static bool GetIsAuto(this DefinitionBase element)
+        {
+            return (bool)element.GetValue(IsAutoProperty);
+        }
+
         private static void OnRowDefinitionsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var grid = (System.Windows.Controls.Grid)d;
+            grid.RowDefinitions.RemoveAllAuto();
+
             var rowDefinitions = (RowDefinitions)e.NewValue;
             if (rowDefinitions == null)
             {
@@ -53,6 +73,7 @@
 
             foreach (var rowDefinition in rowDefinitions)
             {
+                rowDefinition.SetIsAuto(true);
                 grid.RowDefinitions.Add(rowDefinition);
             }
         }
@@ -60,6 +81,8 @@
         private static void OnColumnDefinitionsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var grid = (System.Windows.Controls.Grid)d;
+            grid.ColumnDefinitions.RemoveAllAuto();
+
             var columnDefinitions = (ColumnDefinitions)e.NewValue;
             if (columnDefinitions == null)
             {
@@ -68,7 +91,20 @@
 
             foreach (var columnDefinition in columnDefinitions)
             {
+                columnDefinition.SetIsAuto(true);
                 grid.ColumnDefinitions.Add(columnDefinition);
+            }
+        }
+
+        private static void RemoveAllAuto<T>(this IList<T> definitions)
+            where T : DefinitionBase
+        {
+            for (int i = definitions.Count - 1; i >= 0; i--)
+            {
+                if (Equals(definitions[i].GetIsAuto(), BooleanBoxes.True))
+                {
+                    definitions.RemoveAt(i);
+                }
             }
         }
     }
