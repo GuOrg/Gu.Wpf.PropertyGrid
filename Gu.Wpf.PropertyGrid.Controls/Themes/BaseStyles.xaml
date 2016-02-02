@@ -31,11 +31,11 @@
         <Setter Property="TextAlignment" Value="Right" />
     </Style>
 
-    <Style x:Key="{x:Static propertyGrid:Keys.RootGridStyleKey}" TargetType="{x:Type Grid}">
+    <Style x:Key="{x:Static propertyGrid:Keys.RootGridStyleKey}" TargetType="{x:Type Grid}" x:Shared="False">
         <Setter Property="propertyGrid:Grid.RowDefinitions">
             <Setter.Value>
                 <propertyGrid:RowDefinitions>
-                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto"  />
                     <RowDefinition Height="Auto" />
                 </propertyGrid:RowDefinitions>
             </Setter.Value>

@@ -29,16 +29,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SettingControlBase}">
-                    <Grid Margin="{TemplateBinding Padding}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
-                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
-                        </Grid.ColumnDefinitions>
+                    <Grid Margin="{TemplateBinding Padding}"
+                          Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -67,16 +59,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SettingControlBase}">
-                    <Grid Margin="{TemplateBinding Padding}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
-                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
-                        </Grid.ColumnDefinitions>
+                    <Grid Margin="{TemplateBinding Padding}"
+                          Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -105,16 +89,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SettingControlBase}">
-                    <Grid Margin="{TemplateBinding Padding}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
-                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
-                        </Grid.ColumnDefinitions>
+                    <Grid Margin="{TemplateBinding Padding}"
+                          Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -144,16 +120,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SettingControlBase}">
-                    <Grid Margin="{TemplateBinding Padding}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
-                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
-                        </Grid.ColumnDefinitions>
+                    <Grid Margin="{TemplateBinding Padding}"
+                          Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 

@@ -27,16 +27,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type propertyGrid:SettingControlBase}">
-                    <Grid Margin="{TemplateBinding Padding}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.LabelColumn}" />
-                            <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.SuffixColumn}" />
-                        </Grid.ColumnDefinitions>
+                    <Grid Margin="{TemplateBinding Padding}"
+                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header"
                                    Style="{TemplateBinding HeaderStyle}" />
