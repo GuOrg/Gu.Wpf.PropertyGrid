@@ -4,11 +4,16 @@ namespace Gu.Wpf.PropertyGrid
     using System.Runtime.CompilerServices;
     using System.Windows;
     using Gu.Units;
+    using Gu.Wpf.NumericInput;
 
     public abstract class UnitSettingControl<TQuantity, TUnit> : NumericSettingControl<TQuantity>
         where TQuantity : struct, IComparable<TQuantity>, IQuantity<TUnit>
         where TUnit : IUnit<TQuantity>
     {
+        public static readonly DependencyProperty DecimalDigitsProperty = NumericBox.DecimalDigitsProperty.AddOwner(
+            typeof(UnitSettingControl<TQuantity, TUnit>),
+            new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.Inherits));
+
         public static readonly DependencyProperty ScalarValueProperty = DependencyProperty.Register(
             "ScalarValue",
             typeof(double?),
@@ -36,6 +41,12 @@ namespace Gu.Wpf.PropertyGrid
         public static readonly DependencyProperty SymbolFormatProperty = UnitSettingControl.SymbolFormatProperty.AddOwner(
             typeof(UnitSettingControl<TQuantity, TUnit>),
             new FrameworkPropertyMetadata(UnitSettingControl.DefaultSymbolFormat, FrameworkPropertyMetadataOptions.Inherits, OnSymbolFormatChanged));
+
+        public int? DecimalDigits
+        {
+            get { return (int?)this.GetValue(DecimalDigitsProperty); }
+            set { this.SetValue(DecimalDigitsProperty, value); }
+        }
 
         public double? ScalarValue
         {

@@ -3,15 +3,9 @@
     using System;
     using System.Windows;
 
-    using Gu.Wpf.NumericInput;
-
     public abstract class NumericSettingControl<T> : SettingControlBase<T?>
         where T : struct, IComparable<T>
     {
-        public static readonly DependencyProperty DecimalDigitsProperty = NumericBox.DecimalDigitsProperty.AddOwner(
-            typeof(NumericSettingControl<T>),
-            new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.Inherits));
-
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(T?),
@@ -23,12 +17,6 @@
             typeof(T?),
             typeof(NumericSettingControl<T>),
             new PropertyMetadata(null, OnMaxValueChanged));
-
-        public int DecimalDigits
-        {
-            get { return (int)this.GetValue(DecimalDigitsProperty); }
-            set { this.SetValue(DecimalDigitsProperty, value); }
-        }
 
         public T? MinValue
         {
