@@ -27,41 +27,6 @@
         <Setter Property="TextAlignment" Value="Right" />
     </Style>
 
-    <Grid x:Key="InfoGrid"
-          HorizontalAlignment="Right"
-          TextElement.FontSize="{Binding FontSize,
-                                         ElementName=ValueBox,
-                                         Converter={propertyGrid:MultiplyConverter 0.8}}"
-          x:Shared="False">
-
-        <propertyGrid:ErrorContentPresenter x:Name="ErrorPresenter"
-                                            Content="{Binding Path=(Validation.Errors),
-                                                              ElementName=ValueBox}"
-                                            Style="{Binding ErrorStyle,
-                                                            RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
-                                            Visibility="{Binding Path=(Validation.HasError),
-                                                                 ElementName=ValueBox,
-                                                                 Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
-                                                                                                                      WhenNull=Collapsed,
-                                                                                                                      WhenFalse=Collapsed}}" />
-
-        <TextBlock Style="{Binding OldValueStyle,
-                                   RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
-                   Visibility="{Binding IsDirty,
-                                        RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}},
-                                        Converter={propertyGrid:BooleanToVisibilityConverter WhenTrue=Visible,
-                                                                                             WhenNull=Hidden,
-                                                                                             WhenFalse=Hidden}}" />
-    </Grid>
-
-    <Style x:Key="{x:Static propertyGrid:Keys.SettingRowInfoPresenterStyleKey}"
-           TargetType="{x:Type ContentPresenter}">
-        <Setter Property="Content" Value="{StaticResource InfoGrid}" />
-        <Setter Property="Grid.Row" Value="1" />
-        <Setter Property="Grid.Column" Value="0" />
-        <Setter Property="Grid.ColumnSpan" Value="2" />
-    </Style>
-
     <propertyGrid:RowDefinitions x:Key="RowDefinitions"
                                  x:Shared="False">
         <RowDefinition Height="Auto" />

@@ -13,7 +13,7 @@
         <Setter Property="TextAlignment" Value="Right" />
     </Style>
 
-    <Style TargetType="{x:Type p:ErrorContentPresenter}">
+    <Style TargetType="{x:Type p:ErrorPresenter}">
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="TextElement.Foreground" Value="Red" />
