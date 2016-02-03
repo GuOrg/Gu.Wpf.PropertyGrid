@@ -14,9 +14,19 @@ namespace Gu.Wpf.PropertyGrid
 
         public static IEnumerable<GridLength> Parse(ITypeDescriptorContext typeDescriptorContext, CultureInfo cultureInfo, string text)
         {
-            var lengths = text.Split(SeparatorChars, StringSplitOptions.RemoveEmptyEntries)
-                .Select(x => (GridLength)GridLengthConverter.ConvertFrom(typeDescriptorContext, cultureInfo, x));
-            return lengths;
+            try
+            {
+                var lengths = text.Split(SeparatorChars, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(x => (GridLength) GridLengthConverter.ConvertFrom(typeDescriptorContext, cultureInfo, x));
+                return lengths;
+            }
+            catch (Exception e)
+            {
+                var message = $"Could not parse gridlengts from {text}.\r\n" +
+                              $"Expected a string like '* 20 Auto'\r\n" +
+                              $"Valid separators are {{{string.Join(", ", SeparatorChars.Select(x => $"'x'"))}}}";
+                throw new FormatException(message, e);
+            }
         }
 
         // http://referencesource.microsoft.com/#PresentationFramework/src/Framework/System/Windows/GridLengthConverter.cs,218

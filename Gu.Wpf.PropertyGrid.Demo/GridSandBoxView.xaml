@@ -7,8 +7,10 @@
              d:DesignHeight="300"
              d:DesignWidth="300"
              mc:Ignorable="d">
-    <Grid p:Grid.ColumnDefinitions="* *" p:Grid.RowDefinitions="* *">
-        <Rectangle Fill="Red" p:Grid.Cell="1 1" />
+    <Grid p:Grid.ColumnDefinitions="* *"
+          p:Grid.RowDefinitions="* *">
+        <Rectangle Fill="Red"
+                   p:Grid.Cell="1 1" />
         <Rectangle Grid.Row="0"
                    Grid.Column="0"
                    Fill="Blue" />

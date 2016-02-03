@@ -5,7 +5,6 @@
     using System.Globalization;
     using System.Linq;
     using System.Security;
-    using System.Windows.Controls;
 
     public class GridCellConverter : TypeConverter
     {
@@ -33,14 +32,24 @@
             var text = source as string;
             if (text != null)
             {
-                var strings = text.Split(SeparatorChars, StringSplitOptions.RemoveEmptyEntries);
-                if (strings.Length != 2)
+                try
                 {
-                    var message = $"Could not parse {text} to a grid cell. Expected two ints";
-                    throw new FormatException(message);
-                }
+                    var strings = text.Split(SeparatorChars, StringSplitOptions.RemoveEmptyEntries);
+                    if (strings.Length != 2)
+                    {
+                        var message = $"Could not parse {text} to a grid cell. Expected two ints";
+                        throw new FormatException(message);
+                    }
 
-                return new GridCell(int.Parse(strings[0]), int.Parse(strings[1]));
+                    return new GridCell(int.Parse(strings[0]), int.Parse(strings[1]));
+                }
+                catch (Exception e)
+                {
+                    var message = $"Could not parse row and column from {text}.\r\n" +
+                                  $"Expected a string like '1 2'. (Two integers)\r\n" +
+                                  $"Valid separators are {{{string.Join(", ", SeparatorChars.Select(x => $"'x'"))}}}";
+                    throw new FormatException(message, e);
+                }
             }
 
             return base.ConvertFrom(typeDescriptorContext, cultureInfo, source);
