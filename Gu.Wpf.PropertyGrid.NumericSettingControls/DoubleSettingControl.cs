@@ -1,6 +1,7 @@
 ﻿namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
+    using System.Windows.Data;
     using Gu.Wpf.NumericInput;
 
     public class DoubleSettingControl : NumericSettingControl<double>

@@ -29,7 +29,10 @@
             get { return this.stringValue; }
             set
             {
-                if (value == this.stringValue) return;
+                if (value == this.stringValue)
+                {
+                    return;
+                }
                 this.stringValue = value;
                 this.OnPropertyChanged();
             }
@@ -40,7 +43,10 @@
             get { return this.boolValue; }
             set
             {
-                if (value == this.boolValue) return;
+                if (value == this.boolValue)
+                {
+                    return;
+                }
                 this.boolValue = value;
                 this.OnPropertyChanged();
             }
@@ -51,7 +57,10 @@
             get { return this.intValue; }
             set
             {
-                if (value == this.intValue) return;
+                if (value == this.intValue)
+                {
+                    return;
+                }
                 this.intValue = value;
                 this.OnPropertyChanged();
             }

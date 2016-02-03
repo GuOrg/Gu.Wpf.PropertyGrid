@@ -2,6 +2,7 @@
 {
     using System;
     using System.Windows;
+    using System.Windows.Data;
 
     public abstract class NumericSettingControl<T> : SettingControlBase<T?>
         where T : struct, IComparable<T>
@@ -17,6 +18,11 @@
             typeof(T?),
             typeof(NumericSettingControl<T>),
             new PropertyMetadata(null, OnMaxValueChanged));
+
+        static NumericSettingControl()
+        {
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(NumericSettingControl<T>), UpdateSourceTrigger.LostFocus);
+        }
 
         public T? MinValue
         {

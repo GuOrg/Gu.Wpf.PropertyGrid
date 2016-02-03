@@ -68,6 +68,7 @@
     <Compile Include="Controls\BaseClasses\SettingControlBase.cs" />
     <Compile Include="Controls\BaseClasses\SettingControlBase{T}.cs" />
     <Compile Include="Controls\SettingsControl.cs" />
+    <Compile Include="Internals\DependencyPropertyExt.cs" />
     <Compile Include="OneWayToSourceBinding\OneWayToSource.cs" />
     <Compile Include="OneWayToSourceBinding\Paths.cs" />
     <Compile Include="SharedSizeGroups.cs" />

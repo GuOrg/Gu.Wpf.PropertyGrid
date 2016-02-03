@@ -9,13 +9,13 @@ namespace Gu.Wpf.PropertyGrid
             "Value",
             typeof(T),
             typeof(SettingControlBase<T>),
-            new FrameworkPropertyMetadata
-            {
-                PropertyChangedCallback = OnValueChanged,
-                DefaultValue = default(T),
-                BindsTwoWayByDefault = true,
-                DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
-            });
+            new FrameworkPropertyMetadata(
+                default(T),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.PropertyChanged));
 
         public T Value
         {

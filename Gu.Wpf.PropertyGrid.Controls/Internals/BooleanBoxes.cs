@@ -7,14 +7,7 @@
 
         internal static object Box(bool value)
         {
-            if (value)
-            {
-                return True;
-            }
-            else
-            {
-                return False;
-            }
+            return value ? True : False;
         }
     }
 }
