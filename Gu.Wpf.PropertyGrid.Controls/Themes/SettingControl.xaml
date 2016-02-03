@@ -12,7 +12,6 @@
         <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
         <Setter Property="InfoPresenterStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowInfoPresenterStyleKey}}" />
         <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
-        <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowErrorStyleKey}}" />
     </Style>
 
     <Style TargetType="{x:Type l:StringSettingControl}">
@@ -32,13 +31,17 @@
                     <Grid Margin="{TemplateBinding Padding}"
                           Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
+                        <TextBlock x:Name="Header"
+                                   Style="{TemplateBinding HeaderStyle}" />
 
-                        <TextBox x:Name="ValueBox" Style="{TemplateBinding ValueStyle}" />
+                        <TextBox x:Name="ValueBox"
+                                 Style="{TemplateBinding ValueStyle}" />
 
-                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="SuffixBox"
+                                   Style="{TemplateBinding SuffixStyle}" />
 
-                        <ContentPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
+                        <ContentPresenter x:Name="InfoPresenter"
+                                          Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>
@@ -62,13 +65,17 @@
                     <Grid Margin="{TemplateBinding Padding}"
                           Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
+                        <TextBlock x:Name="Header"
+                                   Style="{TemplateBinding HeaderStyle}" />
 
-                        <CheckBox x:Name="ValueBox" Style="{TemplateBinding ValueStyle}" />
+                        <CheckBox x:Name="ValueBox"
+                                  Style="{TemplateBinding ValueStyle}" />
 
-                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="SuffixBox"
+                                   Style="{TemplateBinding SuffixStyle}" />
 
-                        <ContentPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
+                        <ContentPresenter x:Name="InfoPresenter"
+                                          Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>
@@ -92,13 +99,17 @@
                     <Grid Margin="{TemplateBinding Padding}"
                           Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
+                        <TextBlock x:Name="Header"
+                                   Style="{TemplateBinding HeaderStyle}" />
 
-                        <ToggleButton x:Name="ValueBox" Style="{TemplateBinding ValueStyle}" />
+                        <ToggleButton x:Name="ValueBox"
+                                      Style="{TemplateBinding ValueStyle}" />
 
-                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="SuffixBox"
+                                   Style="{TemplateBinding SuffixStyle}" />
 
-                        <ContentPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
+                        <ContentPresenter x:Name="InfoPresenter"
+                                          Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>
@@ -123,13 +134,17 @@
                     <Grid Margin="{TemplateBinding Padding}"
                           Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
+                        <TextBlock x:Name="Header"
+                                   Style="{TemplateBinding HeaderStyle}" />
 
-                        <ComboBox x:Name="ValueBox" Style="{TemplateBinding ValueStyle}" />
+                        <ComboBox x:Name="ValueBox"
+                                  Style="{TemplateBinding ValueStyle}" />
 
-                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="SuffixBox"
+                                   Style="{TemplateBinding SuffixStyle}" />
 
-                        <ContentPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
+                        <ContentPresenter x:Name="InfoPresenter"
+                                          Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>
@@ -156,13 +171,17 @@
                           Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
 
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
+                        <TextBlock x:Name="Header"
+                                   Style="{TemplateBinding HeaderStyle}" />
 
-                        <ComboBox x:Name="ValueBox" Style="{TemplateBinding ValueStyle}" />
+                        <ComboBox x:Name="ValueBox"
+                                  Style="{TemplateBinding ValueStyle}" />
 
-                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="SuffixBox"
+                                   Style="{TemplateBinding SuffixStyle}" />
 
-                        <ContentPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
+                        <ContentPresenter x:Name="InfoPresenter"
+                                          Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>
@@ -214,7 +233,7 @@
                         <TextBlock x:Name="SuffixBox"
                                    Style="{TemplateBinding SuffixStyle}" />
 
-                        <!--<ContentPresenter x:Name="InfoPresenter" 
+                        <!--<ContentPresenter x:Name="InfoPresenter"
                                           Style="{TemplateBinding InfoPresenterStyle}" />-->
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>

@@ -48,10 +48,13 @@
     <Compile Include="Controls\ContentSettingControl.cs" />
     <Compile Include="Controls\CheckBoxSettingControl.cs" />
     <Compile Include="Controls\EnumSettingControl.cs" />
+    <Compile Include="Controls\ErrorContentPresenter.cs" />
     <Compile Include="Controls\SelectorSettingControl.cs" />
     <Compile Include="Controls\ToggleButtonSettingControl.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\FirstValidationResultConverter.cs" />
     <Compile Include="Converters\FirstOrDefaultConverter.cs" />
+    <Compile Include="Converters\FirstValidationResultErrorContentConverter.cs" />
     <Compile Include="Converters\MultiplyConverter.cs" />
     <Compile Include="Grid\ColumnDefinitions.cs" />
     <Compile Include="Grid\ColumnDefinitionsConverter.cs" />
@@ -73,7 +76,12 @@
     <Compile Include="OneWayToSourceBinding\Paths.cs" />
     <Compile Include="SharedSizeGroups.cs" />
     <Compile Include="Controls\StringSettingControl.cs" />
+    <Compile Include="ValidationErrorTemplateSelector.cs" />
     <Page Include="Themes\BaseStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ErrorContentPresenter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

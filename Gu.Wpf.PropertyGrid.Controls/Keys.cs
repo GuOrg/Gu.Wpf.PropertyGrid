@@ -21,9 +21,11 @@
 
         public static ResourceKey SettingRowOldValueStyleKey { get; } = CreateKey();
 
-        public static ResourceKey SettingRowErrorStyleKey { get; } = CreateKey();
+        public static ResourceKey SettingRowErrorTextStyleKey { get; } = CreateKey();
 
         public static ResourceKey SettingRowSuffixStyleKey { get; } = CreateKey();
+
+        public static ResourceKey ValidationErrorTemplateSelectorKey { get; } = CreateKey();
 
         private static ComponentResourceKey CreateKey([CallerMemberName] string caller = null)
         {

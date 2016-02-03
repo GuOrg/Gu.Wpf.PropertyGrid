@@ -50,7 +50,6 @@
         <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
         <Setter Property="InfoPresenterStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowInfoPresenterStyleKey}}" />
         <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
-        <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowErrorStyleKey}}" />
     </Style>
 
     <Style x:Key="{x:Static l:Keys.NestedSettingListStyle}"
@@ -60,6 +59,5 @@
         <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
         <Setter Property="InfoPresenterStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowInfoPresenterStyleKey}}" />
         <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
-        <Setter Property="ErrorStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowErrorStyleKey}}" />
     </Style>
 </ResourceDictionary>
