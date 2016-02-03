@@ -78,7 +78,7 @@
                                    Unit="km/h"
                                    Value="{Binding SpeedValue}" />
 
-            <p:LengthSettingControl DecimalDigits="1"
+            <p:LengthSettingControl DecimalDigits="2"
                                     Header="Length"
                                     MaxValue="15 mm"
                                     MinValue="-15 mm"
