@@ -79,7 +79,7 @@ Library with controls for making property grids
 
 Renders:
 
-![Render](http://i.imgur.com/uUQ5flQ.png)
+![Render](http://i.imgur.com/x7G425V.png)
 
 ## AttachedProperties
 ### Grid
