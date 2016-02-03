@@ -55,6 +55,12 @@
     <Compile Include="ItemsControlSettingsView.xaml.cs">
       <DependentUpon>ItemsControlSettingsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OneWayToSourceBindingView.xaml.cs">
+      <DependentUpon>OneWayToSourceBindingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OneWayToSourceBindingVm.cs">
+      <DependentUpon>OneWayToSourceBindingView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RelayCommand.cs" />
     <Compile Include="SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
@@ -85,6 +91,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OneWayToSourceBindingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

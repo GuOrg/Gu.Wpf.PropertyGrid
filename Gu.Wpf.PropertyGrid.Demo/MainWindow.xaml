@@ -16,5 +16,9 @@
         <TabItem Header="Props as headers">
             <local:UsePropertyNamesAsHeadersView />
         </TabItem>
+
+        <TabItem Header="one way to source binding">
+            <local:OneWayToSourceBindingView />
+        </TabItem>
     </TabControl>
 </Window>

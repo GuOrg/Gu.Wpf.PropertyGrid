@@ -68,6 +68,7 @@
     <Compile Include="Controls\BaseClasses\SettingControlBase.cs" />
     <Compile Include="Controls\BaseClasses\SettingControlBase{T}.cs" />
     <Compile Include="Controls\SettingsControl.cs" />
+    <Compile Include="OneWayToSource.cs" />
     <Compile Include="SharedSizeGroups.cs" />
     <Compile Include="Controls\StringSettingControl.cs" />
     <Page Include="Themes\BaseStyles.xaml">
