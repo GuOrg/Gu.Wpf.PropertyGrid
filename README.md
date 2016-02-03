@@ -35,18 +35,10 @@ Renders:
 
 ## AttachedProperties
 ### Grid
-##### Xaml sample
-```
-<Grid p:Grid.ColumnDefinitions="* *" p:Grid.RowDefinitions="* *">
-    <Rectangle Grid.Row="0"
-                Grid.Column="0"
-                Fill="Blue" />
-    <Rectangle p:Grid.Cell="1 1"
-                Fill="Yellow" />
-</Grid>
-```
+Made RowDefinitions & ColumnDefinitions attached properties so that the grid can be styled if many grids need the same rows and columns.
 
-##### Style
+##### Sample style
+
 When used in a style either the style must have `x:Shared="False"` or the rows and columns can be declared with `x:Shared="False"` like this:
 About [x:Shared](https://msdn.microsoft.com/en-us/library/aa970778(v=vs.110).aspx) in short it means that instances in resources are not reused.
 
@@ -74,4 +66,29 @@ About [x:Shared](https://msdn.microsoft.com/en-us/library/aa970778(v=vs.110).asp
     <Setter Property="propertyGrid:Grid.RowDefinitions" Value="{StaticResource RowDefinitions}" />
     <Setter Property="propertyGrid:Grid.ColumnDefinitions" Value="{StaticResource ColumnDefinitions}" />
 </Style>
+```
+
+##### Xaml sample
+Wrote typeconverters so that they can be used in xaml like this:
+
+```
+<Grid p:Grid.ColumnDefinitions="* *" p:Grid.RowDefinitions="* *">
+    <Rectangle Grid.Row="0"
+               Grid.Column="0"
+               Fill="Blue" />
+    <Rectangle p:Grid.Cell="1 1"
+               Fill="Yellow" />
+</Grid>
+```
+
+### OneWayToSource
+Attached property that lets you bind readonly dependency properties `OneWayToSource`to datacontes.
+
+##### Sample
+```
+<TextBox x:Name="TextBox"
+            Text="{Binding Text,
+                        ValidatesOnDataErrors=True}"
+            p:OneWayToSource.Bind="{p:Paths From={x:Static Validation.HasErrorProperty},
+                                            To=ViewHasErrors}" />
 ```
