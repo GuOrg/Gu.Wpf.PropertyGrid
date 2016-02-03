@@ -1,32 +1,80 @@
 # Gu.PropertyGrid
-Small lib with styles for using ItemsControl as a property grid.
+Library with controls for making property grids
 
 ## Sample
 
 ```
-<ItemsControl Style="{StaticResource {x:Static propertyGrid:Keys.PropertyGridStyleKey}}">
-    <TextBlock Style="{StaticResource {x:Static propertyGrid:Keys.HeaderTextBlockStyleKey}}" Text="Sample header text" />
+<p:SettingsControl Grid.Row="0"
+                    DataContext="{Binding EditableCopy}"
+                    SuffixMinWidth="20"
+                    ValueMinWidth="150"
+                    OldDataContext="{Binding DataContext.LastSaved,
+                                            RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
+    <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
+                Text="Core" />
 
-    <HeaderedContentControl Header="SomeProperty">
-        <TextBox Text="Value" />
-    </HeaderedContentControl>
+    <p:StringSettingControl Header="string"
+                            Value="{Binding StringValue}" />
 
-    <HeaderedContentControl Header="Some bool property">
-        <CheckBox />
-    </HeaderedContentControl>
+    <p:CheckBoxSettingControl Header="check box"
+                                Value="{Binding BoolValue}" />
 
-    <ItemsControl Style="{StaticResource {x:Static propertyGrid:Keys.PropertyGridStyleKey}}">
-        <TextBlock Style="{StaticResource {x:Static propertyGrid:Keys.HeaderTextBlockStyleKey}}" Text="Nested header text" />
+    <p:ToggleButtonSettingControl Header="toggle button"
+                                    Value="{Binding BoolValue}" />
 
-        <HeaderedContentControl Header="SomeProperty">
-            <TextBox Text="Value" />
-        </HeaderedContentControl>
+    <p:EnumSettingControl Header="enum"
+                            Value="{Binding CurrentStringComparison}" />
 
-        <HeaderedContentControl Header="Some bool property">
-            <CheckBox />
-        </HeaderedContentControl>
-    </ItemsControl>
-</ItemsControl>
+    <p:SelectorSettingControl Header="selector"
+                                ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
+                                Value="{Binding CurrentLengthUnit}" />
+
+    <p:ContentSettingControl Header="content">
+        <Button Command="{Binding DataContext.SaveCommand,
+                                    RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                Content="Save" />
+    </p:ContentSettingControl>
+
+    <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
+                Text="NumericSettingControls" />
+
+    <p:IntSettingControl Header="int"
+                            Value="{Binding IntValue}" />
+
+    <p:IntSettingControl CanValueBeNull="True"
+                            Header="int?"
+                            Value="{Binding NullableIntValue}" />
+
+    <p:DoubleSettingControl Header="double"
+                            Value="{Binding DoubleValue}" />
+
+    <p:DoubleSettingControl CanValueBeNull="True"
+                            Header="double?"
+                            Value="{Binding NullableDoubleValue}" />
+
+
+    <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
+                Text="UnitSettingControls" />
+    <p:LengthSettingControl Header="Length"
+                            IsEnabled="False"
+                            Value="{Binding LengthValue}" />
+
+    <p:LengthSettingControl CanValueBeNull="True"
+                            Header="Nullable length"
+                            Value="{Binding NullableLengthValue}" />
+
+    <p:SpeedSettingControl Header="Speed (readonly)"
+                            IsReadOnly="True"
+                            Unit="km/h"
+                            Value="{Binding SpeedValue}" />
+
+    <p:LengthSettingControl DecimalDigits="1"
+                            Header="Length"
+                            MaxValue="15 mm"
+                            MinValue="-15 mm"
+                            Unit="{Binding CurrentLengthUnit}"
+                            Value="{Binding LengthValue}" />
+</p:SettingsControl>
 ```
 
 Renders:
