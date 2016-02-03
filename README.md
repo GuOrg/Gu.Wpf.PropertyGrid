@@ -86,8 +86,7 @@ Attached property that lets you bind readonly dependency properties `OneWayToSou
 
 ##### Sample
 ```
-<TextBox Text="{Binding Text,
-                        ValidatesOnDataErrors=True}"
+<TextBox Text="{Binding Text}"
          p:OneWayToSource.Bind="{p:Paths From={x:Static Validation.HasErrorProperty},
                                          To=ViewHasErrors}" />
 ```
