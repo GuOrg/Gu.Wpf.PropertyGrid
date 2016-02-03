@@ -4,7 +4,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:propertyGrid="http://gu.se/PropertyGrid"
+             xmlns:p="http://gu.se/PropertyGrid"
              d:DesignHeight="300"
              d:DesignWidth="300"
              mc:Ignorable="d">
@@ -15,8 +15,8 @@
         <TextBox x:Name="TextBox"
                  Text="{Binding Text,
                                 ValidatesOnDataErrors=True}"
-                 propertyGrid:OneWayToSource.Bind="{propertyGrid:Paths From={x:Static Validation.HasErrorProperty},
-                                                                       To=ViewHasErrors}" />
+                 p:OneWayToSource.Bind="{p:Paths From={x:Static Validation.HasErrorProperty},
+                                                 To=ViewHasErrors}" />
         <CheckBox Content="SetViewModelHasError"
                   IsChecked="{Binding HasErrors}" />
         <CheckBox Content="ViewHasError"
