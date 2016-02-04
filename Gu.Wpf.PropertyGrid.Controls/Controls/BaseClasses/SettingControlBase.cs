@@ -8,6 +8,7 @@ namespace Gu.Wpf.PropertyGrid
 
     public abstract class SettingControlBase : Control
     {
+#pragma warning disable SA1202 // Elements must be ordered by access
         public static readonly DependencyProperty UsePropertyNameAsHeaderProperty = SettingControl.UsePropertyNameAsHeaderProperty.AddOwner(
                 typeof(SettingControlBase),
                 new FrameworkPropertyMetadata(
@@ -71,6 +72,7 @@ namespace Gu.Wpf.PropertyGrid
             new PropertyMetadata(null));
 
         public static readonly DependencyProperty IsDirtyProperty = IsDirtyPropertyKey.DependencyProperty;
+#pragma warning restore SA1202 // Elements must be ordered by access
 
         static SettingControlBase()
         {

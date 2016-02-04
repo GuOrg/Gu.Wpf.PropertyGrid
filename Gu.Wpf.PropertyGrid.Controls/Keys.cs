@@ -27,6 +27,10 @@
 
         public static ResourceKey ValidationErrorTemplateSelectorKey { get; } = CreateKey();
 
+        public static ResourceKey ValidationErrorRedBorderTemplateKey { get; } = CreateKey();
+
+        public static ResourceKey ValidationErrorTextUnderTemplateKey { get; } = CreateKey();
+
         private static ComponentResourceKey CreateKey([CallerMemberName] string caller = null)
         {
             return new ComponentResourceKey(typeof(Keys), caller);
