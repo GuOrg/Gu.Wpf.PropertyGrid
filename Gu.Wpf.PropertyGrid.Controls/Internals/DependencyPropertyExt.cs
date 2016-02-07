@@ -81,6 +81,20 @@
                 return;
             }
 
+            if (metadata.GetType() == typeof(UIPropertyMetadata))
+            {
+                var uipm = (UIPropertyMetadata)metadata;
+                property.OverrideMetadata(
+                    forType,
+                    new FrameworkPropertyMetadata(
+                        defaultValue,
+                        FrameworkPropertyMetadataOptions.None,
+                        metadata.PropertyChangedCallback,
+                        metadata.CoerceValueCallback,
+                        uipm.IsAnimationProhibited));
+                return;
+            }
+
             if (metadata.GetType() == typeof(FrameworkPropertyMetadata))
             {
                 var fpm = (FrameworkPropertyMetadata)metadata;
