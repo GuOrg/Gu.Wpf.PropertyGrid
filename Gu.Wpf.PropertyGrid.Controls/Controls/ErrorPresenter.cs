@@ -8,6 +8,7 @@
         static ErrorPresenter()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ErrorPresenter), new FrameworkPropertyMetadata(typeof(ErrorPresenter)));
+            FocusableProperty.OverrideMetadataWithDefaultValue(typeof(ErrorPresenter), false);
         }
     }
 }

@@ -45,6 +45,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\BaseClasses\SettingControlBase.DependencyProperties.cs" />
     <Compile Include="Controls\ContentSettingControl.cs" />
     <Compile Include="Controls\CheckBoxSettingControl.cs" />
     <Compile Include="Controls\EnumSettingControl.cs" />
@@ -53,8 +54,8 @@
     <Compile Include="Controls\SelectorSettingControl.cs" />
     <Compile Include="Controls\ToggleButtonSettingControl.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
-    <Compile Include="Converters\FirstValidationResultConverter.cs" />
     <Compile Include="Converters\FirstOrDefaultConverter.cs" />
+    <Compile Include="Converters\FirstValidationResultConverter.cs" />
     <Compile Include="Converters\FirstValidationResultErrorContentConverter.cs" />
     <Compile Include="Converters\MultiplyConverter.cs" />
     <Compile Include="Grid\ColumnDefinitions.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Grid\GridLengthsParser.cs" />
     <Compile Include="Grid\RowDefinitions.cs" />
     <Compile Include="Grid\RowDefinitionsConverter.cs" />
+    <Compile Include="Internals\BindingHelper.cs" />
     <Compile Include="Internals\BooleanBoxes.cs" />
     <Compile Include="Controls\BoolSettingControl.cs" />
     <Compile Include="Controls\BaseClasses\NumericSettingControl{T}.cs" />
@@ -73,6 +75,8 @@
     <Compile Include="Controls\BaseClasses\SettingControlBase{T}.cs" />
     <Compile Include="Controls\SettingsControl.cs" />
     <Compile Include="Internals\DependencyPropertyExt.cs" />
+    <Compile Include="Internals\Ensure.cs" />
+    <Compile Include="Internals\VisualTreeHelperExt.cs" />
     <Compile Include="OneWayToSourceBinding\OneWayToSource.cs" />
     <Compile Include="OneWayToSourceBinding\Paths.cs" />
     <Compile Include="SharedSizeGroups.cs" />
@@ -150,6 +154,20 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Validation\" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Gu.Wpf.ValidationScope">
+          <HintPath>..\packages\Gu.Wpf.ValidationScope\lib\net45\Gu.Wpf.ValidationScope.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v2.0' Or $(TargetFrameworkVersion) == 'v3.0' Or $(TargetFrameworkVersion) == 'v3.5' Or $(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
       <ItemGroup>

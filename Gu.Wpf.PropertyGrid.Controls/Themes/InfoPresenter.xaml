@@ -1,45 +1,73 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid">
+                    xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid"
+                    xmlns:validationScope="http://gu.se/ValidationScope">
 
     <Style TargetType="{x:Type l:InfoPresenter}">
         <Setter Property="Grid.Row" Value="1" />
         <Setter Property="Grid.Column" Value="0" />
-        <Setter Property="Grid.ColumnSpan" Value="2" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type l:InfoPresenter}">
-                    <Grid HorizontalAlignment="Right">
-                        <StackPanel>
-                            <l:ErrorPresenter x:Name="ValueBoxErrorPresenter"
-                                          Content="{Binding Path=(Validation.Errors),
-                                                            ElementName=ValueBox}"
-                                          Visibility="{Binding Path=(Validation.HasError),
-                                                               ElementName=ValueBox,
-                                                               Converter={l:BooleanToVisibilityConverter WhenTrue=Visible,
-                                                                                                         WhenNull=Collapsed,
-                                                                                                         WhenFalse=Collapsed}}" />
-                            <l:ErrorPresenter x:Name="ErrorPresenter"
-                                          Content="{Binding Path=(Validation.Errors),
-                                                            RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}"
-                                          Visibility="{Binding Path=(Validation.HasError),
-                                                               RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}},
-                                                               Converter={l:BooleanToVisibilityConverter WhenTrue=Visible,
-                                                                                                         WhenNull=Collapsed,
-                                                                                                         WhenFalse=Collapsed}}" />
-                        </StackPanel>
-
-                        <TextBlock x:Name="OldValue"
-                                   Style="{Binding OldValueStyle,
-                                                   RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}"
-                                   Visibility="{Binding IsDirty,
-                                                        RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}},
-                                                        Converter={l:BooleanToVisibilityConverter WhenTrue=Visible,
-                                                                                                  WhenNull=Hidden,
-                                                                                                  WhenFalse=Hidden}}" />
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="Grid.ColumnSpan" Value="3" />
+        <Setter Property="MinHeight" Value="20" />
+        <Setter Property="Grid.IsSharedSizeScope" Value="False" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=(validationScope:Scope.HasErrors),
+                                           RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}"
+                         Value="True">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type l:InfoPresenter}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                                    <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                                </Grid.ColumnDefinitions>
+                                <l:ErrorPresenter x:Name="ValueBoxErrorPresenter"
+                                                  Grid.Column="0"
+                                                  Grid.ColumnSpan="2"
+                                                  Content="{Binding Path=(validationScope:Scope.Errors),
+                                                                    RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />
+                                <Border Grid.Column="1"
+                                        BorderBrush="Red"
+                                        BorderThickness="0,1,0,0" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+            
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding Path=(validationScope:Scope.HasErrors), RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" Value="False" />
+                    <Condition Binding="{Binding Path=IsDirty, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type l:InfoPresenter}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                                    <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock x:Name="OldValue"
+                                           Grid.Column="0"
+                                           Grid.ColumnSpan="2"
+                                           Style="{Binding OldValueStyle,
+                                                           RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}"
+                                           Visibility="{Binding IsDirty,
+                                                                RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}},
+                                                                Converter={l:BooleanToVisibilityConverter WhenTrue=Visible,
+                                                                                                          WhenNull=Hidden,
+                                                                                                          WhenFalse=Hidden}}" />
+                                <Border Grid.Column="1"
+                                        BorderBrush="DodgerBlue"
+                                        BorderThickness="0,1,0,0" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </MultiDataTrigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>

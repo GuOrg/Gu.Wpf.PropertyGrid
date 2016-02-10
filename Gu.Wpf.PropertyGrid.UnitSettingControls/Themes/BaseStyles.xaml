@@ -20,6 +20,7 @@
                     <Setter Property="Value" Value="{Binding ScalarValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MinValue" Value="{Binding ScalarMinValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MaxValue" Value="{Binding ScalarMaxValue, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
                 </Style>
             </Setter.Value>
         </Setter>
@@ -40,7 +41,7 @@
                         <TextBlock x:Name="Header"
                                    Style="{TemplateBinding HeaderStyle}" />
 
-                        <numeric:DoubleBox x:Name="ValueBox"
+                        <numeric:DoubleBox x:Name="PART_ValueBox"
                                            Style="{TemplateBinding ValueStyle}" />
 
                         <TextBlock x:Name="SuffixBox"

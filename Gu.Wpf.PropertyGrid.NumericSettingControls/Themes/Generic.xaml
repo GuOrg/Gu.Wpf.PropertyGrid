@@ -26,6 +26,7 @@
                     <Setter Property="Value" Value="{Binding Value, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MinValue" Value="{Binding MinValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MaxValue" Value="{Binding MaxValue, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
                 </Style>
             </Setter.Value>
         </Setter>
@@ -39,7 +40,7 @@
                         <TextBlock x:Name="Header"
                                    Style="{TemplateBinding HeaderStyle}" />
 
-                        <numeric:DoubleBox x:Name="ValueBox"
+                        <numeric:DoubleBox x:Name="PART_ValueBox"
                                            Style="{TemplateBinding ValueStyle}" />
 
                         <TextBlock x:Name="SuffixBox"
@@ -65,6 +66,7 @@
                     <Setter Property="CanValueBeNull" Value="{Binding CanValueBeNull, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MinValue" Value="{Binding MinValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MaxValue" Value="{Binding MaxValue, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
                 </Style>
             </Setter.Value>
         </Setter>
@@ -72,21 +74,14 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type propertyGrid:SettingControlBase}">
-                    <Grid Margin="{TemplateBinding Padding}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.LabelColumn}" />
-                            <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.SuffixColumn}" />
-                        </Grid.ColumnDefinitions>
+                    <Grid Margin="{TemplateBinding Padding}"
+                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header"
                                    Style="{TemplateBinding HeaderStyle}" />
 
-                        <numeric:IntBox x:Name="ValueBox"
+                        <numeric:IntBox x:Name="PART_ValueBox"
                                         Style="{TemplateBinding ValueStyle}" />
 
                         <TextBlock x:Name="SuffixBox"

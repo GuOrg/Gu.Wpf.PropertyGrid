@@ -2,8 +2,11 @@ namespace Gu.Wpf.PropertyGrid
 {
     using System;
     using System.Windows;
+    using System.Windows.Controls;
+
     using Gu.Units;
     using Gu.Wpf.NumericInput;
+    using Gu.Wpf.ValidationScope;
 
     public abstract class UnitSettingControl<TQuantity, TUnit> : NumericSettingControl<TQuantity>
         where TQuantity : struct, IComparable<TQuantity>, IQuantity<TUnit>
@@ -54,6 +57,11 @@ namespace Gu.Wpf.PropertyGrid
             new FrameworkPropertyMetadata(UnitSettingControl.DefaultSymbolFormat, FrameworkPropertyMetadataOptions.Inherits, OnSymbolFormatChanged));
 
         private bool isUpdatingScalarValue;
+
+        static UnitSettingControl()
+        {
+            ValidationInputTypesProperty.OverrideMetadataWithDefaultValue(typeof(SettingControlBase), typeof(UnitSettingControl<TQuantity, TUnit>), new InputTypeCollection { typeof(UnitSettingControl<TQuantity, TUnit>), typeof(DoubleBox), typeof(TextBox) });
+        }
 
         public int? DecimalDigits
         {

@@ -1,8 +1,9 @@
 ﻿namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
-    using System.Windows.Data;
+    using System.Windows.Controls;
     using Gu.Wpf.NumericInput;
+    using Gu.Wpf.ValidationScope;
 
     public class DoubleSettingControl : NumericSettingControl<double>
     {
@@ -17,6 +18,7 @@
         static DoubleSettingControl()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DoubleSettingControl), new FrameworkPropertyMetadata(typeof(DoubleSettingControl)));
+            ValidationInputTypesProperty.OverrideMetadataWithDefaultValue(typeof(SettingControlBase), typeof(DoubleSettingControl), new InputTypeCollection { typeof(DoubleSettingControl), typeof(DoubleBox), typeof(TextBox) });
         }
 
         public int? DecimalDigits

@@ -9,7 +9,7 @@
         Height="1200"
         mc:Ignorable="d">
     <TabControl>
-        <TabItem Header="Meh">
+        <TabItem Header="SettingsView">
             <local:SettingsView />
         </TabItem>
 

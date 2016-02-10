@@ -6,6 +6,7 @@ nuget XUnit
 nuget Gu.ChangeTracking
 nuget Gu.Wpf.NumericInput
 nuget Gu.Units.Wpf
+nuget Gu.Wpf.ValidationScope
 
 nuget JetBrains.Annotations
 nuget StyleCop.Analyzers

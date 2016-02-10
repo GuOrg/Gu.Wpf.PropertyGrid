@@ -1,4 +1,6 @@
 ﻿Gu.Units.Wpf
 Gu.Wpf.NumericInput
 Gu.ChangeTracking
+Gu.Wpf.ValidationScope
+
 JetBrains.Annotations

@@ -25,6 +25,7 @@
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="TextAlignment" Value="Right" />
+        <Setter Property="Foreground" Value="DodgerBlue" />
     </Style>
 
     <propertyGrid:RowDefinitions x:Key="RowDefinitions"
