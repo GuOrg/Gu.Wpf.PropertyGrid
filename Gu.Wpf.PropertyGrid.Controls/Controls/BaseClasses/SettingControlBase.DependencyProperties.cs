@@ -79,18 +79,18 @@
         static SettingControlBase()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SettingControlBase), new FrameworkPropertyMetadata(typeof(SettingControlBase)));
-            FocusableProperty.OverrideMetadata(typeof(SettingControlBase), new FrameworkPropertyMetadata(false));
+            FocusableProperty.OverrideMetadata(typeof(SettingControlBase), new FrameworkPropertyMetadata(BooleanBoxes.False));
         }
 
         public bool UsePropertyNameAsHeader
         {
             get { return (bool)this.GetValue(UsePropertyNameAsHeaderProperty); }
-            set { this.SetValue(UsePropertyNameAsHeaderProperty, value); }
+            set { this.SetValue(UsePropertyNameAsHeaderProperty, BooleanBoxes.Box(value)); }
         }
 
         public object OldDataContext
         {
-            get { return (object)this.GetValue(OldDataContextProperty); }
+            get { return this.GetValue(OldDataContextProperty); }
             set { this.SetValue(OldDataContextProperty, value); }
         }
 
@@ -114,14 +114,14 @@
 
         public object OldValue
         {
-            get { return (object)this.GetValue(OldValueProperty); }
+            get { return this.GetValue(OldValueProperty); }
             set { this.SetValue(OldValueProperty, value); }
         }
 
         public bool IsReadOnly
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
-            set { this.SetValue(IsReadOnlyProperty, value); }
+            set { this.SetValue(IsReadOnlyProperty, BooleanBoxes.Box(value)); }
         }
 
         public Style HeaderStyle
@@ -163,7 +163,7 @@
         public bool? IsDirty
         {
             get { return (bool?)this.GetValue(IsDirtyProperty); }
-            protected set { this.SetValue(IsDirtyPropertyKey, value); }
+            protected set { this.SetValue(IsDirtyPropertyKey, BooleanBoxes.Box(value)); }
         }
     }
 }

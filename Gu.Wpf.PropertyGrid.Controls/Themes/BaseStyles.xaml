@@ -19,15 +19,6 @@
         <Setter Property="Margin" Value="2,0" />
     </Style>
 
-    <Style x:Key="{x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}"
-           TargetType="{x:Type TextBlock}">
-        <Setter Property="Text" Value="{Binding OldValue, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}, StringFormat='Old value: {0}'}" />
-        <Setter Property="VerticalAlignment" Value="Top" />
-        <Setter Property="HorizontalAlignment" Value="Right" />
-        <Setter Property="TextAlignment" Value="Right" />
-        <Setter Property="Foreground" Value="DodgerBlue" />
-    </Style>
-
     <propertyGrid:RowDefinitions x:Key="RowDefinitions"
                                  x:Shared="False">
         <RowDefinition Height="Auto" />

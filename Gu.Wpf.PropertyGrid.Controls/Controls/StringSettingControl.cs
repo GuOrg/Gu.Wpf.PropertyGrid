@@ -12,7 +12,7 @@
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(StringSettingControl), new FrameworkPropertyMetadata(typeof(StringSettingControl)));
             ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(StringSettingControl), UpdateSourceTrigger.LostFocus);
-            ValidationInputTypesProperty.OverrideMetadataWithDefaultValue(typeof(SettingControlBase), typeof(StringSettingControl), new InputTypeCollection { typeof(StringSettingControl), typeof(TextBox) });
+            ValidationInputTypesProperty.OverrideMetadataWithDefaultValue(typeof(SettingControlBase), typeof(StringSettingControl), new InputTypeCollection { typeof(SettingControlBase), typeof(TextBox) });
         }
     }
 }

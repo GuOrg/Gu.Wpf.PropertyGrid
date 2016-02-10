@@ -10,6 +10,7 @@
 
     <Style TargetType="{x:Type l:SettingControlBase}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}" />
         <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
@@ -59,6 +60,7 @@
                 <Style TargetType="{x:Type CheckBox}">
                     <Setter Property="Grid.Row" Value="0" />
                     <Setter Property="Grid.Column" Value="1" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
                     <Setter Property="IsChecked" Value="{Binding Value, RelativeSource={RelativeSource AncestorType={x:Type l:BoolSettingControl}}}" />
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
                     <Setter Property="FocusVisualStyle" Value="{x:Null}" />

@@ -60,7 +60,7 @@ namespace Gu.Wpf.PropertyGrid
 
         static UnitSettingControl()
         {
-            ValidationInputTypesProperty.OverrideMetadataWithDefaultValue(typeof(SettingControlBase), typeof(UnitSettingControl<TQuantity, TUnit>), new InputTypeCollection { typeof(UnitSettingControl<TQuantity, TUnit>), typeof(DoubleBox), typeof(TextBox) });
+            ValidationInputTypesProperty.OverrideMetadataWithDefaultValue(typeof(SettingControlBase), typeof(UnitSettingControl<TQuantity, TUnit>), new InputTypeCollection { typeof(SettingControlBase), typeof(DoubleBox), typeof(TextBox) });
         }
 
         public int? DecimalDigits

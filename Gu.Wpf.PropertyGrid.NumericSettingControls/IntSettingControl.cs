@@ -15,7 +15,7 @@ namespace Gu.Wpf.PropertyGrid
         static IntSettingControl()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(IntSettingControl), new FrameworkPropertyMetadata(typeof(IntSettingControl)));
-            ValidationInputTypesProperty.OverrideMetadataWithDefaultValue(typeof(SettingControlBase), typeof(IntSettingControl), new InputTypeCollection { typeof(IntSettingControl), typeof(IntBox), typeof(TextBox) });
+            ValidationInputTypesProperty.OverrideMetadataWithDefaultValue(typeof(SettingControlBase), typeof(IntSettingControl), new InputTypeCollection { typeof(SettingControlBase), typeof(IntBox), typeof(TextBox) });
         }
 
         public bool CanValueBeNull

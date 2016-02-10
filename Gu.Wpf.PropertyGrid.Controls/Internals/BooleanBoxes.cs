@@ -9,5 +9,15 @@
         {
             return value ? True : False;
         }
+
+        internal static object Box(bool? value)
+        {
+            if (value == null)
+            {
+                return null;
+            }
+
+            return value.Value ? True : False;
+        }
     }
 }

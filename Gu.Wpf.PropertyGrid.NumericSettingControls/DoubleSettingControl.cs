@@ -18,7 +18,7 @@
         static DoubleSettingControl()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DoubleSettingControl), new FrameworkPropertyMetadata(typeof(DoubleSettingControl)));
-            ValidationInputTypesProperty.OverrideMetadataWithDefaultValue(typeof(SettingControlBase), typeof(DoubleSettingControl), new InputTypeCollection { typeof(DoubleSettingControl), typeof(DoubleBox), typeof(TextBox) });
+            ValidationInputTypesProperty.OverrideMetadataWithDefaultValue(typeof(SettingControlBase), typeof(DoubleSettingControl), new InputTypeCollection { typeof(SettingControlBase), typeof(DoubleBox), typeof(TextBox) });
         }
 
         public int? DecimalDigits

@@ -3,11 +3,21 @@
                     xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid"
                     xmlns:validationScope="http://gu.se/ValidationScope">
 
+    <Style x:Key="{x:Static l:Keys.SettingRowOldValueStyleKey}"
+           TargetType="{x:Type TextBlock}">
+        <Setter Property="Text" Value="{Binding OldValue, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}, StringFormat='Old value: {0}'}" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="TextAlignment" Value="Right" />
+        <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type l:InfoPresenter}}}" />
+    </Style>
+
     <Style TargetType="{x:Type l:InfoPresenter}">
         <Setter Property="Grid.Row" Value="1" />
         <Setter Property="Grid.Column" Value="0" />
         <Setter Property="Grid.ColumnSpan" Value="3" />
-        <Setter Property="MinHeight" Value="20" />
+        <Setter Property="MinHeight" Value="18" />
+        <Setter Property="Foreground" Value="DodgerBlue" />
         <Setter Property="Grid.IsSharedSizeScope" Value="False" />
         <Style.Triggers>
             <DataTrigger Binding="{Binding Path=(validationScope:Scope.HasErrors),
@@ -35,7 +45,7 @@
                     </Setter.Value>
                 </Setter>
             </DataTrigger>
-            
+
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
                     <Condition Binding="{Binding Path=(validationScope:Scope.HasErrors), RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" Value="False" />
@@ -61,7 +71,7 @@
                                                                                                           WhenNull=Hidden,
                                                                                                           WhenFalse=Hidden}}" />
                                 <Border Grid.Column="1"
-                                        BorderBrush="DodgerBlue"
+                                        BorderBrush="{TemplateBinding Foreground}"
                                         BorderThickness="0,1,0,0" />
                             </Grid>
                         </ControlTemplate>
