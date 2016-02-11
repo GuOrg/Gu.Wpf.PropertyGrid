@@ -23,7 +23,8 @@
                 <DataTemplate>
                     <TextBlock DataContext="{Binding Converter={x:Static p:FirstValidationResultConverter.Default}}"
                                Style="{DynamicResource {x:Static p:Keys.SettingRowErrorTextStyleKey}}"
-                               Text="{Binding}" />
+                               Text="{Binding .,
+                                              Converter={x:Static p:ValidationErrorToStringConverter.Default}}" />
                 </DataTemplate>
             </Setter.Value>
         </Setter>

@@ -35,10 +35,10 @@
                                       Value="{Binding HasErrors,
                                                       ValidatesOnNotifyDataErrors=True}" />
 
-            <p:CheckBoxSettingControl Header="check box"
+            <p:CheckBoxSettingControl Header="checkbox"
                                       Value="{Binding BoolValue}" />
 
-            <p:ToggleButtonSettingControl Header="toggle button"
+            <p:ToggleButtonSettingControl Header="togglebutton"
                                           Value="{Binding BoolValue}" />
 
 
@@ -71,7 +71,6 @@
             <p:DoubleSettingControl CanValueBeNull="True"
                                     Header="double?"
                                     Value="{Binding NullableDoubleValue}" />
-
 
             <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
                        Text="UnitSettingControls" />

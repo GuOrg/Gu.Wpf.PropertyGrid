@@ -13,7 +13,8 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
+                            <ColumnDefinition Width="Auto"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
                             <ColumnDefinition Width="Auto"
                                               MinWidth="{Binding Path=(l:SettingControl.ValueMinWidth),
                                                                  RelativeSource={RelativeSource TemplatedParent}}"
