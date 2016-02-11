@@ -29,8 +29,8 @@
             <p:StringSettingControl Header="readonly string"
                                     IsReadOnly="True"
                                     Value="{Binding StringValue}" />
-
-            <p:CheckBoxSettingControl Header="INotifyDataErrorInfo has error"
+            
+           <p:CheckBoxSettingControl Header="INotifyDataErrorInfo has error"
                                       OldDataContext="{x:Null}"
                                       Value="{Binding DataContext.HasErrors,
                                                       RelativeSource={RelativeSource AncestorType={x:Type UserControl}},
@@ -42,6 +42,7 @@
             <p:ToggleButtonSettingControl Header="toggle button"
                                           Value="{Binding BoolValue}" />
 
+                       
             <p:EnumSettingControl Header="enum"
                                   Value="{Binding CurrentStringComparison}" />
 

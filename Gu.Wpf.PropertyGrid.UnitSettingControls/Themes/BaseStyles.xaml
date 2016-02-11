@@ -20,6 +20,8 @@
                     <Setter Property="Value" Value="{Binding ScalarValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MinValue" Value="{Binding ScalarMinValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MaxValue" Value="{Binding ScalarMaxValue, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
+                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
                     <Style.Triggers>
                         <Trigger Property="IsReadOnly" Value="True">

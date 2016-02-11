@@ -17,6 +17,8 @@
         <Setter Property="Grid.Column" Value="2" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="2,0" />
+        <Setter Property="MinWidth" Value="{Binding SuffixMinWidth, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
+        <Setter Property="MaxWidth" Value="{Binding SuffixMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
     </Style>
 
     <propertyGrid:RowDefinitions x:Key="RowDefinitions"
@@ -28,16 +30,8 @@
     <propertyGrid:ColumnDefinitions x:Key="ColumnDefinitions"
                                     x:Shared="False">
         <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.LabelColumn}" />
-        <ColumnDefinition MinWidth="{Binding Path=(propertyGrid:SettingControl.ValueMinWidth),
-                                             RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
-                          MaxWidth="{Binding Path=(propertyGrid:SettingControl.ValueMaxWidth),
-                                             RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
-                          SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
-        <ColumnDefinition MinWidth="{Binding Path=(propertyGrid:SettingControl.SuffixMinWidth),
-                                             RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
-                          MaxWidth="{Binding Path=(propertyGrid:SettingControl.SuffixMaxWidth),
-                                             RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}"
-                          SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.SuffixColumn}" />
+        <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
+        <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.SuffixColumn}" />
     </propertyGrid:ColumnDefinitions>
 
     <Style x:Key="{x:Static propertyGrid:Keys.RootGridStyleKey}"

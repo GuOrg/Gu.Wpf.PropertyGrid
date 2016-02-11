@@ -6,8 +6,8 @@
     public class SettingsControl : ItemsControl
     {
         public static readonly DependencyProperty ValueMinWidthProperty = SettingControl.ValueMinWidthProperty.AddOwner(
-     typeof(SettingsControl),
-     new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
+                typeof(SettingsControl),
+                new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty ValueMaxWidthProperty = SettingControl.ValueMaxWidthProperty.AddOwner(
             typeof(SettingsControl),

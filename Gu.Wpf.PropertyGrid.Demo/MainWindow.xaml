@@ -13,12 +13,12 @@
             <local:SettingsView />
         </TabItem>
 
-        <TabItem Header="Props as headers">
+        <!--<TabItem Header="Props as headers">
             <local:UsePropertyNamesAsHeadersView />
         </TabItem>
 
         <TabItem Header="one way to source binding">
             <local:OneWayToSourceBindingView />
-        </TabItem>
+        </TabItem>-->
     </TabControl>
 </Window>

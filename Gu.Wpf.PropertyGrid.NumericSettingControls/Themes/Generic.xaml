@@ -6,12 +6,6 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    <propertyGrid:ValidationErrorTemplateSelector x:Key="{x:Static propertyGrid:Keys.ValidationErrorTemplateSelectorKey}">
-        <DataTemplate DataType="{x:Type numeric:CanParseValidationResult}">
-            <TextBlock Style="{DynamicResource {x:Static propertyGrid:Keys.SettingRowErrorTextStyleKey}}"
-                       Text="{Binding ErrorContent}" />
-        </DataTemplate>
-    </propertyGrid:ValidationErrorTemplateSelector>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:SettingControlBase}}"
            TargetType="{x:Type l:DoubleSettingControl}">
@@ -27,6 +21,8 @@
                     <Setter Property="MinValue" Value="{Binding MinValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MaxValue" Value="{Binding MaxValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+                    <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
+                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
                     <Style.Triggers>
                         <Trigger Property="IsReadOnly" Value="True">
                             <Setter Property="BorderBrush" Value="{x:Null}" />
@@ -74,6 +70,8 @@
                     <Setter Property="MinValue" Value="{Binding MinValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MaxValue" Value="{Binding MaxValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+                    <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
+                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
                     <Style.Triggers>
                         <Trigger Property="IsReadOnly" Value="True">
                             <Setter Property="BorderBrush" Value="{x:Null}" />

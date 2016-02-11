@@ -1,12 +1,27 @@
 ﻿namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
-
     using Gu.Wpf.ValidationScope;
 
     public abstract partial class SettingControlBase
     {
 #pragma warning disable SA1202 // Elements must be ordered by access
+        public static readonly DependencyProperty ValueMinWidthProperty = SettingControl.ValueMinWidthProperty.AddOwner(
+        typeof(SettingControlBase),
+        new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
+
+        public static readonly DependencyProperty ValueMaxWidthProperty = SettingControl.ValueMaxWidthProperty.AddOwner(
+            typeof(SettingControlBase),
+            new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.Inherits));
+
+        public static readonly DependencyProperty SuffixMinWidthProperty = SettingControl.SuffixMinWidthProperty.AddOwner(
+             typeof(SettingControlBase),
+             new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
+
+        public static readonly DependencyProperty SuffixMaxWidthProperty = SettingControl.SuffixMaxWidthProperty.AddOwner(
+             typeof(SettingControlBase),
+             new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.Inherits));
+
         public static readonly DependencyProperty UsePropertyNameAsHeaderProperty = SettingControl.UsePropertyNameAsHeaderProperty.AddOwner(
                 typeof(SettingControlBase),
                 new FrameworkPropertyMetadata(
@@ -80,6 +95,30 @@
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SettingControlBase), new FrameworkPropertyMetadata(typeof(SettingControlBase)));
             FocusableProperty.OverrideMetadata(typeof(SettingControlBase), new FrameworkPropertyMetadata(BooleanBoxes.False));
+        }
+
+        public double ValueMinWidth
+        {
+            get { return (double)this.GetValue(ValueMinWidthProperty); }
+            set { this.SetValue(ValueMinWidthProperty, value); }
+        }
+
+        public double ValueMaxWidth
+        {
+            get { return (double)this.GetValue(ValueMaxWidthProperty); }
+            set { this.SetValue(ValueMaxWidthProperty, value); }
+        }
+
+        public double SuffixMinWidth
+        {
+            get { return (double)this.GetValue(SuffixMinWidthProperty); }
+            set { this.SetValue(SuffixMinWidthProperty, value); }
+        }
+
+        public double SuffixMaxWidth
+        {
+            get { return (double)this.GetValue(SuffixMaxWidthProperty); }
+            set { this.SetValue(SuffixMaxWidthProperty, value); }
         }
 
         public bool UsePropertyNameAsHeader
@@ -163,7 +202,7 @@
         public bool? IsDirty
         {
             get { return (bool?)this.GetValue(IsDirtyProperty); }
-            protected set { this.SetValue(IsDirtyPropertyKey, BooleanBoxes.Box(value)); }
+            protected set { this.SetValue(IsDirtyPropertyKey, value); }
         }
     }
 }

@@ -25,9 +25,11 @@
                 <Style TargetType="{x:Type TextBox}">
                     <Setter Property="Grid.Row" Value="0" />
                     <Setter Property="Grid.Column" Value="1" />
-                    <Setter Property="Text" Value="{Binding Value, RelativeSource={RelativeSource AncestorType={x:Type l:StringSettingControl}}}" />
+                    <Setter Property="Text" Value="{Binding Value, RelativeSource={RelativeSource AncestorType={x:Type l:StringSettingControl}}, TargetNullValue=''}" />
                     <Setter Property="IsReadOnly" Value="{Binding IsReadOnly, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}, Mode=OneWay}" />
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+                    <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />
+                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />
                     <Style.Triggers>
                         <Trigger Property="IsReadOnly" Value="True">
                             <Setter Property="BorderBrush" Value="{x:Null}" />
@@ -71,6 +73,8 @@
                     <Setter Property="IsChecked" Value="{Binding Value, RelativeSource={RelativeSource AncestorType={x:Type l:BoolSettingControl}}}" />
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
                     <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                    <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />
+                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />                    
                 </Style>
             </Setter.Value>
         </Setter>
@@ -106,6 +110,8 @@
                     <Setter Property="IsChecked" Value="{Binding Value, RelativeSource={RelativeSource AncestorType={x:Type l:BoolSettingControl}}}" />
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
                     <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                    <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />
+                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />                    
                 </Style>
             </Setter.Value>
         </Setter>
@@ -142,6 +148,8 @@
                     <Setter Property="ItemsSource" Value="{Binding EnumValues, RelativeSource={RelativeSource AncestorType={x:Type l:EnumSettingControl}}, Mode=OneWay}" />
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
                     <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                    <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />
+                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />                    
                 </Style>
             </Setter.Value>
         </Setter>
@@ -178,6 +186,8 @@
                     <Setter Property="ItemsSource" Value="{Binding ItemsSource, RelativeSource={RelativeSource AncestorType={x:Type l:SelectorSettingControl}}, Mode=OneWay}" />
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
                     <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                    <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />
+                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />                    
                 </Style>
             </Setter.Value>
         </Setter>
@@ -212,6 +222,8 @@
                 <Style TargetType="{x:Type ContentPresenter}">
                     <Setter Property="Grid.Row" Value="0" />
                     <Setter Property="Grid.Column" Value="1" />
+                    <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type l:ContentSettingControl}}}" />
+                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:ContentSettingControl}}}" />
                 </Style>
             </Setter.Value>
         </Setter>
@@ -225,6 +237,15 @@
             </Setter.Value>
         </Setter>
 
+        <Setter Property="SuffixStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Static l:Keys.SettingRowSuffixStyleKey}}">
+                    <Setter Property="Text" Value="{Binding Suffix, RelativeSource={RelativeSource AncestorType={x:Type l:ContentSettingControl}}}" />
+                    <Setter Property="MinWidth" Value="{Binding SuffixMinWidth, RelativeSource={RelativeSource AncestorType={x:Type l:ContentSettingControl}}}" />
+                    <Setter Property="MaxWidth" Value="{Binding SuffixMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:ContentSettingControl}}}" />
+                </Style>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:ContentSettingControl}">

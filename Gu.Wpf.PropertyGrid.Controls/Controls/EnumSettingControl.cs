@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Windows;
 
-    public class EnumSettingControl : SettingControlBase<ValueType>
+    public class EnumSettingControl : SettingControlBase<object>
     {
         public static readonly DependencyProperty EnumTypeProperty = DependencyProperty.Register(
             "EnumType",
