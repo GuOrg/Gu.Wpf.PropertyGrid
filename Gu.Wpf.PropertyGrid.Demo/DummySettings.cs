@@ -1,14 +1,16 @@
 ﻿namespace Gu.Wpf.PropertyGrid.Demo
 {
     using System;
+    using System.Collections;
     using System.ComponentModel;
+    using System.Linq;
     using System.Runtime.CompilerServices;
 
     using Gu.Units;
 
     using JetBrains.Annotations;
 
-    public class DummySettings : INotifyPropertyChanged
+    public class DummySettings : INotifyPropertyChanged, INotifyDataErrorInfo
     {
         private int intValue;
         private int? nullableIntValue;
@@ -21,8 +23,29 @@
         private Length? nullableLengthValue;
         private string stringValue;
         private bool boolValue;
+        private bool hasErrors;
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+
+        public bool HasErrors
+        {
+            get
+            {
+                return this.hasErrors;
+            }
+            set
+            {
+                if (value == this.hasErrors)
+                {
+                    return;
+                }
+                this.hasErrors = value;
+                this.OnPropertyChanged();
+                this.OnErrorsChanged();
+            }
+        }
 
         public string StringValue
         {
@@ -165,10 +188,31 @@
             }
         }
 
+        public IEnumerable GetErrors(string propertyName)
+        {
+            if (!this.hasErrors)
+            {
+                return Enumerable.Empty<string>();
+            }
+
+            if (string.IsNullOrEmpty(propertyName))
+            {
+                return Enumerable.Empty<string>();
+            }
+
+            return new[] { $"{propertyName} has {nameof(INotifyDataErrorInfo)} error" };
+        }
+
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected virtual void OnErrorsChanged([CallerMemberName] string propertyName = null)
+        {
+            this.ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
+            this.ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(nameof(StringValue)));
         }
     }
 }

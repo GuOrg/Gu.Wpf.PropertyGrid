@@ -1,7 +1,6 @@
 ﻿namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
-    using Gu.Wpf.ValidationScope;
 
     public abstract partial class SettingControlBase
     {
@@ -31,10 +30,6 @@
         public static readonly DependencyProperty OldDataContextProperty = SettingControl.OldDataContextProperty.AddOwner(
                 typeof(SettingControlBase),
                 new FrameworkPropertyMetadata(default(object), FrameworkPropertyMetadataOptions.Inherits, OnOldDataContextChanged));
-
-        public static readonly DependencyProperty ValidationInputTypesProperty = Scope.ForInputTypesProperty.AddOwner(
-                typeof(SettingControlBase),
-                new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(
             "Header",
@@ -131,12 +126,6 @@
         {
             get { return this.GetValue(OldDataContextProperty); }
             set { this.SetValue(OldDataContextProperty, value); }
-        }
-
-        public InputTypeCollection ValidationInputTypes
-        {
-            get { return (InputTypeCollection)this.GetValue(ValidationInputTypesProperty); }
-            set { this.SetValue(ValidationInputTypesProperty, value); }
         }
 
         public string Header

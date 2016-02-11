@@ -1,6 +1,5 @@
 ﻿namespace Gu.Wpf.PropertyGrid
 {
-    using System.CodeDom;
     using System.ComponentModel;
 
     [TypeConverter(typeof(GridCellConverter))]

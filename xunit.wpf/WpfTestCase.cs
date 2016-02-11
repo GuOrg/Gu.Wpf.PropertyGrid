@@ -57,7 +57,7 @@ namespace xunit.wpf
                     {
                         try
                         {
-                            await testCaseTask;
+                            await testCaseTask.ConfigureAwait(false);
                         }
                         finally
                         {

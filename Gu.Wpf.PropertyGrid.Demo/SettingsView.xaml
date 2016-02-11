@@ -5,6 +5,7 @@
              xmlns:demo="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:p="http://gu.se/PropertyGrid"
+             xmlns:validationScope="http://gu.se/ValidationScope"
              mc:Ignorable="d">
     <UserControl.DataContext>
         <demo:SettingsVm />
@@ -29,11 +30,9 @@
             <p:StringSettingControl Header="readonly string"
                                     IsReadOnly="True"
                                     Value="{Binding StringValue}" />
-            
-           <p:CheckBoxSettingControl Header="INotifyDataErrorInfo has error"
-                                      OldDataContext="{x:Null}"
-                                      Value="{Binding DataContext.HasErrors,
-                                                      RelativeSource={RelativeSource AncestorType={x:Type UserControl}},
+
+            <p:CheckBoxSettingControl Header="INotifyDataErrorInfo has error"
+                                      Value="{Binding HasErrors,
                                                       ValidatesOnNotifyDataErrors=True}" />
 
             <p:CheckBoxSettingControl Header="check box"
@@ -42,7 +41,7 @@
             <p:ToggleButtonSettingControl Header="toggle button"
                                           Value="{Binding BoolValue}" />
 
-                       
+
             <p:EnumSettingControl Header="enum"
                                   Value="{Binding CurrentStringComparison}" />
 

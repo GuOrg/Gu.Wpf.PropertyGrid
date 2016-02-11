@@ -1,10 +1,8 @@
 namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
-    using System.Windows.Controls;
 
     using Gu.Wpf.NumericInput;
-    using Gu.Wpf.ValidationScope;
 
     public class IntSettingControl : NumericSettingControl<int>
     {
@@ -15,7 +13,6 @@ namespace Gu.Wpf.PropertyGrid
         static IntSettingControl()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(IntSettingControl), new FrameworkPropertyMetadata(typeof(IntSettingControl)));
-            ValidationInputTypesProperty.OverrideMetadataWithDefaultValue(typeof(SettingControlBase), typeof(IntSettingControl), new InputTypeCollection { typeof(SettingControlBase), typeof(IntBox), typeof(TextBox) });
         }
 
         public bool CanValueBeNull

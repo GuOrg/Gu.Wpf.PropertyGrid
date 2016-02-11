@@ -58,11 +58,6 @@ namespace Gu.Wpf.PropertyGrid
 
         private bool isUpdatingScalarValue;
 
-        static UnitSettingControl()
-        {
-            ValidationInputTypesProperty.OverrideMetadataWithDefaultValue(typeof(SettingControlBase), typeof(UnitSettingControl<TQuantity, TUnit>), new InputTypeCollection { typeof(SettingControlBase), typeof(DoubleBox), typeof(TextBox) });
-        }
-
         public int? DecimalDigits
         {
             get { return (int?)this.GetValue(DecimalDigitsProperty); }

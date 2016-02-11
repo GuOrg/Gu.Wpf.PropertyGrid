@@ -11,15 +11,16 @@
     <Style TargetType="{x:Type l:SettingControlBase}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="SettingControlBase, TextBox" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}" />
         <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
         <Setter Property="InfoPresenterStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowInfoPresenterStyleKey}}" />
         <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="{Binding ValidationInputTypes, RelativeSource={RelativeSource Self}}" />
     </Style>
 
-    <Style TargetType="{x:Type l:StringSettingControl}">
+    <Style BasedOn="{StaticResource {x:Type l:SettingControlBase}}"
+           TargetType="{x:Type l:StringSettingControl}">
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type TextBox}">
@@ -63,7 +64,9 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type l:CheckBoxSettingControl}">
+    <Style BasedOn="{StaticResource {x:Type l:SettingControlBase}}"
+           TargetType="{x:Type l:CheckBoxSettingControl}">
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="SettingControlBase, CheckBox" />
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type CheckBox}">
@@ -74,7 +77,7 @@
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
                     <Setter Property="FocusVisualStyle" Value="{x:Null}" />
                     <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />
-                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />                    
+                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />
                 </Style>
             </Setter.Value>
         </Setter>
@@ -101,7 +104,9 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type l:ToggleButtonSettingControl}">
+    <Style BasedOn="{StaticResource {x:Type l:SettingControlBase}}"
+           TargetType="{x:Type l:ToggleButtonSettingControl}">
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="SettingControlBase, ToggleButton" />
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type ToggleButton}">
@@ -111,7 +116,7 @@
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
                     <Setter Property="FocusVisualStyle" Value="{x:Null}" />
                     <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />
-                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />                    
+                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />
                 </Style>
             </Setter.Value>
         </Setter>
@@ -138,7 +143,9 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type l:EnumSettingControl}">
+    <Style BasedOn="{StaticResource {x:Type l:SettingControlBase}}"
+           TargetType="{x:Type l:EnumSettingControl}">
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="SettingControlBase, ComboBox" />
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type ComboBox}">
@@ -149,7 +156,7 @@
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
                     <Setter Property="FocusVisualStyle" Value="{x:Null}" />
                     <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />
-                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />                    
+                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />
                 </Style>
             </Setter.Value>
         </Setter>
@@ -176,7 +183,9 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type l:SelectorSettingControl}">
+    <Style BasedOn="{StaticResource {x:Type l:SettingControlBase}}"
+           TargetType="{x:Type l:SelectorSettingControl}">
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="SettingControlBase, ComboBox" />
         <Setter Property="ValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type ComboBox}">
@@ -187,7 +196,7 @@
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
                     <Setter Property="FocusVisualStyle" Value="{x:Null}" />
                     <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />
-                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />                    
+                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}}" />
                 </Style>
             </Setter.Value>
         </Setter>
@@ -217,6 +226,7 @@
     </Style>
 
     <Style TargetType="{x:Type l:ContentSettingControl}">
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="SettingControlBase, ComboBox, TextBox, Slider" />
         <Setter Property="ContentStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type ContentPresenter}">
@@ -239,7 +249,8 @@
 
         <Setter Property="SuffixStyle">
             <Setter.Value>
-                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Static l:Keys.SettingRowSuffixStyleKey}}">
+                <Style BasedOn="{StaticResource {x:Static l:Keys.SettingRowSuffixStyleKey}}"
+                       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding Suffix, RelativeSource={RelativeSource AncestorType={x:Type l:ContentSettingControl}}}" />
                     <Setter Property="MinWidth" Value="{Binding SuffixMinWidth, RelativeSource={RelativeSource AncestorType={x:Type l:ContentSettingControl}}}" />
                     <Setter Property="MaxWidth" Value="{Binding SuffixMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:ContentSettingControl}}}" />
