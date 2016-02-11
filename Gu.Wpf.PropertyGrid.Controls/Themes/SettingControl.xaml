@@ -28,6 +28,13 @@
                     <Setter Property="Text" Value="{Binding Value, RelativeSource={RelativeSource AncestorType={x:Type l:StringSettingControl}}}" />
                     <Setter Property="IsReadOnly" Value="{Binding IsReadOnly, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}, Mode=OneWay}" />
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+                    <Style.Triggers>
+                        <Trigger Property="IsReadOnly" Value="True">
+                            <Setter Property="BorderBrush" Value="{x:Null}" />
+                            <Setter Property="Background" Value="{x:Null}" />
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                        </Trigger>
+                    </Style.Triggers>
                 </Style>
             </Setter.Value>
         </Setter>

@@ -26,9 +26,15 @@
             <p:StringSettingControl Header="string"
                                     Value="{Binding StringValue}" />
 
+            <p:StringSettingControl Header="readonly string"
+                                    IsReadOnly="True"
+                                    Value="{Binding StringValue}" />
+
             <p:CheckBoxSettingControl Header="INotifyDataErrorInfo has error"
+                                      OldDataContext="{x:Null}"
                                       Value="{Binding DataContext.HasErrors,
-                                                      RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" />
+                                                      RelativeSource={RelativeSource AncestorType={x:Type UserControl}},
+                                                      ValidatesOnNotifyDataErrors=True}" />
 
             <p:CheckBoxSettingControl Header="check box"
                                       Value="{Binding BoolValue}" />

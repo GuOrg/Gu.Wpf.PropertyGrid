@@ -27,6 +27,13 @@
                     <Setter Property="MinValue" Value="{Binding MinValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MaxValue" Value="{Binding MaxValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+                    <Style.Triggers>
+                        <Trigger Property="IsReadOnly" Value="True">
+                            <Setter Property="BorderBrush" Value="{x:Null}" />
+                            <Setter Property="Background" Value="{x:Null}" />
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                        </Trigger>
+                    </Style.Triggers>
                 </Style>
             </Setter.Value>
         </Setter>
@@ -67,6 +74,13 @@
                     <Setter Property="MinValue" Value="{Binding MinValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MaxValue" Value="{Binding MaxValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+                    <Style.Triggers>
+                        <Trigger Property="IsReadOnly" Value="True">
+                            <Setter Property="BorderBrush" Value="{x:Null}" />
+                            <Setter Property="Background" Value="{x:Null}" />
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                        </Trigger>
+                    </Style.Triggers>
                 </Style>
             </Setter.Value>
         </Setter>
