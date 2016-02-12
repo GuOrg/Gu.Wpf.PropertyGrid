@@ -108,7 +108,7 @@ Library with controls for making property grids
 
 Renders:
 
-![Render](http://i.imgur.com/x7G425V.png)
+![Render](http://i.stack.imgur.com/DkWs1.gif)
 
 ## AttachedProperties
 ### Grid
