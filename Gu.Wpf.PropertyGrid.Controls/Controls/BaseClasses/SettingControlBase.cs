@@ -1,6 +1,7 @@
 namespace Gu.Wpf.PropertyGrid
 {
     using System;
+    using System.ComponentModel;
     using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
@@ -39,7 +40,7 @@ namespace Gu.Wpf.PropertyGrid
                 var binding = BindingOperations.GetBinding(this, this.ValueDependencyProperty);
                 if (binding != null)
                 {
-                    var value = binding?.Path.Path.Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries).Last();
+                    var value = binding.Path?.Path.Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries).LastOrDefault();
                     this.SetCurrentValue(HeaderProperty, value);
                 }
             }

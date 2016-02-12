@@ -6,8 +6,8 @@
     {
 #pragma warning disable SA1202 // Elements must be ordered by access
         public static readonly DependencyProperty ValueMinWidthProperty = SettingControl.ValueMinWidthProperty.AddOwner(
-        typeof(SettingControlBase),
-        new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
+            typeof(SettingControlBase),
+            new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty ValueMaxWidthProperty = SettingControl.ValueMaxWidthProperty.AddOwner(
             typeof(SettingControlBase),
