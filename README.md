@@ -4,77 +4,106 @@ Library with controls for making property grids
 ## Sample
 
 ```
-<p:SettingsControl Grid.Row="0"
-                    DataContext="{Binding EditableCopy}"
-                    SuffixMinWidth="20"
-                    ValueMinWidth="150"
-                    OldDataContext="{Binding DataContext.LastSaved,
-                                            RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
-    <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
-                Text="Core" />
+<Grid validationScope:Scope.ForInputTypes="Scope"
+        validationScope:Scope.HasErrorsOneWayToSourceBinding="{Binding ViewHasErrors,
+                                                                        Mode=OneWayToSource}">
+    <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <p:SettingsControl Grid.Row="0"
+                        DataContext="{Binding EditableCopy}"
+                        OldDataContext="{Binding DataContext.LastSaved,
+                                                RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                        SuffixMinWidth="20"
+                        ValueMinWidth="150">
+        <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
+                    Text="Core" />
 
-    <p:StringSettingControl Header="string"
-                            Value="{Binding StringValue}" />
+        <p:StringSettingControl Header="string"
+                                Value="{Binding StringValue}" />
 
-    <p:CheckBoxSettingControl Header="check box"
-                                Value="{Binding BoolValue}" />
+        <p:StringSettingControl Header="readonly string"
+                                IsReadOnly="True"
+                                Value="{Binding StringValue}" />
 
-    <p:ToggleButtonSettingControl Header="toggle button"
+        <p:CheckBoxSettingControl Header="INotifyDataErrorInfo has error"
+                                    Value="{Binding HasErrors,
+                                                    ValidatesOnNotifyDataErrors=True}" />
+
+        <p:CheckBoxSettingControl Header="checkbox"
                                     Value="{Binding BoolValue}" />
 
-    <p:EnumSettingControl Header="enum"
-                            Value="{Binding CurrentStringComparison}" />
+        <p:ToggleButtonSettingControl Header="togglebutton"
+                                        Value="{Binding BoolValue}" />
 
-    <p:SelectorSettingControl Header="selector"
-                                ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
-                                Value="{Binding CurrentLengthUnit}" />
 
-    <p:ContentSettingControl Header="content">
-        <Button Command="{Binding DataContext.SaveCommand,
-                                    RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+        <p:EnumSettingControl Header="enum"
+                                Value="{Binding CurrentStringComparison}" />
+
+        <p:SelectorSettingControl Header="selector"
+                                    ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
+                                    Value="{Binding CurrentLengthUnit}" />
+
+        <p:ContentSettingControl Header="content">
+            <Button Command="{Binding DataContext.SaveCommand,
+                                        RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                    Content="Save" />
+        </p:ContentSettingControl>
+
+        <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
+                    Text="NumericSettingControls" />
+
+        <p:IntSettingControl Header="int"
+                                Value="{Binding IntValue}" />
+
+        <p:IntSettingControl CanValueBeNull="True"
+                                Header="int?"
+                                Value="{Binding NullableIntValue}" />
+
+        <p:DoubleSettingControl Header="double"
+                                Value="{Binding DoubleValue}" />
+
+        <p:DoubleSettingControl CanValueBeNull="True"
+                                Header="double?"
+                                Value="{Binding NullableDoubleValue}" />
+
+        <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
+                    Text="UnitSettingControls" />
+
+        <p:LengthSettingControl Header="Length"
+                                IsEnabled="False"
+                                Value="{Binding LengthValue}" />
+
+        <p:LengthSettingControl CanValueBeNull="True"
+                                Header="Nullable length"
+                                Value="{Binding NullableLengthValue}" />
+
+        <p:SpeedSettingControl Header="Speed (readonly)"
+                                IsReadOnly="True"
+                                Unit="km/h"
+                                Value="{Binding SpeedValue}" />
+
+        <p:LengthSettingControl DecimalDigits="2"
+                                Header="Length"
+                                MaxValue="15 mm"
+                                MinValue="-15 mm"
+                                Unit="{Binding CurrentLengthUnit}"
+                                Value="{Binding LengthValue}" />
+    </p:SettingsControl>
+    <Grid Grid.Row="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0"
+                Command="{Binding SaveCommand}"
                 Content="Save" />
-    </p:ContentSettingControl>
-
-    <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
-                Text="NumericSettingControls" />
-
-    <p:IntSettingControl Header="int"
-                            Value="{Binding IntValue}" />
-
-    <p:IntSettingControl CanValueBeNull="True"
-                            Header="int?"
-                            Value="{Binding NullableIntValue}" />
-
-    <p:DoubleSettingControl Header="double"
-                            Value="{Binding DoubleValue}" />
-
-    <p:DoubleSettingControl CanValueBeNull="True"
-                            Header="double?"
-                            Value="{Binding NullableDoubleValue}" />
-
-
-    <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
-                Text="UnitSettingControls" />
-    <p:LengthSettingControl Header="Length"
-                            IsEnabled="False"
-                            Value="{Binding LengthValue}" />
-
-    <p:LengthSettingControl CanValueBeNull="True"
-                            Header="Nullable length"
-                            Value="{Binding NullableLengthValue}" />
-
-    <p:SpeedSettingControl Header="Speed (readonly)"
-                            IsReadOnly="True"
-                            Unit="km/h"
-                            Value="{Binding SpeedValue}" />
-
-    <p:LengthSettingControl DecimalDigits="1"
-                            Header="Length"
-                            MaxValue="15 mm"
-                            MinValue="-15 mm"
-                            Unit="{Binding CurrentLengthUnit}"
-                            Value="{Binding LengthValue}" />
-</p:SettingsControl>
+        <Button Grid.Column="1"
+                Command="{Binding UndoAllCommand}"
+                Content="Undo" />
+    </Grid>
+</Grid>
 ```
 
 Renders:
