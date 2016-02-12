@@ -10,7 +10,9 @@
     <UserControl.DataContext>
         <demo:SettingsVm />
     </UserControl.DataContext>
-    <Grid>
+    <Grid validationScope:Scope.ForInputTypes="Scope"
+          validationScope:Scope.HasErrorsOneWayToSourceBinding="{Binding ViewHasErrors,
+                                                                         Mode=OneWayToSource}">
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="Auto" />

@@ -195,7 +195,7 @@
                 return Enumerable.Empty<string>();
             }
 
-            if (string.IsNullOrEmpty(propertyName))
+            if (propertyName != nameof(this.HasErrors) && propertyName != nameof(this.StringValue))
             {
                 return Enumerable.Empty<string>();
             }

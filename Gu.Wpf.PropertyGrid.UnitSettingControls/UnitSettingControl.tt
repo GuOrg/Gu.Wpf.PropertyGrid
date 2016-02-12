@@ -32,7 +32,7 @@ namespace Gu.Wpf.PropertyGrid
             SuffixProperty.OverrideMetadata(
                 typeof(<#= className #>),
                 new FrameworkPropertyMetadata(
-                    GetSuffix(DefaultUnit, 
+                    CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }

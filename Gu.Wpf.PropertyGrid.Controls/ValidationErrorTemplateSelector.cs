@@ -1,6 +1,7 @@
 ﻿namespace Gu.Wpf.PropertyGrid
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Markup;
@@ -12,6 +13,15 @@
 
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
+            if (item != null)
+            {
+                var match = this.Templates.FirstOrDefault(x => x.DataType == item.GetType());
+                if (match != null)
+                {
+                    return match;
+                }
+            }
+
             return base.SelectTemplate(item, container);
         }
     }

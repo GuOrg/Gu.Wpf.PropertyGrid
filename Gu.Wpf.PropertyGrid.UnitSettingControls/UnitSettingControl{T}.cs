@@ -2,11 +2,9 @@ namespace Gu.Wpf.PropertyGrid
 {
     using System;
     using System.Windows;
-    using System.Windows.Controls;
 
     using Gu.Units;
     using Gu.Wpf.NumericInput;
-    using Gu.Wpf.ValidationScope;
 
     public abstract class UnitSettingControl<TQuantity, TUnit> : NumericSettingControl<TQuantity>
         where TQuantity : struct, IComparable<TQuantity>, IQuantity<TUnit>

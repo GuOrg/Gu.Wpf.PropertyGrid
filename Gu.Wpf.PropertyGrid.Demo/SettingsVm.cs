@@ -1,10 +1,7 @@
 ﻿namespace Gu.Wpf.PropertyGrid.Demo
 {
-    using System;
-    using System.Collections;
     using System.Collections.Generic;
     using System.ComponentModel;
-    using System.Linq;
     using System.Runtime.CompilerServices;
     using System.Windows.Input;
     using Gu.ChangeTracking;
@@ -15,12 +12,14 @@
     {
         public static readonly IReadOnlyList<LengthUnit> LengthUnits = new[] { LengthUnit.Centimetres, LengthUnit.Inches, };
 
+        private bool viewHasErrors;
+
         public SettingsVm()
         {
             // simulating saving
             this.SaveCommand = new RelayCommand(
                 _ => Copy.PropertyValues(this.EditableCopy, this.LastSaved),
-                _ => !EqualBy.PropertyValues(this.EditableCopy, this.LastSaved));
+                _ =>!this.ViewHasErrors && !EqualBy.PropertyValues(this.EditableCopy, this.LastSaved));
 
             this.UndoAllCommand = new RelayCommand(
                 _ => Copy.PropertyValues(this.LastSaved, this.EditableCopy),
@@ -36,6 +35,23 @@
         public ICommand SaveCommand { get; }
 
         public ICommand UndoAllCommand { get; }
+
+        public bool ViewHasErrors
+        {
+            get
+            {
+                return this.viewHasErrors;
+            }
+            set
+            {
+                if (value == this.viewHasErrors)
+                {
+                    return;
+                }
+                this.viewHasErrors = value;
+                this.OnPropertyChanged();
+            }
+        }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
