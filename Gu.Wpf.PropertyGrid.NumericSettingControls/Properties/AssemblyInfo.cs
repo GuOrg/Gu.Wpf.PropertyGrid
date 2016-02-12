@@ -7,9 +7,9 @@ using System.Windows.Markup;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Gu.Wpf.PropertyGrid.NumericSettingControls")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Numeric controls for Gu.Wpf.PropertyGrid")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Johan Larsson")]
 [assembly: AssemblyProduct("Gu.Wpf.PropertyGrid.NumericSettingControls")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
