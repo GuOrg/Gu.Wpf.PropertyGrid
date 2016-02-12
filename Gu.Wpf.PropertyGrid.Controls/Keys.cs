@@ -17,8 +17,6 @@
 
         public static ResourceKey SettingRowHeaderStyleKey { get; } = CreateKey();
 
-        public static ResourceKey SettingRowInfoPresenterStyleKey { get; } = CreateKey();
-
         public static ResourceKey SettingRowOldValueStyleKey { get; } = CreateKey();
 
         public static ResourceKey SettingRowErrorTextStyleKey { get; } = CreateKey();

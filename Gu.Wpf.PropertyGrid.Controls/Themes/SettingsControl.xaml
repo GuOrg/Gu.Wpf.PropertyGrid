@@ -3,6 +3,8 @@
                     xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/BaseStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/ErrorPresenter.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/InfoPresenter.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="{x:Static l:Keys.ItemsControlSettingListStyleKey}"
@@ -48,7 +50,7 @@
            TargetType="{x:Type l:SettingsControl}">
         <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}" />
         <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
-        <Setter Property="InfoPresenterStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowInfoPresenterStyleKey}}" />
+        <Setter Property="InfoPresenterStyle" Value="{StaticResource {x:Type l:InfoPresenter}}" />
         <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
     </Style>
 
@@ -57,7 +59,7 @@
            TargetType="{x:Type l:SettingsControl}">
         <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}" />
         <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
-        <Setter Property="InfoPresenterStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowInfoPresenterStyleKey}}" />
+        <Setter Property="InfoPresenterStyle" Value="{StaticResource {x:Type l:InfoPresenter}}" />
         <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
     </Style>
 </ResourceDictionary>

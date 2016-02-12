@@ -49,7 +49,8 @@
                         <TextBlock x:Name="SuffixBox"
                                    Style="{TemplateBinding SuffixStyle}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
+                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                                                    Style="{TemplateBinding InfoPresenterStyle}"/>
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>
@@ -99,7 +100,8 @@
                         <TextBlock x:Name="SuffixBox"
                                    Style="{TemplateBinding SuffixStyle}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
+                        <propertyGrid:InfoPresenter x:Name="InfoPresenter" 
+                                                    Style="{TemplateBinding InfoPresenterStyle}"/>
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>

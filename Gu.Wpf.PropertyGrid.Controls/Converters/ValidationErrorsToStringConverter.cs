@@ -8,11 +8,11 @@
     using System.Windows.Data;
     using System.Windows.Markup;
     [MarkupExtensionReturnType(typeof(IValueConverter))]
-    public class ValidationErrorToStringConverter : MarkupExtension, IValueConverter
+    public class ValidationErrorsToStringConverter : MarkupExtension, IValueConverter
     {
-        public static readonly ValidationErrorToStringConverter Default = new ValidationErrorToStringConverter();
+        public static readonly ValidationErrorsToStringConverter Default = new ValidationErrorsToStringConverter();
 
-        public ValidationErrorToStringConverter()
+        public ValidationErrorsToStringConverter()
         {
         }
 
@@ -26,6 +26,12 @@
             if (value == null)
             {
                 return null;
+            }
+
+            var enumerable = value as IEnumerable<object>;
+            if (enumerable != null)
+            {
+                return this.Convert(enumerable.FirstOrDefault(), targetType, parameter, culture);
             }
 
             var text = value as string;
@@ -51,7 +57,7 @@
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotSupportedException($"{nameof(ValidationErrorToStringConverter)} only supports one-way conversion.");
+            throw new NotSupportedException($"{nameof(ValidationErrorsToStringConverter)} only supports one-way conversion.");
         }
     }
 }
