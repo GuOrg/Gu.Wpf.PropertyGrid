@@ -45,7 +45,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AttachedProperties\TextBox.cs" />
     <Compile Include="Controls\BaseClasses\SettingControlBase.DependencyProperties.cs" />
     <Compile Include="Controls\ContentSettingControl.cs" />
     <Compile Include="Controls\CheckBoxSettingControl.cs" />

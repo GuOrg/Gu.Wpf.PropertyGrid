@@ -36,7 +36,6 @@
                             <Setter Property="BorderBrush" Value="{x:Null}" />
                             <Setter Property="Background" Value="{x:Null}" />
                             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-                            <Setter Property="l:TextBox_.MouseOverBorder" Value="0,0,0,1"></Setter>
                         </Trigger>
                     </Style.Triggers>
                 </Style>
