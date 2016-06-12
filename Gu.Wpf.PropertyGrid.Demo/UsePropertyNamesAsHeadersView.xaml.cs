@@ -9,7 +9,7 @@
     {
         public UsePropertyNamesAsHeadersView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

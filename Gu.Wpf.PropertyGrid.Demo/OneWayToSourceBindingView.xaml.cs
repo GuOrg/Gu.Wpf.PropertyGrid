@@ -9,7 +9,7 @@
     {
         public OneWayToSourceBindingView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

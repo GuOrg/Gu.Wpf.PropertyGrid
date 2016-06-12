@@ -212,7 +212,7 @@
         protected virtual void OnErrorsChanged([CallerMemberName] string propertyName = null)
         {
             this.ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
-            this.ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(nameof(StringValue)));
+            this.ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(nameof(this.StringValue)));
         }
     }
 }

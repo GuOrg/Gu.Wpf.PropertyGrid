@@ -14,11 +14,13 @@
 
         public Visibility WhenNull { get; set; } = Visibility.Collapsed;
 
+        /// <inheritdoc/>
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             return this;
         }
 
+        /// <inheritdoc/>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value == null)
@@ -36,12 +38,13 @@
                 return this.WhenFalse;
             }
 
-            throw new ArgumentOutOfRangeException("Expected value to be of type Nullable<bool>");
+            throw new ArgumentOutOfRangeException("Expected value to be of type bool or Nullable<bool>");
         }
 
+        /// <inheritdoc/>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotSupportedException($"{nameof(BooleanToVisibilityConverter)} is only for OneWay");
+            throw new NotSupportedException($"{nameof(BooleanToVisibilityConverter)} is only for OneWay bindings");
         }
     }
 }

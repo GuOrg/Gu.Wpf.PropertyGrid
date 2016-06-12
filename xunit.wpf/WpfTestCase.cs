@@ -16,7 +16,7 @@ namespace xunit.wpf
     [DebuggerDisplay(@"\{ class = {TestMethod.TestClass.Class.Name}, method = {TestMethod.Method.Name}, display = {DisplayName}, skip = {SkipReason} \}")]
     public class WpfTestCase : LongLivedMarshalByRefObject, IXunitTestCase
     {
-        IXunitTestCase testCase;
+        private IXunitTestCase testCase;
 
         public WpfTestCase(IXunitTestCase testCase)
         {
@@ -28,12 +28,10 @@ namespace xunit.wpf
         [Obsolete("Called by the de-serializer", error: true)]
         public WpfTestCase() { }
 
-        public IMethodInfo Method
-        {
-            get { return testCase.Method; }
-        }
+        public IMethodInfo Method => this.testCase.Method;
 
-        public Task<RunSummary> RunAsync(IMessageSink diagnosticMessageSink,
+        public Task<RunSummary> RunAsync(
+            IMessageSink diagnosticMessageSink,
             IMessageBus messageBus,
             object[] constructorArguments,
             ExceptionAggregator aggregator,
@@ -81,60 +79,42 @@ namespace xunit.wpf
             return tcs.Task;
         }
 
-        public string DisplayName
-        {
-            get { return testCase.DisplayName; }
-        }
+        public string DisplayName => this.testCase.DisplayName;
 
-        public string SkipReason
-        {
-            get { return testCase.SkipReason; }
-        }
+        public string SkipReason => this.testCase.SkipReason;
 
         public ISourceInformation SourceInformation
         {
-            get { return testCase.SourceInformation; }
-            set { testCase.SourceInformation = value; }
+            get { return this.testCase.SourceInformation; }
+            set { this.testCase.SourceInformation = value; }
         }
 
-        public ITestMethod TestMethod
-        {
-            get { return testCase.TestMethod; }
-        }
+        public ITestMethod TestMethod => this.testCase.TestMethod;
 
-        public object[] TestMethodArguments
-        {
-            get { return testCase.TestMethodArguments; }
-        }
+        public object[] TestMethodArguments => this.testCase.TestMethodArguments;
 
-        public Dictionary<string, List<string>> Traits
-        {
-            get { return testCase.Traits; }
-        }
+        public Dictionary<string, List<string>> Traits => this.testCase.Traits;
 
-        public string UniqueID
-        {
-            get { return testCase.UniqueID; }
-        }
+        public string UniqueID => this.testCase.UniqueID;
 
         public void Deserialize(IXunitSerializationInfo info)
         {
-            testCase = info.GetValue<IXunitTestCase>("InnerTestCase");
+            this.testCase = info.GetValue<IXunitTestCase>("InnerTestCase");
         }
 
         public void Serialize(IXunitSerializationInfo info)
         {
-            info.AddValue("InnerTestCase", testCase);
+            info.AddValue("InnerTestCase", this.testCase);
         }
 
         private static void CopyTaskResultFrom<T>(TaskCompletionSource<T> tcs, Task<T> template)
         {
             if (tcs == null)
-                throw new ArgumentNullException("tcs");
+                throw new ArgumentNullException(nameof(tcs));
             if (template == null)
-                throw new ArgumentNullException("template");
+                throw new ArgumentNullException(nameof(template));
             if (!template.IsCompleted)
-                throw new ArgumentException("Task must be completed first.", "template");
+                throw new ArgumentException("Task must be completed first.", nameof(template));
 
             if (template.IsFaulted)
                 tcs.SetException(template.Exception);

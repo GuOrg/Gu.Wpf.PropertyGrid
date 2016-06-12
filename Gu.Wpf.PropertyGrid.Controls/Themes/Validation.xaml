@@ -9,8 +9,7 @@
         </Border>
     </ControlTemplate>
 
-    <Style x:Key="ValidationTextStyle"
-           TargetType="{x:Type TextBlock}">
+    <Style x:Key="ValidationTextStyle" TargetType="{x:Type TextBlock}">
         <Setter Property="Foreground" Value="Red" />
         <Setter Property="FontSize" Value="12" />
     </Style>

@@ -16,16 +16,19 @@ namespace Gu.Wpf.PropertyGrid
         {
         }
 
+        /// <inheritdoc/>
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             return this;
         }
 
+        /// <inheritdoc/>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return (value as IEnumerable<object>)?.FirstOrDefault();
         }
 
+        /// <inheritdoc/>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotSupportedException($"{nameof(FirstOrDefaultConverter)} only supports one-way conversion.");

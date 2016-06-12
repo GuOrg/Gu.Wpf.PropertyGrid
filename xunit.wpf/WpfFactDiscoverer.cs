@@ -11,12 +11,12 @@
 
         public WpfFactDiscoverer(IMessageSink diagnosticMessageSink)
         {
-            factDiscoverer = new FactDiscoverer(diagnosticMessageSink);
+            this.factDiscoverer = new FactDiscoverer(diagnosticMessageSink);
         }
 
         public IEnumerable<IXunitTestCase> Discover(ITestFrameworkDiscoveryOptions discoveryOptions, ITestMethod testMethod, IAttributeInfo factAttribute)
         {
-            return factDiscoverer.Discover(discoveryOptions, testMethod, factAttribute)
+            return this.factDiscoverer.Discover(discoveryOptions, testMethod, factAttribute)
                 .Select(testCase => new WpfTestCase(testCase));
         }
     }

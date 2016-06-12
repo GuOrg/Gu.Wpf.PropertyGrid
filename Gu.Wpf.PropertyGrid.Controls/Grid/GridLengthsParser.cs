@@ -54,8 +54,8 @@ namespace Gu.Wpf.PropertyGrid
         // http://referencesource.microsoft.com/#WindowsBase/Shared/MS/Internal/DoubleUtil.cs,8e95e6558bdb123d
         public static bool IsOne(double value)
         {
-            const double DBL_EPSILON = 2.2204460492503131e-016;
-            return Math.Abs(value - 1.0) < 10.0 * DBL_EPSILON;
+            const double DblEpsilon = 2.2204460492503131e-016;
+            return Math.Abs(value - 1.0) < 10.0 * DblEpsilon;
         }
     }
 }

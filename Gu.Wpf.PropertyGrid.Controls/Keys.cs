@@ -31,6 +31,7 @@
 
         private static ComponentResourceKey CreateKey([CallerMemberName] string caller = null)
         {
+            // ReSharper disable once AssignNullToNotNullAttribute not null here
             return new ComponentResourceKey(typeof(Keys), caller);
         }
     }
