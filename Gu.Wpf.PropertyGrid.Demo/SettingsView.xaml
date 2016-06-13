@@ -10,9 +10,7 @@
     <UserControl.DataContext>
         <demo:SettingsVm />
     </UserControl.DataContext>
-    <Grid validationScope:Scope.ForInputTypes="Scope"
-          validationScope:Scope.HasErrorsOneWayToSourceBinding="{Binding ViewHasErrors,
-                                                                         Mode=OneWayToSource}">
+    <Grid validationScope:Scope.ForInputTypes="Scope" validationScope:Scope.HasErrorsOneWayToSourceBinding="{Binding ViewHasErrors, Mode=OneWayToSource}">
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="Auto" />
@@ -23,62 +21,59 @@
                                                     RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
                            SuffixMinWidth="20"
                            ValueMinWidth="150">
-            <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
-                       Text="Core" />
+            <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Core" />
 
-            <p:StringSettingControl Header="string"
-                                    Value="{Binding StringValue}" />
+            <p:StringSettingControl Header="string" Value="{Binding StringValue}" />
 
             <p:StringSettingControl Header="readonly string"
                                     IsReadOnly="True"
                                     Value="{Binding StringValue}" />
 
-            <p:CheckBoxSettingControl Header="INotifyDataErrorInfo has error"
-                                      Value="{Binding HasErrors,
-                                                      ValidatesOnNotifyDataErrors=True}" />
+            <p:CheckBoxSettingControl Header="INotifyDataErrorInfo has error" Value="{Binding HasErrors, ValidatesOnNotifyDataErrors=True}" />
 
-            <p:CheckBoxSettingControl Header="checkbox"
-                                      Value="{Binding BoolValue}" />
+            <p:CheckBoxSettingControl Header="checkbox" Value="{Binding BoolValue}" />
 
-            <p:ToggleButtonSettingControl Header="togglebutton"
-                                          Value="{Binding BoolValue}" />
+            <p:ToggleButtonSettingControl Header="togglebutton" Value="{Binding BoolValue}" />
 
 
-            <p:EnumSettingControl Header="enum"
-                                  Value="{Binding CurrentStringComparison}" />
+            <p:EnumSettingControl Header="enum" Value="{Binding CurrentStringComparison}" />
 
             <p:SelectorSettingControl Header="selector"
                                       ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
                                       Value="{Binding CurrentLengthUnit}" />
 
             <p:ContentSettingControl Header="content">
-                <Button Command="{Binding DataContext.SaveCommand,
-                                          RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
-                        Content="Save" />
+                <Button Command="{Binding DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Content="Save" />
             </p:ContentSettingControl>
 
-            <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
-                       Text="NumericSettingControls" />
+            <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="NumericSettingControls" />
 
-            <p:IntSettingControl Header="int"
+            <p:IntSettingControl Header="int" Value="{Binding IntValue}" />
+
+            <p:IntSettingControl Header="readonly int"
+                                 IsReadOnly="True"
                                  Value="{Binding IntValue}" />
 
             <p:IntSettingControl CanValueBeNull="True"
                                  Header="int?"
                                  Value="{Binding NullableIntValue}" />
 
-            <p:DoubleSettingControl Header="double"
+            <p:DoubleSettingControl Header="double" Value="{Binding DoubleValue}" />
+
+            <p:DoubleSettingControl Header="readonly double"
+                                    IsReadOnly="True"
                                     Value="{Binding DoubleValue}" />
 
             <p:DoubleSettingControl CanValueBeNull="True"
                                     Header="double?"
                                     Value="{Binding NullableDoubleValue}" />
 
-            <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
-                       Text="UnitSettingControls" />
+            <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="UnitSettingControls" />
 
-            <p:LengthSettingControl Header="Length"
-                                    IsEnabled="False"
+            <p:LengthSettingControl Header="Length" Value="{Binding LengthValue}" />
+
+            <p:LengthSettingControl Header="readonly length"
+                                    IsReadOnly="True"
                                     Value="{Binding LengthValue}" />
 
             <p:LengthSettingControl CanValueBeNull="True"

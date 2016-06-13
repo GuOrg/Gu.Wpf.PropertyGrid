@@ -14,10 +14,11 @@
                 <Style TargetType="{x:Type numeric:DoubleBox}">
                     <Setter Property="Grid.Row" Value="0" />
                     <Setter Property="Grid.Column" Value="1" />
+                    <Setter Property="Value" Value="{Binding Value, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <Setter Property="IsReadOnly" Value="{Binding IsReadOnly, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}, Mode=OneWay}" />
                     <Setter Property="DecimalDigits" Value="{Binding DecimalDigits, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="CanValueBeNull" Value="{Binding CanValueBeNull, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="ValidationTrigger" Value="PropertyChanged" />
-                    <Setter Property="Value" Value="{Binding Value, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MinValue" Value="{Binding MinValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MaxValue" Value="{Binding MaxValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
@@ -65,8 +66,9 @@
                 <Style TargetType="{x:Type numeric:IntBox}">
                     <Setter Property="Grid.Row" Value="0" />
                     <Setter Property="Grid.Column" Value="1" />
-                    <Setter Property="ValidationTrigger" Value="PropertyChanged" />
                     <Setter Property="Value" Value="{Binding Value, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <Setter Property="IsReadOnly" Value="{Binding IsReadOnly, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}, Mode=OneWay}" />
+                    <Setter Property="ValidationTrigger" Value="PropertyChanged" />
                     <Setter Property="CanValueBeNull" Value="{Binding CanValueBeNull, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MinValue" Value="{Binding MinValue, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="MaxValue" Value="{Binding MaxValue, RelativeSource={RelativeSource TemplatedParent}}" />
