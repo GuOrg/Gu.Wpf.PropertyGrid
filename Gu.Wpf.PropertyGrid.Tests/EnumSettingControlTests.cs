@@ -2,12 +2,14 @@
 {
     using System;
     using System.Linq;
-    using Xunit;
-    using xunit.wpf;
+    using System.Threading;
 
+    using NUnit.Framework;
+
+    [Apartment(ApartmentState.STA)]
     public class EnumSettingControlTests
     {
-        [WpfFact]
+        [Test]
         public void SettingValueUpdatesEnumValues()
         {
             var control = new EnumSettingControl();
@@ -15,14 +17,14 @@
 
             control.Value = StringComparison.CurrentCulture;
 
-            Assert.Equal(typeof(StringComparison), control.EnumType);
+            Assert.AreEqual(typeof(StringComparison), control.EnumType);
             var expected = Enum.GetValues(typeof(StringComparison))
                 .Cast<IFormattable>()
                 .ToArray();
-            Assert.Equal(expected, control.EnumValues);
+            Assert.AreEqual(expected, control.EnumValues);
         }
 
-        [WpfFact]
+        [Test]
         public void SettingEnumTypeUpdatesEnumValues()
         {
             var control = new EnumSettingControl();
@@ -33,7 +35,7 @@
             var expected = Enum.GetValues(typeof(StringComparison))
                 .Cast<IFormattable>()
                 .ToArray();
-            Assert.Equal(expected, control.EnumValues);
+            Assert.AreEqual(expected, control.EnumValues);
         }
     }
 }

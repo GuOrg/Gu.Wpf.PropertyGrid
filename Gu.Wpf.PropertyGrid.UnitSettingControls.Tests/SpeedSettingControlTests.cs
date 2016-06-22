@@ -1,27 +1,30 @@
 namespace Gu.Wpf.PropertyGrid.UnitSettingControls.Tests
 {
-    using Gu.Units;
-    using xunit.wpf;
-    using Xunit;
+    using System.Threading;
 
+    using Gu.Units;
+
+    using NUnit.Framework;
+
+    [Apartment(ApartmentState.STA)]
     public class SpeedSettingControlTests
     {
-        [WpfFact]
+        [Test]
         public void UnitUpdatesSuffix()
         {
             var control = new SpeedSettingControl();
-            Assert.Equal("m/s", control.Suffix);
+            Assert.AreEqual("m/s", control.Suffix);
             control.Unit = SpeedUnit.CentimetresPerHour;
-            Assert.Equal("cm/h", control.Suffix);
+            Assert.AreEqual("cm/h", control.Suffix);
         }
 
-        [WpfFact]
+        [Test]
         public void SymbolFormatUpdatesSuffix()
         {
             var control = new SpeedSettingControl();
-            Assert.Equal("m/s", control.Suffix);
+            Assert.AreEqual("m/s", control.Suffix);
             control.Unit = SpeedUnit.CentimetresPerHour;
-            Assert.Equal("cm/h", control.Suffix);
+            Assert.AreEqual("cm/h", control.Suffix);
         }
     }
 }

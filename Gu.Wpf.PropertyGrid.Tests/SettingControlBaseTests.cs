@@ -1,11 +1,13 @@
 ﻿namespace Gu.Wpf.PropertyGrid.Tests
 {
-    using xunit.wpf;
-    using Xunit;
+    using System.Threading;
 
+    using NUnit.Framework;
+
+    [Apartment(ApartmentState.STA)]
     public class SettingControlBaseTests
     {
-        [WpfFact]
+        [Test]
         public void IsDirty()
         {
             var control = new SettingControlBaseImpl();
