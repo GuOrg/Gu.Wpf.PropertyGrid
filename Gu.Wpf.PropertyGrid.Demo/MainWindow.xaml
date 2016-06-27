@@ -21,9 +21,5 @@
         <TabItem Header="one way to source binding">
             <local:OneWayToSourceBindingView />
         </TabItem>
-
-        <TabItem Header="Sandbox">
-            <local:SandboxView />
-        </TabItem>
     </TabControl>
 </Window>

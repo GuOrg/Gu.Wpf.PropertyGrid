@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Gu.Wpf.PropertyGrid.Demo
+namespace Gu.Wpf.PropertyGrid.Demo.UiTestWindows
 {
     /// <summary>
-    /// Interaction logic for SandboxView.xaml
+    /// Interaction logic for UsesResurceStyleForValueWindow.xaml
     /// </summary>
-    public partial class SandboxView : UserControl
+    public partial class UsesResurceStyleForValueWindow : Window
     {
-        public SandboxView()
+        public UsesResurceStyleForValueWindow()
         {
             InitializeComponent();
         }

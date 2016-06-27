@@ -63,14 +63,14 @@
       <DependentUpon>OneWayToSourceBindingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="RelayCommand.cs" />
-    <Compile Include="UiTestWindows\SandboxView.xaml.cs">
-      <DependentUpon>SandboxView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="SettingsVm.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UiTestWindows\UsesResurceStyleForValueWindow.xaml.cs">
+      <DependentUpon>UsesResurceStyleForValueWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UsePropertyNamesAsHeadersView.xaml.cs">
       <DependentUpon>UsePropertyNamesAsHeadersView.xaml</DependentUpon>
@@ -99,11 +99,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\SandboxView.xaml">
+    <Page Include="SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SettingsView.xaml">
+    <Page Include="UiTestWindows\UsesResurceStyleForValueWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
