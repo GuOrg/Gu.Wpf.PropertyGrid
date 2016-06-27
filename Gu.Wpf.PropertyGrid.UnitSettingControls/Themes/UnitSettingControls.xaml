@@ -18,7 +18,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AccelerationSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -54,7 +56,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AmountOfSubstanceSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -90,7 +94,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AngleSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -126,7 +132,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AnglePerUnitlessSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -162,7 +170,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AngularAccelerationSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -198,7 +208,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AngularJerkSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -234,7 +246,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AngularSpeedSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -270,7 +284,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AreaSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -306,7 +322,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AreaDensitySettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -342,7 +360,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:CapacitanceSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -378,7 +398,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:CatalyticActivitySettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -414,7 +436,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:CurrentSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -450,7 +474,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:DataSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -486,7 +512,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:DensitySettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -522,7 +550,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:ElectricalConductanceSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -558,7 +588,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:ElectricChargeSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -594,7 +626,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:EnergySettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -630,7 +664,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:FlexibilitySettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -666,7 +702,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:ForceSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -702,7 +740,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:ForcePerUnitlessSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -738,7 +778,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:FrequencySettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -774,7 +816,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:IlluminanceSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -810,7 +854,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:InductanceSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -846,7 +892,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:JerkSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -882,7 +930,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:KinematicViscositySettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -918,7 +968,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:LengthSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -954,7 +1006,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:LengthPerUnitlessSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -990,7 +1044,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:LuminousFluxSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1026,7 +1082,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:LuminousIntensitySettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1062,7 +1120,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:MagneticFieldStrengthSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1098,7 +1158,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:MagneticFluxSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1134,7 +1196,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:MassSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1170,7 +1234,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:MassFlowSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1206,7 +1272,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:MomentumSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1242,7 +1310,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:PowerSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1278,7 +1348,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:PressureSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1314,7 +1386,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:ResistanceSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1350,7 +1424,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SolidAngleSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1386,7 +1462,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SpecificEnergySettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1422,7 +1500,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SpecificVolumeSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1458,7 +1538,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SpeedSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1494,7 +1576,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:StiffnessSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1530,7 +1614,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:TemperatureSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1566,7 +1652,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:TimeSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1602,7 +1690,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:TorqueSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1638,7 +1728,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:UnitlessSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1674,7 +1766,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:VoltageSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1710,7 +1804,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:VolumeSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1746,7 +1842,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:VolumetricFlowSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
@@ -1782,7 +1880,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:WavenumberSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Gu.Wpf.PropertyGrid.Demo.UiTestWindows
 {
     /// <summary>
-    /// Interaction logic for UsesResurceStyleForValueWindow.xaml
+    /// Interaction logic for UsesResourcesStyleForValueWindow.xaml
     /// </summary>
-    public partial class UsesResurceStyleForValueWindow : Window
+    public partial class UsesResourcesStyleForValueWindow : Window
     {
-        public UsesResurceStyleForValueWindow()
+        public UsesResourcesStyleForValueWindow()
         {
             InitializeComponent();
         }

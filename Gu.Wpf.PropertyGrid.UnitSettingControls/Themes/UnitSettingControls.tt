@@ -36,7 +36,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:<#= quantity.Name #>SettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                    <Grid Margin="{TemplateBinding Padding}"
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 

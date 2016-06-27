@@ -69,8 +69,11 @@
     <Compile Include="SettingsVm.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\UsesResurceStyleForValueWindow.xaml.cs">
-      <DependentUpon>UsesResurceStyleForValueWindow.xaml</DependentUpon>
+    <Compile Include="UiTestWindows\UsesResourcesStyleForSettingsControlBase.xaml.cs">
+      <DependentUpon>UsesResourcesStyleForSettingsControlBase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UiTestWindows\UsesResourcesStyleForValueWindow.xaml.cs">
+      <DependentUpon>UsesResourcesStyleForValueWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UsePropertyNamesAsHeadersView.xaml.cs">
       <DependentUpon>UsePropertyNamesAsHeadersView.xaml</DependentUpon>
@@ -103,7 +106,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\UsesResurceStyleForValueWindow.xaml">
+    <Page Include="UiTestWindows\UsesResourcesStyleForSettingsControlBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\UsesResourcesStyleForValueWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
