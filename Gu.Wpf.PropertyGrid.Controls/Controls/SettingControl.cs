@@ -24,12 +24,6 @@ namespace Gu.Wpf.PropertyGrid
             typeof(SettingControl),
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty ValueStyleProperty = DependencyProperty.RegisterAttached(
-            "ValueStyle",
-            typeof(Style),
-            typeof(SettingControl),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
         public static readonly DependencyProperty SuffixStyleProperty = DependencyProperty.RegisterAttached(
             "SuffixStyle",
             typeof(Style),
@@ -118,18 +112,6 @@ namespace Gu.Wpf.PropertyGrid
         public static Style GetHeaderStyle(this UIElement element)
         {
             return (Style)element.GetValue(HeaderStyleProperty);
-        }
-
-        public static void SetValueStyle(this UIElement element, Style value)
-        {
-            element.SetValue(ValueStyleProperty, value);
-        }
-
-        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(UIElement))]
-        public static Style GetValueStyle(this UIElement element)
-        {
-            return (Style)element.GetValue(ValueStyleProperty);
         }
 
         public static void SetSuffixStyle(this UIElement element, Style value)

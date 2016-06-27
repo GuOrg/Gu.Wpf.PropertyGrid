@@ -9,35 +9,10 @@
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:SettingControlBase}}"
            TargetType="{x:Type l:DoubleSettingControl}">
-        <Setter Property="ValueStyle">
-            <Setter.Value>
-                <Style TargetType="{x:Type numeric:DoubleBox}">
-                    <Setter Property="Grid.Row" Value="0" />
-                    <Setter Property="Grid.Column" Value="1" />
-                    <Setter Property="Value" Value="{Binding Value, RelativeSource={RelativeSource TemplatedParent}}" />
-                    <Setter Property="IsReadOnly" Value="{Binding IsReadOnly, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}, Mode=OneWay}" />
-                    <Setter Property="DecimalDigits" Value="{Binding DecimalDigits, RelativeSource={RelativeSource TemplatedParent}}" />
-                    <Setter Property="CanValueBeNull" Value="{Binding CanValueBeNull, RelativeSource={RelativeSource TemplatedParent}}" />
-                    <Setter Property="ValidationTrigger" Value="PropertyChanged" />
-                    <Setter Property="MinValue" Value="{Binding MinValue, RelativeSource={RelativeSource TemplatedParent}}" />
-                    <Setter Property="MaxValue" Value="{Binding MaxValue, RelativeSource={RelativeSource TemplatedParent}}" />
-                    <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
-                    <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
-                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
-                    <Style.Triggers>
-                        <Trigger Property="IsReadOnly" Value="True">
-                            <Setter Property="BorderBrush" Value="{x:Null}" />
-                            <Setter Property="Background" Value="{x:Null}" />
-                            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Setter.Value>
-        </Setter>
 
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type propertyGrid:SettingControlBase}">
+                <ControlTemplate TargetType="{x:Type l:DoubleSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
                           Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
@@ -45,7 +20,17 @@
                                    Style="{TemplateBinding HeaderStyle}" />
 
                         <numeric:DoubleBox x:Name="PART_ValueBox"
-                                           Style="{TemplateBinding ValueStyle}" />
+                                           MinWidth="{TemplateBinding ValueMinWidth}"
+                                           MaxWidth="{TemplateBinding ValueMaxWidth}"
+                                           DecimalDigits="{TemplateBinding DecimalDigits}"
+                                           MaxValue="{TemplateBinding MaxValue}"
+                                           MinValue="{TemplateBinding MinValue}"
+                                           CanValueBeNull="{TemplateBinding CanValueBeNull}"
+                                           propertyGrid:Grid.Cell="0,1"
+                                           IsReadOnly="{TemplateBinding IsReadOnly}"
+                                           Validation.ErrorTemplate="{x:Null}"
+                                           Value="{Binding Value,
+                                                           RelativeSource={RelativeSource TemplatedParent}}" />
 
                         <TextBlock x:Name="SuffixBox"
                                    Style="{TemplateBinding SuffixStyle}" />
@@ -61,34 +46,10 @@
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:SettingControlBase}}"
            TargetType="{x:Type l:IntSettingControl}">
-        <Setter Property="ValueStyle">
-            <Setter.Value>
-                <Style TargetType="{x:Type numeric:IntBox}">
-                    <Setter Property="Grid.Row" Value="0" />
-                    <Setter Property="Grid.Column" Value="1" />
-                    <Setter Property="Value" Value="{Binding Value, RelativeSource={RelativeSource TemplatedParent}}" />
-                    <Setter Property="IsReadOnly" Value="{Binding IsReadOnly, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}, Mode=OneWay}" />
-                    <Setter Property="ValidationTrigger" Value="PropertyChanged" />
-                    <Setter Property="CanValueBeNull" Value="{Binding CanValueBeNull, RelativeSource={RelativeSource TemplatedParent}}" />
-                    <Setter Property="MinValue" Value="{Binding MinValue, RelativeSource={RelativeSource TemplatedParent}}" />
-                    <Setter Property="MaxValue" Value="{Binding MaxValue, RelativeSource={RelativeSource TemplatedParent}}" />
-                    <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
-                    <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
-                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}}}" />
-                    <Style.Triggers>
-                        <Trigger Property="IsReadOnly" Value="True">
-                            <Setter Property="BorderBrush" Value="{x:Null}" />
-                            <Setter Property="Background" Value="{x:Null}" />
-                            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Setter.Value>
-        </Setter>
 
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type propertyGrid:SettingControlBase}">
+                <ControlTemplate TargetType="{x:Type l:IntSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
                           Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
 
@@ -97,7 +58,16 @@
                                    Style="{TemplateBinding HeaderStyle}" />
 
                         <numeric:IntBox x:Name="PART_ValueBox"
-                                        Style="{TemplateBinding ValueStyle}" />
+                                           MinWidth="{TemplateBinding ValueMinWidth}"
+                                           MaxWidth="{TemplateBinding ValueMaxWidth}"
+                                           MaxValue="{TemplateBinding MaxValue}"
+                                           MinValue="{TemplateBinding MinValue}"
+                                           CanValueBeNull="{TemplateBinding CanValueBeNull}"
+                                           propertyGrid:Grid.Cell="0,1"
+                                           IsReadOnly="{TemplateBinding IsReadOnly}"
+                                           Validation.ErrorTemplate="{x:Null}"
+                                           Value="{Binding Value,
+                                                           RelativeSource={RelativeSource TemplatedParent}}" />
 
                         <TextBlock x:Name="SuffixBox"
                                    Style="{TemplateBinding SuffixStyle}" />

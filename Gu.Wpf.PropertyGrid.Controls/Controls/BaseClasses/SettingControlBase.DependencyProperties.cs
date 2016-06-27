@@ -57,10 +57,6 @@
             typeof(SettingControlBase),
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty ValueStyleProperty = SettingControl.ValueStyleProperty.AddOwner(
-            typeof(SettingControlBase),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
         public static readonly DependencyProperty SuffixStyleProperty = SettingControl.SuffixStyleProperty.AddOwner(
             typeof(SettingControlBase),
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
@@ -156,12 +152,6 @@
         {
             get { return (Style)this.GetValue(HeaderStyleProperty); }
             set { this.SetValue(HeaderStyleProperty, value); }
-        }
-
-        public Style ValueStyle
-        {
-            get { return (Style)this.GetValue(ValueStyleProperty); }
-            set { this.SetValue(ValueStyleProperty, value); }
         }
 
         public Style SuffixStyle

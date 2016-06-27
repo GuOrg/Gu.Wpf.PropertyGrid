@@ -13,8 +13,6 @@
 
         public static ResourceKey NestedSettingListStyle { get; } = CreateKey();
 
-        public static ResourceKey UnitSettingBaseStyleKey { get; } = CreateKey();
-
         public static ResourceKey SettingRowHeaderStyleKey { get; } = CreateKey();
 
         public static ResourceKey SettingRowOldValueStyleKey { get; } = CreateKey();
