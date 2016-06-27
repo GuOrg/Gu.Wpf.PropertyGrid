@@ -47,7 +47,6 @@
     <Style BasedOn="{StaticResource {x:Static l:Keys.ItemsControlSettingListStyleKey}}" TargetType="{x:Type l:SettingsControl}">
         <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}" />
         <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
-        <Setter Property="InfoPresenterStyle" Value="{StaticResource {x:Type l:InfoPresenter}}" />
         <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
     </Style>
 
@@ -56,7 +55,6 @@
            TargetType="{x:Type l:SettingsControl}">
         <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}" />
         <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
-        <Setter Property="InfoPresenterStyle" Value="{StaticResource {x:Type l:InfoPresenter}}" />
         <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
     </Style>
 </ResourceDictionary>
