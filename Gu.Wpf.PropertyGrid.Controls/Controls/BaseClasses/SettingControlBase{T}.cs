@@ -24,5 +24,17 @@ namespace Gu.Wpf.PropertyGrid
         }
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+        protected override void UpdateIsDirty()
+        {
+            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            {
+                this.IsDirty = null;
+            }
+            else
+            {
+                this.IsDirty = !Equals(this.OldValue, this.Value);
+            }
+        }
     }
 }

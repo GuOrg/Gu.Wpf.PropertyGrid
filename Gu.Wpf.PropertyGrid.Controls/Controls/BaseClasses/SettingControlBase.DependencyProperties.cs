@@ -47,7 +47,7 @@
             "OldValue",
             typeof(object),
             typeof(SettingControlBase),
-            new PropertyMetadata("OldValueNotSet", OnOldValueChanged));
+            new PropertyMetadata(new object(), OnOldValueChanged));
 
         public static readonly DependencyProperty IsReadOnlyProperty = SettingControl.IsReadOnlyProperty.AddOwner(
             typeof(SettingControlBase),

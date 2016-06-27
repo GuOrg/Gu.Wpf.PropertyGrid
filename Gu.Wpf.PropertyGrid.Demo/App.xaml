@@ -9,5 +9,9 @@
             <Setter Property="FontSize" Value="24" />
             <Setter Property="FontWeight" Value="Bold" />
         </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="HotPink" />
+        </Style>
     </Application.Resources>
 </Application>

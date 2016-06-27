@@ -15,12 +15,9 @@ namespace Gu.Wpf.PropertyGrid
 
         protected static void OnValueChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
-            var c = (SettingControlBase)o;
-            c.OnValueChanged(e.OldValue, e.NewValue);
-            if (!Equals(c.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
-            {
-                c.IsDirty = !Equals(c.OldValue, e.NewValue);
-            }
+            var sc = (SettingControlBase)o;
+            sc.OnValueChanged(e.OldValue, e.NewValue);
+            sc.UpdateIsDirty();
         }
 
         protected virtual void OnValueChanged(object oldValue, object newValue)
@@ -44,6 +41,8 @@ namespace Gu.Wpf.PropertyGrid
                 }
             }
         }
+
+        protected abstract void UpdateIsDirty();
 
         private static void OnOldDataContextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -73,8 +72,7 @@ namespace Gu.Wpf.PropertyGrid
         private static void OnOldValueChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
             var sc = (SettingControlBase)o;
-            var value = sc.GetValue(sc.ValueDependencyProperty);
-            sc.IsDirty = !Equals(sc.OldValue, value);
+            sc.UpdateIsDirty();
             sc.OnOldValueChanged(e.OldValue, e.NewValue);
         }
     }
