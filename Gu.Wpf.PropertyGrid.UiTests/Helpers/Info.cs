@@ -7,14 +7,14 @@
 
     public static class Info
     {
-        public static ProcessStartInfo ProcessStartInfo { get; } = CreateStartInfo();
+        public static ProcessStartInfo ProcessStartInfo { get; } = CreateStartInfo(null);
 
-        private static ProcessStartInfo CreateStartInfo()
+        internal static ProcessStartInfo CreateStartInfo(string args)
         {
             var processStartInfo = new ProcessStartInfo
             {
                 FileName = GetExeFileName(),
-                Arguments = "en",
+                Arguments = args,
                 UseShellExecute = false,
                 //CreateNoWindow = false,
                 RedirectStandardOutput = true,

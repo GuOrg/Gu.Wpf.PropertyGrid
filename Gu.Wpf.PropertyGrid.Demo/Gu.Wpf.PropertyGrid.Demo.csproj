@@ -69,6 +69,12 @@
     <Compile Include="SettingsVm.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\DecimalDigitsWindow.xaml.cs">
+      <DependentUpon>DecimalDigitsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UiTestWindows\UnitsWindow.xaml.cs">
+      <DependentUpon>UnitsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UiTestWindows\UsesResourcesStyleForSettingsControlBase.xaml.cs">
       <DependentUpon>UsesResourcesStyleForSettingsControlBase.xaml</DependentUpon>
     </Compile>
@@ -103,6 +109,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\DecimalDigitsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\UnitsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

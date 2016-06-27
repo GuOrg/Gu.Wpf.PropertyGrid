@@ -35,7 +35,7 @@
                                            Value="{Binding StringValue}" />
 
         <propertyGrid:DoubleSettingControl AutomationProperties.AutomationId="{x:Static demo:AutomationIds.DoubleSettingId}"
-                                           Header="length"
+                                           Header="double"
                                            Value="{Binding DoubleValue}" />
         
         <propertyGrid:LengthSettingControl AutomationProperties.AutomationId="{x:Static demo:AutomationIds.LengthSettingId}"
