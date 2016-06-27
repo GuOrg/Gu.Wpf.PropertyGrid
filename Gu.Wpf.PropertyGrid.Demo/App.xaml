@@ -1,7 +1,6 @@
 ﻿<Application x:Class="Gu.Wpf.PropertyGrid.Demo.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style x:Key="HeaderTextBlockStyle" TargetType="{x:Type TextBlock}">

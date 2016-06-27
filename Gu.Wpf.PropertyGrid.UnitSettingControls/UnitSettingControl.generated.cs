@@ -617,7 +617,7 @@
 
     public class ResistanceSettingControl : UnitSettingControl<Resistance, ResistanceUnit>
     {
-        public static readonly ResistanceUnit DefaultUnit = ResistanceUnit.Ohm;
+        public static readonly ResistanceUnit DefaultUnit = ResistanceUnit.Ohms;
 
         static ResistanceSettingControl()
         {
