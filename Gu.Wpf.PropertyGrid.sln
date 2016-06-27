@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.UnitSet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.NumericSettingControls", "Gu.Wpf.PropertyGrid.NumericSettingControls\Gu.Wpf.PropertyGrid.NumericSettingControls.csproj", "{AABF74D2-2282-4899-915D-409B1A6735C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.UiTests", "Gu.Wpf.PropertyGrid.UiTests\Gu.Wpf.PropertyGrid.UiTests.csproj", "{E4310685-84DB-4C44-87C2-ECF8E8BE337E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{AABF74D2-2282-4899-915D-409B1A6735C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AABF74D2-2282-4899-915D-409B1A6735C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AABF74D2-2282-4899-915D-409B1A6735C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4310685-84DB-4C44-87C2-ECF8E8BE337E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4310685-84DB-4C44-87C2-ECF8E8BE337E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4310685-84DB-4C44-87C2-ECF8E8BE337E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4310685-84DB-4C44-87C2-ECF8E8BE337E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

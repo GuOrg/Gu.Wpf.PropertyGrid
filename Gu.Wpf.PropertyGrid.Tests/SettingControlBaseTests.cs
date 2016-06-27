@@ -10,22 +10,22 @@
         [Test]
         public void IsDirty()
         {
-            var control = new SettingControlBaseImpl();
+            var control = new StringSettingControl();
             Assert.Null(control.IsDirty);
 
-            control.Value = 1;
+            control.Value = "1";
             Assert.Null(control.IsDirty);
 
-            control.OldValue = 2;
+            control.OldValue = "2";
             Assert.True(control.IsDirty);
 
-            control.OldValue = 1;
+            control.OldValue = "1";
             Assert.False(control.IsDirty);
 
-            control.Value = 3;
+            control.Value = "3";
             Assert.True(control.IsDirty);
 
-            control.OldValue = 3;
+            control.OldValue = "3";
             Assert.False(control.IsDirty);
         }
     }

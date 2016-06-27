@@ -1,6 +1,6 @@
 NUGET
   remote: http://www.nuget.org/api/v2
-    Castle.Core (3.3.3) - framework: >= net45
+    Castle.Core (3.3.3)
     Gu.ChangeTracking (1.1)
     Gu.Units (0.10)
     Gu.Units.Wpf (0.10)
@@ -16,3 +16,5 @@ NUGET
     System.Private.Uri (4.0) - framework: dnxcore50
     System.Runtime (4.0.20) - framework: dnxcore50
       System.Private.Uri (>= 4.0) - framework: dnxcore50
+    TestStack.White (0.13.3)
+      Castle.Core (>= 3.3)

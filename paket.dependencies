@@ -1,12 +1,13 @@
 source http://www.nuget.org/api/v2/
 
-nuget Moq
-nuget NUnit
-
 nuget Gu.ChangeTracking
 nuget Gu.Wpf.NumericInput
 nuget Gu.Units.Wpf
 nuget Gu.Wpf.ValidationScope
+
+nuget NUnit
+nuget Moq
+nuget TestStack.White
 
 nuget JetBrains.Annotations
 nuget StyleCop.Analyzers
