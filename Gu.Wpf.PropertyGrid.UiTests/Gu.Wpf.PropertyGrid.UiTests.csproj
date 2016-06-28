@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="CultureTests.cs" />
     <Compile Include="DecimalDigitsTests.cs" />
+    <Compile Include="EnumSettingControlTests.cs" />
     <Compile Include="Helpers\SettingControl.cs" />
     <Compile Include="Helpers\Info.cs" />
     <Compile Include="Helpers\TextBoxExt.cs" />

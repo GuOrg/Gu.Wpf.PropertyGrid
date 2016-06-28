@@ -39,7 +39,6 @@
                                                                  UpdateSourceTrigger=LostFocus}" />
 
             <propertyGrid:SelectorSettingControl Header="editable"
-                                                 IsReadOnly="True"
                                                  ItemsSource="{Binding Cultures}"
                                                  Value="{Binding CurrentCulture}" />
         </propertyGrid:SettingsControl>

@@ -89,6 +89,9 @@
     <Compile Include="UiTestWindows\UsesResourcesStyleForValueWindow.xaml.cs">
       <DependentUpon>UsesResourcesStyleForValueWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\EnumSettingControlWindow.xaml.cs">
+      <DependentUpon>EnumSettingControlWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UsePropertyNamesAsHeadersView.xaml.cs">
       <DependentUpon>UsePropertyNamesAsHeadersView.xaml</DependentUpon>
     </Compile>
@@ -145,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UiTestWindows\UsesResourcesStyleForValueWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\EnumSettingControlWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
