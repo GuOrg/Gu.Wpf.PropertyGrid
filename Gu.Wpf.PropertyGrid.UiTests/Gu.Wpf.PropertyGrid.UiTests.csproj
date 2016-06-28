@@ -46,6 +46,7 @@
     </When>
   </Choose>
   <ItemGroup>
+    <Compile Include="CultureTests.cs" />
     <Compile Include="DecimalDigitsTests.cs" />
     <Compile Include="Helpers\SettingControl.cs" />
     <Compile Include="Helpers\Info.cs" />

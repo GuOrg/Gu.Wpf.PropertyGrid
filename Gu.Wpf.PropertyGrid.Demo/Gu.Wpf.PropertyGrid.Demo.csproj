@@ -68,6 +68,9 @@
     <Compile Include="SettingsVm.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\CultureWindow.xaml.cs">
+      <DependentUpon>CultureWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UiTestWindows\DecimalDigitsWindow.xaml.cs">
       <DependentUpon>DecimalDigitsWindow.xaml</DependentUpon>
     </Compile>
@@ -108,6 +111,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\CultureWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

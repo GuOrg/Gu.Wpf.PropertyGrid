@@ -1,0 +1,57 @@
+﻿<Window x:Class="Gu.Wpf.PropertyGrid.Demo.CultureWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:demo="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:numeric="http://gu.se/NumericInput"
+        xmlns:propertyGrid="http://gu.se/PropertyGrid"
+        Title="CultureWindow"
+        SizeToContent="WidthAndHeight"
+        mc:Ignorable="d">
+    <Window.DataContext>
+        <demo:SettingsVm />
+    </Window.DataContext>
+    <StackPanel>
+        <GroupBox Header="sv-se">
+            <propertyGrid:SettingsControl numeric:NumericBox.Culture="sv-se"
+                                          numeric:NumericBox.DecimalDigits="2"
+                                          DataContext="{Binding EditableCopy}"
+                                          OldDataContext="{Binding DataContext.LastSaved,
+                                                                   RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+                <propertyGrid:DoubleSettingControl Header="double" Value="{Binding DoubleValue}" />
+
+                <propertyGrid:LengthSettingControl Header="length" Value="{Binding LengthValue}" />
+            </propertyGrid:SettingsControl>
+        </GroupBox>
+
+        <GroupBox Header="en-us">
+            <propertyGrid:SettingsControl numeric:NumericBox.Culture="en-us"
+                                          numeric:NumericBox.DecimalDigits="2"
+                                          DataContext="{Binding EditableCopy}"
+                                          OldDataContext="{Binding DataContext.LastSaved,
+                                                                   RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+                <propertyGrid:DoubleSettingControl Header="double" Value="{Binding DoubleValue}" />
+
+                <propertyGrid:LengthSettingControl Header="length" Value="{Binding LengthValue}" />
+            </propertyGrid:SettingsControl>
+        </GroupBox>
+
+        <GroupBox Header="bound">
+            <propertyGrid:SettingsControl numeric:NumericBox.Culture="{Binding Value,
+                                                                               ElementName=Culture}"
+                                          numeric:NumericBox.DecimalDigits="2"
+                                          DataContext="{Binding EditableCopy}"
+                                          OldDataContext="{Binding DataContext.LastSaved,
+                                                                   RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+                <propertyGrid:StringSettingControl x:Name="Culture"
+                                                   Header="culture"
+                                                   Value="sv-se" />
+                <Button Content="lose focus" />
+                <propertyGrid:DoubleSettingControl Header="double" Value="{Binding DoubleValue}" />
+
+                <propertyGrid:LengthSettingControl Header="length" Value="{Binding LengthValue}" />
+            </propertyGrid:SettingsControl>
+        </GroupBox>
+    </StackPanel>
+</Window>
