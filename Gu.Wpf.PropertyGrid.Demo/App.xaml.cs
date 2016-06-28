@@ -13,15 +13,11 @@
         {
             if (e.Args.Length == 1)
             {
-                var windowType = e.Args[0];
-                var single = GetType().Assembly.GetTypes().Single(x => x.Name == windowType);
-                var window =(Window) Activator.CreateInstance(single);
-                window.Show();
-            }
-            else
-            {
-                var window = new MainWindow();
-                window.Show();
+                var window = e.Args[0];
+                this.StartupUri = new Uri($"UiTestWindows/{window}.xaml", UriKind.Relative);
+                //var single = GetType().Assembly.GetTypes().Single(x => x.Name == windowType);
+                //var window = (Window)Activator.CreateInstance(single);
+                //window.Show();
             }
 
             base.OnStartup(e);

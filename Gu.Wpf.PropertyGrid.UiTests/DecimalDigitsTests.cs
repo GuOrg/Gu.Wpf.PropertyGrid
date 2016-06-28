@@ -2,6 +2,7 @@
 {
     using NUnit.Framework;
     using TestStack.White;
+    using TestStack.White.UIItems;
     using TestStack.White.UIItems.WindowItems;
 
     public class DecimalDigitsTests
@@ -26,6 +27,7 @@
         [Test]
         public void StartApp()
         {
+            var groupBox = this.window.Get<GroupBox>("attached prop");
             Assert.IsNotNull(this.window);
         }
     }
