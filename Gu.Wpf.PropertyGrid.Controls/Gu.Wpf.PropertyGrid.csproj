@@ -45,6 +45,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\BaseClasses\SettingControlAutomationPeer.cs" />
     <Compile Include="Controls\BaseClasses\SettingControlBase.DependencyProperties.cs" />
     <Compile Include="Controls\ContentSettingControl.cs" />
     <Compile Include="Controls\CheckBoxSettingControl.cs" />

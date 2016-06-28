@@ -20,6 +20,12 @@ namespace Gu.Wpf.PropertyGrid
             sc.UpdateIsDirty();
         }
 
+        /// <summary>Creates AutomationPeer (<see cref="UIElement.OnCreateAutomationPeer"/>)</summary>
+        protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer()
+        {
+            return new SettingControlAutomationPeer(this);
+        }
+
         protected virtual void OnValueChanged(object oldValue, object newValue)
         {
         }

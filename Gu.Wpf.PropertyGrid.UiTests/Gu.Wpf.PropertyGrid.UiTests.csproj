@@ -47,6 +47,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DecimalDigitsTests.cs" />
+    <Compile Include="Helpers\SettingControl.cs" />
     <Compile Include="Helpers\Info.cs" />
     <Compile Include="Helpers\UiItemExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
