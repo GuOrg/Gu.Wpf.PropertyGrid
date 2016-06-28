@@ -12,6 +12,10 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         private Window window;
         private Button loseFocusButton;
 
+        private TextBox stringBox;
+        private TextBox propertychangedBox;
+        private TextBox readonlyBox;
+
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
@@ -19,6 +23,9 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
             this.window = this.application.GetWindow(title);
             this.loseFocusButton = this.window.GetByText<Button>("lose focus");
+            this.stringBox = this.window.FindSetting("string").Get<TextBox>();
+            this.propertychangedBox = this.window.FindSetting("propertychanged").Get<TextBox>();
+            this.readonlyBox = this.window.FindSetting("readonly string").Get<TextBox>();
         }
 
         [OneTimeTearDown]
@@ -28,43 +35,40 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         }
 
         [Test]
-        public void SvSe()
+        public void UpdatesWhenLostFocus()
         {
-            var groupBox = this.window.GetByText<GroupBox>("sv-se");
-            var doubleBox = groupBox.FindSetting("double").Get<TextBox>();
-            var lengthBox = groupBox.FindSetting("length").Get<TextBox>();
+            this.stringBox.Text = string.Empty;
+            this.propertychangedBox.Text = string.Empty;
 
-            Assert.AreEqual("0,00", doubleBox.FormattedText());
-            Assert.AreEqual("12,35", lengthBox.FormattedText());
-        }
+            this.stringBox.Text = "1";
+            Assert.AreEqual("1", this.stringBox.Text);
+            Assert.AreEqual(string.Empty, this.propertychangedBox.Text);
+            Assert.AreEqual(string.Empty, this.readonlyBox.Text);
 
-        [Test]
-        public void EnUs()
-        {
-            var groupBox = this.window.GetByText<GroupBox>("en-us");
-            var doubleBox = groupBox.FindSetting("double").Get<TextBox>();
-            var lengthBox = groupBox.FindSetting("length").Get<TextBox>();
-
-            Assert.AreEqual("0.00", doubleBox.FormattedText());
-            Assert.AreEqual("12.35", lengthBox.FormattedText());
-        }
-
-        [Test]
-        public void Bound()
-        {
-            var groupBox = this.window.GetByText<GroupBox>("bound");
-            var doubleBox = groupBox.FindSetting("double").Get<TextBox>();
-            var lengthBox = groupBox.FindSetting("length").Get<TextBox>();
-            var cultureBox = groupBox.FindSetting("culture").Get<TextBox>();
-
-            Assert.AreEqual("0,00", doubleBox.FormattedText());
-            Assert.AreEqual("12,35", lengthBox.FormattedText());
-
-            cultureBox.Text = "en-us";
             this.loseFocusButton.Click();
+            Assert.AreEqual("1", this.stringBox.Text);
+            Assert.AreEqual("1", this.propertychangedBox.Text);
+            Assert.AreEqual("1", this.readonlyBox.Text);
+        }
 
-            Assert.AreEqual("0.00", doubleBox.FormattedText());
-            Assert.AreEqual("12.35", lengthBox.FormattedText());
+        [Test]
+        public void UpdatesWhenPropertyChanged()
+        {
+            this.stringBox.Text = string.Empty;
+            this.propertychangedBox.Text = string.Empty;
+
+            this.propertychangedBox.Text = "2";
+            Assert.AreEqual("2", this.stringBox.Text);
+            Assert.AreEqual("2", this.propertychangedBox.Text);
+            Assert.AreEqual("2", this.readonlyBox.Text);
+        }
+
+        [Test]
+        public void IsReadonly()
+        {
+            Assert.IsFalse(this.stringBox.IsReadOnly);
+            Assert.IsFalse(this.propertychangedBox.IsReadOnly);
+            Assert.IsTrue(this.readonlyBox.IsReadOnly);
         }
     }
 }
