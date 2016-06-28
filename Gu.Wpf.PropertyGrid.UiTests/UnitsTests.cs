@@ -4,6 +4,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     using TestStack.White;
     using TestStack.White.UIItems;
+    using TestStack.White.UIItems.ListBoxItems;
     using TestStack.White.UIItems.WindowItems;
 
     public class UnitsTests
@@ -58,18 +59,17 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         public void Bound()
         {
             var groupBox = this.window.GetByText<GroupBox>("bound");
-            var doubleBox = groupBox.FindSetting("double").Get<TextBox>();
-            var lengthBox = groupBox.FindSetting("length").Get<TextBox>();
-            var digitsBox = groupBox.FindSetting("digits").Get<TextBox>();
+            var settingControl = groupBox.FindSetting("length");
+            var textBox = settingControl.Get<TextBox>();
 
-            Assert.AreEqual("0.000", doubleBox.FormattedText());
-            Assert.AreEqual("12.346", lengthBox.FormattedText());
+            Assert.AreEqual("12.3456", textBox.Text);
+            Assert.AreEqual("mm", settingControl.Suffix());
 
-            digitsBox.Text = "2";
+            groupBox.FindSetting("length").Get<ComboBox>().Select("m");
             groupBox.GetByText<Button>("lose focus").Click();
 
-            Assert.AreEqual("0.00", doubleBox.FormattedText());
-            Assert.AreEqual("12.35", lengthBox.FormattedText());
+            Assert.AreEqual("0.0123456", textBox.Text);
+            Assert.AreEqual("m", settingControl.Suffix());
         }
     }
 }

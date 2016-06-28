@@ -2,9 +2,10 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.Globalization;
     using System.Runtime.CompilerServices;
     using System.Windows.Input;
-    using Gu.ChangeTracking;
+    using Gu.State;
     using Gu.Units;
     using JetBrains.Annotations;
 
@@ -12,18 +13,22 @@
     {
         public static readonly IReadOnlyList<LengthUnit> LengthUnits = new[] { LengthUnit.Centimetres, LengthUnit.Inches, };
 
+        private static readonly PropertiesSettings PropertiesSettings = PropertiesSettings.Build()
+                                                                                          .AddImmutableType<CultureInfo>()
+                                                                                          .IgnoreProperty<DummySettings>(nameof(DummySettings.Cultures))
+                                                                                          .CreateSettings();
         private bool viewHasErrors;
 
         public SettingsVm()
         {
             // simulating saving
             this.SaveCommand = new RelayCommand(
-                _ => Copy.PropertyValues(this.EditableCopy, this.LastSaved),
-                _ =>!this.ViewHasErrors && !EqualBy.PropertyValues(this.EditableCopy, this.LastSaved));
+                _ => Copy.PropertyValues(this.EditableCopy, this.LastSaved, PropertiesSettings),
+                _ => !this.ViewHasErrors && !EqualBy.PropertyValues(this.EditableCopy, this.LastSaved, PropertiesSettings));
 
             this.UndoAllCommand = new RelayCommand(
-                _ => Copy.PropertyValues(this.LastSaved, this.EditableCopy),
-                _ => !EqualBy.PropertyValues(this.EditableCopy, this.LastSaved));
+                _ => Copy.PropertyValues(this.LastSaved, this.EditableCopy, PropertiesSettings),
+                _ => !EqualBy.PropertyValues(this.EditableCopy, this.LastSaved, PropertiesSettings));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

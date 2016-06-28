@@ -1,6 +1,6 @@
 source http://www.nuget.org/api/v2/
 
-nuget Gu.ChangeTracking
+nuget Gu.State
 nuget Gu.Wpf.NumericInput
 nuget Gu.Units.Wpf
 nuget Gu.Wpf.ValidationScope
