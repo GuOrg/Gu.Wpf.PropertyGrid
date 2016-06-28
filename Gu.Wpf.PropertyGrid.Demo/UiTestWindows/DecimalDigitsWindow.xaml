@@ -18,11 +18,9 @@
                                           DataContext="{Binding EditableCopy}"
                                           OldDataContext="{Binding DataContext.LastSaved,
                                                                    RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-                <propertyGrid:DoubleSettingControl Header="double"
-                                                   Value="{Binding DoubleValue}" />
+                <propertyGrid:DoubleSettingControl Header="double" Value="{Binding DoubleValue}" />
 
-                <propertyGrid:LengthSettingControl Header="length"
-                                                   Value="{Binding LengthValue}" />
+                <propertyGrid:LengthSettingControl Header="length" Value="{Binding LengthValue}" />
             </propertyGrid:SettingsControl>
         </GroupBox>
 
