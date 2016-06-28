@@ -74,6 +74,9 @@
     <Compile Include="UiTestWindows\DecimalDigitsWindow.xaml.cs">
       <DependentUpon>DecimalDigitsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\SelectorSettingControlWindow.xaml.cs">
+      <DependentUpon>SelectorSettingControlWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UiTestWindows\StringSettingControlWindow.xaml.cs">
       <DependentUpon>StringSettingControlWindow.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UiTestWindows\DecimalDigitsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\SelectorSettingControlWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
