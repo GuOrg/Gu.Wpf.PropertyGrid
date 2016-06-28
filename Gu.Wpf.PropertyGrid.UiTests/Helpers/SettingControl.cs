@@ -2,23 +2,15 @@
 {
     using System;
     using TestStack.White;
-    using TestStack.White.Factory;
-    using TestStack.White.Sessions;
     using TestStack.White.UIItems;
-    using TestStack.White.UIItems.Container;
     using TestStack.White.UIItems.Finders;
+    using TestStack.White.UIItems.WPFUIItems;
 
     public class SettingControl : UIItem
     {
-        private static readonly WindowSession WindowSession = new NullWindowSession();
-        private readonly UIItem item;
-        private readonly CurrentContainerItemFactory itemFactory;
-
         public SettingControl(UIItem item)
           : base(item.AutomationElement, item.ActionListener)
         {
-            this.item = item;
-            this.itemFactory = new CurrentContainerItemFactory(this.factory, InitializeOption.NoCache, this.automationElement, this.actionListener);
         }
 
         public T Get<T>()
@@ -26,8 +18,7 @@
         {
             try
             {
-                var uiItem = this.itemFactory.Find(SearchCriteria.ByControlType(typeof(T), WindowsFramework.Wpf), WindowSession);
-                return (T)uiItem;
+                return (T)this.Get(SearchCriteria.ByControlType(typeof(T), WindowsFramework.Wpf));
             }
             catch (AutomationException)
             {

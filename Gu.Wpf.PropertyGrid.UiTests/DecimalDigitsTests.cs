@@ -29,10 +29,32 @@
         {
             var groupBox = this.window.GetByText<GroupBox>("attached prop");
             var doubleBox = groupBox.FindSetting("double").Get<TextBox>();
-            Assert.AreEqual("0.00", doubleBox.Text);
+            Assert.AreEqual("0.00", doubleBox.FormattedText());
 
-            var lengthBox = groupBox.FindSetting("double").Get<TextBox>();
-            Assert.AreEqual("12.35", lengthBox.Text);
+            var lengthBox = groupBox.FindSetting("length").Get<TextBox>();
+            Assert.AreEqual("12.35", lengthBox.FormattedText());
+        }
+
+        [Test]
+        public void Explicit()
+        {
+            var groupBox = this.window.GetByText<GroupBox>("explicit");
+            var doubleBox = groupBox.FindSetting("double").Get<TextBox>();
+            Assert.AreEqual("0.00", doubleBox.FormattedText());
+
+            var lengthBox = groupBox.FindSetting("length").Get<TextBox>();
+            Assert.AreEqual("12.35", lengthBox.FormattedText());
+        }
+
+        [Test]
+        public void Bound()
+        {
+            var groupBox = this.window.GetByText<GroupBox>("bound");
+            var doubleBox = groupBox.FindSetting("double").Get<TextBox>();
+            Assert.AreEqual("0.000", doubleBox.FormattedText());
+
+            var lengthBox = groupBox.FindSetting("length").Get<TextBox>();
+            Assert.AreEqual("12.346", lengthBox.FormattedText());
         }
     }
 }
