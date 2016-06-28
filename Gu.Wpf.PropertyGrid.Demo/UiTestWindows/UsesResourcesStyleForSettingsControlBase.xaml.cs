@@ -9,7 +9,7 @@
     {
         public UsesResourcesStyleForSettingsControlBase()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Gu.Wpf.PropertyGrid.Demo.UiTestWindows
     {
         public UsesResourcesStyleForValueWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

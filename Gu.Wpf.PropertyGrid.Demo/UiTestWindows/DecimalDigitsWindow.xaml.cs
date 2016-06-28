@@ -9,7 +9,7 @@
     {
         public DecimalDigitsWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

@@ -30,5 +30,23 @@
                 throw new WhiteException($"Error occured while getting {typeof(T).Name}", debugDetails, e);
             }
         }
+
+        public string Suffix(bool mustExist = true)
+        {
+            try
+            {
+                var label = (Label)this.Get(SearchCriteria.ByControlType(typeof(Label), WindowsFramework.Wpf).AndAutomationId("SuffixBox"));
+                return label.Text;
+            }
+            catch (Exception)
+            {
+                if (mustExist)
+                {
+                    throw;
+                }
+
+                return null;
+            }
+        }
     }
 }

@@ -9,7 +9,7 @@
     {
         public CultureWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }
