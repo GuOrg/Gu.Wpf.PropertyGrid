@@ -18,25 +18,21 @@
                                           DataContext="{Binding EditableCopy}"
                                           OldDataContext="{Binding DataContext.LastSaved,
                                                                    RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-                <propertyGrid:DoubleSettingControl AutomationProperties.AutomationId="{x:Static demo:AutomationIds.DoubleSettingId}"
-                                                   Header="double"
+                <propertyGrid:DoubleSettingControl Header="double"
                                                    Value="{Binding DoubleValue}" />
 
-                <propertyGrid:LengthSettingControl AutomationProperties.AutomationId="{x:Static demo:AutomationIds.LengthSettingId}"
-                                                   Header="length"
+                <propertyGrid:LengthSettingControl Header="length"
                                                    Value="{Binding LengthValue}" />
             </propertyGrid:SettingsControl>
         </GroupBox>
 
         <GroupBox Header="explicit">
             <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-                <propertyGrid:DoubleSettingControl AutomationProperties.AutomationId="{x:Static demo:AutomationIds.DoubleSettingId}"
-                                                   DecimalDigits="2"
+                <propertyGrid:DoubleSettingControl DecimalDigits="2"
                                                    Header="double"
                                                    Value="{Binding DoubleValue}" />
 
-                <propertyGrid:LengthSettingControl AutomationProperties.AutomationId="{x:Static demo:AutomationIds.LengthSettingId}"
-                                                   DecimalDigits="2"
+                <propertyGrid:LengthSettingControl DecimalDigits="2"
                                                    Header="length"
                                                    Value="{Binding LengthValue}" />
             </propertyGrid:SettingsControl>
@@ -48,14 +44,12 @@
                                                 CanValueBeNull="True"
                                                 Header="Digits"
                                                 Value="3" />
-                <propertyGrid:DoubleSettingControl AutomationProperties.AutomationId="{x:Static demo:AutomationIds.DoubleSettingId}"
-                                                   DecimalDigits="{Binding Value,
+                <propertyGrid:DoubleSettingControl DecimalDigits="{Binding Value,
                                                                            ElementName=Digits}"
                                                    Header="double"
                                                    Value="{Binding DoubleValue}" />
 
-                <propertyGrid:LengthSettingControl AutomationProperties.AutomationId="{x:Static demo:AutomationIds.LengthSettingId}"
-                                                   DecimalDigits="{Binding Value,
+                <propertyGrid:LengthSettingControl DecimalDigits="{Binding Value,
                                                                            ElementName=Digits}"
                                                    Header="length"
                                                    Value="{Binding LengthValue}" />

@@ -14,13 +14,11 @@
     </Window.DataContext>
 
     <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-        <propertyGrid:LengthSettingControl AutomationProperties.AutomationId="{x:Static demo:AutomationIds.LengthSettingId}"
-                                           Header="length (m)"
+        <propertyGrid:LengthSettingControl Header="length (m)"
                                            Value="{Binding LengthValue}" 
                                            Unit="m"/>
 
-        <propertyGrid:LengthSettingControl AutomationProperties.AutomationId="{x:Static demo:AutomationIds.LengthSettingId}"
-                                           Header="length (mm)"
+        <propertyGrid:LengthSettingControl Header="length (mm)"
                                            Value="{Binding LengthValue}" 
                                            Unit="mm"/>
     </propertyGrid:SettingsControl>

@@ -26,20 +26,16 @@
                                                            RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
                                   ValueMaxWidth="50"
                                   ValueMinWidth="50">
-        <propertyGrid:StringSettingControl AutomationProperties.AutomationId="{x:Static demo:AutomationIds.StringSettingId}"
-                                           Header="string"
+        <propertyGrid:StringSettingControl Header="string"
                                            Value="{Binding StringValue}" />
-        <propertyGrid:StringSettingControl AutomationProperties.AutomationId="{x:Static demo:AutomationIds.ReadonlyStringSettingId}"
-                                           Header="readonly string"
+        <propertyGrid:StringSettingControl Header="readonly string"
                                            IsReadOnly="True"
                                            Value="{Binding StringValue}" />
 
-        <propertyGrid:DoubleSettingControl AutomationProperties.AutomationId="{x:Static demo:AutomationIds.DoubleSettingId}"
-                                           Header="double"
+        <propertyGrid:DoubleSettingControl Header="double"
                                            Value="{Binding DoubleValue}" />
         
-        <propertyGrid:LengthSettingControl AutomationProperties.AutomationId="{x:Static demo:AutomationIds.LengthSettingId}"
-                                           Header="length"
+        <propertyGrid:LengthSettingControl Header="length"
                                            Value="{Binding LengthValue}" />
     </propertyGrid:SettingsControl>
 </Window>

@@ -3,6 +3,7 @@
     using NUnit.Framework;
     using TestStack.White;
     using TestStack.White.UIItems;
+    using TestStack.White.UIItems.Finders;
     using TestStack.White.UIItems.WindowItems;
 
     public class DecimalDigitsTests
@@ -27,7 +28,8 @@
         [Test]
         public void StartApp()
         {
-            var groupBox = this.window.Get<GroupBox>("attached prop");
+            var groupBox = this.window.GetByText<GroupBox>("attached prop");
+            var label = groupBox.GetByText<Label>("double");
             Assert.IsNotNull(this.window);
         }
     }

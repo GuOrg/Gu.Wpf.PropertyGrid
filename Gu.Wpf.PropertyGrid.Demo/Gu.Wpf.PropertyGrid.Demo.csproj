@@ -48,7 +48,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AutomationIds.cs" />
     <Compile Include="DummySettings.cs" />
     <Compile Include="GridSandBoxView.xaml.cs">
       <DependentUpon>GridSandBoxView.xaml</DependentUpon>
