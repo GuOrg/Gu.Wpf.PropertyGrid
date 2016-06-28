@@ -13,6 +13,8 @@
         <demo:SettingsVm />
     </Window.DataContext>
     <StackPanel>
+        <Button Content="lose focus" />
+
         <GroupBox Header="sv-se">
             <propertyGrid:SettingsControl numeric:NumericBox.Culture="sv-se"
                                           numeric:NumericBox.DecimalDigits="2"
@@ -38,16 +40,15 @@
         </GroupBox>
 
         <GroupBox Header="bound">
-            <propertyGrid:SettingsControl numeric:NumericBox.Culture="{Binding Value,
-                                                                               ElementName=Culture}"
+            <propertyGrid:SettingsControl numeric:NumericBox.Culture="{Binding CurrentCulture}"
                                           numeric:NumericBox.DecimalDigits="2"
                                           DataContext="{Binding EditableCopy}"
                                           OldDataContext="{Binding DataContext.LastSaved,
                                                                    RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-                <propertyGrid:StringSettingControl x:Name="Culture"
-                                                   Header="culture"
-                                                   Value="sv-se" />
-                <Button Content="lose focus" />
+                <propertyGrid:SelectorSettingControl Header="culture"
+                                                     ItemsSource="{Binding Cultures}"
+                                                     Value="{Binding CurrentCulture}" />
+
                 <propertyGrid:DoubleSettingControl Header="double" Value="{Binding DoubleValue}" />
 
                 <propertyGrid:LengthSettingControl Header="length" Value="{Binding LengthValue}" />

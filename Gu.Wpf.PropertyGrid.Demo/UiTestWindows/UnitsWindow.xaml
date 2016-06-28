@@ -14,6 +14,8 @@
     </Window.DataContext>
 
     <StackPanel>
+        <Button Content="lose focus" />
+
         <GroupBox Header="explicit">
             <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
                 <propertyGrid:LengthSettingControl Header="length (m)"
@@ -35,7 +37,6 @@
 
             <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
                 <propertyGrid:LengthSettingControl Header="length" Value="{Binding LengthValue}" />
-
             </propertyGrid:SettingsControl>
         </GroupBox>
 

@@ -9,7 +9,7 @@ namespace Gu.Wpf.PropertyGrid
     [TemplatePart(Name = ValueBoxName, Type = typeof(FrameworkElement))]
     public abstract partial class SettingControlBase : Control
     {
-        public const string ValueBoxName = "PART_ValueBox";
+        public const string ValueBoxName = "PART_Value";
 
         protected abstract DependencyProperty ValueDependencyProperty { get; }
 

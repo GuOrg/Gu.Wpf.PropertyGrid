@@ -23,13 +23,13 @@
                                               SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock x:Name="Header"
+                        <TextBlock x:Name="PART_Header"
                                    Grid.Row="0"
                                    Grid.Column="0"
                                    Style="{StaticResource {x:Static l:Keys.SettingRowHeaderStyleKey}}"
                                    Text="{TemplateBinding Header}" />
 
-                        <ContentPresenter x:Name="ValuePresenter"
+                        <ContentPresenter x:Name="PART_Value"
                                           Grid.Row="0"
                                           Grid.Column="1"
                                           ContentSource="Content" />

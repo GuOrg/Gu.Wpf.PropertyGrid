@@ -13,6 +13,8 @@
         <demo:SettingsVm />
     </Window.DataContext>
     <StackPanel>
+        <Button Content="lose focus" />
+
         <GroupBox Header="attached prop">
             <propertyGrid:SettingsControl numeric:NumericBox.DecimalDigits="2"
                                           DataContext="{Binding EditableCopy}"
@@ -42,7 +44,6 @@
                                                 CanValueBeNull="True"
                                                 Header="digits"
                                                 Value="3" />
-                <Button Content="lose focus" />
                 <propertyGrid:DoubleSettingControl DecimalDigits="{Binding Value,
                                                                            ElementName=Digits}"
                                                    Header="double"

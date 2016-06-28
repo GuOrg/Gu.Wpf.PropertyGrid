@@ -15,9 +15,9 @@
                           Background="{TemplateBinding Background}"
                           Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
+                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
 
-                        <numeric:DoubleBox x:Name="PART_ValueBox"
+                        <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
                                            MaxWidth="{TemplateBinding ValueMaxWidth}"
                                            propertyGrid:Grid.Cell="0,1"
@@ -30,7 +30,7 @@
                                            Value="{Binding Value,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -49,9 +49,9 @@
                           Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
 
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
+                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
 
-                        <numeric:IntBox x:Name="PART_ValueBox"
+                        <numeric:IntBox x:Name="PART_Value"
                                         MinWidth="{TemplateBinding ValueMinWidth}"
                                         MaxWidth="{TemplateBinding ValueMaxWidth}"
                                         propertyGrid:Grid.Cell="0,1"
@@ -63,7 +63,7 @@
                                         Value="{Binding Value,
                                                         RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->

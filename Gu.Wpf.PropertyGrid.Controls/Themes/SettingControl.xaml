@@ -26,9 +26,9 @@
                           Background="{TemplateBinding Background}"
                           Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
+                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
 
-                        <TextBox x:Name="PART_ValueBox"
+                        <TextBox x:Name="PART_Value"
                                  MinWidth="{TemplateBinding ValueMinWidth}"
                                  MaxWidth="{TemplateBinding ValueMaxWidth}"
                                  l:Grid.Cell="0,1"
@@ -37,7 +37,7 @@
                                                 RelativeSource={RelativeSource TemplatedParent}}"
                                  Validation.ErrorTemplate="{x:Null}" />
 
-                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
 
                         <l:InfoPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -56,9 +56,9 @@
                           Background="{TemplateBinding Background}"
                           Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
+                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
 
-                        <CheckBox x:Name="PART_ValueBox"
+                        <CheckBox x:Name="PART_Value"
                                   MinWidth="{TemplateBinding ValueMinWidth}"
                                   MaxWidth="{TemplateBinding ValueMaxWidth}"
                                   HorizontalAlignment="Center"
@@ -68,7 +68,7 @@
                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
-                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
 
                         <l:InfoPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -88,9 +88,9 @@
                           Background="{TemplateBinding Background}"
                           Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
+                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
 
-                        <ToggleButton x:Name="PART_ValueBox"
+                        <ToggleButton x:Name="PART_Value"
                                       MinWidth="{TemplateBinding ValueMinWidth}"
                                       MaxWidth="{TemplateBinding ValueMaxWidth}"
                                       l:Grid.Cell="0 1"
@@ -98,7 +98,7 @@
                                                           RelativeSource={RelativeSource TemplatedParent}}"
                                       Validation.ErrorTemplate="{x:Null}" />
 
-                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
 
                         <l:InfoPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -118,9 +118,9 @@
                           Background="{TemplateBinding Background}"
                           Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
+                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
 
-                        <ComboBox x:Name="PART_ValueBox"
+                        <ComboBox x:Name="PART_Value"
                                   MinWidth="{TemplateBinding ValueMinWidth}"
                                   MaxWidth="{TemplateBinding ValueMaxWidth}"
                                   l:Grid.Cell="0 1"
@@ -129,7 +129,7 @@
                                                          RelativeSource={RelativeSource TemplatedParent}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
-                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
 
                         <l:InfoPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -149,9 +149,9 @@
                           Background="{TemplateBinding Background}"
                           Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
+                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
 
-                        <ComboBox x:Name="PART_ValueBox"
+                        <ComboBox x:Name="PART_Value"
                                   MinWidth="{TemplateBinding ValueMinWidth}"
                                   MaxWidth="{TemplateBinding ValueMaxWidth}"
                                   l:Grid.Cell="0 1"
@@ -160,7 +160,7 @@
                                                          RelativeSource={RelativeSource TemplatedParent}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
-                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
 
                         <l:InfoPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -255,7 +255,7 @@
                                           ContentSource="Content"
                                           Style="{TemplateBinding ContentStyle}" />
 
-                        <TextBlock x:Name="SuffixBox"
+                        <TextBlock x:Name="PART_Suffix"
                                    Style="{TemplateBinding SuffixStyle}"
                                    Text="{TemplateBinding Suffix}" />
 

@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Globalization;
     using System.Linq;
@@ -25,6 +26,13 @@
         private string stringValue;
         private bool boolValue;
         private bool hasErrors;
+
+        private CultureInfo currentCulture;
+
+        public DummySettings()
+        {
+            this.currentCulture = this.Cultures[0];
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -202,6 +210,22 @@
             }
 
             return new[] { $"{propertyName} has {nameof(INotifyDataErrorInfo)} error" };
+        }
+
+        public IReadOnlyList<CultureInfo> Cultures { get; } = new[] { CultureInfo.GetCultureInfo("sv-se"), CultureInfo.GetCultureInfo("en-us"), };
+
+        public CultureInfo CurrentCulture
+        {
+            get
+            {
+                return this.currentCulture;
+            }
+            set
+            {
+                if (Equals(value, this.currentCulture)) return;
+                this.currentCulture = value;
+                this.OnPropertyChanged();
+            }
         }
 
         [NotifyPropertyChangedInvocator]

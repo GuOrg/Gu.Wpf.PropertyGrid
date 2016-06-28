@@ -10,12 +10,15 @@
         private Application application;
         private Window window;
 
+        private Button loseFocusButton;
+
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
             var title = "DecimalDigitsWindow";
             this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
             this.window = this.application.GetWindow(title);
+            this.loseFocusButton = this.window.GetByText<Button>("lose focus");
         }
 
         [OneTimeTearDown]
@@ -58,7 +61,7 @@
             Assert.AreEqual("12.346", lengthBox.FormattedText());
 
             digitsBox.Text = "2";
-            groupBox.GetByText<Button>("lose focus").Click();
+            this.loseFocusButton.Click();
 
             Assert.AreEqual("0.00", doubleBox.FormattedText());
             Assert.AreEqual("12.35", lengthBox.FormattedText());
