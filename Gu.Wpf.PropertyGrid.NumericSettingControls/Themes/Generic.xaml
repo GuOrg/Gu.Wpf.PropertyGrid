@@ -7,9 +7,7 @@
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style BasedOn="{StaticResource {x:Type propertyGrid:SettingControlBase}}"
-           TargetType="{x:Type l:DoubleSettingControl}">
-
+    <Style TargetType="{x:Type l:DoubleSettingControl}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:DoubleSettingControl}">
@@ -17,27 +15,24 @@
                           Background="{TemplateBinding Background}"
                           Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="Header"
-                                   Style="{TemplateBinding HeaderStyle}" />
+                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
                         <numeric:DoubleBox x:Name="PART_ValueBox"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
                                            MaxWidth="{TemplateBinding ValueMaxWidth}"
+                                           propertyGrid:Grid.Cell="0,1"
+                                           CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                            DecimalDigits="{TemplateBinding DecimalDigits}"
+                                           IsReadOnly="{TemplateBinding IsReadOnly}"
                                            MaxValue="{TemplateBinding MaxValue}"
                                            MinValue="{TemplateBinding MinValue}"
-                                           CanValueBeNull="{TemplateBinding CanValueBeNull}"
-                                           propertyGrid:Grid.Cell="0,1"
-                                           IsReadOnly="{TemplateBinding IsReadOnly}"
                                            Validation.ErrorTemplate="{x:Null}"
                                            Value="{Binding Value,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="SuffixBox"
-                                   Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
-                                                    Style="{TemplateBinding InfoPresenterStyle}"/>
+                        <propertyGrid:InfoPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>
@@ -45,9 +40,7 @@
         </Setter>
     </Style>
 
-    <Style BasedOn="{StaticResource {x:Type propertyGrid:SettingControlBase}}"
-           TargetType="{x:Type l:IntSettingControl}">
-
+    <Style TargetType="{x:Type l:IntSettingControl}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:IntSettingControl}">
@@ -56,26 +49,23 @@
                           Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
 
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="Header"
-                                   Style="{TemplateBinding HeaderStyle}" />
+                        <TextBlock x:Name="Header" Style="{TemplateBinding HeaderStyle}" />
 
                         <numeric:IntBox x:Name="PART_ValueBox"
-                                           MinWidth="{TemplateBinding ValueMinWidth}"
-                                           MaxWidth="{TemplateBinding ValueMaxWidth}"
-                                           MaxValue="{TemplateBinding MaxValue}"
-                                           MinValue="{TemplateBinding MinValue}"
-                                           CanValueBeNull="{TemplateBinding CanValueBeNull}"
-                                           propertyGrid:Grid.Cell="0,1"
-                                           IsReadOnly="{TemplateBinding IsReadOnly}"
-                                           Validation.ErrorTemplate="{x:Null}"
-                                           Value="{Binding Value,
-                                                           RelativeSource={RelativeSource TemplatedParent}}" />
+                                        MinWidth="{TemplateBinding ValueMinWidth}"
+                                        MaxWidth="{TemplateBinding ValueMaxWidth}"
+                                        propertyGrid:Grid.Cell="0,1"
+                                        CanValueBeNull="{TemplateBinding CanValueBeNull}"
+                                        IsReadOnly="{TemplateBinding IsReadOnly}"
+                                        MaxValue="{TemplateBinding MaxValue}"
+                                        MinValue="{TemplateBinding MinValue}"
+                                        Validation.ErrorTemplate="{x:Null}"
+                                        Value="{Binding Value,
+                                                        RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="SuffixBox"
-                                   Style="{TemplateBinding SuffixStyle}" />
+                        <TextBlock x:Name="SuffixBox" Style="{TemplateBinding SuffixStyle}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter" 
-                                                    Style="{TemplateBinding InfoPresenterStyle}"/>
+                        <propertyGrid:InfoPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
                     </Grid>
                 </ControlTemplate>

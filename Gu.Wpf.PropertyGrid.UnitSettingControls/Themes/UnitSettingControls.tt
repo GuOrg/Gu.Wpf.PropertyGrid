@@ -24,11 +24,11 @@
 		foreach(var quantity in quantities)
 		{
 		#>
-    <Style BasedOn="{StaticResource {x:Type propertyGrid:SettingControlBase}}"
-           TargetType="{x:Type l:<#= quantity.Name #>SettingControl}">
+    <Style TargetType="{x:Type l:<#= quantity.Name #>SettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:<#= quantity.Name #>SettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
