@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:demo="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:numeric="http://gu.se/NumericInput"
         xmlns:propertyGrid="http://gu.se/PropertyGrid"
         Title="StringSettingControlWindow"
         SizeToContent="WidthAndHeight"
@@ -15,15 +14,10 @@
     <StackPanel>
         <Button Content="lose focus" />
 
-        <GroupBox Header="sv-se">
-            <propertyGrid:SettingsControl numeric:NumericBox.Culture="sv-se"
-                                          numeric:NumericBox.DecimalDigits="2"
-                                          DataContext="{Binding EditableCopy}"
-                                          OldDataContext="{Binding DataContext.LastSaved,
-                                                                   RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-                <propertyGrid:StringSettingControl Header="string" Value="{Binding StringValue}" />
-                <propertyGrid:StringSettingControl Header="readonly string" Value="{Binding StringValue}" />
-            </propertyGrid:SettingsControl>
-        </GroupBox>
+        <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+            <propertyGrid:StringSettingControl Header="string" Value="{Binding StringValue}" />
+            <propertyGrid:StringSettingControl Header="propertychanged" Value="{Binding StringValue, UpdateSourceTrigger=PropertyChanged}" />
+            <propertyGrid:StringSettingControl Header="readonly string" Value="{Binding StringValue}" />
+        </propertyGrid:SettingsControl>
     </StackPanel>
 </Window>
