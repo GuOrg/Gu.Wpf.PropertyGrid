@@ -62,8 +62,8 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             var settingControl = groupBox.FindSetting("length");
             var textBox = settingControl.Get<TextBox>();
 
-            Assert.AreEqual("12.3456", textBox.Text);
-            Assert.AreEqual("mm", settingControl.Suffix());
+            Assert.AreEqual("1.23456", textBox.Text);
+            Assert.AreEqual("cm", settingControl.Suffix());
 
             groupBox.FindSetting("length").Get<ComboBox>().Select("m");
             groupBox.GetByText<Button>("lose focus").Click();
