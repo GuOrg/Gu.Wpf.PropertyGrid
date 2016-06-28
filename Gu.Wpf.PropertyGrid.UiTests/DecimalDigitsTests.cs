@@ -29,9 +29,9 @@
         {
             var groupBox = this.window.GetByText<GroupBox>("attached prop");
             var doubleBox = groupBox.FindSetting("double").Get<TextBox>();
-            Assert.AreEqual("0.00", doubleBox.FormattedText());
-
             var lengthBox = groupBox.FindSetting("length").Get<TextBox>();
+
+            Assert.AreEqual("0.00", doubleBox.FormattedText());
             Assert.AreEqual("12.35", lengthBox.FormattedText());
         }
 
@@ -40,9 +40,9 @@
         {
             var groupBox = this.window.GetByText<GroupBox>("explicit");
             var doubleBox = groupBox.FindSetting("double").Get<TextBox>();
-            Assert.AreEqual("0.00", doubleBox.FormattedText());
-
             var lengthBox = groupBox.FindSetting("length").Get<TextBox>();
+
+            Assert.AreEqual("0.00", doubleBox.FormattedText());
             Assert.AreEqual("12.35", lengthBox.FormattedText());
         }
 
@@ -51,10 +51,17 @@
         {
             var groupBox = this.window.GetByText<GroupBox>("bound");
             var doubleBox = groupBox.FindSetting("double").Get<TextBox>();
-            Assert.AreEqual("0.000", doubleBox.FormattedText());
-
             var lengthBox = groupBox.FindSetting("length").Get<TextBox>();
+            var digitsBox = groupBox.FindSetting("digits").Get<TextBox>();
+
+            Assert.AreEqual("0.000", doubleBox.FormattedText());
             Assert.AreEqual("12.346", lengthBox.FormattedText());
+
+            digitsBox.Text = "2";
+            groupBox.GetByText<Button>("lose focus").Click();
+
+            Assert.AreEqual("0.00", doubleBox.FormattedText());
+            Assert.AreEqual("12.35", lengthBox.FormattedText());
         }
     }
 }

@@ -13,7 +13,8 @@
             return (string)item.AutomationElement.Current.ItemStatus;
         }
 
-        public static T GetByText<T>(this UIItemContainer container, string text) where T : UIItem
+        public static T GetByText<T>(this UIItemContainer container, string text)
+            where T : UIItem
         {
             return container.Get<T>(SearchCriteria.ByText(text));
         }

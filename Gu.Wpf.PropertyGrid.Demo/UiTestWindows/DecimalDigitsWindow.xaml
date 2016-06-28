@@ -40,8 +40,9 @@
             <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
                 <propertyGrid:IntSettingControl x:Name="Digits"
                                                 CanValueBeNull="True"
-                                                Header="Digits"
+                                                Header="digits"
                                                 Value="3" />
+                <Button Content="lose focus" />
                 <propertyGrid:DoubleSettingControl DecimalDigits="{Binding Value,
                                                                            ElementName=Digits}"
                                                    Header="double"
