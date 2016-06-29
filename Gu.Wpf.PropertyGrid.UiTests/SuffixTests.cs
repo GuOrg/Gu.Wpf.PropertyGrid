@@ -1,10 +1,9 @@
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
+
     using NUnit.Framework;
 
     using TestStack.White;
-    using TestStack.White.UIItems;
-    using TestStack.White.UIItems.ListBoxItems;
     using TestStack.White.UIItems.WindowItems;
 
     public class SuffixTests

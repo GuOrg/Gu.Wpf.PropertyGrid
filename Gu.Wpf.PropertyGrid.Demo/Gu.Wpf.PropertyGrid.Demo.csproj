@@ -85,6 +85,9 @@
     <Compile Include="UiTestWindows\SelectorSettingControlWindow.xaml.cs">
       <DependentUpon>SelectorSettingControlWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\SingleSettingControlWindow.xaml.cs">
+      <DependentUpon>SingleSettingControlWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UiTestWindows\StringSettingControlWindow.xaml.cs">
       <DependentUpon>StringSettingControlWindow.xaml</DependentUpon>
     </Compile>
@@ -151,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UiTestWindows\SelectorSettingControlWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\SingleSettingControlWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -24,8 +24,8 @@
 
         public Label Suffix()
         {
-            var uiItem = this.Get(SearchCriteria.ByText("PART_Suffix"));
-            uiItem = this.Get(SearchCriteria.ByAutomationId("PART_Suffix"));
+            //var uiItem = this.Get(SearchCriteria.ByText("PART_Suffix"));
+            var uiItem = this.Get(SearchCriteria.ByAutomationId("PART_Suffix"));
             return this.Get<Label>("PART_Suffix");
         }
 

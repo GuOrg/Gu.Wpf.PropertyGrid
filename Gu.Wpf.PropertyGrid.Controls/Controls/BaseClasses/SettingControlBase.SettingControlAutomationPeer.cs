@@ -1,6 +1,9 @@
 namespace Gu.Wpf.PropertyGrid
 {
+    using System.Collections.Generic;
+    using System.Windows;
     using System.Windows.Automation.Peers;
+    using System.Windows.Media;
 
     public abstract partial class SettingControlBase
     {

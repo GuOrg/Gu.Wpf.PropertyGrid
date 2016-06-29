@@ -18,7 +18,7 @@
                                                Value="{Binding StringValue}" />
         </propertyGrid:SettingsControl>
 
-        <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+        <!--<propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
             <propertyGrid:SettingsControl.Resources>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Foreground" Value="Green" />
@@ -38,6 +38,6 @@
             <propertyGrid:StringSettingControl Header="suffixblock style"
                                                Suffix="abc"
                                                Value="{Binding StringValue}" />
-        </propertyGrid:SettingsControl>
+        </propertyGrid:SettingsControl>-->
     </StackPanel>
 </Window>

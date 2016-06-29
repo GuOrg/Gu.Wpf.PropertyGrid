@@ -4,8 +4,6 @@
     using System.Windows.Automation.Peers;
     using System.Windows.Controls;
 
-    using JetBrains.Annotations;
-
     public class SuffixBlock : TextBlock
     {
         static SuffixBlock()
@@ -18,20 +16,7 @@
 
         protected override AutomationPeer OnCreateAutomationPeer()
         {
-            return new SuffixBlockAutomationPeer(this);
-        }
-
-        private class SuffixBlockAutomationPeer : TextBlockAutomationPeer
-        {
-            public SuffixBlockAutomationPeer([NotNull] SuffixBlock owner)
-                : base(owner)
-            {
-            }
-
-            protected override bool IsContentElementCore()
-            {
-                return true;
-            }
+            return new SettingBlockAutomationPeer(this);
         }
     }
 }

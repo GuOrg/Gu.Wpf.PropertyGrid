@@ -18,20 +18,7 @@ namespace Gu.Wpf.PropertyGrid
 
         protected override AutomationPeer OnCreateAutomationPeer()
         {
-            return new HeaderBlockAutomationPeer(this);
-        }
-
-        private class HeaderBlockAutomationPeer : TextBlockAutomationPeer
-        {
-            public HeaderBlockAutomationPeer([NotNull] HeaderBlock owner)
-                : base(owner)
-            {
-            }
-
-            protected override bool IsContentElementCore()
-            {
-                return true;
-            }
+            return new SettingBlockAutomationPeer(this);
         }
     }
 }
