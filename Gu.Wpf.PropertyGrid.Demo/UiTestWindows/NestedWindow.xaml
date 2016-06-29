@@ -2,7 +2,6 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:demo="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:propertyGrid="http://gu.se/PropertyGrid"
         Title="NestedWindow"
@@ -12,8 +11,8 @@
         <GroupBox Header="nested longer">
             <propertyGrid:SettingsControl>
                 <propertyGrid:StringSettingControl Header="root"
-                                                   Suffix="a"
-                                                   Value="a" />
+                                                   Suffix="root suffix"
+                                                   Value="root value" />
 
                 <TextBlock>First nested below</TextBlock>
                 <propertyGrid:SettingsControl Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
@@ -25,8 +24,8 @@
                 <TextBlock>Second nested below</TextBlock>
                 <propertyGrid:SettingsControl Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
                     <propertyGrid:StringSettingControl Header="long header"
-                                                       Suffix="long suffix"
-                                                       Value="long value" />
+                                                       Suffix="really long suffix"
+                                                       Value="really long value" />
                 </propertyGrid:SettingsControl>
             </propertyGrid:SettingsControl>
         </GroupBox>
@@ -40,15 +39,15 @@
                 <TextBlock>First nested below</TextBlock>
                 <propertyGrid:SettingsControl Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
                     <propertyGrid:StringSettingControl Header="a"
-                                                       Suffix="a"
-                                                       Value="a" />
+                                                       Suffix="ab"
+                                                       Value="ac" />
                 </propertyGrid:SettingsControl>
 
                 <TextBlock>Second nested below</TextBlock>
                 <propertyGrid:SettingsControl Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
                     <propertyGrid:StringSettingControl Header="b"
-                                                       Suffix="b"
-                                                       Value="b" />
+                                                       Suffix="bb"
+                                                       Value="bc" />
                 </propertyGrid:SettingsControl>
             </propertyGrid:SettingsControl>
         </GroupBox>

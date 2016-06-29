@@ -58,7 +58,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         public void ColumnWidthsWhenNestedLonger()
         {
             var groupBox = this.window.GetByText<GroupBox>("nested longer");
-            var expected = new[] { 64, 61, 55 };
+            var expected = new[] { 64, 92, 86 };
             CollectionAssert.AreEqual(expected, groupBox.FindSetting("root").ColumnsWidths<TextBox>());
             CollectionAssert.AreEqual(expected, groupBox.FindSetting("a").ColumnsWidths<TextBox>());
             CollectionAssert.AreEqual(expected, groupBox.FindSetting("long header").ColumnsWidths<TextBox>());

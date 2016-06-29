@@ -29,7 +29,7 @@
                         <TextBox x:Name="PART_Value"
                                  l:Grid.Cell="0,1"
                                  Focusable="{Binding IsReadOnly,
-                                                     RelativeSource={RelativeSource TemplatedParent},
+                                                     RelativeSource={RelativeSource Self},
                                                      Converter={x:Static l:InvertBoolConverter.Default}}"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
