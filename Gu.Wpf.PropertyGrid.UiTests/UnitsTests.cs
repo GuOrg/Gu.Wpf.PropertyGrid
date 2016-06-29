@@ -65,7 +65,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             Assert.AreEqual("1.23456", textBox.Text);
             Assert.AreEqual("cm", settingControl.Suffix());
 
-            groupBox.FindSetting("length").Get<ComboBox>().Select("m");
+            groupBox.FindSetting("selector").Get<ComboBox>().Select("m");
             groupBox.GetByText<Button>("lose focus").Click();
 
             Assert.AreEqual("0.0123456", textBox.Text);

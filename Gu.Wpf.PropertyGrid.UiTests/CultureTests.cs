@@ -4,6 +4,7 @@
 
     using TestStack.White;
     using TestStack.White.UIItems;
+    using TestStack.White.UIItems.ListBoxItems;
     using TestStack.White.UIItems.WindowItems;
 
     public class CultureTests
@@ -55,12 +56,12 @@
             var groupBox = this.window.GetByText<GroupBox>("bound");
             var doubleBox = groupBox.FindSetting("double").Get<TextBox>();
             var lengthBox = groupBox.FindSetting("length").Get<TextBox>();
-            var cultureBox = groupBox.FindSetting("culture").Get<TextBox>();
+            var cultureBox = groupBox.FindSetting("culture").Get<ComboBox>();
 
             Assert.AreEqual("0,00", doubleBox.FormattedText());
             Assert.AreEqual("12,35", lengthBox.FormattedText());
 
-            cultureBox.Text = "en-us";
+            cultureBox.Select("en-US");
             this.loseFocusButton.Click();
 
             Assert.AreEqual("0.00", doubleBox.FormattedText());

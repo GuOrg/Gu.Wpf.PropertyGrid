@@ -14,6 +14,7 @@
     </Window.DataContext>
     <StackPanel>
         <Button Content="lose focus" />
+        <TextBlock AutomationProperties.AutomationId="currentCultureTextBlock" Text="{Binding EditableCopy.CurrentCulture}" />
 
         <GroupBox Header="sv-se">
             <propertyGrid:SettingsControl numeric:NumericBox.Culture="sv-se"
