@@ -9,14 +9,14 @@
         mc:Ignorable="d">
     <propertyGrid:SettingsControl>
         <propertyGrid:StringSettingControl Header="a"
-                                           Suffix="a"
-                                           Value="a" />
+                                           Suffix="aa"
+                                           Value="ab" />
         <propertyGrid:StringSettingControl Header="b"
-                                           Suffix="b"
-                                           Value="b" />
+                                           Suffix="ba"
+                                           Value="bb" />
         <propertyGrid:StringSettingControl Header="readonly"
                                            IsReadOnly="True"
-                                           Suffix="c"
-                                           Value="c" />
+                                           Suffix="ca"
+                                           Value="cb" />
     </propertyGrid:SettingsControl>
 </Window>

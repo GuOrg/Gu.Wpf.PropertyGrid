@@ -68,9 +68,11 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         public void ColumnWidthsWhenNestedShorter()
         {
             var groupBox = this.window.GetByText<GroupBox>("nested shorter");
-            var expected = new[] { 26, 32, 25 };
+            var expected = new[] { 22, 34, 57 };
             CollectionAssert.AreEqual(expected, groupBox.FindSetting("root").ColumnsWidths<TextBox>());
+            expected[2] = 28;
             CollectionAssert.AreEqual(expected, groupBox.FindSetting("a").ColumnsWidths<TextBox>());
+            expected[2] = 28;
             CollectionAssert.AreEqual(expected, groupBox.FindSetting("b").ColumnsWidths<TextBox>());
         }
     }

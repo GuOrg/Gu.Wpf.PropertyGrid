@@ -9,21 +9,24 @@
         mc:Ignorable="d">
     <StackPanel>
         <GroupBox Header="nested longer">
-            <propertyGrid:SettingsControl>
-                <propertyGrid:StringSettingControl Header="root"
+            <propertyGrid:SettingsControl HorizontalAlignment="Left" Background="DarkKhaki">
+                <propertyGrid:StringSettingControl Background="Yellow"
+                                                   Header="root"
                                                    Suffix="root suffix"
                                                    Value="root value" />
 
                 <TextBlock>First nested below</TextBlock>
-                <propertyGrid:SettingsControl Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
-                    <propertyGrid:StringSettingControl Header="a"
+                <propertyGrid:SettingsControl Background="GreenYellow" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
+                    <propertyGrid:StringSettingControl Background="CornflowerBlue"
+                                                       Header="a"
                                                        Suffix="b"
                                                        Value="c" />
                 </propertyGrid:SettingsControl>
 
                 <TextBlock>Second nested below</TextBlock>
-                <propertyGrid:SettingsControl Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
-                    <propertyGrid:StringSettingControl Header="long header"
+                <propertyGrid:SettingsControl Background="BurlyWood" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
+                    <propertyGrid:StringSettingControl Background="Orange"
+                                                       Header="long header"
                                                        Suffix="really long suffix"
                                                        Value="really long value" />
                 </propertyGrid:SettingsControl>
@@ -31,21 +34,24 @@
         </GroupBox>
 
         <GroupBox Header="nested shorter">
-            <propertyGrid:SettingsControl>
-                <propertyGrid:StringSettingControl Header="root"
+            <propertyGrid:SettingsControl HorizontalAlignment="Left" Background="NavajoWhite">
+                <propertyGrid:StringSettingControl Background="Tan"
+                                                   Header="root"
                                                    Suffix="suffix"
                                                    Value="value" />
 
                 <TextBlock>First nested below</TextBlock>
-                <propertyGrid:SettingsControl Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
-                    <propertyGrid:StringSettingControl Header="a"
+                <propertyGrid:SettingsControl Background="OldLace" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
+                    <propertyGrid:StringSettingControl Background="PaleGreen"
+                                                       Header="a"
                                                        Suffix="ab"
                                                        Value="ac" />
                 </propertyGrid:SettingsControl>
 
                 <TextBlock>Second nested below</TextBlock>
-                <propertyGrid:SettingsControl Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
-                    <propertyGrid:StringSettingControl Header="b"
+                <propertyGrid:SettingsControl Background="IndianRed" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
+                    <propertyGrid:StringSettingControl Background="LightGoldenrodYellow"
+                                                       Header="b"
                                                        Suffix="bb"
                                                        Value="bc" />
                 </propertyGrid:SettingsControl>
