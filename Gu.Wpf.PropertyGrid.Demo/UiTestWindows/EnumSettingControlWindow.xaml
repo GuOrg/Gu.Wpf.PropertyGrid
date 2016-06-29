@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:propertyGrid="http://gu.se/PropertyGrid"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
-        Title="Window1"
+        Title="EnumSettingControlWindow"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d">
 
@@ -18,13 +18,14 @@
         <TextBlock AutomationProperties.AutomationId="currentTextBlock" Text="{Binding EditableCopy.CurrentStringComparison}" />
 
         <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-            <propertyGrid:EnumSettingControl EnumType="{x:Type system:StringComparison}"
-                                             Header="current"
-                                             Value="{Binding CurrentCulture}" />
+            <propertyGrid:EnumSettingControl Header="current" Value="{Binding CurrentStringComparison}" />
+
+            <propertyGrid:EnumSettingControl Header="explicit_type" Value="{Binding CurrentStringComparison}" />
+
             <propertyGrid:EnumSettingControl EnumType="{x:Type system:StringComparison}"
                                              Header="readonly"
                                              IsReadOnly="True"
-                                             Value="{Binding CurrentCulture}" />
+                                             Value="{Binding CurrentStringComparison}" />
         </propertyGrid:SettingsControl>
 
         <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
@@ -36,12 +37,12 @@
 
             <propertyGrid:EnumSettingControl EnumType="{x:Type system:StringComparison}"
                                              Header="lostfocus"
-                                             Value="{Binding CurrentCulture,
+                                             Value="{Binding CurrentStringComparison,
                                                              UpdateSourceTrigger=LostFocus}" />
 
             <propertyGrid:EnumSettingControl EnumType="{x:Type system:StringComparison}"
                                              Header="editable"
-                                             Value="{Binding CurrentCulture}" />
+                                             Value="{Binding CurrentStringComparison}" />
         </propertyGrid:SettingsControl>
     </StackPanel>
 </Window>
