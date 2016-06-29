@@ -8,8 +8,6 @@
     {
         static SuffixBlock()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SuffixBlock), new FrameworkPropertyMetadata(typeof(TextBlock)));
-            MarginProperty.OverrideMetadataWithDefaultValue(typeof(SuffixBlock), new Thickness(2, 0, 0, 0));
             VerticalAlignmentProperty.OverrideMetadataWithDefaultValue(typeof(SuffixBlock), VerticalAlignment.Center);
             HorizontalAlignmentProperty.OverrideMetadataWithDefaultValue(typeof(SuffixBlock), HorizontalAlignment.Left);
         }

@@ -2,10 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid"
                     xmlns:validationScope="http://gu.se/ValidationScope">
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/BaseStyles.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/ErrorPresenter.xaml" />
-    </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="{x:Static l:Keys.SettingRowOldValueStyleKey}" TargetType="{x:Type TextBlock}">
         <Setter Property="Text" Value="{Binding OldValue, RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}}, StringFormat='Old value: {0}'}" />

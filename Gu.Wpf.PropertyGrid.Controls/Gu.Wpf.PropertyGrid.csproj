@@ -86,7 +86,7 @@
     <Compile Include="SharedSizeGroups.cs" />
     <Compile Include="Controls\StringSettingControl.cs" />
     <Compile Include="ValidationErrorTemplateSelector.cs" />
-    <Page Include="Themes\BaseStyles.xaml">
+    <Page Include="Themes\Grid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

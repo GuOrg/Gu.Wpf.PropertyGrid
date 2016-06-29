@@ -12,9 +12,7 @@
                     xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid"
                     xmlns:propertyGrid="http://gu.se/PropertyGrid"
 					xmlns:numeric="http://gu.se/NumericInput">
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.UnitSettingControls;component/Themes/BaseStyles.xaml" />
-    </ResourceDictionary.MergedDictionaries>
+
 <#
 	    var quantities = typeof (Length).Assembly
 										.GetTypes()

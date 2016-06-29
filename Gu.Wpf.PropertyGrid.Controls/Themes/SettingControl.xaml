@@ -3,9 +3,7 @@
                     xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid"
                     xmlns:validationScope="http://gu.se/ValidationScope">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/BaseStyles.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/ErrorPresenter.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/InfoPresenter.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Grid.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type l:SettingControlBase}">
