@@ -10,8 +10,7 @@
         mc:Ignorable="d">
     <StackPanel>
         <GroupBox Header="abcd">
-            <propertyGrid:SettingsControl HorizontalAlignment="Left"
-                                          Background="AliceBlue">
+            <propertyGrid:SettingsControl HorizontalAlignment="Left" Background="AliceBlue">
                 <propertyGrid:StringSettingControl Header="a"
                                                    Suffix="b"
                                                    Value="c" />
@@ -20,7 +19,21 @@
                                                    Value="abcd" />
             </propertyGrid:SettingsControl>
         </GroupBox>
-        
+
+        <GroupBox Header="* * *">
+            <propertyGrid:SettingsControl Background="AliceBlue"
+                                          HeaderWidth="*"
+                                          SuffixWidth="*"
+                                          ValueWidth="*">
+                <propertyGrid:StringSettingControl Header="a"
+                                                   Suffix="b"
+                                                   Value="c" />
+                <propertyGrid:StringSettingControl Header="abcd"
+                                                   Suffix="abcd"
+                                                   Value="abcd" />
+            </propertyGrid:SettingsControl>
+        </GroupBox>
+
         <GroupBox Header="Width 15 20 25">
             <propertyGrid:SettingsControl HorizontalAlignment="Left"
                                           Background="AliceBlue"
@@ -32,7 +45,7 @@
                                                    Value="c" />
             </propertyGrid:SettingsControl>
         </GroupBox>
-        
+
         <GroupBox Header="Width 15 20 25 abcd">
             <propertyGrid:SettingsControl HorizontalAlignment="Left"
                                           Background="AliceBlue"
@@ -86,7 +99,7 @@
                                                    Value="b" />
             </propertyGrid:SettingsControl>
         </GroupBox>
-        
+
         <GroupBox Header="MaxWidth 15 20 25 abcd">
             <propertyGrid:SettingsControl HorizontalAlignment="Left"
                                           Background="AliceBlue"
@@ -98,7 +111,7 @@
                                                    Value="b" />
                 <propertyGrid:StringSettingControl Header="abcd"
                                                    Suffix="abcd"
-                                                   Value="abcd" />                
+                                                   Value="abcd" />
             </propertyGrid:SettingsControl>
         </GroupBox>
     </StackPanel>
