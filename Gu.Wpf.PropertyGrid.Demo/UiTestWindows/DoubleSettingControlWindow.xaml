@@ -1,6 +1,7 @@
 ﻿<Window x:Class="Gu.Wpf.PropertyGrid.Demo.UiTestWindows.DoubleSettingControlWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:Gu.Wpf.PropertyGrid.Demo.Converters"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:demo="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -14,6 +15,7 @@
     <StackPanel>
         <Button Content="lose focus" />
         <TextBox AutomationProperties.AutomationId="currentValueTextBox" Text="{Binding EditableCopy.DoubleValue}" />
+        <TextBox AutomationProperties.AutomationId="currentNullableValueTextBox" Text="{Binding EditableCopy.NullableDoubleValue, Converter={x:Static converters:NullableDoubleToStringConverter.Default}}" />
 
         <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
             <propertyGrid:DoubleSettingControl Header="default" Value="{Binding DoubleValue}" />
@@ -21,6 +23,10 @@
             <propertyGrid:DoubleSettingControl Header="readonly"
                                                IsReadOnly="True"
                                                Value="{Binding DoubleValue}" />
+
+            <propertyGrid:DoubleSettingControl CanValueBeNull="True"
+                                               Header="nullable"
+                                               Value="{Binding NullableDoubleValue}" />
         </propertyGrid:SettingsControl>
     </StackPanel>
 </Window>

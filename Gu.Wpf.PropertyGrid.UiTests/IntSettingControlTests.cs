@@ -6,7 +6,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
     using TestStack.White.UIItems;
     using TestStack.White.UIItems.WindowItems;
 
-    public class DoubleSettingControlTests
+    public class IntSettingControlTests
     {
         private Application application;
         private Window window;
@@ -22,7 +22,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            var title = "DoubleSettingControlWindow";
+            var title = "IntSettingControlWindow";
             this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
             this.window = this.application.GetWindow(title);
             this.loseFocusButton = this.window.GetByText<Button>("lose focus");
@@ -44,23 +44,23 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [SetUp]
         public void SetUp()
         {
-            this.currentValueTextBox.Text = "0.0123456";
-            this.currentNullableValueTextBox.Text = "0.0123456";
+            this.currentValueTextBox.Text = "1";
+            this.currentNullableValueTextBox.Text = "1";
             this.loseFocusButton.Click();
         }
 
         [Test]
         public void UpdatesWhenLostFocus()
         {
-            this.defaultBox.Text = "1";
-            Assert.AreEqual("1", this.defaultBox.Text);
-            Assert.AreEqual("0.0123456", this.propertychangedBox.Text);
-            Assert.AreEqual("0.0123456", this.readonlyBox.Text);
-
-            this.loseFocusButton.Click();
-            Assert.AreEqual("1", this.defaultBox.Text);
+            this.defaultBox.Text = "2";
+            Assert.AreEqual("2", this.defaultBox.Text);
             Assert.AreEqual("1", this.propertychangedBox.Text);
             Assert.AreEqual("1", this.readonlyBox.Text);
+
+            this.loseFocusButton.Click();
+            Assert.AreEqual("2", this.defaultBox.Text);
+            Assert.AreEqual("2", this.propertychangedBox.Text);
+            Assert.AreEqual("2", this.readonlyBox.Text);
         }
 
         [Test]

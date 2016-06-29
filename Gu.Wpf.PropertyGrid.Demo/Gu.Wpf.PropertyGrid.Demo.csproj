@@ -68,6 +68,8 @@
     <Compile Include="SettingsVm.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\Converters\NullableDoubleToStringConverter.cs" />
+    <Compile Include="UiTestWindows\Converters\NullableIntToStringConverter.cs" />
     <Compile Include="UiTestWindows\CultureWindow.xaml.cs">
       <DependentUpon>CultureWindow.xaml</DependentUpon>
     </Compile>
@@ -76,6 +78,9 @@
     </Compile>
     <Compile Include="UiTestWindows\DoubleSettingControlWindow.xaml.cs">
       <DependentUpon>DoubleSettingControlWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UiTestWindows\IntSettingControlWindow.xaml.cs">
+      <DependentUpon>IntSettingControlWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UiTestWindows\SelectorSettingControlWindow.xaml.cs">
       <DependentUpon>SelectorSettingControlWindow.xaml</DependentUpon>
@@ -135,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UiTestWindows\DoubleSettingControlWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\IntSettingControlWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
