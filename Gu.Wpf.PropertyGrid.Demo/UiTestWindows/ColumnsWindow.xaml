@@ -9,7 +9,7 @@
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d">
     <StackPanel>
-        <GroupBox Header="abcd">
+        <GroupBox Header="default">
             <propertyGrid:SettingsControl HorizontalAlignment="Left" Background="AliceBlue">
                 <propertyGrid:StringSettingControl Header="a"
                                                    Suffix="b"
@@ -38,8 +38,8 @@
             <propertyGrid:SettingsControl HorizontalAlignment="Left"
                                           Background="AliceBlue"
                                           HeaderWidth="15"
-                                          SuffixWidth="20"
-                                          ValueWidth="25">
+                                          SuffixWidth="25"
+                                          ValueWidth="20">
                 <propertyGrid:StringSettingControl Header="a"
                                                    Suffix="b"
                                                    Value="c" />
@@ -50,8 +50,8 @@
             <propertyGrid:SettingsControl HorizontalAlignment="Left"
                                           Background="AliceBlue"
                                           HeaderWidth="15"
-                                          SuffixWidth="20"
-                                          ValueWidth="25">
+                                          SuffixWidth="25"
+                                          ValueWidth="20">
                 <propertyGrid:StringSettingControl Header="a"
                                                    Suffix="b"
                                                    Value="c" />
@@ -65,8 +65,8 @@
             <propertyGrid:SettingsControl HorizontalAlignment="Left"
                                           Background="AliceBlue"
                                           HeaderMinWidth="15"
-                                          SuffixMinWidth="20"
-                                          ValueMinWidth="25">
+                                          SuffixMinWidth="25"
+                                          ValueMinWidth="20">
                 <propertyGrid:StringSettingControl Header="a"
                                                    Suffix="b"
                                                    Value="c" />
@@ -77,8 +77,8 @@
             <propertyGrid:SettingsControl HorizontalAlignment="Left"
                                           Background="AliceBlue"
                                           HeaderMinWidth="15"
-                                          SuffixMinWidth="20"
-                                          ValueMinWidth="25">
+                                          SuffixMinWidth="25"
+                                          ValueMinWidth="20">
                 <propertyGrid:StringSettingControl Header="a"
                                                    Suffix="b"
                                                    Value="c" />
@@ -92,8 +92,8 @@
             <propertyGrid:SettingsControl HorizontalAlignment="Left"
                                           Background="AliceBlue"
                                           HeaderMaxWidth="15"
-                                          SuffixMaxWidth="20"
-                                          ValueMaxWidth="25">
+                                          SuffixMaxWidth="25"
+                                          ValueMaxWidth="20">
                 <propertyGrid:StringSettingControl Header="a"
                                                    Suffix="b"
                                                    Value="b" />
@@ -104,8 +104,8 @@
             <propertyGrid:SettingsControl HorizontalAlignment="Left"
                                           Background="AliceBlue"
                                           HeaderMaxWidth="15"
-                                          SuffixMaxWidth="20"
-                                          ValueMaxWidth="25">
+                                          SuffixMaxWidth="25"
+                                          ValueMaxWidth="20">
                 <propertyGrid:StringSettingControl Header="a"
                                                    Suffix="b"
                                                    Value="b" />

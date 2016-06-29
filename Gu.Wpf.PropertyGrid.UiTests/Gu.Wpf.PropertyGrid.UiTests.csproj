@@ -39,6 +39,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="UIAutomationClient" />
     <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -48,6 +49,7 @@
     </When>
   </Choose>
   <ItemGroup>
+    <Compile Include="ColumnsTests.cs" />
     <Compile Include="CultureTests.cs" />
     <Compile Include="DecimalDigitsTests.cs" />
     <Compile Include="DoubleSettingControlTests.cs" />

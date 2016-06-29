@@ -47,5 +47,17 @@
                 throw new WhiteException($"Error occured while getting {typeof(T).Name}", debugDetails, e);
             }
         }
+
+        public double[] ColumnsWidths<T>() 
+            where T : UIItem
+        {
+            var valueBounds = this.Value<T>().Bounds;
+            return new[]
+            {
+                valueBounds.Left - this.Bounds.Left,
+                valueBounds.Width,
+                this.Bounds.Right - valueBounds.Right
+            };
+        }
     }
 }
