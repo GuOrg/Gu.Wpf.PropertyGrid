@@ -5,16 +5,101 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:propertyGrid="http://gu.se/PropertyGrid"
         Title="ColumnsWindow"
+        Width="500"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d">
     <StackPanel>
-        <propertyGrid:SettingsControl Background="AliceBlue"
-                                      HeaderWidth="50"
-                                      SuffixWidth="10"
-                                      ValueWidth="70">
-            <propertyGrid:StringSettingControl Header="a"
-                                               Suffix="a"
-                                               Value="short" />
-        </propertyGrid:SettingsControl>
+        <GroupBox Header="abcd">
+            <propertyGrid:SettingsControl HorizontalAlignment="Left"
+                                          Background="AliceBlue">
+                <propertyGrid:StringSettingControl Header="a"
+                                                   Suffix="b"
+                                                   Value="c" />
+                <propertyGrid:StringSettingControl Header="abcd"
+                                                   Suffix="abcd"
+                                                   Value="abcd" />
+            </propertyGrid:SettingsControl>
+        </GroupBox>
+        
+        <GroupBox Header="Width 15 20 25">
+            <propertyGrid:SettingsControl HorizontalAlignment="Left"
+                                          Background="AliceBlue"
+                                          HeaderWidth="15"
+                                          SuffixWidth="20"
+                                          ValueWidth="25">
+                <propertyGrid:StringSettingControl Header="a"
+                                                   Suffix="b"
+                                                   Value="c" />
+            </propertyGrid:SettingsControl>
+        </GroupBox>
+        
+        <GroupBox Header="Width 15 20 25 abcd">
+            <propertyGrid:SettingsControl HorizontalAlignment="Left"
+                                          Background="AliceBlue"
+                                          HeaderWidth="15"
+                                          SuffixWidth="20"
+                                          ValueWidth="25">
+                <propertyGrid:StringSettingControl Header="a"
+                                                   Suffix="b"
+                                                   Value="c" />
+                <propertyGrid:StringSettingControl Header="abcd"
+                                                   Suffix="abcd"
+                                                   Value="abcd" />
+            </propertyGrid:SettingsControl>
+        </GroupBox>
+
+        <GroupBox Header="MinWidth 15 20 25">
+            <propertyGrid:SettingsControl HorizontalAlignment="Left"
+                                          Background="AliceBlue"
+                                          HeaderMinWidth="15"
+                                          SuffixMinWidth="20"
+                                          ValueMinWidth="25">
+                <propertyGrid:StringSettingControl Header="a"
+                                                   Suffix="b"
+                                                   Value="c" />
+            </propertyGrid:SettingsControl>
+        </GroupBox>
+
+        <GroupBox Header="MinWidth 15 20 25 abcd">
+            <propertyGrid:SettingsControl HorizontalAlignment="Left"
+                                          Background="AliceBlue"
+                                          HeaderMinWidth="15"
+                                          SuffixMinWidth="20"
+                                          ValueMinWidth="25">
+                <propertyGrid:StringSettingControl Header="a"
+                                                   Suffix="b"
+                                                   Value="c" />
+                <propertyGrid:StringSettingControl Header="abcd"
+                                                   Suffix="abcd"
+                                                   Value="abcd" />
+            </propertyGrid:SettingsControl>
+        </GroupBox>
+
+        <GroupBox Header="MaxWidth 15 20 25">
+            <propertyGrid:SettingsControl HorizontalAlignment="Left"
+                                          Background="AliceBlue"
+                                          HeaderMaxWidth="15"
+                                          SuffixMaxWidth="20"
+                                          ValueMaxWidth="25">
+                <propertyGrid:StringSettingControl Header="a"
+                                                   Suffix="b"
+                                                   Value="b" />
+            </propertyGrid:SettingsControl>
+        </GroupBox>
+        
+        <GroupBox Header="MaxWidth 15 20 25 abcd">
+            <propertyGrid:SettingsControl HorizontalAlignment="Left"
+                                          Background="AliceBlue"
+                                          HeaderMaxWidth="15"
+                                          SuffixMaxWidth="20"
+                                          ValueMaxWidth="25">
+                <propertyGrid:StringSettingControl Header="a"
+                                                   Suffix="b"
+                                                   Value="b" />
+                <propertyGrid:StringSettingControl Header="abcd"
+                                                   Suffix="abcd"
+                                                   Value="abcd" />                
+            </propertyGrid:SettingsControl>
+        </GroupBox>
     </StackPanel>
 </Window>

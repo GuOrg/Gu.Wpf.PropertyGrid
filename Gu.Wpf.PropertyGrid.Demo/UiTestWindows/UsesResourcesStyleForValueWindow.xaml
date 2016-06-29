@@ -42,8 +42,7 @@
     <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
         <propertyGrid:CheckBoxSettingControl Header="checkbox" Value="{Binding BoolValue}" />
         <propertyGrid:ToggleButtonSettingControl Header="togglebutton" Value="{Binding BoolValue}" />
-        <propertyGrid:EnumSettingControl Header="enum"
-                                         Value="{Binding CurrentStringComparison}" />
+        <propertyGrid:EnumSettingControl Header="enum" Value="{Binding CurrentStringComparison}" />
         <propertyGrid:SelectorSettingControl Header="selector"
                                              ItemsSource="{Binding Cultures}"
                                              Value="{Binding CurrentCulture}" />
