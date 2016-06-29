@@ -45,14 +45,14 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         {
             var groupBox = this.window.GetByText<GroupBox>("explicit");
             var metresSetting = groupBox.FindSetting("length (m)");
-            var metresBox = metresSetting.Get<TextBox>();
+            var metresBox = metresSetting.Value<TextBox>();
             var millimetresSetting = groupBox.FindSetting("length (mm)");
-            var millimetresBox = millimetresSetting.Get<TextBox>();
+            var millimetresBox = millimetresSetting.Value<TextBox>();
 
             Assert.AreEqual("0.0123456", metresBox.Text);
-            //Assert.AreEqual("m", metresSetting.Suffix());
+            Assert.AreEqual("m", metresSetting.Suffix().Text);
             Assert.AreEqual("12.3456", millimetresBox.Text);
-            //Assert.AreEqual("mm", millimetresSetting.Suffix());
+            Assert.AreEqual("mm", millimetresSetting.Suffix().Text);
 
             metresBox.Text = "2.4";
             this.loseFocusButton.Click();
@@ -64,7 +64,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         {
             var groupBox = this.window.GetByText<GroupBox>("style");
             var settingControl = groupBox.FindSetting("length");
-            var textBox = settingControl.Get<TextBox>();
+            var textBox = settingControl.Value<TextBox>();
 
             Assert.AreEqual("12.3456", textBox.Text);
             //Assert.AreEqual("mm", settingControl.Suffix());
@@ -80,12 +80,12 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         {
             var groupBox = this.window.GetByText<GroupBox>("bound");
             var settingControl = groupBox.FindSetting("length");
-            var textBox = settingControl.Get<TextBox>();
+            var textBox = settingControl.Value<TextBox>();
 
             Assert.AreEqual("1.23456", textBox.Text);
             //Assert.AreEqual("cm", settingControl.Suffix());
 
-            groupBox.FindSetting("selector").Get<ComboBox>().Select("m");
+            groupBox.FindSetting("selector").Value<ComboBox>().Select("m");
 
             Assert.AreEqual("0.0123456", textBox.Text);
             //Assert.AreEqual("m", settingControl.Suffix());

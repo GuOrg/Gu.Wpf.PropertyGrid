@@ -29,10 +29,10 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             this.currentValueTextBox = this.window.Get<TextBox>("currentValueTextBox");
             this.currentNullableValueTextBox = this.window.Get<TextBox>("currentNullableValueTextBox");
 
-            this.defaultBox = this.window.FindSetting("default").Get<TextBox>();
-            this.propertychangedBox = this.window.FindSetting("propertychanged").Get<TextBox>();
-            this.readonlyBox = this.window.FindSetting("readonly").Get<TextBox>();
-            this.nullableBox = this.window.FindSetting("nullable").Get<TextBox>();
+            this.defaultBox = this.window.FindSetting("default").Value<TextBox>();
+            this.propertychangedBox = this.window.FindSetting("propertychanged").Value<TextBox>();
+            this.readonlyBox = this.window.FindSetting("readonly").Value<TextBox>();
+            this.nullableBox = this.window.FindSetting("nullable").Value<TextBox>();
         }
 
         [OneTimeTearDown]

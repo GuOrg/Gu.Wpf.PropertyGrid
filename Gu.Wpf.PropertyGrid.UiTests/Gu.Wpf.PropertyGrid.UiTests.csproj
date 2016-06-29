@@ -58,10 +58,12 @@
     <Compile Include="Helpers\TextBoxExt.cs" />
     <Compile Include="Helpers\UiItemExt.cs" />
     <Compile Include="IntSettingControlTests.cs" />
+    <Compile Include="NestedTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectorSettingControlTests.cs" />
     <Compile Include="StringSettingControlTests.cs" />
     <Compile Include="StyleTests.cs" />
+    <Compile Include="SuffixTests.cs" />
     <Compile Include="UnitsTests.cs" />
   </ItemGroup>
   <ItemGroup>

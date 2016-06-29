@@ -18,9 +18,7 @@
         <p:SettingsControl Grid.Row="0"
                            DataContext="{Binding EditableCopy}"
                            OldDataContext="{Binding DataContext.LastSaved,
-                                                    RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
-                           SuffixMinWidth="20"
-                           ValueMinWidth="150">
+                                                    RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
             <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Core" />
 
             <p:StringSettingControl Header="string" Value="{Binding StringValue}" />
@@ -92,6 +90,7 @@
                                     Unit="{Binding CurrentLengthUnit}"
                                     Value="{Binding LengthValue}" />
         </p:SettingsControl>
+
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />

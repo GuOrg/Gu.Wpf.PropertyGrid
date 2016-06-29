@@ -27,9 +27,9 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             this.loseFocusButton = this.window.GetByText<Button>("lose focus");
             this.currentValueTextBox = this.window.Get<TextBox>("currentValueTextBox");
 
-            this.defaultBox = this.window.FindSetting("default").Get<TextBox>();
-            this.propertychangedBox = this.window.FindSetting("propertychanged").Get<TextBox>();
-            this.readonlyBox = this.window.FindSetting("readonly string").Get<TextBox>();
+            this.defaultBox = this.window.FindSetting("default").Value<TextBox>();
+            this.propertychangedBox = this.window.FindSetting("propertychanged").Value<TextBox>();
+            this.readonlyBox = this.window.FindSetting("readonly string").Value<TextBox>();
         }
 
         [OneTimeTearDown]

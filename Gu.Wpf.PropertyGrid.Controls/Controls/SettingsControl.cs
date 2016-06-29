@@ -13,13 +13,23 @@
             typeof(SettingsControl),
             new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty SuffixMinWidthProperty = SettingControl.SuffixMinWidthProperty.AddOwner(
-             typeof(SettingsControl),
-             new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
+        public static readonly DependencyProperty SuffixWidthProperty = DependencyProperty.Register(
+            nameof(SuffixWidth),
+            typeof(double),
+            typeof(SettingsControl),
+            new FrameworkPropertyMetadata(double.NaN, FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange));
 
-        public static readonly DependencyProperty SuffixMaxWidthProperty = SettingControl.SuffixMaxWidthProperty.AddOwner(
-             typeof(SettingsControl),
-             new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.Inherits));
+        public static readonly DependencyProperty SuffixMinWidthProperty = DependencyProperty.Register(
+                nameof(SuffixMinWidth),
+                typeof(double),
+                typeof(SettingsControl),
+                new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange));
+
+        public static readonly DependencyProperty SuffixMaxWidthProperty = DependencyProperty.Register(
+                nameof(SuffixMaxWidth),
+                typeof(double),
+                typeof(SettingsControl),
+                new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange));
 
         public static readonly DependencyProperty UsePropertyNameAsHeaderProperty = SettingControl.UsePropertyNameAsHeaderProperty.AddOwner(
                 typeof(SettingsControl),
@@ -34,14 +44,6 @@
         public static readonly DependencyProperty IsReadOnlyProperty = SettingControl.IsReadOnlyProperty.AddOwner(
             typeof(SettingsControl),
             new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty HeaderStyleProperty = SettingControl.HeaderStyleProperty.AddOwner(
-            typeof(SettingsControl),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty SuffixStyleProperty = SettingControl.SuffixStyleProperty.AddOwner(
-            typeof(SettingsControl),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty InfoPresenterStyleProperty = SettingControl.InfoPresenterStyleProperty.AddOwner(
                 typeof(SettingsControl),
@@ -73,6 +75,12 @@
             set { this.SetValue(ValueMaxWidthProperty, value); }
         }
 
+        public double SuffixWidth
+        {
+            get { return (double)this.GetValue(SuffixWidthProperty); }
+            set { this.SetValue(SuffixWidthProperty, value); }
+        }
+
         public double SuffixMinWidth
         {
             get { return (double)this.GetValue(SuffixMinWidthProperty); }
@@ -101,18 +109,6 @@
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
             set { this.SetValue(IsReadOnlyProperty, value); }
-        }
-
-        public Style HeaderStyle
-        {
-            get { return (Style)this.GetValue(HeaderStyleProperty); }
-            set { this.SetValue(HeaderStyleProperty, value); }
-        }
-
-        public Style SuffixStyle
-        {
-            get { return (Style)this.GetValue(SuffixStyleProperty); }
-            set { this.SetValue(SuffixStyleProperty, value); }
         }
 
         public Style InfoPresenterStyle

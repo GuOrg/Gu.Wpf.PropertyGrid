@@ -13,14 +13,6 @@ namespace Gu.Wpf.PropertyGrid
             typeof(ContentSettingControl),
             new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty SuffixMinWidthProperty = SettingControl.SuffixMinWidthProperty.AddOwner(
-             typeof(ContentSettingControl),
-             new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty SuffixMaxWidthProperty = SettingControl.SuffixMaxWidthProperty.AddOwner(
-             typeof(ContentSettingControl),
-             new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.Inherits));
-
         public static readonly DependencyProperty OldDataContextProperty = SettingControl.OldDataContextProperty.AddOwner(
             typeof(ContentSettingControl),
             new FrameworkPropertyMetadata(
@@ -42,20 +34,6 @@ namespace Gu.Wpf.PropertyGrid
         public static readonly DependencyProperty IsReadOnlyProperty = SettingControl.IsReadOnlyProperty.AddOwner(
             typeof(ContentSettingControl),
             new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty HeaderStyleProperty = SettingControl.HeaderStyleProperty.AddOwner(
-            typeof(ContentSettingControl),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty ContentStyleProperty = DependencyProperty.Register(
-            "ContentStyle",
-            typeof(Style),
-            typeof(ContentSettingControl),
-            new PropertyMetadata(default(Style)));
-
-        public static readonly DependencyProperty SuffixStyleProperty = SettingControl.SuffixStyleProperty.AddOwner(
-            typeof(ContentSettingControl),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty InfoPresenterStyleProperty = SettingControl.InfoPresenterStyleProperty.AddOwner(
             typeof(ContentSettingControl),
@@ -87,18 +65,6 @@ namespace Gu.Wpf.PropertyGrid
             set { this.SetValue(ValueMaxWidthProperty, value); }
         }
 
-        public double SuffixMinWidth
-        {
-            get { return (double)this.GetValue(SuffixMinWidthProperty); }
-            set { this.SetValue(SuffixMinWidthProperty, value); }
-        }
-
-        public double SuffixMaxWidth
-        {
-            get { return (double)this.GetValue(SuffixMaxWidthProperty); }
-            set { this.SetValue(SuffixMaxWidthProperty, value); }
-        }
-
         public object OldDataContext
         {
             get { return (object)this.GetValue(OldDataContextProperty); }
@@ -121,24 +87,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
             set { this.SetValue(IsReadOnlyProperty, value); }
-        }
-
-        public Style HeaderStyle
-        {
-            get { return (Style)this.GetValue(HeaderStyleProperty); }
-            set { this.SetValue(HeaderStyleProperty, value); }
-        }
-
-        public Style ContentStyle
-        {
-            get { return (Style)this.GetValue(ContentStyleProperty); }
-            set { this.SetValue(ContentStyleProperty, value); }
-        }
-
-        public Style SuffixStyle
-        {
-            get { return (Style)this.GetValue(SuffixStyleProperty); }
-            set { this.SetValue(SuffixStyleProperty, value); }
         }
 
         public Style InfoPresenterStyle

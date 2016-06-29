@@ -52,9 +52,6 @@
     <Compile Include="GridSandBoxView.xaml.cs">
       <DependentUpon>GridSandBoxView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ItemsControlSettingsView.xaml.cs">
-      <DependentUpon>ItemsControlSettingsView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="OneWayToSourceBindingView.xaml.cs">
       <DependentUpon>OneWayToSourceBindingView.xaml</DependentUpon>
     </Compile>
@@ -82,11 +79,20 @@
     <Compile Include="UiTestWindows\IntSettingControlWindow.xaml.cs">
       <DependentUpon>IntSettingControlWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\NestedWindow.xaml.cs">
+      <DependentUpon>NestedWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UiTestWindows\SelectorSettingControlWindow.xaml.cs">
       <DependentUpon>SelectorSettingControlWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\SingleSettingControlWindow.xaml.cs">
+      <DependentUpon>SingleSettingControlWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UiTestWindows\StringSettingControlWindow.xaml.cs">
       <DependentUpon>StringSettingControlWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UiTestWindows\SuffixWindow.xaml.cs">
+      <DependentUpon>SuffixWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UiTestWindows\UnitsWindow.xaml.cs">
       <DependentUpon>UnitsWindow.xaml</DependentUpon>
@@ -104,10 +110,6 @@
       <DependentUpon>UsePropertyNamesAsHeadersView.xaml</DependentUpon>
     </Compile>
     <Page Include="GridSandBoxView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ItemsControlSettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,11 +149,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UiTestWindows\NestedWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UiTestWindows\SelectorSettingControlWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UiTestWindows\SingleSettingControlWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UiTestWindows\StringSettingControlWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\SuffixWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

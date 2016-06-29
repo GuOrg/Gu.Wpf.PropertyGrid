@@ -7,24 +7,24 @@
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/InfoPresenter.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="{x:Static l:Keys.ItemsControlSettingListStyleKey}" TargetType="{x:Type ItemsControl}">
+    <Style TargetType="{x:Type l:SettingsControl}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Grid.IsSharedSizeScope" Value="True" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="Cycle" />
         <Setter Property="KeyboardNavigation.AcceptsReturn" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type ItemsControl}">
+                <ControlTemplate TargetType="{x:Type l:SettingsControl}">
                     <Grid IsSharedSizeScope="True">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
                             <ColumnDefinition Width="Auto"
-                                              MinWidth="{Binding Path=(l:SettingControl.ValueMinWidth),
-                                                                 RelativeSource={RelativeSource TemplatedParent}}"
+                                              MinWidth="{TemplateBinding ValueMinWidth}"
+                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
                                               SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="Auto"
-                                              MinWidth="{Binding Path=(l:SettingControl.SuffixMinWidth),
-                                                                 RelativeSource={RelativeSource TemplatedParent}}"
+                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
+                                              MinWidth="{TemplateBinding SuffixMinWidth}"
+                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
                                               SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Row="0"
@@ -37,24 +37,8 @@
         </Setter>
     </Style>
 
-    <Style x:Key="{x:Static l:Keys.ItemsControlNestedSettingListStyleKey}"
-           BasedOn="{StaticResource {x:Static l:Keys.ItemsControlSettingListStyleKey}}"
-           TargetType="{x:Type ItemsControl}">
+    <Style x:Key="{x:Static l:Keys.NestedSettingListStyle}" TargetType="{x:Type l:SettingsControl}">
         <Setter Property="Grid.IsSharedSizeScope" Value="False" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="Continue" />
-    </Style>
-
-    <Style BasedOn="{StaticResource {x:Static l:Keys.ItemsControlSettingListStyleKey}}" TargetType="{x:Type l:SettingsControl}">
-        <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}" />
-        <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
-        <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
-    </Style>
-
-    <Style x:Key="{x:Static l:Keys.NestedSettingListStyle}"
-           BasedOn="{StaticResource {x:Static l:Keys.ItemsControlNestedSettingListStyleKey}}"
-           TargetType="{x:Type l:SettingsControl}">
-        <Setter Property="HeaderStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowHeaderStyleKey}}" />
-        <Setter Property="SuffixStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowSuffixStyleKey}}" />
-        <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
     </Style>
 </ResourceDictionary>
