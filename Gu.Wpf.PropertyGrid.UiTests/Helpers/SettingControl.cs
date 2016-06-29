@@ -1,6 +1,9 @@
 ﻿namespace Gu.Wpf.PropertyGrid.UiTests
 {
     using System;
+    using System.Drawing;
+    using System.Windows.Automation;
+
     using TestStack.White;
     using TestStack.White.UIItems;
     using TestStack.White.UIItems.Finders;
@@ -38,22 +41,22 @@
             }
         }
 
-        public string Suffix(bool mustExist = true)
-        {
-            try
-            {
-                var label = this.Get<Label>("PART_Suffix");
-                return label.Text;
-            }
-            catch (Exception)
-            {
-                if (mustExist)
-                {
-                    throw;
-                }
+        //public string Suffix(bool mustExist = true)
+        //{
+        //    try
+        //    {
+        //        var label = this.Get<Label>("PART_Suffix");
+        //        return label.Text;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        if (mustExist)
+        //        {
+        //            throw;
+        //        }
 
-                return "Missing";
-            }
-        }
+        //        return "Missing";
+        //    }
+        //}
     }
 }

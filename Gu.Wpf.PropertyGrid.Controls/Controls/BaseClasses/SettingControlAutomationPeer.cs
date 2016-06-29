@@ -2,7 +2,7 @@ namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows.Automation.Peers;
 
-    public class SettingControlAutomationPeer : UIElementAutomationPeer
+    public class SettingControlAutomationPeer : FrameworkElementAutomationPeer
     {
         public SettingControlAutomationPeer(SettingControlBase owner)
             : base(owner)

@@ -11,7 +11,7 @@
 
     public class SettingsVm : INotifyPropertyChanged
     {
-        public static readonly IReadOnlyList<LengthUnit> LengthUnits = new[] { LengthUnit.Centimetres, LengthUnit.Inches, };
+        public static readonly IReadOnlyList<LengthUnit> LengthUnits = new[] { LengthUnit.Centimetres, LengthUnit.Inches, LengthUnit.Metres, LengthUnit.Millimetres };
 
         private static readonly PropertiesSettings PropertiesSettings = PropertiesSettings.Build()
                                                                                           .AddImmutableType<CultureInfo>()
