@@ -5,14 +5,6 @@ namespace Gu.Wpf.PropertyGrid
 
     public class ContentSettingControl : HeaderedContentControl
     {
-        public static readonly DependencyProperty ValueMinWidthProperty = SettingControl.ValueMinWidthProperty.AddOwner(
-                typeof(ContentSettingControl),
-                new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty ValueMaxWidthProperty = SettingControl.ValueMaxWidthProperty.AddOwner(
-            typeof(ContentSettingControl),
-            new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.Inherits));
-
         public static readonly DependencyProperty OldDataContextProperty = SettingControl.OldDataContextProperty.AddOwner(
             typeof(ContentSettingControl),
             new FrameworkPropertyMetadata(
@@ -51,18 +43,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ContentSettingControl), new FrameworkPropertyMetadata(typeof(ContentSettingControl)));
             FocusableProperty.OverrideMetadata(typeof(ContentSettingControl), new FrameworkPropertyMetadata(false));
-        }
-
-        public double ValueMinWidth
-        {
-            get { return (double)this.GetValue(ValueMinWidthProperty); }
-            set { this.SetValue(ValueMinWidthProperty, value); }
-        }
-
-        public double ValueMaxWidth
-        {
-            get { return (double)this.GetValue(ValueMaxWidthProperty); }
-            set { this.SetValue(ValueMaxWidthProperty, value); }
         }
 
         public object OldDataContext

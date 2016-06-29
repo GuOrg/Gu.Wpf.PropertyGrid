@@ -10,15 +10,13 @@
                 <ControlTemplate TargetType="{x:Type l:DoubleSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
                           Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                          Style="{StaticResource {x:Static propertyGrid:Keys.TwoRowSettingGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <propertyGrid:HeaderBlock x:Name="PART_Header"
                                                   propertyGrid:Grid.Cell="0,0"
                                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
-                                           MinWidth="{TemplateBinding ValueMinWidth}"
-                                           MaxWidth="{TemplateBinding ValueMaxWidth}"
                                            propertyGrid:Grid.Cell="0,1"
                                            CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                            DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -48,7 +46,7 @@
                 <ControlTemplate TargetType="{x:Type l:IntSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
                           Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+                          Style="{StaticResource {x:Static propertyGrid:Keys.TwoRowSettingGridStyleKey}}">
 
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <propertyGrid:HeaderBlock x:Name="PART_Header"
@@ -56,8 +54,6 @@
                                                   Text="{TemplateBinding Header}" />
 
                         <numeric:IntBox x:Name="PART_Value"
-                                        MinWidth="{TemplateBinding ValueMinWidth}"
-                                        MaxWidth="{TemplateBinding ValueMaxWidth}"
                                         propertyGrid:Grid.Cell="0,1"
                                         CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                         IsReadOnly="{TemplateBinding IsReadOnly}"

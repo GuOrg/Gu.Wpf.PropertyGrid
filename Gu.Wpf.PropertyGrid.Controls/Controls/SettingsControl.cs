@@ -5,19 +5,47 @@
 
     public class SettingsControl : ItemsControl
     {
-        public static readonly DependencyProperty ValueMinWidthProperty = SettingControl.ValueMinWidthProperty.AddOwner(
-                typeof(SettingsControl),
-                new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty ValueMaxWidthProperty = SettingControl.ValueMaxWidthProperty.AddOwner(
+        public static readonly DependencyProperty HeaderWidthProperty = DependencyProperty.Register(
+            nameof(HeaderWidth),
+            typeof(GridLength),
             typeof(SettingsControl),
-            new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(GridLength.Auto, FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange));
+
+        public static readonly DependencyProperty HeaderMinWidthProperty = DependencyProperty.Register(
+            nameof(HeaderMinWidth),
+            typeof(double),
+            typeof(SettingsControl),
+            new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange));
+
+        public static readonly DependencyProperty HeaderMaxWidthProperty = DependencyProperty.Register(
+            nameof(HeaderMaxWidth),
+            typeof(double),
+            typeof(SettingsControl),
+            new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange));
+
+        public static readonly DependencyProperty ValueWidthProperty = DependencyProperty.Register(
+            nameof(ValueWidth),
+            typeof(GridLength),
+            typeof(SettingsControl),
+            new FrameworkPropertyMetadata(GridLength.Auto, FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange));
+
+        public static readonly DependencyProperty ValueMinWidthProperty = DependencyProperty.Register(
+            nameof(ValueMinWidth),
+            typeof(double),
+            typeof(SettingsControl),
+            new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange));
+
+        public static readonly DependencyProperty ValueMaxWidthProperty = DependencyProperty.Register(
+            nameof(ValueMaxWidth),
+            typeof(double),
+            typeof(SettingsControl),
+            new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange));
 
         public static readonly DependencyProperty SuffixWidthProperty = DependencyProperty.Register(
             nameof(SuffixWidth),
-            typeof(double),
+            typeof(GridLength),
             typeof(SettingsControl),
-            new FrameworkPropertyMetadata(double.NaN, FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange));
+            new FrameworkPropertyMetadata(GridLength.Auto, FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange));
 
         public static readonly DependencyProperty SuffixMinWidthProperty = DependencyProperty.Register(
                 nameof(SuffixMinWidth),
@@ -63,6 +91,30 @@
             FocusableProperty.OverrideMetadata(typeof(SettingsControl), new FrameworkPropertyMetadata(BooleanBoxes.False));
         }
 
+        public GridLength HeaderWidth
+        {
+            get { return (GridLength)this.GetValue(HeaderWidthProperty); }
+            set { this.SetValue(HeaderWidthProperty, value); }
+        }
+
+        public double HeaderMinWidth
+        {
+            get { return (double)this.GetValue(HeaderMinWidthProperty); }
+            set { this.SetValue(HeaderMinWidthProperty, value); }
+        }
+
+        public double HeaderMaxWidth
+        {
+            get { return (double)this.GetValue(HeaderMaxWidthProperty); }
+            set { this.SetValue(HeaderMaxWidthProperty, value); }
+        }
+
+        public GridLength ValueWidth
+        {
+            get { return (GridLength)this.GetValue(ValueWidthProperty); }
+            set { this.SetValue(ValueWidthProperty, value); }
+        }
+
         public double ValueMinWidth
         {
             get { return (double)this.GetValue(ValueMinWidthProperty); }
@@ -75,9 +127,9 @@
             set { this.SetValue(ValueMaxWidthProperty, value); }
         }
 
-        public double SuffixWidth
+        public GridLength SuffixWidth
         {
-            get { return (double)this.GetValue(SuffixWidthProperty); }
+            get { return (GridLength)this.GetValue(SuffixWidthProperty); }
             set { this.SetValue(SuffixWidthProperty, value); }
         }
 

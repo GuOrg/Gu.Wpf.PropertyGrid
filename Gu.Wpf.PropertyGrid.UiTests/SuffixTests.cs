@@ -35,9 +35,14 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         }
 
         [Test]
-        public void UsesStyle()
+        public void InheritsTextBlockStyle()
         {
             Assert.AreEqual("Green", this.window.FindSetting("textblock style").Suffix().ItemStatus());
+        }
+
+        [Test]
+        public void UsesResourceStyle()
+        {
             Assert.AreEqual("Blue", this.window.FindSetting("suffixblock style").Suffix().ItemStatus());
         }
     }

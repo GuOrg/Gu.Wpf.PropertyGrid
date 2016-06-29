@@ -5,13 +5,6 @@
     public abstract partial class SettingControlBase
     {
 #pragma warning disable SA1202 // Elements must be ordered by access
-        public static readonly DependencyProperty ValueMinWidthProperty = SettingControl.ValueMinWidthProperty.AddOwner(
-            typeof(SettingControlBase),
-            new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty ValueMaxWidthProperty = SettingControl.ValueMaxWidthProperty.AddOwner(
-            typeof(SettingControlBase),
-            new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty UsePropertyNameAsHeaderProperty = SettingControl.UsePropertyNameAsHeaderProperty.AddOwner(
                 typeof(SettingControlBase),
@@ -70,18 +63,6 @@
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SettingControlBase), new FrameworkPropertyMetadata(typeof(SettingControlBase)));
             FocusableProperty.OverrideMetadata(typeof(SettingControlBase), new FrameworkPropertyMetadata(BooleanBoxes.False));
-        }
-
-        public double ValueMinWidth
-        {
-            get { return (double)this.GetValue(ValueMinWidthProperty); }
-            set { this.SetValue(ValueMinWidthProperty, value); }
-        }
-
-        public double ValueMaxWidth
-        {
-            get { return (double)this.GetValue(ValueMaxWidthProperty); }
-            set { this.SetValue(ValueMaxWidthProperty, value); }
         }
 
         public bool UsePropertyNameAsHeader

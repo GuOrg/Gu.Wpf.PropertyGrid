@@ -65,6 +65,9 @@
     <Compile Include="SettingsVm.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\ColumnsWindow.xaml.cs">
+      <DependentUpon>ColumnsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UiTestWindows\Converters\NullableDoubleToStringConverter.cs" />
     <Compile Include="UiTestWindows\Converters\NullableIntToStringConverter.cs" />
     <Compile Include="UiTestWindows\CultureWindow.xaml.cs">
@@ -133,6 +136,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\ColumnsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

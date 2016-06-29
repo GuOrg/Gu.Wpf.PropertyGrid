@@ -43,8 +43,6 @@
                                    Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
-                                           MinWidth="{TemplateBinding ValueMinWidth}"
-                                           MaxWidth="{TemplateBinding ValueMaxWidth}"
                                            propertyGrid:Grid.Cell="0,1"
                                            DecimalDigits="{TemplateBinding DecimalDigits}"
                                            IsReadOnly="{TemplateBinding IsReadOnly}"

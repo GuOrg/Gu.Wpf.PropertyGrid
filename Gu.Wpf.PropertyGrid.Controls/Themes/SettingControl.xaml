@@ -20,15 +20,13 @@
                 <ControlTemplate TargetType="{x:Type l:StringSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
                           Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
+                          Style="{StaticResource {x:Static l:Keys.TwoRowSettingGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <l:HeaderBlock x:Name="PART_Header"
                                        l:Grid.Cell="0,0"
                                        Text="{TemplateBinding Header}" />
 
                         <TextBox x:Name="PART_Value"
-                                 MinWidth="{TemplateBinding ValueMinWidth}"
-                                 MaxWidth="{TemplateBinding ValueMaxWidth}"
                                  l:Grid.Cell="0,1"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
@@ -55,15 +53,13 @@
                 <ControlTemplate TargetType="{x:Type l:CheckBoxSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
                           Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
+                          Style="{StaticResource {x:Static l:Keys.TwoRowSettingGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <l:HeaderBlock x:Name="PART_Header"
                                        l:Grid.Cell="0,0"
                                        Text="{TemplateBinding Header}" />
 
                         <CheckBox x:Name="PART_Value"
-                                  MinWidth="{TemplateBinding ValueMinWidth}"
-                                  MaxWidth="{TemplateBinding ValueMaxWidth}"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   l:Grid.Cell="0 1"
@@ -91,15 +87,13 @@
                 <ControlTemplate TargetType="{x:Type l:ToggleButtonSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
                           Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
+                          Style="{StaticResource {x:Static l:Keys.TwoRowSettingGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <l:HeaderBlock x:Name="PART_Header"
                                        l:Grid.Cell="0,0"
                                        Text="{TemplateBinding Header}" />
 
                         <ToggleButton x:Name="PART_Value"
-                                      MinWidth="{TemplateBinding ValueMinWidth}"
-                                      MaxWidth="{TemplateBinding ValueMaxWidth}"
                                       l:Grid.Cell="0 1"
                                       IsChecked="{Binding Value,
                                                           RelativeSource={RelativeSource TemplatedParent}}"
@@ -125,15 +119,13 @@
                 <ControlTemplate TargetType="{x:Type l:EnumSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
                           Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
+                          Style="{StaticResource {x:Static l:Keys.TwoRowSettingGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <l:HeaderBlock x:Name="PART_Header"
                                        l:Grid.Cell="0,0"
                                        Text="{TemplateBinding Header}" />
 
                         <ComboBox x:Name="PART_Value"
-                                  MinWidth="{TemplateBinding ValueMinWidth}"
-                                  MaxWidth="{TemplateBinding ValueMaxWidth}"
                                   l:Grid.Cell="0 1"
                                   ItemsSource="{TemplateBinding EnumValues}"
                                   SelectedItem="{Binding Value,
@@ -160,15 +152,13 @@
                 <ControlTemplate TargetType="{x:Type l:SelectorSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
                           Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
+                          Style="{StaticResource {x:Static l:Keys.TwoRowSettingGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <l:HeaderBlock x:Name="PART_Header"
                                        l:Grid.Cell="0,0"
                                        Text="{TemplateBinding Header}" />
 
                         <ComboBox x:Name="PART_Value"
-                                  MinWidth="{TemplateBinding ValueMinWidth}"
-                                  MaxWidth="{TemplateBinding ValueMaxWidth}"
                                   l:Grid.Cell="0 1"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
@@ -233,7 +223,7 @@
                 <ControlTemplate TargetType="{x:Type l:ContentSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
                           Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
+                          Style="{StaticResource {x:Static l:Keys.TwoRowSettingGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <ContentPresenter x:Name="HeaderPresenter"
                                           l:Grid.Cell="0,0"

@@ -42,18 +42,6 @@ namespace Gu.Wpf.PropertyGrid
             typeof(SettingControl),
             new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty ValueMaxWidthProperty = DependencyProperty.RegisterAttached(
-            "ValueMaxWidth",
-            typeof(double),
-            typeof(SettingControl),
-            new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty ValueMinWidthProperty = DependencyProperty.RegisterAttached(
-            "ValueMinWidth",
-            typeof(double),
-            typeof(SettingControl),
-            new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
-
         public static void SetUsePropertyNameAsHeader(this UIElement element, bool value)
         {
             element.SetValue(UsePropertyNameAsHeaderProperty, value);
@@ -124,30 +112,6 @@ namespace Gu.Wpf.PropertyGrid
         public static bool GetIsReadOnly(this UIElement element)
         {
             return (bool)element.GetValue(IsReadOnlyProperty);
-        }
-
-        public static void SetValueMinWidth(this UIElement element, double value)
-        {
-            element.SetValue(ValueMinWidthProperty, value);
-        }
-
-        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(UIElement))]
-        public static double GetValueMinWidth(this UIElement element)
-        {
-            return (double)element.GetValue(ValueMinWidthProperty);
-        }
-
-        public static void SetValueMaxWidth(this UIElement element, double value)
-        {
-            element.SetValue(ValueMaxWidthProperty, value);
-        }
-
-        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(UIElement))]
-        public static double GetValueMaxWidth(this UIElement element)
-        {
-            return (double)element.GetValue(ValueMaxWidthProperty);
         }
     }
 }
