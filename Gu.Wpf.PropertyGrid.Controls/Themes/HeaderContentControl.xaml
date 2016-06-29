@@ -17,17 +17,19 @@
                                               MinWidth="{Binding Path=(l:SettingControl.ValueMinWidth),
                                                                  RelativeSource={RelativeSource TemplatedParent}}"
                                               SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="Auto"
-                                              MinWidth="{Binding Path=(l:SettingControl.SuffixMinWidth),
-                                                                 RelativeSource={RelativeSource TemplatedParent}}"
+                            <ColumnDefinition Width="{Binding SuffixWidth,
+                                                              RelativeSource={RelativeSource AncestorType={x:Type l:SettingsControl}}}"
+                                              MinWidth="{Binding SuffixMinWidth,
+                                                                 RelativeSource={RelativeSource AncestorType={x:Type l:SettingsControl}}}"
+                                              MaxWidth="{Binding SuffixMaxWidth,
+                                                                 RelativeSource={RelativeSource AncestorType={x:Type l:SettingsControl}}}"
                                               SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock x:Name="PART_Header"
-                                   Grid.Row="0"
-                                   Grid.Column="0"
-                                   Style="{StaticResource {x:Static l:Keys.SettingRowHeaderStyleKey}}"
-                                   Text="{TemplateBinding Header}" />
+                        <ContentPresenter x:Name="PART_Header"
+                                          Grid.Row="0"
+                                          Grid.Column="0"
+                                          ContentSource="Header" />
 
                         <ContentPresenter x:Name="PART_Value"
                                           Grid.Row="0"

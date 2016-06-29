@@ -21,7 +21,7 @@
                 <ControlTemplate TargetType="{x:Type l:IUnitSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}" Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         --><!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  --><!--
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <l:HeaderBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"

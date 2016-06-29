@@ -1,15 +1,16 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid"
-                    xmlns:numeric="http://gu.se/NumericInput"
-                    xmlns:propertyGrid="http://gu.se/PropertyGrid">
+                    xmlns:propertyGrid="http://gu.se/PropertyGrid"
+					xmlns:numeric="http://gu.se/NumericInput">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.UnitSettingControls;component/Themes/BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type l:AccelerationSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:AccelerationSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -18,10 +19,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AccelerationSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -33,7 +36,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -46,7 +51,8 @@
     <Style TargetType="{x:Type l:AmountOfSubstanceSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:AmountOfSubstanceSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -55,10 +61,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AmountOfSubstanceSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -70,7 +78,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -83,7 +93,8 @@
     <Style TargetType="{x:Type l:AngleSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:AngleSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -92,10 +103,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AngleSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -107,7 +120,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -120,7 +135,8 @@
     <Style TargetType="{x:Type l:AnglePerUnitlessSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:AnglePerUnitlessSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -129,10 +145,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AnglePerUnitlessSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -144,7 +162,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -157,7 +177,8 @@
     <Style TargetType="{x:Type l:AngularAccelerationSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:AngularAccelerationSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -166,10 +187,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AngularAccelerationSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -181,7 +204,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -194,7 +219,8 @@
     <Style TargetType="{x:Type l:AngularJerkSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:AngularJerkSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -203,10 +229,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AngularJerkSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -218,7 +246,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -231,7 +261,8 @@
     <Style TargetType="{x:Type l:AngularSpeedSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:AngularSpeedSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -240,10 +271,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AngularSpeedSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -255,7 +288,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -268,7 +303,8 @@
     <Style TargetType="{x:Type l:AreaSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:AreaSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -277,10 +313,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AreaSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -292,7 +330,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -305,7 +345,8 @@
     <Style TargetType="{x:Type l:AreaDensitySettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:AreaDensitySettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -314,10 +355,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:AreaDensitySettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -329,7 +372,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -342,7 +387,8 @@
     <Style TargetType="{x:Type l:CapacitanceSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:CapacitanceSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -351,10 +397,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:CapacitanceSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -366,7 +414,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -379,7 +429,8 @@
     <Style TargetType="{x:Type l:CatalyticActivitySettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:CatalyticActivitySettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -388,10 +439,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:CatalyticActivitySettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -403,7 +456,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -416,7 +471,8 @@
     <Style TargetType="{x:Type l:CurrentSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:CurrentSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -425,10 +481,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:CurrentSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -440,7 +498,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -453,7 +513,8 @@
     <Style TargetType="{x:Type l:DataSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:DataSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -462,10 +523,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:DataSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -477,7 +540,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -490,7 +555,8 @@
     <Style TargetType="{x:Type l:DensitySettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:DensitySettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -499,10 +565,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:DensitySettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -514,7 +582,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -527,7 +597,8 @@
     <Style TargetType="{x:Type l:ElectricalConductanceSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:ElectricalConductanceSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -536,10 +607,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:ElectricalConductanceSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -551,7 +624,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -564,7 +639,8 @@
     <Style TargetType="{x:Type l:ElectricChargeSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:ElectricChargeSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -573,10 +649,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:ElectricChargeSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -588,7 +666,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -601,7 +681,8 @@
     <Style TargetType="{x:Type l:EnergySettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:EnergySettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -610,10 +691,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:EnergySettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -625,7 +708,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -638,7 +723,8 @@
     <Style TargetType="{x:Type l:FlexibilitySettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:FlexibilitySettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -647,10 +733,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:FlexibilitySettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -662,7 +750,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -675,7 +765,8 @@
     <Style TargetType="{x:Type l:ForceSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:ForceSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -684,10 +775,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:ForceSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -699,7 +792,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -712,7 +807,8 @@
     <Style TargetType="{x:Type l:ForcePerUnitlessSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:ForcePerUnitlessSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -721,10 +817,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:ForcePerUnitlessSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -736,7 +834,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -749,7 +849,8 @@
     <Style TargetType="{x:Type l:FrequencySettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:FrequencySettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -758,10 +859,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:FrequencySettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -773,7 +876,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -786,7 +891,8 @@
     <Style TargetType="{x:Type l:IlluminanceSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:IlluminanceSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -795,10 +901,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:IlluminanceSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -810,7 +918,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -823,7 +933,8 @@
     <Style TargetType="{x:Type l:InductanceSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:InductanceSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -832,10 +943,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:InductanceSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -847,7 +960,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -860,7 +975,8 @@
     <Style TargetType="{x:Type l:JerkSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:JerkSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -869,10 +985,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:JerkSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -884,7 +1002,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -897,7 +1017,8 @@
     <Style TargetType="{x:Type l:KinematicViscositySettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:KinematicViscositySettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -906,10 +1027,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:KinematicViscositySettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -921,7 +1044,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -934,7 +1059,8 @@
     <Style TargetType="{x:Type l:LengthSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:LengthSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -943,10 +1069,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:LengthSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -958,7 +1086,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -971,7 +1101,8 @@
     <Style TargetType="{x:Type l:LengthPerUnitlessSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:LengthPerUnitlessSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -980,10 +1111,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:LengthPerUnitlessSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -995,7 +1128,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1008,7 +1143,8 @@
     <Style TargetType="{x:Type l:LuminousFluxSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:LuminousFluxSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1017,10 +1153,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:LuminousFluxSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1032,7 +1170,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1045,7 +1185,8 @@
     <Style TargetType="{x:Type l:LuminousIntensitySettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:LuminousIntensitySettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1054,10 +1195,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:LuminousIntensitySettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1069,7 +1212,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1082,7 +1227,8 @@
     <Style TargetType="{x:Type l:MagneticFieldStrengthSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:MagneticFieldStrengthSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1091,10 +1237,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:MagneticFieldStrengthSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1106,7 +1254,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1119,7 +1269,8 @@
     <Style TargetType="{x:Type l:MagneticFluxSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:MagneticFluxSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1128,10 +1279,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:MagneticFluxSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1143,7 +1296,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1156,7 +1311,8 @@
     <Style TargetType="{x:Type l:MassSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:MassSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1165,10 +1321,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:MassSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1180,7 +1338,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1193,7 +1353,8 @@
     <Style TargetType="{x:Type l:MassFlowSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:MassFlowSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1202,10 +1363,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:MassFlowSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1217,7 +1380,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1230,7 +1395,8 @@
     <Style TargetType="{x:Type l:MomentumSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:MomentumSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1239,10 +1405,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:MomentumSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1254,7 +1422,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1267,7 +1437,8 @@
     <Style TargetType="{x:Type l:PowerSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:PowerSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1276,10 +1447,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:PowerSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1291,7 +1464,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1304,7 +1479,8 @@
     <Style TargetType="{x:Type l:PressureSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:PressureSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1313,10 +1489,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:PressureSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1328,7 +1506,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1341,7 +1521,8 @@
     <Style TargetType="{x:Type l:ResistanceSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:ResistanceSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1350,10 +1531,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:ResistanceSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1365,7 +1548,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1378,7 +1563,8 @@
     <Style TargetType="{x:Type l:SolidAngleSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:SolidAngleSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1387,10 +1573,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SolidAngleSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1402,7 +1590,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1415,7 +1605,8 @@
     <Style TargetType="{x:Type l:SpecificEnergySettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:SpecificEnergySettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1424,10 +1615,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SpecificEnergySettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1439,7 +1632,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1452,7 +1647,8 @@
     <Style TargetType="{x:Type l:SpecificVolumeSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:SpecificVolumeSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1461,10 +1657,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SpecificVolumeSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1476,7 +1674,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1489,7 +1689,8 @@
     <Style TargetType="{x:Type l:SpeedSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:SpeedSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1498,10 +1699,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SpeedSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1513,7 +1716,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1526,7 +1731,8 @@
     <Style TargetType="{x:Type l:StiffnessSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:StiffnessSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1535,10 +1741,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:StiffnessSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1550,7 +1758,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1563,7 +1773,8 @@
     <Style TargetType="{x:Type l:TemperatureSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:TemperatureSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1572,10 +1783,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:TemperatureSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1587,7 +1800,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1600,7 +1815,8 @@
     <Style TargetType="{x:Type l:TimeSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:TimeSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1609,10 +1825,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:TimeSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1624,7 +1842,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1637,7 +1857,8 @@
     <Style TargetType="{x:Type l:TorqueSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:TorqueSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1646,10 +1867,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:TorqueSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1661,7 +1884,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1674,7 +1899,8 @@
     <Style TargetType="{x:Type l:UnitlessSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:UnitlessSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1683,10 +1909,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:UnitlessSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1698,7 +1926,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1711,7 +1941,8 @@
     <Style TargetType="{x:Type l:VoltageSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:VoltageSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1720,10 +1951,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:VoltageSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1735,7 +1968,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1748,7 +1983,8 @@
     <Style TargetType="{x:Type l:VolumeSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:VolumeSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1757,10 +1993,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:VolumeSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1772,7 +2010,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1785,7 +2025,8 @@
     <Style TargetType="{x:Type l:VolumetricFlowSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:VolumetricFlowSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1794,10 +2035,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:VolumetricFlowSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1809,7 +2052,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->
@@ -1822,7 +2067,8 @@
     <Style TargetType="{x:Type l:WavenumberSettingControl}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource {x:Static propertyGrid:Keys.SettingRowOldValueStyleKey}}" 
+				       TargetType="{x:Type TextBlock}">
                     <Setter Property="Text" Value="{Binding OldStringValue, RelativeSource={RelativeSource AncestorType={x:Type l:WavenumberSettingControl}}, StringFormat='Old value: {0}'}" />
                 </Style>
             </Setter.Value>
@@ -1831,10 +2077,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:WavenumberSettingControl}">
                     <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
+					      Background="{TemplateBinding Background}"
+					      Style="{StaticResource {x:Static propertyGrid:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <TextBlock x:Name="PART_Header" Style="{TemplateBinding HeaderStyle}" />
+                        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                   propertyGrid:Grid.Cell="0,0"
+                                   Text="{TemplateBinding Header}" />
 
                         <numeric:DoubleBox x:Name="PART_Value"
                                            MinWidth="{TemplateBinding ValueMinWidth}"
@@ -1846,7 +2094,9 @@
                                            Value="{Binding ScalarValue,
                                                            RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+												  propertyGrid:Grid.Cell="0,2"
+												  Text="{TemplateBinding Suffix}" />
 
                         <propertyGrid:InfoPresenter x:Name="InfoPresenter" />
                         <!--  ReSharper restore Xaml.MissingGridIndex  -->

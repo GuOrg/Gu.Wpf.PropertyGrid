@@ -45,14 +45,16 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\BaseClasses\SettingControlAutomationPeer.cs" />
     <Compile Include="Controls\BaseClasses\SettingControlBase.DependencyProperties.cs" />
+    <Compile Include="Controls\BaseClasses\SettingControlBase.SettingControlAutomationPeer.cs" />
     <Compile Include="Controls\ContentSettingControl.cs" />
     <Compile Include="Controls\CheckBoxSettingControl.cs" />
     <Compile Include="Controls\EnumSettingControl.cs" />
     <Compile Include="Controls\ErrorPresenter.cs" />
     <Compile Include="Controls\InfoPresenter.cs" />
     <Compile Include="Controls\SelectorSettingControl.cs" />
+    <Compile Include="Controls\TextBlocks\HeaderBlock.cs" />
+    <Compile Include="Controls\TextBlocks\SuffixBlock.cs" />
     <Compile Include="Controls\ToggleButtonSettingControl.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\FirstOrDefaultConverter.cs" />

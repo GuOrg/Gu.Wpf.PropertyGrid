@@ -62,6 +62,7 @@
     <Compile Include="SelectorSettingControlTests.cs" />
     <Compile Include="StringSettingControlTests.cs" />
     <Compile Include="StyleTests.cs" />
+    <Compile Include="SuffixTests.cs" />
     <Compile Include="UnitsTests.cs" />
   </ItemGroup>
   <ItemGroup>

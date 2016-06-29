@@ -16,10 +16,15 @@
         {
         }
 
-        public T Get<T>()
+        public T Value<T>()
             where T : UIItem
         {
             return this.Get<T>("PART_Value");
+        }
+
+        public Label Suffix()
+        {
+            return this.Get<Label>("PART_Suffix");
         }
 
 #pragma warning disable SA1313 // ReSharper disable once InconsistentNaming we want PART_Name here
@@ -40,23 +45,5 @@
                 throw new WhiteException($"Error occured while getting {typeof(T).Name}", debugDetails, e);
             }
         }
-
-        //public string Suffix(bool mustExist = true)
-        //{
-        //    try
-        //    {
-        //        var label = this.Get<Label>("PART_Suffix");
-        //        return label.Text;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        if (mustExist)
-        //        {
-        //            throw;
-        //        }
-
-        //        return "Missing";
-        //    }
-        //}
     }
 }

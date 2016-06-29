@@ -13,14 +13,6 @@
             typeof(SettingControlBase),
             new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty SuffixMinWidthProperty = SettingControl.SuffixMinWidthProperty.AddOwner(
-             typeof(SettingControlBase),
-             new FrameworkPropertyMetadata(0.0, FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty SuffixMaxWidthProperty = SettingControl.SuffixMaxWidthProperty.AddOwner(
-             typeof(SettingControlBase),
-             new FrameworkPropertyMetadata(double.PositiveInfinity, FrameworkPropertyMetadataOptions.Inherits));
-
         public static readonly DependencyProperty UsePropertyNameAsHeaderProperty = SettingControl.UsePropertyNameAsHeaderProperty.AddOwner(
                 typeof(SettingControlBase),
                 new FrameworkPropertyMetadata(
@@ -54,10 +46,6 @@
             new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty HeaderStyleProperty = SettingControl.HeaderStyleProperty.AddOwner(
-            typeof(SettingControlBase),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty SuffixStyleProperty = SettingControl.SuffixStyleProperty.AddOwner(
             typeof(SettingControlBase),
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
@@ -100,18 +88,6 @@
             set { this.SetValue(ValueMaxWidthProperty, value); }
         }
 
-        public double SuffixMinWidth
-        {
-            get { return (double)this.GetValue(SuffixMinWidthProperty); }
-            set { this.SetValue(SuffixMinWidthProperty, value); }
-        }
-
-        public double SuffixMaxWidth
-        {
-            get { return (double)this.GetValue(SuffixMaxWidthProperty); }
-            set { this.SetValue(SuffixMaxWidthProperty, value); }
-        }
-
         public bool UsePropertyNameAsHeader
         {
             get { return (bool)this.GetValue(UsePropertyNameAsHeaderProperty); }
@@ -152,12 +128,6 @@
         {
             get { return (Style)this.GetValue(HeaderStyleProperty); }
             set { this.SetValue(HeaderStyleProperty, value); }
-        }
-
-        public Style SuffixStyle
-        {
-            get { return (Style)this.GetValue(SuffixStyleProperty); }
-            set { this.SetValue(SuffixStyleProperty, value); }
         }
 
         public Style InfoPresenterStyle

@@ -30,10 +30,10 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             this.loseFocusButton = this.window.GetByText<Button>("lose focus");
             this.currentCultureTextBlock = this.window.Get<Label>("currentCultureTextBlock");
 
-            this.defaultBox = this.window.FindSetting("default").Get<ComboBox>();
-            this.lostFocusBox = this.window.FindSetting("lostfocus").Get<ComboBox>();
-            this.readonlyBox = this.window.FindSetting("readonly").Get<ComboBox>();
-            this.editableBox = this.window.FindSetting("editable").Get<ComboBox>();
+            this.defaultBox = this.window.FindSetting("default").Value<ComboBox>();
+            this.lostFocusBox = this.window.FindSetting("lostfocus").Value<ComboBox>();
+            this.readonlyBox = this.window.FindSetting("readonly").Value<ComboBox>();
+            this.editableBox = this.window.FindSetting("editable").Value<ComboBox>();
         }
 
         [OneTimeTearDown]
