@@ -8,19 +8,29 @@
         Title="SuffixWindow"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="AutomationProperties.ItemStatus" Value="Green" />
+            <Setter Property="Foreground" Value="Green" />
+        </Style>
+
+        <Style TargetType="{x:Type propertyGrid:SuffixBlock}">
+            <Setter Property="AutomationProperties.ItemStatus" Value="Blue" />
+            <Setter Property="Foreground" Value="Blue" />
+        </Style>
+    </Window.Resources>
     <Window.DataContext>
         <demo:SettingsVm />
     </Window.DataContext>
-    <StackPanel>
-        <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-            <propertyGrid:StringSettingControl Header="default"
-                                               Suffix="abc"
-                                               Value="{Binding StringValue}" />
-        </propertyGrid:SettingsControl>
+    <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+        <propertyGrid:StringSettingControl Header="default"
+                                           Suffix="abc"
+                                           Value="{Binding StringValue}" />
 
-        <!--<propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+        <propertyGrid:SettingsControl OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
             <propertyGrid:SettingsControl.Resources>
                 <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="AutomationProperties.ItemStatus" Value="Green" />
                     <Setter Property="Foreground" Value="Green" />
                 </Style>
             </propertyGrid:SettingsControl.Resources>
@@ -29,15 +39,16 @@
                                                Value="{Binding StringValue}" />
         </propertyGrid:SettingsControl>
 
-        <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+        <propertyGrid:SettingsControl OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
             <propertyGrid:SettingsControl.Resources>
                 <Style TargetType="{x:Type propertyGrid:SuffixBlock}">
-                    <Setter Property="Foreground" Value="Green" />
+                    <Setter Property="AutomationProperties.ItemStatus" Value="Blue" />
+                    <Setter Property="Foreground" Value="Blue" />
                 </Style>
             </propertyGrid:SettingsControl.Resources>
             <propertyGrid:StringSettingControl Header="suffixblock style"
                                                Suffix="abc"
                                                Value="{Binding StringValue}" />
-        </propertyGrid:SettingsControl>-->
-    </StackPanel>
+        </propertyGrid:SettingsControl>
+    </propertyGrid:SettingsControl>
 </Window>

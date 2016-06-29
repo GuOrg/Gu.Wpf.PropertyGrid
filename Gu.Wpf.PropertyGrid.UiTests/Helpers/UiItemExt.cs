@@ -1,9 +1,6 @@
 ﻿namespace Gu.Wpf.PropertyGrid.UiTests
 {
-    using System;
-
     using TestStack.White.UIItems;
-    using TestStack.White.UIItems.Custom;
     using TestStack.White.UIItems.Finders;
 
     public static class UiItemExt

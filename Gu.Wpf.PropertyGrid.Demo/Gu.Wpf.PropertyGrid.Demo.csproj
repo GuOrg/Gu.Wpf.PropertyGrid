@@ -91,6 +91,9 @@
     <Compile Include="UiTestWindows\StringSettingControlWindow.xaml.cs">
       <DependentUpon>StringSettingControlWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\SuffixBlockWindow.xaml.cs">
+      <DependentUpon>SuffixBlockWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UiTestWindows\SuffixWindow.xaml.cs">
       <DependentUpon>SuffixWindow.xaml</DependentUpon>
     </Compile>
@@ -162,6 +165,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UiTestWindows\StringSettingControlWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\SuffixBlockWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

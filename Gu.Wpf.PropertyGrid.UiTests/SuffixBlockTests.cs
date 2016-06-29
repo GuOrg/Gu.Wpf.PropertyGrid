@@ -1,25 +1,23 @@
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
-
     using NUnit.Framework;
 
     using TestStack.White;
+    using TestStack.White.UIItems;
+    using TestStack.White.UIItems.Finders;
     using TestStack.White.UIItems.WindowItems;
 
-    public class SuffixTests
+    public class SuffixBlockTests
     {
         private Application application;
         private Window window;
 
-        private SettingControl defaultSetting;
-
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            var title = "SuffixWindow";
+            var title = "SuffixBlockWindow";
             this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
             this.window = this.application.GetWindow(title);
-            this.defaultSetting = this.window.FindSetting("default");
         }
 
         [OneTimeTearDown]
@@ -29,16 +27,17 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         }
 
         [Test]
-        public void Default()
+        public void SuffixBlockStyle()
         {
-            Assert.AreEqual("abc", this.defaultSetting.Suffix().Text);
+            var groupBox = this.window.GetByText<GroupBox>("suffixblock style");
+            Assert.AreEqual("Green", groupBox.Get<Label>(SearchCriteria.ByText("abc")).ItemStatus());
         }
 
         [Test]
-        public void UsesStyle()
+        public void InheritsTextBlockStyle()
         {
-            Assert.AreEqual("Green", this.window.FindSetting("textblock style").Suffix().ItemStatus());
-            Assert.AreEqual("Blue", this.window.FindSetting("suffixblock style").Suffix().ItemStatus());
+            var groupBox = this.window.GetByText<GroupBox>("inherits textblock style");
+            Assert.AreEqual("Blue", groupBox.Get<Label>(SearchCriteria.ByText("abc")).ItemStatus());
         }
     }
 }
