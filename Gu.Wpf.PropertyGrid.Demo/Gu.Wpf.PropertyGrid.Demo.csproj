@@ -79,6 +79,9 @@
     <Compile Include="UiTestWindows\DoubleSettingControlWindow.xaml.cs">
       <DependentUpon>DoubleSettingControlWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\FocusWindow.xaml.cs">
+      <DependentUpon>FocusWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UiTestWindows\IntSettingControlWindow.xaml.cs">
       <DependentUpon>IntSettingControlWindow.xaml</DependentUpon>
     </Compile>
@@ -152,6 +155,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UiTestWindows\DoubleSettingControlWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\FocusWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

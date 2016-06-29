@@ -1,0 +1,22 @@
+﻿<Window x:Class="Gu.Wpf.PropertyGrid.Demo.UiTestWindows.FocusWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:propertyGrid="http://gu.se/PropertyGrid"
+        Title="FocusWindow"
+        SizeToContent="WidthAndHeight"
+        mc:Ignorable="d">
+    <propertyGrid:SettingsControl>
+        <propertyGrid:StringSettingControl Header="a"
+                                           Suffix="a"
+                                           Value="a" />
+        <propertyGrid:StringSettingControl Header="b"
+                                           Suffix="b"
+                                           Value="b" />
+        <propertyGrid:StringSettingControl Header="readonly"
+                                           IsReadOnly="True"
+                                           Suffix="c"
+                                           Value="c" />
+    </propertyGrid:SettingsControl>
+</Window>

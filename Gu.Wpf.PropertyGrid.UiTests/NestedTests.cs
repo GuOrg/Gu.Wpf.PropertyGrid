@@ -12,20 +12,12 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         private Application application;
         private Window window;
 
-        private TextBox defaultBox;
-        private TextBox shortBox;
-        private TextBox longBox;
-
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
             var title = "NestedWindow";
             this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
             this.window = this.application.GetWindow(title);
-
-            this.defaultBox = this.window.FindSetting("default").Value<TextBox>();
-            this.shortBox = this.window.FindSetting("short").Value<TextBox>();
-            this.longBox = this.window.FindSetting("long so long").Value<TextBox>();
         }
 
         [OneTimeTearDown]
@@ -37,25 +29,49 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void CyclesFocus()
         {
-            this.defaultBox.Focus();
-            Assert.True(this.defaultBox.IsFocussed);
-            Assert.False(this.shortBox.IsFocussed);
-            Assert.False(this.longBox.IsFocussed);
+            var groupBox = this.window.GetByText<GroupBox>("nested longer");
+            var rootBox = groupBox.FindSetting("root").Value<TextBox>();
+            var shortBox = groupBox.FindSetting("a").Value<TextBox>();
+            var longBox = groupBox.FindSetting("long header").Value<TextBox>();
+            rootBox.Focus();
+            Assert.True(rootBox.IsFocussed);
+            Assert.False(shortBox.IsFocussed);
+            Assert.False(longBox.IsFocussed);
 
             this.window.Keyboard.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
-            Assert.False(this.defaultBox.IsFocussed);
-            Assert.True(this.shortBox.IsFocussed);
-            Assert.False(this.longBox.IsFocussed);
+            Assert.False(rootBox.IsFocussed);
+            Assert.True(shortBox.IsFocussed);
+            Assert.False(longBox.IsFocussed);
 
             this.window.Keyboard.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
-            Assert.False(this.defaultBox.IsFocussed);
-            Assert.False(this.shortBox.IsFocussed);
-            Assert.True(this.longBox.IsFocussed);
+            Assert.False(rootBox.IsFocussed);
+            Assert.False(shortBox.IsFocussed);
+            Assert.True(longBox.IsFocussed);
 
             this.window.Keyboard.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
-            Assert.True(this.defaultBox.IsFocussed);
-            Assert.False(this.shortBox.IsFocussed);
-            Assert.False(this.longBox.IsFocussed);
+            Assert.True(rootBox.IsFocussed);
+            Assert.False(shortBox.IsFocussed);
+            Assert.False(longBox.IsFocussed);
+        }
+
+        [Test]
+        public void ColumnWidthsWhenNestedLonger()
+        {
+            var groupBox = this.window.GetByText<GroupBox>("nested longer");
+            var expected = new[] { 64, 61, 55 };
+            CollectionAssert.AreEqual(expected, groupBox.FindSetting("root").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindSetting("a").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindSetting("long header").ColumnsWidths<TextBox>());
+        }
+
+        [Test]
+        public void ColumnWidthsWhenNestedShorter()
+        {
+            var groupBox = this.window.GetByText<GroupBox>("nested shorter");
+            var expected = new[] { 26, 32, 25 };
+            CollectionAssert.AreEqual(expected, groupBox.FindSetting("root").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindSetting("a").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindSetting("b").ColumnsWidths<TextBox>());
         }
     }
 }

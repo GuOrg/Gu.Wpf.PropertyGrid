@@ -60,6 +60,7 @@
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\FirstOrDefaultConverter.cs" />
     <Compile Include="Converters\FirstValidationResultConverter.cs" />
+    <Compile Include="Converters\InvertBoolConverter.cs" />
     <Compile Include="Converters\ValidationErrorsToStringConverter.cs" />
     <Compile Include="Converters\MultiplyConverter.cs" />
     <Compile Include="Grid\ColumnDefinitions.cs" />

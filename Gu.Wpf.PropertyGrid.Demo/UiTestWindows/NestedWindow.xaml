@@ -8,26 +8,49 @@
         Title="NestedWindow"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d">
-    <Window.DataContext>
-        <demo:SettingsVm />
-    </Window.DataContext>
-    <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-        <propertyGrid:StringSettingControl Header="default" Value="{Binding StringValue}" />
+    <StackPanel>
+        <GroupBox Header="nested longer">
+            <propertyGrid:SettingsControl>
+                <propertyGrid:StringSettingControl Header="root"
+                                                   Suffix="a"
+                                                   Value="a" />
 
-        <TextBlock>First nested below</TextBlock>
-        <propertyGrid:SettingsControl DataContext="{Binding}"
-                                      OldDataContext="{Binding DataContext.LastSaved,
-                                                               RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
-                                      Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
-            <propertyGrid:StringSettingControl Header="short" Value="{Binding StringValue}" />
-        </propertyGrid:SettingsControl>
+                <TextBlock>First nested below</TextBlock>
+                <propertyGrid:SettingsControl Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
+                    <propertyGrid:StringSettingControl Header="a"
+                                                       Suffix="b"
+                                                       Value="c" />
+                </propertyGrid:SettingsControl>
 
-        <TextBlock>Second nested below</TextBlock>
-        <propertyGrid:SettingsControl DataContext="{Binding}"
-                                      OldDataContext="{Binding DataContext.LastSaved,
-                                                               RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
-                                      Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
-            <propertyGrid:StringSettingControl Header="long so long" Value="{Binding StringValue}" />
-        </propertyGrid:SettingsControl>
-    </propertyGrid:SettingsControl>
+                <TextBlock>Second nested below</TextBlock>
+                <propertyGrid:SettingsControl Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
+                    <propertyGrid:StringSettingControl Header="long header"
+                                                       Suffix="long suffix"
+                                                       Value="long value" />
+                </propertyGrid:SettingsControl>
+            </propertyGrid:SettingsControl>
+        </GroupBox>
+
+        <GroupBox Header="nested shorter">
+            <propertyGrid:SettingsControl>
+                <propertyGrid:StringSettingControl Header="root"
+                                                   Suffix="suffix"
+                                                   Value="value" />
+
+                <TextBlock>First nested below</TextBlock>
+                <propertyGrid:SettingsControl Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
+                    <propertyGrid:StringSettingControl Header="a"
+                                                       Suffix="a"
+                                                       Value="a" />
+                </propertyGrid:SettingsControl>
+
+                <TextBlock>Second nested below</TextBlock>
+                <propertyGrid:SettingsControl Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
+                    <propertyGrid:StringSettingControl Header="b"
+                                                       Suffix="b"
+                                                       Value="b" />
+                </propertyGrid:SettingsControl>
+            </propertyGrid:SettingsControl>
+        </GroupBox>
+    </StackPanel>
 </Window>
