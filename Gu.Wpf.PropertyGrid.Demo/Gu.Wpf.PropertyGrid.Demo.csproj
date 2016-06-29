@@ -79,6 +79,9 @@
     <Compile Include="UiTestWindows\IntSettingControlWindow.xaml.cs">
       <DependentUpon>IntSettingControlWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\NestedWindow.xaml.cs">
+      <DependentUpon>NestedWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UiTestWindows\SelectorSettingControlWindow.xaml.cs">
       <DependentUpon>SelectorSettingControlWindow.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UiTestWindows\IntSettingControlWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\NestedWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

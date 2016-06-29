@@ -35,16 +35,6 @@ namespace Gu.Wpf.PropertyGrid
             typeof(ContentSettingControl),
             new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty HeaderStyleProperty = SettingControl.HeaderStyleProperty.AddOwner(
-            typeof(ContentSettingControl),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty ContentStyleProperty = DependencyProperty.Register(
-            "ContentStyle",
-            typeof(Style),
-            typeof(ContentSettingControl),
-            new PropertyMetadata(default(Style)));
-
         public static readonly DependencyProperty InfoPresenterStyleProperty = SettingControl.InfoPresenterStyleProperty.AddOwner(
             typeof(ContentSettingControl),
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
@@ -97,18 +87,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
             set { this.SetValue(IsReadOnlyProperty, value); }
-        }
-
-        public Style HeaderStyle
-        {
-            get { return (Style)this.GetValue(HeaderStyleProperty); }
-            set { this.SetValue(HeaderStyleProperty, value); }
-        }
-
-        public Style ContentStyle
-        {
-            get { return (Style)this.GetValue(ContentStyleProperty); }
-            set { this.SetValue(ContentStyleProperty, value); }
         }
 
         public Style InfoPresenterStyle

@@ -25,8 +25,8 @@
                           Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <l:HeaderBlock x:Name="PART_Header"
-                                   l:Grid.Cell="0,0"
-                                   Text="{TemplateBinding Header}" />
+                                       l:Grid.Cell="0,0"
+                                       Text="{TemplateBinding Header}" />
 
                         <TextBox x:Name="PART_Value"
                                  MinWidth="{TemplateBinding ValueMinWidth}"
@@ -60,8 +60,8 @@
                           Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <l:HeaderBlock x:Name="PART_Header"
-                                   l:Grid.Cell="0,0"
-                                   Text="{TemplateBinding Header}" />
+                                       l:Grid.Cell="0,0"
+                                       Text="{TemplateBinding Header}" />
 
                         <CheckBox x:Name="PART_Value"
                                   MinWidth="{TemplateBinding ValueMinWidth}"
@@ -96,8 +96,8 @@
                           Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <l:HeaderBlock x:Name="PART_Header"
-                                   l:Grid.Cell="0,0"
-                                   Text="{TemplateBinding Header}" />
+                                       l:Grid.Cell="0,0"
+                                       Text="{TemplateBinding Header}" />
 
                         <ToggleButton x:Name="PART_Value"
                                       MinWidth="{TemplateBinding ValueMinWidth}"
@@ -165,8 +165,8 @@
                           Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <l:HeaderBlock x:Name="PART_Header"
-                                   l:Grid.Cell="0,0"
-                                   Text="{TemplateBinding Header}" />
+                                       l:Grid.Cell="0,0"
+                                       Text="{TemplateBinding Header}" />
 
                         <ComboBox x:Name="PART_Value"
                                   MinWidth="{TemplateBinding ValueMinWidth}"
@@ -191,25 +191,6 @@
 
     <Style TargetType="{x:Type l:ContentSettingControl}">
         <Setter Property="validationScope:Scope.ForInputTypes" Value="SettingControlBase, ComboBox, TextBox, Slider" />
-        <Setter Property="ContentStyle">
-            <Setter.Value>
-                <Style TargetType="{x:Type ContentPresenter}">
-                    <Setter Property="Grid.Row" Value="0" />
-                    <Setter Property="Grid.Column" Value="1" />
-                    <Setter Property="MinWidth" Value="{Binding ValueMinWidth, RelativeSource={RelativeSource AncestorType={x:Type l:ContentSettingControl}}}" />
-                    <Setter Property="MaxWidth" Value="{Binding ValueMaxWidth, RelativeSource={RelativeSource AncestorType={x:Type l:ContentSettingControl}}}" />
-                </Style>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="HeaderStyle">
-            <Setter.Value>
-                <Style TargetType="{x:Type ContentPresenter}">
-                    <Setter Property="Grid.Row" Value="0" />
-                    <Setter Property="Grid.Column" Value="0" />
-                    <Setter Property="Focusable" Value="False" />
-                </Style>
-            </Setter.Value>
-        </Setter>
 
         <Setter Property="InfoPresenterStyle">
             <Setter.Value>
@@ -257,12 +238,12 @@
                           Style="{StaticResource {x:Static l:Keys.RootGridStyleKey}}">
                         <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
                         <ContentPresenter x:Name="HeaderPresenter"
-                                          ContentSource="Header"
-                                          Style="{TemplateBinding HeaderStyle}" />
+                                          l:Grid.Cell="0,0"
+                                          ContentSource="Header" />
 
                         <ContentPresenter x:Name="ContentPresenter"
-                                          ContentSource="Content"
-                                          Style="{TemplateBinding ContentStyle}" />
+                                          l:Grid.Cell="0,1"
+                                          ContentSource="Content" />
 
                         <l:SuffixBlock x:Name="PART_Suffix"
                                        l:Grid.Cell="0,2"

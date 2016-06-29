@@ -18,12 +18,6 @@ namespace Gu.Wpf.PropertyGrid
             typeof(SettingControl),
             new FrameworkPropertyMetadata(default(object), FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty HeaderStyleProperty = DependencyProperty.RegisterAttached(
-            "HeaderStyle",
-            typeof(Style),
-            typeof(SettingControl),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
         public static readonly DependencyProperty InfoPresenterStyleProperty = DependencyProperty.RegisterAttached(
             "InfoPresenterStyle",
             typeof(Style),
@@ -82,18 +76,6 @@ namespace Gu.Wpf.PropertyGrid
         public static object GetOldDataContext(this UIElement element)
         {
             return (object)element.GetValue(OldDataContextProperty);
-        }
-
-        public static void SetHeaderStyle(this UIElement element, Style value)
-        {
-            element.SetValue(HeaderStyleProperty, value);
-        }
-
-        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(UIElement))]
-        public static Style GetHeaderStyle(this UIElement element)
-        {
-            return (Style)element.GetValue(HeaderStyleProperty);
         }
 
         public static void SetInfoPresenterStyle(this UIElement element, Style value)

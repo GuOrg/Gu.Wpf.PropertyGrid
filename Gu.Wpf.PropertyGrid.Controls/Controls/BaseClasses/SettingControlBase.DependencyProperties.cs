@@ -45,10 +45,6 @@
             typeof(SettingControlBase),
             new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty HeaderStyleProperty = SettingControl.HeaderStyleProperty.AddOwner(
-            typeof(SettingControlBase),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
         public static readonly DependencyProperty InfoPresenterStyleProperty = SettingControl.InfoPresenterStyleProperty.AddOwner(
             typeof(SettingControlBase),
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
@@ -122,12 +118,6 @@
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
             set { this.SetValue(IsReadOnlyProperty, BooleanBoxes.Box(value)); }
-        }
-
-        public Style HeaderStyle
-        {
-            get { return (Style)this.GetValue(HeaderStyleProperty); }
-            set { this.SetValue(HeaderStyleProperty, value); }
         }
 
         public Style InfoPresenterStyle
