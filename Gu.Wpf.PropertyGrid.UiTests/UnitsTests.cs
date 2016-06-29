@@ -41,7 +41,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         }
 
         [Test]
-        public void Explicit()
+        public void ExplicitUnits()
         {
             var groupBox = this.window.GetByText<GroupBox>("explicit");
             var metresSetting = groupBox.FindSetting("length (m)");
@@ -60,7 +60,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         }
 
         [Test]
-        public void Style()
+        public void UnitFromStyle()
         {
             var groupBox = this.window.GetByText<GroupBox>("style");
             var settingControl = groupBox.FindSetting("length");
