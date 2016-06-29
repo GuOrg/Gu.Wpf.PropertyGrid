@@ -1,6 +1,7 @@
 ﻿namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
+    using System.Windows.Data;
 
     using Gu.Wpf.NumericInput;
 
@@ -17,6 +18,8 @@
         static DoubleSettingControl()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DoubleSettingControl), new FrameworkPropertyMetadata(typeof(DoubleSettingControl)));
+
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(DoubleSettingControl), UpdateSourceTrigger.LostFocus);
         }
 
         public int? DecimalDigits

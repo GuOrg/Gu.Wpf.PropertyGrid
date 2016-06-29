@@ -6,22 +6,21 @@ namespace Gu.Wpf.PropertyGrid.UiTests
     using TestStack.White.UIItems;
     using TestStack.White.UIItems.WindowItems;
 
-    public class StringSettingControlTests
+    public class DoubleSettingControlTests
     {
         private Application application;
         private Window window;
         private Button loseFocusButton;
+        private TextBox currentValueTextBox;
 
         private TextBox defaultBox;
         private TextBox propertychangedBox;
         private TextBox readonlyBox;
 
-        private TextBox currentValueTextBox;
-
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            var title = "StringSettingControlWindow";
+            var title = "DoubleSettingControlWindow";
             this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
             this.window = this.application.GetWindow(title);
             this.loseFocusButton = this.window.GetByText<Button>("lose focus");
@@ -29,7 +28,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
             this.defaultBox = this.window.FindSetting("default").Get<TextBox>();
             this.propertychangedBox = this.window.FindSetting("propertychanged").Get<TextBox>();
-            this.readonlyBox = this.window.FindSetting("readonly string").Get<TextBox>();
+            this.readonlyBox = this.window.FindSetting("readonly").Get<TextBox>();
         }
 
         [OneTimeTearDown]
@@ -41,7 +40,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [SetUp]
         public void SetUp()
         {
-            this.currentValueTextBox.Text = string.Empty;
+            this.currentValueTextBox.Text = "0.0123456";
             this.loseFocusButton.Click();
         }
 
@@ -50,8 +49,8 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         {
             this.defaultBox.Text = "1";
             Assert.AreEqual("1", this.defaultBox.Text);
-            Assert.AreEqual(string.Empty, this.propertychangedBox.Text);
-            Assert.AreEqual(string.Empty, this.readonlyBox.Text);
+            Assert.AreEqual("0.0123456", this.propertychangedBox.Text);
+            Assert.AreEqual("0.0123456", this.readonlyBox.Text);
 
             this.loseFocusButton.Click();
             Assert.AreEqual("1", this.defaultBox.Text);

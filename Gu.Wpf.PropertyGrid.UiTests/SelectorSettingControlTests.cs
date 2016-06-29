@@ -16,7 +16,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         private Button loseFocusButton;
         private Label currentCultureTextBlock;
 
-        private ComboBox cultureBox;
+        private ComboBox defaultBox;
         private ComboBox lostFocusBox;
         private ComboBox readonlyBox;
         private ComboBox editableBox;
@@ -30,7 +30,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             this.loseFocusButton = this.window.GetByText<Button>("lose focus");
             this.currentCultureTextBlock = this.window.Get<Label>("currentCultureTextBlock");
 
-            this.cultureBox = this.window.FindSetting("currentculture").Get<ComboBox>();
+            this.defaultBox = this.window.FindSetting("default").Get<ComboBox>();
             this.lostFocusBox = this.window.FindSetting("lostfocus").Get<ComboBox>();
             this.readonlyBox = this.window.FindSetting("readonly").Get<ComboBox>();
             this.editableBox = this.window.FindSetting("editable").Get<ComboBox>();
@@ -45,7 +45,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void UpdatesWhenLostFocus()
         {
-            this.cultureBox.Select("sv-SE");
+            this.defaultBox.Select("sv-SE");
             Assert.AreEqual("sv-SE", this.lostFocusBox.SelectedItemText);
 
             this.lostFocusBox.EditableText = "en-US";
@@ -58,16 +58,16 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void UpdatesWhenPropertyChanged()
         {
-            this.cultureBox.Select("en-US");
+            this.defaultBox.Select("en-US");
             Assert.AreEqual("en-US", this.currentCultureTextBlock.Text);
-            Assert.AreEqual("en-US", this.cultureBox.SelectedItemText);
+            Assert.AreEqual("en-US", this.defaultBox.SelectedItemText);
             Assert.AreEqual("en-US", this.lostFocusBox.SelectedItemText);
             Assert.AreEqual("en-US", this.readonlyBox.SelectedItemText);
             Assert.AreEqual("en-US", this.editableBox.SelectedItemText);
 
-            this.cultureBox.Select("sv-SE");
+            this.defaultBox.Select("sv-SE");
             Assert.AreEqual("sv-SE", this.currentCultureTextBlock.Text);
-            Assert.AreEqual("sv-SE", this.cultureBox.SelectedItemText);
+            Assert.AreEqual("sv-SE", this.defaultBox.SelectedItemText);
             Assert.AreEqual("sv-SE", this.lostFocusBox.SelectedItemText);
             Assert.AreEqual("sv-SE", this.readonlyBox.SelectedItemText);
             Assert.AreEqual("sv-SE", this.editableBox.SelectedItemText);
@@ -76,7 +76,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void IsEditable()
         {
-            Assert.False(this.cultureBox.IsEditable);
+            Assert.False(this.defaultBox.IsEditable);
             Assert.True(this.lostFocusBox.IsEditable);
             Assert.False(this.readonlyBox.IsEditable);
             Assert.True(this.editableBox.IsEditable);
@@ -86,7 +86,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         public void Items()
         {
             var expected = new[] { "sv-SE", "en-US" };
-            CollectionAssert.AreEqual(expected, this.cultureBox.Items.AsReadOnly().Select(x => x.Text));
+            CollectionAssert.AreEqual(expected, this.defaultBox.Items.AsReadOnly().Select(x => x.Text));
             CollectionAssert.AreEqual(expected, this.lostFocusBox.Items.AsReadOnly().Select(x => x.Text));
             CollectionAssert.AreEqual(expected, this.readonlyBox.Items.AsReadOnly().Select(x => x.Text));
         }

@@ -16,7 +16,7 @@
 
     <StackPanel>
         <Button Content="lose focus" />
-        <TextBox AutomationProperties.AutomationId="lengthValueTextBox" Text="{Binding EditableCopy.LengthValue, Converter={units:LengthConverter Unit=m, UnitInput=SymbolRequired}}" />
+        <TextBox AutomationProperties.AutomationId="currentValueTextBox" Text="{Binding EditableCopy.LengthValue, Converter={units:LengthConverter Unit=m, UnitInput=SymbolRequired}}" />
 
         <GroupBox Header="explicit">
             <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">

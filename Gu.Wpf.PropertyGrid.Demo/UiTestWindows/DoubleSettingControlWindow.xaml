@@ -1,11 +1,11 @@
-﻿<Window x:Class="Gu.Wpf.PropertyGrid.Demo.UiTestWindows.StringSettingControlWindow"
+﻿<Window x:Class="Gu.Wpf.PropertyGrid.Demo.UiTestWindows.DoubleSettingControlWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:demo="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:propertyGrid="http://gu.se/PropertyGrid"
-        Title="StringSettingControlWindow"
+        Title="DoubleSettingControlWindow"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d">
     <Window.DataContext>
@@ -13,14 +13,14 @@
     </Window.DataContext>
     <StackPanel>
         <Button Content="lose focus" />
-        <TextBox AutomationProperties.AutomationId="currentValueTextBox" Text="{Binding EditableCopy.StringValue}" />
+        <TextBox AutomationProperties.AutomationId="currentValueTextBox" Text="{Binding EditableCopy.DoubleValue}" />
 
         <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-            <propertyGrid:StringSettingControl Header="default" Value="{Binding StringValue}" />
-            <propertyGrid:StringSettingControl Header="propertychanged" Value="{Binding StringValue, UpdateSourceTrigger=PropertyChanged}" />
-            <propertyGrid:StringSettingControl Header="readonly string"
+            <propertyGrid:DoubleSettingControl Header="default" Value="{Binding DoubleValue}" />
+            <propertyGrid:DoubleSettingControl Header="propertychanged" Value="{Binding DoubleValue, UpdateSourceTrigger=PropertyChanged}" />
+            <propertyGrid:DoubleSettingControl Header="readonly"
                                                IsReadOnly="True"
-                                               Value="{Binding StringValue}" />
+                                               Value="{Binding DoubleValue}" />
         </propertyGrid:SettingsControl>
     </StackPanel>
 </Window>

@@ -15,7 +15,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
         private Button loseFocusButton;
 
-        private TextBox lengthValueTextBox;
+        private TextBox currentValueTextBox;
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
@@ -24,7 +24,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
             this.window = this.application.GetWindow(title);
             this.loseFocusButton = this.window.GetByText<Button>("lose focus");
-            this.lengthValueTextBox = this.window.Get<TextBox>("lengthValueTextBox");
+            this.currentValueTextBox = this.window.Get<TextBox>("currentValueTextBox");
         }
 
         [OneTimeTearDown]
@@ -36,7 +36,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [SetUp]
         public void SetUp()
         {
-            this.lengthValueTextBox.Text = "0.0123456 m";
+            this.currentValueTextBox.Text = "0.0123456 m";
             this.loseFocusButton.Click();
         }
 
@@ -70,9 +70,9 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             //Assert.AreEqual("mm", settingControl.Suffix());
 
             textBox.Text = "2";
-            Assert.AreEqual("0.0123456\u00A0m", this.lengthValueTextBox.Text);
+            Assert.AreEqual("0.0123456\u00A0m", this.currentValueTextBox.Text);
             this.loseFocusButton.Click();
-            Assert.AreEqual("0.002\u00A0m", this.lengthValueTextBox.Text);
+            Assert.AreEqual("0.002\u00A0m", this.currentValueTextBox.Text);
         }
 
         [Test]

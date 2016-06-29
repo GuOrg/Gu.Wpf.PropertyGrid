@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="CultureTests.cs" />
     <Compile Include="DecimalDigitsTests.cs" />
+    <Compile Include="DoubleSettingControlTests.cs" />
     <Compile Include="EnumSettingControlTests.cs" />
     <Compile Include="Helpers\ComboBoxExt.cs" />
     <Compile Include="Helpers\SettingControl.cs" />

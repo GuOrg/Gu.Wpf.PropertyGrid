@@ -10,6 +10,7 @@
 namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
+	using System.Windows.Data;
     using Gu.Units;
 <#
 	    var quantities = typeof (Length).Assembly.GetTypes()
@@ -35,6 +36,8 @@ namespace Gu.Wpf.PropertyGrid
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(<#= className #>), UpdateSourceTrigger.LostFocus);
         }
     }
 <#

@@ -25,7 +25,8 @@
                                            MinValue="{TemplateBinding MinValue}"
                                            Validation.ErrorTemplate="{x:Null}"
                                            Value="{Binding Value,
-                                                           RelativeSource={RelativeSource TemplatedParent}}" />
+                                                           RelativeSource={RelativeSource TemplatedParent},
+                                                           UpdateSourceTrigger=PropertyChanged}" />
 
                         <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
 
@@ -58,7 +59,8 @@
                                         MinValue="{TemplateBinding MinValue}"
                                         Validation.ErrorTemplate="{x:Null}"
                                         Value="{Binding Value,
-                                                        RelativeSource={RelativeSource TemplatedParent}}" />
+                                                        RelativeSource={RelativeSource TemplatedParent},
+                                                        UpdateSourceTrigger=PropertyChanged}" />
 
                         <TextBlock x:Name="PART_Suffix" Style="{TemplateBinding SuffixStyle}" />
 

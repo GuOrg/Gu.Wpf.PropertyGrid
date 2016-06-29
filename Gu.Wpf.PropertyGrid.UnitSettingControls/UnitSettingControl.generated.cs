@@ -1,6 +1,7 @@
 ﻿namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
+	using System.Windows.Data;
     using Gu.Units;
 
     public class AccelerationSettingControl : UnitSettingControl<Acceleration, AccelerationUnit>
@@ -17,6 +18,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AccelerationSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -34,6 +37,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AmountOfSubstanceSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -51,6 +56,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngleSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -68,6 +75,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AnglePerUnitlessSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -85,6 +94,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngularAccelerationSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -102,6 +113,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngularJerkSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -119,6 +132,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngularSpeedSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -136,6 +151,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AreaSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -153,6 +170,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AreaDensitySettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -170,6 +189,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(CapacitanceSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -187,6 +208,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(CatalyticActivitySettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -204,6 +227,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(CurrentSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -221,6 +246,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(DataSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -238,6 +265,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(DensitySettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -255,6 +284,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ElectricalConductanceSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -272,6 +303,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ElectricChargeSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -289,6 +322,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(EnergySettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -306,6 +341,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(FlexibilitySettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -323,6 +360,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ForceSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -340,6 +379,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ForcePerUnitlessSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -357,6 +398,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(FrequencySettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -374,6 +417,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(IlluminanceSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -391,6 +436,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(InductanceSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -408,6 +455,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(JerkSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -425,6 +474,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(KinematicViscositySettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -442,6 +493,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LengthSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -459,6 +512,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LengthPerUnitlessSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -476,6 +531,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LuminousFluxSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -493,6 +550,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LuminousIntensitySettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -510,6 +569,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MagneticFieldStrengthSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -527,6 +588,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MagneticFluxSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -544,6 +607,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MassSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -561,6 +626,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MassFlowSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -578,6 +645,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MomentumSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -595,6 +664,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(PowerSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -612,6 +683,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(PressureSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -629,6 +702,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ResistanceSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -646,6 +721,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SolidAngleSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -663,6 +740,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SpecificEnergySettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -680,6 +759,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SpecificVolumeSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -697,6 +778,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SpeedSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -714,6 +797,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(StiffnessSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -731,6 +816,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(TemperatureSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -748,6 +835,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(TimeSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -765,6 +854,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(TorqueSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -782,6 +873,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(UnitlessSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -799,6 +892,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(VoltageSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -816,6 +911,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(VolumeSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -833,6 +930,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(VolumetricFlowSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -850,6 +949,8 @@
                     CreateSuffix(DefaultUnit, 
                     UnitSettingControl.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(WavenumberSettingControl), UpdateSourceTrigger.LostFocus);
         }
     }
 }
