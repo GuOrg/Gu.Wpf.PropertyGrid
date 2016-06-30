@@ -13,9 +13,9 @@ namespace Gu.Wpf.PropertyGrid
 
         public static readonly DependencyProperty SuffixProperty = DependencyProperty.Register(
             "Suffix",
-            typeof(string),
+            typeof(object),
             typeof(ContentSettingControl),
-            new PropertyMetadata(string.Empty));
+            new PropertyMetadata(default(object)));
 
         public static readonly DependencyProperty OldValueProperty = DependencyProperty.Register(
             "OldValue",
@@ -39,9 +39,9 @@ namespace Gu.Wpf.PropertyGrid
             set { this.SetValue(OldDataContextProperty, value); }
         }
 
-        public string Suffix
+        public object Suffix
         {
-            get { return (string)this.GetValue(SuffixProperty); }
+            get { return this.GetValue(SuffixProperty); }
             set { this.SetValue(SuffixProperty, value); }
         }
 

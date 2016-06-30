@@ -4,8 +4,7 @@
 
     <p:ValidationErrorTemplateSelector x:Key="{x:Static p:Keys.ValidationErrorTemplateSelectorKey}" />
 
-    <Style x:Key="{x:Static p:Keys.SettingRowErrorTextStyleKey}"
-           TargetType="{x:Type TextBlock}">
+    <Style TargetType="{x:Type TextBlock}">
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="Foreground" Value="Red" />
