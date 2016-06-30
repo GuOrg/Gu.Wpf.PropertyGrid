@@ -1,6 +1,7 @@
-﻿namespace Gu.Wpf.PropertyGrid.Demo.UiTestWindows
+﻿namespace Gu.Wpf.PropertyGrid.Demo
 {
     using System.Windows;
+
     /// <summary>
     /// Interaction logic for SuffixBlockWindow.xaml
     /// </summary>

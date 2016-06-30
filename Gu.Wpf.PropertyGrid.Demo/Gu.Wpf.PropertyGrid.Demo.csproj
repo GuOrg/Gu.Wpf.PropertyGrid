@@ -109,8 +109,8 @@
     <Compile Include="UiTestWindows\UsesResourcesStyleForSettingsControlBase.xaml.cs">
       <DependentUpon>UsesResourcesStyleForSettingsControlBase.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\UsesResourcesStyleForValueWindow.xaml.cs">
-      <DependentUpon>UsesResourcesStyleForValueWindow.xaml</DependentUpon>
+    <Compile Include="UiTestWindows\ValueStylesWindow.xaml.cs">
+      <DependentUpon>ValueStylesWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UiTestWindows\EnumSettingControlWindow.xaml.cs">
       <DependentUpon>EnumSettingControlWindow.xaml</DependentUpon>
@@ -198,7 +198,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\UsesResourcesStyleForValueWindow.xaml">
+    <Page Include="UiTestWindows\ValueStylesWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

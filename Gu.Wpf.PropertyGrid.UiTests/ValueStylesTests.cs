@@ -7,7 +7,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
     using TestStack.White.UIItems.ListBoxItems;
     using TestStack.White.UIItems.WindowItems;
 
-    public class StyleTests
+    public class ValueStylesTests
     {
         private Application application;
         private Window window;
@@ -15,7 +15,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            var title = "UsesResourcesStyleForValueWindow";
+            var title = "ValueStylesWindow";
             this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
             this.window = this.application.GetWindow(title);
         }
