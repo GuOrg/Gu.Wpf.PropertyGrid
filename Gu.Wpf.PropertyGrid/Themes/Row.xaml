@@ -71,7 +71,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type l:CheckBoxRow}">
+    <Style TargetType="{x:Type l:BoolRow}">
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, CheckBox, ToggleButton" />
         <Setter Property="Template">
             <Setter.Value>
@@ -131,7 +131,11 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type l:ToggleButtonRow}">
+    <Style BasedOn="{StaticResource {x:Type l:BoolRow}}" TargetType="{x:Type l:CheckBoxRow}">
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, ToggleButton, CheckBox" />
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Type l:BoolRow}}" TargetType="{x:Type l:ToggleButtonRow}">
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, ToggleButton, CheckBox" />
 
         <Setter Property="Template">
@@ -307,6 +311,8 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style BasedOn="{StaticResource {x:Type l:SelectorRow}}" TargetType="{x:Type l:ComboBoxRow}" />
 
     <Style TargetType="{x:Type l:ContentRow}">
         <Setter Property="validationScope:Scope.ForInputTypes" Value="{x:Static validationScope:InputTypeCollection.Default}" />

@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Controls\Rows\BaseClasses\Row.DependencyProperties.cs" />
     <Compile Include="Controls\Rows\BaseClasses\Row.RowAutomationPeer.cs" />
+    <Compile Include="Controls\Rows\ComboBoxRow.cs" />
     <Compile Include="Controls\Rows\ContentRow.cs" />
     <Compile Include="Controls\Rows\CheckBoxRow.cs" />
     <Compile Include="Controls\Rows\EnumRow.cs" />
