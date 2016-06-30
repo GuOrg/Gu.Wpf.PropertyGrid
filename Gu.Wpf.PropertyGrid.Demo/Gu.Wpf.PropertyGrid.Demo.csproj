@@ -59,6 +59,10 @@
       <DependentUpon>OneWayToSourceBindingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="RelayCommand.cs" />
+    <Compile Include="Sandbox\StyleSandboxWindow.xaml.cs">
+      <DependentUpon>StyleSandboxWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\StyleTargetTypeConverter.cs" />
     <Compile Include="SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
@@ -135,6 +139,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="OneWayToSourceBindingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sandbox\StyleSandboxWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

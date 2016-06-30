@@ -13,12 +13,13 @@
     </Window.DataContext>
     <Window.Resources>
         <Style TargetType="{x:Type propertyGrid:Row}">
+            <Setter Property="AutomationProperties.ItemStatus" Value="Lavender" />
             <Setter Property="Background" Value="Lavender" />
         </Style>
 
-        <Style TargetType="{x:Type propertyGrid:StringRow}">
-            <Setter Property="Background" Value="PaleGoldenrod" />
-        </Style>
+        <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:StringRow}" />
+        <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:LengthRow}" />
+        <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:DoubleRow}" />
     </Window.Resources>
 
     <propertyGrid:Rows DataContext="{Binding EditableCopy}"

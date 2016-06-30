@@ -89,7 +89,6 @@ namespace Gu.Wpf.PropertyGrid
 		} 
 		#>
 }
-
 <#+
    private class ClassMetaData
    {
