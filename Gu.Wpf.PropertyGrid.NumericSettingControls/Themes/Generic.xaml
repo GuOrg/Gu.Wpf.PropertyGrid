@@ -38,7 +38,7 @@
                                            CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                            DecimalDigits="{TemplateBinding DecimalDigits}"
                                            Focusable="{Binding IsReadOnly,
-                                                               RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}},
+                                                               RelativeSource={RelativeSource TemplatedParent},
                                                                Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                            IsReadOnly="{TemplateBinding IsReadOnly}"
                                            MaxValue="{TemplateBinding MaxValue}"
@@ -97,7 +97,7 @@
                                            Grid.Column="1"
                                            CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                            Focusable="{Binding IsReadOnly,
-                                                               RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:SettingControlBase}},
+                                                               RelativeSource={RelativeSource TemplatedParent},
                                                                Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                            IsReadOnly="{TemplateBinding IsReadOnly}"
                                            MaxValue="{TemplateBinding MaxValue}"

@@ -14,9 +14,17 @@
                 <propertyGrid:StringSettingControl Header="a"
                                                    Suffix="b"
                                                    Value="c" />
+            </propertyGrid:SettingsControl>
+        </GroupBox>
+
+        <GroupBox Header="default abcd">
+            <propertyGrid:SettingsControl HorizontalAlignment="Left" Background="AliceBlue">
+                <propertyGrid:StringSettingControl Header="a"
+                                                   Suffix="b"
+                                                   Value="c" />
                 <propertyGrid:StringSettingControl Header="abcd"
-                                                   Suffix="abcd"
-                                                   Value="abcd" />
+                                                   Suffix="abcdefgh"
+                                                   Value="abcdef" />
             </propertyGrid:SettingsControl>
         </GroupBox>
 
@@ -29,8 +37,8 @@
                                                    Suffix="b"
                                                    Value="c" />
                 <propertyGrid:StringSettingControl Header="abcd"
-                                                   Suffix="abcd"
-                                                   Value="abcd" />
+                                                   Suffix="abcdefgh"
+                                                   Value="abcdef" />
             </propertyGrid:SettingsControl>
         </GroupBox>
 
@@ -56,8 +64,8 @@
                                                    Suffix="b"
                                                    Value="c" />
                 <propertyGrid:StringSettingControl Header="abcd"
-                                                   Suffix="abcd"
-                                                   Value="abcd" />
+                                                   Suffix="abcdefgh"
+                                                   Value="abcdef" />
             </propertyGrid:SettingsControl>
         </GroupBox>
 
@@ -83,8 +91,8 @@
                                                    Suffix="b"
                                                    Value="c" />
                 <propertyGrid:StringSettingControl Header="abcd"
-                                                   Suffix="abcd"
-                                                   Value="abcd" />
+                                                   Suffix="abcdefgh"
+                                                   Value="abcdef" />
             </propertyGrid:SettingsControl>
         </GroupBox>
 
@@ -110,8 +118,8 @@
                                                    Suffix="b"
                                                    Value="b" />
                 <propertyGrid:StringSettingControl Header="abcd"
-                                                   Suffix="abcd"
-                                                   Value="abcd" />
+                                                   Suffix="abcdefgh"
+                                                   Value="abcdef" />
             </propertyGrid:SettingsControl>
         </GroupBox>
     </StackPanel>

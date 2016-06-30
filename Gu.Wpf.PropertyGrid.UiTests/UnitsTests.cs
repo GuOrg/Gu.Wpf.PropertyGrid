@@ -67,7 +67,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             var textBox = settingControl.Value<TextBox>();
 
             Assert.AreEqual("12.3456", textBox.Text);
-            //Assert.AreEqual("mm", settingControl.Suffix());
+            Assert.AreEqual("mm", settingControl.Suffix().Text);
 
             textBox.Text = "2";
             Assert.AreEqual("0.0123456\u00A0m", this.currentValueTextBox.Text);
@@ -83,12 +83,12 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             var textBox = settingControl.Value<TextBox>();
 
             Assert.AreEqual("1.23456", textBox.Text);
-            //Assert.AreEqual("cm", settingControl.Suffix());
+            Assert.AreEqual("cm", settingControl.Suffix().Text);
 
             groupBox.FindSetting("selector").Value<ComboBox>().Select("m");
 
             Assert.AreEqual("0.0123456", textBox.Text);
-            //Assert.AreEqual("m", settingControl.Suffix());
+            Assert.AreEqual("m", settingControl.Suffix().Text);
         }
     }
 }

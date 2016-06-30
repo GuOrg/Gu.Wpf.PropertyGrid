@@ -104,11 +104,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}},
+                                                      RelativeSource={RelativeSource TemplatedParent},
                                                       Converter={x:Static l:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
                                                       RelativeSource={RelativeSource TemplatedParent}}"
-                                  IsEnabled="{TemplateBinding IsReadOnly}"
+                                  IsEnabled="{Binding IsReadOnly,
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static l:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
                         <l:SuffixBlock x:Name="PART_Suffix"
@@ -219,12 +221,13 @@
                                   Grid.Row="0"
                                   Grid.Column="1"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}},
+                                                      RelativeSource={RelativeSource TemplatedParent},
                                                       Converter={x:Static l:InvertBoolConverter.Default}}"
-                                  IsEnabled="{TemplateBinding IsReadOnly}"
+                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding EnumValues}"
                                   SelectedItem="{Binding Value,
-                                                         RelativeSource={RelativeSource TemplatedParent}}"
+                                                         RelativeSource={RelativeSource TemplatedParent},
+                                                         UpdateSourceTrigger=PropertyChanged}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
                         <l:SuffixBlock x:Name="PART_Suffix"
@@ -277,12 +280,13 @@
                                   Grid.Row="0"
                                   Grid.Column="1"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}},
+                                                      RelativeSource={RelativeSource TemplatedParent},
                                                       Converter={x:Static l:InvertBoolConverter.Default}}"
-                                  IsEnabled="{TemplateBinding IsReadOnly}"
+                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
-                                                         RelativeSource={RelativeSource TemplatedParent}}"
+                                                         RelativeSource={RelativeSource TemplatedParent},
+                                                         UpdateSourceTrigger=PropertyChanged}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
                         <l:SuffixBlock x:Name="PART_Suffix"
