@@ -2,9 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid"
                     xmlns:validationScope="http://gu.se/ValidationScope">
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Grid.xaml" />
-    </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type l:SettingControlBase}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -20,16 +17,33 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:StringSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static l:Keys.TwoRowSettingGridStyleKey}}">
-                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
+                    <Grid Margin="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
+                                              MinWidth="{TemplateBinding HeaderMinWidth}"
+                                              MaxWidth="{TemplateBinding HeaderMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
+                            <ColumnDefinition Width="{TemplateBinding ValueWidth}"
+                                              MinWidth="{TemplateBinding ValueMinWidth}"
+                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
+                                              MinWidth="{TemplateBinding SuffixMinWidth}"
+                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                        </Grid.ColumnDefinitions>
                         <l:HeaderBlock x:Name="PART_Header"
-                                       l:Grid.Cell="0,0"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
                                        Text="{TemplateBinding Header}" />
 
                         <TextBox x:Name="PART_Value"
-                                 l:Grid.Cell="0,1"
+                                 Grid.Row="0"
+                                 Grid.Column="1"
                                  Focusable="{Binding IsReadOnly,
                                                      RelativeSource={RelativeSource Self},
                                                      Converter={x:Static l:InvertBoolConverter.Default}}"
@@ -40,11 +54,15 @@
                                  Validation.ErrorTemplate="{x:Null}" />
 
                         <l:SuffixBlock x:Name="PART_Suffix"
-                                       l:Grid.Cell="0,2"
+                                       Grid.Row="0"
+                                       Grid.Column="2"
                                        Text="{TemplateBinding Suffix}" />
 
-                        <l:InfoPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
-                        <!--  ReSharper restore Xaml.MissingGridIndex  -->
+                        <l:InfoPresenter x:Name="InfoPresenter"
+                                         Grid.Row="1"
+                                         Grid.Column="0"
+                                         Grid.ColumnSpan="2"
+                                         Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -56,28 +74,53 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:CheckBoxSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static l:Keys.TwoRowSettingGridStyleKey}}">
-                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
+                    <Grid Margin="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
+                                              MinWidth="{TemplateBinding HeaderMinWidth}"
+                                              MaxWidth="{TemplateBinding HeaderMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
+                            <ColumnDefinition Width="{TemplateBinding ValueWidth}"
+                                              MinWidth="{TemplateBinding ValueMinWidth}"
+                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
+                                              MinWidth="{TemplateBinding SuffixMinWidth}"
+                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                        </Grid.ColumnDefinitions>
                         <l:HeaderBlock x:Name="PART_Header"
-                                       l:Grid.Cell="0,0"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
                                        Text="{TemplateBinding Header}" />
 
                         <CheckBox x:Name="PART_Value"
+                                  Grid.Row="0"
+                                  Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  l:Grid.Cell="0 1"
+                                  Focusable="{Binding IsReadOnly,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}},
+                                                      Converter={x:Static l:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                  IsEnabled="{TemplateBinding IsReadOnly}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
                         <l:SuffixBlock x:Name="PART_Suffix"
-                                       l:Grid.Cell="0,2"
+                                       Grid.Row="0"
+                                       Grid.Column="2"
                                        Text="{TemplateBinding Suffix}" />
 
-                        <l:InfoPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
-                        <!--  ReSharper restore Xaml.MissingGridIndex  -->
+                        <l:InfoPresenter x:Name="InfoPresenter"
+                                         Grid.Row="1"
+                                         Grid.Column="0"
+                                         Grid.ColumnSpan="2"
+                                         Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -90,26 +133,52 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:ToggleButtonSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static l:Keys.TwoRowSettingGridStyleKey}}">
-                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
+                    <Grid Margin="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
+                                              MinWidth="{TemplateBinding HeaderMinWidth}"
+                                              MaxWidth="{TemplateBinding HeaderMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
+                            <ColumnDefinition Width="{TemplateBinding ValueWidth}"
+                                              MinWidth="{TemplateBinding ValueMinWidth}"
+                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
+                                              MinWidth="{TemplateBinding SuffixMinWidth}"
+                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                        </Grid.ColumnDefinitions>
                         <l:HeaderBlock x:Name="PART_Header"
-                                       l:Grid.Cell="0,0"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
                                        Text="{TemplateBinding Header}" />
 
                         <ToggleButton x:Name="PART_Value"
-                                      l:Grid.Cell="0 1"
+                                      Grid.Row="0"
+                                      Grid.Column="1"
+                                      Focusable="{Binding IsReadOnly,
+                                                          RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}},
+                                                          Converter={x:Static l:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
                                                           RelativeSource={RelativeSource TemplatedParent}}"
+                                      IsEnabled="{TemplateBinding IsReadOnly}"
                                       Validation.ErrorTemplate="{x:Null}" />
 
                         <l:SuffixBlock x:Name="PART_Suffix"
+                                       Grid.Row="0"
+                                       Grid.Column="2"
                                        l:Grid.Cell="0,2"
                                        Text="{TemplateBinding Suffix}" />
 
-                        <l:InfoPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
-                        <!--  ReSharper restore Xaml.MissingGridIndex  -->
+                        <l:InfoPresenter x:Name="InfoPresenter"
+                                         Grid.Row="1"
+                                         Grid.Column="0"
+                                         Grid.ColumnSpan="2"
+                                         Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -122,27 +191,52 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:EnumSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static l:Keys.TwoRowSettingGridStyleKey}}">
-                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
+                    <Grid Margin="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
+                                              MinWidth="{TemplateBinding HeaderMinWidth}"
+                                              MaxWidth="{TemplateBinding HeaderMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
+                            <ColumnDefinition Width="{TemplateBinding ValueWidth}"
+                                              MinWidth="{TemplateBinding ValueMinWidth}"
+                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
+                                              MinWidth="{TemplateBinding SuffixMinWidth}"
+                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                        </Grid.ColumnDefinitions>
                         <l:HeaderBlock x:Name="PART_Header"
-                                       l:Grid.Cell="0,0"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
                                        Text="{TemplateBinding Header}" />
 
                         <ComboBox x:Name="PART_Value"
-                                  l:Grid.Cell="0 1"
+                                  Grid.Row="0"
+                                  Grid.Column="1"
+                                  Focusable="{Binding IsReadOnly,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}},
+                                                      Converter={x:Static l:InvertBoolConverter.Default}}"
+                                  IsEnabled="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding EnumValues}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
                         <l:SuffixBlock x:Name="PART_Suffix"
-                                       l:Grid.Cell="0,2"
+                                       Grid.Row="0"
+                                       Grid.Column="2"
                                        Text="{TemplateBinding Suffix}" />
 
-                        <l:InfoPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
-                        <!--  ReSharper restore Xaml.MissingGridIndex  -->
+                        <l:InfoPresenter x:Name="InfoPresenter"
+                                         Grid.Row="1"
+                                         Grid.Column="0"
+                                         Grid.ColumnSpan="2"
+                                         Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -155,27 +249,53 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SelectorSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static l:Keys.TwoRowSettingGridStyleKey}}">
-                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
+                    <Grid Margin="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
+                                              MinWidth="{TemplateBinding HeaderMinWidth}"
+                                              MaxWidth="{TemplateBinding HeaderMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
+                            <ColumnDefinition Width="{TemplateBinding ValueWidth}"
+                                              MinWidth="{TemplateBinding ValueMinWidth}"
+                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
+                                              MinWidth="{TemplateBinding SuffixMinWidth}"
+                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                        </Grid.ColumnDefinitions>
                         <l:HeaderBlock x:Name="PART_Header"
-                                       l:Grid.Cell="0,0"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
                                        Text="{TemplateBinding Header}" />
 
                         <ComboBox x:Name="PART_Value"
-                                  l:Grid.Cell="0 1"
+                                  Grid.Row="0"
+                                  Grid.Column="1"
+                                  Focusable="{Binding IsReadOnly,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type l:SettingControlBase}},
+                                                      Converter={x:Static l:InvertBoolConverter.Default}}"
+                                  IsEnabled="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
                         <l:SuffixBlock x:Name="PART_Suffix"
+                                       Grid.Row="0"
+                                       Grid.Column="2"
                                        l:Grid.Cell="0,2"
                                        Text="{TemplateBinding Suffix}" />
 
-                        <l:InfoPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
-                        <!--  ReSharper restore Xaml.MissingGridIndex  -->
+                        <l:InfoPresenter x:Name="InfoPresenter"
+                                         Grid.Row="1"
+                                         Grid.Column="0"
+                                         Grid.ColumnSpan="2"
+                                         Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -226,24 +346,45 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:ContentSettingControl}">
-                    <Grid Margin="{TemplateBinding Padding}"
-                          Background="{TemplateBinding Background}"
-                          Style="{StaticResource {x:Static l:Keys.TwoRowSettingGridStyleKey}}">
-                        <!--  ReSharper disable Xaml.MissingGridIndex  (setting in styles for flexibility)  -->
-                        <ContentPresenter x:Name="HeaderPresenter"
-                                          l:Grid.Cell="0,0"
+                    <Grid Margin="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
+                                              MinWidth="{TemplateBinding HeaderMinWidth}"
+                                              MaxWidth="{TemplateBinding HeaderMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
+                            <ColumnDefinition Width="{TemplateBinding ValueWidth}"
+                                              MinWidth="{TemplateBinding ValueMinWidth}"
+                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
+                                              MinWidth="{TemplateBinding SuffixMinWidth}"
+                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                        </Grid.ColumnDefinitions>
+                        <ContentPresenter x:Name="PART_Header"
+                                          Grid.Row="0"
+                                          Grid.Column="0"
                                           ContentSource="Header" />
 
-                        <ContentPresenter x:Name="ContentPresenter"
-                                          l:Grid.Cell="0,1"
+                        <ContentPresenter x:Name="PART_Value"
+                                          Grid.Row="0"
+                                          Grid.Column="1"
                                           ContentSource="Content" />
 
                         <l:SuffixBlock x:Name="PART_Suffix"
-                                       l:Grid.Cell="0,2"
+                                       Grid.Row="0"
+                                       Grid.Column="2"
                                        Text="{TemplateBinding Suffix}" />
 
-                        <l:InfoPresenter x:Name="InfoPresenter" Style="{TemplateBinding InfoPresenterStyle}" />
-                        <!--  ReSharper restore Xaml.MissingGridIndex  -->
+                        <l:InfoPresenter x:Name="InfoPresenter"
+                                         Grid.Row="1"
+                                         Grid.Column="0"
+                                         Grid.ColumnSpan="2"
+                                         Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

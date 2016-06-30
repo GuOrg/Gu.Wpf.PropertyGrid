@@ -5,8 +5,6 @@
 
     public static class Keys
     {
-        public static ResourceKey TwoRowSettingGridStyleKey { get; } = CreateKey();
-
         public static ResourceKey NestedSettingListStyle { get; } = CreateKey();
 
         public static ResourceKey ValidationErrorTemplateSelectorKey { get; } = CreateKey();

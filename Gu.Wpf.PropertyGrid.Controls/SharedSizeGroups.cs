@@ -2,7 +2,7 @@ namespace Gu.Wpf.PropertyGrid
 {
     public static class SharedSizeGroups
     {
-        public static string LabelColumn { get; } = nameof(LabelColumn);
+        public static string HeaderColumn { get; } = nameof(HeaderColumn);
 
         public static string ValueColumn { get; } = nameof(ValueColumn);
 

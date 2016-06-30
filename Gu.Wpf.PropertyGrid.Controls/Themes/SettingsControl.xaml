@@ -17,7 +17,7 @@
                             <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
                                               MinWidth="{TemplateBinding HeaderMinWidth}"
                                               MaxWidth="{TemplateBinding HeaderMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.LabelColumn}" />
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
                             <ColumnDefinition Width="{TemplateBinding ValueWidth}"
                                               MinWidth="{TemplateBinding ValueMinWidth}"
                                               MaxWidth="{TemplateBinding ValueMaxWidth}"
