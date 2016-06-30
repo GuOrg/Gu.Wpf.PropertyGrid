@@ -1,0 +1,105 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ output extension=".cs" #>
+#pragma warning disable SA1402 // File may only contain a single class
+namespace Gu.Wpf.PropertyGrid
+{
+    using System.Windows;
+
+    public static partial class PropertyGrid
+    {
+<#
+    var styles = new[]
+                     {
+                         "HeaderStyle",
+                         "ValueStyle",
+                         "SuffixStyle",
+                         "InfoPresenterStyle",
+                         "OldValueStyle",
+                         "ErrorStyle", 
+                     };
+		foreach(var styleName in styles)
+		{
+		#>
+        public static readonly DependencyProperty <#= styleName #>Property = DependencyProperty.RegisterAttached(
+            "<#= styleName #>",
+            typeof(Style),
+            typeof(PropertyGrid),
+            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+
+<#
+		} 
+
+		foreach(var styleName in styles)
+		{
+		#>
+
+        public static void Set<#= styleName #>(this UIElement element, Style value)
+        {
+            element.SetValue(<#= styleName #>Property, value);
+        }
+
+        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
+        [AttachedPropertyBrowsableForType(typeof(UIElement))]
+        public static Style Get<#= styleName #>(this UIElement element)
+        {
+            return (Style)element.GetValue(<#= styleName #>Property);
+        }
+<#      }
+		 #>
+    }
+<#
+       var controlNames = new[]
+                           {
+                               new ClassMetaData("Rows", false),
+                               new ClassMetaData("Row", true),
+                               new ClassMetaData("ContentRow", false)
+                           };
+		foreach(var controlName in controlNames)
+		{
+		 #>
+
+    public <#= controlName.IsAbstract ? "abstract " : "" #>partial class <#= controlName.Name #>
+    {
+<#
+			foreach(var styleName in styles)
+			{
+			 #>
+        public static readonly DependencyProperty <#= styleName #>Property = PropertyGrid.<#= styleName #>Property.AddOwner(
+            typeof(<#= controlName.Name #>),
+            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+
+<#
+			} 
+
+			foreach(var styleName in styles)
+			{
+			 #>
+
+        public Style <#= styleName #>
+        {
+            get { return (Style)this.GetValue(<#= styleName #>Property); }
+            set { this.SetValue(<#= styleName #>Property, value); }
+        }
+<#
+			} 
+			#>
+    }
+<#
+		} 
+		#>
+}
+
+<#+
+   private class ClassMetaData
+   {
+       public readonly string Name;
+       public readonly bool IsAbstract;
+
+       public ClassMetaData(string name, bool isAbstract)
+       {
+           this.Name = name;
+           this.IsAbstract = isAbstract;
+       }
+   }
+#>

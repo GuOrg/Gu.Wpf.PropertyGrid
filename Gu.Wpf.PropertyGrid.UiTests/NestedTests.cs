@@ -30,9 +30,9 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         public void CyclesFocus()
         {
             var groupBox = this.window.GetByText<GroupBox>("nested longer");
-            var rootBox = groupBox.FindSetting("root").Value<TextBox>();
-            var shortBox = groupBox.FindSetting("a").Value<TextBox>();
-            var longBox = groupBox.FindSetting("long header").Value<TextBox>();
+            var rootBox = groupBox.FindRow("root").Value<TextBox>();
+            var shortBox = groupBox.FindRow("a").Value<TextBox>();
+            var longBox = groupBox.FindRow("long header").Value<TextBox>();
             rootBox.Focus();
             Assert.True(rootBox.IsFocussed);
             Assert.False(shortBox.IsFocussed);
@@ -59,9 +59,9 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         {
             var groupBox = this.window.GetByText<GroupBox>("nested longer");
             var expected = new[] { 64, 96, 86 };
-            CollectionAssert.AreEqual(expected, groupBox.FindSetting("root").ColumnsWidths<TextBox>());
-            CollectionAssert.AreEqual(expected, groupBox.FindSetting("a").ColumnsWidths<TextBox>());
-            CollectionAssert.AreEqual(expected, groupBox.FindSetting("long header").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindRow("root").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindRow("a").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindRow("long header").ColumnsWidths<TextBox>());
         }
 
         [Test]
@@ -69,11 +69,11 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         {
             var groupBox = this.window.GetByText<GroupBox>("nested shorter");
             var expected = new[] { 22, 38, 53 };
-            CollectionAssert.AreEqual(expected, groupBox.FindSetting("root").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindRow("root").ColumnsWidths<TextBox>());
             expected[2] = 28;
-            CollectionAssert.AreEqual(expected, groupBox.FindSetting("a").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindRow("a").ColumnsWidths<TextBox>());
             expected[2] = 28;
-            CollectionAssert.AreEqual(expected, groupBox.FindSetting("b").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindRow("b").ColumnsWidths<TextBox>());
         }
     }
 }

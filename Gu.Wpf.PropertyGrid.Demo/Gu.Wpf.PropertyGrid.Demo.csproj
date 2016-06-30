@@ -76,26 +76,26 @@
     <Compile Include="UiTestWindows\DecimalDigitsWindow.xaml.cs">
       <DependentUpon>DecimalDigitsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\DoubleSettingControlWindow.xaml.cs">
-      <DependentUpon>DoubleSettingControlWindow.xaml</DependentUpon>
+    <Compile Include="UiTestWindows\DoubleRowWindow.xaml.cs">
+      <DependentUpon>DoubleRowWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UiTestWindows\FocusWindow.xaml.cs">
       <DependentUpon>FocusWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\IntSettingControlWindow.xaml.cs">
-      <DependentUpon>IntSettingControlWindow.xaml</DependentUpon>
+    <Compile Include="UiTestWindows\IntRowWindow.xaml.cs">
+      <DependentUpon>IntRowWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UiTestWindows\NestedWindow.xaml.cs">
       <DependentUpon>NestedWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\SelectorSettingControlWindow.xaml.cs">
-      <DependentUpon>SelectorSettingControlWindow.xaml</DependentUpon>
+    <Compile Include="UiTestWindows\SelectorRowWindow.xaml.cs">
+      <DependentUpon>SelectorRowWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\SingleSettingControlWindow.xaml.cs">
-      <DependentUpon>SingleSettingControlWindow.xaml</DependentUpon>
+    <Compile Include="UiTestWindows\SingleRowWindow.xaml.cs">
+      <DependentUpon>SingleRowWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\StringSettingControlWindow.xaml.cs">
-      <DependentUpon>StringSettingControlWindow.xaml</DependentUpon>
+    <Compile Include="UiTestWindows\StringRowWindow.xaml.cs">
+      <DependentUpon>StringRowWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UiTestWindows\SuffixBlockWindow.xaml.cs">
       <DependentUpon>SuffixBlockWindow.xaml</DependentUpon>
@@ -106,14 +106,14 @@
     <Compile Include="UiTestWindows\UnitsWindow.xaml.cs">
       <DependentUpon>UnitsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\UsesResourcesStyleForSettingsControlBase.xaml.cs">
-      <DependentUpon>UsesResourcesStyleForSettingsControlBase.xaml</DependentUpon>
+    <Compile Include="UiTestWindows\UsesResourcesStyleForRowWindow.xaml.cs">
+      <DependentUpon>UsesResourcesStyleForRowWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UiTestWindows\ValueStylesWindow.xaml.cs">
       <DependentUpon>ValueStylesWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\EnumSettingControlWindow.xaml.cs">
-      <DependentUpon>EnumSettingControlWindow.xaml</DependentUpon>
+    <Compile Include="UiTestWindows\EnumRowWindow.xaml.cs">
+      <DependentUpon>EnumRowWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UsePropertyNamesAsHeadersView.xaml.cs">
       <DependentUpon>UsePropertyNamesAsHeadersView.xaml</DependentUpon>
@@ -154,7 +154,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\DoubleSettingControlWindow.xaml">
+    <Page Include="UiTestWindows\DoubleRowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -162,7 +162,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\IntSettingControlWindow.xaml">
+    <Page Include="UiTestWindows\IntRowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -170,15 +170,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\SelectorSettingControlWindow.xaml">
+    <Page Include="UiTestWindows\SelectorRowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\SingleSettingControlWindow.xaml">
+    <Page Include="UiTestWindows\SingleRowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\StringSettingControlWindow.xaml">
+    <Page Include="UiTestWindows\StringRowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -194,7 +194,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\UsesResourcesStyleForSettingsControlBase.xaml">
+    <Page Include="UiTestWindows\UsesResourcesStyleForRowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,7 +202,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\EnumSettingControlWindow.xaml">
+    <Page Include="UiTestWindows\EnumRowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -240,17 +240,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gu.Wpf.PropertyGrid.Controls\Gu.Wpf.PropertyGrid.csproj">
+    <ProjectReference Include="..\Gu.Wpf.PropertyGrid.NumericRows\Gu.Wpf.PropertyGrid.NumericRows.csproj">
+      <Project>{aabf74d2-2282-4899-915d-409b1a6735c4}</Project>
+      <Name>Gu.Wpf.PropertyGrid.NumericRows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gu.Wpf.PropertyGrid.UnitRows\Gu.Wpf.PropertyGrid.UnitRows.csproj">
+      <Project>{ceafb9fb-d606-4a98-b8df-81a14ae6ee35}</Project>
+      <Name>Gu.Wpf.PropertyGrid.UnitRows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gu.Wpf.PropertyGrid\Gu.Wpf.PropertyGrid.csproj">
       <Project>{7ddab84f-2416-413b-ae7a-6f2d75b2882d}</Project>
-      <Name>Gu.PropertyGrid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gu.Wpf.PropertyGrid.NumericSettingControls\Gu.Wpf.PropertyGrid.NumericSettingControls.csproj">
-      <Project>{AABF74D2-2282-4899-915D-409B1A6735C4}</Project>
-      <Name>Gu.Wpf.PropertyGrid.NumericSettingControls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gu.Wpf.PropertyGrid.UnitSettingControls\Gu.Wpf.PropertyGrid.UnitSettingControls.csproj">
-      <Project>{CEAFB9FB-D606-4A98-B8DF-81A14AE6EE35}</Project>
-      <Name>Gu.Wpf.PropertyGrid.UnitSettingControls</Name>
+      <Name>Gu.Wpf.PropertyGrid</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

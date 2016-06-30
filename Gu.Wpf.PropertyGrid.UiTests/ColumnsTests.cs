@@ -29,7 +29,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         {
             var groupBox = this.window.GetByText<GroupBox>("default");
             var expected = new[] { 6, 16, 7 };
-            CollectionAssert.AreEqual(expected, groupBox.FindSetting("a").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindRow("a").ColumnsWidths<TextBox>());
         }
 
         [Test]
@@ -37,9 +37,9 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         {
             var groupBox = this.window.GetByText<GroupBox>("default abcd");
             var expected = new[] { 26, 46, 49 };
-            var actual = groupBox.FindSetting("a").ColumnsWidths<TextBox>();
+            var actual = groupBox.FindRow("a").ColumnsWidths<TextBox>();
             CollectionAssert.AreEqual(expected, actual);
-            actual = groupBox.FindSetting("abcd").ColumnsWidths<TextBox>();
+            actual = groupBox.FindRow("abcd").ColumnsWidths<TextBox>();
             CollectionAssert.AreEqual(expected, actual);
         }
 
@@ -48,7 +48,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         {
             var groupBox = this.window.GetByText<GroupBox>("Width 15 20 25");
             var expected = new[] { 15, 20, 25 };
-            CollectionAssert.AreEqual(expected, groupBox.FindSetting("a").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindRow("a").ColumnsWidths<TextBox>());
         }
 
         [Test]
@@ -56,8 +56,8 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         {
             var groupBox = this.window.GetByText<GroupBox>("Width 15 20 25 abcd");
             var expected = new[] { 15, 20, 25 };
-            CollectionAssert.AreEqual(expected, groupBox.FindSetting("a").ColumnsWidths<TextBox>());
-            CollectionAssert.AreEqual(expected, groupBox.FindSetting("abcd").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindRow("a").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindRow("abcd").ColumnsWidths<TextBox>());
         }
 
         [Test]
@@ -65,7 +65,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         {
             var groupBox = this.window.GetByText<GroupBox>("MinWidth 15 20 25");
             var expected = new[] { 15, 20, 25 };
-            CollectionAssert.AreEqual(expected, groupBox.FindSetting("a").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindRow("a").ColumnsWidths<TextBox>());
         }
 
         [Test]
@@ -73,9 +73,9 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         {
             var groupBox = this.window.GetByText<GroupBox>("MinWidth 15 20 25 abcd");
             var expected = new[] { 26, 46, 49 };
-            var actual = groupBox.FindSetting("a").ColumnsWidths<TextBox>();
+            var actual = groupBox.FindRow("a").ColumnsWidths<TextBox>();
             CollectionAssert.AreEqual(expected, actual);
-            actual = groupBox.FindSetting("abcd").ColumnsWidths<TextBox>();
+            actual = groupBox.FindRow("abcd").ColumnsWidths<TextBox>();
             CollectionAssert.AreEqual(expected, actual);
         }
 
@@ -84,7 +84,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         {
             var groupBox = this.window.GetByText<GroupBox>("MaxWidth 15 20 25");
             var expected = new[] { 6, 17, 7 };
-            CollectionAssert.AreEqual(expected, groupBox.FindSetting("a").ColumnsWidths<TextBox>());
+            CollectionAssert.AreEqual(expected, groupBox.FindRow("a").ColumnsWidths<TextBox>());
         }
 
         [Test]
@@ -92,11 +92,11 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         {
             var groupBox = this.window.GetByText<GroupBox>("MaxWidth 15 20 25 abcd");
             var expected = new[] { 15, 20, 25 };
-            var actual = groupBox.FindSetting("a").ColumnsWidths<TextBox>();
+            var actual = groupBox.FindRow("a").ColumnsWidths<TextBox>();
             CollectionAssert.AreEqual(expected, actual);
 
             expected = new[] { 15, 46, -1 }; // this looks strange but the textbox gets clipped here.
-            actual = groupBox.FindSetting("abcd").ColumnsWidths<TextBox>();
+            actual = groupBox.FindRow("abcd").ColumnsWidths<TextBox>();
             CollectionAssert.AreEqual(expected, actual);
         }
     }

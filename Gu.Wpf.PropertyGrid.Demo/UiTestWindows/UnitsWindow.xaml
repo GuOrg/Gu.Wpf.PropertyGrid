@@ -19,41 +19,55 @@
         <TextBox AutomationProperties.AutomationId="currentValueTextBox" Text="{Binding EditableCopy.LengthValue, Converter={units:LengthConverter Unit=m, UnitInput=SymbolRequired}}" />
 
         <GroupBox Header="explicit">
-            <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-                <propertyGrid:LengthSettingControl Header="length (m)"
+            <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+                <propertyGrid:LengthRow Header="length (m)"
                                                    Unit="m"
                                                    Value="{Binding LengthValue}" />
 
-                <propertyGrid:LengthSettingControl Header="length (mm)"
+                <propertyGrid:LengthRow Header="length (mm)"
                                                    Unit="mm"
                                                    Value="{Binding LengthValue}" />
-            </propertyGrid:SettingsControl>
+            </propertyGrid:Rows>
         </GroupBox>
 
         <GroupBox Header="style">
             <GroupBox.Resources>
-                <Style TargetType="{x:Type propertyGrid:LengthSettingControl}">
+                <Style TargetType="{x:Type propertyGrid:LengthRow}">
                     <Setter Property="Unit" Value="mm" />
                 </Style>
             </GroupBox.Resources>
 
-            <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-                <propertyGrid:LengthSettingControl Header="length" Value="{Binding LengthValue}" />
-            </propertyGrid:SettingsControl>
+            <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+                <propertyGrid:LengthRow Header="length" Value="{Binding LengthValue}" />
+            </propertyGrid:Rows>
         </GroupBox>
 
         <GroupBox Header="bound">
-            <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-                <propertyGrid:SelectorSettingControl Header="selector"
+            <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+                <propertyGrid:SelectorRow Header="selector"
                                                      ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
                                                      Value="{Binding CurrentLengthUnit}" />
 
-                <propertyGrid:LengthSettingControl Header="length"
+                <propertyGrid:LengthRow Header="length"
                                                    Unit="{Binding CurrentLengthUnit}"
                                                    Value="{Binding LengthValue}" />
 
-            </propertyGrid:SettingsControl>
+            </propertyGrid:Rows>
         </GroupBox>
     </StackPanel>
 </Window>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

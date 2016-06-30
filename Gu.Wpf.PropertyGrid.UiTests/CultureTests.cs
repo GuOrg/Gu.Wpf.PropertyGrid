@@ -32,8 +32,8 @@
         public void SvSe()
         {
             var groupBox = this.window.GetByText<GroupBox>("sv-se");
-            var doubleBox = groupBox.FindSetting("double").Value<TextBox>();
-            var lengthBox = groupBox.FindSetting("length").Value<TextBox>();
+            var doubleBox = groupBox.FindRow("double").Value<TextBox>();
+            var lengthBox = groupBox.FindRow("length").Value<TextBox>();
 
             Assert.AreEqual("0,00", doubleBox.FormattedText());
             Assert.AreEqual("12,35", lengthBox.FormattedText());
@@ -43,8 +43,8 @@
         public void EnUs()
         {
             var groupBox = this.window.GetByText<GroupBox>("en-us");
-            var doubleBox = groupBox.FindSetting("double").Value<TextBox>();
-            var lengthBox = groupBox.FindSetting("length").Value<TextBox>();
+            var doubleBox = groupBox.FindRow("double").Value<TextBox>();
+            var lengthBox = groupBox.FindRow("length").Value<TextBox>();
 
             Assert.AreEqual("0.00", doubleBox.FormattedText());
             Assert.AreEqual("12.35", lengthBox.FormattedText());
@@ -54,9 +54,9 @@
         public void Bound()
         {
             var groupBox = this.window.GetByText<GroupBox>("bound");
-            var doubleBox = groupBox.FindSetting("double").Value<TextBox>();
-            var lengthBox = groupBox.FindSetting("length").Value<TextBox>();
-            var cultureBox = groupBox.FindSetting("culture").Value<ComboBox>();
+            var doubleBox = groupBox.FindRow("double").Value<TextBox>();
+            var lengthBox = groupBox.FindRow("length").Value<TextBox>();
+            var cultureBox = groupBox.FindRow("culture").Value<ComboBox>();
 
             Assert.AreEqual("0,00", doubleBox.FormattedText());
             Assert.AreEqual("12,35", lengthBox.FormattedText());

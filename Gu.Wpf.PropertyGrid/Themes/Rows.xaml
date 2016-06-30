@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid">
+
+    <Style TargetType="{x:Type l:Rows}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Grid.IsSharedSizeScope" Value="True" />
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="Cycle" />
+        <Setter Property="KeyboardNavigation.AcceptsReturn" Value="True" />
+        <Setter Property="HeaderStyle" Value="{StaticResource {x:Type l:HeaderBlock}}" />
+        <Setter Property="SuffixStyle" Value="{StaticResource {x:Type l:SuffixBlock}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type l:Rows}">
+                    <Grid Background="{TemplateBinding Background}" IsSharedSizeScope="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
+                                              MinWidth="{TemplateBinding HeaderMinWidth}"
+                                              MaxWidth="{TemplateBinding HeaderMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
+                            <ColumnDefinition Width="{TemplateBinding ValueWidth}"
+                                              MinWidth="{TemplateBinding ValueMinWidth}"
+                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
+                                              MinWidth="{TemplateBinding SuffixMinWidth}"
+                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Row="0"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="3"
+                                    IsItemsHost="True" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{x:Static l:Keys.NestedSettingListStyle}" TargetType="{x:Type l:Rows}">
+        <Setter Property="Grid.IsSharedSizeScope" Value="False" />
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="Continue" />
+    </Style>
+</ResourceDictionary>

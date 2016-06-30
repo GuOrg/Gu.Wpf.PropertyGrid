@@ -44,9 +44,9 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         public void ExplicitUnits()
         {
             var groupBox = this.window.GetByText<GroupBox>("explicit");
-            var metresSetting = groupBox.FindSetting("length (m)");
+            var metresSetting = groupBox.FindRow("length (m)");
             var metresBox = metresSetting.Value<TextBox>();
-            var millimetresSetting = groupBox.FindSetting("length (mm)");
+            var millimetresSetting = groupBox.FindRow("length (mm)");
             var millimetresBox = millimetresSetting.Value<TextBox>();
 
             Assert.AreEqual("0.0123456", metresBox.Text);
@@ -63,7 +63,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         public void UnitFromStyle()
         {
             var groupBox = this.window.GetByText<GroupBox>("style");
-            var settingControl = groupBox.FindSetting("length");
+            var settingControl = groupBox.FindRow("length");
             var textBox = settingControl.Value<TextBox>();
 
             Assert.AreEqual("12.3456", textBox.Text);
@@ -79,13 +79,13 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         public void BoundUnit()
         {
             var groupBox = this.window.GetByText<GroupBox>("bound");
-            var settingControl = groupBox.FindSetting("length");
+            var settingControl = groupBox.FindRow("length");
             var textBox = settingControl.Value<TextBox>();
 
             Assert.AreEqual("1.23456", textBox.Text);
             Assert.AreEqual("cm", settingControl.Suffix().Text);
 
-            groupBox.FindSetting("selector").Value<ComboBox>().Select("m");
+            groupBox.FindRow("selector").Value<ComboBox>().Select("m");
 
             Assert.AreEqual("0.0123456", textBox.Text);
             Assert.AreEqual("m", settingControl.Suffix().Text);

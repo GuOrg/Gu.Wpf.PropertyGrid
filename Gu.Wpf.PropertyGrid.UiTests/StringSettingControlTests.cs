@@ -6,7 +6,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
     using TestStack.White.UIItems;
     using TestStack.White.UIItems.WindowItems;
 
-    public class StringSettingControlTests
+    public class StringRowTests
     {
         private Application application;
         private Window window;
@@ -21,15 +21,15 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            var title = "StringSettingControlWindow";
+            var title = "StringRowWindow";
             this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
             this.window = this.application.GetWindow(title);
             this.loseFocusButton = this.window.GetByText<Button>("lose focus");
             this.currentValueTextBox = this.window.Get<TextBox>("currentValueTextBox");
 
-            this.defaultBox = this.window.FindSetting("default").Value<TextBox>();
-            this.propertychangedBox = this.window.FindSetting("propertychanged").Value<TextBox>();
-            this.readonlyBox = this.window.FindSetting("readonly string").Value<TextBox>();
+            this.defaultBox = this.window.FindRow("default").Value<TextBox>();
+            this.propertychangedBox = this.window.FindRow("propertychanged").Value<TextBox>();
+            this.readonlyBox = this.window.FindRow("readonly string").Value<TextBox>();
         }
 
         [OneTimeTearDown]

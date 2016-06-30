@@ -17,43 +17,50 @@
         <TextBlock AutomationProperties.AutomationId="currentCultureTextBlock" Text="{Binding EditableCopy.CurrentCulture}" />
 
         <GroupBox Header="sv-se">
-            <propertyGrid:SettingsControl numeric:NumericBox.Culture="sv-se"
+            <propertyGrid:Rows numeric:NumericBox.Culture="sv-se"
                                           numeric:NumericBox.DecimalDigits="2"
                                           DataContext="{Binding EditableCopy}"
                                           OldDataContext="{Binding DataContext.LastSaved,
                                                                    RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-                <propertyGrid:DoubleSettingControl Header="double" Value="{Binding DoubleValue}" />
+                <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
 
-                <propertyGrid:LengthSettingControl Header="length" Value="{Binding LengthValue}" />
-            </propertyGrid:SettingsControl>
+                <propertyGrid:LengthRow Header="length" Value="{Binding LengthValue}" />
+            </propertyGrid:Rows>
         </GroupBox>
 
         <GroupBox Header="en-us">
-            <propertyGrid:SettingsControl numeric:NumericBox.Culture="en-us"
+            <propertyGrid:Rows numeric:NumericBox.Culture="en-us"
                                           numeric:NumericBox.DecimalDigits="2"
                                           DataContext="{Binding EditableCopy}"
                                           OldDataContext="{Binding DataContext.LastSaved,
                                                                    RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-                <propertyGrid:DoubleSettingControl Header="double" Value="{Binding DoubleValue}" />
+                <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
 
-                <propertyGrid:LengthSettingControl Header="length" Value="{Binding LengthValue}" />
-            </propertyGrid:SettingsControl>
+                <propertyGrid:LengthRow Header="length" Value="{Binding LengthValue}" />
+            </propertyGrid:Rows>
         </GroupBox>
 
         <GroupBox Header="bound">
-            <propertyGrid:SettingsControl numeric:NumericBox.Culture="{Binding CurrentCulture}"
+            <propertyGrid:Rows numeric:NumericBox.Culture="{Binding CurrentCulture}"
                                           numeric:NumericBox.DecimalDigits="2"
                                           DataContext="{Binding EditableCopy}"
                                           OldDataContext="{Binding DataContext.LastSaved,
                                                                    RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-                <propertyGrid:SelectorSettingControl Header="culture"
+                <propertyGrid:SelectorRow Header="culture"
                                                      ItemsSource="{Binding Cultures}"
                                                      Value="{Binding CurrentCulture}" />
 
-                <propertyGrid:DoubleSettingControl Header="double" Value="{Binding DoubleValue}" />
+                <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
 
-                <propertyGrid:LengthSettingControl Header="length" Value="{Binding LengthValue}" />
-            </propertyGrid:SettingsControl>
+                <propertyGrid:LengthRow Header="length" Value="{Binding LengthValue}" />
+            </propertyGrid:Rows>
         </GroupBox>
     </StackPanel>
 </Window>
+
+
+
+
+
+
+
