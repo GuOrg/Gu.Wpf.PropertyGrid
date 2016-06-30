@@ -10,19 +10,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{BDA089
 		Readme.paket.md = Readme.paket.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid", "Gu.Wpf.PropertyGrid.Controls\Gu.Wpf.PropertyGrid.csproj", "{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.Demo", "Gu.Wpf.PropertyGrid.Demo\Gu.Wpf.PropertyGrid.Demo.csproj", "{917C1338-E809-43D8-A10D-AA2629891258}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.Tests", "Gu.Wpf.PropertyGrid.Tests\Gu.Wpf.PropertyGrid.Tests.csproj", "{3E9EF147-E92A-46EE-8A4A-886935AD1560}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.UnitSettingControls", "Gu.Wpf.PropertyGrid.UnitSettingControls\Gu.Wpf.PropertyGrid.UnitSettingControls.csproj", "{CEAFB9FB-D606-4A98-B8DF-81A14AE6EE35}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.UnitSettingControls.Tests", "Gu.Wpf.PropertyGrid.UnitSettingControls.Tests\Gu.Wpf.PropertyGrid.UnitSettingControls.Tests.csproj", "{4B86294B-EAD2-42CD-B78C-9F47FDE34456}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.NumericSettingControls", "Gu.Wpf.PropertyGrid.NumericSettingControls\Gu.Wpf.PropertyGrid.NumericSettingControls.csproj", "{AABF74D2-2282-4899-915D-409B1A6735C4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.UiTests", "Gu.Wpf.PropertyGrid.UiTests\Gu.Wpf.PropertyGrid.UiTests.csproj", "{E4310685-84DB-4C44-87C2-ECF8E8BE337E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid", "Gu.Wpf.PropertyGrid\Gu.Wpf.PropertyGrid.csproj", "{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.NumericRows", "Gu.Wpf.PropertyGrid.NumericRows\Gu.Wpf.PropertyGrid.NumericRows.csproj", "{AABF74D2-2282-4899-915D-409B1A6735C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.UnitRows", "Gu.Wpf.PropertyGrid.UnitRows\Gu.Wpf.PropertyGrid.UnitRows.csproj", "{CEAFB9FB-D606-4A98-B8DF-81A14AE6EE35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.UnitRows.Tests", "Gu.Wpf.PropertyGrid.UnitRows.Tests\Gu.Wpf.PropertyGrid.UnitRows.Tests.csproj", "{4B86294B-EAD2-42CD-B78C-9F47FDE34456}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,10 +30,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{917C1338-E809-43D8-A10D-AA2629891258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{917C1338-E809-43D8-A10D-AA2629891258}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{917C1338-E809-43D8-A10D-AA2629891258}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -42,6 +38,18 @@ Global
 		{3E9EF147-E92A-46EE-8A4A-886935AD1560}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E9EF147-E92A-46EE-8A4A-886935AD1560}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E9EF147-E92A-46EE-8A4A-886935AD1560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4310685-84DB-4C44-87C2-ECF8E8BE337E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4310685-84DB-4C44-87C2-ECF8E8BE337E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4310685-84DB-4C44-87C2-ECF8E8BE337E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4310685-84DB-4C44-87C2-ECF8E8BE337E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AABF74D2-2282-4899-915D-409B1A6735C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AABF74D2-2282-4899-915D-409B1A6735C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AABF74D2-2282-4899-915D-409B1A6735C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AABF74D2-2282-4899-915D-409B1A6735C4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CEAFB9FB-D606-4A98-B8DF-81A14AE6EE35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CEAFB9FB-D606-4A98-B8DF-81A14AE6EE35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEAFB9FB-D606-4A98-B8DF-81A14AE6EE35}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -50,14 +58,6 @@ Global
 		{4B86294B-EAD2-42CD-B78C-9F47FDE34456}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B86294B-EAD2-42CD-B78C-9F47FDE34456}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B86294B-EAD2-42CD-B78C-9F47FDE34456}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AABF74D2-2282-4899-915D-409B1A6735C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AABF74D2-2282-4899-915D-409B1A6735C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AABF74D2-2282-4899-915D-409B1A6735C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AABF74D2-2282-4899-915D-409B1A6735C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E4310685-84DB-4C44-87C2-ECF8E8BE337E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E4310685-84DB-4C44-87C2-ECF8E8BE337E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E4310685-84DB-4C44-87C2-ECF8E8BE337E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E4310685-84DB-4C44-87C2-ECF8E8BE337E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

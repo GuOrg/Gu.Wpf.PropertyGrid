@@ -59,12 +59,6 @@
   <ItemGroup>
     <Folder Include="CodeGen\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Gu.Wpf.PropertyGrid.Controls\Gu.Wpf.PropertyGrid.csproj">
-      <Project>{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}</Project>
-      <Name>Gu.Wpf.PropertyGrid</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="..\.paket\paket.targets" />
   <Choose>
     <When Condition="($(TargetFrameworkIdentifier) == '.NETStandard' And ($(TargetFrameworkVersion) == 'v1.1' Or $(TargetFrameworkVersion) == 'v1.2' Or $(TargetFrameworkVersion) == 'v1.3' Or $(TargetFrameworkVersion) == 'v1.4' Or $(TargetFrameworkVersion) == 'v1.5')) Or ($(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2'))">
@@ -179,5 +173,11 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers\analyzers\dotnet\cs\StyleCop.Analyzers.dll">
       <Paket>True</Paket>
     </Analyzer>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Wpf.PropertyGrid\Gu.Wpf.PropertyGrid.csproj">
+      <Project>{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}</Project>
+      <Name>Gu.Wpf.PropertyGrid</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

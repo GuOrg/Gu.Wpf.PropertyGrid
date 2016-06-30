@@ -6,11 +6,11 @@ using System.Windows.Markup;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Gu.Wpf.PropertyGrid.UnitSettingControls")]
-[assembly: AssemblyDescription("Unit setting controls for Gu.Wpf.PropertyGrid")]
+[assembly: AssemblyTitle("Gu.Wpf.PropertyGrid.NumericRows")]
+[assembly: AssemblyDescription("Numeric controls for Gu.Wpf.PropertyGrid")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Johan Larsson")]
-[assembly: AssemblyProduct("Gu.Wpf.PropertyGrid.UnitSettingControls")]
+[assembly: AssemblyProduct("Gu.Wpf.PropertyGrid.NumericRows")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -29,13 +29,14 @@ using System.Windows.Markup;
 
 //[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
 
-[assembly:ThemeInfo(
+
+[assembly: ThemeInfo(
     ResourceDictionaryLocation.None, //where theme specific resource dictionaries are located
-                             //(used if a resource is not found in the page, 
-                             // or application resource dictionaries)
+                                     //(used if a resource is not found in the page, 
+                                     // or application resource dictionaries)
     ResourceDictionaryLocation.SourceAssembly //where the generic resource dictionary is located
-                                      //(used if a resource is not found in the page, 
-                                      // app, or any theme specific resource dictionaries)
+                                              //(used if a resource is not found in the page, 
+                                              // app, or any theme specific resource dictionaries)
 )]
 
 

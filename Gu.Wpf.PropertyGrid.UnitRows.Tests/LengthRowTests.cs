@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid.UnitSettingControls.Tests
+﻿namespace Gu.Wpf.PropertyGrid.UnitRows.Tests
 {
     using System.Threading;
 

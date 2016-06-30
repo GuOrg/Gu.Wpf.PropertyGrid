@@ -4,18 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{917C1338-E809-43D8-A10D-AA2629891258}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{CEAFB9FB-D606-4A98-B8DF-81A14AE6EE35}</ProjectGuid>
+    <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gu.Wpf.PropertyGrid.Demo</RootNamespace>
-    <AssemblyName>Gu.Wpf.PropertyGrid.Demo</AssemblyName>
+    <RootNamespace>Gu.Wpf.PropertyGrid</RootNamespace>
+    <AssemblyName>Gu.Wpf.PropertyGrid.UnitRows</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,180 +33,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
+    <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Generic.tt</DependentUpon>
       <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="DummySettings.cs" />
-    <Compile Include="GridSandBoxView.xaml.cs">
-      <DependentUpon>GridSandBoxView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="OneWayToSourceBindingView.xaml.cs">
-      <DependentUpon>OneWayToSourceBindingView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="OneWayToSourceBindingVm.cs">
-      <DependentUpon>OneWayToSourceBindingView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RelayCommand.cs" />
-    <Compile Include="SettingsView.xaml.cs">
-      <DependentUpon>SettingsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsVm.cs">
-      <DependentUpon>SettingsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\ColumnsWindow.xaml.cs">
-      <DependentUpon>ColumnsWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\Converters\NullableDoubleToStringConverter.cs" />
-    <Compile Include="UiTestWindows\Converters\NullableIntToStringConverter.cs" />
-    <Compile Include="UiTestWindows\CultureWindow.xaml.cs">
-      <DependentUpon>CultureWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\DecimalDigitsWindow.xaml.cs">
-      <DependentUpon>DecimalDigitsWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\DoubleRowWindow.xaml.cs">
-      <DependentUpon>DoubleRowWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\FocusWindow.xaml.cs">
-      <DependentUpon>FocusWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\IntRowWindow.xaml.cs">
-      <DependentUpon>IntRowWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\NestedWindow.xaml.cs">
-      <DependentUpon>NestedWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\SelectorRowWindow.xaml.cs">
-      <DependentUpon>SelectorRowWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\SingleRowWindow.xaml.cs">
-      <DependentUpon>SingleRowWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\StringRowWindow.xaml.cs">
-      <DependentUpon>StringRowWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\SuffixBlockWindow.xaml.cs">
-      <DependentUpon>SuffixBlockWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\SuffixWindow.xaml.cs">
-      <DependentUpon>SuffixWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\UnitsWindow.xaml.cs">
-      <DependentUpon>UnitsWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\UsesResourcesStyleForRowWindow.xaml.cs">
-      <DependentUpon>UsesResourcesStyleForRowWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\ValueStylesWindow.xaml.cs">
-      <DependentUpon>ValueStylesWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UiTestWindows\EnumRowWindow.xaml.cs">
-      <DependentUpon>EnumRowWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UsePropertyNamesAsHeadersView.xaml.cs">
-      <DependentUpon>UsePropertyNamesAsHeadersView.xaml</DependentUpon>
-    </Compile>
-    <Page Include="GridSandBoxView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="OneWayToSourceBindingView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SettingsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\ColumnsWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\CultureWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\DecimalDigitsWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\DoubleRowWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\FocusWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\IntRowWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\NestedWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\SelectorRowWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\SingleRowWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\StringRowWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\SuffixBlockWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\SuffixWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\UnitsWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\UsesResourcesStyleForRowWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\ValueStylesWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UiTestWindows\EnumRowWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UsePropertyNamesAsHeadersView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -225,11 +66,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UnitRow.cs" />
+    <Compile Include="UnitSettingControl.generated.cs">
+      <DependentUpon>UnitSettingControl.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="UnitRow{TQuantity,TUnit}.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="paket.references" />
+    <None Include="paket.template" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -237,21 +86,14 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Gu.Wpf.PropertyGrid.NumericRows\Gu.Wpf.PropertyGrid.NumericRows.csproj">
-      <Project>{aabf74d2-2282-4899-915d-409b1a6735c4}</Project>
-      <Name>Gu.Wpf.PropertyGrid.NumericRows</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gu.Wpf.PropertyGrid.UnitRows\Gu.Wpf.PropertyGrid.UnitRows.csproj">
-      <Project>{ceafb9fb-d606-4a98-b8df-81a14ae6ee35}</Project>
-      <Name>Gu.Wpf.PropertyGrid.UnitRows</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gu.Wpf.PropertyGrid\Gu.Wpf.PropertyGrid.csproj">
-      <Project>{7ddab84f-2416-413b-ae7a-6f2d75b2882d}</Project>
-      <Name>Gu.Wpf.PropertyGrid</Name>
-    </ProjectReference>
+    <Content Include="Themes\Generic.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Generic.xaml</LastGenOutput>
+    </Content>
+    <Content Include="UnitSettingControl.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UnitSettingControl.generated.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -261,18 +103,16 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Wpf.PropertyGrid\Gu.Wpf.PropertyGrid.csproj">
+      <Project>{7ddab84f-2416-413b-ae7a-6f2d75b2882d}</Project>
+      <Name>Gu.Wpf.PropertyGrid</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="..\.paket\paket.targets" />
-  <Choose>
-    <When Condition="($(TargetFrameworkIdentifier) == '.NETStandard' And ($(TargetFrameworkVersion) == 'v1.1' Or $(TargetFrameworkVersion) == 'v1.2' Or $(TargetFrameworkVersion) == 'v1.3' Or $(TargetFrameworkVersion) == 'v1.4' Or $(TargetFrameworkVersion) == 'v1.5')) Or ($(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2'))">
-      <ItemGroup>
-        <Reference Include="Gu.State">
-          <HintPath>..\packages\Gu.State\lib\net45\Gu.State.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
   <Choose>
     <When Condition="($(TargetFrameworkIdentifier) == '.NETStandard' And ($(TargetFrameworkVersion) == 'v1.1' Or $(TargetFrameworkVersion) == 'v1.2' Or $(TargetFrameworkVersion) == 'v1.3' Or $(TargetFrameworkVersion) == 'v1.4' Or $(TargetFrameworkVersion) == 'v1.5')) Or ($(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2'))">
       <ItemGroup>
@@ -346,4 +186,15 @@
       </ItemGroup>
     </When>
   </Choose>
+  <ItemGroup>
+    <Analyzer Include="..\packages\StyleCop.Analyzers\analyzers\dotnet\cs\Newtonsoft.Json.dll">
+      <Paket>True</Paket>
+    </Analyzer>
+    <Analyzer Include="..\packages\StyleCop.Analyzers\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll">
+      <Paket>True</Paket>
+    </Analyzer>
+    <Analyzer Include="..\packages\StyleCop.Analyzers\analyzers\dotnet\cs\StyleCop.Analyzers.dll">
+      <Paket>True</Paket>
+    </Analyzer>
+  </ItemGroup>
 </Project>

@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Gu.Wpf.PropertyGrid.UnitSettingControls.Tests")]
+[assembly: AssemblyTitle("Gu.Wpf.PropertyGrid.UnitRows.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Gu.Wpf.PropertyGrid.UnitSettingControls.Tests")]
+[assembly: AssemblyProduct("Gu.Wpf.PropertyGrid.UnitRows.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
