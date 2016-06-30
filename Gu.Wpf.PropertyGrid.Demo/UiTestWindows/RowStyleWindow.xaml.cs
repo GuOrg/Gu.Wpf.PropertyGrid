@@ -2,9 +2,9 @@
 {
     using System.Windows;
 
-    public partial class UsesResourcesStyleForRowWindow : Window
+    public partial class RowStyleWindow : Window
     {
-        public UsesResourcesStyleForRowWindow()
+        public RowStyleWindow()
         {
             this.InitializeComponent();
         }

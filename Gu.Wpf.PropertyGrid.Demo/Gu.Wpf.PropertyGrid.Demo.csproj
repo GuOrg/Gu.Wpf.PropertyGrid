@@ -106,8 +106,8 @@
     <Compile Include="UiTestWindows\UnitsWindow.xaml.cs">
       <DependentUpon>UnitsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\UsesResourcesStyleForRowWindow.xaml.cs">
-      <DependentUpon>UsesResourcesStyleForRowWindow.xaml</DependentUpon>
+    <Compile Include="UiTestWindows\RowStyleWindow.xaml.cs">
+      <DependentUpon>RowStyleWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UiTestWindows\ValueStylesWindow.xaml.cs">
       <DependentUpon>ValueStylesWindow.xaml</DependentUpon>
@@ -194,7 +194,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\UsesResourcesStyleForRowWindow.xaml">
+    <Page Include="UiTestWindows\RowStyleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

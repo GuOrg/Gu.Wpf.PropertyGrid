@@ -2,6 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid"
                     xmlns:validationScope="http://gu.se/ValidationScope">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Blocks.xaml" />
+    </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type l:Row}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -13,7 +16,7 @@
         <!--<Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />-->
     </Style>
 
-    <Style TargetType="{x:Type l:StringRow}">
+    <Style BasedOn="{StaticResource {x:Type l:Row}}" TargetType="{x:Type l:StringRow}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:StringRow}">
