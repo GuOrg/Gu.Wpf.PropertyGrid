@@ -38,18 +38,6 @@
             typeof(SettingControlBase),
             new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty InfoPresenterStyleProperty = SettingControl.InfoPresenterStyleProperty.AddOwner(
-            typeof(SettingControlBase),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty OldValueStyleProperty = SettingControl.OldValueStyleProperty.AddOwner(
-            typeof(SettingControlBase),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty ErrorStyleProperty = SettingControl.ErrorStyleProperty.AddOwner(
-            typeof(SettingControlBase),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
         private static readonly DependencyPropertyKey IsDirtyPropertyKey = DependencyProperty.RegisterReadOnly(
             "IsDirty",
             typeof(bool?),
@@ -99,24 +87,6 @@
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
             set { this.SetValue(IsReadOnlyProperty, BooleanBoxes.Box(value)); }
-        }
-
-        public Style InfoPresenterStyle
-        {
-            get { return (Style)this.GetValue(InfoPresenterStyleProperty); }
-            set { this.SetValue(InfoPresenterStyleProperty, value); }
-        }
-
-        public Style OldValueStyle
-        {
-            get { return (Style)this.GetValue(OldValueStyleProperty); }
-            set { this.SetValue(OldValueStyleProperty, value); }
-        }
-
-        public Style ErrorStyle
-        {
-            get { return (Style)this.GetValue(ErrorStyleProperty); }
-            set { this.SetValue(ErrorStyleProperty, value); }
         }
 
         public bool? IsDirty

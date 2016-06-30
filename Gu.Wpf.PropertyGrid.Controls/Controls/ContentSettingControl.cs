@@ -3,7 +3,7 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows;
     using System.Windows.Controls;
 
-    public class ContentSettingControl : HeaderedContentControl
+    public partial class ContentSettingControl : HeaderedContentControl
     {
         public static readonly DependencyProperty OldDataContextProperty = SettingControl.OldDataContextProperty.AddOwner(
             typeof(ContentSettingControl),
@@ -26,18 +26,6 @@ namespace Gu.Wpf.PropertyGrid
         public static readonly DependencyProperty IsReadOnlyProperty = SettingControl.IsReadOnlyProperty.AddOwner(
             typeof(ContentSettingControl),
             new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty InfoPresenterStyleProperty = SettingControl.InfoPresenterStyleProperty.AddOwner(
-            typeof(ContentSettingControl),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty OldValueStyleProperty = SettingControl.OldValueStyleProperty.AddOwner(
-            typeof(ContentSettingControl),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty ErrorStyleProperty = SettingControl.ErrorStyleProperty.AddOwner(
-            typeof(ContentSettingControl),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
         static ContentSettingControl()
         {
@@ -67,24 +55,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
             set { this.SetValue(IsReadOnlyProperty, value); }
-        }
-
-        public Style InfoPresenterStyle
-        {
-            get { return (Style)this.GetValue(InfoPresenterStyleProperty); }
-            set { this.SetValue(InfoPresenterStyleProperty, value); }
-        }
-
-        public Style OldValueStyle
-        {
-            get { return (Style)this.GetValue(OldValueStyleProperty); }
-            set { this.SetValue(OldValueStyleProperty, value); }
-        }
-
-        public Style ErrorStyle
-        {
-            get { return (Style)this.GetValue(ErrorStyleProperty); }
-            set { this.SetValue(ErrorStyleProperty, value); }
         }
 
         protected virtual void OnOldValueChanged(object oldValue, object newValue)

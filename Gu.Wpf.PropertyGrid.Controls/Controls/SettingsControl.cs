@@ -3,7 +3,7 @@
     using System.Windows;
     using System.Windows.Controls;
 
-    public class SettingsControl : ItemsControl
+    public partial class SettingsControl : ItemsControl
     {
         public static readonly DependencyProperty HeaderWidthProperty = DependencyProperty.Register(
             nameof(HeaderWidth),
@@ -72,18 +72,6 @@
         public static readonly DependencyProperty IsReadOnlyProperty = SettingControl.IsReadOnlyProperty.AddOwner(
             typeof(SettingsControl),
             new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty InfoPresenterStyleProperty = SettingControl.InfoPresenterStyleProperty.AddOwner(
-                typeof(SettingsControl),
-                new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty OldValueStyleProperty = SettingControl.OldValueStyleProperty.AddOwner(
-            typeof(SettingsControl),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
-        public static readonly DependencyProperty ErrorStyleProperty = SettingControl.ErrorStyleProperty.AddOwner(
-            typeof(SettingsControl),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
         static SettingsControl()
         {
@@ -161,24 +149,6 @@
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
             set { this.SetValue(IsReadOnlyProperty, value); }
-        }
-
-        public Style InfoPresenterStyle
-        {
-            get { return (Style)this.GetValue(InfoPresenterStyleProperty); }
-            set { this.SetValue(InfoPresenterStyleProperty, value); }
-        }
-
-        public Style OldValueStyle
-        {
-            get { return (Style)this.GetValue(OldValueStyleProperty); }
-            set { this.SetValue(OldValueStyleProperty, value); }
-        }
-
-        public Style ErrorStyle
-        {
-            get { return (Style)this.GetValue(ErrorStyleProperty); }
-            set { this.SetValue(ErrorStyleProperty, value); }
         }
     }
 }

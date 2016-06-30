@@ -51,6 +51,11 @@
     <Compile Include="Controls\CheckBoxSettingControl.cs" />
     <Compile Include="Controls\EnumSettingControl.cs" />
     <Compile Include="Controls\ErrorPresenter.cs" />
+    <Compile Include="Controls\Generated\SettingControl.Styles.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettingControl.Styles.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controls\InfoPresenter.cs" />
     <Compile Include="Controls\SelectorSettingControl.cs" />
     <Compile Include="Controls\TextBlocks\HeaderBlock.cs" />
@@ -210,5 +215,11 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers\analyzers\dotnet\cs\StyleCop.Analyzers.dll">
       <Paket>True</Paket>
     </Analyzer>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Generated\SettingControl.Styles.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SettingControl.Styles.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
 </Project>
