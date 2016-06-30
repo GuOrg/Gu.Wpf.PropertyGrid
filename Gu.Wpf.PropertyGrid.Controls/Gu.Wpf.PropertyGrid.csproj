@@ -97,6 +97,10 @@
     <Compile Include="SharedSizeGroups.cs" />
     <Compile Include="Controls\StringSettingControl.cs" />
     <Compile Include="ValidationErrorTemplateSelector.cs" />
+    <Page Include="Themes\Blocks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\ErrorPresenter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

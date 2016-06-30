@@ -8,6 +8,7 @@ namespace Gu.Wpf.PropertyGrid
     {
         static HeaderBlock()
         {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(HeaderBlock), new FrameworkPropertyMetadata(typeof(HeaderBlock)));
             VerticalAlignmentProperty.OverrideMetadataWithDefaultValue(typeof(HeaderBlock), VerticalAlignment.Center);
             HorizontalAlignmentProperty.OverrideMetadataWithDefaultValue(typeof(HeaderBlock), HorizontalAlignment.Left);
         }

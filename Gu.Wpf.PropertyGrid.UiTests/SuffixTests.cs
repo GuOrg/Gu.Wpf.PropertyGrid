@@ -31,19 +31,26 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void Default()
         {
-            Assert.AreEqual("abc", this.defaultSetting.Suffix().Text);
-        }
-
-        [Test]
-        public void InheritsTextBlockStyle()
-        {
-            Assert.AreEqual("Green", this.window.FindSetting("textblock style").Suffix().ItemStatus());
+            Assert.AreEqual("suffix", this.defaultSetting.Suffix().Text);
         }
 
         [Test]
         public void UsesResourceStyle()
         {
-            Assert.AreEqual("Blue", this.window.FindSetting("suffixblock style").Suffix().ItemStatus());
+            Assert.Inconclusive("not sure how to test this.");
+            Assert.AreEqual("implicit blue", this.window.FindSetting("implicit suffixblock style").Suffix().ItemStatus());
+        }
+
+        [Test]
+        public void ExplicitSuffixStyle()
+        {
+            Assert.AreEqual("explicit pink", this.window.FindSetting("explicit suffixblock style").Suffix().ItemStatus());
+        }
+
+        [Test]
+        public void InheritSuffixStyle()
+        {
+            Assert.AreEqual("inherit khaki", this.window.FindSetting("inherit suffixblock style").Suffix().ItemStatus());
         }
     }
 }

@@ -22,12 +22,12 @@
     <Window.DataContext>
         <demo:SettingsVm />
     </Window.DataContext>
-    <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+    <propertyGrid:SettingsControl>
         <propertyGrid:StringSettingControl Header="default"
-                                           Suffix="abc"
-                                           Value="{Binding StringValue}" />
+                                           Suffix="suffix"
+                                           Value="abc" />
 
-        <propertyGrid:SettingsControl OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
+        <propertyGrid:SettingsControl>
             <propertyGrid:SettingsControl.Resources>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="AutomationProperties.ItemStatus" Value="Green" />
@@ -35,20 +35,45 @@
                 </Style>
             </propertyGrid:SettingsControl.Resources>
             <propertyGrid:StringSettingControl Header="textblock style"
-                                               Suffix="abc"
-                                               Value="{Binding StringValue}" />
+                                               Suffix="suffix"
+                                               Value="abc" />
         </propertyGrid:SettingsControl>
 
-        <propertyGrid:SettingsControl OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
+        <propertyGrid:SettingsControl>
             <propertyGrid:SettingsControl.Resources>
                 <Style TargetType="{x:Type propertyGrid:SuffixBlock}">
-                    <Setter Property="AutomationProperties.ItemStatus" Value="Blue" />
+                    <Setter Property="AutomationProperties.ItemStatus" Value="implicit blue" />
                     <Setter Property="Foreground" Value="Blue" />
                 </Style>
             </propertyGrid:SettingsControl.Resources>
-            <propertyGrid:StringSettingControl Header="suffixblock style"
-                                               Suffix="abc"
-                                               Value="{Binding StringValue}" />
+            <propertyGrid:StringSettingControl Header="implicit suffixblock style"
+                                               Suffix="suffix"
+                                               Value="abc" />
+        </propertyGrid:SettingsControl>
+
+        <propertyGrid:SettingsControl>
+            <propertyGrid:SettingsControl.Resources>
+                <Style x:Key="SuffixStyle" TargetType="{x:Type propertyGrid:SuffixBlock}">
+                    <Setter Property="AutomationProperties.ItemStatus" Value="explicit pink" />
+                    <Setter Property="Foreground" Value="HotPink" />
+                </Style>
+            </propertyGrid:SettingsControl.Resources>
+            <propertyGrid:StringSettingControl Header="explicit suffixblock style"
+                                               Suffix="suffix"
+                                               SuffixStyle="{StaticResource SuffixStyle}"
+                                               Value="abc" />
+        </propertyGrid:SettingsControl>
+
+        <propertyGrid:SettingsControl>
+            <propertyGrid:SettingsControl.SuffixStyle>
+                <Style TargetType="{x:Type propertyGrid:SuffixBlock}">
+                    <Setter Property="AutomationProperties.ItemStatus" Value="inherit khaki" />
+                    <Setter Property="Foreground" Value="DarkKhaki" />
+                </Style>
+            </propertyGrid:SettingsControl.SuffixStyle>
+            <propertyGrid:StringSettingControl Header="inherit suffixblock style"
+                                               Suffix="suffix"
+                                               Value="abc" />
         </propertyGrid:SettingsControl>
     </propertyGrid:SettingsControl>
 </Window>

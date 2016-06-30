@@ -39,6 +39,7 @@
                         <l:HeaderBlock x:Name="PART_Header"
                                        Grid.Row="0"
                                        Grid.Column="0"
+                                       Style="{TemplateBinding HeaderStyle}"
                                        Text="{TemplateBinding Header}" />
 
                         <TextBox x:Name="PART_Value"
@@ -56,6 +57,7 @@
                         <l:SuffixBlock x:Name="PART_Suffix"
                                        Grid.Row="0"
                                        Grid.Column="2"
+                                       Style="{TemplateBinding SuffixStyle}"
                                        Text="{TemplateBinding Suffix}" />
 
                         <l:InfoPresenter x:Name="InfoPresenter"
@@ -307,8 +309,9 @@
     </Style>
 
     <Style TargetType="{x:Type l:ContentSettingControl}">
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="SettingControlBase, ComboBox, TextBox, Slider" />
-
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="{x:Static validationScope:InputTypeCollection.Default}" />
+        <Setter Property="HeaderStyle" Value="{StaticResource {x:Type l:HeaderBlock}}" />
+        <Setter Property="SuffixStyle" Value="{StaticResource {x:Type l:SuffixBlock}}" />
         <Setter Property="InfoPresenterStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type l:InfoPresenter}">
