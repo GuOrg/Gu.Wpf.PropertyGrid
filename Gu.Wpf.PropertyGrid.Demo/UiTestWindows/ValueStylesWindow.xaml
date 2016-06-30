@@ -43,8 +43,8 @@
         <propertyGrid:ToggleButtonRow Header="togglebutton" Value="{Binding BoolValue}" />
         <propertyGrid:EnumRow Header="enum" Value="{Binding CurrentStringComparison}" />
         <propertyGrid:SelectorRow Header="selector"
-                                             ItemsSource="{Binding Cultures}"
-                                             Value="{Binding CurrentCulture}" />
+                                  ItemsSource="{Binding Cultures}"
+                                  Value="{Binding CurrentCulture}" />
         <propertyGrid:StringRow Header="string" Value="{Binding StringValue}" />
         <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
         <propertyGrid:LengthRow Header="length" Value="{Binding LengthValue}" />

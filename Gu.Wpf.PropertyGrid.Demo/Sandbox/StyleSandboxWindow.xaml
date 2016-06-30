@@ -41,7 +41,6 @@
                              Grid.Column="0"
                              Focusable="False"
                              IsReadOnly="True"
-                             IsReadOnlyCaretVisible="True"
                              Style="{TemplateBinding HeaderStyle}"
                              Text="{TemplateBinding Header}" />
 
