@@ -50,7 +50,7 @@ using System.Windows.Markup;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.3.0.0")]
-[assembly: AssemblyFileVersion("2.3.0.0")]
+[assembly: AssemblyVersion("3.0.0.0")]
+[assembly: AssemblyFileVersion("3.0.0.0")]
 [assembly: XmlnsDefinition("http://gu.se/PropertyGrid", "Gu.Wpf.PropertyGrid")]
 [assembly: XmlnsPrefix("http://gu.se/PropertyGrid", "propertyGrid")]

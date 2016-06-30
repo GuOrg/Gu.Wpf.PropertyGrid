@@ -9,9 +9,9 @@
     {
         public static readonly DependencyProperty TargetProperty = DependencyProperty.Register(
             "Target",
-            typeof(SettingControlBase),
+            typeof(Row),
             typeof(InfoPresenter),
-            new PropertyMetadata(default(SettingControlBase)));
+            new PropertyMetadata(default(Row)));
 
         static InfoPresenter()
         {
@@ -19,9 +19,9 @@
             FocusableProperty.OverrideMetadataWithDefaultValue(typeof(InfoPresenter), false);
         }
 
-        public SettingControlBase Target
+        public Row Target
         {
-            get { return (SettingControlBase)this.GetValue(TargetProperty); }
+            get { return (Row)this.GetValue(TargetProperty); }
             set { this.SetValue(TargetProperty, value); }
         }
 
@@ -30,7 +30,7 @@
             if (this.Target == null)
             {
                 var target = this.Ancestors()
-                                 .OfType<SettingControlBase>()
+                                 .OfType<Row>()
                                  .FirstOrDefault();
                 this.SetCurrentValue(TargetProperty, target);
             }

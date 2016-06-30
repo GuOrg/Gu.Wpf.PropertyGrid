@@ -11,7 +11,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         private Application application;
         private Window window;
 
-        private SettingControl defaultSetting;
+        private Row defaultRow;
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
@@ -19,7 +19,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             var title = "SuffixWindow";
             this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
             this.window = this.application.GetWindow(title);
-            this.defaultSetting = this.window.FindSetting("default");
+            this.defaultRow = this.window.FindRow("default");
         }
 
         [OneTimeTearDown]
@@ -31,26 +31,26 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void Default()
         {
-            Assert.AreEqual("suffix", this.defaultSetting.Suffix().Text);
+            Assert.AreEqual("suffix", this.defaultRow.Suffix().Text);
         }
 
         [Test]
         public void UsesResourceStyle()
         {
             Assert.Inconclusive("not sure how to test this.");
-            Assert.AreEqual("implicit blue", this.window.FindSetting("implicit suffixblock style").Suffix().ItemStatus());
+            Assert.AreEqual("implicit blue", this.window.FindRow("implicit suffixblock style").Suffix().ItemStatus());
         }
 
         [Test]
         public void ExplicitSuffixStyle()
         {
-            Assert.AreEqual("explicit pink", this.window.FindSetting("explicit suffixblock style").Suffix().ItemStatus());
+            Assert.AreEqual("explicit pink", this.window.FindRow("explicit suffixblock style").Suffix().ItemStatus());
         }
 
         [Test]
         public void InheritSuffixStyle()
         {
-            Assert.AreEqual("inherit khaki", this.window.FindSetting("inherit suffixblock style").Suffix().ItemStatus());
+            Assert.AreEqual("inherit khaki", this.window.FindRow("inherit suffixblock style").Suffix().ItemStatus());
         }
     }
 }

@@ -4,7 +4,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:demo="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:p="http://gu.se/PropertyGrid"
+             xmlns:propertyGrid="http://gu.se/PropertyGrid"
              xmlns:validationScope="http://gu.se/ValidationScope"
              mc:Ignorable="d">
     <UserControl.DataContext>
@@ -15,81 +15,81 @@
             <RowDefinition />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <p:SettingsControl Grid.Row="0"
+        <propertyGrid:Rows Grid.Row="0"
                            DataContext="{Binding EditableCopy}"
                            OldDataContext="{Binding DataContext.LastSaved,
                                                     RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
             <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Core" />
 
-            <p:StringSettingControl Header="string" Value="{Binding StringValue}" />
+            <propertyGrid:StringRow Header="string" Value="{Binding StringValue}" />
 
-            <p:StringSettingControl Header="readonly string"
+            <propertyGrid:StringRow Header="readonly string"
                                     IsReadOnly="True"
                                     Value="{Binding StringValue}" />
 
-            <p:CheckBoxSettingControl Header="INotifyDataErrorInfo has error" Value="{Binding HasErrors, ValidatesOnNotifyDataErrors=True}" />
+            <propertyGrid:CheckBoxRow Header="INotifyDataErrorInfo has error" Value="{Binding HasErrors, ValidatesOnNotifyDataErrors=True}" />
 
-            <p:CheckBoxSettingControl Header="checkbox" Value="{Binding BoolValue}" />
+            <propertyGrid:CheckBoxRow Header="checkbox" Value="{Binding BoolValue}" />
 
-            <p:ToggleButtonSettingControl Header="togglebutton" Value="{Binding BoolValue}" />
+            <propertyGrid:ToggleButtonRow Header="togglebutton" Value="{Binding BoolValue}" />
 
 
-            <p:EnumSettingControl Header="enum" Value="{Binding CurrentStringComparison}" />
+            <propertyGrid:EnumRow Header="enum" Value="{Binding CurrentStringComparison}" />
 
-            <p:SelectorSettingControl Header="selector"
+            <propertyGrid:SelectorRow Header="selector"
                                       ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
                                       Value="{Binding CurrentLengthUnit}" />
 
-            <p:ContentSettingControl Header="content">
+            <propertyGrid:ContentRow Header="content">
                 <Button Command="{Binding DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Content="Save" />
-            </p:ContentSettingControl>
+            </propertyGrid:ContentRow>
 
-            <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="NumericSettingControls" />
+            <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Numeric" />
 
-            <p:IntSettingControl Header="int" Value="{Binding IntValue}" />
+            <propertyGrid:IntRow Header="int" Value="{Binding IntValue}" />
 
-            <p:IntSettingControl Header="readonly int"
+            <propertyGrid:IntRow Header="readonly int"
                                  IsReadOnly="True"
                                  Value="{Binding IntValue}" />
 
-            <p:IntSettingControl CanValueBeNull="True"
+            <propertyGrid:IntRow CanValueBeNull="True"
                                  Header="int?"
                                  Value="{Binding NullableIntValue}" />
 
-            <p:DoubleSettingControl Header="double" Value="{Binding DoubleValue}" />
+            <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
 
-            <p:DoubleSettingControl Header="readonly double"
+            <propertyGrid:DoubleRow Header="readonly double"
                                     IsReadOnly="True"
                                     Value="{Binding DoubleValue}" />
 
-            <p:DoubleSettingControl CanValueBeNull="True"
+            <propertyGrid:DoubleRow CanValueBeNull="True"
                                     Header="double?"
                                     Value="{Binding NullableDoubleValue}" />
 
-            <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="UnitSettingControls" />
+            <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Units" />
 
-            <p:LengthSettingControl Header="Length" Value="{Binding LengthValue}" />
+            <propertyGrid:LengthRow Header="Length" Value="{Binding LengthValue}" />
 
-            <p:LengthSettingControl Header="readonly length"
+            <propertyGrid:LengthRow Header="readonly length"
                                     IsReadOnly="True"
                                     Value="{Binding LengthValue}" />
 
-            <p:LengthSettingControl CanValueBeNull="True"
+            <propertyGrid:LengthRow CanValueBeNull="True"
                                     Header="Nullable length"
                                     Value="{Binding NullableLengthValue}" />
 
-            <p:SpeedSettingControl Header="Speed (readonly)"
+            <propertyGrid:SpeedRow Header="Speed (readonly)"
                                    IsReadOnly="True"
                                    Unit="km/h"
                                    Value="{Binding SpeedValue}" />
 
-            <p:LengthSettingControl DecimalDigits="2"
+            <propertyGrid:LengthRow DecimalDigits="2"
                                     Header="Length"
                                     MaxValue="15 mm"
                                     MinValue="-15 mm"
                                     Unit="{Binding CurrentLengthUnit}"
                                     Value="{Binding LengthValue}" />
-        </p:SettingsControl>
+        </propertyGrid:Rows>
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -105,4 +105,18 @@
         </Grid>
     </Grid>
 </UserControl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

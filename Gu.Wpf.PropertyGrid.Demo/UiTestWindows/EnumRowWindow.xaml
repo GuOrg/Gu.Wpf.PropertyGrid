@@ -1,0 +1,55 @@
+﻿<Window x:Class="Gu.Wpf.PropertyGrid.Demo.EnumRowWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:demo="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:propertyGrid="http://gu.se/PropertyGrid"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        Title="EnumRowWindow"
+        SizeToContent="WidthAndHeight"
+        mc:Ignorable="d">
+
+    <Window.DataContext>
+        <demo:SettingsVm />
+    </Window.DataContext>
+    <StackPanel>
+        <Button Content="lose focus" />
+        <TextBlock AutomationProperties.AutomationId="currentTextBlock" Text="{Binding EditableCopy.CurrentStringComparison}" />
+
+        <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+            <propertyGrid:EnumRow Header="current" Value="{Binding CurrentStringComparison}" />
+
+            <propertyGrid:EnumRow Header="explicit_type" Value="{Binding CurrentStringComparison}" />
+
+            <propertyGrid:EnumRow EnumType="{x:Type system:StringComparison}"
+                                             Header="readonly"
+                                             IsReadOnly="True"
+                                             Value="{Binding CurrentStringComparison}" />
+        </propertyGrid:Rows>
+
+        <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+            <propertyGrid:Rows.Resources>
+                <Style TargetType="{x:Type ComboBox}">
+                    <Setter Property="IsEditable" Value="True" />
+                </Style>
+            </propertyGrid:Rows.Resources>
+
+            <propertyGrid:EnumRow EnumType="{x:Type system:StringComparison}"
+                                             Header="lostfocus"
+                                             Value="{Binding CurrentStringComparison,
+                                                             UpdateSourceTrigger=LostFocus}" />
+
+            <propertyGrid:EnumRow EnumType="{x:Type system:StringComparison}"
+                                             Header="editable"
+                                             Value="{Binding CurrentStringComparison}" />
+        </propertyGrid:Rows>
+    </StackPanel>
+</Window>
+
+
+
+
+
+
+

@@ -15,14 +15,15 @@ namespace Gu.Wpf.PropertyGrid
 <#
 	    var quantities = typeof (Length).Assembly.GetTypes()
 											     .Where(x => !x.IsInterface)
-											     .Where(x => x.GetInterfaces().Any(i => i == typeof (IQuantity))).ToArray();
+											     .Where(x => x.GetInterfaces().Any(i => i == typeof (IQuantity)))
+												 .ToArray();
 		foreach(var quantity in quantities)
 		{
-		    var className = quantity.Name + "SettingControl";
+		    var className = quantity.Name + "Row";
 		    var defaultUnit = GetDefaultUnitName(quantity);
 		#>
 
-    public class <#= className #> : UnitSettingControl<<#= quantity.Name #>, <#= quantity.Name #>Unit>
+    public class <#= className #> : UnitRow<<#= quantity.Name #>, <#= quantity.Name #>Unit>
     {
         public static readonly <#= quantity.Name #>Unit DefaultUnit = <#= quantity.Name #>Unit.<#= defaultUnit #>;
 
@@ -34,7 +35,7 @@ namespace Gu.Wpf.PropertyGrid
                 typeof(<#= className #>),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
 			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(<#= className #>), UpdateSourceTrigger.LostFocus);

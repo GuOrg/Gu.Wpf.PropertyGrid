@@ -12,17 +12,17 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
-                            <ColumnDefinition Width="Auto"
-                                              MinWidth="{Binding Path=(l:SettingControl.ValueMinWidth),
-                                                                 RelativeSource={RelativeSource TemplatedParent}}"
+                            <ColumnDefinition Width="{Binding Path=(l:PropertyGrid.HeaderWidth)}"
+                                              MinWidth="{Binding Path=(l:PropertyGrid.HeaderMinWidth)}"
+                                              MaxWidth="{Binding Path=(l:PropertyGrid.HeaderMaxWidth)}"
+                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
+                            <ColumnDefinition Width="{Binding Path=(l:PropertyGrid.ValueWidth)}"
+                                              MinWidth="{Binding Path=(l:PropertyGrid.ValueMinWidth)}"
+                                              MaxWidth="{Binding Path=(l:PropertyGrid.ValueMaxWidth)}"
                                               SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="{Binding SuffixWidth,
-                                                              RelativeSource={RelativeSource AncestorType={x:Type l:SettingsControl}}}"
-                                              MinWidth="{Binding SuffixMinWidth,
-                                                                 RelativeSource={RelativeSource AncestorType={x:Type l:SettingsControl}}}"
-                                              MaxWidth="{Binding SuffixMaxWidth,
-                                                                 RelativeSource={RelativeSource AncestorType={x:Type l:SettingsControl}}}"
+                            <ColumnDefinition Width="{Binding Path=(l:PropertyGrid.SuffixWidth)}"
+                                              MinWidth="{Binding Path=(l:PropertyGrid.SuffixMinWidth)}"
+                                              MaxWidth="{Binding Path=(l:PropertyGrid.SuffixMaxWidth)}"
                                               SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
                         </Grid.ColumnDefinitions>
 

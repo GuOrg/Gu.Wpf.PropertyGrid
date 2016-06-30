@@ -38,15 +38,16 @@
             <Setter Property="BorderBrush" Value="Blue" />
         </Style>
     </Window.Resources>
-    <propertyGrid:SettingsControl DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-        <propertyGrid:CheckBoxSettingControl Header="checkbox" Value="{Binding BoolValue}" />
-        <propertyGrid:ToggleButtonSettingControl Header="togglebutton" Value="{Binding BoolValue}" />
-        <propertyGrid:EnumSettingControl Header="enum" Value="{Binding CurrentStringComparison}" />
-        <propertyGrid:SelectorSettingControl Header="selector"
+    <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+        <propertyGrid:CheckBoxRow Header="checkbox" Value="{Binding BoolValue}" />
+        <propertyGrid:ToggleButtonRow Header="togglebutton" Value="{Binding BoolValue}" />
+        <propertyGrid:EnumRow Header="enum" Value="{Binding CurrentStringComparison}" />
+        <propertyGrid:SelectorRow Header="selector"
                                              ItemsSource="{Binding Cultures}"
                                              Value="{Binding CurrentCulture}" />
-        <propertyGrid:StringSettingControl Header="string" Value="{Binding StringValue}" />
-        <propertyGrid:DoubleSettingControl Header="double" Value="{Binding DoubleValue}" />
-        <propertyGrid:LengthSettingControl Header="length" Value="{Binding LengthValue}" />
-    </propertyGrid:SettingsControl>
+        <propertyGrid:StringRow Header="string" Value="{Binding StringValue}" />
+        <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
+        <propertyGrid:LengthRow Header="length" Value="{Binding LengthValue}" />
+    </propertyGrid:Rows>
 </Window>
+

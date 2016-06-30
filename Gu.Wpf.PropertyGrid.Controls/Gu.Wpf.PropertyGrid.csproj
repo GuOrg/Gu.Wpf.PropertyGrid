@@ -45,28 +45,28 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\BaseClasses\SettingControlBase.DependencyProperties.cs" />
-    <Compile Include="Controls\BaseClasses\SettingControlBase.SettingControlAutomationPeer.cs" />
-    <Compile Include="Controls\ContentSettingControl.cs" />
-    <Compile Include="Controls\CheckBoxSettingControl.cs" />
-    <Compile Include="Controls\EnumSettingControl.cs" />
+    <Compile Include="Controls\Rows\BaseClasses\Row.DependencyProperties.cs" />
+    <Compile Include="Controls\Rows\BaseClasses\Row.RowAutomationPeer.cs" />
+    <Compile Include="Controls\Rows\ContentRow.cs" />
+    <Compile Include="Controls\Rows\CheckBoxRow.cs" />
+    <Compile Include="Controls\Rows\EnumRow.cs" />
     <Compile Include="Controls\ErrorPresenter.cs" />
-    <Compile Include="Controls\Generated\SettingControl.Columns.cs">
+    <Compile Include="Controls\Generated\PropertyGrid.Columns.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingControl.Columns.tt</DependentUpon>
+      <DependentUpon>PropertyGrid.Columns.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Generated\SettingControl.Styles.cs">
+    <Compile Include="Controls\Generated\PropertyGrid.Styles.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingControl.Styles.tt</DependentUpon>
+      <DependentUpon>PropertyGrid.Styles.tt</DependentUpon>
     </Compile>
     <Compile Include="Controls\InfoPresenter.cs" />
-    <Compile Include="Controls\SelectorSettingControl.cs" />
+    <Compile Include="Controls\Rows\SelectorRow.cs" />
     <Compile Include="Controls\TextBlocks\HeaderBlock.cs" />
     <Compile Include="Controls\TextBlocks\SettingBlockAutomationPeer.cs" />
     <Compile Include="Controls\TextBlocks\SuffixBlock.cs" />
-    <Compile Include="Controls\ToggleButtonSettingControl.cs" />
+    <Compile Include="Controls\Rows\ToggleButtonRow.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\FirstOrDefaultConverter.cs" />
     <Compile Include="Converters\FirstValidationResultConverter.cs" />
@@ -83,19 +83,19 @@
     <Compile Include="Grid\RowDefinitionsConverter.cs" />
     <Compile Include="Internals\BindingHelper.cs" />
     <Compile Include="Internals\BooleanBoxes.cs" />
-    <Compile Include="Controls\BoolSettingControl.cs" />
-    <Compile Include="Controls\BaseClasses\NumericSettingControl{T}.cs" />
-    <Compile Include="Controls\SettingControl.cs" />
-    <Compile Include="Controls\BaseClasses\SettingControlBase.cs" />
-    <Compile Include="Controls\BaseClasses\SettingControlBase{T}.cs" />
-    <Compile Include="Controls\SettingsControl.cs" />
+    <Compile Include="Controls\Rows\BoolRow.cs" />
+    <Compile Include="Controls\Rows\BaseClasses\NumericRow{T}.cs" />
+    <Compile Include="Controls\PropertyGrid.cs" />
+    <Compile Include="Controls\Rows\BaseClasses\Row.cs" />
+    <Compile Include="Controls\Rows\BaseClasses\Row{T}.cs" />
+    <Compile Include="Controls\Rows.cs" />
     <Compile Include="Internals\DependencyPropertyExt.cs" />
     <Compile Include="Internals\Ensure.cs" />
     <Compile Include="Internals\VisualTreeHelperExt.cs" />
     <Compile Include="OneWayToSourceBinding\OneWayToSource.cs" />
     <Compile Include="OneWayToSourceBinding\Paths.cs" />
     <Compile Include="SharedSizeGroups.cs" />
-    <Compile Include="Controls\StringSettingControl.cs" />
+    <Compile Include="Controls\Rows\StringRow.cs" />
     <Compile Include="ValidationErrorTemplateSelector.cs" />
     <Page Include="Themes\Blocks.xaml">
       <SubType>Designer</SubType>
@@ -117,11 +117,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\SettingControl.xaml">
+    <Page Include="Themes\Row.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\SettingsControl.xaml">
+    <Page Include="Themes\Rows.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -222,13 +222,13 @@
     </Analyzer>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Controls\Generated\SettingControl.Columns.tt">
+    <Content Include="Controls\Generated\PropertyGrid.Columns.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SettingControl.Columns.cs</LastGenOutput>
+      <LastGenOutput>PropertyGrid.Columns.cs</LastGenOutput>
     </Content>
-    <Content Include="Controls\Generated\SettingControl.Styles.tt">
+    <Content Include="Controls\Generated\PropertyGrid.Styles.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SettingControl.Styles.cs</LastGenOutput>
+      <LastGenOutput>PropertyGrid.Styles.cs</LastGenOutput>
     </Content>
   </ItemGroup>
 </Project>

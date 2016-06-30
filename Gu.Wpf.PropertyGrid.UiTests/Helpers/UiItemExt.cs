@@ -16,10 +16,10 @@
             return container.Get<T>(SearchCriteria.ByText(text));
         }
 
-        public static SettingControl FindSetting(this UIItemContainer container, string header)
+        public static Row FindRow(this UIItemContainer container, string header)
         {
             var uiItem = container.Get<UIItem>(SearchCriteria.ByText(header));
-            return new SettingControl(uiItem);
+            return new Row(uiItem);
         }
     }
 }

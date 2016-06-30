@@ -10,117 +10,628 @@
         mc:Ignorable="d">
     <StackPanel>
         <GroupBox Header="default">
-            <propertyGrid:SettingsControl HorizontalAlignment="Left" Background="AliceBlue">
-                <propertyGrid:StringSettingControl Header="a"
+            <propertyGrid:Rows HorizontalAlignment="Left" Background="AliceBlue">
+                <propertyGrid:StringRow Header="a"
                                                    Suffix="b"
                                                    Value="c" />
-            </propertyGrid:SettingsControl>
+            </propertyGrid:Rows>
         </GroupBox>
 
         <GroupBox Header="default abcd">
-            <propertyGrid:SettingsControl HorizontalAlignment="Left" Background="AliceBlue">
-                <propertyGrid:StringSettingControl Header="a"
+            <propertyGrid:Rows HorizontalAlignment="Left" Background="AliceBlue">
+                <propertyGrid:StringRow Header="a"
                                                    Suffix="b"
                                                    Value="c" />
-                <propertyGrid:StringSettingControl Header="abcd"
+                <propertyGrid:StringRow Header="abcd"
                                                    Suffix="abcdefgh"
                                                    Value="abcdef" />
-            </propertyGrid:SettingsControl>
+            </propertyGrid:Rows>
         </GroupBox>
 
         <GroupBox Header="* * *">
-            <propertyGrid:SettingsControl Background="AliceBlue"
+            <propertyGrid:Rows Background="AliceBlue"
                                           HeaderWidth="*"
                                           SuffixWidth="*"
                                           ValueWidth="*">
-                <propertyGrid:StringSettingControl Header="a"
+                <propertyGrid:StringRow Header="a"
                                                    Suffix="b"
                                                    Value="c" />
-                <propertyGrid:StringSettingControl Header="abcd"
+                <propertyGrid:StringRow Header="abcd"
                                                    Suffix="abcdefgh"
                                                    Value="abcdef" />
-            </propertyGrid:SettingsControl>
+            </propertyGrid:Rows>
         </GroupBox>
 
         <GroupBox Header="Width 15 20 25">
-            <propertyGrid:SettingsControl HorizontalAlignment="Left"
+            <propertyGrid:Rows HorizontalAlignment="Left"
                                           Background="AliceBlue"
                                           HeaderWidth="15"
                                           SuffixWidth="25"
                                           ValueWidth="20">
-                <propertyGrid:StringSettingControl Header="a"
+                <propertyGrid:StringRow Header="a"
                                                    Suffix="b"
                                                    Value="c" />
-            </propertyGrid:SettingsControl>
+            </propertyGrid:Rows>
         </GroupBox>
 
         <GroupBox Header="Width 15 20 25 abcd">
-            <propertyGrid:SettingsControl HorizontalAlignment="Left"
+            <propertyGrid:Rows HorizontalAlignment="Left"
                                           Background="AliceBlue"
                                           HeaderWidth="15"
                                           SuffixWidth="25"
                                           ValueWidth="20">
-                <propertyGrid:StringSettingControl Header="a"
+                <propertyGrid:StringRow Header="a"
                                                    Suffix="b"
                                                    Value="c" />
-                <propertyGrid:StringSettingControl Header="abcd"
+                <propertyGrid:StringRow Header="abcd"
                                                    Suffix="abcdefgh"
                                                    Value="abcdef" />
-            </propertyGrid:SettingsControl>
+            </propertyGrid:Rows>
         </GroupBox>
 
         <GroupBox Header="MinWidth 15 20 25">
-            <propertyGrid:SettingsControl HorizontalAlignment="Left"
+            <propertyGrid:Rows HorizontalAlignment="Left"
                                           Background="AliceBlue"
                                           HeaderMinWidth="15"
                                           SuffixMinWidth="25"
                                           ValueMinWidth="20">
-                <propertyGrid:StringSettingControl Header="a"
+                <propertyGrid:StringRow Header="a"
                                                    Suffix="b"
                                                    Value="c" />
-            </propertyGrid:SettingsControl>
+            </propertyGrid:Rows>
         </GroupBox>
 
         <GroupBox Header="MinWidth 15 20 25 abcd">
-            <propertyGrid:SettingsControl HorizontalAlignment="Left"
+            <propertyGrid:Rows HorizontalAlignment="Left"
                                           Background="AliceBlue"
                                           HeaderMinWidth="15"
                                           SuffixMinWidth="25"
                                           ValueMinWidth="20">
-                <propertyGrid:StringSettingControl Header="a"
+                <propertyGrid:StringRow Header="a"
                                                    Suffix="b"
                                                    Value="c" />
-                <propertyGrid:StringSettingControl Header="abcd"
+                <propertyGrid:StringRow Header="abcd"
                                                    Suffix="abcdefgh"
                                                    Value="abcdef" />
-            </propertyGrid:SettingsControl>
+            </propertyGrid:Rows>
         </GroupBox>
 
         <GroupBox Header="MaxWidth 15 20 25">
-            <propertyGrid:SettingsControl HorizontalAlignment="Left"
+            <propertyGrid:Rows HorizontalAlignment="Left"
                                           Background="AliceBlue"
                                           HeaderMaxWidth="15"
                                           SuffixMaxWidth="25"
                                           ValueMaxWidth="20">
-                <propertyGrid:StringSettingControl Header="a"
+                <propertyGrid:StringRow Header="a"
                                                    Suffix="b"
                                                    Value="b" />
-            </propertyGrid:SettingsControl>
+            </propertyGrid:Rows>
         </GroupBox>
 
         <GroupBox Header="MaxWidth 15 20 25 abcd">
-            <propertyGrid:SettingsControl HorizontalAlignment="Left"
+            <propertyGrid:Rows HorizontalAlignment="Left"
                                           Background="AliceBlue"
                                           HeaderMaxWidth="15"
                                           SuffixMaxWidth="25"
                                           ValueMaxWidth="20">
-                <propertyGrid:StringSettingControl Header="a"
+                <propertyGrid:StringRow Header="a"
                                                    Suffix="b"
                                                    Value="b" />
-                <propertyGrid:StringSettingControl Header="abcd"
+                <propertyGrid:StringRow Header="abcd"
                                                    Suffix="abcdefgh"
                                                    Value="abcdef" />
-            </propertyGrid:SettingsControl>
+            </propertyGrid:Rows>
         </GroupBox>
     </StackPanel>
 </Window>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

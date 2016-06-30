@@ -9,7 +9,7 @@
     {
         public FocusWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

@@ -9,53 +9,116 @@
         mc:Ignorable="d">
     <StackPanel>
         <GroupBox Header="nested longer">
-            <propertyGrid:SettingsControl HorizontalAlignment="Left" Background="DarkKhaki">
-                <propertyGrid:StringSettingControl Background="Yellow"
+            <propertyGrid:Rows HorizontalAlignment="Left" Background="DarkKhaki">
+                <propertyGrid:StringRow Background="Yellow"
                                                    Header="root"
                                                    Suffix="root suffix"
                                                    Value="root value" />
 
                 <TextBlock>First nested below</TextBlock>
-                <propertyGrid:SettingsControl Background="GreenYellow" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
-                    <propertyGrid:StringSettingControl Background="CornflowerBlue"
+                <propertyGrid:Rows Background="GreenYellow" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
+                    <propertyGrid:StringRow Background="CornflowerBlue"
                                                        Header="a"
                                                        Suffix="b"
                                                        Value="c" />
-                </propertyGrid:SettingsControl>
+                </propertyGrid:Rows>
 
                 <TextBlock>Second nested below</TextBlock>
-                <propertyGrid:SettingsControl Background="BurlyWood" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
-                    <propertyGrid:StringSettingControl Background="Orange"
+                <propertyGrid:Rows Background="BurlyWood" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
+                    <propertyGrid:StringRow Background="Orange"
                                                        Header="long header"
                                                        Suffix="really long suffix"
                                                        Value="really long value" />
-                </propertyGrid:SettingsControl>
-            </propertyGrid:SettingsControl>
+                </propertyGrid:Rows>
+            </propertyGrid:Rows>
         </GroupBox>
 
         <GroupBox Header="nested shorter">
-            <propertyGrid:SettingsControl HorizontalAlignment="Left" Background="NavajoWhite">
-                <propertyGrid:StringSettingControl Background="Tan"
+            <propertyGrid:Rows HorizontalAlignment="Left" Background="NavajoWhite">
+                <propertyGrid:StringRow Background="Tan"
                                                    Header="root"
                                                    Suffix="suffix"
                                                    Value="value" />
 
                 <TextBlock>First nested below</TextBlock>
-                <propertyGrid:SettingsControl Background="OldLace" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
-                    <propertyGrid:StringSettingControl Background="PaleGreen"
+                <propertyGrid:Rows Background="OldLace" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
+                    <propertyGrid:StringRow Background="PaleGreen"
                                                        Header="a"
                                                        Suffix="ab"
                                                        Value="ac" />
-                </propertyGrid:SettingsControl>
+                </propertyGrid:Rows>
 
                 <TextBlock>Second nested below</TextBlock>
-                <propertyGrid:SettingsControl Background="IndianRed" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
-                    <propertyGrid:StringSettingControl Background="LightGoldenrodYellow"
+                <propertyGrid:Rows Background="IndianRed" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
+                    <propertyGrid:StringRow Background="LightGoldenrodYellow"
                                                        Header="b"
                                                        Suffix="bb"
                                                        Value="bc" />
-                </propertyGrid:SettingsControl>
-            </propertyGrid:SettingsControl>
+                </propertyGrid:Rows>
+            </propertyGrid:Rows>
         </GroupBox>
     </StackPanel>
 </Window>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

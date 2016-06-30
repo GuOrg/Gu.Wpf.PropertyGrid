@@ -49,8 +49,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DoubleSettingControl.cs" />
-    <Compile Include="IntSettingControl.cs" />
+    <Compile Include="DoubleRow.cs" />
+    <Compile Include="IntRow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -9,7 +9,7 @@
     {
         public NestedWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

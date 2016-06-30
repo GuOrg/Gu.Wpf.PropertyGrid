@@ -4,953 +4,953 @@
 	using System.Windows.Data;
     using Gu.Units;
 
-    public class AccelerationSettingControl : UnitSettingControl<Acceleration, AccelerationUnit>
+    public class AccelerationRow : UnitRow<Acceleration, AccelerationUnit>
     {
         public static readonly AccelerationUnit DefaultUnit = AccelerationUnit.MetresPerSecondSquared;
 
-        static AccelerationSettingControl()
+        static AccelerationRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AccelerationSettingControl), new FrameworkPropertyMetadata(typeof(AccelerationSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(AccelerationSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(AccelerationRow), new FrameworkPropertyMetadata(typeof(AccelerationRow)));
+            UnitProperty.OverrideMetadata(typeof(AccelerationRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(AccelerationSettingControl),
+                typeof(AccelerationRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AccelerationSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AccelerationRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class AmountOfSubstanceSettingControl : UnitSettingControl<AmountOfSubstance, AmountOfSubstanceUnit>
+    public class AmountOfSubstanceRow : UnitRow<AmountOfSubstance, AmountOfSubstanceUnit>
     {
         public static readonly AmountOfSubstanceUnit DefaultUnit = AmountOfSubstanceUnit.Moles;
 
-        static AmountOfSubstanceSettingControl()
+        static AmountOfSubstanceRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AmountOfSubstanceSettingControl), new FrameworkPropertyMetadata(typeof(AmountOfSubstanceSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(AmountOfSubstanceSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(AmountOfSubstanceRow), new FrameworkPropertyMetadata(typeof(AmountOfSubstanceRow)));
+            UnitProperty.OverrideMetadata(typeof(AmountOfSubstanceRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(AmountOfSubstanceSettingControl),
+                typeof(AmountOfSubstanceRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AmountOfSubstanceSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AmountOfSubstanceRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class AngleSettingControl : UnitSettingControl<Angle, AngleUnit>
+    public class AngleRow : UnitRow<Angle, AngleUnit>
     {
         public static readonly AngleUnit DefaultUnit = AngleUnit.Degrees;
 
-        static AngleSettingControl()
+        static AngleRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AngleSettingControl), new FrameworkPropertyMetadata(typeof(AngleSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(AngleSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(AngleRow), new FrameworkPropertyMetadata(typeof(AngleRow)));
+            UnitProperty.OverrideMetadata(typeof(AngleRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(AngleSettingControl),
+                typeof(AngleRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngleSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngleRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class AnglePerUnitlessSettingControl : UnitSettingControl<AnglePerUnitless, AnglePerUnitlessUnit>
+    public class AnglePerUnitlessRow : UnitRow<AnglePerUnitless, AnglePerUnitlessUnit>
     {
         public static readonly AnglePerUnitlessUnit DefaultUnit = AnglePerUnitlessUnit.RadiansPerUnitless;
 
-        static AnglePerUnitlessSettingControl()
+        static AnglePerUnitlessRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AnglePerUnitlessSettingControl), new FrameworkPropertyMetadata(typeof(AnglePerUnitlessSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(AnglePerUnitlessSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(AnglePerUnitlessRow), new FrameworkPropertyMetadata(typeof(AnglePerUnitlessRow)));
+            UnitProperty.OverrideMetadata(typeof(AnglePerUnitlessRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(AnglePerUnitlessSettingControl),
+                typeof(AnglePerUnitlessRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AnglePerUnitlessSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AnglePerUnitlessRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class AngularAccelerationSettingControl : UnitSettingControl<AngularAcceleration, AngularAccelerationUnit>
+    public class AngularAccelerationRow : UnitRow<AngularAcceleration, AngularAccelerationUnit>
     {
         public static readonly AngularAccelerationUnit DefaultUnit = AngularAccelerationUnit.RadiansPerSecondSquared;
 
-        static AngularAccelerationSettingControl()
+        static AngularAccelerationRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AngularAccelerationSettingControl), new FrameworkPropertyMetadata(typeof(AngularAccelerationSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(AngularAccelerationSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(AngularAccelerationRow), new FrameworkPropertyMetadata(typeof(AngularAccelerationRow)));
+            UnitProperty.OverrideMetadata(typeof(AngularAccelerationRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(AngularAccelerationSettingControl),
+                typeof(AngularAccelerationRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngularAccelerationSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngularAccelerationRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class AngularJerkSettingControl : UnitSettingControl<AngularJerk, AngularJerkUnit>
+    public class AngularJerkRow : UnitRow<AngularJerk, AngularJerkUnit>
     {
         public static readonly AngularJerkUnit DefaultUnit = AngularJerkUnit.RadiansPerSecondCubed;
 
-        static AngularJerkSettingControl()
+        static AngularJerkRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AngularJerkSettingControl), new FrameworkPropertyMetadata(typeof(AngularJerkSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(AngularJerkSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(AngularJerkRow), new FrameworkPropertyMetadata(typeof(AngularJerkRow)));
+            UnitProperty.OverrideMetadata(typeof(AngularJerkRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(AngularJerkSettingControl),
+                typeof(AngularJerkRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngularJerkSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngularJerkRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class AngularSpeedSettingControl : UnitSettingControl<AngularSpeed, AngularSpeedUnit>
+    public class AngularSpeedRow : UnitRow<AngularSpeed, AngularSpeedUnit>
     {
         public static readonly AngularSpeedUnit DefaultUnit = AngularSpeedUnit.RadiansPerSecond;
 
-        static AngularSpeedSettingControl()
+        static AngularSpeedRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AngularSpeedSettingControl), new FrameworkPropertyMetadata(typeof(AngularSpeedSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(AngularSpeedSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(AngularSpeedRow), new FrameworkPropertyMetadata(typeof(AngularSpeedRow)));
+            UnitProperty.OverrideMetadata(typeof(AngularSpeedRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(AngularSpeedSettingControl),
+                typeof(AngularSpeedRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngularSpeedSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngularSpeedRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class AreaSettingControl : UnitSettingControl<Area, AreaUnit>
+    public class AreaRow : UnitRow<Area, AreaUnit>
     {
         public static readonly AreaUnit DefaultUnit = AreaUnit.SquareMetres;
 
-        static AreaSettingControl()
+        static AreaRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AreaSettingControl), new FrameworkPropertyMetadata(typeof(AreaSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(AreaSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(AreaRow), new FrameworkPropertyMetadata(typeof(AreaRow)));
+            UnitProperty.OverrideMetadata(typeof(AreaRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(AreaSettingControl),
+                typeof(AreaRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AreaSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AreaRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class AreaDensitySettingControl : UnitSettingControl<AreaDensity, AreaDensityUnit>
+    public class AreaDensityRow : UnitRow<AreaDensity, AreaDensityUnit>
     {
         public static readonly AreaDensityUnit DefaultUnit = AreaDensityUnit.KilogramsPerSquareMetre;
 
-        static AreaDensitySettingControl()
+        static AreaDensityRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AreaDensitySettingControl), new FrameworkPropertyMetadata(typeof(AreaDensitySettingControl)));
-            UnitProperty.OverrideMetadata(typeof(AreaDensitySettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(AreaDensityRow), new FrameworkPropertyMetadata(typeof(AreaDensityRow)));
+            UnitProperty.OverrideMetadata(typeof(AreaDensityRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(AreaDensitySettingControl),
+                typeof(AreaDensityRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AreaDensitySettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AreaDensityRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class CapacitanceSettingControl : UnitSettingControl<Capacitance, CapacitanceUnit>
+    public class CapacitanceRow : UnitRow<Capacitance, CapacitanceUnit>
     {
         public static readonly CapacitanceUnit DefaultUnit = CapacitanceUnit.Farads;
 
-        static CapacitanceSettingControl()
+        static CapacitanceRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(CapacitanceSettingControl), new FrameworkPropertyMetadata(typeof(CapacitanceSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(CapacitanceSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(CapacitanceRow), new FrameworkPropertyMetadata(typeof(CapacitanceRow)));
+            UnitProperty.OverrideMetadata(typeof(CapacitanceRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(CapacitanceSettingControl),
+                typeof(CapacitanceRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(CapacitanceSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(CapacitanceRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class CatalyticActivitySettingControl : UnitSettingControl<CatalyticActivity, CatalyticActivityUnit>
+    public class CatalyticActivityRow : UnitRow<CatalyticActivity, CatalyticActivityUnit>
     {
         public static readonly CatalyticActivityUnit DefaultUnit = CatalyticActivityUnit.Katals;
 
-        static CatalyticActivitySettingControl()
+        static CatalyticActivityRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(CatalyticActivitySettingControl), new FrameworkPropertyMetadata(typeof(CatalyticActivitySettingControl)));
-            UnitProperty.OverrideMetadata(typeof(CatalyticActivitySettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(CatalyticActivityRow), new FrameworkPropertyMetadata(typeof(CatalyticActivityRow)));
+            UnitProperty.OverrideMetadata(typeof(CatalyticActivityRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(CatalyticActivitySettingControl),
+                typeof(CatalyticActivityRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(CatalyticActivitySettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(CatalyticActivityRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class CurrentSettingControl : UnitSettingControl<Current, CurrentUnit>
+    public class CurrentRow : UnitRow<Current, CurrentUnit>
     {
         public static readonly CurrentUnit DefaultUnit = CurrentUnit.Amperes;
 
-        static CurrentSettingControl()
+        static CurrentRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(CurrentSettingControl), new FrameworkPropertyMetadata(typeof(CurrentSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(CurrentSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(CurrentRow), new FrameworkPropertyMetadata(typeof(CurrentRow)));
+            UnitProperty.OverrideMetadata(typeof(CurrentRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(CurrentSettingControl),
+                typeof(CurrentRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(CurrentSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(CurrentRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class DataSettingControl : UnitSettingControl<Data, DataUnit>
+    public class DataRow : UnitRow<Data, DataUnit>
     {
         public static readonly DataUnit DefaultUnit = DataUnit.Bits;
 
-        static DataSettingControl()
+        static DataRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(DataSettingControl), new FrameworkPropertyMetadata(typeof(DataSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(DataSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(DataRow), new FrameworkPropertyMetadata(typeof(DataRow)));
+            UnitProperty.OverrideMetadata(typeof(DataRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(DataSettingControl),
+                typeof(DataRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(DataSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(DataRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class DensitySettingControl : UnitSettingControl<Density, DensityUnit>
+    public class DensityRow : UnitRow<Density, DensityUnit>
     {
         public static readonly DensityUnit DefaultUnit = DensityUnit.KilogramsPerCubicMetre;
 
-        static DensitySettingControl()
+        static DensityRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(DensitySettingControl), new FrameworkPropertyMetadata(typeof(DensitySettingControl)));
-            UnitProperty.OverrideMetadata(typeof(DensitySettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(DensityRow), new FrameworkPropertyMetadata(typeof(DensityRow)));
+            UnitProperty.OverrideMetadata(typeof(DensityRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(DensitySettingControl),
+                typeof(DensityRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(DensitySettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(DensityRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class ElectricalConductanceSettingControl : UnitSettingControl<ElectricalConductance, ElectricalConductanceUnit>
+    public class ElectricalConductanceRow : UnitRow<ElectricalConductance, ElectricalConductanceUnit>
     {
         public static readonly ElectricalConductanceUnit DefaultUnit = ElectricalConductanceUnit.Siemens;
 
-        static ElectricalConductanceSettingControl()
+        static ElectricalConductanceRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ElectricalConductanceSettingControl), new FrameworkPropertyMetadata(typeof(ElectricalConductanceSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(ElectricalConductanceSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ElectricalConductanceRow), new FrameworkPropertyMetadata(typeof(ElectricalConductanceRow)));
+            UnitProperty.OverrideMetadata(typeof(ElectricalConductanceRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(ElectricalConductanceSettingControl),
+                typeof(ElectricalConductanceRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ElectricalConductanceSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ElectricalConductanceRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class ElectricChargeSettingControl : UnitSettingControl<ElectricCharge, ElectricChargeUnit>
+    public class ElectricChargeRow : UnitRow<ElectricCharge, ElectricChargeUnit>
     {
         public static readonly ElectricChargeUnit DefaultUnit = ElectricChargeUnit.Coulombs;
 
-        static ElectricChargeSettingControl()
+        static ElectricChargeRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ElectricChargeSettingControl), new FrameworkPropertyMetadata(typeof(ElectricChargeSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(ElectricChargeSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ElectricChargeRow), new FrameworkPropertyMetadata(typeof(ElectricChargeRow)));
+            UnitProperty.OverrideMetadata(typeof(ElectricChargeRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(ElectricChargeSettingControl),
+                typeof(ElectricChargeRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ElectricChargeSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ElectricChargeRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class EnergySettingControl : UnitSettingControl<Energy, EnergyUnit>
+    public class EnergyRow : UnitRow<Energy, EnergyUnit>
     {
         public static readonly EnergyUnit DefaultUnit = EnergyUnit.Joules;
 
-        static EnergySettingControl()
+        static EnergyRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(EnergySettingControl), new FrameworkPropertyMetadata(typeof(EnergySettingControl)));
-            UnitProperty.OverrideMetadata(typeof(EnergySettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(EnergyRow), new FrameworkPropertyMetadata(typeof(EnergyRow)));
+            UnitProperty.OverrideMetadata(typeof(EnergyRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(EnergySettingControl),
+                typeof(EnergyRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(EnergySettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(EnergyRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class FlexibilitySettingControl : UnitSettingControl<Flexibility, FlexibilityUnit>
+    public class FlexibilityRow : UnitRow<Flexibility, FlexibilityUnit>
     {
         public static readonly FlexibilityUnit DefaultUnit = FlexibilityUnit.MetresPerNewton;
 
-        static FlexibilitySettingControl()
+        static FlexibilityRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(FlexibilitySettingControl), new FrameworkPropertyMetadata(typeof(FlexibilitySettingControl)));
-            UnitProperty.OverrideMetadata(typeof(FlexibilitySettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(FlexibilityRow), new FrameworkPropertyMetadata(typeof(FlexibilityRow)));
+            UnitProperty.OverrideMetadata(typeof(FlexibilityRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(FlexibilitySettingControl),
+                typeof(FlexibilityRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(FlexibilitySettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(FlexibilityRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class ForceSettingControl : UnitSettingControl<Force, ForceUnit>
+    public class ForceRow : UnitRow<Force, ForceUnit>
     {
         public static readonly ForceUnit DefaultUnit = ForceUnit.Newtons;
 
-        static ForceSettingControl()
+        static ForceRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ForceSettingControl), new FrameworkPropertyMetadata(typeof(ForceSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(ForceSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ForceRow), new FrameworkPropertyMetadata(typeof(ForceRow)));
+            UnitProperty.OverrideMetadata(typeof(ForceRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(ForceSettingControl),
+                typeof(ForceRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ForceSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ForceRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class ForcePerUnitlessSettingControl : UnitSettingControl<ForcePerUnitless, ForcePerUnitlessUnit>
+    public class ForcePerUnitlessRow : UnitRow<ForcePerUnitless, ForcePerUnitlessUnit>
     {
         public static readonly ForcePerUnitlessUnit DefaultUnit = ForcePerUnitlessUnit.NewtonsPerUnitless;
 
-        static ForcePerUnitlessSettingControl()
+        static ForcePerUnitlessRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ForcePerUnitlessSettingControl), new FrameworkPropertyMetadata(typeof(ForcePerUnitlessSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(ForcePerUnitlessSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ForcePerUnitlessRow), new FrameworkPropertyMetadata(typeof(ForcePerUnitlessRow)));
+            UnitProperty.OverrideMetadata(typeof(ForcePerUnitlessRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(ForcePerUnitlessSettingControl),
+                typeof(ForcePerUnitlessRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ForcePerUnitlessSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ForcePerUnitlessRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class FrequencySettingControl : UnitSettingControl<Frequency, FrequencyUnit>
+    public class FrequencyRow : UnitRow<Frequency, FrequencyUnit>
     {
         public static readonly FrequencyUnit DefaultUnit = FrequencyUnit.Hertz;
 
-        static FrequencySettingControl()
+        static FrequencyRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(FrequencySettingControl), new FrameworkPropertyMetadata(typeof(FrequencySettingControl)));
-            UnitProperty.OverrideMetadata(typeof(FrequencySettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(FrequencyRow), new FrameworkPropertyMetadata(typeof(FrequencyRow)));
+            UnitProperty.OverrideMetadata(typeof(FrequencyRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(FrequencySettingControl),
+                typeof(FrequencyRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(FrequencySettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(FrequencyRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class IlluminanceSettingControl : UnitSettingControl<Illuminance, IlluminanceUnit>
+    public class IlluminanceRow : UnitRow<Illuminance, IlluminanceUnit>
     {
         public static readonly IlluminanceUnit DefaultUnit = IlluminanceUnit.Lux;
 
-        static IlluminanceSettingControl()
+        static IlluminanceRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(IlluminanceSettingControl), new FrameworkPropertyMetadata(typeof(IlluminanceSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(IlluminanceSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(IlluminanceRow), new FrameworkPropertyMetadata(typeof(IlluminanceRow)));
+            UnitProperty.OverrideMetadata(typeof(IlluminanceRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(IlluminanceSettingControl),
+                typeof(IlluminanceRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(IlluminanceSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(IlluminanceRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class InductanceSettingControl : UnitSettingControl<Inductance, InductanceUnit>
+    public class InductanceRow : UnitRow<Inductance, InductanceUnit>
     {
         public static readonly InductanceUnit DefaultUnit = InductanceUnit.Henrys;
 
-        static InductanceSettingControl()
+        static InductanceRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(InductanceSettingControl), new FrameworkPropertyMetadata(typeof(InductanceSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(InductanceSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(InductanceRow), new FrameworkPropertyMetadata(typeof(InductanceRow)));
+            UnitProperty.OverrideMetadata(typeof(InductanceRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(InductanceSettingControl),
+                typeof(InductanceRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(InductanceSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(InductanceRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class JerkSettingControl : UnitSettingControl<Jerk, JerkUnit>
+    public class JerkRow : UnitRow<Jerk, JerkUnit>
     {
         public static readonly JerkUnit DefaultUnit = JerkUnit.MetresPerSecondCubed;
 
-        static JerkSettingControl()
+        static JerkRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(JerkSettingControl), new FrameworkPropertyMetadata(typeof(JerkSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(JerkSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(JerkRow), new FrameworkPropertyMetadata(typeof(JerkRow)));
+            UnitProperty.OverrideMetadata(typeof(JerkRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(JerkSettingControl),
+                typeof(JerkRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(JerkSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(JerkRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class KinematicViscositySettingControl : UnitSettingControl<KinematicViscosity, KinematicViscosityUnit>
+    public class KinematicViscosityRow : UnitRow<KinematicViscosity, KinematicViscosityUnit>
     {
         public static readonly KinematicViscosityUnit DefaultUnit = KinematicViscosityUnit.SquareMetresPerSecond;
 
-        static KinematicViscositySettingControl()
+        static KinematicViscosityRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(KinematicViscositySettingControl), new FrameworkPropertyMetadata(typeof(KinematicViscositySettingControl)));
-            UnitProperty.OverrideMetadata(typeof(KinematicViscositySettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(KinematicViscosityRow), new FrameworkPropertyMetadata(typeof(KinematicViscosityRow)));
+            UnitProperty.OverrideMetadata(typeof(KinematicViscosityRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(KinematicViscositySettingControl),
+                typeof(KinematicViscosityRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(KinematicViscositySettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(KinematicViscosityRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class LengthSettingControl : UnitSettingControl<Length, LengthUnit>
+    public class LengthRow : UnitRow<Length, LengthUnit>
     {
         public static readonly LengthUnit DefaultUnit = LengthUnit.Millimetres;
 
-        static LengthSettingControl()
+        static LengthRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(LengthSettingControl), new FrameworkPropertyMetadata(typeof(LengthSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(LengthSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(LengthRow), new FrameworkPropertyMetadata(typeof(LengthRow)));
+            UnitProperty.OverrideMetadata(typeof(LengthRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(LengthSettingControl),
+                typeof(LengthRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LengthSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LengthRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class LengthPerUnitlessSettingControl : UnitSettingControl<LengthPerUnitless, LengthPerUnitlessUnit>
+    public class LengthPerUnitlessRow : UnitRow<LengthPerUnitless, LengthPerUnitlessUnit>
     {
         public static readonly LengthPerUnitlessUnit DefaultUnit = LengthPerUnitlessUnit.MetresPerUnitless;
 
-        static LengthPerUnitlessSettingControl()
+        static LengthPerUnitlessRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(LengthPerUnitlessSettingControl), new FrameworkPropertyMetadata(typeof(LengthPerUnitlessSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(LengthPerUnitlessSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(LengthPerUnitlessRow), new FrameworkPropertyMetadata(typeof(LengthPerUnitlessRow)));
+            UnitProperty.OverrideMetadata(typeof(LengthPerUnitlessRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(LengthPerUnitlessSettingControl),
+                typeof(LengthPerUnitlessRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LengthPerUnitlessSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LengthPerUnitlessRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class LuminousFluxSettingControl : UnitSettingControl<LuminousFlux, LuminousFluxUnit>
+    public class LuminousFluxRow : UnitRow<LuminousFlux, LuminousFluxUnit>
     {
         public static readonly LuminousFluxUnit DefaultUnit = LuminousFluxUnit.Lumens;
 
-        static LuminousFluxSettingControl()
+        static LuminousFluxRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(LuminousFluxSettingControl), new FrameworkPropertyMetadata(typeof(LuminousFluxSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(LuminousFluxSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(LuminousFluxRow), new FrameworkPropertyMetadata(typeof(LuminousFluxRow)));
+            UnitProperty.OverrideMetadata(typeof(LuminousFluxRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(LuminousFluxSettingControl),
+                typeof(LuminousFluxRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LuminousFluxSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LuminousFluxRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class LuminousIntensitySettingControl : UnitSettingControl<LuminousIntensity, LuminousIntensityUnit>
+    public class LuminousIntensityRow : UnitRow<LuminousIntensity, LuminousIntensityUnit>
     {
         public static readonly LuminousIntensityUnit DefaultUnit = LuminousIntensityUnit.Candelas;
 
-        static LuminousIntensitySettingControl()
+        static LuminousIntensityRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(LuminousIntensitySettingControl), new FrameworkPropertyMetadata(typeof(LuminousIntensitySettingControl)));
-            UnitProperty.OverrideMetadata(typeof(LuminousIntensitySettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(LuminousIntensityRow), new FrameworkPropertyMetadata(typeof(LuminousIntensityRow)));
+            UnitProperty.OverrideMetadata(typeof(LuminousIntensityRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(LuminousIntensitySettingControl),
+                typeof(LuminousIntensityRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LuminousIntensitySettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LuminousIntensityRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class MagneticFieldStrengthSettingControl : UnitSettingControl<MagneticFieldStrength, MagneticFieldStrengthUnit>
+    public class MagneticFieldStrengthRow : UnitRow<MagneticFieldStrength, MagneticFieldStrengthUnit>
     {
         public static readonly MagneticFieldStrengthUnit DefaultUnit = MagneticFieldStrengthUnit.Teslas;
 
-        static MagneticFieldStrengthSettingControl()
+        static MagneticFieldStrengthRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(MagneticFieldStrengthSettingControl), new FrameworkPropertyMetadata(typeof(MagneticFieldStrengthSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(MagneticFieldStrengthSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(MagneticFieldStrengthRow), new FrameworkPropertyMetadata(typeof(MagneticFieldStrengthRow)));
+            UnitProperty.OverrideMetadata(typeof(MagneticFieldStrengthRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(MagneticFieldStrengthSettingControl),
+                typeof(MagneticFieldStrengthRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MagneticFieldStrengthSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MagneticFieldStrengthRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class MagneticFluxSettingControl : UnitSettingControl<MagneticFlux, MagneticFluxUnit>
+    public class MagneticFluxRow : UnitRow<MagneticFlux, MagneticFluxUnit>
     {
         public static readonly MagneticFluxUnit DefaultUnit = MagneticFluxUnit.Webers;
 
-        static MagneticFluxSettingControl()
+        static MagneticFluxRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(MagneticFluxSettingControl), new FrameworkPropertyMetadata(typeof(MagneticFluxSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(MagneticFluxSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(MagneticFluxRow), new FrameworkPropertyMetadata(typeof(MagneticFluxRow)));
+            UnitProperty.OverrideMetadata(typeof(MagneticFluxRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(MagneticFluxSettingControl),
+                typeof(MagneticFluxRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MagneticFluxSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MagneticFluxRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class MassSettingControl : UnitSettingControl<Mass, MassUnit>
+    public class MassRow : UnitRow<Mass, MassUnit>
     {
         public static readonly MassUnit DefaultUnit = MassUnit.Kilograms;
 
-        static MassSettingControl()
+        static MassRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(MassSettingControl), new FrameworkPropertyMetadata(typeof(MassSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(MassSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(MassRow), new FrameworkPropertyMetadata(typeof(MassRow)));
+            UnitProperty.OverrideMetadata(typeof(MassRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(MassSettingControl),
+                typeof(MassRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MassSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MassRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class MassFlowSettingControl : UnitSettingControl<MassFlow, MassFlowUnit>
+    public class MassFlowRow : UnitRow<MassFlow, MassFlowUnit>
     {
         public static readonly MassFlowUnit DefaultUnit = MassFlowUnit.KilogramsPerSecond;
 
-        static MassFlowSettingControl()
+        static MassFlowRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(MassFlowSettingControl), new FrameworkPropertyMetadata(typeof(MassFlowSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(MassFlowSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(MassFlowRow), new FrameworkPropertyMetadata(typeof(MassFlowRow)));
+            UnitProperty.OverrideMetadata(typeof(MassFlowRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(MassFlowSettingControl),
+                typeof(MassFlowRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MassFlowSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MassFlowRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class MomentumSettingControl : UnitSettingControl<Momentum, MomentumUnit>
+    public class MomentumRow : UnitRow<Momentum, MomentumUnit>
     {
         public static readonly MomentumUnit DefaultUnit = MomentumUnit.NewtonSecond;
 
-        static MomentumSettingControl()
+        static MomentumRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(MomentumSettingControl), new FrameworkPropertyMetadata(typeof(MomentumSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(MomentumSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(MomentumRow), new FrameworkPropertyMetadata(typeof(MomentumRow)));
+            UnitProperty.OverrideMetadata(typeof(MomentumRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(MomentumSettingControl),
+                typeof(MomentumRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MomentumSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MomentumRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class PowerSettingControl : UnitSettingControl<Power, PowerUnit>
+    public class PowerRow : UnitRow<Power, PowerUnit>
     {
         public static readonly PowerUnit DefaultUnit = PowerUnit.Watts;
 
-        static PowerSettingControl()
+        static PowerRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(PowerSettingControl), new FrameworkPropertyMetadata(typeof(PowerSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(PowerSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(PowerRow), new FrameworkPropertyMetadata(typeof(PowerRow)));
+            UnitProperty.OverrideMetadata(typeof(PowerRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(PowerSettingControl),
+                typeof(PowerRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(PowerSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(PowerRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class PressureSettingControl : UnitSettingControl<Pressure, PressureUnit>
+    public class PressureRow : UnitRow<Pressure, PressureUnit>
     {
         public static readonly PressureUnit DefaultUnit = PressureUnit.Megapascals;
 
-        static PressureSettingControl()
+        static PressureRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(PressureSettingControl), new FrameworkPropertyMetadata(typeof(PressureSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(PressureSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(PressureRow), new FrameworkPropertyMetadata(typeof(PressureRow)));
+            UnitProperty.OverrideMetadata(typeof(PressureRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(PressureSettingControl),
+                typeof(PressureRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(PressureSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(PressureRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class ResistanceSettingControl : UnitSettingControl<Resistance, ResistanceUnit>
+    public class ResistanceRow : UnitRow<Resistance, ResistanceUnit>
     {
         public static readonly ResistanceUnit DefaultUnit = ResistanceUnit.Ohms;
 
-        static ResistanceSettingControl()
+        static ResistanceRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ResistanceSettingControl), new FrameworkPropertyMetadata(typeof(ResistanceSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(ResistanceSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ResistanceRow), new FrameworkPropertyMetadata(typeof(ResistanceRow)));
+            UnitProperty.OverrideMetadata(typeof(ResistanceRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(ResistanceSettingControl),
+                typeof(ResistanceRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ResistanceSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ResistanceRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class SolidAngleSettingControl : UnitSettingControl<SolidAngle, SolidAngleUnit>
+    public class SolidAngleRow : UnitRow<SolidAngle, SolidAngleUnit>
     {
         public static readonly SolidAngleUnit DefaultUnit = SolidAngleUnit.Steradians;
 
-        static SolidAngleSettingControl()
+        static SolidAngleRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SolidAngleSettingControl), new FrameworkPropertyMetadata(typeof(SolidAngleSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(SolidAngleSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(SolidAngleRow), new FrameworkPropertyMetadata(typeof(SolidAngleRow)));
+            UnitProperty.OverrideMetadata(typeof(SolidAngleRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(SolidAngleSettingControl),
+                typeof(SolidAngleRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SolidAngleSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SolidAngleRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class SpecificEnergySettingControl : UnitSettingControl<SpecificEnergy, SpecificEnergyUnit>
+    public class SpecificEnergyRow : UnitRow<SpecificEnergy, SpecificEnergyUnit>
     {
         public static readonly SpecificEnergyUnit DefaultUnit = SpecificEnergyUnit.JoulesPerKilogram;
 
-        static SpecificEnergySettingControl()
+        static SpecificEnergyRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SpecificEnergySettingControl), new FrameworkPropertyMetadata(typeof(SpecificEnergySettingControl)));
-            UnitProperty.OverrideMetadata(typeof(SpecificEnergySettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(SpecificEnergyRow), new FrameworkPropertyMetadata(typeof(SpecificEnergyRow)));
+            UnitProperty.OverrideMetadata(typeof(SpecificEnergyRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(SpecificEnergySettingControl),
+                typeof(SpecificEnergyRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SpecificEnergySettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SpecificEnergyRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class SpecificVolumeSettingControl : UnitSettingControl<SpecificVolume, SpecificVolumeUnit>
+    public class SpecificVolumeRow : UnitRow<SpecificVolume, SpecificVolumeUnit>
     {
         public static readonly SpecificVolumeUnit DefaultUnit = SpecificVolumeUnit.CubicMetresPerKilogram;
 
-        static SpecificVolumeSettingControl()
+        static SpecificVolumeRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SpecificVolumeSettingControl), new FrameworkPropertyMetadata(typeof(SpecificVolumeSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(SpecificVolumeSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(SpecificVolumeRow), new FrameworkPropertyMetadata(typeof(SpecificVolumeRow)));
+            UnitProperty.OverrideMetadata(typeof(SpecificVolumeRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(SpecificVolumeSettingControl),
+                typeof(SpecificVolumeRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SpecificVolumeSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SpecificVolumeRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class SpeedSettingControl : UnitSettingControl<Speed, SpeedUnit>
+    public class SpeedRow : UnitRow<Speed, SpeedUnit>
     {
         public static readonly SpeedUnit DefaultUnit = SpeedUnit.MetresPerSecond;
 
-        static SpeedSettingControl()
+        static SpeedRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SpeedSettingControl), new FrameworkPropertyMetadata(typeof(SpeedSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(SpeedSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(SpeedRow), new FrameworkPropertyMetadata(typeof(SpeedRow)));
+            UnitProperty.OverrideMetadata(typeof(SpeedRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(SpeedSettingControl),
+                typeof(SpeedRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SpeedSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SpeedRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class StiffnessSettingControl : UnitSettingControl<Stiffness, StiffnessUnit>
+    public class StiffnessRow : UnitRow<Stiffness, StiffnessUnit>
     {
         public static readonly StiffnessUnit DefaultUnit = StiffnessUnit.NewtonsPerMetre;
 
-        static StiffnessSettingControl()
+        static StiffnessRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(StiffnessSettingControl), new FrameworkPropertyMetadata(typeof(StiffnessSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(StiffnessSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(StiffnessRow), new FrameworkPropertyMetadata(typeof(StiffnessRow)));
+            UnitProperty.OverrideMetadata(typeof(StiffnessRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(StiffnessSettingControl),
+                typeof(StiffnessRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(StiffnessSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(StiffnessRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class TemperatureSettingControl : UnitSettingControl<Temperature, TemperatureUnit>
+    public class TemperatureRow : UnitRow<Temperature, TemperatureUnit>
     {
         public static readonly TemperatureUnit DefaultUnit = TemperatureUnit.Kelvin;
 
-        static TemperatureSettingControl()
+        static TemperatureRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(TemperatureSettingControl), new FrameworkPropertyMetadata(typeof(TemperatureSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(TemperatureSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(TemperatureRow), new FrameworkPropertyMetadata(typeof(TemperatureRow)));
+            UnitProperty.OverrideMetadata(typeof(TemperatureRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(TemperatureSettingControl),
+                typeof(TemperatureRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(TemperatureSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(TemperatureRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class TimeSettingControl : UnitSettingControl<Time, TimeUnit>
+    public class TimeRow : UnitRow<Time, TimeUnit>
     {
         public static readonly TimeUnit DefaultUnit = TimeUnit.Seconds;
 
-        static TimeSettingControl()
+        static TimeRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(TimeSettingControl), new FrameworkPropertyMetadata(typeof(TimeSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(TimeSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(TimeRow), new FrameworkPropertyMetadata(typeof(TimeRow)));
+            UnitProperty.OverrideMetadata(typeof(TimeRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(TimeSettingControl),
+                typeof(TimeRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(TimeSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(TimeRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class TorqueSettingControl : UnitSettingControl<Torque, TorqueUnit>
+    public class TorqueRow : UnitRow<Torque, TorqueUnit>
     {
         public static readonly TorqueUnit DefaultUnit = TorqueUnit.NewtonMetres;
 
-        static TorqueSettingControl()
+        static TorqueRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(TorqueSettingControl), new FrameworkPropertyMetadata(typeof(TorqueSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(TorqueSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(TorqueRow), new FrameworkPropertyMetadata(typeof(TorqueRow)));
+            UnitProperty.OverrideMetadata(typeof(TorqueRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(TorqueSettingControl),
+                typeof(TorqueRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(TorqueSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(TorqueRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class UnitlessSettingControl : UnitSettingControl<Unitless, UnitlessUnit>
+    public class UnitlessRow : UnitRow<Unitless, UnitlessUnit>
     {
         public static readonly UnitlessUnit DefaultUnit = UnitlessUnit.Scalar;
 
-        static UnitlessSettingControl()
+        static UnitlessRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(UnitlessSettingControl), new FrameworkPropertyMetadata(typeof(UnitlessSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(UnitlessSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(UnitlessRow), new FrameworkPropertyMetadata(typeof(UnitlessRow)));
+            UnitProperty.OverrideMetadata(typeof(UnitlessRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(UnitlessSettingControl),
+                typeof(UnitlessRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(UnitlessSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(UnitlessRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class VoltageSettingControl : UnitSettingControl<Voltage, VoltageUnit>
+    public class VoltageRow : UnitRow<Voltage, VoltageUnit>
     {
         public static readonly VoltageUnit DefaultUnit = VoltageUnit.Volts;
 
-        static VoltageSettingControl()
+        static VoltageRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(VoltageSettingControl), new FrameworkPropertyMetadata(typeof(VoltageSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(VoltageSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(VoltageRow), new FrameworkPropertyMetadata(typeof(VoltageRow)));
+            UnitProperty.OverrideMetadata(typeof(VoltageRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(VoltageSettingControl),
+                typeof(VoltageRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(VoltageSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(VoltageRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class VolumeSettingControl : UnitSettingControl<Volume, VolumeUnit>
+    public class VolumeRow : UnitRow<Volume, VolumeUnit>
     {
         public static readonly VolumeUnit DefaultUnit = VolumeUnit.CubicMetres;
 
-        static VolumeSettingControl()
+        static VolumeRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(VolumeSettingControl), new FrameworkPropertyMetadata(typeof(VolumeSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(VolumeSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(VolumeRow), new FrameworkPropertyMetadata(typeof(VolumeRow)));
+            UnitProperty.OverrideMetadata(typeof(VolumeRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(VolumeSettingControl),
+                typeof(VolumeRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(VolumeSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(VolumeRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class VolumetricFlowSettingControl : UnitSettingControl<VolumetricFlow, VolumetricFlowUnit>
+    public class VolumetricFlowRow : UnitRow<VolumetricFlow, VolumetricFlowUnit>
     {
         public static readonly VolumetricFlowUnit DefaultUnit = VolumetricFlowUnit.CubicMetresPerSecond;
 
-        static VolumetricFlowSettingControl()
+        static VolumetricFlowRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(VolumetricFlowSettingControl), new FrameworkPropertyMetadata(typeof(VolumetricFlowSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(VolumetricFlowSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(VolumetricFlowRow), new FrameworkPropertyMetadata(typeof(VolumetricFlowRow)));
+            UnitProperty.OverrideMetadata(typeof(VolumetricFlowRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(VolumetricFlowSettingControl),
+                typeof(VolumetricFlowRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(VolumetricFlowSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(VolumetricFlowRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
-    public class WavenumberSettingControl : UnitSettingControl<Wavenumber, WavenumberUnit>
+    public class WavenumberRow : UnitRow<Wavenumber, WavenumberUnit>
     {
         public static readonly WavenumberUnit DefaultUnit = WavenumberUnit.ReciprocalMetres;
 
-        static WavenumberSettingControl()
+        static WavenumberRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(WavenumberSettingControl), new FrameworkPropertyMetadata(typeof(WavenumberSettingControl)));
-            UnitProperty.OverrideMetadata(typeof(WavenumberSettingControl), new PropertyMetadata(DefaultUnit, OnUnitChanged));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(WavenumberRow), new FrameworkPropertyMetadata(typeof(WavenumberRow)));
+            UnitProperty.OverrideMetadata(typeof(WavenumberRow), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
-                typeof(WavenumberSettingControl),
+                typeof(WavenumberRow),
                 new FrameworkPropertyMetadata(
                     CreateSuffix(DefaultUnit, 
-                    UnitSettingControl.DefaultSymbolFormat),
+                    UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(WavenumberSettingControl), UpdateSourceTrigger.LostFocus);
+			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(WavenumberRow), UpdateSourceTrigger.LostFocus);
         }
     }
 }

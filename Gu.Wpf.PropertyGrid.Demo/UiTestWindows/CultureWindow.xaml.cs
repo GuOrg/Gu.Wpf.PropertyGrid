@@ -2,9 +2,6 @@
 {
     using System.Windows;
 
-    /// <summary>
-    /// Interaction logic for CultureWindow.xaml
-    /// </summary>
     public partial class CultureWindow : Window
     {
         public CultureWindow()

@@ -5,12 +5,12 @@
     using NUnit.Framework;
 
     [Apartment(ApartmentState.STA)]
-    public class SettingControlBaseTests
+    public class StringRowTests
     {
         [Test]
         public void IsDirty()
         {
-            var control = new StringSettingControl();
+            var control = new StringRow();
             Assert.Null(control.IsDirty);
 
             control.Value = "1";

@@ -14,57 +14,57 @@
             <RowDefinition />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <propertyGrid:SettingsControl Grid.Row="0"
+        <propertyGrid:Rows Grid.Row="0"
                                       DataContext="{Binding EditableCopy}"
                                       UsePropertyNameAsHeader="True"
-                                      propertyGrid:SettingControl.OldDataContext="{Binding DataContext.LastSaved,
+                                      propertyGrid:PropertyGrid.OldDataContext="{Binding DataContext.LastSaved,
                                                                                            RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
             <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
                        Text="Core" />
 
-            <propertyGrid:StringSettingControl Value="{Binding StringValue}" />
+            <propertyGrid:StringRow Value="{Binding StringValue}" />
 
-            <propertyGrid:CheckBoxSettingControl Value="{Binding BoolValue}" />
+            <propertyGrid:CheckBoxRow Value="{Binding BoolValue}" />
 
-            <propertyGrid:ToggleButtonSettingControl Value="{Binding BoolValue}" />
+            <propertyGrid:ToggleButtonRow Value="{Binding BoolValue}" />
 
-            <propertyGrid:EnumSettingControl Value="{Binding CurrentStringComparison}" />
+            <propertyGrid:EnumRow Value="{Binding CurrentStringComparison}" />
 
-            <propertyGrid:SelectorSettingControl ItemsSource="{x:Static local:SettingsVm.LengthUnits}"
+            <propertyGrid:SelectorRow ItemsSource="{x:Static local:SettingsVm.LengthUnits}"
                                                  Value="{Binding CurrentLengthUnit}" />
 
             <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
-                       Text="NumericSettingControls" />
+                       Text="Numeric" />
 
-            <propertyGrid:IntSettingControl Value="{Binding IntValue}" />
+            <propertyGrid:IntRow Value="{Binding IntValue}" />
 
-            <propertyGrid:IntSettingControl CanValueBeNull="True"
+            <propertyGrid:IntRow CanValueBeNull="True"
                                             Header="Explicit header"
                                             Value="{Binding NullableIntValue}" />
 
-            <propertyGrid:DoubleSettingControl Value="{Binding DoubleValue}" />
+            <propertyGrid:DoubleRow Value="{Binding DoubleValue}" />
 
-            <propertyGrid:DoubleSettingControl CanValueBeNull="True"
+            <propertyGrid:DoubleRow CanValueBeNull="True"
                                                Value="{Binding NullableDoubleValue}" />
 
 
             <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
-                       Text="UnitSettingControls" />
-            <propertyGrid:LengthSettingControl IsEnabled="False"
+                       Text="Units" />
+            <propertyGrid:LengthRow IsEnabled="False"
                                                Value="{Binding LengthValue}" />
 
-            <propertyGrid:LengthSettingControl Value="{Binding NullableLengthValue}" />
+            <propertyGrid:LengthRow Value="{Binding NullableLengthValue}" />
 
-            <propertyGrid:SpeedSettingControl IsReadOnly="True"
+            <propertyGrid:SpeedRow IsReadOnly="True"
                                               Unit="km/h"
                                               Value="{Binding SpeedValue}" />
 
-            <propertyGrid:LengthSettingControl DecimalDigits="1"
+            <propertyGrid:LengthRow DecimalDigits="1"
                                                MaxValue="15 mm"
                                                MinValue="-15 mm"
                                                Unit="{Binding CurrentLengthUnit}"
                                                Value="{Binding LengthValue}" />
-        </propertyGrid:SettingsControl>
+        </propertyGrid:Rows>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -79,3 +79,4 @@
         </Grid>
     </Grid>
 </UserControl>
+

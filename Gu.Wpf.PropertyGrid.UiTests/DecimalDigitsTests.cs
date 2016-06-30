@@ -31,8 +31,8 @@
         public void Inherits()
         {
             var groupBox = this.window.GetByText<GroupBox>("attached prop");
-            var doubleBox = groupBox.FindSetting("double").Value<TextBox>();
-            var lengthBox = groupBox.FindSetting("length").Value<TextBox>();
+            var doubleBox = groupBox.FindRow("double").Value<TextBox>();
+            var lengthBox = groupBox.FindRow("length").Value<TextBox>();
 
             Assert.AreEqual("0.00", doubleBox.FormattedText());
             Assert.AreEqual("12.35", lengthBox.FormattedText());
@@ -42,8 +42,8 @@
         public void Explicit()
         {
             var groupBox = this.window.GetByText<GroupBox>("explicit");
-            var doubleBox = groupBox.FindSetting("double").Value<TextBox>();
-            var lengthBox = groupBox.FindSetting("length").Value<TextBox>();
+            var doubleBox = groupBox.FindRow("double").Value<TextBox>();
+            var lengthBox = groupBox.FindRow("length").Value<TextBox>();
 
             Assert.AreEqual("0.00", doubleBox.FormattedText());
             Assert.AreEqual("12.35", lengthBox.FormattedText());
@@ -53,9 +53,9 @@
         public void Bound()
         {
             var groupBox = this.window.GetByText<GroupBox>("bound");
-            var doubleBox = groupBox.FindSetting("double").Value<TextBox>();
-            var lengthBox = groupBox.FindSetting("length").Value<TextBox>();
-            var digitsBox = groupBox.FindSetting("digits").Value<TextBox>();
+            var doubleBox = groupBox.FindRow("double").Value<TextBox>();
+            var lengthBox = groupBox.FindRow("length").Value<TextBox>();
+            var digitsBox = groupBox.FindRow("digits").Value<TextBox>();
 
             Assert.AreEqual("0.000", doubleBox.FormattedText());
             Assert.AreEqual("12.346", lengthBox.FormattedText());

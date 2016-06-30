@@ -7,16 +7,17 @@
         Title="FocusWindow"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d">
-    <propertyGrid:SettingsControl>
-        <propertyGrid:StringSettingControl Header="a"
+    <propertyGrid:Rows>
+        <propertyGrid:StringRow Header="a"
                                            Suffix="aa"
                                            Value="ab" />
-        <propertyGrid:StringSettingControl Header="b"
+        <propertyGrid:StringRow Header="b"
                                            Suffix="ba"
                                            Value="bb" />
-        <propertyGrid:StringSettingControl Header="readonly"
+        <propertyGrid:StringRow Header="readonly"
                                            IsReadOnly="True"
                                            Suffix="ca"
                                            Value="cb" />
-    </propertyGrid:SettingsControl>
+    </propertyGrid:Rows>
 </Window>
+

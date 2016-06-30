@@ -28,9 +28,9 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void CyclesFocus()
         {
-            var a = this.window.FindSetting("a").Value<TextBox>();
-            var b = this.window.FindSetting("b").Value<TextBox>();
-            var ro = this.window.FindSetting("readonly").Value<TextBox>();
+            var a = this.window.FindRow("a").Value<TextBox>();
+            var b = this.window.FindRow("b").Value<TextBox>();
+            var ro = this.window.FindRow("readonly").Value<TextBox>();
             a.Focus();
             Assert.True(a.IsFocussed);
             Assert.False(b.IsFocussed);

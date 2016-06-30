@@ -29,13 +29,13 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void UsesStyle()
         {
-            Assert.AreEqual("Green", this.window.FindSetting("checkbox").Value<CheckBox>().ItemStatus());
-            Assert.AreEqual("Green", this.window.FindSetting("togglebutton").Value<Button>().ItemStatus());
-            Assert.AreEqual("Green", this.window.FindSetting("enum").Value<ComboBox>().ItemStatus());
-            Assert.AreEqual("Green", this.window.FindSetting("selector").Value<ComboBox>().ItemStatus());
-            Assert.AreEqual("Green", this.window.FindSetting("string").Value<TextBox>().ItemStatus());
-            Assert.AreEqual("Blue", this.window.FindSetting("double").Value<TextBox>().ItemStatus());
-            Assert.AreEqual("Blue", this.window.FindSetting("length").Value<TextBox>().ItemStatus());
+            Assert.AreEqual("Green", this.window.FindRow("checkbox").Value<CheckBox>().ItemStatus());
+            Assert.AreEqual("Green", this.window.FindRow("togglebutton").Value<Button>().ItemStatus());
+            Assert.AreEqual("Green", this.window.FindRow("enum").Value<ComboBox>().ItemStatus());
+            Assert.AreEqual("Green", this.window.FindRow("selector").Value<ComboBox>().ItemStatus());
+            Assert.AreEqual("Green", this.window.FindRow("string").Value<TextBox>().ItemStatus());
+            Assert.AreEqual("Blue", this.window.FindRow("double").Value<TextBox>().ItemStatus());
+            Assert.AreEqual("Blue", this.window.FindRow("length").Value<TextBox>().ItemStatus());
         }
     }
 }
