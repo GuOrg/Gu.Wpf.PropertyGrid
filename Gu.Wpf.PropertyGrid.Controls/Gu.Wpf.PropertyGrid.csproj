@@ -51,6 +51,11 @@
     <Compile Include="Controls\CheckBoxSettingControl.cs" />
     <Compile Include="Controls\EnumSettingControl.cs" />
     <Compile Include="Controls\ErrorPresenter.cs" />
+    <Compile Include="Controls\Generated\SettingControl.Columns.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettingControl.Columns.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Generated\SettingControl.Styles.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -217,6 +222,10 @@
     </Analyzer>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Controls\Generated\SettingControl.Columns.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SettingControl.Columns.cs</LastGenOutput>
+    </Content>
     <Content Include="Controls\Generated\SettingControl.Styles.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SettingControl.Styles.cs</LastGenOutput>
