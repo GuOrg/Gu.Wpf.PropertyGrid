@@ -7,7 +7,8 @@
         <Setter Property="Grid.IsSharedSizeScope" Value="True" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="Cycle" />
         <Setter Property="KeyboardNavigation.AcceptsReturn" Value="True" />
-        <Setter Property="SuffixStyle" Value="{StaticResource {x:Type l:SuffixBlock}}"></Setter>
+        <Setter Property="HeaderStyle" Value="{StaticResource {x:Type l:HeaderBlock}}" />
+        <Setter Property="SuffixStyle" Value="{StaticResource {x:Type l:SuffixBlock}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:SettingsControl}">

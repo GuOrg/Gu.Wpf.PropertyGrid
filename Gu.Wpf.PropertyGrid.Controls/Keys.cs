@@ -9,10 +9,6 @@
 
         public static ResourceKey NestedSettingListStyle { get; } = CreateKey();
 
-        public static ResourceKey SettingRowOldValueStyleKey { get; } = CreateKey();
-
-        public static ResourceKey SettingRowErrorTextStyleKey { get; } = CreateKey();
-
         public static ResourceKey ValidationErrorTemplateSelectorKey { get; } = CreateKey();
 
         public static ResourceKey ValidationErrorRedBorderTemplateKey { get; } = CreateKey();

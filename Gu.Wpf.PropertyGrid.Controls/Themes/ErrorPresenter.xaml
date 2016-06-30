@@ -21,8 +21,7 @@
         <Setter Property="ContentTemplate">
             <Setter.Value>
                 <DataTemplate>
-                    <TextBlock Style="{DynamicResource {x:Static p:Keys.SettingRowErrorTextStyleKey}}"
-                               Text="{Binding Converter={x:Static p:ValidationErrorsToStringConverter.Default}}" />
+                    <TextBlock Text="{Binding Converter={x:Static p:ValidationErrorsToStringConverter.Default}}" />
                 </DataTemplate>
             </Setter.Value>
         </Setter>

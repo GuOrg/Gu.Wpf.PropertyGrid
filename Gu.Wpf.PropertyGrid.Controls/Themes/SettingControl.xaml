@@ -11,7 +11,9 @@
         <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
         <Setter Property="validationScope:Scope.ForInputTypes" Value="SettingControlBase, TextBox" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />
+        <Setter Property="HeaderStyle" Value="{StaticResource {x:Type l:HeaderBlock}}" />
+        <Setter Property="SuffixStyle" Value="{StaticResource {x:Type l:SuffixBlock}}" />
+        <!--<Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />-->
     </Style>
 
     <Style TargetType="{x:Type l:StringSettingControl}">
