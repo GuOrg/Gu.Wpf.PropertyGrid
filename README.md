@@ -10,94 +10,93 @@ Library with controls for making property grids
 
 ## Sample
 
-```
-<Grid validationScope:Scope.ForInputTypes="Scope"
-        validationScope:Scope.HasErrorsOneWayToSourceBinding="{Binding ViewHasErrors,
-                                                                        Mode=OneWayToSource}">
+```xaml
+<Grid validationScope:Scope.ForInputTypes="Scope" validationScope:Scope.HasErrorsOneWayToSourceBinding="{Binding ViewHasErrors, Mode=OneWayToSource}">
     <Grid.RowDefinitions>
         <RowDefinition />
         <RowDefinition Height="Auto" />
     </Grid.RowDefinitions>
-    <p:SettingsControl Grid.Row="0"
+    <propertyGrid:Rows Grid.Row="0"
                         DataContext="{Binding EditableCopy}"
                         OldDataContext="{Binding DataContext.LastSaved,
-                                                RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
-                        SuffixMinWidth="20"
-                        ValueMinWidth="150">
-        <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
-                    Text="Core" />
+                                                RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
+        <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Core" />
 
-        <p:StringSettingControl Header="string"
-                                Value="{Binding StringValue}" />
+        <propertyGrid:StringRow Header="string" Value="{Binding StringValue}" />
 
-        <p:StringSettingControl Header="readonly string"
+        <propertyGrid:StringRow Header="readonly string"
                                 IsReadOnly="True"
                                 Value="{Binding StringValue}" />
 
-        <p:CheckBoxSettingControl Header="INotifyDataErrorInfo has error"
-                                    Value="{Binding HasErrors,
-                                                    ValidatesOnNotifyDataErrors=True}" />
+        <propertyGrid:CheckBoxRow Header="INotifyDataErrorInfo has error" Value="{Binding HasErrors, ValidatesOnNotifyDataErrors=True}" />
 
-        <p:CheckBoxSettingControl Header="checkbox"
-                                    Value="{Binding BoolValue}" />
+        <propertyGrid:CheckBoxRow Header="checkbox" Value="{Binding BoolValue}" />
+        <propertyGrid:BoolRow Header="bool" Value="{Binding BoolValue}" />
 
-        <p:ToggleButtonSettingControl Header="togglebutton"
-                                        Value="{Binding BoolValue}" />
+        <propertyGrid:ToggleButtonRow Header="togglebutton" Value="{Binding BoolValue}" />
 
 
-        <p:EnumSettingControl Header="enum"
-                                Value="{Binding CurrentStringComparison}" />
+        <propertyGrid:EnumRow Header="enum" Value="{Binding CurrentStringComparison}" />
 
-        <p:SelectorSettingControl Header="selector"
+        <propertyGrid:SelectorRow Header="selector"
                                     ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
                                     Value="{Binding CurrentLengthUnit}" />
 
-        <p:ContentSettingControl Header="content">
-            <Button Command="{Binding DataContext.SaveCommand,
-                                        RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
-                    Content="Save" />
-        </p:ContentSettingControl>
+        <propertyGrid:ComboBoxRow Header="combobox"
+                                    ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
+                                    Value="{Binding CurrentLengthUnit}" />
+            
+        <propertyGrid:ContentRow Header="content">
+            <Button Command="{Binding DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Content="Save" />
+        </propertyGrid:ContentRow>
 
-        <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
-                    Text="NumericSettingControls" />
+        <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Numeric" />
 
-        <p:IntSettingControl Header="int"
+        <propertyGrid:IntRow Header="int" Value="{Binding IntValue}" />
+
+        <propertyGrid:IntRow Header="readonly int"
+                                IsReadOnly="True"
                                 Value="{Binding IntValue}" />
 
-        <p:IntSettingControl CanValueBeNull="True"
+        <propertyGrid:IntRow CanValueBeNull="True"
                                 Header="int?"
                                 Value="{Binding NullableIntValue}" />
 
-        <p:DoubleSettingControl Header="double"
+        <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
+
+        <propertyGrid:DoubleRow Header="readonly double"
+                                IsReadOnly="True"
                                 Value="{Binding DoubleValue}" />
 
-        <p:DoubleSettingControl CanValueBeNull="True"
+        <propertyGrid:DoubleRow CanValueBeNull="True"
                                 Header="double?"
                                 Value="{Binding NullableDoubleValue}" />
 
-        <TextBlock Style="{StaticResource HeaderTextBlockStyle}"
-                    Text="UnitSettingControls" />
+        <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Units" />
 
-        <p:LengthSettingControl Header="Length"
-                                IsEnabled="False"
+        <propertyGrid:LengthRow Header="Length" Value="{Binding LengthValue}" />
+
+        <propertyGrid:LengthRow Header="readonly length"
+                                IsReadOnly="True"
                                 Value="{Binding LengthValue}" />
 
-        <p:LengthSettingControl CanValueBeNull="True"
+        <propertyGrid:LengthRow CanValueBeNull="True"
                                 Header="Nullable length"
                                 Value="{Binding NullableLengthValue}" />
 
-        <p:SpeedSettingControl Header="Speed (readonly)"
+        <propertyGrid:SpeedRow Header="Speed (readonly)"
                                 IsReadOnly="True"
                                 Unit="km/h"
                                 Value="{Binding SpeedValue}" />
 
-        <p:LengthSettingControl DecimalDigits="2"
+        <propertyGrid:LengthRow DecimalDigits="2"
                                 Header="Length"
                                 MaxValue="15 mm"
                                 MinValue="-15 mm"
                                 Unit="{Binding CurrentLengthUnit}"
                                 Value="{Binding LengthValue}" />
-    </p:SettingsControl>
+    </propertyGrid:Rows>
+
     <Grid Grid.Row="1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />

@@ -24,6 +24,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.UnitRow
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.UnitRows.Tests", "Gu.Wpf.PropertyGrid.UnitRows.Tests\Gu.Wpf.PropertyGrid.UnitRows.Tests.csproj", "{4B86294B-EAD2-42CD-B78C-9F47FDE34456}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{95550FCF-F50D-449F-B665-9D527BFB57EF}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+		.paket\Readme.paket.md = .paket\Readme.paket.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

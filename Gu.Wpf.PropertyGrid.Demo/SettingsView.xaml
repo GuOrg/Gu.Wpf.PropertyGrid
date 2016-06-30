@@ -30,6 +30,7 @@
             <propertyGrid:CheckBoxRow Header="INotifyDataErrorInfo has error" Value="{Binding HasErrors, ValidatesOnNotifyDataErrors=True}" />
 
             <propertyGrid:CheckBoxRow Header="checkbox" Value="{Binding BoolValue}" />
+            <propertyGrid:BoolRow Header="bool" Value="{Binding BoolValue}" />
 
             <propertyGrid:ToggleButtonRow Header="togglebutton" Value="{Binding BoolValue}" />
 
@@ -37,6 +38,10 @@
             <propertyGrid:EnumRow Header="enum" Value="{Binding CurrentStringComparison}" />
 
             <propertyGrid:SelectorRow Header="selector"
+                                      ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
+                                      Value="{Binding CurrentLengthUnit}" />
+
+            <propertyGrid:ComboBoxRow Header="combobox"
                                       ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
                                       Value="{Binding CurrentLengthUnit}" />
 

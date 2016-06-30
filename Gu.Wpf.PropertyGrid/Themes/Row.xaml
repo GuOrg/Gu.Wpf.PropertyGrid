@@ -75,7 +75,7 @@
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, CheckBox, ToggleButton" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type l:CheckBoxRow}">
+                <ControlTemplate TargetType="{x:Type l:BoolRow}">
                     <Grid Margin="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
