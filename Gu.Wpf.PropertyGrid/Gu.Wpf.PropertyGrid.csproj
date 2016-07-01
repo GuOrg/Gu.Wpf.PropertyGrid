@@ -77,6 +77,7 @@
     <Compile Include="Grid\ColumnDefinitions.cs" />
     <Compile Include="Grid\ColumnDefinitionsConverter.cs" />
     <Compile Include="Grid\Grid.cs" />
+    <Compile Include="Grid\Grid.Sources.cs" />
     <Compile Include="Grid\GridCell.cs" />
     <Compile Include="Grid\GridCellConverter.cs" />
     <Compile Include="Grid\GridLengthsParser.cs" />

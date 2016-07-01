@@ -7,11 +7,14 @@
 
     public class EnumRow : Row<object>
     {
+#pragma warning disable SA1202 // Elements must be ordered by access
+
         public static readonly DependencyProperty EnumTypeProperty = DependencyProperty.Register(
             "EnumType",
             typeof(Type),
             typeof(EnumRow),
-            new PropertyMetadata(default(Type), OnEnumTypeChanged), OnEnumTypeValidate);
+            new PropertyMetadata(default(Type), OnEnumTypeChanged),
+            OnEnumTypeValidate);
 
         private static readonly DependencyPropertyKey EnumValuesPropertyKey = DependencyProperty.RegisterReadOnly(
             "EnumValues",
@@ -20,6 +23,8 @@
             new PropertyMetadata(default(IReadOnlyList<IFormattable>)));
 
         public static readonly DependencyProperty EnumValuesProperty = EnumValuesPropertyKey.DependencyProperty;
+
+#pragma warning restore SA1202 // Elements must be ordered by access
 
         static EnumRow()
         {

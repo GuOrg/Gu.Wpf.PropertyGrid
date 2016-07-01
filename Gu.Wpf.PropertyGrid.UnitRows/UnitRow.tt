@@ -7,10 +7,13 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="Gu.Units" #>
 <#@ output extension=".generated.cs" #>
+#pragma warning disable SA1649 // File name must match first type name
+#pragma warning disable SA1402 // File may only contain a single class
+#pragma warning disable SA1118 // Parameter must not span multiple lines
 namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
-	using System.Windows.Data;
+    using System.Windows.Data;
     using Gu.Units;
 <#
 	    var quantities = typeof (Length).Assembly.GetTypes()
@@ -34,18 +37,16 @@ namespace Gu.Wpf.PropertyGrid
             SuffixProperty.OverrideMetadata(
                 typeof(<#= className #>),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(<#= className #>), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(<#= className #>), UpdateSourceTrigger.LostFocus);
         }
     }
 <#
 		} 
 		#>
 }
-
 <#+
     private static readonly Dictionary<Type, string> CustomUnits = new Dictionary<Type, string>
     {

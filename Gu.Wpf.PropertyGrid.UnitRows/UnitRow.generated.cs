@@ -1,7 +1,10 @@
-﻿namespace Gu.Wpf.PropertyGrid
+﻿#pragma warning disable SA1649 // File name must match first type name
+#pragma warning disable SA1402 // File may only contain a single class
+#pragma warning disable SA1118 // Parameter must not span multiple lines
+namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
-	using System.Windows.Data;
+    using System.Windows.Data;
     using Gu.Units;
 
     public class AccelerationRow : UnitRow<Acceleration, AccelerationUnit>
@@ -15,11 +18,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AccelerationRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AccelerationRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AccelerationRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -34,11 +36,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AmountOfSubstanceRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AmountOfSubstanceRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AmountOfSubstanceRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -53,11 +54,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AngleRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngleRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngleRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -72,11 +72,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AnglePerUnitlessRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AnglePerUnitlessRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AnglePerUnitlessRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -91,11 +90,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AngularAccelerationRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngularAccelerationRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngularAccelerationRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -110,11 +108,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AngularJerkRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngularJerkRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngularJerkRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -129,11 +126,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AngularSpeedRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngularSpeedRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AngularSpeedRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -148,11 +144,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AreaRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AreaRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AreaRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -167,11 +162,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(AreaDensityRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AreaDensityRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(AreaDensityRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -186,11 +180,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(CapacitanceRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(CapacitanceRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(CapacitanceRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -205,11 +198,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(CatalyticActivityRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(CatalyticActivityRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(CatalyticActivityRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -224,11 +216,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(CurrentRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(CurrentRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(CurrentRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -243,11 +234,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(DataRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(DataRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(DataRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -262,11 +252,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(DensityRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(DensityRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(DensityRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -281,11 +270,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(ElectricalConductanceRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ElectricalConductanceRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ElectricalConductanceRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -300,11 +288,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(ElectricChargeRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ElectricChargeRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ElectricChargeRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -319,11 +306,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(EnergyRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(EnergyRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(EnergyRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -338,11 +324,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(FlexibilityRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(FlexibilityRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(FlexibilityRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -357,11 +342,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(ForceRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ForceRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ForceRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -376,11 +360,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(ForcePerUnitlessRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ForcePerUnitlessRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ForcePerUnitlessRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -395,11 +378,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(FrequencyRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(FrequencyRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(FrequencyRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -414,11 +396,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(IlluminanceRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(IlluminanceRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(IlluminanceRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -433,11 +414,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(InductanceRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(InductanceRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(InductanceRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -452,11 +432,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(JerkRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(JerkRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(JerkRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -471,11 +450,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(KinematicViscosityRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(KinematicViscosityRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(KinematicViscosityRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -490,11 +468,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(LengthRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LengthRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LengthRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -509,11 +486,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(LengthPerUnitlessRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LengthPerUnitlessRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LengthPerUnitlessRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -528,11 +504,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(LuminousFluxRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LuminousFluxRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LuminousFluxRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -547,11 +522,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(LuminousIntensityRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LuminousIntensityRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(LuminousIntensityRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -566,11 +540,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(MagneticFieldStrengthRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MagneticFieldStrengthRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MagneticFieldStrengthRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -585,11 +558,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(MagneticFluxRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MagneticFluxRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MagneticFluxRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -604,11 +576,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(MassRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MassRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MassRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -623,11 +594,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(MassFlowRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MassFlowRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MassFlowRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -642,11 +612,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(MomentumRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MomentumRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(MomentumRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -661,11 +630,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(PowerRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(PowerRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(PowerRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -680,11 +648,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(PressureRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(PressureRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(PressureRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -699,11 +666,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(ResistanceRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ResistanceRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(ResistanceRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -718,11 +684,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(SolidAngleRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SolidAngleRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SolidAngleRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -737,11 +702,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(SpecificEnergyRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SpecificEnergyRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SpecificEnergyRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -756,11 +720,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(SpecificVolumeRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SpecificVolumeRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SpecificVolumeRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -775,11 +738,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(SpeedRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SpeedRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(SpeedRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -794,11 +756,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(StiffnessRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(StiffnessRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(StiffnessRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -813,11 +774,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(TemperatureRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(TemperatureRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(TemperatureRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -832,11 +792,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(TimeRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(TimeRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(TimeRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -851,11 +810,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(TorqueRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(TorqueRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(TorqueRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -870,11 +828,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(UnitlessRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(UnitlessRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(UnitlessRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -889,11 +846,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(VoltageRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(VoltageRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(VoltageRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -908,11 +864,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(VolumeRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(VolumeRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(VolumeRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -927,11 +882,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(VolumetricFlowRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(VolumetricFlowRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(VolumetricFlowRow), UpdateSourceTrigger.LostFocus);
         }
     }
 
@@ -946,12 +900,10 @@
             SuffixProperty.OverrideMetadata(
                 typeof(WavenumberRow),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, 
-                    UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
 
-			 ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(WavenumberRow), UpdateSourceTrigger.LostFocus);
+            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(WavenumberRow), UpdateSourceTrigger.LostFocus);
         }
     }
 }
-

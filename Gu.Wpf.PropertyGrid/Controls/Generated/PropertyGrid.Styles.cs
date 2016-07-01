@@ -41,7 +41,6 @@ namespace Gu.Wpf.PropertyGrid
             typeof(PropertyGrid),
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
-
         public static void SetHeaderStyle(this UIElement element, Style value)
         {
             element.SetValue(HeaderStyleProperty, value);
@@ -141,7 +140,6 @@ namespace Gu.Wpf.PropertyGrid
             typeof(Rows),
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
-
         public Style HeaderStyle
         {
             get { return (Style)this.GetValue(HeaderStyleProperty); }
@@ -204,7 +202,6 @@ namespace Gu.Wpf.PropertyGrid
         public static readonly DependencyProperty ErrorStyleProperty = PropertyGrid.ErrorStyleProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
-
 
         public Style HeaderStyle
         {
@@ -269,7 +266,6 @@ namespace Gu.Wpf.PropertyGrid
             typeof(ContentRow),
             new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
 
-
         public Style HeaderStyle
         {
             get { return (Style)this.GetValue(HeaderStyleProperty); }
@@ -307,4 +303,3 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 }
-

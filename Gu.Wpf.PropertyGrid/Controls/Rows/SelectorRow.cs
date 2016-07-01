@@ -16,7 +16,7 @@ namespace Gu.Wpf.PropertyGrid
 
         public IEnumerable ItemsSource
         {
-            get { return (IEnumerable) this.GetValue(ItemsSourceProperty); }
+            get { return (IEnumerable)this.GetValue(ItemsSourceProperty); }
             set { this.SetValue(ItemsSourceProperty, value); }
         }
     }
