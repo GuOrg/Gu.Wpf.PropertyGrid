@@ -14,18 +14,9 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
-                                              MinWidth="{TemplateBinding HeaderMinWidth}"
-                                              MaxWidth="{TemplateBinding HeaderMaxWidth}"
-                                              SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.HeaderColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding ValueWidth}"
-                                              MinWidth="{TemplateBinding ValueMinWidth}"
-                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
-                                              SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
-                                              MinWidth="{TemplateBinding SuffixMinWidth}"
-                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
-                                              SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.SuffixColumn}" />
+                            <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
+                            <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
+                            <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
                         </Grid.ColumnDefinitions>
                         <propertyGrid:HeaderBlock x:Name="PART_Header"
                                                   Grid.Row="0"
@@ -74,18 +65,9 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
-                                              MinWidth="{TemplateBinding HeaderMinWidth}"
-                                              MaxWidth="{TemplateBinding HeaderMaxWidth}"
-                                              SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.HeaderColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding ValueWidth}"
-                                              MinWidth="{TemplateBinding ValueMinWidth}"
-                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
-                                              SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
-                                              MinWidth="{TemplateBinding SuffixMinWidth}"
-                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
-                                              SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.SuffixColumn}" />
+                            <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
+                            <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
+                            <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
                         </Grid.ColumnDefinitions>
                         <propertyGrid:HeaderBlock x:Name="PART_Header"
                                                   Grid.Row="0"
@@ -93,19 +75,19 @@
                                                   Text="{TemplateBinding Header}" />
 
                         <numeric:IntBox x:Name="PART_Value"
-                                           Grid.Row="0"
-                                           Grid.Column="1"
-                                           CanValueBeNull="{TemplateBinding CanValueBeNull}"
-                                           Focusable="{Binding IsReadOnly,
-                                                               RelativeSource={RelativeSource TemplatedParent},
-                                                               Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                           IsReadOnly="{TemplateBinding IsReadOnly}"
-                                           MaxValue="{TemplateBinding MaxValue}"
-                                           MinValue="{TemplateBinding MinValue}"
-                                           Validation.ErrorTemplate="{x:Null}"
-                                           Value="{Binding Value,
-                                                           RelativeSource={RelativeSource TemplatedParent},
-                                                           UpdateSourceTrigger=PropertyChanged}" />
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        CanValueBeNull="{TemplateBinding CanValueBeNull}"
+                                        Focusable="{Binding IsReadOnly,
+                                                            RelativeSource={RelativeSource TemplatedParent},
+                                                            Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                        IsReadOnly="{TemplateBinding IsReadOnly}"
+                                        MaxValue="{TemplateBinding MaxValue}"
+                                        MinValue="{TemplateBinding MinValue}"
+                                        Validation.ErrorTemplate="{x:Null}"
+                                        Value="{Binding Value,
+                                                        RelativeSource={RelativeSource TemplatedParent},
+                                                        UpdateSourceTrigger=PropertyChanged}" />
 
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"

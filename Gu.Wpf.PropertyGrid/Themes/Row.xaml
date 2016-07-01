@@ -76,18 +76,9 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
-                                              MinWidth="{TemplateBinding HeaderMinWidth}"
-                                              MaxWidth="{TemplateBinding HeaderMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding ValueWidth}"
-                                              MinWidth="{TemplateBinding ValueMinWidth}"
-                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
-                                              MinWidth="{TemplateBinding SuffixMinWidth}"
-                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Header" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Value" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Suffix" />
                         </Grid.ColumnDefinitions>
                         <l:HeaderBlock x:Name="PART_Header"
                                        Grid.Row="0"
@@ -141,18 +132,9 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
-                                              MinWidth="{TemplateBinding HeaderMinWidth}"
-                                              MaxWidth="{TemplateBinding HeaderMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding ValueWidth}"
-                                              MinWidth="{TemplateBinding ValueMinWidth}"
-                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
-                                              MinWidth="{TemplateBinding SuffixMinWidth}"
-                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Header" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Value" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Suffix" />
                         </Grid.ColumnDefinitions>
                         <l:HeaderBlock x:Name="PART_Header"
                                        Grid.Row="0"
@@ -199,18 +181,9 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
-                                              MinWidth="{TemplateBinding HeaderMinWidth}"
-                                              MaxWidth="{TemplateBinding HeaderMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding ValueWidth}"
-                                              MinWidth="{TemplateBinding ValueMinWidth}"
-                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
-                                              MinWidth="{TemplateBinding SuffixMinWidth}"
-                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Header" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Value" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Suffix" />
                         </Grid.ColumnDefinitions>
                         <l:HeaderBlock x:Name="PART_Header"
                                        Grid.Row="0"
@@ -258,18 +231,9 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
-                                              MinWidth="{TemplateBinding HeaderMinWidth}"
-                                              MaxWidth="{TemplateBinding HeaderMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding ValueWidth}"
-                                              MinWidth="{TemplateBinding ValueMinWidth}"
-                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
-                                              MinWidth="{TemplateBinding SuffixMinWidth}"
-                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Header" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Value" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Suffix" />
                         </Grid.ColumnDefinitions>
                         <l:HeaderBlock x:Name="PART_Header"
                                        Grid.Row="0"
@@ -356,21 +320,12 @@
                     <Grid Margin="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
-                                              MinWidth="{TemplateBinding HeaderMinWidth}"
-                                              MaxWidth="{TemplateBinding HeaderMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding ValueWidth}"
-                                              MinWidth="{TemplateBinding ValueMinWidth}"
-                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
-                                              MinWidth="{TemplateBinding SuffixMinWidth}"
-                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Header" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Value" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Suffix" />
                         </Grid.ColumnDefinitions>
                         <ContentPresenter x:Name="PART_Header"
                                           Grid.Row="0"

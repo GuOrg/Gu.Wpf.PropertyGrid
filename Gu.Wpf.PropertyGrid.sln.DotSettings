@@ -53,5 +53,13 @@ public static $propertyType$ Get$propertyName$(this $TargetType$ $element$)&#xD;
 {&#xD;
   return ($propertyType$) $element$.GetValue($propertyName$Property);&#xD;
 }</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CCC8542C9C95DC45B63B7E80F9460D6F/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CCC8542C9C95DC45B63B7E80F9460D6F/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CCC8542C9C95DC45B63B7E80F9460D6F/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CCC8542C9C95DC45B63B7E80F9460D6F/Scope/=139FF4CE89E7094686FDA7BF5FFBBE92/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CCC8542C9C95DC45B63B7E80F9460D6F/Scope/=139FF4CE89E7094686FDA7BF5FFBBE92/Type/@EntryValue">Everywhere</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CCC8542C9C95DC45B63B7E80F9460D6F/Shortcut/@EntryValue">system_windows_controls</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CCC8542C9C95DC45B63B7E80F9460D6F/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CCC8542C9C95DC45B63B7E80F9460D6F/Text/@EntryValue">System.Windows.Controls.</s:String>
 	<s:Boolean x:Key="/Default/ReSpeller/UserDictionaries/=en_005Fus/@KeyIndexDefined">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ReSpeller/UserDictionaries/=en_005Fus/Words/=Templated/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

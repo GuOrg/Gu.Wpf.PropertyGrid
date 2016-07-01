@@ -78,7 +78,7 @@
     <Compile Include="Grid\ColumnDefinitionsConverter.cs" />
     <Compile Include="Grid\ColumnDefinition.Sources.cs" />
     <Compile Include="Grid\Grid.cs" />
-    <Compile Include="Grid\Grid.Sources.cs" />
+    <Compile Include="Grid\Grid.AutoGeneratePropertyGridColumns.cs" />
     <Compile Include="Grid\GridCell.cs" />
     <Compile Include="Grid\GridCellConverter.cs" />
     <Compile Include="Grid\GridLengthsParser.cs" />
@@ -94,6 +94,7 @@
     <Compile Include="Controls\Rows.cs" />
     <Compile Include="Internals\DependencyPropertyExt.cs" />
     <Compile Include="Internals\Ensure.cs" />
+    <Compile Include="Internals\ServiceProviderExt.cs" />
     <Compile Include="Internals\VisualTreeHelperExt.cs" />
     <Compile Include="OneWayToSourceBinding\OneWayToSource.cs" />
     <Compile Include="OneWayToSourceBinding\Paths.cs" />
