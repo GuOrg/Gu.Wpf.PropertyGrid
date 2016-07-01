@@ -14,52 +14,59 @@
         <Setter Property="HeaderStyle" Value="{StaticResource {x:Type l:HeaderBlock}}" />
         <Setter Property="SuffixStyle" Value="{StaticResource {x:Type l:SuffixBlock}}" />
         <!--<Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />-->
+
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type l:Row}}" TargetType="{x:Type l:StringRow}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:StringRow}">
-                    <Grid Margin="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition l:ColumnDefinition.Source="Header" />
-                            <ColumnDefinition l:ColumnDefinition.Source="Value" />
-                            <ColumnDefinition l:ColumnDefinition.Source="Suffix" />
-                        </Grid.ColumnDefinitions>
-                        <l:HeaderBlock x:Name="PART_Header"
-                                       Grid.Row="0"
-                                       Grid.Column="0"
-                                       Style="{TemplateBinding HeaderStyle}"
-                                       Text="{TemplateBinding Header}" />
+                    <Border Margin="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition l:ColumnDefinition.Source="Header" />
+                                <ColumnDefinition l:ColumnDefinition.Source="Value" />
+                                <ColumnDefinition l:ColumnDefinition.Source="Suffix" />
+                            </Grid.ColumnDefinitions>
 
-                        <TextBox x:Name="PART_Value"
-                                 Grid.Row="0"
-                                 Grid.Column="1"
-                                 Focusable="{Binding IsReadOnly,
-                                                     RelativeSource={RelativeSource Self},
-                                                     Converter={x:Static l:InvertBoolConverter.Default}}"
-                                 IsReadOnly="{TemplateBinding IsReadOnly}"
-                                 Text="{Binding Value,
-                                                RelativeSource={RelativeSource TemplatedParent},
-                                                UpdateSourceTrigger=PropertyChanged}"
-                                 Validation.ErrorTemplate="{x:Null}" />
+                            <l:HeaderBlock x:Name="PART_Header"
+                                           Grid.Row="0"
+                                           Grid.Column="0"
+                                           Style="{TemplateBinding HeaderStyle}"
+                                           Text="{TemplateBinding Header}" />
 
-                        <l:SuffixBlock x:Name="PART_Suffix"
-                                       Grid.Row="0"
-                                       Grid.Column="2"
-                                       Style="{TemplateBinding SuffixStyle}"
-                                       Text="{TemplateBinding Suffix}" />
+                            <TextBox x:Name="PART_Value"
+                                     Grid.Row="0"
+                                     Grid.Column="1"
+                                     Focusable="{Binding IsReadOnly,
+                                                         RelativeSource={RelativeSource Self},
+                                                         Converter={x:Static l:InvertBoolConverter.Default}}"
+                                     IsReadOnly="{TemplateBinding IsReadOnly}"
+                                     Text="{Binding Value,
+                                                    RelativeSource={RelativeSource TemplatedParent},
+                                                    UpdateSourceTrigger=PropertyChanged}"
+                                     Validation.ErrorTemplate="{x:Null}" />
 
-                        <l:RowInfoPresenter x:Name="InfoPresenter"
-                                            Grid.Row="1"
-                                            Grid.Column="0"
-                                            Grid.ColumnSpan="3"
-                                            Style="{TemplateBinding InfoPresenterStyle}" />
-                    </Grid>
+                            <l:SuffixBlock x:Name="PART_Suffix"
+                                           Grid.Row="0"
+                                           Grid.Column="2"
+                                           Style="{TemplateBinding SuffixStyle}"
+                                           Text="{TemplateBinding Suffix}" />
+
+                            <l:RowInfoPresenter x:Name="InfoPresenter"
+                                                Grid.Row="1"
+                                                Grid.Column="0"
+                                                Grid.ColumnSpan="3"
+                                                Style="{TemplateBinding InfoPresenterStyle}" />
+                        </Grid>
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
