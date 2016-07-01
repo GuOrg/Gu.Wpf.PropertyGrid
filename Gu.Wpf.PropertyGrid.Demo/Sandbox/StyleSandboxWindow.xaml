@@ -245,8 +245,8 @@
         </ControlTemplate>
 
         <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:StringRow}">
-            <Setter Property="HeaderStyle" Value="{StaticResource HeaderTextBoxStyle}" />
-            <Setter Property="InfoPresenterStyle" Value="{StaticResource {x:Type propertyGrid:InfoPresenter}}" />
+            <!--<Setter Property="HeaderStyle" Value="{StaticResource HeaderTextBoxStyle}" />
+            <Setter Property="InfoPresenterStyle" Value="{StaticResource {x:Type propertyGrid:InfoPresenter}}" />-->
             <Setter Property="Template" Value="{StaticResource StringRowPlainTemplate}" />
             <Style.Triggers>
                 <MultiDataTrigger>
@@ -271,6 +271,7 @@
     <StackPanel>
         <propertyGrid:Rows DataContext="{Binding EditableCopy}"
                            HeaderWidth="107"
+                           HeaderStyle="{StaticResource HeaderTextBoxStyle}"
                            OldDataContext="{Binding DataContext.LastSaved,
                                                     RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
                            SuffixWidth="20"
