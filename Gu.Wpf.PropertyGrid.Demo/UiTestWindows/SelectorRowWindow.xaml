@@ -18,12 +18,12 @@
 
         <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
             <propertyGrid:SelectorRow Header="default"
-                                                 ItemsSource="{Binding Cultures}"
-                                                 Value="{Binding CurrentCulture}" />
+                                      ItemsSource="{Binding Cultures}"
+                                      Value="{Binding CurrentCulture}" />
             <propertyGrid:SelectorRow Header="readonly"
-                                                 IsReadOnly="True"
-                                                 ItemsSource="{Binding Cultures}"
-                                                 Value="{Binding CurrentCulture}" />
+                                      IsReadOnly="True"
+                                      ItemsSource="{Binding Cultures}"
+                                      Value="{Binding CurrentCulture}" />
         </propertyGrid:Rows>
 
         <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
@@ -34,13 +34,13 @@
             </propertyGrid:Rows.Resources>
 
             <propertyGrid:SelectorRow Header="lostfocus"
-                                                 ItemsSource="{Binding Cultures}"
-                                                 Value="{Binding CurrentCulture,
-                                                                 UpdateSourceTrigger=LostFocus}" />
+                                      ItemsSource="{Binding Cultures}"
+                                      Value="{Binding CurrentCulture,
+                                                      UpdateSourceTrigger=LostFocus}" />
 
             <propertyGrid:SelectorRow Header="editable"
-                                                 ItemsSource="{Binding Cultures}"
-                                                 Value="{Binding CurrentCulture}" />
+                                      ItemsSource="{Binding Cultures}"
+                                      Value="{Binding CurrentCulture}" />
         </propertyGrid:Rows>
     </StackPanel>
 </Window>

@@ -44,6 +44,17 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         }
 
         [Test]
+        public void Star_star_star()
+        {
+            var groupBox = this.window.GetByText<GroupBox>("* * *");
+            var expected = new[] { 33, 33, 33 };
+            var actual = groupBox.FindRow("a").ColumnsWidths<TextBox>();
+            CollectionAssert.AreEqual(expected, actual);
+            actual = groupBox.FindRow("abcd").ColumnsWidths<TextBox>();
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [Test]
         public void Width_15_20_25()
         {
             var groupBox = this.window.GetByText<GroupBox>("Width 15 20 25");
