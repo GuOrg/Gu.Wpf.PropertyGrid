@@ -22,12 +22,12 @@ namespace Gu.Wpf.PropertyGrid
             PropertyPath path)
         {
             var binding = new Binding
-                              {
-                                  Path = path,
-                                  Source = source,
-                                  Mode = BindingMode.OneWay,
-                                  UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
-                              };
+            {
+                Path = path,
+                Source = source,
+                Mode = BindingMode.OneWay,
+                UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+            };
             return (BindingExpression)BindingOperations.SetBinding(target, targetProperty, binding);
         }
 
@@ -65,12 +65,12 @@ namespace Gu.Wpf.PropertyGrid
             {
                 var sourcePath = GetPath(sourceProperty);
                 var binding = new Binding
-                                  {
-                                      Source = source,
-                                      Path = sourcePath,
-                                      Mode = BindingMode.TwoWay,
-                                      UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
-                                  };
+                {
+                    Source = source,
+                    Path = sourcePath,
+                    Mode = BindingMode.TwoWay,
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+                };
 
                 return (BindingExpression)BindingOperations.SetBinding(this.target, this.targetProperty, binding);
             }
@@ -78,10 +78,10 @@ namespace Gu.Wpf.PropertyGrid
             internal BindingExpression OneWayTo(object source)
             {
                 var binding = new Binding
-                                  {
-                                      Source = source,
-                                      Mode = BindingMode.OneWay,
-                                  };
+                {
+                    Source = source,
+                    Mode = BindingMode.OneWay,
+                };
 
                 return (BindingExpression)BindingOperations.SetBinding(this.target, this.targetProperty, binding);
             }
@@ -89,12 +89,26 @@ namespace Gu.Wpf.PropertyGrid
             internal BindingExpression OneWayTo(object source, PropertyPath sourcePath)
             {
                 var binding = new Binding
-                                  {
-                                      Path = sourcePath,
-                                      Source = source,
-                                      Mode = BindingMode.OneWay,
-                                      UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
-                                  };
+                {
+                    Path = sourcePath,
+                    Source = source,
+                    Mode = BindingMode.OneWay,
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+                };
+
+                return (BindingExpression)BindingOperations.SetBinding(this.target, this.targetProperty, binding);
+            }
+
+            internal BindingExpression OneWayTo(object source, PropertyPath sourcePath, IValueConverter converter)
+            {
+                var binding = new Binding
+                {
+                    Path = sourcePath,
+                    Source = source,
+                    Converter = converter,
+                    Mode = BindingMode.OneWay,
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+                };
 
                 return (BindingExpression)BindingOperations.SetBinding(this.target, this.targetProperty, binding);
             }

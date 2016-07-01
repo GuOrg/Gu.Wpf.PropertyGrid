@@ -32,7 +32,7 @@ namespace Gu.Wpf.PropertyGrid
             if (text != null)
             {
                 var lengths = GridLengthsParser.Parse(typeDescriptorContext, cultureInfo, text);
-                var columnDefinitions = lengths.Select(gl => new ColumnDefinition { Width = gl });
+                var columnDefinitions = lengths.Select(gl => new System.Windows.Controls.ColumnDefinition { Width = gl });
                 return new ColumnDefinitions(columnDefinitions);
             }
 

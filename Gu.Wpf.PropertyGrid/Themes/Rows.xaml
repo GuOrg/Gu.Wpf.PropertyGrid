@@ -4,7 +4,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Blocks.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <Style TargetType="{x:Type l:Rows}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Grid.IsSharedSizeScope" Value="True" />
@@ -17,18 +17,9 @@
                 <ControlTemplate TargetType="{x:Type l:Rows}">
                     <Grid Background="{TemplateBinding Background}" IsSharedSizeScope="True">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="{TemplateBinding HeaderWidth}"
-                                              MinWidth="{TemplateBinding HeaderMinWidth}"
-                                              MaxWidth="{TemplateBinding HeaderMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.HeaderColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding ValueWidth}"
-                                              MinWidth="{TemplateBinding ValueMinWidth}"
-                                              MaxWidth="{TemplateBinding ValueMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
-                            <ColumnDefinition Width="{TemplateBinding SuffixWidth}"
-                                              MinWidth="{TemplateBinding SuffixMinWidth}"
-                                              MaxWidth="{TemplateBinding SuffixMaxWidth}"
-                                              SharedSizeGroup="{x:Static l:SharedSizeGroups.SuffixColumn}" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Header" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Value" />
+                            <ColumnDefinition l:ColumnDefinition.Source="Suffix" />
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Row="0"
                                     Grid.Column="0"

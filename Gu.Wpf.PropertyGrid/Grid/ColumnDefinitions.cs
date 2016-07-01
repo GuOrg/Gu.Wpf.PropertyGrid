@@ -5,13 +5,13 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows.Controls;
 
     [TypeConverter(typeof(ColumnDefinitionsConverter))]
-    public class ColumnDefinitions : List<ColumnDefinition>
+    public class ColumnDefinitions : List<System.Windows.Controls.ColumnDefinition>
     {
         public ColumnDefinitions()
         {
         }
 
-        public ColumnDefinitions(IEnumerable<ColumnDefinition> collection)
+        public ColumnDefinitions(IEnumerable<System.Windows.Controls.ColumnDefinition> collection)
             : base(collection)
         {
         }

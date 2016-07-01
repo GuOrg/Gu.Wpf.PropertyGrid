@@ -6,12 +6,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:propertyGrid="http://gu.se/PropertyGrid"
         Title="SingleRowWindow"
+        SizeToContent="WidthAndHeight"
         mc:Ignorable="d">
     <Window.DataContext>
         <demo:SettingsVm />
     </Window.DataContext>
 
     <propertyGrid:LengthRow Header="length (m)"
-                                       Unit="m"
-                                       Value="{Binding EditableCopy.LengthValue}" />
+                            HeaderWidth="*"
+                            SuffixWidth="*"
+                            Unit="m"
+                            ValueWidth="*"
+                            Value="{Binding EditableCopy.LengthValue}" />
 </Window>

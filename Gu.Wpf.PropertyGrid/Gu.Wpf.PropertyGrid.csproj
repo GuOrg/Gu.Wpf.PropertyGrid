@@ -76,6 +76,7 @@
     <Compile Include="Converters\MultiplyConverter.cs" />
     <Compile Include="Grid\ColumnDefinitions.cs" />
     <Compile Include="Grid\ColumnDefinitionsConverter.cs" />
+    <Compile Include="Grid\ColumnDefinition.Sources.cs" />
     <Compile Include="Grid\Grid.cs" />
     <Compile Include="Grid\Grid.Sources.cs" />
     <Compile Include="Grid\GridCell.cs" />
@@ -120,8 +121,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Row.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Rows.xaml">
       <SubType>Designer</SubType>
