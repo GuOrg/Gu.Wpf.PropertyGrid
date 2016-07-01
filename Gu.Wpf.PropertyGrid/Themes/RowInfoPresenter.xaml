@@ -8,27 +8,25 @@
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="TextAlignment" Value="Right" />
-        <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type l:InfoPresenter}}}" />
+        <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type l:RowInfoPresenter}}}" />
     </Style>
 
-    <Style TargetType="{x:Type l:InfoPresenter}">
-        <Setter Property="Grid.Row" Value="1" />
-        <Setter Property="Grid.Column" Value="0" />
-        <Setter Property="Grid.ColumnSpan" Value="2" />
+    <Style TargetType="{x:Type l:RowInfoPresenter}">
         <Setter Property="MinHeight" Value="18" />
         <Setter Property="Foreground" Value="DodgerBlue" />
-        <!--<Setter Property="Grid.IsSharedSizeScope" Value="False" />-->
         <Setter Property="Template" Value="{x:Null}" />
         <Style.Triggers>
             <DataTrigger Binding="{Binding Path=(validationScope:Scope.HasErrors), RelativeSource={RelativeSource AncestorType={x:Type l:Row}}}" Value="True">
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type l:InfoPresenter}">
+                        <ControlTemplate TargetType="{x:Type l:RowInfoPresenter}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition />
-                                    <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                                    <ColumnDefinition l:ColumnDefinition.Source="Header" />
+                                    <ColumnDefinition l:ColumnDefinition.Source="Value" />
+                                    <ColumnDefinition l:ColumnDefinition.Source="Suffix" />
                                 </Grid.ColumnDefinitions>
+
                                 <l:ErrorPresenter x:Name="ErrorPresenter"
                                                   Grid.Column="0"
                                                   Grid.ColumnSpan="2"
@@ -51,11 +49,12 @@
                 </MultiDataTrigger.Conditions>
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type l:InfoPresenter}">
+                        <ControlTemplate TargetType="{x:Type l:RowInfoPresenter}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition />
-                                    <ColumnDefinition SharedSizeGroup="{x:Static l:SharedSizeGroups.ValueColumn}" />
+                                    <ColumnDefinition l:ColumnDefinition.Source="Header" />
+                                    <ColumnDefinition l:ColumnDefinition.Source="Value" />
+                                    <ColumnDefinition l:ColumnDefinition.Source="Suffix" />
                                 </Grid.ColumnDefinitions>
                                 <TextBlock x:Name="OldValue"
                                            Grid.Column="0"

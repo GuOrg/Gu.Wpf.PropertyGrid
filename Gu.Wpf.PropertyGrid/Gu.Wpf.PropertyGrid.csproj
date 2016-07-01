@@ -62,7 +62,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PropertyGrid.Styles.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controls\InfoPresenter.cs" />
+    <Compile Include="Controls\RowInfoPresenter.cs" />
     <Compile Include="Controls\Rows\SelectorRow.cs" />
     <Compile Include="Controls\TextBlocks\HeaderBlock.cs" />
     <Compile Include="Controls\TextBlocks\SettingBlockAutomationPeer.cs" />
@@ -117,7 +117,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\InfoPresenter.xaml">
+    <Page Include="Themes\RowInfoPresenter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

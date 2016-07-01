@@ -51,7 +51,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -109,7 +109,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -167,7 +167,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -225,7 +225,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -283,7 +283,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -341,7 +341,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -399,7 +399,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -457,7 +457,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -515,7 +515,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -573,7 +573,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -631,7 +631,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -689,7 +689,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -747,7 +747,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -805,7 +805,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -863,7 +863,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -921,7 +921,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -979,7 +979,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1037,7 +1037,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1095,7 +1095,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1153,7 +1153,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1211,7 +1211,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1269,7 +1269,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1327,7 +1327,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1385,7 +1385,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1443,7 +1443,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1501,7 +1501,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1559,7 +1559,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1617,7 +1617,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1675,7 +1675,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1733,7 +1733,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1791,7 +1791,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1849,7 +1849,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1907,7 +1907,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -1965,7 +1965,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2023,7 +2023,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2081,7 +2081,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2139,7 +2139,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2197,7 +2197,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2255,7 +2255,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2313,7 +2313,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2371,7 +2371,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2429,7 +2429,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2487,7 +2487,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2545,7 +2545,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2603,7 +2603,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2661,7 +2661,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2719,7 +2719,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2777,7 +2777,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2835,7 +2835,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"
@@ -2893,7 +2893,7 @@
                                                   Grid.Column="2"
                                                   Text="{TemplateBinding Suffix}" />
 
-                        <propertyGrid:InfoPresenter x:Name="InfoPresenter"
+                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                     Grid.Row="1"
                                                     Grid.Column="0"
                                                     Grid.ColumnSpan="2"

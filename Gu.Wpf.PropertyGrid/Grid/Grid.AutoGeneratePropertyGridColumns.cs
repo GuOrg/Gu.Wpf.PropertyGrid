@@ -3,10 +3,10 @@
     using System;
     using System.Windows;
 
-    // Don't think I'll be using this as it confuses with R# static analysis
-    internal static partial class Grid
+    public static partial class Grid
     {
-        public static readonly DependencyProperty AutoGeneratePropertyGridColumnsProperty = DependencyProperty.RegisterAttached(
+        // Don't think I'll be using this as it confuses with R# static analysis
+        internal static readonly DependencyProperty AutoGeneratePropertyGridColumnsProperty = DependencyProperty.RegisterAttached(
             "AutoGeneratePropertyGridColumns",
             typeof(bool),
             typeof(Grid),
@@ -15,14 +15,14 @@
                 FrameworkPropertyMetadataOptions.NotDataBindable,
                 AutoGeneratePropertyGridColumnsChanged));
 
-        public static void SetAutoGeneratePropertyGridColumns(this System.Windows.Controls.Grid element, bool value)
+        internal static void SetAutoGeneratePropertyGridColumns(this System.Windows.Controls.Grid element, bool value)
         {
             element.SetValue(AutoGeneratePropertyGridColumnsProperty, value);
         }
 
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(Grid))]
-        public static bool GetAutoGeneratePropertyGridColumns(this System.Windows.Controls.Grid element)
+        internal static bool GetAutoGeneratePropertyGridColumns(this System.Windows.Controls.Grid element)
         {
             return (bool)element.GetValue(AutoGeneratePropertyGridColumnsProperty);
         }

@@ -52,7 +52,10 @@
 
         public static readonly DependencyProperty SymbolFormatProperty = UnitRow.SymbolFormatProperty.AddOwner(
             typeof(UnitRow<TQuantity, TUnit>),
-            new FrameworkPropertyMetadata(UnitRow.DefaultSymbolFormat, FrameworkPropertyMetadataOptions.Inherits, OnSymbolFormatChanged));
+            new FrameworkPropertyMetadata(
+                UnitRow.DefaultSymbolFormat,
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnSymbolFormatChanged));
 
         private bool isUpdatingScalarValue;
 

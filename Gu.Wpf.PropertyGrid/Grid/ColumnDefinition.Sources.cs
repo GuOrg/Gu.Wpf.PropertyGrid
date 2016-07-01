@@ -118,10 +118,12 @@
 
         private class PropertyPaths
         {
+#pragma warning disable SA1401 // Fields must be private
             internal readonly PropertyPath WidthPath;
             internal readonly PropertyPath MinWidthPath;
             internal readonly PropertyPath MaxWidthPath;
             internal readonly IValueConverter SharedSizeGroupConverter;
+#pragma warning restore SA1401 // Fields must be private
 
             public PropertyPaths(string source, string sharedSizeGroup)
             {
@@ -139,7 +141,7 @@
                 return path;
             }
 
-            private class SharedSizeGroupConverter_: IValueConverter
+            private class SharedSizeGroupConverter_ : IValueConverter
             {
                 private readonly string groupName;
 

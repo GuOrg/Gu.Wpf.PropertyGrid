@@ -4,7 +4,7 @@
     using System.Windows;
     using System.Windows.Controls;
 
-    internal static partial class Grid
+    public static partial class Grid
     {
         public static readonly DependencyProperty CellProperty = DependencyProperty.RegisterAttached(
             "Cell",

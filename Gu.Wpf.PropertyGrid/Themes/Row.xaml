@@ -54,11 +54,11 @@
                                        Style="{TemplateBinding SuffixStyle}"
                                        Text="{TemplateBinding Suffix}" />
 
-                        <l:InfoPresenter x:Name="InfoPresenter"
-                                         Grid.Row="1"
-                                         Grid.Column="0"
-                                         Grid.ColumnSpan="2"
-                                         Style="{TemplateBinding InfoPresenterStyle}" />
+                        <l:RowInfoPresenter x:Name="InfoPresenter"
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="3"
+                                            Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -105,11 +105,11 @@
                                        Grid.Column="2"
                                        Text="{TemplateBinding Suffix}" />
 
-                        <l:InfoPresenter x:Name="InfoPresenter"
-                                         Grid.Row="1"
-                                         Grid.Column="0"
-                                         Grid.ColumnSpan="2"
-                                         Style="{TemplateBinding InfoPresenterStyle}" />
+                        <l:RowInfoPresenter x:Name="InfoPresenter"
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2"
+                                            Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -158,11 +158,11 @@
                                        l:Grid.Cell="0,2"
                                        Text="{TemplateBinding Suffix}" />
 
-                        <l:InfoPresenter x:Name="InfoPresenter"
-                                         Grid.Row="1"
-                                         Grid.Column="0"
-                                         Grid.ColumnSpan="2"
-                                         Style="{TemplateBinding InfoPresenterStyle}" />
+                        <l:RowInfoPresenter x:Name="InfoPresenter"
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2"
+                                            Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -208,11 +208,11 @@
                                        Grid.Column="2"
                                        Text="{TemplateBinding Suffix}" />
 
-                        <l:InfoPresenter x:Name="InfoPresenter"
-                                         Grid.Row="1"
-                                         Grid.Column="0"
-                                         Grid.ColumnSpan="2"
-                                         Style="{TemplateBinding InfoPresenterStyle}" />
+                        <l:RowInfoPresenter x:Name="InfoPresenter"
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2"
+                                            Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -259,11 +259,11 @@
                                        l:Grid.Cell="0,2"
                                        Text="{TemplateBinding Suffix}" />
 
-                        <l:InfoPresenter x:Name="InfoPresenter"
-                                         Grid.Row="1"
-                                         Grid.Column="0"
-                                         Grid.ColumnSpan="2"
-                                         Style="{TemplateBinding InfoPresenterStyle}" />
+                        <l:RowInfoPresenter x:Name="InfoPresenter"
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2"
+                                            Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -278,7 +278,7 @@
         <Setter Property="SuffixStyle" Value="{StaticResource {x:Type l:SuffixBlock}}" />
         <Setter Property="InfoPresenterStyle">
             <Setter.Value>
-                <Style TargetType="{x:Type l:InfoPresenter}">
+                <Style TargetType="{x:Type l:RowInfoPresenter}">
                     <Setter Property="Grid.Row" Value="1" />
                     <Setter Property="Grid.Column" Value="0" />
                     <Setter Property="Grid.ColumnSpan" Value="2" />
@@ -289,7 +289,7 @@
                         <DataTrigger Binding="{Binding Path=(validationScope:Scope.HasErrors), RelativeSource={RelativeSource AncestorType={x:Type l:ContentRow}}}" Value="True">
                             <Setter Property="Template">
                                 <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type l:InfoPresenter}">
+                                    <ControlTemplate TargetType="{x:Type l:RowInfoPresenter}">
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition />
@@ -342,11 +342,11 @@
                                        Grid.Column="2"
                                        Text="{TemplateBinding Suffix}" />
 
-                        <l:InfoPresenter x:Name="InfoPresenter"
-                                         Grid.Row="1"
-                                         Grid.Column="0"
-                                         Grid.ColumnSpan="2"
-                                         Style="{TemplateBinding InfoPresenterStyle}" />
+                        <l:RowInfoPresenter x:Name="InfoPresenter"
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2"
+                                            Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

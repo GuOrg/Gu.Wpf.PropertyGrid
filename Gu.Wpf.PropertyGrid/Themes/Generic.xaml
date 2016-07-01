@@ -2,7 +2,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Blocks.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/ErrorPresenter.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/InfoPresenter.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/RowInfoPresenter.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Row.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Rows.xaml" />
     </ResourceDictionary.MergedDictionaries>
