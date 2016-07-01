@@ -271,7 +271,6 @@
     <StackPanel>
         <propertyGrid:Rows DataContext="{Binding EditableCopy}"
                            HeaderWidth="107"
-                           HeaderStyle="{StaticResource HeaderTextBoxStyle}"
                            OldDataContext="{Binding DataContext.LastSaved,
                                                     RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
                            SuffixWidth="20"

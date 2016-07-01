@@ -22,8 +22,8 @@ namespace Gu.Wpf.PropertyGrid
             Type destinationType)
         {
             return false;
-            return destinationType == typeof(InstanceDescriptor) ||
-                   destinationType == typeof(string);
+            ////return destinationType == typeof(InstanceDescriptor) ||
+            ////       destinationType == typeof(string);
         }
 
         public override object ConvertFrom(

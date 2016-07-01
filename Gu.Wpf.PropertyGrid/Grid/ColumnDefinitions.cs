@@ -11,7 +11,7 @@ namespace Gu.Wpf.PropertyGrid
         {
         }
 
-        public ColumnDefinitions(IEnumerable<ColumnDefinition> collection) 
+        public ColumnDefinitions(IEnumerable<ColumnDefinition> collection)
             : base(collection)
         {
         }

@@ -44,7 +44,7 @@
             }
         }
 
-        public double[] ColumnsWidths<T>() 
+        public double[] ColumnsWidths<T>()
             where T : UIItem
         {
             var valueBounds = this.Value<T>().Bounds;

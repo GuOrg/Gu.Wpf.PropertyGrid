@@ -75,7 +75,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void Nullable()
         {
-            this.nullableBox.Text = "";
+            this.nullableBox.Text = string.Empty;
             this.loseFocusButton.Click();
 
             Assert.AreEqual("null", this.currentNullableValueTextBox.Text);

@@ -77,7 +77,6 @@ namespace Gu.Wpf.PropertyGrid
                 double.PositiveInfinity,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
-
         public static void SetHeaderWidth(this UIElement element, GridLength value)
         {
             element.SetValue(HeaderWidthProperty, value);
@@ -243,7 +242,6 @@ namespace Gu.Wpf.PropertyGrid
                 double.PositiveInfinity,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
-
         public GridLength HeaderWidth
         {
             get { return (GridLength)this.GetValue(HeaderWidthProperty); }
@@ -354,7 +352,6 @@ namespace Gu.Wpf.PropertyGrid
             new FrameworkPropertyMetadata(
                 double.PositiveInfinity,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
-
 
         public GridLength HeaderWidth
         {
@@ -467,7 +464,6 @@ namespace Gu.Wpf.PropertyGrid
                 double.PositiveInfinity,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
-
         public GridLength HeaderWidth
         {
             get { return (GridLength)this.GetValue(HeaderWidthProperty); }
@@ -523,4 +519,3 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 }
-

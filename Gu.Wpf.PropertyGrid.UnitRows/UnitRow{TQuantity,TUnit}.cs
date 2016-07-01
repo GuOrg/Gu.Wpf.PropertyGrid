@@ -119,16 +119,6 @@
             control.UpdateOldText();
         }
 
-        private static void OnSymbolFormatChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var control = (UnitRow<TQuantity, TUnit>)d;
-            var oldSuffix = CreateSuffix(control.Unit, (SymbolFormat)e.OldValue);
-            if (Equals(control.Suffix, oldSuffix))
-            {
-                control.Suffix = CreateSuffix(control.Unit, (SymbolFormat)e.NewValue);
-            }
-        }
-
         protected static string CreateSuffix(TUnit unit, SymbolFormat symbolFormat)
         {
             return unit.ToString(symbolFormat);
@@ -156,6 +146,16 @@
         {
             SetScalarValue(this, ScalarMaxValueProperty, newValue);
             base.OnMaxValueChanged(oldValue, newValue);
+        }
+
+        private static void OnSymbolFormatChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = (UnitRow<TQuantity, TUnit>)d;
+            var oldSuffix = CreateSuffix(control.Unit, (SymbolFormat)e.OldValue);
+            if (Equals(control.Suffix, oldSuffix))
+            {
+                control.Suffix = CreateSuffix(control.Unit, (SymbolFormat)e.NewValue);
+            }
         }
 
         private static void OnScalarValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
