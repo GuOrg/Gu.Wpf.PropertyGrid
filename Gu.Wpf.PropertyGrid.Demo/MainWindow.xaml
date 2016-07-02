@@ -10,7 +10,7 @@
         mc:Ignorable="d">
     <TabControl>
         <TabItem Header="SettingsView">
-            <local:SettingsView />
+            <local:PlainSettingsView />
         </TabItem>
 
         <TabItem Header="Props as headers">
