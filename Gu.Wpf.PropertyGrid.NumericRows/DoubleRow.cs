@@ -1,8 +1,7 @@
-﻿namespace Gu.Wpf.PropertyGrid
+﻿namespace Gu.Wpf.PropertyGrid.NumericRows
 {
     using System.Windows;
     using System.Windows.Data;
-
     using Gu.Wpf.NumericInput;
 
     public class DoubleRow : NumericRow<double>

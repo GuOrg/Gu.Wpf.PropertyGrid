@@ -6,15 +6,16 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid">
 <#
+    var prefix = "propertyGrid";
 		var namesAndXamls = new[]
 		{
-			new NameAndXaml("StringRow", StringValueXaml),
-			new NameAndXaml("BoolRow", CheckBoxValueXaml),
-			new NameAndXaml("CheckBoxRow", CheckBoxValueXaml),
-			new NameAndXaml("ToggleButtonRow", ToggleButtonValueXaml),
-			new NameAndXaml("EnumRow", EnumValueXaml),
-			new NameAndXaml("SelectorRow", ComboBoxValueXaml),
-			new NameAndXaml("ComboBoxRow", ComboBoxValueXaml),
+			new NameAndXaml(prefix, "StringRow", StringValueXaml),
+			new NameAndXaml(prefix, "BoolRow", CheckBoxValueXaml),
+			new NameAndXaml(prefix, "CheckBoxRow", CheckBoxValueXaml),
+			new NameAndXaml(prefix, "ToggleButtonRow", ToggleButtonValueXaml),
+			new NameAndXaml(prefix, "EnumRow", EnumValueXaml),
+			new NameAndXaml(prefix, "SelectorRow", ComboBoxValueXaml),
+			new NameAndXaml(prefix, "ComboBoxRow", ComboBoxValueXaml),
 		};
 		foreach(var nameAndXaml in namesAndXamls)
 		{
@@ -22,35 +23,35 @@
 
     <propertyGrid:RowControlTemplateSelector x:Key="<#= nameAndXaml.Name #>ControlTemplateSelector">
         <propertyGrid:RowControlTemplateSelector.PlainTemplate>
-<#= GetPlainTemplate(nameAndXaml.Name, TextBlockHeaderXaml, nameAndXaml.Xaml, TextBlockSuffixXaml) #>
+<#= GetPlainTemplate(nameAndXaml, TextBlockHeaderXaml, TextBlockSuffixXaml) #>
         </propertyGrid:RowControlTemplateSelector.PlainTemplate>
 
         <propertyGrid:RowControlTemplateSelector.TextBoxHeaderTemplate>
-<#= GetPlainTemplate(nameAndXaml.Name, TextBoxHeaderXaml, nameAndXaml.Xaml, TextBlockSuffixXaml) #>            
+<#= GetPlainTemplate(nameAndXaml, TextBoxHeaderXaml, TextBlockSuffixXaml) #>            
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderTemplate>
 
         <propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixTemplate>
-<#= GetPlainTemplate(nameAndXaml.Name, TextBoxHeaderXaml, nameAndXaml.Xaml, TextBoxSuffixXaml) #>              
+<#= GetPlainTemplate(nameAndXaml, TextBoxHeaderXaml, TextBoxSuffixXaml) #>              
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixTemplate>
 
         <propertyGrid:RowControlTemplateSelector.TextBoxSuffixTemplate>
-<#= GetPlainTemplate(nameAndXaml.Name, TextBlockHeaderXaml, nameAndXaml.Xaml, TextBoxSuffixXaml) #>              
+<#= GetPlainTemplate(nameAndXaml, TextBlockHeaderXaml, TextBoxSuffixXaml) #>              
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixTemplate>
 
         <propertyGrid:RowControlTemplateSelector.InfoTemplate>
-<#= GetInfoTemplate(nameAndXaml.Name, TextBlockHeaderXaml, nameAndXaml.Xaml, TextBlockSuffixXaml, InfoPresenterXaml) #>
+<#= GetInfoTemplate(nameAndXaml, TextBlockHeaderXaml, TextBlockSuffixXaml, InfoPresenterXaml) #>
         </propertyGrid:RowControlTemplateSelector.InfoTemplate>
 
         <propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndInfoTemplate>
-<#= GetInfoTemplate(nameAndXaml.Name, TextBoxHeaderXaml, nameAndXaml.Xaml, TextBlockSuffixXaml, InfoPresenterXaml) #>
+<#= GetInfoTemplate(nameAndXaml, TextBoxHeaderXaml, TextBlockSuffixXaml, InfoPresenterXaml) #>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndInfoTemplate>
 
         <propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixAndInfoTemplate>
-<#= GetInfoTemplate(nameAndXaml.Name, TextBoxHeaderXaml, nameAndXaml.Xaml, TextBoxSuffixXaml, InfoPresenterXaml) #>
+<#= GetInfoTemplate(nameAndXaml, TextBoxHeaderXaml, TextBoxSuffixXaml, InfoPresenterXaml) #>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixAndInfoTemplate>
 
         <propertyGrid:RowControlTemplateSelector.TextBoxSuffixInfoTemplate>
-<#= GetInfoTemplate(nameAndXaml.Name, TextBlockHeaderXaml, nameAndXaml.Xaml, TextBoxSuffixXaml, InfoPresenterXaml) #>
+<#= GetInfoTemplate(nameAndXaml, TextBlockHeaderXaml, TextBoxSuffixXaml, InfoPresenterXaml) #>
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixInfoTemplate>
     </propertyGrid:RowControlTemplateSelector>
 <#

@@ -3,12 +3,12 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows;
     using System.Windows.Data;
 
-    public abstract class Row<T> : Row
+    public abstract class GenericRow<T> : Row
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(T),
-            typeof(Row<T>),
+            typeof(GenericRow<T>),
             new FrameworkPropertyMetadata(
                 default(T),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,

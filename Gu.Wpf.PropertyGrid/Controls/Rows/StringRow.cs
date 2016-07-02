@@ -3,7 +3,7 @@
     using System.Windows;
     using System.Windows.Data;
 
-    public class StringRow : Row<string>
+    public class StringRow : GenericRow<string>
     {
         static StringRow()
         {

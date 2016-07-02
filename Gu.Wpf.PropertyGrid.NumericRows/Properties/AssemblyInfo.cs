@@ -43,5 +43,5 @@ using System.Windows.Markup;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.0.0.0")]
 [assembly: AssemblyFileVersion("3.0.0.0")]
-[assembly: XmlnsDefinition("http://gu.se/PropertyGrid", "Gu.Wpf.PropertyGrid")]
+[assembly: XmlnsDefinition("http://gu.se/PropertyGrid", "Gu.Wpf.PropertyGrid.NumericRows", AssemblyName = "Gu.Wpf.PropertyGrid.NumericRows")]
 [assembly: XmlnsPrefix("http://gu.se/PropertyGrid", "propertyGrid")]

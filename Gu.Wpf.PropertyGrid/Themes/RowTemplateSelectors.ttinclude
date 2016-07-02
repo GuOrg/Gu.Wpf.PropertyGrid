@@ -46,7 +46,7 @@
                                                        Style=""{TemplateBinding InfoPresenterStyle}"" />";
 
     private const string InfoTemplate =
-        @"            <ControlTemplate TargetType=""{{x:Type propertyGrid:{0}}}"">
+        @"            <ControlTemplate TargetType=""{{x:Type {0}}}"">
                 <Border Margin=""{{TemplateBinding Padding}}""
                         Background=""{{TemplateBinding Background}}""
                         BorderBrush=""{{TemplateBinding BorderBrush}}""
@@ -75,7 +75,7 @@
             </ControlTemplate>";
 
     private const string PlainTemplate =
-        @"            <ControlTemplate TargetType=""{{x:Type propertyGrid:{0}}}"">
+        @"            <ControlTemplate TargetType=""{{x:Type {0}}}"">
                 <Border Margin=""{{TemplateBinding Padding}}""
                         Background=""{{TemplateBinding Background}}""
                         BorderBrush=""{{TemplateBinding BorderBrush}}""
@@ -98,17 +98,17 @@
                 </ControlTemplate.Triggers>
             </ControlTemplate>";
 
-    private static string GetInfoTemplate(string controlName, string headerXaml, string valueXaml, string suffixXaml, string infoXaml)
+    private static string GetInfoTemplate(NameAndXaml nameAndXaml, string headerXaml, string suffixXaml, string infoXaml)
     {
-        var updatedValueXaml = SetValidationTemplateToNull(valueXaml);
-        updatedValueXaml = SetValueRowColumnAndFocusable(updatedValueXaml);
-        return  string.Format(InfoTemplate, controlName, headerXaml, updatedValueXaml, suffixXaml, infoXaml);
+        var valueXaml = SetValidationTemplateToNull(nameAndXaml.Xaml);
+        valueXaml = SetValueRowColumnAndFocusable(valueXaml);
+        return  string.Format(InfoTemplate, nameAndXaml.TargetType, headerXaml, valueXaml, suffixXaml, infoXaml);
     }
 
-	private static string GetPlainTemplate(string controlName, string headerXaml, string valueXaml, string suffixXaml)
+	private static string GetPlainTemplate(NameAndXaml nameAndXaml, string headerXaml, string suffixXaml)
     {
-	    var updatedValueXaml = SetValueRowColumnAndFocusable(valueXaml);
-        return  string.Format(PlainTemplate, controlName, headerXaml, updatedValueXaml, suffixXaml);
+	    var valueXaml = SetValueRowColumnAndFocusable(nameAndXaml.Xaml);
+        return  string.Format(PlainTemplate, nameAndXaml.TargetType, headerXaml, valueXaml, suffixXaml);
     }
 
     private static string SetValidationTemplateToNull(string valueXaml)
@@ -201,13 +201,20 @@
 
 	public  class NameAndXaml
 	{
+	    internal readonly string Prefix;
 	    internal readonly string Name;
 	    internal readonly string Xaml;
 
-	    public NameAndXaml(string name, string xaml)
+	    public NameAndXaml(string prefix,string name, string xaml)
 	    {
+	        this.Prefix = prefix;
 	        this.Name = name;
 	        this.Xaml = xaml;
+	    }
+
+	    public string TargetType
+	    {
+	        get { return this.Prefix + ":" + this.Name; }
 	    }
 	}
 #>
