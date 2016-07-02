@@ -24,14 +24,11 @@
                         <TextBox x:Name="PART_Value"
                                  Grid.Row="0"
                                  Grid.Column="1"
-                                 Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource Self},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
                                                  RelativeSource={RelativeSource TemplatedParent},
                                                  UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -40,6 +37,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.PlainTemplate>
 
@@ -66,14 +68,11 @@
                         <TextBox x:Name="PART_Value"
                                  Grid.Row="0"
                                  Grid.Column="1"
-                                 Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource Self},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
                                                  RelativeSource={RelativeSource TemplatedParent},
                                                  UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -82,6 +81,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>            
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderTemplate>
 
@@ -108,14 +112,11 @@
                         <TextBox x:Name="PART_Value"
                                  Grid.Row="0"
                                  Grid.Column="1"
-                                 Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource Self},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
                                                  RelativeSource={RelativeSource TemplatedParent},
                                                  UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -126,6 +127,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>              
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixTemplate>
 
@@ -150,14 +156,11 @@
                         <TextBox x:Name="PART_Value"
                                  Grid.Row="0"
                                  Grid.Column="1"
-                                 Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource Self},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
                                                  RelativeSource={RelativeSource TemplatedParent},
                                                  UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -168,6 +171,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>              
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixTemplate>
 
@@ -196,9 +204,6 @@
                         <TextBox x:Name="PART_Value"
                                  Grid.Row="0"
                                  Grid.Column="1"
-                                 Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource Self},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
                                                  RelativeSource={RelativeSource TemplatedParent},
@@ -217,7 +222,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.InfoTemplate>
 
@@ -248,9 +258,6 @@
                         <TextBox x:Name="PART_Value"
                                  Grid.Row="0"
                                  Grid.Column="1"
-                                 Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource Self},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
                                                  RelativeSource={RelativeSource TemplatedParent},
@@ -269,7 +276,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndInfoTemplate>
 
@@ -300,9 +312,6 @@
                         <TextBox x:Name="PART_Value"
                                  Grid.Row="0"
                                  Grid.Column="1"
-                                 Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource Self},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
                                                  RelativeSource={RelativeSource TemplatedParent},
@@ -323,7 +332,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixAndInfoTemplate>
 
@@ -352,9 +366,6 @@
                         <TextBox x:Name="PART_Value"
                                  Grid.Row="0"
                                  Grid.Column="1"
-                                 Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource Self},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
                                                  RelativeSource={RelativeSource TemplatedParent},
@@ -375,7 +386,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixInfoTemplate>
     </propertyGrid:RowControlTemplateSelector>
@@ -404,15 +420,12 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
-	
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -421,6 +434,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.PlainTemplate>
 
@@ -449,15 +467,12 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
-	
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -466,6 +481,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>            
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderTemplate>
 
@@ -494,15 +514,12 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
-	
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -513,6 +530,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>              
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixTemplate>
 
@@ -539,15 +561,12 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
-	
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -558,6 +577,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>              
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixTemplate>
 
@@ -588,14 +612,11 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -610,7 +631,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.InfoTemplate>
 
@@ -643,14 +669,11 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -665,7 +688,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndInfoTemplate>
 
@@ -698,14 +726,11 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
                         <TextBox x:Name="PART_Suffix"
@@ -722,7 +747,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixAndInfoTemplate>
 
@@ -753,14 +783,11 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
                         <TextBox x:Name="PART_Suffix"
@@ -777,7 +804,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixInfoTemplate>
     </propertyGrid:RowControlTemplateSelector>
@@ -806,15 +838,12 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
-	
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -823,6 +852,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.PlainTemplate>
 
@@ -851,15 +885,12 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
-	
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -868,6 +899,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>            
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderTemplate>
 
@@ -896,15 +932,12 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
-	
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -915,6 +948,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>              
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixTemplate>
 
@@ -941,15 +979,12 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
-	
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -960,6 +995,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>              
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixTemplate>
 
@@ -990,14 +1030,11 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -1012,7 +1049,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.InfoTemplate>
 
@@ -1045,14 +1087,11 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -1067,7 +1106,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndInfoTemplate>
 
@@ -1100,14 +1144,11 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
                         <TextBox x:Name="PART_Suffix"
@@ -1124,7 +1165,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixAndInfoTemplate>
 
@@ -1155,14 +1201,11 @@
                                   Grid.Column="1"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Focusable="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent}}"
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 
                         <TextBox x:Name="PART_Suffix"
@@ -1179,7 +1222,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixInfoTemplate>
     </propertyGrid:RowControlTemplateSelector>
@@ -1206,14 +1254,11 @@
                         <ToggleButton x:Name="PART_Value"
                                       Grid.Row="0"
                                       Grid.Column="1"
-                                      Focusable="{Binding IsReadOnly,
-                                                           RelativeSource={RelativeSource TemplatedParent},
-                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
                                                            RelativeSource={RelativeSource TemplatedParent}}"
                                       IsEnabled="{TemplateBinding IsReadOnly,
                                                                    Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -1222,6 +1267,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.PlainTemplate>
 
@@ -1248,14 +1298,11 @@
                         <ToggleButton x:Name="PART_Value"
                                       Grid.Row="0"
                                       Grid.Column="1"
-                                      Focusable="{Binding IsReadOnly,
-                                                           RelativeSource={RelativeSource TemplatedParent},
-                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
                                                            RelativeSource={RelativeSource TemplatedParent}}"
                                       IsEnabled="{TemplateBinding IsReadOnly,
                                                                    Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -1264,6 +1311,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>            
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderTemplate>
 
@@ -1290,14 +1342,11 @@
                         <ToggleButton x:Name="PART_Value"
                                       Grid.Row="0"
                                       Grid.Column="1"
-                                      Focusable="{Binding IsReadOnly,
-                                                           RelativeSource={RelativeSource TemplatedParent},
-                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
                                                            RelativeSource={RelativeSource TemplatedParent}}"
                                       IsEnabled="{TemplateBinding IsReadOnly,
                                                                    Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -1308,6 +1357,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>              
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixTemplate>
 
@@ -1332,14 +1386,11 @@
                         <ToggleButton x:Name="PART_Value"
                                       Grid.Row="0"
                                       Grid.Column="1"
-                                      Focusable="{Binding IsReadOnly,
-                                                           RelativeSource={RelativeSource TemplatedParent},
-                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
                                                            RelativeSource={RelativeSource TemplatedParent}}"
                                       IsEnabled="{TemplateBinding IsReadOnly,
                                                                    Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -1350,6 +1401,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>              
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixTemplate>
 
@@ -1378,9 +1434,6 @@
                         <ToggleButton x:Name="PART_Value"
                                       Grid.Row="0"
                                       Grid.Column="1"
-                                      Focusable="{Binding IsReadOnly,
-                                                           RelativeSource={RelativeSource TemplatedParent},
-                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
                                                            RelativeSource={RelativeSource TemplatedParent}}"
                                       IsEnabled="{TemplateBinding IsReadOnly,
@@ -1399,7 +1452,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.InfoTemplate>
 
@@ -1430,9 +1488,6 @@
                         <ToggleButton x:Name="PART_Value"
                                       Grid.Row="0"
                                       Grid.Column="1"
-                                      Focusable="{Binding IsReadOnly,
-                                                           RelativeSource={RelativeSource TemplatedParent},
-                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
                                                            RelativeSource={RelativeSource TemplatedParent}}"
                                       IsEnabled="{TemplateBinding IsReadOnly,
@@ -1451,7 +1506,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndInfoTemplate>
 
@@ -1482,9 +1542,6 @@
                         <ToggleButton x:Name="PART_Value"
                                       Grid.Row="0"
                                       Grid.Column="1"
-                                      Focusable="{Binding IsReadOnly,
-                                                           RelativeSource={RelativeSource TemplatedParent},
-                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
                                                            RelativeSource={RelativeSource TemplatedParent}}"
                                       IsEnabled="{TemplateBinding IsReadOnly,
@@ -1505,7 +1562,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixAndInfoTemplate>
 
@@ -1534,9 +1596,6 @@
                         <ToggleButton x:Name="PART_Value"
                                       Grid.Row="0"
                                       Grid.Column="1"
-                                      Focusable="{Binding IsReadOnly,
-                                                           RelativeSource={RelativeSource TemplatedParent},
-                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
                                                            RelativeSource={RelativeSource TemplatedParent}}"
                                       IsEnabled="{TemplateBinding IsReadOnly,
@@ -1557,7 +1616,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixInfoTemplate>
     </propertyGrid:RowControlTemplateSelector>
@@ -1584,15 +1648,12 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding EnumValues}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -1601,6 +1662,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.PlainTemplate>
 
@@ -1627,15 +1693,12 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding EnumValues}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -1644,6 +1707,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>            
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderTemplate>
 
@@ -1670,15 +1738,12 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding EnumValues}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -1689,6 +1754,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>              
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixTemplate>
 
@@ -1713,15 +1783,12 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding EnumValues}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -1732,6 +1799,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>              
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixTemplate>
 
@@ -1760,9 +1832,6 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding EnumValues}"
                                   SelectedItem="{Binding Value,
@@ -1782,7 +1851,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.InfoTemplate>
 
@@ -1813,9 +1887,6 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding EnumValues}"
                                   SelectedItem="{Binding Value,
@@ -1835,7 +1906,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndInfoTemplate>
 
@@ -1866,9 +1942,6 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding EnumValues}"
                                   SelectedItem="{Binding Value,
@@ -1890,7 +1963,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixAndInfoTemplate>
 
@@ -1919,9 +1997,6 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding EnumValues}"
                                   SelectedItem="{Binding Value,
@@ -1943,7 +2018,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixInfoTemplate>
     </propertyGrid:RowControlTemplateSelector>
@@ -1970,15 +2050,12 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -1987,6 +2064,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.PlainTemplate>
 
@@ -2013,15 +2095,12 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -2030,6 +2109,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>            
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderTemplate>
 
@@ -2056,15 +2140,12 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -2075,6 +2156,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>              
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixTemplate>
 
@@ -2099,15 +2185,12 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -2118,6 +2201,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>              
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixTemplate>
 
@@ -2146,9 +2234,6 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
@@ -2168,7 +2253,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.InfoTemplate>
 
@@ -2199,9 +2289,6 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
@@ -2221,7 +2308,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndInfoTemplate>
 
@@ -2252,9 +2344,6 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
@@ -2276,7 +2365,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixAndInfoTemplate>
 
@@ -2305,9 +2399,6 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
@@ -2329,7 +2420,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixInfoTemplate>
     </propertyGrid:RowControlTemplateSelector>
@@ -2356,15 +2452,12 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -2373,6 +2466,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.PlainTemplate>
 
@@ -2399,15 +2497,12 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -2416,6 +2511,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>            
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderTemplate>
 
@@ -2442,15 +2542,12 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -2461,6 +2558,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>              
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixTemplate>
 
@@ -2485,15 +2587,12 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -2504,6 +2603,11 @@
 	
                     </Grid>
                 </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>              
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixTemplate>
 
@@ -2532,9 +2636,6 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
@@ -2554,7 +2655,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.InfoTemplate>
 
@@ -2585,9 +2691,6 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
@@ -2607,7 +2710,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndInfoTemplate>
 
@@ -2638,9 +2746,6 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
@@ -2662,7 +2767,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixAndInfoTemplate>
 
@@ -2691,9 +2801,6 @@
                         <ComboBox x:Name="PART_Value"
                                   Grid.Row="0"
                                   Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsReadOnly="{TemplateBinding IsReadOnly}"
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
@@ -2715,7 +2822,12 @@
                                                        Grid.ColumnSpan="2"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
-                </Border> 
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="IsReadOnly" Value="True">
+                        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
             </ControlTemplate>
         </propertyGrid:RowControlTemplateSelector.TextBoxSuffixInfoTemplate>
     </propertyGrid:RowControlTemplateSelector>
