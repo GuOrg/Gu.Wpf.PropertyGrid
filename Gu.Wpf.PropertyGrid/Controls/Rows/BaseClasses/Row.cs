@@ -6,10 +6,10 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows.Controls;
     using System.Windows.Data;
 
-    [TemplatePart(Name = ValueBoxName, Type = typeof(FrameworkElement))]
+    [TemplatePart(Name = ValueName, Type = typeof(FrameworkElement))]
     public abstract partial class Row : Control
     {
-        public const string ValueBoxName = "PART_Value";
+        public const string ValueName = "PART_Value";
 
         protected abstract DependencyProperty ValueDependencyProperty { get; }
 
@@ -20,7 +20,7 @@ namespace Gu.Wpf.PropertyGrid
             sc.UpdateIsDirty();
         }
 
-        /// <summary>Creates AutomationPeer (<see cref="UIElement.OnCreateAutomationPeer"/>)</summary>
+        /// <inheritdoc/>
         protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer()
         {
             return new RowAutomationPeer(this);
