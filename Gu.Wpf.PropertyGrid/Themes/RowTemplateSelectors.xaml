@@ -30,8 +30,7 @@
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
                                                  RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}"
-                                 Validation.ErrorTemplate="{x:Null}" />
+                                                 UpdateSourceTrigger=PropertyChanged}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -73,8 +72,7 @@
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
                                                  RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}"
-                                 Validation.ErrorTemplate="{x:Null}" />
+                                                 UpdateSourceTrigger=PropertyChanged}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -116,8 +114,7 @@
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
                                                  RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}"
-                                 Validation.ErrorTemplate="{x:Null}" />
+                                                 UpdateSourceTrigger=PropertyChanged}" />
 	
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -159,8 +156,7 @@
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
                                                  RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}"
-                                 Validation.ErrorTemplate="{x:Null}" />
+                                                 UpdateSourceTrigger=PropertyChanged}" />
 	
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -208,7 +204,7 @@
                                                  RelativeSource={RelativeSource TemplatedParent},
                                                  UpdateSourceTrigger=PropertyChanged}"
                                  Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -260,7 +256,7 @@
                                                  RelativeSource={RelativeSource TemplatedParent},
                                                  UpdateSourceTrigger=PropertyChanged}"
                                  Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -312,7 +308,7 @@
                                                  RelativeSource={RelativeSource TemplatedParent},
                                                  UpdateSourceTrigger=PropertyChanged}"
                                  Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -364,7 +360,7 @@
                                                  RelativeSource={RelativeSource TemplatedParent},
                                                  UpdateSourceTrigger=PropertyChanged}"
                                  Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -415,8 +411,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
                                                        RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -461,8 +456,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
                                                        RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -507,8 +501,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
                                                        RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 	
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -553,8 +546,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
                                                        RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 	
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -605,7 +597,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent},
                                                        Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -660,7 +652,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent},
                                                        Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -715,7 +707,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent},
                                                        Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -770,7 +762,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent},
                                                        Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -821,8 +813,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
                                                        RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -867,8 +858,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
                                                        RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -913,8 +903,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
                                                        RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 	
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -959,8 +948,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
                                                        RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 	
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -1011,7 +999,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent},
                                                        Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -1066,7 +1054,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent},
                                                        Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -1121,7 +1109,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent},
                                                        Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -1176,7 +1164,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent},
                                                        Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -1224,8 +1212,7 @@
                                       IsChecked="{Binding Value,
                                                            RelativeSource={RelativeSource TemplatedParent}}"
                                       IsEnabled="{TemplateBinding IsReadOnly,
-                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                      Validation.ErrorTemplate="{x:Null}" />
+                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -1267,8 +1254,7 @@
                                       IsChecked="{Binding Value,
                                                            RelativeSource={RelativeSource TemplatedParent}}"
                                       IsEnabled="{TemplateBinding IsReadOnly,
-                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                      Validation.ErrorTemplate="{x:Null}" />
+                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -1310,8 +1296,7 @@
                                       IsChecked="{Binding Value,
                                                            RelativeSource={RelativeSource TemplatedParent}}"
                                       IsEnabled="{TemplateBinding IsReadOnly,
-                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                      Validation.ErrorTemplate="{x:Null}" />
+                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 	
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -1353,8 +1338,7 @@
                                       IsChecked="{Binding Value,
                                                            RelativeSource={RelativeSource TemplatedParent}}"
                                       IsEnabled="{TemplateBinding IsReadOnly,
-                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                      Validation.ErrorTemplate="{x:Null}" />
+                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 	
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -1402,7 +1386,7 @@
                                       IsEnabled="{TemplateBinding IsReadOnly,
                                                                    Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -1454,7 +1438,7 @@
                                       IsEnabled="{TemplateBinding IsReadOnly,
                                                                    Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -1506,7 +1490,7 @@
                                       IsEnabled="{TemplateBinding IsReadOnly,
                                                                    Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -1558,7 +1542,7 @@
                                       IsEnabled="{TemplateBinding IsReadOnly,
                                                                    Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -1607,8 +1591,7 @@
                                   ItemsSource="{TemplateBinding EnumValues}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                         UpdateSourceTrigger=PropertyChanged}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -1651,8 +1634,7 @@
                                   ItemsSource="{TemplateBinding EnumValues}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                         UpdateSourceTrigger=PropertyChanged}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -1695,8 +1677,7 @@
                                   ItemsSource="{TemplateBinding EnumValues}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                         UpdateSourceTrigger=PropertyChanged}" />
 	
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -1739,8 +1720,7 @@
                                   ItemsSource="{TemplateBinding EnumValues}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                         UpdateSourceTrigger=PropertyChanged}" />
 	
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -1789,7 +1769,7 @@
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -1842,7 +1822,7 @@
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -1895,7 +1875,7 @@
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -1948,7 +1928,7 @@
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -1997,8 +1977,7 @@
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                         UpdateSourceTrigger=PropertyChanged}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -2041,8 +2020,7 @@
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                         UpdateSourceTrigger=PropertyChanged}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -2085,8 +2063,7 @@
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                         UpdateSourceTrigger=PropertyChanged}" />
 	
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -2129,8 +2106,7 @@
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                         UpdateSourceTrigger=PropertyChanged}" />
 	
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -2179,7 +2155,7 @@
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -2232,7 +2208,7 @@
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -2285,7 +2261,7 @@
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -2338,7 +2314,7 @@
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -2387,8 +2363,7 @@
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                         UpdateSourceTrigger=PropertyChanged}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -2431,8 +2406,7 @@
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                         UpdateSourceTrigger=PropertyChanged}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -2475,8 +2449,7 @@
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                         UpdateSourceTrigger=PropertyChanged}" />
 	
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -2519,8 +2492,7 @@
                                   ItemsSource="{TemplateBinding ItemsSource}"
                                   SelectedItem="{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                                                         UpdateSourceTrigger=PropertyChanged}" />
 	
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -2569,7 +2541,7 @@
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -2622,7 +2594,7 @@
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
@@ -2675,7 +2647,7 @@
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"
@@ -2728,7 +2700,7 @@
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}"
                                   Validation.ErrorTemplate="{x:Null}" />
-	
+
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
                                  Grid.Column="2"

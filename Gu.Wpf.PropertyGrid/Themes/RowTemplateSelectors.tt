@@ -1,5 +1,7 @@
 ﻿<#@ template language="C#" #>
 <#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
 <#@ output extension=".xaml" #>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -79,8 +81,7 @@
                                  IsReadOnly=""{TemplateBinding IsReadOnly}""
                                  Text=""{Binding Value,
                                                  RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}""
-                                 Validation.ErrorTemplate=""{x:Null}"" />
+                                                 UpdateSourceTrigger=PropertyChanged}"" />
 	";
 
     private const string CheckBoxValueXaml = 
@@ -96,8 +97,7 @@
                                                        RelativeSource={RelativeSource TemplatedParent}}""
                                   IsEnabled=""{Binding IsReadOnly,
                                                        RelativeSource={RelativeSource TemplatedParent},
-                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}""
-                                  Validation.ErrorTemplate=""{x:Null}"" />
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"" />
 	";
 
 	    private const string ToggleButtonValueXaml = 
@@ -110,8 +110,7 @@
                                       IsChecked=""{Binding Value,
                                                            RelativeSource={RelativeSource TemplatedParent}}""
                                       IsEnabled=""{TemplateBinding IsReadOnly,
-                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}""
-                                      Validation.ErrorTemplate=""{x:Null}"" />
+                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"" />
 	";
 
     private const string EnumValueXaml =
@@ -125,8 +124,7 @@
                                   ItemsSource=""{TemplateBinding EnumValues}""
                                   SelectedItem=""{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}""
-                                  Validation.ErrorTemplate=""{x:Null}"" />
+                                                         UpdateSourceTrigger=PropertyChanged}"" />
 	";
 
     private const string ComboBoxValueXaml =
@@ -140,8 +138,7 @@
                                   ItemsSource=""{TemplateBinding ItemsSource}""
                                   SelectedItem=""{Binding Value,
                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}""
-                                  Validation.ErrorTemplate=""{x:Null}"" />
+                                                         UpdateSourceTrigger=PropertyChanged}"" />
 	";
 
     private const string TextBlockHeaderXaml = 
@@ -231,11 +228,64 @@
             </ControlTemplate>";
     private static string GetInfoTemplate(string controlName, string headerXaml, string valueXaml, string suffixXaml, string infoXaml)
     {
-        return  string.Format(InfoTemplate, controlName, headerXaml, valueXaml, suffixXaml, infoXaml);
+        var updatedValueXaml = SetValidationTemplateToNull(valueXaml);
+        return  string.Format(InfoTemplate, controlName, headerXaml, updatedValueXaml, suffixXaml, infoXaml);
     }
 
-	    private static string GetPlainTemplate(string controlName, string headerXaml, string valueXaml, string suffixXaml)
+	private static string GetPlainTemplate(string controlName, string headerXaml, string valueXaml, string suffixXaml)
     {
         return  string.Format(PlainTemplate, controlName, headerXaml, valueXaml, suffixXaml);
     }
-#>
+
+    private static string SetValidationTemplateToNull(string valueXaml)
+    {
+		if(valueXaml.Contains("Validation.ErrorTemplate"))
+		{
+		    return "Should not contain Validation.ErrorTemplate";
+		}
+        var builder = new StringBuilder();
+        var rows = GetRows(valueXaml);
+        var indentation = GetIndentation(valueXaml);
+        for (int i = 0; i < rows.Length; i++)
+        {
+            if (i < rows.Length - 1)
+            {
+                builder.AppendLine(rows[i]);
+            }
+            else
+            {
+                builder.AppendLine(RemoveEndTag(rows[i]));
+                builder.Append(indentation);
+                builder.Append(@"Validation.ErrorTemplate=""{x:Null}"" />");
+                builder.AppendLine();
+            }
+        }
+
+        return builder.ToString();
+    }
+
+    private static string[] GetRows(string text)
+    {
+        return text.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)
+                   .Where(s => !string.IsNullOrWhiteSpace(s))
+                   .ToArray();
+    }
+
+	private static string GetIndentation(string text)
+	{
+	    var row = GetRows(text)[1];
+	    var indexOf = row.IndexOf("Grid.");
+	    if (indexOf < 0)
+	    {
+	        return "second attribute should  be Grid.X";
+	    }
+	    return row.Substring(0, indexOf);
+	}
+
+	private static string RemoveEndTag(string text)
+	{
+	    return text.Substring(0, text.LastIndexOf("/>"))
+	               .TrimEnd();
+	}
+
+    #>
