@@ -7,17 +7,11 @@
     {
         private ControlTemplate textBoxHeaderTemplate;
         private ControlTemplate textBoxHeaderAndSuffixTemplate;
-
         private ControlTemplate textBoxHeaderAndInfoTemplate;
-
         private ControlTemplate plainTemplate;
-
         private ControlTemplate infoTemplate;
-
         private ControlTemplate textBoxHeaderAndSuffixAndInfoTemplate;
-
         private ControlTemplate textBoxSuffixTemplate;
-
         private ControlTemplate textBoxSuffixInfoTemplate;
 
         public ControlTemplate PlainTemplate
@@ -134,44 +128,12 @@
 
         protected override ControlTemplate SelectTemplate(Row container)
         {
-            if (container.InfoPresenterStyle == null)
-            {
-                if (IsTextBlockStyle(container.HeaderStyle) && IsTextBlockStyle(container.SuffixStyle))
-                {
-                    return this.plainTemplate;
-                }
+            return this.SelectTemplateCore(container, container.HeaderStyle, container.SuffixStyle, container.InfoPresenterStyle);
+        }
 
-                if (IsTextBoxStyle(container.HeaderStyle) && IsTextBlockStyle(container.SuffixStyle))
-                {
-                    return this.textBoxHeaderTemplate;
-                }
-
-                if (IsTextBoxStyle(container.HeaderStyle) && IsTextBoxStyle(container.SuffixStyle))
-                {
-                    return this.textBoxHeaderAndSuffixTemplate;
-                }
-
-                return this.textBoxSuffixTemplate;
-            }
-            else
-            {
-                if (IsTextBlockStyle(container.HeaderStyle) && IsTextBlockStyle(container.SuffixStyle))
-                {
-                    return this.infoTemplate;
-                }
-
-                if (IsTextBoxStyle(container.HeaderStyle) && IsTextBlockStyle(container.SuffixStyle))
-                {
-                    return this.textBoxHeaderAndInfoTemplate;
-                }
-
-                if (IsTextBoxStyle(container.HeaderStyle) && IsTextBoxStyle(container.SuffixStyle))
-                {
-                    return this.textBoxHeaderAndSuffixAndInfoTemplate;
-                }
-
-                return this.textBoxSuffixInfoTemplate;
-            }
+        public void UpdateCurrentTemplate(ContentRow container)
+        {
+            container.Template = this.SelectTemplateCore(container, container.HeaderStyle, container.SuffixStyle, container.InfoPresenterStyle);
         }
 
         protected static bool IsTextBlockStyle(Style style)
@@ -184,6 +146,47 @@
         {
             var targetType = style?.TargetType ?? typeof(ContentPresenter);
             return typeof(TextBox).IsAssignableFrom(targetType);
+        }
+
+        // ReSharper disable once UnusedParameter.Global
+        protected ControlTemplate SelectTemplateCore(Control container, Style headerStyle, Style suffixStyle, Style infoStyle)
+        {
+            if (infoStyle == null)
+            {
+                if (IsTextBlockStyle(headerStyle) && IsTextBlockStyle(suffixStyle))
+                {
+                    return this.plainTemplate;
+                }
+
+                if (IsTextBoxStyle(headerStyle) && IsTextBlockStyle(suffixStyle))
+                {
+                    return this.textBoxHeaderTemplate;
+                }
+
+                if (IsTextBoxStyle(headerStyle) && IsTextBoxStyle(suffixStyle))
+                {
+                    return this.textBoxHeaderAndSuffixTemplate;
+                }
+
+                return this.textBoxSuffixTemplate;
+            }
+
+            if (IsTextBlockStyle(headerStyle) && IsTextBlockStyle(suffixStyle))
+            {
+                return this.infoTemplate;
+            }
+
+            if (IsTextBoxStyle(headerStyle) && IsTextBlockStyle(suffixStyle))
+            {
+                return this.textBoxHeaderAndInfoTemplate;
+            }
+
+            if (IsTextBoxStyle(headerStyle) && IsTextBoxStyle(suffixStyle))
+            {
+                return this.textBoxHeaderAndSuffixAndInfoTemplate;
+            }
+
+            return this.textBoxSuffixInfoTemplate;
         }
     }
 }

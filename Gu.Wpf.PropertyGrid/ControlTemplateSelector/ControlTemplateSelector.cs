@@ -1,36 +1,15 @@
 ﻿namespace Gu.Wpf.PropertyGrid
 {
-    using System.ComponentModel;
     using System.Windows.Controls;
     using System.Xaml;
 
-    public abstract class ControlTemplateSelector<T> : INotifyPropertyChanged
+    public abstract class ControlTemplateSelector<T>
         where T : Control
     {
-        private ControlTemplate current;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public ControlTemplate Current
+        public virtual void UpdateCurrentTemplate(T container)
         {
-            get
-            {
-                return this.current;
-            }
-
-            protected set
-            {
-                if (value == this.current)
-                {
-                    return;
-                }
-
-                this.current = value;
-                this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(this.Current)));
-            }
+            container.Template = this.SelectTemplate(container);
         }
-
-        public virtual void UpdateCurrentTemplate(T container) => this.Current = this.SelectTemplate(container);
 
         protected abstract ControlTemplate SelectTemplate(T container);
 

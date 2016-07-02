@@ -33,7 +33,7 @@
                                                  UpdateSourceTrigger=PropertyChanged}"
                                  Validation.ErrorTemplate="{x:Null}" />
 	
-                        <propertyGrid:HeaderBlock x:Name="PART_Suffix"
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
                                                   Style="{TemplateBinding SuffixStyle}"
@@ -76,7 +76,7 @@
                                                  UpdateSourceTrigger=PropertyChanged}"
                                  Validation.ErrorTemplate="{x:Null}" />
 	
-                        <propertyGrid:HeaderBlock x:Name="PART_Suffix"
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
                                                   Style="{TemplateBinding SuffixStyle}"
@@ -209,7 +209,7 @@
                                                  UpdateSourceTrigger=PropertyChanged}"
                                  Validation.ErrorTemplate="{x:Null}" />
 	
-                        <propertyGrid:HeaderBlock x:Name="PART_Suffix"
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
                                                   Style="{TemplateBinding SuffixStyle}"
@@ -261,7 +261,7 @@
                                                  UpdateSourceTrigger=PropertyChanged}"
                                  Validation.ErrorTemplate="{x:Null}" />
 	
-                        <propertyGrid:HeaderBlock x:Name="PART_Suffix"
+                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
                                                   Grid.Column="2"
                                                   Style="{TemplateBinding SuffixStyle}"

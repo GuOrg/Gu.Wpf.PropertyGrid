@@ -45,8 +45,8 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\ControlTemplateSelector.cs" />
-    <Compile Include="Controls\RowControlTemplateSelector.cs" />
+    <Compile Include="ControlTemplateSelector\ControlTemplateSelector.cs" />
+    <Compile Include="ControlTemplateSelector\RowControlTemplateSelector.cs" />
     <Compile Include="Controls\Rows\BaseClasses\Row.DependencyProperties.cs" />
     <Compile Include="Controls\Rows\BaseClasses\Row.RowAutomationPeer.cs" />
     <Compile Include="Controls\Rows\ComboBoxRow.cs" />

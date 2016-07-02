@@ -9,37 +9,50 @@ namespace Gu.Wpf.PropertyGrid
             "HeaderStyle",
             typeof(Style),
             typeof(PropertyGrid),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty ValueStyleProperty = DependencyProperty.RegisterAttached(
             "ValueStyle",
             typeof(Style),
             typeof(PropertyGrid),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty SuffixStyleProperty = DependencyProperty.RegisterAttached(
             "SuffixStyle",
             typeof(Style),
             typeof(PropertyGrid),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty InfoPresenterStyleProperty = DependencyProperty.RegisterAttached(
             "InfoPresenterStyle",
             typeof(Style),
             typeof(PropertyGrid),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty OldValueStyleProperty = DependencyProperty.RegisterAttached(
             "OldValueStyle",
             typeof(Style),
             typeof(PropertyGrid),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty ErrorStyleProperty = DependencyProperty.RegisterAttached(
             "ErrorStyle",
             typeof(Style),
             typeof(PropertyGrid),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits));
+
 
         public static void SetHeaderStyle(this UIElement element, Style value)
         {
@@ -118,27 +131,40 @@ namespace Gu.Wpf.PropertyGrid
     {
         public static readonly DependencyProperty HeaderStyleProperty = PropertyGrid.HeaderStyleProperty.AddOwner(
             typeof(Rows),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty ValueStyleProperty = PropertyGrid.ValueStyleProperty.AddOwner(
             typeof(Rows),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty SuffixStyleProperty = PropertyGrid.SuffixStyleProperty.AddOwner(
             typeof(Rows),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty InfoPresenterStyleProperty = PropertyGrid.InfoPresenterStyleProperty.AddOwner(
             typeof(Rows),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
             typeof(Rows),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty ErrorStyleProperty = PropertyGrid.ErrorStyleProperty.AddOwner(
             typeof(Rows),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits));
+
 
         public Style HeaderStyle
         {
@@ -179,29 +205,61 @@ namespace Gu.Wpf.PropertyGrid
 
     public abstract partial class Row
     {
+        public static readonly DependencyProperty ControlTemplateSelectorProperty = DependencyProperty.Register(
+            nameof(ControlTemplateSelector),
+            typeof(RowControlTemplateSelector),
+            typeof(Row),
+            new PropertyMetadata(
+               default(RowControlTemplateSelector),
+               OnPartStyleChanged));
+
         public static readonly DependencyProperty HeaderStyleProperty = PropertyGrid.HeaderStyleProperty.AddOwner(
             typeof(Row),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnPartStyleChanged));
 
         public static readonly DependencyProperty ValueStyleProperty = PropertyGrid.ValueStyleProperty.AddOwner(
             typeof(Row),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnPartStyleChanged));
 
         public static readonly DependencyProperty SuffixStyleProperty = PropertyGrid.SuffixStyleProperty.AddOwner(
             typeof(Row),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnPartStyleChanged));
 
         public static readonly DependencyProperty InfoPresenterStyleProperty = PropertyGrid.InfoPresenterStyleProperty.AddOwner(
             typeof(Row),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnPartStyleChanged));
 
         public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
             typeof(Row),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnPartStyleChanged));
 
         public static readonly DependencyProperty ErrorStyleProperty = PropertyGrid.ErrorStyleProperty.AddOwner(
             typeof(Row),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnPartStyleChanged));
+
+        public RowControlTemplateSelector ControlTemplateSelector
+        {
+            get { return (RowControlTemplateSelector)this.GetValue(ControlTemplateSelectorProperty); }
+            set { this.SetValue(ControlTemplateSelectorProperty, value); }
+        }
 
         public Style HeaderStyle
         {
@@ -237,34 +295,71 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (Style)this.GetValue(ErrorStyleProperty); }
             set { this.SetValue(ErrorStyleProperty, value); }
+        }
+
+        private static void OnPartStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((Row)d).UpdateTemplate();
         }
     }
 
     public partial class ContentRow
     {
+        public static readonly DependencyProperty ControlTemplateSelectorProperty = DependencyProperty.Register(
+            nameof(ControlTemplateSelector),
+            typeof(RowControlTemplateSelector),
+            typeof(ContentRow),
+            new PropertyMetadata(
+               default(RowControlTemplateSelector),
+               OnPartStyleChanged));
+
         public static readonly DependencyProperty HeaderStyleProperty = PropertyGrid.HeaderStyleProperty.AddOwner(
             typeof(ContentRow),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnPartStyleChanged));
 
         public static readonly DependencyProperty ValueStyleProperty = PropertyGrid.ValueStyleProperty.AddOwner(
             typeof(ContentRow),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnPartStyleChanged));
 
         public static readonly DependencyProperty SuffixStyleProperty = PropertyGrid.SuffixStyleProperty.AddOwner(
             typeof(ContentRow),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnPartStyleChanged));
 
         public static readonly DependencyProperty InfoPresenterStyleProperty = PropertyGrid.InfoPresenterStyleProperty.AddOwner(
             typeof(ContentRow),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnPartStyleChanged));
 
         public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
             typeof(ContentRow),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnPartStyleChanged));
 
         public static readonly DependencyProperty ErrorStyleProperty = PropertyGrid.ErrorStyleProperty.AddOwner(
             typeof(ContentRow),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnPartStyleChanged));
+
+        public RowControlTemplateSelector ControlTemplateSelector
+        {
+            get { return (RowControlTemplateSelector)this.GetValue(ControlTemplateSelectorProperty); }
+            set { this.SetValue(ControlTemplateSelectorProperty, value); }
+        }
 
         public Style HeaderStyle
         {
@@ -300,6 +395,11 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (Style)this.GetValue(ErrorStyleProperty); }
             set { this.SetValue(ErrorStyleProperty, value); }
+        }
+
+        private static void OnPartStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((ContentRow)d).UpdateTemplate();
         }
     }
 }
