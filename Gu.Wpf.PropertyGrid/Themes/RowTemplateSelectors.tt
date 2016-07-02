@@ -68,3 +68,93 @@
 		} 
 		#>
 </ResourceDictionary>
+
+<#+
+
+    private const string TextBlockHeader = 
+	@"                        <propertyGrid:HeaderBlock x:Name=""PART_Header""
+                                Grid.Row=""0""
+                                Grid.Column=""0""
+                                Style=""{TemplateBinding HeaderStyle}""
+                                Text=""{TemplateBinding Header}""
+	";
+
+	    private const string TextBoxHeader = 
+	@"                        <TextBox x:Name=""PART_Header""
+                             Grid.Row=""0""
+                             Grid.Column=""0""
+                             Focusable=""False""
+                             IsReadOnly=""True""
+                             Style=""{TemplateBinding HeaderStyle}""
+                             Text=""{TemplateBinding Header}""
+	";
+
+	    private const string TextBlockSuffix = 
+	@"                        <propertyGrid:HeaderBlock x:Name=""PART_Suffix""
+                                Grid.Row=""0""
+                                Grid.Column=""2""
+                                Style=""{TemplateBinding SuffixStyle}""
+                                Text=""{TemplateBinding Suffix}""
+	";
+
+	    private const string TextBoxSuffix = 
+	@"                        <TextBox x:Name=""PART_Suffix""
+                             Grid.Row=""0""
+                             Grid.Column=""2""
+                             Focusable=""False""
+                             IsReadOnly=""True""
+                             Style=""{TemplateBinding SuffixStyle}""
+                             Text=""{TemplateBinding Suffix}""
+	";
+
+    private const string InfoTemplate =
+        @"            <ControlTemplate TargetType=""{x:Type propertyGrid:{0}}"">
+                        <Border Margin=""{TemplateBinding Padding}""
+                                Background=""{TemplateBinding Background}""
+                                BorderBrush=""{TemplateBinding BorderBrush}""
+                                BorderThickness=""{TemplateBinding BorderThickness}"">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height=""Auto"" />
+                                    <RowDefinition Height=""Auto"" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition propertyGrid:ColumnDefinition.Source=""Header"" />
+                                    <ColumnDefinition propertyGrid:ColumnDefinition.Source=""Value"" />
+                                    <ColumnDefinition propertyGrid:ColumnDefinition.Source=""Suffix"" />
+                                </Grid.ColumnDefinitions> 
+                                {1}
+                                {2}
+                                {3}
+                                {4}
+                            </Grid>
+		                </Border> 
+		            </ControlTemplate>";
+    private const string PlainTemplate =
+        @"            <ControlTemplate TargetType=""{x:Type propertyGrid:{0}}"">
+                        <Border Margin=""{TemplateBinding Padding}""
+                                Background=""{TemplateBinding Background}""
+                                BorderBrush=""{TemplateBinding BorderBrush}""
+                                BorderThickness=""{TemplateBinding BorderThickness}"">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition propertyGrid:ColumnDefinition.Source=""Header"" />
+                                    <ColumnDefinition propertyGrid:ColumnDefinition.Source=""Value"" />
+                                    <ColumnDefinition propertyGrid:ColumnDefinition.Source=""Suffix"" />
+                                </Grid.ColumnDefinitions> 
+                                {1}
+                                {2}
+                                {3}
+                            </Grid>
+		                </Border> 
+		            </ControlTemplate>";
+    private static string GetInfoTemplate(string controlName, string headerXaml, string valueXaml, string suffixXaml, string infoXaml)
+    {
+        return  string.Format(InfoTemplate, controlName, headerXaml, valueXaml, suffixXaml, infoXaml);
+    }
+
+	    private static string GetPlainTemplate(string controlName, string headerXaml, string valueXaml, string suffixXaml, string infoXaml)
+    {
+        return  string.Format(PlainTemplate, controlName, headerXaml, valueXaml, suffixXaml, infoXaml);
+    }
+#>
