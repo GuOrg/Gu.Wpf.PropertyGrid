@@ -23,7 +23,7 @@
         private StringComparison currentStringComparison;
         private Speed speedValue;
         private Length? nullableLengthValue;
-        private string stringValue;
+        private string stringValue = string.Empty;
         private bool boolValue;
         private bool hasErrors;
 

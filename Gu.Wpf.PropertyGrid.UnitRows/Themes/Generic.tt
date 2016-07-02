@@ -1,10 +1,11 @@
 ﻿<#@ template language="C#" #>
-<#@ include file="$(ProjectDir)Quantities.ttinclude" #>
+<#@ include file="..\Quantities.ttinclude" #>
 <#@ output extension=".xaml" #>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:validationScope="clr-namespace:Gu.Wpf.ValidationScope;assembly=Gu.Wpf.ValidationScope"
-					xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows">
+					xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows"
+					xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid;assembly=Gu.Wpf.PropertyGrid">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.UnitRows;component/Themes/RowTemplateSelectors.xaml" />
@@ -13,7 +14,7 @@
 	foreach(var quantity in GetQuantityTypes())
 	{
 		#>
-    <Style TargetType="{x:Type unitRows:<#= quantity.Name #>Row}">
+    <Style TargetType="{x:Type unitRows:<#= quantity.Name #>Row}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">

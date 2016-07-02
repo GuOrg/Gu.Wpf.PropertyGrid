@@ -243,7 +243,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -301,7 +301,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -361,7 +361,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -419,7 +419,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -669,7 +669,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -727,7 +727,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -787,7 +787,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -845,7 +845,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -1095,7 +1095,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -1153,7 +1153,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -1213,7 +1213,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -1271,7 +1271,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -1521,7 +1521,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -1579,7 +1579,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -1639,7 +1639,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -1697,7 +1697,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -1947,7 +1947,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -2005,7 +2005,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -2065,7 +2065,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -2123,7 +2123,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -2373,7 +2373,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -2431,7 +2431,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -2491,7 +2491,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -2549,7 +2549,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -2799,7 +2799,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -2857,7 +2857,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -2917,7 +2917,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -2975,7 +2975,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -3225,7 +3225,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -3283,7 +3283,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -3343,7 +3343,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -3401,7 +3401,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -3651,7 +3651,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -3709,7 +3709,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -3769,7 +3769,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -3827,7 +3827,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -4077,7 +4077,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -4135,7 +4135,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -4195,7 +4195,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -4253,7 +4253,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -4503,7 +4503,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -4561,7 +4561,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -4621,7 +4621,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -4679,7 +4679,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -4929,7 +4929,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -4987,7 +4987,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -5047,7 +5047,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -5105,7 +5105,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -5355,7 +5355,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -5413,7 +5413,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -5473,7 +5473,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -5531,7 +5531,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -5781,7 +5781,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -5839,7 +5839,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -5899,7 +5899,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -5957,7 +5957,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -6207,7 +6207,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -6265,7 +6265,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -6325,7 +6325,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -6383,7 +6383,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -6633,7 +6633,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -6691,7 +6691,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -6751,7 +6751,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -6809,7 +6809,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -7059,7 +7059,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -7117,7 +7117,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -7177,7 +7177,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -7235,7 +7235,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -7485,7 +7485,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -7543,7 +7543,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -7603,7 +7603,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -7661,7 +7661,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -7911,7 +7911,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -7969,7 +7969,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -8029,7 +8029,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -8087,7 +8087,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -8337,7 +8337,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -8395,7 +8395,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -8455,7 +8455,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -8513,7 +8513,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -8763,7 +8763,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -8821,7 +8821,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -8881,7 +8881,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -8939,7 +8939,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -9189,7 +9189,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -9247,7 +9247,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -9307,7 +9307,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -9365,7 +9365,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -9615,7 +9615,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -9673,7 +9673,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -9733,7 +9733,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -9791,7 +9791,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -10041,7 +10041,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -10099,7 +10099,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -10159,7 +10159,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -10217,7 +10217,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -10467,7 +10467,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -10525,7 +10525,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -10585,7 +10585,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -10643,7 +10643,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -10893,7 +10893,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -10951,7 +10951,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -11011,7 +11011,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -11069,7 +11069,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -11319,7 +11319,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -11377,7 +11377,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -11437,7 +11437,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -11495,7 +11495,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -11745,7 +11745,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -11803,7 +11803,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -11863,7 +11863,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -11921,7 +11921,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -12171,7 +12171,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -12229,7 +12229,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -12289,7 +12289,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -12347,7 +12347,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -12597,7 +12597,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -12655,7 +12655,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -12715,7 +12715,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -12773,7 +12773,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -13023,7 +13023,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -13081,7 +13081,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -13141,7 +13141,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -13199,7 +13199,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -13449,7 +13449,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -13507,7 +13507,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -13567,7 +13567,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -13625,7 +13625,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -13875,7 +13875,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -13933,7 +13933,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -13993,7 +13993,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -14051,7 +14051,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -14301,7 +14301,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -14359,7 +14359,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -14419,7 +14419,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -14477,7 +14477,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -14727,7 +14727,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -14785,7 +14785,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -14845,7 +14845,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -14903,7 +14903,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -15153,7 +15153,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -15211,7 +15211,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -15271,7 +15271,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -15329,7 +15329,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -15579,7 +15579,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -15637,7 +15637,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -15697,7 +15697,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -15755,7 +15755,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -16005,7 +16005,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -16063,7 +16063,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -16123,7 +16123,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -16181,7 +16181,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -16431,7 +16431,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -16489,7 +16489,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -16549,7 +16549,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -16607,7 +16607,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -16857,7 +16857,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -16915,7 +16915,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -16975,7 +16975,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -17033,7 +17033,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -17283,7 +17283,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -17341,7 +17341,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -17401,7 +17401,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -17459,7 +17459,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -17709,7 +17709,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -17767,7 +17767,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -17827,7 +17827,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -17885,7 +17885,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -18135,7 +18135,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -18193,7 +18193,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -18253,7 +18253,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -18311,7 +18311,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -18561,7 +18561,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -18619,7 +18619,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -18679,7 +18679,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -18737,7 +18737,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -18987,7 +18987,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -19045,7 +19045,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -19105,7 +19105,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -19163,7 +19163,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -19413,7 +19413,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -19471,7 +19471,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -19531,7 +19531,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -19589,7 +19589,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -19839,7 +19839,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -19897,7 +19897,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -19957,7 +19957,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -20015,7 +20015,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -20265,7 +20265,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -20323,7 +20323,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -20383,7 +20383,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -20441,7 +20441,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -20691,7 +20691,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -20749,7 +20749,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -20809,7 +20809,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -20867,7 +20867,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -21117,7 +21117,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -21175,7 +21175,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -21235,7 +21235,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>
@@ -21293,7 +21293,7 @@
                         <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
                                                        Grid.Row="1"
                                                        Grid.Column="0"
-                                                       Grid.ColumnSpan="2"
+                                                       Grid.ColumnSpan="3"
                                                        Style="{TemplateBinding InfoPresenterStyle}" />
                     </Grid>
                 </Border>

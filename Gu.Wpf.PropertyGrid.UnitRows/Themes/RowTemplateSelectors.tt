@@ -1,6 +1,6 @@
 ﻿<#@ template language="C#" #>
 <#@ include file="$(SolutionDir)\Gu.Wpf.PropertyGrid\Themes\RowTemplateSelectors.ttinclude" #>
-<#@ include file="$(ProjectDir)Quantities.ttinclude" #>
+<#@ include file="..\Quantities.ttinclude" #>
 <#@ output extension=".xaml" #>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
