@@ -11,6 +11,9 @@
 		                                   new NameAndXaml("BoolRow", CheckBoxValueXaml),
 		                                   new NameAndXaml("CheckBoxRow", CheckBoxValueXaml),
 		                                   new NameAndXaml("ToggleButtonRow", ToggleButtonValueXaml),
+		                                   new NameAndXaml("EnumRow", EnumValueXaml),
+		                                   new NameAndXaml("SelectorRow", ComboBoxValueXaml),
+		                                   new NameAndXaml("ComboBoxRow", ComboBoxValueXaml),
 		                               })
 		{
 		#>
@@ -108,6 +111,36 @@
                                                           RelativeSource={RelativeSource TemplatedParent}}""
                                       IsEnabled=""{TemplateBinding IsReadOnly}""
                                       Validation.ErrorTemplate=""{x:Null}"" />
+	";
+
+    private const string EnumValueXaml =
+	 @"                        <ComboBox x:Name=""PART_Value""
+                                  Grid.Row=""0""
+                                  Grid.Column=""1""
+                                  Focusable=""{Binding IsReadOnly,
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}""
+                                  IsReadOnly=""{TemplateBinding IsReadOnly}""
+                                  ItemsSource=""{TemplateBinding EnumValues}""
+                                  SelectedItem=""{Binding Value,
+                                                         RelativeSource={RelativeSource TemplatedParent},
+                                                         UpdateSourceTrigger=PropertyChanged}""
+                                  Validation.ErrorTemplate=""{x:Null}"" />
+	";
+
+    private const string ComboBoxValueXaml =
+	 @"                        <ComboBox x:Name=""PART_Value""
+                                  Grid.Row=""0""
+                                  Grid.Column=""1""
+                                  Focusable=""{Binding IsReadOnly,
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}""
+                                  IsReadOnly=""{TemplateBinding IsReadOnly}""
+                                  ItemsSource=""{TemplateBinding ItemsSource}""
+                                  SelectedItem=""{Binding Value,
+                                                         RelativeSource={RelativeSource TemplatedParent},
+                                                         UpdateSourceTrigger=PropertyChanged}""
+                                  Validation.ErrorTemplate=""{x:Null}"" />
 	";
 
     private const string TextBlockHeaderXaml = 

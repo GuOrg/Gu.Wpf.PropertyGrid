@@ -37,106 +37,17 @@
 
     <Style TargetType="{x:Type propertyGrid:EnumRow}">
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, ComboBox" />
-
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type propertyGrid:EnumRow}">
-                    <Grid Margin="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
-                            <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
-                            <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                        </Grid.ColumnDefinitions>
-                        <propertyGrid:HeaderBlock x:Name="PART_Header"
-                                       Grid.Row="0"
-                                       Grid.Column="0"
-                                       Text="{TemplateBinding Header}" />
-
-                        <ComboBox x:Name="PART_Value"
-                                  Grid.Row="0"
-                                  Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                  IsReadOnly="{TemplateBinding IsReadOnly}"
-                                  ItemsSource="{TemplateBinding EnumValues}"
-                                  SelectedItem="{Binding Value,
-                                                         RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}"
-                                  Validation.ErrorTemplate="{x:Null}" />
-
-                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                       Grid.Row="0"
-                                       Grid.Column="2"
-                                       Text="{TemplateBinding Suffix}" />
-
-                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
-                                            Grid.Row="1"
-                                            Grid.Column="0"
-                                            Grid.ColumnSpan="2"
-                                            Style="{TemplateBinding InfoPresenterStyle}" />
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="ControlTemplateSelector" Value="{StaticResource EnumRowControlTemplateSelector}" />
     </Style>
 
     <Style TargetType="{x:Type propertyGrid:SelectorRow}">
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, ComboBox" />
-
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type propertyGrid:SelectorRow}">
-                    <Grid Margin="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
-                            <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
-                            <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                        </Grid.ColumnDefinitions>
-                        <propertyGrid:HeaderBlock x:Name="PART_Header"
-                                       Grid.Row="0"
-                                       Grid.Column="0"
-                                       Text="{TemplateBinding Header}" />
-
-                        <ComboBox x:Name="PART_Value"
-                                  Grid.Row="0"
-                                  Grid.Column="1"
-                                  Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                  IsReadOnly="{TemplateBinding IsReadOnly}"
-                                  ItemsSource="{TemplateBinding ItemsSource}"
-                                  SelectedItem="{Binding Value,
-                                                         RelativeSource={RelativeSource TemplatedParent},
-                                                         UpdateSourceTrigger=PropertyChanged}"
-                                  Validation.ErrorTemplate="{x:Null}" />
-
-                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                       Grid.Row="0"
-                                       Grid.Column="2"
-                                       propertyGrid:Grid.Cell="0,2"
-                                       Text="{TemplateBinding Suffix}" />
-
-                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
-                                            Grid.Row="1"
-                                            Grid.Column="0"
-                                            Grid.ColumnSpan="2"
-                                            Style="{TemplateBinding InfoPresenterStyle}" />
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="ControlTemplateSelector" Value="{StaticResource SelectorRowControlTemplateSelector}" />
     </Style>
 
-    <Style BasedOn="{StaticResource {x:Type propertyGrid:SelectorRow}}" TargetType="{x:Type propertyGrid:ComboBoxRow}" />
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:SelectorRow}}" TargetType="{x:Type propertyGrid:ComboBoxRow}">
+        <Setter Property="ControlTemplateSelector" Value="{StaticResource ComboBoxRowControlTemplateSelector}" />
+    </Style>
 
     <Style TargetType="{x:Type propertyGrid:ContentRow}">
         <Setter Property="validationScope:Scope.ForInputTypes" Value="{x:Static validationScope:InputTypeCollection.Default}" />
@@ -162,11 +73,11 @@
                                                 <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
                                             </Grid.ColumnDefinitions>
                                             <propertyGrid:ErrorPresenter x:Name="ErrorPresenter"
-                                                              Grid.Column="0"
-                                                              Grid.ColumnSpan="2"
-                                                              HorizontalAlignment="Right"
-                                                              Content="{Binding Path=(validationScope:Scope.Errors),
-                                                                                RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:ContentRow}}}" />
+                                                                         Grid.Column="0"
+                                                                         Grid.ColumnSpan="2"
+                                                                         HorizontalAlignment="Right"
+                                                                         Content="{Binding Path=(validationScope:Scope.Errors),
+                                                                                           RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:ContentRow}}}" />
                                             <Border Grid.Column="1"
                                                     BorderBrush="Red"
                                                     BorderThickness="0,1,0,0" />
@@ -184,10 +95,6 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type propertyGrid:ContentRow}">
                     <Grid Margin="{TemplateBinding Padding}" Background="{TemplateBinding Background}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                             <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
@@ -204,15 +111,9 @@
                                           ContentSource="Content" />
 
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                       Grid.Row="0"
-                                       Grid.Column="2"
-                                       Text="{TemplateBinding Suffix}" />
-
-                        <propertyGrid:RowInfoPresenter x:Name="InfoPresenter"
-                                            Grid.Row="1"
-                                            Grid.Column="0"
-                                            Grid.ColumnSpan="2"
-                                            Style="{TemplateBinding InfoPresenterStyle}" />
+                                                  Grid.Row="0"
+                                                  Grid.Column="2"
+                                                  Text="{TemplateBinding Suffix}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
