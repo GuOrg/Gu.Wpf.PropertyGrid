@@ -13,6 +13,7 @@
         <Setter Property="Focusable" Value="False" />
         <Setter Property="HeaderStyle" Value="{StaticResource {x:Type l:HeaderBlock}}" />
         <Setter Property="SuffixStyle" Value="{StaticResource {x:Type l:SuffixBlock}}" />
+        <Setter Property="Template" Value="{Binding ControlTemplateSelector.Current, RelativeSource={RelativeSource Self}}" />
         <!--<Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />-->
     </Style>
 

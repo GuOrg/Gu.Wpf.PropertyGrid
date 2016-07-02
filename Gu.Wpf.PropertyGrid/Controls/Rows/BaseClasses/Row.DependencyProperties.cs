@@ -12,6 +12,12 @@
                     BooleanBoxes.False,
                     FrameworkPropertyMetadataOptions.Inherits | FrameworkPropertyMetadataOptions.NotDataBindable));
 
+        public static readonly DependencyProperty ControlTemplateSelectorProperty = DependencyProperty.Register(
+            nameof(ControlTemplateSelector),
+            typeof(RowControlTemplateSelector),
+            typeof(Row),
+            new PropertyMetadata(default(RowControlTemplateSelector)));
+
         public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
                 typeof(Row),
                 new FrameworkPropertyMetadata(default(object), FrameworkPropertyMetadataOptions.Inherits, OnOldDataContextChanged));
@@ -57,6 +63,12 @@
         {
             get { return (bool)this.GetValue(UsePropertyNameAsHeaderProperty); }
             set { this.SetValue(UsePropertyNameAsHeaderProperty, BooleanBoxes.Box(value)); }
+        }
+
+        public RowControlTemplateSelector ControlTemplateSelector
+        {
+            get { return (RowControlTemplateSelector)this.GetValue(ControlTemplateSelectorProperty); }
+            set { this.SetValue(ControlTemplateSelectorProperty, value); }
         }
 
         public object OldDataContext
