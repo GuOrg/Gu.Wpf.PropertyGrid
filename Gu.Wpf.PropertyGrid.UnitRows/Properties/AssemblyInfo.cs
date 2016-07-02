@@ -7,7 +7,7 @@ using System.Windows.Markup;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Gu.Wpf.PropertyGrid.UnitRows")]
-[assembly: AssemblyDescription("Unit setting controls for Gu.Wpf.PropertyGrid")]
+[assembly: AssemblyDescription("Unit rows for Gu.Wpf.PropertyGrid")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Johan Larsson")]
 [assembly: AssemblyProduct("Gu.Wpf.PropertyGrid.UnitRows")]
@@ -42,5 +42,5 @@ using System.Windows.Markup;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.0.0.0")]
 [assembly: AssemblyFileVersion("3.0.0.0")]
-[assembly: XmlnsDefinition("http://gu.se/PropertyGrid", "Gu.Wpf.PropertyGrid")]
+[assembly: XmlnsDefinition("http://gu.se/PropertyGrid", "Gu.Wpf.PropertyGrid.UnitRows")]
 [assembly: XmlnsPrefix("http://gu.se/PropertyGrid", "propertyGrid")]

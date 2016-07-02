@@ -45,6 +45,8 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlTemplateSelector\ControlTemplateSelector.cs" />
+    <Compile Include="ControlTemplateSelector\RowControlTemplateSelector.cs" />
     <Compile Include="Controls\Rows\BaseClasses\Row.DependencyProperties.cs" />
     <Compile Include="Controls\Rows\BaseClasses\Row.RowAutomationPeer.cs" />
     <Compile Include="Controls\Rows\ComboBoxRow.cs" />
@@ -129,6 +131,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\RowTemplateSelectors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RowTemplateSelectors.tt</DependentUpon>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\Validation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -161,6 +170,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Themes\RowTemplateSelectors.ttinclude" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -233,6 +243,10 @@
     <Content Include="Controls\Generated\PropertyGrid.Styles.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PropertyGrid.Styles.cs</LastGenOutput>
+    </Content>
+    <Content Include="Themes\RowTemplateSelectors.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RowTemplateSelectors.xaml</LastGenOutput>
     </Content>
   </ItemGroup>
 </Project>

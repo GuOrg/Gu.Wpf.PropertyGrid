@@ -25,7 +25,9 @@ namespace Gu.Wpf.PropertyGrid
             "<#= styleName #>",
             typeof(Style),
             typeof(PropertyGrid),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits));
 
 <#
 		} 
@@ -48,26 +50,18 @@ namespace Gu.Wpf.PropertyGrid
 <#      }
 		 #>
     }
-<#
-       var controlNames = new[]
-                           {
-                               new ClassMetaData("Rows", false),
-                               new ClassMetaData("Row", true),
-                               new ClassMetaData("ContentRow", false)
-                           };
-		foreach(var controlName in controlNames)
-		{
-		 #>
 
-    public <#= controlName.IsAbstract ? "abstract " : "" #>partial class <#= controlName.Name #>
+    public partial class Rows
     {
 <#
 			foreach(var styleName in styles)
 			{
 			 #>
         public static readonly DependencyProperty <#= styleName #>Property = PropertyGrid.<#= styleName #>Property.AddOwner(
-            typeof(<#= controlName.Name #>),
-            new FrameworkPropertyMetadata(default(Style), FrameworkPropertyMetadataOptions.Inherits));
+            typeof(Rows),
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits));
 
 <#
 			} 
@@ -86,10 +80,66 @@ namespace Gu.Wpf.PropertyGrid
 			#>
     }
 <#
+       var controlNames = new[]
+                           {
+                               new ClassMetaData("Row", true),
+                               new ClassMetaData("ContentRow", false)
+                           };
+		foreach(var controlName in controlNames)
+		{
+		 #>
+
+    public <#= controlName.IsAbstract ? "abstract " : "" #>partial class <#= controlName.Name #>
+    {
+        public static readonly DependencyProperty ControlTemplateSelectorProperty = DependencyProperty.Register(
+            nameof(ControlTemplateSelector),
+            typeof(RowControlTemplateSelector),
+            typeof(<#= controlName.Name #>),
+            new PropertyMetadata(
+               default(RowControlTemplateSelector),
+               OnPartStyleChanged));
+
+<#
+			foreach(var styleName in styles)
+			{
+			 #>
+        public static readonly DependencyProperty <#= styleName #>Property = PropertyGrid.<#= styleName #>Property.AddOwner(
+            typeof(<#= controlName.Name #>),
+            new FrameworkPropertyMetadata(
+                default(Style),
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnPartStyleChanged));
+
+<#
+			} #>
+        public RowControlTemplateSelector ControlTemplateSelector
+        {
+            get { return (RowControlTemplateSelector)this.GetValue(ControlTemplateSelectorProperty); }
+            set { this.SetValue(ControlTemplateSelectorProperty, value); }
+        }
+<#
+			foreach(var styleName in styles)
+			{
+			 #>
+
+        public Style <#= styleName #>
+        {
+            get { return (Style)this.GetValue(<#= styleName #>Property); }
+            set { this.SetValue(<#= styleName #>Property, value); }
+        }
+<#
+			} 
+			#>
+
+        private static void OnPartStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((<#= controlName.Name #>)d).UpdateTemplate();
+        }
+    }
+<#
 		} 
 		#>
 }
-
 <#+
    private class ClassMetaData
    {

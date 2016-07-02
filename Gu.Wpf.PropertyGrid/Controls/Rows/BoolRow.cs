@@ -2,7 +2,7 @@
 {
     using System.Windows;
 
-    public class BoolRow : Row<bool>
+    public class BoolRow : GenericRow<bool>
     {
         static BoolRow()
         {

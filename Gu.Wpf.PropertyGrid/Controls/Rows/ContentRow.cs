@@ -57,6 +57,11 @@ namespace Gu.Wpf.PropertyGrid
             set { this.SetValue(IsReadOnlyProperty, value); }
         }
 
+        protected virtual void UpdateTemplate()
+        {
+            this.ControlTemplateSelector?.UpdateCurrentTemplate(this);
+        }
+
         protected virtual void OnOldValueChanged(object oldValue, object newValue)
         {
         }

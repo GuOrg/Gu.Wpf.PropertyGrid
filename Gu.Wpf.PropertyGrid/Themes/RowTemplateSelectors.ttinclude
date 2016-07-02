@@ -1,0 +1,220 @@
+﻿<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#+
+    private const string TextBlockHeaderXaml = 
+	@"                        <propertyGrid:HeaderBlock x:Name=""PART_Header""
+                                                  Grid.Row=""0""
+                                                  Grid.Column=""0""
+                                                  Style=""{TemplateBinding HeaderStyle}""
+                                                  Text=""{TemplateBinding Header}"" />
+	";
+
+	    private const string TextBoxHeaderXaml = 
+	@"                        <TextBox x:Name=""PART_Header""
+                                 Grid.Row=""0""
+                                 Grid.Column=""0""
+                                 Focusable=""False""
+                                 IsReadOnly=""True""
+                                 Style=""{TemplateBinding HeaderStyle}""
+                                 Text=""{TemplateBinding Header}"" />
+	";
+
+	    private const string TextBlockSuffixXaml = 
+	@"                        <propertyGrid:SuffixBlock x:Name=""PART_Suffix""
+                                                  Grid.Row=""0""
+                                                  Grid.Column=""2""
+                                                  Style=""{TemplateBinding SuffixStyle}""
+                                                  Text=""{TemplateBinding Suffix}"" />
+	";
+
+	    private const string TextBoxSuffixXaml = 
+	@"                        <TextBox x:Name=""PART_Suffix""
+                                 Grid.Row=""0""
+                                 Grid.Column=""2""
+                                 Focusable=""False""
+                                 IsReadOnly=""True""
+                                 Style=""{TemplateBinding SuffixStyle}""
+                                 Text=""{TemplateBinding Suffix}"" />
+	";
+
+	    private const string InfoPresenterXaml = 
+	@"                        <propertyGrid:RowInfoPresenter x:Name=""InfoPresenter""
+                                                       Grid.Row=""1""
+                                                       Grid.Column=""0""
+                                                       Grid.ColumnSpan=""3""
+                                                       Style=""{TemplateBinding InfoPresenterStyle}"" />";
+
+    private const string InfoTemplate =
+        @"            <ControlTemplate TargetType=""{{x:Type {0}}}"">
+                <Border Margin=""{{TemplateBinding Padding}}""
+                        Background=""{{TemplateBinding Background}}""
+                        BorderBrush=""{{TemplateBinding BorderBrush}}""
+                        BorderThickness=""{{TemplateBinding BorderThickness}}"">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height=""Auto"" />
+                            <RowDefinition Height=""Auto"" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition propertyGrid:ColumnDefinition.Source=""Header"" />
+                            <ColumnDefinition propertyGrid:ColumnDefinition.Source=""Value"" />
+                            <ColumnDefinition propertyGrid:ColumnDefinition.Source=""Suffix"" />
+                        </Grid.ColumnDefinitions> 
+{1}
+{2}
+{3}
+{4}
+                    </Grid>
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property=""IsReadOnly"" Value=""True"">
+                        <Setter TargetName=""PART_Value"" Property=""Focusable"" Value=""False"" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>";
+
+    private const string PlainTemplate =
+        @"            <ControlTemplate TargetType=""{{x:Type {0}}}"">
+                <Border Margin=""{{TemplateBinding Padding}}""
+                        Background=""{{TemplateBinding Background}}""
+                        BorderBrush=""{{TemplateBinding BorderBrush}}""
+                        BorderThickness=""{{TemplateBinding BorderThickness}}"">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition propertyGrid:ColumnDefinition.Source=""Header"" />
+                            <ColumnDefinition propertyGrid:ColumnDefinition.Source=""Value"" />
+                            <ColumnDefinition propertyGrid:ColumnDefinition.Source=""Suffix"" />
+                        </Grid.ColumnDefinitions> 
+{1}
+{2}
+{3}
+                    </Grid>
+                </Border> 
+                <ControlTemplate.Triggers>
+                    <Trigger Property=""IsReadOnly"" Value=""True"">
+                        <Setter TargetName=""PART_Value"" Property=""Focusable"" Value=""False"" />
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>";
+
+    private static string GetInfoTemplate(NameAndXaml nameAndXaml, string headerXaml, string suffixXaml, string infoXaml)
+    {
+        var valueXaml = SetValidationTemplateToNull(nameAndXaml.Xaml);
+        valueXaml = SetValueRowColumnAndFocusable(valueXaml);
+        return  string.Format(InfoTemplate, nameAndXaml.TargetType, headerXaml, valueXaml, suffixXaml, infoXaml);
+    }
+
+	private static string GetPlainTemplate(NameAndXaml nameAndXaml, string headerXaml, string suffixXaml)
+    {
+	    var valueXaml = SetValueRowColumnAndFocusable(nameAndXaml.Xaml);
+        return  string.Format(PlainTemplate, nameAndXaml.TargetType, headerXaml, valueXaml, suffixXaml);
+    }
+
+    private static string SetValidationTemplateToNull(string valueXaml)
+    {
+		if(valueXaml.Contains("Validation.ErrorTemplate"))
+		{
+		    return "Should not contain Validation.ErrorTemplate";
+		}
+
+        var builder = new StringBuilder();
+        var rows = GetRows(valueXaml);
+        var indentation = GetIndentation(valueXaml);
+        for (int i = 0; i < rows.Length; i++)
+        {
+            if (i < rows.Length - 1)
+            {
+                builder.AppendLine(rows[i]);
+            }
+            else
+            {
+                builder.AppendLine(RemoveEndTag(rows[i]));
+                builder.Append(indentation);
+                builder.Append(@"Validation.ErrorTemplate=""{x:Null}"" />");
+                builder.AppendLine();
+            }
+        }
+
+        return builder.ToString();
+    }
+
+	private static string SetValueRowColumnAndFocusable(string valueXaml)
+    {
+		if(valueXaml.Contains("Grid.Row="))
+		{
+		    return "Template should not contain Grid.Row";
+		}
+
+		if(valueXaml.Contains("Grid.Column="))
+		{
+		    return "Template should not contain Grid.Column";
+		}
+
+	    if (valueXaml.Contains("Focusable="))
+	    {
+	           return "Template should not contain Focusable";
+	    }
+
+        var builder = new StringBuilder();
+        var rows = GetRows(valueXaml);
+	    builder.AppendLine(rows[0]);
+        var indentation = GetIndentation(valueXaml);
+	    builder.AppendLine(indentation + "Grid.Row=\"0\"");
+	    builder.AppendLine(indentation + "Grid.Column=\"1\"");
+	    // builder.AppendLine(indentation + "Focusable=\"{Binding IsReadOnly,");
+	    // builder.AppendLine(indentation + "                    RelativeSource={RelativeSource TemplatedParent},");
+	    // builder.AppendLine(indentation + "                    Converter={x:Static propertyGrid:InvertBoolConverter.Default}}\"");
+
+        for (int i = 1; i < rows.Length; i++)
+        {
+            builder.AppendLine(rows[i]);
+        }
+
+        return builder.ToString();
+    }
+
+    private static string[] GetRows(string text)
+    {
+        return text.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)
+                   .Where(s => !string.IsNullOrWhiteSpace(s))
+                   .ToArray();
+    }
+
+	private static string GetIndentation(string text)
+	{
+	    var row = GetRows(text)[0];
+	    var xNamePartValue = @"x:Name=""PART_Value""";
+	    var indexOf = row.IndexOf(xNamePartValue);
+	    if (indexOf < 0)
+	    {
+	        return $"first attribute should  be: '{xNamePartValue}'";
+	    }
+	    return new string(' ', indexOf);
+	}
+
+	private static string RemoveEndTag(string text)
+	{
+	    return text.Substring(0, text.LastIndexOf("/>"))
+	               .TrimEnd();
+	}
+
+	public  class NameAndXaml
+	{
+	    internal readonly string Prefix;
+	    internal readonly string Name;
+	    internal readonly string Xaml;
+
+	    public NameAndXaml(string prefix,string name, string xaml)
+	    {
+	        this.Prefix = prefix;
+	        this.Name = name;
+	        this.Xaml = xaml;
+	    }
+
+	    public string TargetType
+	    {
+	        get { return this.Prefix + ":" + this.Name; }
+	    }
+	}
+#>

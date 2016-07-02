@@ -1,4 +1,4 @@
-namespace Gu.Wpf.PropertyGrid
+namespace Gu.Wpf.PropertyGrid.UnitRows
 {
     using System.Windows;
     using Gu.Units;

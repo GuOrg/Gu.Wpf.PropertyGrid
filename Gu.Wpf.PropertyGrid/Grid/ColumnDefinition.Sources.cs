@@ -6,6 +6,7 @@
     using System.Globalization;
     using System.Linq;
     using System.Windows;
+    using System.Windows.Controls;
     using System.Windows.Data;
 
     public static class ColumnDefinition
@@ -54,35 +55,41 @@
                 return;
             }
 
-            var parent = (System.Windows.Controls.Control)grid.Ancestors()
-                          .OfType<Row>()
-                          .FirstOrDefault() ??
-                      grid.Ancestors()
-                          .OfType<Rows>()
-                          .FirstOrDefault();
-            if (parent != null)
-            {
-                var paths = GetPropertyPaths(source);
+            var parent = GetParentOrDefault<Row>(grid) ??
+                         GetParentOrDefault<ContentRow>(grid) ??
+                         GetParentOrDefault<Rows>(grid);
 
-                d.Bind(System.Windows.Controls.ColumnDefinition.WidthProperty)
-                 .OneWayTo(parent, paths.WidthPath);
-
-                d.Bind(System.Windows.Controls.ColumnDefinition.MaxWidthProperty)
-                 .OneWayTo(parent, paths.MaxWidthPath);
-
-                d.Bind(System.Windows.Controls.ColumnDefinition.MinWidthProperty)
-                 .OneWayTo(parent, paths.MinWidthPath);
-
-                d.Bind(System.Windows.Controls.DefinitionBase.SharedSizeGroupProperty)
-                 .OneWayTo(parent, paths.WidthPath, paths.SharedSizeGroupConverter);
-            }
-            else
+            if (parent == null)
             {
                 if (DesignerProperties.GetIsInDesignMode(d))
                 {
                     throw new NotSupportedException($"Cannot use {typeof(ColumnDefinition).Name}.{SourceProperty.Name} when not in a {typeof(Row).Name}");
                 }
+
+                return;
             }
+
+            var paths = GetPropertyPaths(source);
+
+            d.Bind(System.Windows.Controls.ColumnDefinition.WidthProperty)
+             .OneWayTo(parent, paths.WidthPath);
+
+            d.Bind(System.Windows.Controls.ColumnDefinition.MaxWidthProperty)
+             .OneWayTo(parent, paths.MaxWidthPath);
+
+            d.Bind(System.Windows.Controls.ColumnDefinition.MinWidthProperty)
+             .OneWayTo(parent, paths.MinWidthPath);
+
+            d.Bind(System.Windows.Controls.DefinitionBase.SharedSizeGroupProperty)
+             .OneWayTo(parent, paths.WidthPath, paths.SharedSizeGroupConverter);
+        }
+
+        private static Control GetParentOrDefault<T>(System.Windows.Controls.Grid grid)
+            where T : Control
+        {
+            return grid.Ancestors()
+                       .OfType<T>()
+                       .FirstOrDefault();
         }
 
         private static PropertyPaths GetPropertyPaths(string source)

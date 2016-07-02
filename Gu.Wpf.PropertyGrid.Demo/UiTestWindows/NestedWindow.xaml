@@ -11,24 +11,24 @@
         <GroupBox Header="nested longer">
             <propertyGrid:Rows HorizontalAlignment="Left" Background="DarkKhaki">
                 <propertyGrid:StringRow Background="Yellow"
-                                                   Header="root"
-                                                   Suffix="root suffix"
-                                                   Value="root value" />
+                                        Header="root"
+                                        Suffix="root suffix"
+                                        Value="root value" />
 
                 <TextBlock>First nested below</TextBlock>
                 <propertyGrid:Rows Background="GreenYellow" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
                     <propertyGrid:StringRow Background="CornflowerBlue"
-                                                       Header="a"
-                                                       Suffix="b"
-                                                       Value="c" />
+                                            Header="a"
+                                            Suffix="b"
+                                            Value="c" />
                 </propertyGrid:Rows>
 
                 <TextBlock>Second nested below</TextBlock>
                 <propertyGrid:Rows Background="BurlyWood" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
                     <propertyGrid:StringRow Background="Orange"
-                                                       Header="long header"
-                                                       Suffix="really long suffix"
-                                                       Value="really long value" />
+                                            Header="long header"
+                                            Suffix="really long suffix"
+                                            Value="really long value" />
                 </propertyGrid:Rows>
             </propertyGrid:Rows>
         </GroupBox>
@@ -36,24 +36,24 @@
         <GroupBox Header="nested shorter">
             <propertyGrid:Rows HorizontalAlignment="Left" Background="NavajoWhite">
                 <propertyGrid:StringRow Background="Tan"
-                                                   Header="root"
-                                                   Suffix="suffix"
-                                                   Value="value" />
+                                        Header="root"
+                                        Suffix="suffix"
+                                        Value="value" />
 
                 <TextBlock>First nested below</TextBlock>
                 <propertyGrid:Rows Background="OldLace" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
                     <propertyGrid:StringRow Background="PaleGreen"
-                                                       Header="a"
-                                                       Suffix="ab"
-                                                       Value="ac" />
+                                            Header="a"
+                                            Suffix="ab"
+                                            Value="ac" />
                 </propertyGrid:Rows>
 
                 <TextBlock>Second nested below</TextBlock>
                 <propertyGrid:Rows Background="IndianRed" Style="{StaticResource {x:Static propertyGrid:Keys.NestedSettingListStyle}}">
                     <propertyGrid:StringRow Background="LightGoldenrodYellow"
-                                                       Header="b"
-                                                       Suffix="bb"
-                                                       Value="bc" />
+                                            Header="b"
+                                            Suffix="bb"
+                                            Value="bc" />
                 </propertyGrid:Rows>
             </propertyGrid:Rows>
         </GroupBox>

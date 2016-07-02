@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Windows;
 
-    public class EnumRow : Row<object>
+    public class EnumRow : GenericRow<object>
     {
 #pragma warning disable SA1202 // Elements must be ordered by access
 

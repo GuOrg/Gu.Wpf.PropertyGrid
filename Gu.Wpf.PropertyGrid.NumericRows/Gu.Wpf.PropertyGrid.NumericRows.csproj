@@ -7,7 +7,7 @@
     <ProjectGuid>{AABF74D2-2282-4899-915D-409B1A6735C4}</ProjectGuid>
     <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gu.Wpf.PropertyGrid</RootNamespace>
+    <RootNamespace>Gu.Wpf.PropertyGrid.NumericRows</RootNamespace>
     <AssemblyName>Gu.Wpf.PropertyGrid.NumericRows</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -36,7 +36,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -137,5 +136,23 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers\analyzers\dotnet\cs\StyleCop.Analyzers.dll">
       <Paket>True</Paket>
     </Analyzer>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\RowTemplateSelectors.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RowTemplateSelectors.xaml</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\RowTemplateSelectors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RowTemplateSelectors.tt</DependentUpon>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>

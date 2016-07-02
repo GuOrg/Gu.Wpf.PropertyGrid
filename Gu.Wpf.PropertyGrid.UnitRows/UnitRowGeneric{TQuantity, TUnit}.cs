@@ -1,45 +1,44 @@
-﻿namespace Gu.Wpf.PropertyGrid
+﻿namespace Gu.Wpf.PropertyGrid.UnitRows
 {
     using System;
     using System.Windows;
-
     using Gu.Units;
     using Gu.Wpf.NumericInput;
 
-    public abstract class UnitRow<TQuantity, TUnit> : NumericRow<TQuantity>
+    public abstract class UnitRowGeneric<TQuantity, TUnit> : NumericRow<TQuantity>
         where TQuantity : struct, IComparable<TQuantity>, IQuantity<TUnit>
         where TUnit : IUnit<TQuantity>
     {
         public static readonly DependencyProperty DecimalDigitsProperty = NumericBox.DecimalDigitsProperty.AddOwner(
-            typeof(UnitRow<TQuantity, TUnit>),
+            typeof(UnitRowGeneric<TQuantity, TUnit>),
             new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty CanValueBeNullProperty = NumericBox.CanValueBeNullProperty.AddOwner(
-            typeof(UnitRow<TQuantity, TUnit>),
+            typeof(UnitRowGeneric<TQuantity, TUnit>),
             new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty ScalarValueProperty = DependencyProperty.Register(
             "ScalarValue",
             typeof(double?),
-            typeof(UnitRow<TQuantity, TUnit>),
+            typeof(UnitRowGeneric<TQuantity, TUnit>),
             new PropertyMetadata(default(double?), OnScalarValueChanged));
 
         public static readonly DependencyProperty ScalarMinValueProperty = DependencyProperty.Register(
             "ScalarMinValue",
             typeof(double?),
-            typeof(UnitRow<TQuantity, TUnit>),
+            typeof(UnitRowGeneric<TQuantity, TUnit>),
             new PropertyMetadata(default(double?), OnScalarMinValueChanged));
 
         public static readonly DependencyProperty ScalarMaxValueProperty = DependencyProperty.Register(
             "ScalarMaxValue",
             typeof(double?),
-            typeof(UnitRow<TQuantity, TUnit>),
+            typeof(UnitRowGeneric<TQuantity, TUnit>),
             new PropertyMetadata(default(double?), OnScalarMaxValueChanged));
 
         private static readonly DependencyPropertyKey OldStringValuePropertyKey = DependencyProperty.RegisterReadOnly(
             "OldStringValue",
             typeof(string),
-            typeof(UnitRow<TQuantity, TUnit>),
+            typeof(UnitRowGeneric<TQuantity, TUnit>),
             new PropertyMetadata(default(string)));
 
         public static readonly DependencyProperty OldStringValueProperty = OldStringValuePropertyKey.DependencyProperty;
@@ -47,11 +46,11 @@
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(TUnit),
-            typeof(UnitRow<TQuantity, TUnit>),
+            typeof(UnitRowGeneric<TQuantity, TUnit>),
             new PropertyMetadata(default(TUnit), OnUnitChanged));
 
         public static readonly DependencyProperty SymbolFormatProperty = UnitRow.SymbolFormatProperty.AddOwner(
-            typeof(UnitRow<TQuantity, TUnit>),
+            typeof(UnitRowGeneric<TQuantity, TUnit>),
             new FrameworkPropertyMetadata(
                 UnitRow.DefaultSymbolFormat,
                 FrameworkPropertyMetadataOptions.Inherits,
@@ -109,7 +108,7 @@
 
         protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (UnitRow<TQuantity, TUnit>)d;
+            var control = (UnitRowGeneric<TQuantity, TUnit>)d;
             var oldSuffix = CreateSuffix((TUnit)e.OldValue, control.SymbolFormat);
             if (Equals(control.Suffix, oldSuffix))
             {
@@ -153,7 +152,7 @@
 
         private static void OnSymbolFormatChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = (UnitRow<TQuantity, TUnit>)d;
+            var control = (UnitRowGeneric<TQuantity, TUnit>)d;
             var oldSuffix = CreateSuffix(control.Unit, (SymbolFormat)e.OldValue);
             if (Equals(control.Suffix, oldSuffix))
             {
@@ -178,7 +177,7 @@
 
         private static void SetQuantityValue(DependencyObject o, DependencyProperty property, double? value)
         {
-            var control = (UnitRow<TQuantity, TUnit>)o;
+            var control = (UnitRowGeneric<TQuantity, TUnit>)o;
             if (control.isUpdatingScalarValue)
             {
                 return;
@@ -192,7 +191,7 @@
 
         private static void SetScalarValue(DependencyObject o, DependencyProperty property, TQuantity? quantity)
         {
-            var control = (UnitRow<TQuantity, TUnit>)o;
+            var control = (UnitRowGeneric<TQuantity, TUnit>)o;
             control.isUpdatingScalarValue = true;
             var value = quantity != null
                 ? control.Unit.GetScalarValue(quantity.Value)

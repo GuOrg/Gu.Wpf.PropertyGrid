@@ -4,7 +4,7 @@
     using System.Windows;
     using System.Windows.Data;
 
-    public abstract class NumericRow<T> : Row<T?>
+    public abstract class NumericRow<T> : GenericRow<T?>
         where T : struct, IComparable<T>
     {
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(

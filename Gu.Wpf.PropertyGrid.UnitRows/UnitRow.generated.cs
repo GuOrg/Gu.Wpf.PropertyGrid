@@ -1,15 +1,16 @@
-﻿#pragma warning disable SA1649 // File name must match first type name
+﻿
+#pragma warning disable SA1649 // File name must match first type name
 #pragma warning disable SA1402 // File may only contain a single class
 #pragma warning disable SA1118 // Parameter must not span multiple lines
-namespace Gu.Wpf.PropertyGrid
+namespace Gu.Wpf.PropertyGrid.UnitRows
 {
     using System.Windows;
     using System.Windows.Data;
     using Gu.Units;
 
-    public class AccelerationRow : UnitRow<Acceleration, AccelerationUnit>
+    public class AccelerationRow : UnitRowGeneric<Acceleration, AccelerationUnit>
     {
-        public static readonly AccelerationUnit DefaultUnit = AccelerationUnit.MetresPerSecondSquared;
+        public static readonly AccelerationUnit DefaultUnit = default(AccelerationUnit).SiUnit;
 
         static AccelerationRow()
         {
@@ -25,9 +26,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class AmountOfSubstanceRow : UnitRow<AmountOfSubstance, AmountOfSubstanceUnit>
+    public class AmountOfSubstanceRow : UnitRowGeneric<AmountOfSubstance, AmountOfSubstanceUnit>
     {
-        public static readonly AmountOfSubstanceUnit DefaultUnit = AmountOfSubstanceUnit.Moles;
+        public static readonly AmountOfSubstanceUnit DefaultUnit = default(AmountOfSubstanceUnit).SiUnit;
 
         static AmountOfSubstanceRow()
         {
@@ -43,9 +44,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class AngleRow : UnitRow<Angle, AngleUnit>
+    public class AngleRow : UnitRowGeneric<Angle, AngleUnit>
     {
-        public static readonly AngleUnit DefaultUnit = AngleUnit.Degrees;
+        public static readonly AngleUnit DefaultUnit = default(AngleUnit).SiUnit;
 
         static AngleRow()
         {
@@ -61,9 +62,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class AnglePerUnitlessRow : UnitRow<AnglePerUnitless, AnglePerUnitlessUnit>
+    public class AnglePerUnitlessRow : UnitRowGeneric<AnglePerUnitless, AnglePerUnitlessUnit>
     {
-        public static readonly AnglePerUnitlessUnit DefaultUnit = AnglePerUnitlessUnit.RadiansPerUnitless;
+        public static readonly AnglePerUnitlessUnit DefaultUnit = default(AnglePerUnitlessUnit).SiUnit;
 
         static AnglePerUnitlessRow()
         {
@@ -79,9 +80,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class AngularAccelerationRow : UnitRow<AngularAcceleration, AngularAccelerationUnit>
+    public class AngularAccelerationRow : UnitRowGeneric<AngularAcceleration, AngularAccelerationUnit>
     {
-        public static readonly AngularAccelerationUnit DefaultUnit = AngularAccelerationUnit.RadiansPerSecondSquared;
+        public static readonly AngularAccelerationUnit DefaultUnit = default(AngularAccelerationUnit).SiUnit;
 
         static AngularAccelerationRow()
         {
@@ -97,9 +98,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class AngularJerkRow : UnitRow<AngularJerk, AngularJerkUnit>
+    public class AngularJerkRow : UnitRowGeneric<AngularJerk, AngularJerkUnit>
     {
-        public static readonly AngularJerkUnit DefaultUnit = AngularJerkUnit.RadiansPerSecondCubed;
+        public static readonly AngularJerkUnit DefaultUnit = default(AngularJerkUnit).SiUnit;
 
         static AngularJerkRow()
         {
@@ -115,9 +116,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class AngularSpeedRow : UnitRow<AngularSpeed, AngularSpeedUnit>
+    public class AngularSpeedRow : UnitRowGeneric<AngularSpeed, AngularSpeedUnit>
     {
-        public static readonly AngularSpeedUnit DefaultUnit = AngularSpeedUnit.RadiansPerSecond;
+        public static readonly AngularSpeedUnit DefaultUnit = default(AngularSpeedUnit).SiUnit;
 
         static AngularSpeedRow()
         {
@@ -133,9 +134,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class AreaRow : UnitRow<Area, AreaUnit>
+    public class AreaRow : UnitRowGeneric<Area, AreaUnit>
     {
-        public static readonly AreaUnit DefaultUnit = AreaUnit.SquareMetres;
+        public static readonly AreaUnit DefaultUnit = default(AreaUnit).SiUnit;
 
         static AreaRow()
         {
@@ -151,9 +152,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class AreaDensityRow : UnitRow<AreaDensity, AreaDensityUnit>
+    public class AreaDensityRow : UnitRowGeneric<AreaDensity, AreaDensityUnit>
     {
-        public static readonly AreaDensityUnit DefaultUnit = AreaDensityUnit.KilogramsPerSquareMetre;
+        public static readonly AreaDensityUnit DefaultUnit = default(AreaDensityUnit).SiUnit;
 
         static AreaDensityRow()
         {
@@ -169,9 +170,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class CapacitanceRow : UnitRow<Capacitance, CapacitanceUnit>
+    public class CapacitanceRow : UnitRowGeneric<Capacitance, CapacitanceUnit>
     {
-        public static readonly CapacitanceUnit DefaultUnit = CapacitanceUnit.Farads;
+        public static readonly CapacitanceUnit DefaultUnit = default(CapacitanceUnit).SiUnit;
 
         static CapacitanceRow()
         {
@@ -187,9 +188,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class CatalyticActivityRow : UnitRow<CatalyticActivity, CatalyticActivityUnit>
+    public class CatalyticActivityRow : UnitRowGeneric<CatalyticActivity, CatalyticActivityUnit>
     {
-        public static readonly CatalyticActivityUnit DefaultUnit = CatalyticActivityUnit.Katals;
+        public static readonly CatalyticActivityUnit DefaultUnit = default(CatalyticActivityUnit).SiUnit;
 
         static CatalyticActivityRow()
         {
@@ -205,9 +206,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class CurrentRow : UnitRow<Current, CurrentUnit>
+    public class CurrentRow : UnitRowGeneric<Current, CurrentUnit>
     {
-        public static readonly CurrentUnit DefaultUnit = CurrentUnit.Amperes;
+        public static readonly CurrentUnit DefaultUnit = default(CurrentUnit).SiUnit;
 
         static CurrentRow()
         {
@@ -223,9 +224,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class DataRow : UnitRow<Data, DataUnit>
+    public class DataRow : UnitRowGeneric<Data, DataUnit>
     {
-        public static readonly DataUnit DefaultUnit = DataUnit.Bits;
+        public static readonly DataUnit DefaultUnit = default(DataUnit).SiUnit;
 
         static DataRow()
         {
@@ -241,9 +242,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class DensityRow : UnitRow<Density, DensityUnit>
+    public class DensityRow : UnitRowGeneric<Density, DensityUnit>
     {
-        public static readonly DensityUnit DefaultUnit = DensityUnit.KilogramsPerCubicMetre;
+        public static readonly DensityUnit DefaultUnit = default(DensityUnit).SiUnit;
 
         static DensityRow()
         {
@@ -259,9 +260,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class ElectricalConductanceRow : UnitRow<ElectricalConductance, ElectricalConductanceUnit>
+    public class ElectricalConductanceRow : UnitRowGeneric<ElectricalConductance, ElectricalConductanceUnit>
     {
-        public static readonly ElectricalConductanceUnit DefaultUnit = ElectricalConductanceUnit.Siemens;
+        public static readonly ElectricalConductanceUnit DefaultUnit = default(ElectricalConductanceUnit).SiUnit;
 
         static ElectricalConductanceRow()
         {
@@ -277,9 +278,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class ElectricChargeRow : UnitRow<ElectricCharge, ElectricChargeUnit>
+    public class ElectricChargeRow : UnitRowGeneric<ElectricCharge, ElectricChargeUnit>
     {
-        public static readonly ElectricChargeUnit DefaultUnit = ElectricChargeUnit.Coulombs;
+        public static readonly ElectricChargeUnit DefaultUnit = default(ElectricChargeUnit).SiUnit;
 
         static ElectricChargeRow()
         {
@@ -295,9 +296,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class EnergyRow : UnitRow<Energy, EnergyUnit>
+    public class EnergyRow : UnitRowGeneric<Energy, EnergyUnit>
     {
-        public static readonly EnergyUnit DefaultUnit = EnergyUnit.Joules;
+        public static readonly EnergyUnit DefaultUnit = default(EnergyUnit).SiUnit;
 
         static EnergyRow()
         {
@@ -313,9 +314,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class FlexibilityRow : UnitRow<Flexibility, FlexibilityUnit>
+    public class FlexibilityRow : UnitRowGeneric<Flexibility, FlexibilityUnit>
     {
-        public static readonly FlexibilityUnit DefaultUnit = FlexibilityUnit.MetresPerNewton;
+        public static readonly FlexibilityUnit DefaultUnit = default(FlexibilityUnit).SiUnit;
 
         static FlexibilityRow()
         {
@@ -331,9 +332,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class ForceRow : UnitRow<Force, ForceUnit>
+    public class ForceRow : UnitRowGeneric<Force, ForceUnit>
     {
-        public static readonly ForceUnit DefaultUnit = ForceUnit.Newtons;
+        public static readonly ForceUnit DefaultUnit = default(ForceUnit).SiUnit;
 
         static ForceRow()
         {
@@ -349,9 +350,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class ForcePerUnitlessRow : UnitRow<ForcePerUnitless, ForcePerUnitlessUnit>
+    public class ForcePerUnitlessRow : UnitRowGeneric<ForcePerUnitless, ForcePerUnitlessUnit>
     {
-        public static readonly ForcePerUnitlessUnit DefaultUnit = ForcePerUnitlessUnit.NewtonsPerUnitless;
+        public static readonly ForcePerUnitlessUnit DefaultUnit = default(ForcePerUnitlessUnit).SiUnit;
 
         static ForcePerUnitlessRow()
         {
@@ -367,9 +368,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class FrequencyRow : UnitRow<Frequency, FrequencyUnit>
+    public class FrequencyRow : UnitRowGeneric<Frequency, FrequencyUnit>
     {
-        public static readonly FrequencyUnit DefaultUnit = FrequencyUnit.Hertz;
+        public static readonly FrequencyUnit DefaultUnit = default(FrequencyUnit).SiUnit;
 
         static FrequencyRow()
         {
@@ -385,9 +386,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class IlluminanceRow : UnitRow<Illuminance, IlluminanceUnit>
+    public class IlluminanceRow : UnitRowGeneric<Illuminance, IlluminanceUnit>
     {
-        public static readonly IlluminanceUnit DefaultUnit = IlluminanceUnit.Lux;
+        public static readonly IlluminanceUnit DefaultUnit = default(IlluminanceUnit).SiUnit;
 
         static IlluminanceRow()
         {
@@ -403,9 +404,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class InductanceRow : UnitRow<Inductance, InductanceUnit>
+    public class InductanceRow : UnitRowGeneric<Inductance, InductanceUnit>
     {
-        public static readonly InductanceUnit DefaultUnit = InductanceUnit.Henrys;
+        public static readonly InductanceUnit DefaultUnit = default(InductanceUnit).SiUnit;
 
         static InductanceRow()
         {
@@ -421,9 +422,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class JerkRow : UnitRow<Jerk, JerkUnit>
+    public class JerkRow : UnitRowGeneric<Jerk, JerkUnit>
     {
-        public static readonly JerkUnit DefaultUnit = JerkUnit.MetresPerSecondCubed;
+        public static readonly JerkUnit DefaultUnit = default(JerkUnit).SiUnit;
 
         static JerkRow()
         {
@@ -439,9 +440,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class KinematicViscosityRow : UnitRow<KinematicViscosity, KinematicViscosityUnit>
+    public class KinematicViscosityRow : UnitRowGeneric<KinematicViscosity, KinematicViscosityUnit>
     {
-        public static readonly KinematicViscosityUnit DefaultUnit = KinematicViscosityUnit.SquareMetresPerSecond;
+        public static readonly KinematicViscosityUnit DefaultUnit = default(KinematicViscosityUnit).SiUnit;
 
         static KinematicViscosityRow()
         {
@@ -457,9 +458,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class LengthRow : UnitRow<Length, LengthUnit>
+    public class LengthRow : UnitRowGeneric<Length, LengthUnit>
     {
-        public static readonly LengthUnit DefaultUnit = LengthUnit.Millimetres;
+        public static readonly LengthUnit DefaultUnit = default(LengthUnit).SiUnit;
 
         static LengthRow()
         {
@@ -475,9 +476,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class LengthPerUnitlessRow : UnitRow<LengthPerUnitless, LengthPerUnitlessUnit>
+    public class LengthPerUnitlessRow : UnitRowGeneric<LengthPerUnitless, LengthPerUnitlessUnit>
     {
-        public static readonly LengthPerUnitlessUnit DefaultUnit = LengthPerUnitlessUnit.MetresPerUnitless;
+        public static readonly LengthPerUnitlessUnit DefaultUnit = default(LengthPerUnitlessUnit).SiUnit;
 
         static LengthPerUnitlessRow()
         {
@@ -493,9 +494,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class LuminousFluxRow : UnitRow<LuminousFlux, LuminousFluxUnit>
+    public class LuminousFluxRow : UnitRowGeneric<LuminousFlux, LuminousFluxUnit>
     {
-        public static readonly LuminousFluxUnit DefaultUnit = LuminousFluxUnit.Lumens;
+        public static readonly LuminousFluxUnit DefaultUnit = default(LuminousFluxUnit).SiUnit;
 
         static LuminousFluxRow()
         {
@@ -511,9 +512,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class LuminousIntensityRow : UnitRow<LuminousIntensity, LuminousIntensityUnit>
+    public class LuminousIntensityRow : UnitRowGeneric<LuminousIntensity, LuminousIntensityUnit>
     {
-        public static readonly LuminousIntensityUnit DefaultUnit = LuminousIntensityUnit.Candelas;
+        public static readonly LuminousIntensityUnit DefaultUnit = default(LuminousIntensityUnit).SiUnit;
 
         static LuminousIntensityRow()
         {
@@ -529,9 +530,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class MagneticFieldStrengthRow : UnitRow<MagneticFieldStrength, MagneticFieldStrengthUnit>
+    public class MagneticFieldStrengthRow : UnitRowGeneric<MagneticFieldStrength, MagneticFieldStrengthUnit>
     {
-        public static readonly MagneticFieldStrengthUnit DefaultUnit = MagneticFieldStrengthUnit.Teslas;
+        public static readonly MagneticFieldStrengthUnit DefaultUnit = default(MagneticFieldStrengthUnit).SiUnit;
 
         static MagneticFieldStrengthRow()
         {
@@ -547,9 +548,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class MagneticFluxRow : UnitRow<MagneticFlux, MagneticFluxUnit>
+    public class MagneticFluxRow : UnitRowGeneric<MagneticFlux, MagneticFluxUnit>
     {
-        public static readonly MagneticFluxUnit DefaultUnit = MagneticFluxUnit.Webers;
+        public static readonly MagneticFluxUnit DefaultUnit = default(MagneticFluxUnit).SiUnit;
 
         static MagneticFluxRow()
         {
@@ -565,9 +566,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class MassRow : UnitRow<Mass, MassUnit>
+    public class MassRow : UnitRowGeneric<Mass, MassUnit>
     {
-        public static readonly MassUnit DefaultUnit = MassUnit.Kilograms;
+        public static readonly MassUnit DefaultUnit = default(MassUnit).SiUnit;
 
         static MassRow()
         {
@@ -583,9 +584,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class MassFlowRow : UnitRow<MassFlow, MassFlowUnit>
+    public class MassFlowRow : UnitRowGeneric<MassFlow, MassFlowUnit>
     {
-        public static readonly MassFlowUnit DefaultUnit = MassFlowUnit.KilogramsPerSecond;
+        public static readonly MassFlowUnit DefaultUnit = default(MassFlowUnit).SiUnit;
 
         static MassFlowRow()
         {
@@ -601,9 +602,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class MomentumRow : UnitRow<Momentum, MomentumUnit>
+    public class MomentumRow : UnitRowGeneric<Momentum, MomentumUnit>
     {
-        public static readonly MomentumUnit DefaultUnit = MomentumUnit.NewtonSecond;
+        public static readonly MomentumUnit DefaultUnit = default(MomentumUnit).SiUnit;
 
         static MomentumRow()
         {
@@ -619,9 +620,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class PowerRow : UnitRow<Power, PowerUnit>
+    public class PowerRow : UnitRowGeneric<Power, PowerUnit>
     {
-        public static readonly PowerUnit DefaultUnit = PowerUnit.Watts;
+        public static readonly PowerUnit DefaultUnit = default(PowerUnit).SiUnit;
 
         static PowerRow()
         {
@@ -637,9 +638,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class PressureRow : UnitRow<Pressure, PressureUnit>
+    public class PressureRow : UnitRowGeneric<Pressure, PressureUnit>
     {
-        public static readonly PressureUnit DefaultUnit = PressureUnit.Megapascals;
+        public static readonly PressureUnit DefaultUnit = default(PressureUnit).SiUnit;
 
         static PressureRow()
         {
@@ -655,9 +656,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class ResistanceRow : UnitRow<Resistance, ResistanceUnit>
+    public class ResistanceRow : UnitRowGeneric<Resistance, ResistanceUnit>
     {
-        public static readonly ResistanceUnit DefaultUnit = ResistanceUnit.Ohms;
+        public static readonly ResistanceUnit DefaultUnit = default(ResistanceUnit).SiUnit;
 
         static ResistanceRow()
         {
@@ -673,9 +674,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class SolidAngleRow : UnitRow<SolidAngle, SolidAngleUnit>
+    public class SolidAngleRow : UnitRowGeneric<SolidAngle, SolidAngleUnit>
     {
-        public static readonly SolidAngleUnit DefaultUnit = SolidAngleUnit.Steradians;
+        public static readonly SolidAngleUnit DefaultUnit = default(SolidAngleUnit).SiUnit;
 
         static SolidAngleRow()
         {
@@ -691,9 +692,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class SpecificEnergyRow : UnitRow<SpecificEnergy, SpecificEnergyUnit>
+    public class SpecificEnergyRow : UnitRowGeneric<SpecificEnergy, SpecificEnergyUnit>
     {
-        public static readonly SpecificEnergyUnit DefaultUnit = SpecificEnergyUnit.JoulesPerKilogram;
+        public static readonly SpecificEnergyUnit DefaultUnit = default(SpecificEnergyUnit).SiUnit;
 
         static SpecificEnergyRow()
         {
@@ -709,9 +710,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class SpecificVolumeRow : UnitRow<SpecificVolume, SpecificVolumeUnit>
+    public class SpecificVolumeRow : UnitRowGeneric<SpecificVolume, SpecificVolumeUnit>
     {
-        public static readonly SpecificVolumeUnit DefaultUnit = SpecificVolumeUnit.CubicMetresPerKilogram;
+        public static readonly SpecificVolumeUnit DefaultUnit = default(SpecificVolumeUnit).SiUnit;
 
         static SpecificVolumeRow()
         {
@@ -727,9 +728,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class SpeedRow : UnitRow<Speed, SpeedUnit>
+    public class SpeedRow : UnitRowGeneric<Speed, SpeedUnit>
     {
-        public static readonly SpeedUnit DefaultUnit = SpeedUnit.MetresPerSecond;
+        public static readonly SpeedUnit DefaultUnit = default(SpeedUnit).SiUnit;
 
         static SpeedRow()
         {
@@ -745,9 +746,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class StiffnessRow : UnitRow<Stiffness, StiffnessUnit>
+    public class StiffnessRow : UnitRowGeneric<Stiffness, StiffnessUnit>
     {
-        public static readonly StiffnessUnit DefaultUnit = StiffnessUnit.NewtonsPerMetre;
+        public static readonly StiffnessUnit DefaultUnit = default(StiffnessUnit).SiUnit;
 
         static StiffnessRow()
         {
@@ -763,9 +764,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class TemperatureRow : UnitRow<Temperature, TemperatureUnit>
+    public class TemperatureRow : UnitRowGeneric<Temperature, TemperatureUnit>
     {
-        public static readonly TemperatureUnit DefaultUnit = TemperatureUnit.Kelvin;
+        public static readonly TemperatureUnit DefaultUnit = default(TemperatureUnit).SiUnit;
 
         static TemperatureRow()
         {
@@ -781,9 +782,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class TimeRow : UnitRow<Time, TimeUnit>
+    public class TimeRow : UnitRowGeneric<Time, TimeUnit>
     {
-        public static readonly TimeUnit DefaultUnit = TimeUnit.Seconds;
+        public static readonly TimeUnit DefaultUnit = default(TimeUnit).SiUnit;
 
         static TimeRow()
         {
@@ -799,9 +800,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class TorqueRow : UnitRow<Torque, TorqueUnit>
+    public class TorqueRow : UnitRowGeneric<Torque, TorqueUnit>
     {
-        public static readonly TorqueUnit DefaultUnit = TorqueUnit.NewtonMetres;
+        public static readonly TorqueUnit DefaultUnit = default(TorqueUnit).SiUnit;
 
         static TorqueRow()
         {
@@ -817,9 +818,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class UnitlessRow : UnitRow<Unitless, UnitlessUnit>
+    public class UnitlessRow : UnitRowGeneric<Unitless, UnitlessUnit>
     {
-        public static readonly UnitlessUnit DefaultUnit = UnitlessUnit.Scalar;
+        public static readonly UnitlessUnit DefaultUnit = default(UnitlessUnit).SiUnit;
 
         static UnitlessRow()
         {
@@ -835,9 +836,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class VoltageRow : UnitRow<Voltage, VoltageUnit>
+    public class VoltageRow : UnitRowGeneric<Voltage, VoltageUnit>
     {
-        public static readonly VoltageUnit DefaultUnit = VoltageUnit.Volts;
+        public static readonly VoltageUnit DefaultUnit = default(VoltageUnit).SiUnit;
 
         static VoltageRow()
         {
@@ -853,9 +854,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class VolumeRow : UnitRow<Volume, VolumeUnit>
+    public class VolumeRow : UnitRowGeneric<Volume, VolumeUnit>
     {
-        public static readonly VolumeUnit DefaultUnit = VolumeUnit.CubicMetres;
+        public static readonly VolumeUnit DefaultUnit = default(VolumeUnit).SiUnit;
 
         static VolumeRow()
         {
@@ -871,9 +872,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class VolumetricFlowRow : UnitRow<VolumetricFlow, VolumetricFlowUnit>
+    public class VolumetricFlowRow : UnitRowGeneric<VolumetricFlow, VolumetricFlowUnit>
     {
-        public static readonly VolumetricFlowUnit DefaultUnit = VolumetricFlowUnit.CubicMetresPerSecond;
+        public static readonly VolumetricFlowUnit DefaultUnit = default(VolumetricFlowUnit).SiUnit;
 
         static VolumetricFlowRow()
         {
@@ -889,9 +890,9 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-    public class WavenumberRow : UnitRow<Wavenumber, WavenumberUnit>
+    public class WavenumberRow : UnitRowGeneric<Wavenumber, WavenumberUnit>
     {
-        public static readonly WavenumberUnit DefaultUnit = WavenumberUnit.ReciprocalMetres;
+        public static readonly WavenumberUnit DefaultUnit = default(WavenumberUnit).SiUnit;
 
         static WavenumberRow()
         {
