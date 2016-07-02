@@ -9,15 +9,15 @@
         mc:Ignorable="d">
     <propertyGrid:Rows>
         <propertyGrid:StringRow Header="a"
-                                           Suffix="aa"
-                                           Value="ab" />
+                                Suffix="aa"
+                                Value="ab" />
         <propertyGrid:StringRow Header="b"
-                                           Suffix="ba"
-                                           Value="bb" />
+                                Suffix="ba"
+                                Value="bb" />
         <propertyGrid:StringRow Header="readonly"
-                                           IsReadOnly="True"
-                                           Suffix="ca"
-                                           Value="cb" />
+                                IsReadOnly="True"
+                                Suffix="ca"
+                                Value="cb" />
     </propertyGrid:Rows>
 </Window>
 

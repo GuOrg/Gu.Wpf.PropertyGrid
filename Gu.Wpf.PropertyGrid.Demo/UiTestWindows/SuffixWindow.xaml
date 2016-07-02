@@ -24,8 +24,8 @@
     </Window.DataContext>
     <propertyGrid:Rows>
         <propertyGrid:StringRow Header="default"
-                                           Suffix="suffix"
-                                           Value="abc" />
+                                Suffix="suffix"
+                                Value="abc" />
 
         <propertyGrid:Rows>
             <propertyGrid:Rows.Resources>
@@ -35,8 +35,8 @@
                 </Style>
             </propertyGrid:Rows.Resources>
             <propertyGrid:StringRow Header="textblock style"
-                                               Suffix="suffix"
-                                               Value="abc" />
+                                    Suffix="suffix"
+                                    Value="abc" />
         </propertyGrid:Rows>
 
         <propertyGrid:Rows>
@@ -47,8 +47,8 @@
                 </Style>
             </propertyGrid:Rows.Resources>
             <propertyGrid:StringRow Header="implicit suffixblock style"
-                                               Suffix="suffix"
-                                               Value="abc" />
+                                    Suffix="suffix"
+                                    Value="abc" />
         </propertyGrid:Rows>
 
         <propertyGrid:Rows>
@@ -59,9 +59,9 @@
                 </Style>
             </propertyGrid:Rows.Resources>
             <propertyGrid:StringRow Header="explicit suffixblock style"
-                                               Suffix="suffix"
-                                               SuffixStyle="{StaticResource SuffixStyle}"
-                                               Value="abc" />
+                                    Suffix="suffix"
+                                    SuffixStyle="{StaticResource SuffixStyle}"
+                                    Value="abc" />
         </propertyGrid:Rows>
 
         <propertyGrid:Rows>
@@ -72,8 +72,8 @@
                 </Style>
             </propertyGrid:Rows.SuffixStyle>
             <propertyGrid:StringRow Header="inherit suffixblock style"
-                                               Suffix="suffix"
-                                               Value="abc" />
+                                    Suffix="suffix"
+                                    Value="abc" />
         </propertyGrid:Rows>
     </propertyGrid:Rows>
 </Window>
