@@ -37,6 +37,7 @@ namespace Gu.Wpf.PropertyGrid
         protected override void OnInitialized(EventArgs e)
         {
             base.OnInitialized(e);
+            this.ControlTemplateSelector?.UpdateCurrentTemplate(this);
             if (string.IsNullOrEmpty(this.Header) && this.UsePropertyNameAsHeader)
             {
                 var binding = BindingOperations.GetBinding(this, this.ValueDependencyProperty);

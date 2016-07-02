@@ -131,6 +131,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\RowTemplateSelectors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RowTemplateSelectors.tt</DependentUpon>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\Validation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -235,6 +242,10 @@
     <Content Include="Controls\Generated\PropertyGrid.Styles.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PropertyGrid.Styles.cs</LastGenOutput>
+    </Content>
+    <Content Include="Themes\RowTemplateSelectors.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RowTemplateSelectors.xaml</LastGenOutput>
     </Content>
   </ItemGroup>
 </Project>
