@@ -6,6 +6,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:propertyGrid="http://gu.se/PropertyGrid"
              xmlns:validationScope="http://gu.se/ValidationScope"
+             xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows;assembly=Gu.Wpf.PropertyGrid.UnitRows"
              mc:Ignorable="d">
     <UserControl.DataContext>
         <demo:SettingsVm />
@@ -74,22 +75,22 @@
 
             <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Units" />
 
-            <propertyGrid:LengthRow Header="Length" Value="{Binding LengthValue}" />
+            <unitRows:LengthRow Header="Length" Value="{Binding LengthValue}" />
 
-            <propertyGrid:LengthRow Header="readonly length"
+            <unitRows:LengthRow Header="readonly length"
                                     IsReadOnly="True"
                                     Value="{Binding LengthValue}" />
 
-            <propertyGrid:LengthRow CanValueBeNull="True"
+            <unitRows:LengthRow CanValueBeNull="True"
                                     Header="Nullable length"
                                     Value="{Binding NullableLengthValue}" />
 
-            <propertyGrid:SpeedRow Header="Speed (readonly)"
+            <unitRows:SpeedRow Header="Speed (readonly)"
                                    IsReadOnly="True"
                                    Unit="km/h"
                                    Value="{Binding SpeedValue}" />
 
-            <propertyGrid:LengthRow DecimalDigits="2"
+            <unitRows:LengthRow DecimalDigits="2"
                                     Header="Length"
                                     MaxValue="15 mm"
                                     MinValue="-15 mm"

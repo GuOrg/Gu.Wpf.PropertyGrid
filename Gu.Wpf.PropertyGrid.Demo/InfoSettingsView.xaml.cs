@@ -6,7 +6,7 @@
     {
         public InfoSettingsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

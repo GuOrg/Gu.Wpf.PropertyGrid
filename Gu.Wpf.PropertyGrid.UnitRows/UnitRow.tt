@@ -1,34 +1,23 @@
-﻿<#@ template debug="false" hostspecific="false" language="C#" #>
-<#@ assembly name="System.Core" #>
-<#@ assembly name="$(SolutionDir)\packages\Gu.Units\lib\net45\Gu.Units.dll" #>
-<#@ assembly name="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Text" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="Gu.Units" #>
+﻿<#@ template language="C#" #>
+<#@ include file="$(ProjectDir)Quantities.ttinclude" #>
 <#@ output extension=".generated.cs" #>
 #pragma warning disable SA1649 // File name must match first type name
 #pragma warning disable SA1402 // File may only contain a single class
 #pragma warning disable SA1118 // Parameter must not span multiple lines
-namespace Gu.Wpf.PropertyGrid
+namespace Gu.Wpf.PropertyGrid.UnitRows
 {
     using System.Windows;
     using System.Windows.Data;
     using Gu.Units;
 <#
-	    var quantities = typeof (Length).Assembly.GetTypes()
-											     .Where(x => !x.IsInterface)
-											     .Where(x => x.GetInterfaces().Any(i => i == typeof (IQuantity)))
-												 .ToArray();
-		foreach(var quantity in quantities)
-		{
-		    var className = quantity.Name + "Row";
-		    var defaultUnit = GetDefaultUnitName(quantity);
+	foreach(var quantityType in GetQuantityTypes())
+	{
+		var className = quantityType.Name + "Row";
 		#>
 
-    public class <#= className #> : UnitRow<<#= quantity.Name #>, <#= quantity.Name #>Unit>
+    public class <#= className #> : UnitRowGeneric<<#= quantityType.Name #>, <#= quantityType.Name #>Unit>
     {
-        public static readonly <#= quantity.Name #>Unit DefaultUnit = <#= quantity.Name #>Unit.<#= defaultUnit #>;
+        public static readonly <#= quantityType.Name #>Unit DefaultUnit = default(<#= quantityType.Name #>Unit).SiUnit;
 
         static <#= className #>()
         {
@@ -44,29 +33,6 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 <#
-		} 
+	} 
 		#>
 }
-<#+
-    private static readonly Dictionary<Type, string> CustomUnits = new Dictionary<Type, string>
-    {
-        { typeof (Length), "Millimetres" },
-        { typeof (Angle), "Degrees" },
-        { typeof (Pressure), "Megapascals" },
-    };
-
-    private static string GetDefaultUnitName(Type quantityType)
-    {
-        string name;
-        if (CustomUnits.TryGetValue(quantityType, out name))
-        {
-            return name;
-        }
-
-        var assembly = quantityType.Assembly;
-        var unitName =quantityType.FullName + "Unit";
-        var unitType = assembly.GetType(unitName, true);
-        var fieldInfo = unitType.GetFields().First(f => f.FieldType == unitType);
-        return fieldInfo.Name;
-    }
-#>

@@ -5,6 +5,7 @@
         xmlns:demo="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:propertyGrid="http://gu.se/PropertyGrid"
+        xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows;assembly=Gu.Wpf.PropertyGrid.UnitRows"
         Title="RowStyleWindow"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d">
@@ -33,7 +34,7 @@
 
         <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
 
-        <propertyGrid:LengthRow Header="length" Value="{Binding LengthValue}" />
+        <unitRows:LengthRow Header="length" Value="{Binding LengthValue}" />
     </propertyGrid:Rows>
 </Window>
 

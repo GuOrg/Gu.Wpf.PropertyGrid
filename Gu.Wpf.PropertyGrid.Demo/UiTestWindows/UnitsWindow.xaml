@@ -6,6 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:propertyGrid="http://gu.se/PropertyGrid"
         xmlns:units="http://Gu.com/Units"
+        xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows;assembly=Gu.Wpf.PropertyGrid.UnitRows"
         Title="UnitsWindow"
         Width="300"
         Height="300"
@@ -20,11 +21,11 @@
 
         <GroupBox Header="explicit">
             <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-                <propertyGrid:LengthRow Header="length (m)"
+                <unitRows:LengthRow Header="length (m)"
                                                    Unit="m"
                                                    Value="{Binding LengthValue}" />
 
-                <propertyGrid:LengthRow Header="length (mm)"
+                <unitRows:LengthRow Header="length (mm)"
                                                    Unit="mm"
                                                    Value="{Binding LengthValue}" />
             </propertyGrid:Rows>
@@ -32,13 +33,13 @@
 
         <GroupBox Header="style">
             <GroupBox.Resources>
-                <Style TargetType="{x:Type propertyGrid:LengthRow}">
+                <Style TargetType="{x:Type unitRows:LengthRow}">
                     <Setter Property="Unit" Value="mm" />
                 </Style>
             </GroupBox.Resources>
 
             <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-                <propertyGrid:LengthRow Header="length" Value="{Binding LengthValue}" />
+                <unitRows:LengthRow Header="length" Value="{Binding LengthValue}" />
             </propertyGrid:Rows>
         </GroupBox>
 
@@ -48,7 +49,7 @@
                                                      ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
                                                      Value="{Binding CurrentLengthUnit}" />
 
-                <propertyGrid:LengthRow Header="length"
+                <unitRows:LengthRow Header="length"
                                                    Unit="{Binding CurrentLengthUnit}"
                                                    Value="{Binding LengthValue}" />
 

@@ -1,0 +1,28 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="$(SolutionDir)\packages\Gu.Units\lib\net45\Gu.Units.dll" #>
+<#@ assembly name="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Gu.Units" #>
+<#+
+    public static Type[] GetQuantityTypes()
+    {
+        return typeof(Gu.Units.Length).Assembly
+			.GetTypes()
+            .Where(x => !x.IsInterface)
+            .Where(x => x.GetInterfaces().Any(i => i == typeof(Gu.Units.IQuantity)))
+            .ToArray();
+    }
+
+    public static string[] GetQuantityNames()
+    {
+        return GetQuantityTypes().Select(x => x.Name)
+            .ToArray();
+    }
+
+    public static string GetDefaultUnitName(Type quantityType)
+    {
+        var instance =(IQuantity) Activator.CreateInstance(quantityType);
+        return instance.SiUnit.GetType().Name;
+    }
+#>
