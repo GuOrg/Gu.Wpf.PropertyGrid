@@ -273,13 +273,14 @@
 
 	private static string GetIndentation(string text)
 	{
-	    var row = GetRows(text)[1];
-	    var indexOf = row.IndexOf("Grid.");
+	    var row = GetRows(text)[0];
+	    var xNamePartValue = @"x:Name=""PART_Value""";
+	    var indexOf = row.IndexOf(xNamePartValue);
 	    if (indexOf < 0)
 	    {
-	        return "second attribute should  be Grid.X";
+	        return $"first attribute should  be: '{xNamePartValue}'";
 	    }
-	    return row.Substring(0, indexOf);
+	    return new string(' ', indexOf);
 	}
 
 	private static string RemoveEndTag(string text)
