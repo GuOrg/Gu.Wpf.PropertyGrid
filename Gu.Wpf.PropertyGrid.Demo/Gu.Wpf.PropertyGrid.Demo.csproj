@@ -52,6 +52,9 @@
     <Compile Include="GridSandBoxView.xaml.cs">
       <DependentUpon>GridSandBoxView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InfoSettingsView.xaml.cs">
+      <DependentUpon>InfoSettingsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OneWayToSourceBindingView.xaml.cs">
       <DependentUpon>OneWayToSourceBindingView.xaml</DependentUpon>
     </Compile>
@@ -59,12 +62,10 @@
       <DependentUpon>OneWayToSourceBindingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="RelayCommand.cs" />
-    <Compile Include="SettingsView.xaml.cs">
-      <DependentUpon>SettingsView.xaml</DependentUpon>
+    <Compile Include="PlainSettingsView.xaml.cs">
+      <DependentUpon>PlainSettingsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SettingsVm.cs">
-      <DependentUpon>SettingsView.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="SettingsVm.cs" />
     <Compile Include="UiTestWindows\ColumnsWindow.xaml.cs">
       <DependentUpon>ColumnsWindow.xaml</DependentUpon>
     </Compile>
@@ -122,6 +123,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="InfoSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -138,7 +143,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SettingsView.xaml">
+    <Page Include="PlainSettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
