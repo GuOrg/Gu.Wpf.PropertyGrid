@@ -409,13 +409,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -455,13 +455,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -501,13 +501,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <TextBox x:Name="PART_Suffix"
@@ -547,13 +547,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <TextBox x:Name="PART_Suffix"
@@ -597,13 +597,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -652,13 +652,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -707,13 +707,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <TextBox x:Name="PART_Suffix"
@@ -762,13 +762,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <TextBox x:Name="PART_Suffix"
@@ -815,13 +815,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -861,13 +861,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -907,13 +907,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <TextBox x:Name="PART_Suffix"
@@ -953,13 +953,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <TextBox x:Name="PART_Suffix"
@@ -1003,13 +1003,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -1058,13 +1058,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -1113,13 +1113,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <TextBox x:Name="PART_Suffix"
@@ -1168,13 +1168,13 @@
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Focusable="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                                       RelativeSource={RelativeSource TemplatedParent}}"
                                   IsEnabled="{Binding IsReadOnly,
-                                                      RelativeSource={RelativeSource TemplatedParent},
-                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                   Validation.ErrorTemplate="{x:Null}" />
 	
                         <TextBox x:Name="PART_Suffix"
@@ -1219,11 +1219,12 @@
                                       Grid.Row="0"
                                       Grid.Column="1"
                                       Focusable="{Binding IsReadOnly,
-                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                          Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                           RelativeSource={RelativeSource TemplatedParent},
+                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
-                                                          RelativeSource={RelativeSource TemplatedParent}}"
-                                      IsEnabled="{TemplateBinding IsReadOnly}"
+                                                           RelativeSource={RelativeSource TemplatedParent}}"
+                                      IsEnabled="{TemplateBinding IsReadOnly,
+                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       Validation.ErrorTemplate="{x:Null}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -1261,11 +1262,12 @@
                                       Grid.Row="0"
                                       Grid.Column="1"
                                       Focusable="{Binding IsReadOnly,
-                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                          Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                           RelativeSource={RelativeSource TemplatedParent},
+                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
-                                                          RelativeSource={RelativeSource TemplatedParent}}"
-                                      IsEnabled="{TemplateBinding IsReadOnly}"
+                                                           RelativeSource={RelativeSource TemplatedParent}}"
+                                      IsEnabled="{TemplateBinding IsReadOnly,
+                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       Validation.ErrorTemplate="{x:Null}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -1303,11 +1305,12 @@
                                       Grid.Row="0"
                                       Grid.Column="1"
                                       Focusable="{Binding IsReadOnly,
-                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                          Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                           RelativeSource={RelativeSource TemplatedParent},
+                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
-                                                          RelativeSource={RelativeSource TemplatedParent}}"
-                                      IsEnabled="{TemplateBinding IsReadOnly}"
+                                                           RelativeSource={RelativeSource TemplatedParent}}"
+                                      IsEnabled="{TemplateBinding IsReadOnly,
+                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       Validation.ErrorTemplate="{x:Null}" />
 	
                         <TextBox x:Name="PART_Suffix"
@@ -1345,11 +1348,12 @@
                                       Grid.Row="0"
                                       Grid.Column="1"
                                       Focusable="{Binding IsReadOnly,
-                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                          Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                           RelativeSource={RelativeSource TemplatedParent},
+                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
-                                                          RelativeSource={RelativeSource TemplatedParent}}"
-                                      IsEnabled="{TemplateBinding IsReadOnly}"
+                                                           RelativeSource={RelativeSource TemplatedParent}}"
+                                      IsEnabled="{TemplateBinding IsReadOnly,
+                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       Validation.ErrorTemplate="{x:Null}" />
 	
                         <TextBox x:Name="PART_Suffix"
@@ -1391,11 +1395,12 @@
                                       Grid.Row="0"
                                       Grid.Column="1"
                                       Focusable="{Binding IsReadOnly,
-                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                          Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                           RelativeSource={RelativeSource TemplatedParent},
+                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
-                                                          RelativeSource={RelativeSource TemplatedParent}}"
-                                      IsEnabled="{TemplateBinding IsReadOnly}"
+                                                           RelativeSource={RelativeSource TemplatedParent}}"
+                                      IsEnabled="{TemplateBinding IsReadOnly,
+                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       Validation.ErrorTemplate="{x:Null}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -1442,11 +1447,12 @@
                                       Grid.Row="0"
                                       Grid.Column="1"
                                       Focusable="{Binding IsReadOnly,
-                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                          Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                           RelativeSource={RelativeSource TemplatedParent},
+                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
-                                                          RelativeSource={RelativeSource TemplatedParent}}"
-                                      IsEnabled="{TemplateBinding IsReadOnly}"
+                                                           RelativeSource={RelativeSource TemplatedParent}}"
+                                      IsEnabled="{TemplateBinding IsReadOnly,
+                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       Validation.ErrorTemplate="{x:Null}" />
 	
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -1493,11 +1499,12 @@
                                       Grid.Row="0"
                                       Grid.Column="1"
                                       Focusable="{Binding IsReadOnly,
-                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                          Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                           RelativeSource={RelativeSource TemplatedParent},
+                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
-                                                          RelativeSource={RelativeSource TemplatedParent}}"
-                                      IsEnabled="{TemplateBinding IsReadOnly}"
+                                                           RelativeSource={RelativeSource TemplatedParent}}"
+                                      IsEnabled="{TemplateBinding IsReadOnly,
+                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       Validation.ErrorTemplate="{x:Null}" />
 	
                         <TextBox x:Name="PART_Suffix"
@@ -1544,11 +1551,12 @@
                                       Grid.Row="0"
                                       Grid.Column="1"
                                       Focusable="{Binding IsReadOnly,
-                                                          RelativeSource={RelativeSource TemplatedParent},
-                                                          Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                                           RelativeSource={RelativeSource TemplatedParent},
+                                                           Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       IsChecked="{Binding Value,
-                                                          RelativeSource={RelativeSource TemplatedParent}}"
-                                      IsEnabled="{TemplateBinding IsReadOnly}"
+                                                           RelativeSource={RelativeSource TemplatedParent}}"
+                                      IsEnabled="{TemplateBinding IsReadOnly,
+                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
                                       Validation.ErrorTemplate="{x:Null}" />
 	
                         <TextBox x:Name="PART_Suffix"
