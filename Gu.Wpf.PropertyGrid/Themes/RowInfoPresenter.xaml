@@ -8,8 +8,7 @@
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="TextAlignment" Value="Right" />
-        <Setter Property="Foreground" Value="{Binding Foreground, 
-                                                      RelativeSource={RelativeSource AncestorType={x:Type l:RowInfoPresenter}}}" />
+        <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type l:RowInfoPresenter}}}" />
     </Style>
 
     <Style TargetType="{x:Type l:RowInfoPresenter}">
@@ -17,17 +16,15 @@
         <Setter Property="Foreground" Value="DodgerBlue" />
         <Setter Property="Template" Value="{x:Null}" />
         <Style.Triggers>
-            <DataTrigger Binding="{Binding Path=(validationScope:Scope.HasErrors), 
-                                           RelativeSource={RelativeSource AncestorType={x:Type l:Row}}}" 
-                         Value="True">
+            <DataTrigger Binding="{Binding Path=(validationScope:Scope.HasErrors), RelativeSource={RelativeSource AncestorType={x:Type l:Row}}}" Value="True">
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type l:RowInfoPresenter}">
-                            <Grid IsSharedSizeScope="False">
+                            <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition l:ColumnDefinition.Source="Header" />
-                                    <ColumnDefinition l:ColumnDefinition.Source="Value" />
-                                    <ColumnDefinition l:ColumnDefinition.Source="Suffix" />
+                                    <ColumnDefinition Width="{Binding ColumnDefinitions[0].ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" />
+                                    <ColumnDefinition Width="{Binding ColumnDefinitions[1].ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" />
+                                    <ColumnDefinition Width="{Binding ColumnDefinitions[2].ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" />
                                 </Grid.ColumnDefinitions>
 
                                 <l:ErrorPresenter x:Name="ErrorPresenter"
@@ -47,21 +44,17 @@
 
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding Path=(validationScope:Scope.HasErrors), 
-                                                 RelativeSource={RelativeSource AncestorType={x:Type l:Row}}}" 
-                               Value="False" />
-                    <Condition Binding="{Binding Path=IsDirty, 
-                                                 RelativeSource={RelativeSource AncestorType={x:Type l:Row}}}" 
-                               Value="True" />
+                    <Condition Binding="{Binding Path=(validationScope:Scope.HasErrors), RelativeSource={RelativeSource AncestorType={x:Type l:Row}}}" Value="False" />
+                    <Condition Binding="{Binding Path=IsDirty, RelativeSource={RelativeSource AncestorType={x:Type l:Row}}}" Value="True" />
                 </MultiDataTrigger.Conditions>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type l:RowInfoPresenter}">
-                            <Grid IsSharedSizeScope="False">
+                            <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition l:ColumnDefinition.Source="Header" />
-                                    <ColumnDefinition l:ColumnDefinition.Source="Value" />
-                                    <ColumnDefinition l:ColumnDefinition.Source="Suffix" />
+                                    <ColumnDefinition Width="{Binding ColumnDefinitions[0].ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" />
+                                    <ColumnDefinition Width="{Binding ColumnDefinitions[1].ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" />
+                                    <ColumnDefinition Width="{Binding ColumnDefinitions[2].ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}" />
                                 </Grid.ColumnDefinitions>
                                 <TextBlock x:Name="OldValue"
                                            Grid.Column="0"
