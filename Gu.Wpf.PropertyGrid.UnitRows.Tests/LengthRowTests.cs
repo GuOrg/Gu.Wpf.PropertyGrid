@@ -35,7 +35,7 @@
         public void UnitUpdatesSuffix()
         {
             var control = new LengthRow();
-            Assert.AreEqual("mm", control.Suffix);
+            Assert.AreEqual("m", control.Suffix);
             control.Unit = LengthUnit.Centimetres;
             Assert.AreEqual("cm", control.Suffix);
         }
@@ -44,9 +44,9 @@
         public void UnitUpdatesValueWhenMaxAndMinAreNull()
         {
             var control = new LengthRow { Value = Length.FromCentimetres(1.2) };
-            Assert.AreEqual("mm", control.Suffix);
+            Assert.AreEqual("m", control.Suffix);
             Assert.AreEqual(Length.FromMillimetres(12), control.Value);
-            Assert.AreEqual(12, control.ScalarValue);
+            Assert.AreEqual(0.012, control.ScalarValue);
             Assert.AreEqual(null, control.ScalarMinValue);
             Assert.AreEqual(null, control.ScalarMaxValue);
 
@@ -67,15 +67,17 @@
                 MinValue = Length.FromCentimetres(-5),
                 MaxValue = Length.FromCentimetres(5),
             };
-            Assert.AreEqual("mm", control.Suffix);
+            Assert.AreEqual("m", control.Suffix);
             Assert.AreEqual(Length.FromMillimetres(12), control.Value);
-            Assert.AreEqual(12, control.ScalarValue);
-            Assert.AreEqual(-50, control.ScalarMinValue);
-            Assert.AreEqual(50, control.ScalarMaxValue);
+            Assert.AreEqual(0.012, control.ScalarValue);
+            Assert.AreEqual(-0.050, control.ScalarMinValue);
+            Assert.AreEqual(0.050, control.ScalarMaxValue);
 
             control.Unit = LengthUnit.Centimetres;
             Assert.AreEqual("cm", control.Suffix);
-            Assert.AreEqual(Length.FromMillimetres(12), control.Value);
+            Assert.AreEqual(Length.FromCentimetres(1.2), control.Value);
+            Assert.AreEqual(Length.FromCentimetres(-5), control.MinValue);
+            Assert.AreEqual(Length.FromCentimetres(5), control.MaxValue);
             Assert.AreEqual(1.2, control.ScalarValue);
             Assert.AreEqual(-5, control.ScalarMinValue);
             Assert.AreEqual(5, control.ScalarMaxValue);
@@ -90,19 +92,19 @@
                 MinValue = Length.FromCentimetres(-5),
                 MaxValue = Length.FromCentimetres(5),
             };
-            Assert.AreEqual("mm", control.Suffix);
+            Assert.AreEqual("m", control.Suffix);
             Assert.AreEqual(Length.FromMillimetres(12), control.Value);
-            Assert.AreEqual(12, control.ScalarValue);
-            Assert.AreEqual(-50, control.ScalarMinValue);
-            Assert.AreEqual(50, control.ScalarMaxValue);
+            Assert.AreEqual(0.012, control.ScalarValue);
+            Assert.AreEqual(-0.050, control.ScalarMinValue);
+            Assert.AreEqual(0.050, control.ScalarMaxValue);
 
             control.ScalarValue = 0.8;
             control.ScalarMinValue = -1.2;
             control.ScalarMaxValue = 2.3;
-            Assert.AreEqual("mm", control.Suffix);
-            Assert.AreEqual(Length.FromMillimetres(0.8), control.Value);
-            Assert.AreEqual(Length.FromMillimetres(-1.2), control.MinValue);
-            Assert.AreEqual(Length.FromMillimetres(2.3), control.MaxValue);
+            Assert.AreEqual("m", control.Suffix);
+            Assert.AreEqual(Length.FromMetres(0.8), control.Value);
+            Assert.AreEqual(Length.FromMetres(-1.2), control.MinValue);
+            Assert.AreEqual(Length.FromMetres(2.3), control.MaxValue);
             Assert.AreEqual(0.8, control.ScalarValue);
             Assert.AreEqual(-1.2, control.ScalarMinValue);
             Assert.AreEqual(2.3, control.ScalarMaxValue);
@@ -110,7 +112,7 @@
             control.ScalarValue = null;
             control.ScalarMinValue = null;
             control.ScalarMaxValue = null;
-            Assert.AreEqual("mm", control.Suffix);
+            Assert.AreEqual("m", control.Suffix);
             Assert.AreEqual(null, control.Value);
             Assert.AreEqual(null, control.MinValue);
             Assert.AreEqual(null, control.MaxValue);
@@ -128,29 +130,29 @@
                 MinValue = Length.FromCentimetres(-5),
                 MaxValue = Length.FromCentimetres(5),
             };
-            Assert.AreEqual("mm", control.Suffix);
+            Assert.AreEqual("m", control.Suffix);
             Assert.AreEqual(Length.FromMillimetres(12), control.Value);
             Assert.AreEqual(Length.FromMillimetres(-50), control.MinValue);
             Assert.AreEqual(Length.FromMillimetres(50), control.MaxValue);
-            Assert.AreEqual(12, control.ScalarValue);
-            Assert.AreEqual(-50, control.ScalarMinValue);
-            Assert.AreEqual(50, control.ScalarMaxValue);
+            Assert.AreEqual(0.012, control.ScalarValue);
+            Assert.AreEqual(-0.05, control.ScalarMinValue);
+            Assert.AreEqual(0.05, control.ScalarMaxValue);
 
             control.Value = Length.FromMillimetres(0.8);
             control.MinValue = Length.FromMillimetres(-1.2);
             control.MaxValue = Length.FromMillimetres(2.3);
-            Assert.AreEqual("mm", control.Suffix);
+            Assert.AreEqual("m", control.Suffix);
             Assert.AreEqual(Length.FromMillimetres(0.8), control.Value);
             Assert.AreEqual(Length.FromMillimetres(-1.2), control.MinValue);
             Assert.AreEqual(Length.FromMillimetres(2.3), control.MaxValue);
-            Assert.AreEqual(0.8, control.ScalarValue);
-            Assert.AreEqual(-1.2, control.ScalarMinValue);
-            Assert.AreEqual(2.3, control.ScalarMaxValue);
+            Assert.AreEqual(0.0008, control.ScalarValue);
+            Assert.AreEqual(-0.0012, control.ScalarMinValue);
+            Assert.AreEqual(0.0023, control.ScalarMaxValue);
 
             control.Value = null;
             control.MinValue = null;
             control.MaxValue = null;
-            Assert.AreEqual("mm", control.Suffix);
+            Assert.AreEqual("m", control.Suffix);
             Assert.AreEqual(null, control.Value);
             Assert.AreEqual(null, control.MinValue);
             Assert.AreEqual(null, control.MaxValue);
