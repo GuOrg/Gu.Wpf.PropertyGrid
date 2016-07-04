@@ -1,7 +1,7 @@
 # Gu.PropertyGrid
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
-[![Build status](https://ci.appveyor.com/api/projects/status/vhg6ru7ennq82ek7?svg=true)](https://ci.appveyor.com/project/JohanLarsson/gu-wpf-propertygrid)
+[![Build status](https://ci.appveyor.com/api/projects/status/vhg6ru7ennq82ek7/branch/master?svg=true)](https://ci.appveyor.com/project/JohanLarsson/gu-wpf-propertygrid/branch/master)
 [![NuGet](https://img.shields.io/nuget/v/Gu.Wpf.PropertyGrid.svg)](https://www.nuget.org/packages/Gu.Wpf.PropertyGrid/)
 [![NuGet](https://img.shields.io/nuget/v/Gu.Wpf.PropertyGrid.NumericSettingControls.svg)](https://www.nuget.org/packages/Gu.Wpf.PropertyGrid.NumericSettingControls/)
 [![NuGet](https://img.shields.io/nuget/v/Gu.Wpf.PropertyGrid.UnitSettingControls.svg)](https://www.nuget.org/packages/Gu.Wpf.PropertyGrid.UnitSettingControls/)
