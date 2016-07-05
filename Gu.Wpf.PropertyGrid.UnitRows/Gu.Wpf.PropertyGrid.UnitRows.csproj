@@ -53,7 +53,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UnitRow.tt</DependentUpon>
     </Compile>
-    <Compile Include="UnitRowGeneric{TQuantity, TUnit}.cs" />
+    <Compile Include="UnitRowGeneric{TQuantity,TUnit}.cs" />
     <None Include="Gu.Wpf.PropertyGrid.UnitRows.ruleset" />
     <None Include="paket.references" />
     <None Include="paket.template" />

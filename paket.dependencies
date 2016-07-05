@@ -1,9 +1,9 @@
 source http://www.nuget.org/api/v2/
 
 nuget Gu.State
-nuget Gu.Wpf.NumericInput
-nuget Gu.Units.Wpf
-nuget Gu.Wpf.ValidationScope
+nuget Gu.Wpf.NumericInput ~> 0.4.8
+nuget Gu.Units.Wpf ~> 0.10
+nuget Gu.Wpf.ValidationScope ~> 0.1.4
 
 nuget NUnit
 nuget Moq
