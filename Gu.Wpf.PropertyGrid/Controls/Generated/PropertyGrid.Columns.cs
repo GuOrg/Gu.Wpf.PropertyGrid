@@ -523,4 +523,3 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 }
-

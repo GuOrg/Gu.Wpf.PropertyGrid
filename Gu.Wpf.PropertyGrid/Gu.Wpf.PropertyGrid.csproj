@@ -92,7 +92,7 @@
     <Compile Include="Controls\Rows\BaseClasses\NumericRow{T}.cs" />
     <Compile Include="Controls\PropertyGrid.cs" />
     <Compile Include="Controls\Rows\BaseClasses\Row.cs" />
-    <Compile Include="Controls\Rows\BaseClasses\Row{T}.cs" />
+    <Compile Include="Controls\Rows\BaseClasses\GenericRow{T}.cs" />
     <Compile Include="Controls\Rows.cs" />
     <Compile Include="Internals\DependencyPropertyExt.cs" />
     <Compile Include="Internals\Ensure.cs" />

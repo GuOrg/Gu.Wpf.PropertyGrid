@@ -11,8 +11,6 @@
             container.Template = this.SelectTemplate(container);
         }
 
-        protected abstract ControlTemplate SelectTemplate(T container);
-
         protected static void AssertIsValidTemplate(ControlTemplate template)
         {
             if (!IsValidTemplate(template))
@@ -31,5 +29,7 @@
 
             return typeof(T).IsAssignableFrom(targetType);
         }
+
+        protected abstract ControlTemplate SelectTemplate(T container);
     }
 }

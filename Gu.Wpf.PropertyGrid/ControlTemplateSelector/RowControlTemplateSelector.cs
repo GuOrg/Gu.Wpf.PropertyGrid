@@ -126,14 +126,14 @@
             }
         }
 
-        protected override ControlTemplate SelectTemplate(Row container)
-        {
-            return this.SelectTemplateCore(container, container.HeaderStyle, container.SuffixStyle, container.InfoPresenterStyle);
-        }
-
         public void UpdateCurrentTemplate(ContentRow container)
         {
             container.Template = this.SelectTemplateCore(container, container.HeaderStyle, container.SuffixStyle, container.InfoPresenterStyle);
+        }
+
+        protected override ControlTemplate SelectTemplate(Row container)
+        {
+            return this.SelectTemplateCore(container, container.HeaderStyle, container.SuffixStyle, container.InfoPresenterStyle);
         }
 
         protected static bool IsTextBlockStyle(Style style)

@@ -1,5 +1,5 @@
 ﻿<#@ template language="C#" #>
-<#@ include file="..\Quantities.ttinclude" #>
+<#@ include file="..\Quantities.ttinclude" #><##>
 <#@ output extension=".xaml" #>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

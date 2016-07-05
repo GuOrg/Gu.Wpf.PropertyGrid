@@ -33,10 +33,10 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
 <#
-		} 
+		}
 
-		foreach(var columnWidth in columns.SelectMany(x => x.Widths))
-		{
+	foreach(var columnWidth in columns.SelectMany(x => x.Widths))
+	{
 		#>
 
         public static void Set<#= columnWidth.PropertyName #>(this UIElement element, <#= columnWidth.Type #> value)
@@ -50,7 +50,7 @@ namespace Gu.Wpf.PropertyGrid
         {
             return (<#= columnWidth.Type #>)element.GetValue(<#= columnWidth.PropertyName #>Property);
         }
-<#      }
+<#   }
 		 #>
     }
 <#
@@ -96,7 +96,6 @@ namespace Gu.Wpf.PropertyGrid
 		} 
 		#>
 }
-
 <#+
    private class ClassMetaData
    {

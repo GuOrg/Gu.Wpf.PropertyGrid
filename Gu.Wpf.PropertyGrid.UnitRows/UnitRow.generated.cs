@@ -1,5 +1,4 @@
-﻿
-#pragma warning disable SA1649 // File name must match first type name
+﻿#pragma warning disable SA1649 // File name must match first type name
 #pragma warning disable SA1402 // File may only contain a single class
 #pragma warning disable SA1118 // Parameter must not span multiple lines
 namespace Gu.Wpf.PropertyGrid.UnitRows
