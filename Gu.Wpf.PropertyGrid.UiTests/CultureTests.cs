@@ -35,8 +35,8 @@
             var doubleBox = groupBox.FindRow("double").Value<TextBox>();
             var lengthBox = groupBox.FindRow("length").Value<TextBox>();
 
-            Assert.AreEqual("0,00", doubleBox.FormattedText());
-            Assert.AreEqual("12,35", lengthBox.FormattedText());
+            Assert.AreEqual("0,0000", doubleBox.FormattedText());
+            Assert.AreEqual("0,0123", lengthBox.FormattedText());
         }
 
         [Test]
@@ -46,8 +46,8 @@
             var doubleBox = groupBox.FindRow("double").Value<TextBox>();
             var lengthBox = groupBox.FindRow("length").Value<TextBox>();
 
-            Assert.AreEqual("0.00", doubleBox.FormattedText());
-            Assert.AreEqual("12.35", lengthBox.FormattedText());
+            Assert.AreEqual("0.0000", doubleBox.FormattedText());
+            Assert.AreEqual("0.0123", lengthBox.FormattedText());
         }
 
         [Test]
@@ -58,14 +58,14 @@
             var lengthBox = groupBox.FindRow("length").Value<TextBox>();
             var cultureBox = groupBox.FindRow("culture").Value<ComboBox>();
 
-            Assert.AreEqual("0,00", doubleBox.FormattedText());
-            Assert.AreEqual("12,35", lengthBox.FormattedText());
+            Assert.AreEqual("0,0000", doubleBox.FormattedText());
+            Assert.AreEqual("0,0123", lengthBox.FormattedText());
 
             cultureBox.Select("en-US");
             this.loseFocusButton.Click();
 
-            Assert.AreEqual("0.00", doubleBox.FormattedText());
-            Assert.AreEqual("12.35", lengthBox.FormattedText());
+            Assert.AreEqual("0.0000", doubleBox.FormattedText());
+            Assert.AreEqual("0.0123", lengthBox.FormattedText());
         }
     }
 }

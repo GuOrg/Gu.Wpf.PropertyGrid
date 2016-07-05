@@ -27,8 +27,8 @@
                                  Grid.Column="1"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
-                                                 RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}" />
+                                                RelativeSource={RelativeSource TemplatedParent},
+                                                UpdateSourceTrigger=PropertyChanged}" />
 
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -71,8 +71,8 @@
                                  Grid.Column="1"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
-                                                 RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}" />
+                                                RelativeSource={RelativeSource TemplatedParent},
+                                                UpdateSourceTrigger=PropertyChanged}" />
 
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                                   Grid.Row="0"
@@ -115,8 +115,8 @@
                                  Grid.Column="1"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
-                                                 RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}" />
+                                                RelativeSource={RelativeSource TemplatedParent},
+                                                UpdateSourceTrigger=PropertyChanged}" />
 
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -159,8 +159,8 @@
                                  Grid.Column="1"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
-                                                 RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}" />
+                                                RelativeSource={RelativeSource TemplatedParent},
+                                                UpdateSourceTrigger=PropertyChanged}" />
 
                         <TextBox x:Name="PART_Suffix"
                                  Grid.Row="0"
@@ -207,8 +207,8 @@
                                  Grid.Column="1"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
-                                                 RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}"
+                                                RelativeSource={RelativeSource TemplatedParent},
+                                                UpdateSourceTrigger=PropertyChanged}"
                                  Validation.ErrorTemplate="{x:Null}" />
 
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -261,8 +261,8 @@
                                  Grid.Column="1"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
-                                                 RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}"
+                                                RelativeSource={RelativeSource TemplatedParent},
+                                                UpdateSourceTrigger=PropertyChanged}"
                                  Validation.ErrorTemplate="{x:Null}" />
 
                         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -315,8 +315,8 @@
                                  Grid.Column="1"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
-                                                 RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}"
+                                                RelativeSource={RelativeSource TemplatedParent},
+                                                UpdateSourceTrigger=PropertyChanged}"
                                  Validation.ErrorTemplate="{x:Null}" />
 
                         <TextBox x:Name="PART_Suffix"
@@ -369,8 +369,8 @@
                                  Grid.Column="1"
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Text="{Binding Value,
-                                                 RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}"
+                                                RelativeSource={RelativeSource TemplatedParent},
+                                                UpdateSourceTrigger=PropertyChanged}"
                                  Validation.ErrorTemplate="{x:Null}" />
 
                         <TextBox x:Name="PART_Suffix"
