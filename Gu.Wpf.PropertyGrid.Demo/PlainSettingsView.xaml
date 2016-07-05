@@ -5,8 +5,8 @@
              xmlns:demo="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:propertyGrid="http://gu.se/PropertyGrid"
-             xmlns:validationScope="http://gu.se/ValidationScope"
              xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows;assembly=Gu.Wpf.PropertyGrid.UnitRows"
+             xmlns:validationScope="http://gu.se/ValidationScope"
              mc:Ignorable="d">
     <UserControl.DataContext>
         <demo:SettingsVm />
@@ -30,8 +30,14 @@
                                     Value="{Binding StringValue}" />
 
             <propertyGrid:CheckBoxRow Header="INotifyDataErrorInfo has error" Value="{Binding HasErrors, ValidatesOnNotifyDataErrors=True}" />
+            
+            <propertyGrid:CheckBoxRow Header="view has errors"
+                                      IsReadOnly="True"
+                                      Value="{Binding DataContext.ViewHasErrors,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" />
 
             <propertyGrid:CheckBoxRow Header="checkbox" Value="{Binding BoolValue}" />
+
             <propertyGrid:BoolRow Header="bool" Value="{Binding BoolValue}" />
 
             <propertyGrid:ToggleButtonRow Header="togglebutton" Value="{Binding BoolValue}" />
@@ -78,24 +84,24 @@
             <unitRows:LengthRow Header="Length" Value="{Binding LengthValue}" />
 
             <unitRows:LengthRow Header="readonly length"
-                                    IsReadOnly="True"
-                                    Value="{Binding LengthValue}" />
+                                IsReadOnly="True"
+                                Value="{Binding LengthValue}" />
 
             <unitRows:LengthRow CanValueBeNull="True"
-                                    Header="Nullable length"
-                                    Value="{Binding NullableLengthValue}" />
+                                Header="Nullable length"
+                                Value="{Binding NullableLengthValue}" />
 
             <unitRows:SpeedRow Header="Speed (readonly)"
-                                   IsReadOnly="True"
-                                   Unit="km/h"
-                                   Value="{Binding SpeedValue}" />
+                               IsReadOnly="True"
+                               Unit="km/h"
+                               Value="{Binding SpeedValue}" />
 
             <unitRows:LengthRow DecimalDigits="2"
-                                    Header="Length"
-                                    MaxValue="15 mm"
-                                    MinValue="-15 mm"
-                                    Unit="{Binding CurrentLengthUnit}"
-                                    Value="{Binding LengthValue}" />
+                                Header="Length"
+                                MaxValue="15 mm"
+                                MinValue="-15 mm"
+                                Unit="{Binding CurrentLengthUnit}"
+                                Value="{Binding LengthValue}" />
         </propertyGrid:Rows>
 
         <Grid Grid.Row="1">
