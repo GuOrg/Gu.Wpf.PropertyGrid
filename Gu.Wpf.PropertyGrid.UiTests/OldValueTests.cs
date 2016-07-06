@@ -56,9 +56,9 @@
         }
 
         [Test]
-        public void AttachedProp()
+        public void Inherits()
         {
-            var groupBox = this.Window.GetByText<GroupBox>("attached prop");
+            var groupBox = this.Window.GetByText<GroupBox>("inherits");
 
             var stringRow = groupBox.FindRow("string");
             stringRow.Value<TextBox>().Text = "g";
@@ -76,9 +76,9 @@
             Assert.AreEqual("before: 2.3\u00A0mm", oldLengthValue.Text);
 
             this.saveButton.Click();
-            //Assert.AreEqual(true, oldStringValue.IsOffScreen);
-            //Assert.AreEqual(true, oldDoubleValue.IsOffScreen);
-            //Assert.AreEqual(true, oldLengthValue.IsOffScreen);
+            Assert.AreEqual(true, oldStringValue.IsOffScreen);
+            Assert.AreEqual(true, oldDoubleValue.IsOffScreen);
+            Assert.AreEqual(true, oldLengthValue.IsOffScreen);
         }
 
         [Test]
@@ -102,9 +102,43 @@
             Assert.AreEqual("before: 2.3\u00A0mm", oldLengthValue.Text);
 
             this.saveButton.Click();
-            //Assert.AreEqual(true, oldStringValue.IsOffScreen);
-            //Assert.AreEqual(true, oldDoubleValue.IsOffScreen);
-            //Assert.AreEqual(true, oldLengthValue.IsOffScreen);
+            Assert.AreEqual(true, oldStringValue.IsOffScreen);
+            Assert.AreEqual(true, oldDoubleValue.IsOffScreen);
+            Assert.AreEqual(true, oldLengthValue.IsOffScreen);
+        }
+
+
+        [Test]
+        public void Bound()
+        {
+            var groupBox = this.Window.GetByText<GroupBox>("bound");
+
+            var stringRow = groupBox.FindRow("string");
+            stringRow.Value<TextBox>().Text = "g";
+            var oldStringValue = stringRow.OldValue();
+            Assert.AreEqual("changed", oldStringValue.Text);
+
+            var doubleRow = groupBox.FindRow("double");
+            doubleRow.Value<TextBox>().Text = "1.23";
+            var oldDoubleValue = doubleRow.OldValue();
+            Assert.AreEqual("changed", oldDoubleValue.Text);
+
+            var lengthRow = groupBox.FindRow("length");
+            lengthRow.Value<TextBox>().Text = "2";
+            var oldLengthValue = lengthRow.OldValue();
+            Assert.AreEqual("changed", oldLengthValue.Text);
+
+            groupBox.FindRow("old value format").Value<TextBox>().Text = "before: {0}";
+            this.loseFocusButton.Click();
+
+            Assert.AreEqual("before: abc", oldStringValue.Text);
+            Assert.AreEqual("before: 1.2", oldDoubleValue.Text);
+            Assert.AreEqual("before: 2.3\u00A0mm", oldLengthValue.Text);
+
+            this.saveButton.Click();
+            Assert.AreEqual(true, oldStringValue.IsOffScreen);
+            Assert.AreEqual(true, oldDoubleValue.IsOffScreen);
+            Assert.AreEqual(true, oldLengthValue.IsOffScreen);
         }
     }
 }

@@ -28,7 +28,7 @@
                                     Value="{Binding StringValue}" />
 
             <propertyGrid:CheckBoxRow Header="INotifyDataErrorInfo has error" Value="{Binding HasErrors, ValidatesOnNotifyDataErrors=True}" />
-            
+
             <propertyGrid:CheckBoxRow Header="view has errors"
                                       IsReadOnly="True"
                                       Value="{Binding DataContext.ViewHasErrors,

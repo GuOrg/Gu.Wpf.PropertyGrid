@@ -1,8 +1,5 @@
 ﻿<#@ template language="C#" #>
 <#@ assembly name="System.Core" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Text" #>
-<#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".generated.cs" #>
 #pragma warning disable SA1402 // File may only contain a single class
 namespace Gu.Wpf.PropertyGrid
@@ -15,7 +12,7 @@ namespace Gu.Wpf.PropertyGrid
     var propertyMetaDatas = new[]
                      {
 						new PropertyMetaData("IsReadOnly","bool","false"),
-						new PropertyMetaData("OldValueStringFormat","string","\"Old value: {0}\""),
+						new PropertyMetaData("OldValueStringFormat","string","string.Empty"),
 						new PropertyMetaData("OldDataContext","object","null", "OnOldDataContextChanged"),
                      };
 

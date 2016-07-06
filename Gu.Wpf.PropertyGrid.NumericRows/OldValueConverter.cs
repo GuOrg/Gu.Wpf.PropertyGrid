@@ -27,7 +27,8 @@
             var oldValueStringFormat = row.OldValueStringFormat;
             bool? anyItemHasFormat;
             int numberOfArguments;
-            if (FormatString.IsValidFormat(oldValueStringFormat, out numberOfArguments, out anyItemHasFormat))
+            if (!string.IsNullOrEmpty(oldValueStringFormat) &&
+                FormatString.IsValidFormat(oldValueStringFormat, out numberOfArguments, out anyItemHasFormat))
             {
                 if (numberOfArguments == 1 && anyItemHasFormat == false)
                 {

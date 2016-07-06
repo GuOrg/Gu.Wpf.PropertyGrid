@@ -18,7 +18,7 @@ namespace Gu.Wpf.PropertyGrid
             typeof(string),
             typeof(PropertyGrid),
             new FrameworkPropertyMetadata(
-                "Old value: {0}",
+                string.Empty,
                 FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty OldDataContextProperty = DependencyProperty.RegisterAttached(
@@ -78,7 +78,7 @@ namespace Gu.Wpf.PropertyGrid
         public static readonly DependencyProperty OldValueStringFormatProperty = PropertyGrid.OldValueStringFormatProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
-                "Old value: {0}",
+                string.Empty,
                 FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
@@ -119,7 +119,7 @@ namespace Gu.Wpf.PropertyGrid
         public static readonly DependencyProperty OldValueStringFormatProperty = PropertyGrid.OldValueStringFormatProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
-                "Old value: {0}",
+                string.Empty,
                 FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
@@ -160,7 +160,7 @@ namespace Gu.Wpf.PropertyGrid
         public static readonly DependencyProperty OldValueStringFormatProperty = PropertyGrid.OldValueStringFormatProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
-                "Old value: {0}",
+                string.Empty,
                 FrameworkPropertyMetadataOptions.Inherits));
 
         public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(

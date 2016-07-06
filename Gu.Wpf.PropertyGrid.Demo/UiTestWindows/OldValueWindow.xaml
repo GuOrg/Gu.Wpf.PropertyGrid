@@ -16,8 +16,7 @@
     <Window.DataContext>
         <demo:SettingsVm />
     </Window.DataContext>
-    <StackPanel propertyGrid:PropertyGrid.InfoPresenterStyle="{StaticResource {x:Type propertyGrid:RowInfoPresenter}}" 
-                propertyGrid:PropertyGrid.OldDataContext="{Binding LastSaved}">
+    <StackPanel propertyGrid:PropertyGrid.InfoPresenterStyle="{StaticResource {x:Type propertyGrid:RowInfoPresenter}}" propertyGrid:PropertyGrid.OldDataContext="{Binding LastSaved}">
         <Button Content="lose focus" />
         <Button Command="{Binding DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Content="save" />
 
@@ -28,8 +27,8 @@
                 <propertyGrid:LengthRow Header="length" Value="{Binding LengthValue}" />
             </propertyGrid:Rows>
         </GroupBox>
-        
-        <GroupBox Header="attached prop">
+
+        <GroupBox Header="inherits">
             <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldValueStringFormat="before: {0}">
                 <propertyGrid:StringRow Header="string" Value="{Binding StringValue}" />
                 <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
@@ -53,11 +52,22 @@
 
         <GroupBox Header="bound">
             <propertyGrid:Rows DataContext="{Binding EditableCopy}">
-                <propertyGrid:StringRow Header="old value format" Value="changed" />
+                <propertyGrid:StringRow x:Name="OldValueFormat"
+                                        Header="old value format"
+                                        Value="changed" />
 
-                <propertyGrid:StringRow Header="string" Value="{Binding StringValue}" />
-                <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
-                <propertyGrid:LengthRow Header="length" Value="{Binding LengthValue}" />
+                <propertyGrid:StringRow Header="string"
+                                        OldValueStringFormat="{Binding Value,
+                                                                       ElementName=OldValueFormat}"
+                                        Value="{Binding StringValue}" />
+                <propertyGrid:DoubleRow Header="double"
+                                        OldValueStringFormat="{Binding Value,
+                                                                       ElementName=OldValueFormat}"
+                                        Value="{Binding DoubleValue}" />
+                <propertyGrid:LengthRow Header="length"
+                                        OldValueStringFormat="{Binding Value,
+                                                                       ElementName=OldValueFormat}"
+                                        Value="{Binding LengthValue}" />
             </propertyGrid:Rows>
         </GroupBox>
 
