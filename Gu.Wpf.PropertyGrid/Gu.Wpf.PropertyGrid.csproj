@@ -191,6 +191,24 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="..\.paket\paket.targets" />
+  <ItemGroup>
+    <Content Include="Controls\Generated\PropertyGrid.Columns.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PropertyGrid.Columns.cs</LastGenOutput>
+    </Content>
+    <Content Include="Controls\Generated\PropertyGrid.MiscDependencyProperties.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PropertyGrid.MiscDependencyProperties.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Controls\Generated\PropertyGrid.Styles.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PropertyGrid.Styles.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Themes\RowTemplateSelectors.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RowTemplateSelectors.xaml</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Choose>
     <When Condition="($(TargetFrameworkIdentifier) == '.NETStandard' And ($(TargetFrameworkVersion) == 'v1.1' Or $(TargetFrameworkVersion) == 'v1.2' Or $(TargetFrameworkVersion) == 'v1.3' Or $(TargetFrameworkVersion) == 'v1.4' Or $(TargetFrameworkVersion) == 'v1.5')) Or ($(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2'))">
       <ItemGroup>
@@ -215,7 +233,7 @@
     <When Condition="($(TargetFrameworkIdentifier) == '.NETStandard' And ($(TargetFrameworkVersion) == 'v1.0' Or $(TargetFrameworkVersion) == 'v1.1' Or $(TargetFrameworkVersion) == 'v1.2' Or $(TargetFrameworkVersion) == 'v1.3' Or $(TargetFrameworkVersion) == 'v1.4' Or $(TargetFrameworkVersion) == 'v1.5')) Or ($(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v2.0' Or $(TargetFrameworkVersion) == 'v3.0' Or $(TargetFrameworkVersion) == 'v3.5' Or $(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2'))">
       <ItemGroup>
         <Reference Include="JetBrains.Annotations">
-          <HintPath>..\packages\JetBrains.Annotations\lib\net20\JetBrains.Annotations.dll</HintPath>
+          <HintPath>..\packages\JetBrains.Annotations\lib\net\JetBrains.Annotations.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -241,23 +259,5 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers\analyzers\dotnet\cs\StyleCop.Analyzers.dll">
       <Paket>True</Paket>
     </Analyzer>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Controls\Generated\PropertyGrid.Columns.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PropertyGrid.Columns.cs</LastGenOutput>
-    </Content>
-    <Content Include="Controls\Generated\PropertyGrid.MiscDependencyProperties.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PropertyGrid.MiscDependencyProperties.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Controls\Generated\PropertyGrid.Styles.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PropertyGrid.Styles.generated.cs</LastGenOutput>
-    </Content>
-    <Content Include="Themes\RowTemplateSelectors.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RowTemplateSelectors.xaml</LastGenOutput>
-    </Content>
   </ItemGroup>
 </Project>
