@@ -30,7 +30,7 @@
         </GroupBox>
         
         <GroupBox Header="attached prop">
-            <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldValueStringFormat="before {0}">
+            <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldValueStringFormat="before: {0}">
                 <propertyGrid:StringRow Header="string" Value="{Binding StringValue}" />
                 <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
                 <propertyGrid:LengthRow Header="length" Value="{Binding LengthValue}" />
@@ -40,20 +40,20 @@
         <GroupBox Header="explicit">
             <propertyGrid:Rows DataContext="{Binding EditableCopy}">
                 <propertyGrid:StringRow Header="string"
-                                        OldValueStringFormat="before {0}"
+                                        OldValueStringFormat="before: {0}"
                                         Value="{Binding StringValue}" />
                 <propertyGrid:DoubleRow Header="double"
-                                        OldValueStringFormat="before {0}"
+                                        OldValueStringFormat="before: {0}"
                                         Value="{Binding DoubleValue}" />
                 <propertyGrid:LengthRow Header="length"
-                                        OldValueStringFormat="before {0}"
+                                        OldValueStringFormat="before: {0}"
                                         Value="{Binding LengthValue}" />
             </propertyGrid:Rows>
         </GroupBox>
 
         <GroupBox Header="bound">
             <propertyGrid:Rows DataContext="{Binding EditableCopy}">
-                <propertyGrid:StringRow Header="old value format" Value="old value : {0}" />
+                <propertyGrid:StringRow Header="old value format" Value="changed" />
 
                 <propertyGrid:StringRow Header="string" Value="{Binding StringValue}" />
                 <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
