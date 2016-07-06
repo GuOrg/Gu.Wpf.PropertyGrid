@@ -98,6 +98,7 @@
     <Compile Include="Controls\Rows\BaseClasses\Row.cs" />
     <Compile Include="Controls\Rows\BaseClasses\GenericRow{T}.cs" />
     <Compile Include="Controls\Rows.cs" />
+    <Compile Include="Internals\FormatString.cs" />
     <Compile Include="Internals\DependencyPropertyExt.cs" />
     <Compile Include="Internals\Ensure.cs" />
     <Compile Include="Internals\ServiceProviderExt.cs" />

@@ -5,6 +5,7 @@
     using System.Windows.Data;
 
     using Gu.Units;
+    using Gu.Wpf.NumericInput;
 
     public class OldValueConverter : IMultiValueConverter
     {
@@ -24,8 +25,21 @@
                 return "first parameter must be a Row";
             }
 
-            var formattedValue = formatter.Format(values[1] as IQuantity);
-            return string.Format(row.OldValueStringFormat, formattedValue);
+            var oldValueStringFormat = row.OldValueStringFormat;
+            bool? anyItemHasFormat;
+            int numberOfArguments;
+            if (FormatString.IsValidFormat(oldValueStringFormat, out numberOfArguments, out anyItemHasFormat))
+            {
+                if (numberOfArguments == 1 && anyItemHasFormat == false)
+                {
+                    var formattedValue = formatter.Format(values[1] as IQuantity);
+                    return string.Format(row.OldValueStringFormat, formattedValue);
+                }
+
+                return string.Format(NumericBox.GetCulture(row), oldValueStringFormat, row.OldValue);
+            }
+
+            return oldValueStringFormat;
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
