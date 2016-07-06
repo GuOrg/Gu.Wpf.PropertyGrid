@@ -34,10 +34,6 @@
             typeof(Row),
             new PropertyMetadata(new object(), OnOldValueChanged));
 
-        public static readonly DependencyProperty IsReadOnlyProperty = PropertyGrid.IsReadOnlyProperty.AddOwner(
-            typeof(Row),
-            new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
-
         private static readonly DependencyPropertyKey IsDirtyPropertyKey = DependencyProperty.RegisterReadOnly(
             "IsDirty",
             typeof(bool?),
@@ -81,12 +77,6 @@
         {
             get { return this.GetValue(OldValueProperty); }
             set { this.SetValue(OldValueProperty, value); }
-        }
-
-        public bool IsReadOnly
-        {
-            get { return (bool)this.GetValue(IsReadOnlyProperty); }
-            set { this.SetValue(IsReadOnlyProperty, BooleanBoxes.Box(value)); }
         }
 
         public bool? IsDirty

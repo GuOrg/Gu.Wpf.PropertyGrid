@@ -23,10 +23,6 @@ namespace Gu.Wpf.PropertyGrid
             typeof(ContentRow),
             new PropertyMetadata(null));
 
-        public static readonly DependencyProperty IsReadOnlyProperty = PropertyGrid.IsReadOnlyProperty.AddOwner(
-            typeof(ContentRow),
-            new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
-
         static ContentRow()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ContentRow), new FrameworkPropertyMetadata(typeof(ContentRow)));
@@ -49,12 +45,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (object)this.GetValue(OldValueProperty); }
             set { this.SetValue(OldValueProperty, value); }
-        }
-
-        public bool IsReadOnly
-        {
-            get { return (bool)this.GetValue(IsReadOnlyProperty); }
-            set { this.SetValue(IsReadOnlyProperty, value); }
         }
 
         protected virtual void UpdateTemplate()

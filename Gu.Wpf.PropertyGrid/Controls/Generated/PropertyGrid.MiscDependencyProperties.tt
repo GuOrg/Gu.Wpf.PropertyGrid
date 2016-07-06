@@ -1,0 +1,123 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".generated.cs" #>
+#pragma warning disable SA1402 // File may only contain a single class
+namespace Gu.Wpf.PropertyGrid
+{
+    using System.Windows;
+
+    public static partial class PropertyGrid
+    {
+<#
+    var propertyMetaDatas = new[]
+                     {
+                      new PropertyMetaData("IsReadOnly","bool","false"),
+                     };
+
+	foreach(var propertyMetaData in propertyMetaDatas)
+	{
+		#>
+        public static readonly DependencyProperty <#= propertyMetaData.Name #>Property = DependencyProperty.RegisterAttached(
+            "<#= propertyMetaData.Name #>",
+            typeof(<#= propertyMetaData.Type #>),
+            typeof(PropertyGrid),
+            new FrameworkPropertyMetadata(
+                <#= propertyMetaData.DefaultValue #>,
+                FrameworkPropertyMetadataOptions.Inherits));
+
+<#
+	} 
+
+	foreach(var propertyMetaData in propertyMetaDatas)
+	{
+		#>
+
+        public static void Set<#= propertyMetaData.Name #>(this UIElement element, <#= propertyMetaData.Type #> value)
+        {
+            element.SetValue(<#= propertyMetaData.Name #>Property, value);
+        }
+
+        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
+        [AttachedPropertyBrowsableForType(typeof(UIElement))]
+        public static <#= propertyMetaData.Type #> Get<#= propertyMetaData.Name #>(this UIElement element)
+        {
+            return (<#= propertyMetaData.Type #>)element.GetValue(<#= propertyMetaData.Name #>Property);
+        }
+<#  }
+		 #>
+    }
+<#
+    var controlNames = new[]
+                        {
+                            new ClassMetaData("Row", true),
+                            new ClassMetaData("Rows", false),
+                            new ClassMetaData("ContentRow", false)
+                        };
+
+	foreach(var controlName in controlNames)
+	{ 
+	#>
+
+    public <#= controlName.IsAbstract ? "abstract " : "" #>partial class <#= controlName.Name #>
+    {
+<#
+		foreach(var propertyMetaData in propertyMetaDatas)
+		{
+			 #>
+        public static readonly DependencyProperty <#= propertyMetaData.Name #>Property = PropertyGrid.<#= propertyMetaData.Name #>Property.AddOwner(
+            typeof(<#= controlName.Name #>),
+            new FrameworkPropertyMetadata(
+                <#= propertyMetaData.DefaultValue #>,
+                FrameworkPropertyMetadataOptions.Inherits));
+
+<#
+		} 
+
+		foreach(var propertyMetaData in propertyMetaDatas)
+		{
+			 #>
+
+        public <#= propertyMetaData.Type #> <#= propertyMetaData.Name #>
+        {
+            get { return (<#= propertyMetaData.Type #>)this.GetValue(<#= propertyMetaData.Name #>Property); }
+            set { this.SetValue(<#= propertyMetaData.Name #>Property, value); }
+        }
+<#
+	} 
+			#>
+    }
+<#
+		} 
+		#>
+}
+<#+
+   private class PropertyMetaData
+   {
+       public readonly string Name;
+       public readonly string Type;
+       public readonly string DefaultValue;
+
+       public PropertyMetaData(string name, string type, string defaultValue)
+       {
+           this.Name = name;
+           this.Type = type;
+           this.DefaultValue = defaultValue;
+       }
+   }
+
+   private class ClassMetaData
+   {
+       public readonly string Name;
+       public readonly bool IsAbstract;
+
+       public ClassMetaData(string name, bool isAbstract)
+       {
+           this.Name = name;
+           this.IsAbstract = isAbstract;
+       }
+   }
+#>
+

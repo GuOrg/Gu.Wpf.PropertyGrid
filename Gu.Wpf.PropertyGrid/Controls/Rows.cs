@@ -15,10 +15,6 @@
                 typeof(Rows),
                 new FrameworkPropertyMetadata(default(object), FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty IsReadOnlyProperty = PropertyGrid.IsReadOnlyProperty.AddOwner(
-            typeof(Rows),
-            new FrameworkPropertyMetadata(BooleanBoxes.False, FrameworkPropertyMetadataOptions.Inherits));
-
         static Rows()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Rows), new FrameworkPropertyMetadata(typeof(Rows)));
@@ -35,12 +31,6 @@
         {
             get { return (object)this.GetValue(OldDataContextProperty); }
             set { this.SetValue(OldDataContextProperty, value); }
-        }
-
-        public bool IsReadOnly
-        {
-            get { return (bool)this.GetValue(IsReadOnlyProperty); }
-            set { this.SetValue(IsReadOnlyProperty, value); }
         }
     }
 }

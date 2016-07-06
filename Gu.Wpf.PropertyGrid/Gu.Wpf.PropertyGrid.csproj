@@ -45,6 +45,16 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Generated\PropertyGrid.MiscDependencyProperties.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PropertyGrid.MiscDependencyProperties.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Generated\PropertyGrid.Styles.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PropertyGrid.Styles.tt</DependentUpon>
+    </Compile>
     <Compile Include="ControlTemplateSelector\ControlTemplateSelector.cs" />
     <Compile Include="ControlTemplateSelector\RowControlTemplateSelector.cs" />
     <Compile Include="Controls\Rows\BaseClasses\Row.DependencyProperties.cs" />
@@ -58,11 +68,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PropertyGrid.Columns.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Generated\PropertyGrid.Styles.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PropertyGrid.Styles.tt</DependentUpon>
     </Compile>
     <Compile Include="Controls\RowInfoPresenter.cs" />
     <Compile Include="Controls\Rows\SelectorRow.cs" />
@@ -240,9 +245,13 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PropertyGrid.Columns.cs</LastGenOutput>
     </Content>
+    <Content Include="Controls\Generated\PropertyGrid.MiscDependencyProperties.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PropertyGrid.MiscDependencyProperties.generated.cs</LastGenOutput>
+    </Content>
     <Content Include="Controls\Generated\PropertyGrid.Styles.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PropertyGrid.Styles.cs</LastGenOutput>
+      <LastGenOutput>PropertyGrid.Styles.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Themes\RowTemplateSelectors.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
