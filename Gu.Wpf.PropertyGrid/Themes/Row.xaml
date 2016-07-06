@@ -14,7 +14,20 @@
         <Setter Property="Focusable" Value="False" />
         <Setter Property="HeaderStyle" Value="{StaticResource {x:Type propertyGrid:HeaderBlock}}" />
         <Setter Property="SuffixStyle" Value="{StaticResource {x:Type propertyGrid:SuffixBlock}}" />
-        <!--<Setter Property="OldValueStyle" Value="{DynamicResource {x:Static l:Keys.SettingRowOldValueStyleKey}}" />-->
+        <Setter Property="OldValueStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static propertyGrid:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type propertyGrid:Row}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type propertyGrid:Row}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:StringRow}">

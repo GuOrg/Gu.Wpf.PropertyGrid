@@ -97,6 +97,7 @@
     <Compile Include="Internals\Ensure.cs" />
     <Compile Include="Internals\ServiceProviderExt.cs" />
     <Compile Include="Internals\VisualTreeHelperExt.cs" />
+    <Compile Include="OldValueConverter.cs" />
     <Compile Include="OneWayToSourceBinding\OneWayToSource.cs" />
     <Compile Include="OneWayToSourceBinding\Paths.cs" />
     <Compile Include="SharedSizeGroups.cs" />
