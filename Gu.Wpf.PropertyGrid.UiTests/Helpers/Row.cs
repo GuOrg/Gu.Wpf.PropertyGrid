@@ -25,6 +25,11 @@
             return this.Get<Label>("PART_Suffix");
         }
 
+        public Label OldValue()
+        {
+            return this.Get<Label>("PART_OldValue");
+        }
+
 #pragma warning disable SA1313 // ReSharper disable once InconsistentNaming we want PART_Name here
         public T Get<T>(string PART_Name)
 #pragma warning restore SA1313 // Parameter names must begin with lower-case letter

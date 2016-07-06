@@ -89,6 +89,9 @@
     <Compile Include="UiTestWindows\NestedWindow.xaml.cs">
       <DependentUpon>NestedWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\OldValueWindow.xaml.cs">
+      <DependentUpon>OldValueWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UiTestWindows\SelectorRowWindow.xaml.cs">
       <DependentUpon>SelectorRowWindow.xaml</DependentUpon>
     </Compile>
@@ -172,6 +175,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UiTestWindows\NestedWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\OldValueWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

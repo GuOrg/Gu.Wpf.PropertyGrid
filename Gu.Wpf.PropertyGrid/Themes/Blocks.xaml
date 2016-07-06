@@ -3,4 +3,5 @@
                     xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid">
     <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type propertyGrid:SuffixBlock}" />
     <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type propertyGrid:HeaderBlock}" />
+    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type propertyGrid:OldValueBlock}" />
 </ResourceDictionary>

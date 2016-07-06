@@ -37,7 +37,7 @@
         <Setter Property="ControlTemplateSelector" Value="{StaticResource StringRowControlTemplateSelector}" />
     </Style>
 
-    <Style TargetType="{x:Type propertyGrid:BoolRow}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:BoolRow}">
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, CheckBox, ToggleButton" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource BoolRowControlTemplateSelector}" />
     </Style>
@@ -50,12 +50,12 @@
         <Setter Property="ControlTemplateSelector" Value="{StaticResource ToggleButtonRowControlTemplateSelector}" />
     </Style>
 
-    <Style TargetType="{x:Type propertyGrid:EnumRow}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:EnumRow}">
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, ComboBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource EnumRowControlTemplateSelector}" />
     </Style>
 
-    <Style TargetType="{x:Type propertyGrid:SelectorRow}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:SelectorRow}">
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, ComboBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource SelectorRowControlTemplateSelector}" />
     </Style>
@@ -82,21 +82,10 @@
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="{x:Type propertyGrid:RowInfoPresenter}">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition />
-                                                <ColumnDefinition SharedSizeGroup="{x:Static propertyGrid:SharedSizeGroups.ValueColumn}" />
-                                            </Grid.ColumnDefinitions>
-                                            <propertyGrid:ErrorPresenter x:Name="ErrorPresenter"
-                                                                         Grid.Column="0"
-                                                                         Grid.ColumnSpan="2"
-                                                                         HorizontalAlignment="Right"
-                                                                         Content="{Binding Path=(validationScope:Scope.Errors),
-                                                                                           RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:ContentRow}}}" />
-                                            <Border Grid.Column="1"
-                                                    BorderBrush="Red"
-                                                    BorderThickness="0,1,0,0" />
-                                        </Grid>
+                                        <propertyGrid:ErrorPresenter x:Name="ErrorPresenter"
+                                                                     HorizontalAlignment="Right"
+                                                                     Content="{Binding Path=(validationScope:Scope.Errors),
+                                                                                       RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:ContentRow}}}" />
                                     </ControlTemplate>
                                 </Setter.Value>
                             </Setter>

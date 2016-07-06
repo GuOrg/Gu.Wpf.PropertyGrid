@@ -2,36 +2,25 @@
 {
     using NUnit.Framework;
 
-    using TestStack.White;
     using TestStack.White.UIItems;
     using TestStack.White.UIItems.ListBoxItems;
-    using TestStack.White.UIItems.WindowItems;
 
-    public class CultureTests
+    public class CultureTests : WindowTests
     {
-        private Application application;
-        private Window window;
         private Button loseFocusButton;
+        protected override string WindowName { get; } = "CultureWindow";
 
         [OneTimeSetUp]
-        public void OneTimeSetUp()
+        public override void OneTimeSetUp()
         {
-            var title = "CultureWindow";
-            this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
-            this.window = this.application.GetWindow(title);
-            this.loseFocusButton = this.window.GetByText<Button>("lose focus");
-        }
-
-        [OneTimeTearDown]
-        public void OneTimeTearDown()
-        {
-            this.application?.Dispose();
+            base.OneTimeSetUp();
+            this.loseFocusButton = this.Window.GetByText<Button>("lose focus");
         }
 
         [Test]
         public void SvSe()
         {
-            var groupBox = this.window.GetByText<GroupBox>("sv-se");
+            var groupBox = this.Window.GetByText<GroupBox>("sv-se");
             var doubleBox = groupBox.FindRow("double").Value<TextBox>();
             var lengthBox = groupBox.FindRow("length").Value<TextBox>();
 
@@ -42,7 +31,7 @@
         [Test]
         public void EnUs()
         {
-            var groupBox = this.window.GetByText<GroupBox>("en-us");
+            var groupBox = this.Window.GetByText<GroupBox>("en-us");
             var doubleBox = groupBox.FindRow("double").Value<TextBox>();
             var lengthBox = groupBox.FindRow("length").Value<TextBox>();
 
@@ -53,7 +42,7 @@
         [Test]
         public void Bound()
         {
-            var groupBox = this.window.GetByText<GroupBox>("bound");
+            var groupBox = this.Window.GetByText<GroupBox>("bound");
             var doubleBox = groupBox.FindRow("double").Value<TextBox>();
             var lengthBox = groupBox.FindRow("length").Value<TextBox>();
             var cultureBox = groupBox.FindRow("culture").Value<ComboBox>();

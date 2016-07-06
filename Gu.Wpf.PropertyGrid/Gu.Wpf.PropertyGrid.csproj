@@ -55,6 +55,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PropertyGrid.Styles.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TextBlocks\OldValueBlock.cs" />
     <Compile Include="ControlTemplateSelector\ControlTemplateSelector.cs" />
     <Compile Include="ControlTemplateSelector\RowControlTemplateSelector.cs" />
     <Compile Include="Controls\Rows\BaseClasses\Row.DependencyProperties.cs" />
@@ -103,7 +104,7 @@
     <Compile Include="Internals\Ensure.cs" />
     <Compile Include="Internals\ServiceProviderExt.cs" />
     <Compile Include="Internals\VisualTreeHelperExt.cs" />
-    <Compile Include="OldValueConverter.cs" />
+    <Compile Include="Converters\OldValueConverter.cs" />
     <Compile Include="OneWayToSourceBinding\OneWayToSource.cs" />
     <Compile Include="OneWayToSourceBinding\Paths.cs" />
     <Compile Include="SharedSizeGroups.cs" />
@@ -125,15 +126,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\RowInfoPresenter.xaml">
+    <Page Include="Themes\RowInfoPresenterStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Row.xaml">
+    <Page Include="Themes\RowStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\Rows.xaml">
+    <Page Include="Themes\RowsStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
