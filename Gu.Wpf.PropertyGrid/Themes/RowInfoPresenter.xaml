@@ -39,7 +39,10 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type l:RowInfoPresenter}">
-                            <TextBlock x:Name="OldValue" Style="{Binding OldValueStyle, RelativeSource={RelativeSource AncestorType={x:Type l:Row}}}" />
+                            <TextBlock x:Name="OldValue"
+                                       HorizontalAlignment="Right"
+                                       Style="{Binding OldValueStyle,
+                                                       RelativeSource={RelativeSource AncestorType={x:Type l:Row}}}" />
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
