@@ -18,7 +18,14 @@
                 return "first parameter must be a IQuantityFormatter";
             }
 
-            return $"Old value: {formatter.Format(values[1] as IQuantity)}";
+            var row = values[0] as Row;
+            if (row == null)
+            {
+                return "first parameter must be a Row";
+            }
+
+            var formattedValue = formatter.Format(values[1] as IQuantity);
+            return string.Format(row.OldValueStringFormat, formattedValue);
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)

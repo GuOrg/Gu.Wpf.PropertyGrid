@@ -14,7 +14,8 @@ namespace Gu.Wpf.PropertyGrid
 <#
     var propertyMetaDatas = new[]
                      {
-                      new PropertyMetaData("IsReadOnly","bool","false"),
+						new PropertyMetaData("IsReadOnly","bool","false"),
+						new PropertyMetaData("OldValueStringFormat","string","\"Old value: {0}\""),
                      };
 
 	foreach(var propertyMetaData in propertyMetaDatas)

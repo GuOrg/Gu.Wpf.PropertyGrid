@@ -17,6 +17,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AccelerationRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AccelerationRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AccelerationRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AccelerationRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AccelerationRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AccelerationRow}}" />
@@ -39,6 +40,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AmountOfSubstanceRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AmountOfSubstanceRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AmountOfSubstanceRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AmountOfSubstanceRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AmountOfSubstanceRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AmountOfSubstanceRow}}" />
@@ -61,6 +63,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngleRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngleRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngleRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngleRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngleRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngleRow}}" />
@@ -83,6 +86,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AnglePerUnitlessRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AnglePerUnitlessRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AnglePerUnitlessRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AnglePerUnitlessRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AnglePerUnitlessRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AnglePerUnitlessRow}}" />
@@ -105,6 +109,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularAccelerationRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularAccelerationRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularAccelerationRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularAccelerationRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularAccelerationRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularAccelerationRow}}" />
@@ -127,6 +132,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularJerkRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularJerkRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularJerkRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularJerkRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularJerkRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularJerkRow}}" />
@@ -149,6 +155,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularSpeedRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularSpeedRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularSpeedRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularSpeedRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularSpeedRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularSpeedRow}}" />
@@ -171,6 +178,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaRow}}" />
@@ -193,6 +201,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaDensityRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaDensityRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaDensityRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaDensityRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaDensityRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaDensityRow}}" />
@@ -215,6 +224,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CapacitanceRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CapacitanceRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CapacitanceRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CapacitanceRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CapacitanceRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CapacitanceRow}}" />
@@ -237,6 +247,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CatalyticActivityRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CatalyticActivityRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CatalyticActivityRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CatalyticActivityRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CatalyticActivityRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CatalyticActivityRow}}" />
@@ -259,6 +270,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CurrentRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CurrentRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CurrentRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CurrentRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CurrentRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CurrentRow}}" />
@@ -281,6 +293,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DataRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DataRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DataRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DataRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DataRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DataRow}}" />
@@ -303,6 +316,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DensityRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DensityRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DensityRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DensityRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DensityRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DensityRow}}" />
@@ -325,6 +339,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricalConductanceRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricalConductanceRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricalConductanceRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricalConductanceRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricalConductanceRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricalConductanceRow}}" />
@@ -347,6 +362,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricChargeRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricChargeRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricChargeRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricChargeRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricChargeRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricChargeRow}}" />
@@ -369,6 +385,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:EnergyRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:EnergyRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:EnergyRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:EnergyRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:EnergyRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:EnergyRow}}" />
@@ -391,6 +408,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FlexibilityRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FlexibilityRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FlexibilityRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FlexibilityRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FlexibilityRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FlexibilityRow}}" />
@@ -413,6 +431,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForceRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForceRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForceRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForceRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForceRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForceRow}}" />
@@ -435,6 +454,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForcePerUnitlessRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForcePerUnitlessRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForcePerUnitlessRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForcePerUnitlessRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForcePerUnitlessRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForcePerUnitlessRow}}" />
@@ -457,6 +477,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FrequencyRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FrequencyRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FrequencyRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FrequencyRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FrequencyRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FrequencyRow}}" />
@@ -479,6 +500,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:IlluminanceRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:IlluminanceRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:IlluminanceRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:IlluminanceRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:IlluminanceRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:IlluminanceRow}}" />
@@ -501,6 +523,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:InductanceRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:InductanceRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:InductanceRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:InductanceRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:InductanceRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:InductanceRow}}" />
@@ -523,6 +546,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:JerkRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:JerkRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:JerkRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:JerkRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:JerkRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:JerkRow}}" />
@@ -545,6 +569,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:KinematicViscosityRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:KinematicViscosityRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:KinematicViscosityRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:KinematicViscosityRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:KinematicViscosityRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:KinematicViscosityRow}}" />
@@ -567,6 +592,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthRow}}" />
@@ -589,6 +615,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthPerUnitlessRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthPerUnitlessRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthPerUnitlessRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthPerUnitlessRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthPerUnitlessRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthPerUnitlessRow}}" />
@@ -611,6 +638,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousFluxRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousFluxRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousFluxRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousFluxRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousFluxRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousFluxRow}}" />
@@ -633,6 +661,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousIntensityRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousIntensityRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousIntensityRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousIntensityRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousIntensityRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousIntensityRow}}" />
@@ -655,6 +684,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFieldStrengthRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFieldStrengthRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFieldStrengthRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFieldStrengthRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFieldStrengthRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFieldStrengthRow}}" />
@@ -677,6 +707,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFluxRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFluxRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFluxRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFluxRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFluxRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFluxRow}}" />
@@ -699,6 +730,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassRow}}" />
@@ -721,6 +753,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassFlowRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassFlowRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassFlowRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassFlowRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassFlowRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassFlowRow}}" />
@@ -743,6 +776,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MomentumRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MomentumRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MomentumRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MomentumRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MomentumRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MomentumRow}}" />
@@ -765,6 +799,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PowerRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PowerRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PowerRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PowerRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PowerRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PowerRow}}" />
@@ -787,6 +822,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PressureRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PressureRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PressureRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PressureRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PressureRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PressureRow}}" />
@@ -809,6 +845,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ResistanceRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ResistanceRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ResistanceRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ResistanceRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ResistanceRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ResistanceRow}}" />
@@ -831,6 +868,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SolidAngleRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SolidAngleRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SolidAngleRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SolidAngleRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SolidAngleRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SolidAngleRow}}" />
@@ -853,6 +891,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificEnergyRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificEnergyRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificEnergyRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificEnergyRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificEnergyRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificEnergyRow}}" />
@@ -875,6 +914,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificVolumeRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificVolumeRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificVolumeRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificVolumeRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificVolumeRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificVolumeRow}}" />
@@ -897,6 +937,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpeedRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpeedRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpeedRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpeedRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpeedRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpeedRow}}" />
@@ -919,6 +960,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:StiffnessRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:StiffnessRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:StiffnessRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:StiffnessRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:StiffnessRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:StiffnessRow}}" />
@@ -941,6 +983,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TemperatureRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TemperatureRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TemperatureRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TemperatureRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TemperatureRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TemperatureRow}}" />
@@ -963,6 +1006,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TimeRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TimeRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TimeRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TimeRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TimeRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TimeRow}}" />
@@ -985,6 +1029,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TorqueRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TorqueRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TorqueRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TorqueRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TorqueRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TorqueRow}}" />
@@ -1007,6 +1052,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:UnitlessRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:UnitlessRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:UnitlessRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:UnitlessRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:UnitlessRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:UnitlessRow}}" />
@@ -1029,6 +1075,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VoltageRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VoltageRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VoltageRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VoltageRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VoltageRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VoltageRow}}" />
@@ -1051,6 +1098,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumeRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumeRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumeRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumeRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumeRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumeRow}}" />
@@ -1073,6 +1121,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumetricFlowRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumetricFlowRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumetricFlowRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumetricFlowRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumetricFlowRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumetricFlowRow}}" />
@@ -1095,6 +1144,7 @@
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:WavenumberRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:WavenumberRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:WavenumberRow}}" />
                                 <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:WavenumberRow}}" />
                                 <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:WavenumberRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:WavenumberRow}}" />

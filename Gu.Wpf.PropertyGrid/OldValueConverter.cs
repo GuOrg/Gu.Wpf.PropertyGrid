@@ -10,7 +10,13 @@
 
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            return $"Old value: {values[1]}";
+            var row = values[0] as Row;
+            if (row == null)
+            {
+                return "first parameter must be a Row";
+            }
+
+            return string.Format(culture, row.OldValueStringFormat, row.OldValue);
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)

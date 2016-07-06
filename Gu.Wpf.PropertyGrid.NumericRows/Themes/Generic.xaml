@@ -18,6 +18,7 @@
                             <MultiBinding Converter="{x:Static numericRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type numericRows:DoubleRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type numericRows:DoubleRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type numericRows:DoubleRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type numericRows:DoubleRow}}" />
                             </MultiBinding>
                         </Setter.Value>
@@ -38,6 +39,7 @@
                             <MultiBinding Converter="{x:Static numericRows:OldValueConverter.Default}">
                                 <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type numericRows:IntRow}}" />
                                 <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type numericRows:IntRow}}" />
+                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type numericRows:IntRow}}" />
                                 <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type numericRows:IntRow}}" />
                             </MultiBinding>
                         </Setter.Value>

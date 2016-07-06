@@ -13,6 +13,14 @@ namespace Gu.Wpf.PropertyGrid
                 false,
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        public static readonly DependencyProperty OldValueStringFormatProperty = DependencyProperty.RegisterAttached(
+            "OldValueStringFormat",
+            typeof(string),
+            typeof(PropertyGrid),
+            new FrameworkPropertyMetadata(
+                "Old value: {0}",
+                FrameworkPropertyMetadataOptions.Inherits));
+
 
         public static void SetIsReadOnly(this UIElement element, bool value)
         {
@@ -25,6 +33,18 @@ namespace Gu.Wpf.PropertyGrid
         {
             return (bool)element.GetValue(IsReadOnlyProperty);
         }
+
+        public static void SetOldValueStringFormat(this UIElement element, string value)
+        {
+            element.SetValue(OldValueStringFormatProperty, value);
+        }
+
+        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
+        [AttachedPropertyBrowsableForType(typeof(UIElement))]
+        public static string GetOldValueStringFormat(this UIElement element)
+        {
+            return (string)element.GetValue(OldValueStringFormatProperty);
+        }
     }
 
     public abstract partial class Row
@@ -35,11 +55,23 @@ namespace Gu.Wpf.PropertyGrid
                 false,
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        public static readonly DependencyProperty OldValueStringFormatProperty = PropertyGrid.OldValueStringFormatProperty.AddOwner(
+            typeof(Row),
+            new FrameworkPropertyMetadata(
+                "Old value: {0}",
+                FrameworkPropertyMetadataOptions.Inherits));
+
 
         public bool IsReadOnly
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
             set { this.SetValue(IsReadOnlyProperty, value); }
+        }
+
+        public string OldValueStringFormat
+        {
+            get { return (string)this.GetValue(OldValueStringFormatProperty); }
+            set { this.SetValue(OldValueStringFormatProperty, value); }
         }
     }
 
@@ -51,11 +83,23 @@ namespace Gu.Wpf.PropertyGrid
                 false,
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        public static readonly DependencyProperty OldValueStringFormatProperty = PropertyGrid.OldValueStringFormatProperty.AddOwner(
+            typeof(Rows),
+            new FrameworkPropertyMetadata(
+                "Old value: {0}",
+                FrameworkPropertyMetadataOptions.Inherits));
+
 
         public bool IsReadOnly
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
             set { this.SetValue(IsReadOnlyProperty, value); }
+        }
+
+        public string OldValueStringFormat
+        {
+            get { return (string)this.GetValue(OldValueStringFormatProperty); }
+            set { this.SetValue(OldValueStringFormatProperty, value); }
         }
     }
 
@@ -67,11 +111,23 @@ namespace Gu.Wpf.PropertyGrid
                 false,
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        public static readonly DependencyProperty OldValueStringFormatProperty = PropertyGrid.OldValueStringFormatProperty.AddOwner(
+            typeof(ContentRow),
+            new FrameworkPropertyMetadata(
+                "Old value: {0}",
+                FrameworkPropertyMetadataOptions.Inherits));
+
 
         public bool IsReadOnly
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
             set { this.SetValue(IsReadOnlyProperty, value); }
+        }
+
+        public string OldValueStringFormat
+        {
+            get { return (string)this.GetValue(OldValueStringFormatProperty); }
+            set { this.SetValue(OldValueStringFormatProperty, value); }
         }
     }
 }
