@@ -14,7 +14,6 @@
         <Setter Property="Focusable" Value="False" />
         <Setter Property="HeaderStyle" Value="{StaticResource {x:Type propertyGrid:HeaderBlock}}" />
         <Setter Property="SuffixStyle" Value="{StaticResource {x:Type propertyGrid:SuffixBlock}}" />
-        <Setter Property="OldValueStringFormat" Value="Old value: {0}" />
         <Setter Property="OldValueStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type TextBlock}">
