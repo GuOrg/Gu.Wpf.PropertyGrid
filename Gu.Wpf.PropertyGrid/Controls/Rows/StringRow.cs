@@ -7,10 +7,7 @@
     {
         static StringRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(
-                typeof(StringRow),
-                new FrameworkPropertyMetadata(typeof(StringRow)));
-
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(StringRow), new FrameworkPropertyMetadata(typeof(StringRow)));
             ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(StringRow), UpdateSourceTrigger.LostFocus);
         }
     }
