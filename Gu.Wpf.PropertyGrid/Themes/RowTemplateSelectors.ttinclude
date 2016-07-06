@@ -42,7 +42,7 @@
 	@"                        <propertyGrid:RowInfoPresenter x:Name=""InfoPresenter""
                                                        Grid.Row=""1""
                                                        Grid.Column=""0""
-                                                       Grid.ColumnSpan=""3""
+                                                       Grid.ColumnSpan=""2""
                                                        Style=""{TemplateBinding InfoPresenterStyle}"" />";
 
     private const string InfoTemplate =
