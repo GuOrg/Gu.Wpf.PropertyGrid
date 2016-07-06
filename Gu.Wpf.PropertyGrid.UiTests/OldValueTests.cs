@@ -23,9 +23,9 @@
         public void SetUp()
         {
             var groupBox = this.Window.GetByText<GroupBox>("default");
-            groupBox.FindRow("string").Value<TextBox>().Text="abc";
-            groupBox.FindRow("double").Value<TextBox>().Text="1.2";
-            groupBox.FindRow("length").Value<TextBox>().Text="2.3";
+            groupBox.FindRow("string").Value<TextBox>().Text = "abc";
+            groupBox.FindRow("double").Value<TextBox>().Text = "1.2";
+            groupBox.FindRow("length").Value<TextBox>().Text = "2.3";
             this.saveButton.Click();
         }
 
@@ -40,7 +40,7 @@
             Assert.AreEqual("Old value: abc", oldStringValue.Text);
 
             var doubleRow = groupBox.FindRow("double");
-            doubleRow.Value<TextBox>().Text ="1.23";
+            doubleRow.Value<TextBox>().Text = "1.23";
             var oldDoubleValue = doubleRow.OldValue();
             Assert.AreEqual("Old value: 1.2", oldDoubleValue.Text);
 
@@ -107,7 +107,6 @@
             Assert.AreEqual(true, oldLengthValue.IsOffScreen);
         }
 
-
         [Test]
         public void Bound()
         {
@@ -139,6 +138,28 @@
             Assert.AreEqual(true, oldStringValue.IsOffScreen);
             Assert.AreEqual(true, oldDoubleValue.IsOffScreen);
             Assert.AreEqual(true, oldLengthValue.IsOffScreen);
+        }
+
+        [Test]
+        public void NoOldValue()
+        {
+            var partOldValue = "PART_OldValue";
+            var groupBox = this.Window.GetByText<GroupBox>("no old datacontext");
+
+            var stringRow = groupBox.FindRow("string");
+            stringRow.Value<TextBox>().Text = "g";
+            Assert.AreEqual(false, groupBox.Exists<Label>(partOldValue));
+            Assert.AreEqual(true, this.Window.GetByText<GroupBox>("default").Exists<Label>(partOldValue));
+
+            var doubleRow = groupBox.FindRow("double");
+            doubleRow.Value<TextBox>().Text = "1.23";
+            Assert.AreEqual(false, groupBox.Exists<Label>(partOldValue));
+            Assert.AreEqual(true, this.Window.GetByText<GroupBox>("default").Exists<Label>(partOldValue));
+
+            var lengthRow = groupBox.FindRow("length");
+            lengthRow.Value<TextBox>().Text = "2";
+            Assert.AreEqual(false, groupBox.Exists<Label>(partOldValue));
+            Assert.AreEqual(true, this.Window.GetByText<GroupBox>("default").Exists<Label>(partOldValue));
         }
     }
 }
