@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:validationScope="clr-namespace:Gu.Wpf.ValidationScope;assembly=Gu.Wpf.ValidationScope"
 					xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows"
+					xmlns:numeric="clr-namespace:Gu.Wpf.NumericInput;assembly=Gu.Wpf.NumericInput"
 					xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid;assembly=Gu.Wpf.PropertyGrid">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
@@ -11,9 +12,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:AccelerationRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AccelerationRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AccelerationRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AccelerationRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AccelerationRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AccelerationRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -25,9 +34,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:AmountOfSubstanceRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AmountOfSubstanceRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AmountOfSubstanceRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AmountOfSubstanceRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AmountOfSubstanceRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AmountOfSubstanceRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -39,9 +56,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:AngleRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngleRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngleRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngleRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngleRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngleRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -53,9 +78,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:AnglePerUnitlessRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AnglePerUnitlessRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AnglePerUnitlessRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AnglePerUnitlessRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AnglePerUnitlessRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AnglePerUnitlessRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -67,9 +100,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:AngularAccelerationRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularAccelerationRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularAccelerationRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularAccelerationRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularAccelerationRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularAccelerationRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -81,9 +122,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:AngularJerkRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularJerkRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularJerkRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularJerkRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularJerkRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularJerkRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -95,9 +144,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:AngularSpeedRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularSpeedRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularSpeedRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularSpeedRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularSpeedRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AngularSpeedRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -109,9 +166,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:AreaRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -123,9 +188,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:AreaDensityRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaDensityRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaDensityRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaDensityRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaDensityRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:AreaDensityRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -137,9 +210,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:CapacitanceRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CapacitanceRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CapacitanceRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CapacitanceRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CapacitanceRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CapacitanceRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -151,9 +232,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:CatalyticActivityRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CatalyticActivityRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CatalyticActivityRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CatalyticActivityRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CatalyticActivityRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CatalyticActivityRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -165,9 +254,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:CurrentRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CurrentRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CurrentRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CurrentRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CurrentRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:CurrentRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -179,9 +276,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:DataRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DataRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DataRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DataRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DataRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DataRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -193,9 +298,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:DensityRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DensityRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DensityRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DensityRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DensityRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:DensityRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -207,9 +320,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:ElectricalConductanceRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricalConductanceRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricalConductanceRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricalConductanceRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricalConductanceRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricalConductanceRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -221,9 +342,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:ElectricChargeRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricChargeRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricChargeRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricChargeRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricChargeRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ElectricChargeRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -235,9 +364,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:EnergyRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:EnergyRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:EnergyRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:EnergyRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:EnergyRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:EnergyRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -249,9 +386,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:FlexibilityRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FlexibilityRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FlexibilityRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FlexibilityRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FlexibilityRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FlexibilityRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -263,9 +408,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:ForceRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForceRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForceRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForceRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForceRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForceRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -277,9 +430,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:ForcePerUnitlessRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForcePerUnitlessRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForcePerUnitlessRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForcePerUnitlessRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForcePerUnitlessRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ForcePerUnitlessRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -291,9 +452,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:FrequencyRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FrequencyRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FrequencyRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FrequencyRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FrequencyRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:FrequencyRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -305,9 +474,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:IlluminanceRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:IlluminanceRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:IlluminanceRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:IlluminanceRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:IlluminanceRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:IlluminanceRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -319,9 +496,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:InductanceRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:InductanceRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:InductanceRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:InductanceRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:InductanceRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:InductanceRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -333,9 +518,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:JerkRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:JerkRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:JerkRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:JerkRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:JerkRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:JerkRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -347,9 +540,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:KinematicViscosityRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:KinematicViscosityRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:KinematicViscosityRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:KinematicViscosityRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:KinematicViscosityRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:KinematicViscosityRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -361,9 +562,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:LengthRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -375,9 +584,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:LengthPerUnitlessRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthPerUnitlessRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthPerUnitlessRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthPerUnitlessRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthPerUnitlessRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LengthPerUnitlessRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -389,9 +606,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:LuminousFluxRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousFluxRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousFluxRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousFluxRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousFluxRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousFluxRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -403,9 +628,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:LuminousIntensityRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousIntensityRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousIntensityRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousIntensityRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousIntensityRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:LuminousIntensityRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -417,9 +650,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:MagneticFieldStrengthRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFieldStrengthRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFieldStrengthRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFieldStrengthRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFieldStrengthRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFieldStrengthRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -431,9 +672,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:MagneticFluxRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFluxRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFluxRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFluxRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFluxRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MagneticFluxRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -445,9 +694,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:MassRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -459,9 +716,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:MassFlowRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassFlowRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassFlowRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassFlowRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassFlowRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MassFlowRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -473,9 +738,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:MomentumRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MomentumRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MomentumRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MomentumRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MomentumRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:MomentumRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -487,9 +760,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:PowerRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PowerRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PowerRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PowerRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PowerRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PowerRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -501,9 +782,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:PressureRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PressureRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PressureRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PressureRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PressureRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:PressureRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -515,9 +804,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:ResistanceRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ResistanceRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ResistanceRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ResistanceRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ResistanceRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:ResistanceRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -529,9 +826,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:SolidAngleRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SolidAngleRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SolidAngleRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SolidAngleRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SolidAngleRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SolidAngleRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -543,9 +848,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:SpecificEnergyRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificEnergyRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificEnergyRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificEnergyRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificEnergyRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificEnergyRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -557,9 +870,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:SpecificVolumeRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificVolumeRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificVolumeRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificVolumeRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificVolumeRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpecificVolumeRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -571,9 +892,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:SpeedRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpeedRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpeedRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpeedRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpeedRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:SpeedRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -585,9 +914,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:StiffnessRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:StiffnessRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:StiffnessRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:StiffnessRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:StiffnessRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:StiffnessRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -599,9 +936,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:TemperatureRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TemperatureRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TemperatureRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TemperatureRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TemperatureRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TemperatureRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -613,9 +958,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:TimeRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TimeRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TimeRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TimeRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TimeRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TimeRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -627,9 +980,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:TorqueRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TorqueRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TorqueRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TorqueRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TorqueRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:TorqueRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -641,9 +1002,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:UnitlessRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:UnitlessRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:UnitlessRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:UnitlessRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:UnitlessRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:UnitlessRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -655,9 +1024,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:VoltageRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VoltageRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VoltageRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VoltageRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VoltageRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VoltageRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -669,9 +1046,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:VolumeRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumeRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumeRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumeRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumeRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumeRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -683,9 +1068,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:VolumetricFlowRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumetricFlowRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumetricFlowRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumetricFlowRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumetricFlowRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:VolumetricFlowRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>
@@ -697,9 +1090,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:WavenumberRow}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:WavenumberRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:WavenumberRow}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:WavenumberRow}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:WavenumberRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:WavenumberRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>

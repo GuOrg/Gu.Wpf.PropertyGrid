@@ -5,6 +5,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:validationScope="clr-namespace:Gu.Wpf.ValidationScope;assembly=Gu.Wpf.ValidationScope"
 					xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows"
+					xmlns:numeric="clr-namespace:Gu.Wpf.NumericInput;assembly=Gu.Wpf.NumericInput"
 					xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid;assembly=Gu.Wpf.PropertyGrid">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
@@ -18,9 +19,17 @@
         <Setter Property="OldValueStyle">
             <Setter.Value>
 			    <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="Text" Value="{Binding OldStringValue, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type unitRows:<#= quantity.Name #>Row}}, 
-                                            StringFormat='Old value: {0}'}" />
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type unitRows:<#= quantity.Name #>Row}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:<#= quantity.Name #>Row}}" />
+                                <Binding Path="Unit" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:<#= quantity.Name #>Row}}" />
+                                <Binding Path="SymbolFormat" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:<#= quantity.Name #>Row}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type unitRows:<#= quantity.Name #>Row}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
                  </Style>
             </Setter.Value>
         </Setter>

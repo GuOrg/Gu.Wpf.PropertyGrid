@@ -5,7 +5,7 @@
     using Gu.Units;
     using Gu.Wpf.NumericInput;
 
-    public abstract class UnitRowGeneric<TQuantity, TUnit> : NumericRow<TQuantity>
+    public abstract class UnitRowGeneric<TQuantity, TUnit> : NumericRow<TQuantity>, IQuantityFormatter
         where TQuantity : struct, IComparable<TQuantity>, IQuantity<TUnit>
         where TUnit : IUnit<TQuantity>
     {
@@ -34,14 +34,6 @@
             typeof(double?),
             typeof(UnitRowGeneric<TQuantity, TUnit>),
             new PropertyMetadata(default(double?), OnScalarMaxValueChanged));
-
-        private static readonly DependencyPropertyKey OldStringValuePropertyKey = DependencyProperty.RegisterReadOnly(
-            "OldStringValue",
-            typeof(string),
-            typeof(UnitRowGeneric<TQuantity, TUnit>),
-            new PropertyMetadata(default(string)));
-
-        public static readonly DependencyProperty OldStringValueProperty = OldStringValuePropertyKey.DependencyProperty;
 
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
@@ -88,12 +80,6 @@
             set { this.SetValue(ScalarMaxValueProperty, value); }
         }
 
-        public string OldStringValue
-        {
-            get { return (string)this.GetValue(OldStringValueProperty); }
-            protected set { this.SetValue(OldStringValuePropertyKey, value); }
-        }
-
         public TUnit Unit
         {
             get { return (TUnit)this.GetValue(UnitProperty); }
@@ -104,6 +90,23 @@
         {
             get { return (SymbolFormat)this.GetValue(SymbolFormatProperty); }
             set { this.SetValue(SymbolFormatProperty, value); }
+        }
+
+        string IQuantityFormatter.Format(IQuantity quantity)
+        {
+            if (quantity == null)
+            {
+                return string.Empty;
+            }
+
+            if (!(quantity is TQuantity))
+            {
+                return "error";
+            }
+
+            var qty = (TQuantity)quantity;
+            var culture = NumericBox.GetCulture(this);
+            return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
         protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -118,7 +121,6 @@
             SetScalarValue(d, ScalarValueProperty, (TQuantity?)d.GetValue(ValueProperty));
             SetScalarValue(d, ScalarMinValueProperty, (TQuantity?)d.GetValue(MinValueProperty));
             SetScalarValue(d, ScalarMaxValueProperty, (TQuantity?)d.GetValue(MaxValueProperty));
-            control.UpdateOldText();
         }
 
         protected static string CreateSuffix(TUnit unit, SymbolFormat symbolFormat)
@@ -130,12 +132,6 @@
         {
             SetScalarValue(this, ScalarValueProperty, (TQuantity?)newValue);
             base.OnValueChanged(oldValue, newValue);
-        }
-
-        protected override void OnOldValueChanged(object oldValue, object newValue)
-        {
-            base.OnOldValueChanged(oldValue, newValue);
-            this.UpdateOldText();
         }
 
         protected override void OnMinValueChanged(TQuantity? oldValue, TQuantity? newValue)
@@ -198,12 +194,6 @@
                 : (double?)null;
             control.SetCurrentValue(property, value);
             control.isUpdatingScalarValue = false;
-        }
-
-        private void UpdateOldText()
-        {
-            var text = (this.OldValue as TQuantity?)?.ToString(this.Unit, this.SymbolFormat) ?? string.Empty;
-            this.OldStringValue = text;
         }
     }
 }
