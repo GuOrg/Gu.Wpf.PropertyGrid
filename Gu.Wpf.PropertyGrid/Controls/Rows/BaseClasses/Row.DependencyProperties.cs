@@ -12,10 +12,6 @@
                     BooleanBoxes.False,
                     FrameworkPropertyMetadataOptions.Inherits | FrameworkPropertyMetadataOptions.NotDataBindable));
 
-        public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
-                typeof(Row),
-                new FrameworkPropertyMetadata(default(object), FrameworkPropertyMetadataOptions.Inherits, OnOldDataContextChanged));
-
         public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(
             "Header",
             typeof(string),
@@ -53,12 +49,6 @@
         {
             get { return (bool)this.GetValue(UsePropertyNameAsHeaderProperty); }
             set { this.SetValue(UsePropertyNameAsHeaderProperty, BooleanBoxes.Box(value)); }
-        }
-
-        public object OldDataContext
-        {
-            get { return this.GetValue(OldDataContextProperty); }
-            set { this.SetValue(OldDataContextProperty, value); }
         }
 
         public string Header

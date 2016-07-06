@@ -21,6 +21,14 @@ namespace Gu.Wpf.PropertyGrid
                 "Old value: {0}",
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        public static readonly DependencyProperty OldDataContextProperty = DependencyProperty.RegisterAttached(
+            "OldDataContext",
+            typeof(object),
+            typeof(PropertyGrid),
+            new FrameworkPropertyMetadata(
+                null,
+                FrameworkPropertyMetadataOptions.Inherits));
+
 
         public static void SetIsReadOnly(this UIElement element, bool value)
         {
@@ -45,6 +53,18 @@ namespace Gu.Wpf.PropertyGrid
         {
             return (string)element.GetValue(OldValueStringFormatProperty);
         }
+
+        public static void SetOldDataContext(this UIElement element, object value)
+        {
+            element.SetValue(OldDataContextProperty, value);
+        }
+
+        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
+        [AttachedPropertyBrowsableForType(typeof(UIElement))]
+        public static object GetOldDataContext(this UIElement element)
+        {
+            return (object)element.GetValue(OldDataContextProperty);
+        }
     }
 
     public abstract partial class Row
@@ -61,6 +81,13 @@ namespace Gu.Wpf.PropertyGrid
                 "Old value: {0}",
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
+            typeof(Row),
+            new FrameworkPropertyMetadata(
+                null,
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnOldDataContextChanged));
+
 
         public bool IsReadOnly
         {
@@ -72,6 +99,12 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (string)this.GetValue(OldValueStringFormatProperty); }
             set { this.SetValue(OldValueStringFormatProperty, value); }
+        }
+
+        public object OldDataContext
+        {
+            get { return (object)this.GetValue(OldDataContextProperty); }
+            set { this.SetValue(OldDataContextProperty, value); }
         }
     }
 
@@ -89,6 +122,13 @@ namespace Gu.Wpf.PropertyGrid
                 "Old value: {0}",
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
+            typeof(Rows),
+            new FrameworkPropertyMetadata(
+                null,
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnOldDataContextChanged));
+
 
         public bool IsReadOnly
         {
@@ -100,6 +140,12 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (string)this.GetValue(OldValueStringFormatProperty); }
             set { this.SetValue(OldValueStringFormatProperty, value); }
+        }
+
+        public object OldDataContext
+        {
+            get { return (object)this.GetValue(OldDataContextProperty); }
+            set { this.SetValue(OldDataContextProperty, value); }
         }
     }
 
@@ -117,6 +163,13 @@ namespace Gu.Wpf.PropertyGrid
                 "Old value: {0}",
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
+            typeof(ContentRow),
+            new FrameworkPropertyMetadata(
+                null,
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnOldDataContextChanged));
+
 
         public bool IsReadOnly
         {
@@ -128,6 +181,12 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (string)this.GetValue(OldValueStringFormatProperty); }
             set { this.SetValue(OldValueStringFormatProperty, value); }
+        }
+
+        public object OldDataContext
+        {
+            get { return (object)this.GetValue(OldDataContextProperty); }
+            set { this.SetValue(OldDataContextProperty, value); }
         }
     }
 }

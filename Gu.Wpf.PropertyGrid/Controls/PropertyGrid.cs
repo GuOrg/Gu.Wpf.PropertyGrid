@@ -12,12 +12,6 @@ namespace Gu.Wpf.PropertyGrid
                 BooleanBoxes.False,
                 FrameworkPropertyMetadataOptions.Inherits | FrameworkPropertyMetadataOptions.NotDataBindable));
 
-        public static readonly DependencyProperty OldDataContextProperty = DependencyProperty.RegisterAttached(
-            "OldDataContext",
-            typeof(object),
-            typeof(PropertyGrid),
-            new FrameworkPropertyMetadata(default(object), FrameworkPropertyMetadataOptions.Inherits));
-
         public static void SetUsePropertyNameAsHeader(this UIElement element, bool value)
         {
             element.SetValue(UsePropertyNameAsHeaderProperty, value);
@@ -28,18 +22,6 @@ namespace Gu.Wpf.PropertyGrid
         public static bool GetUsePropertyNameAsHeader(this UIElement element)
         {
             return (bool)element.GetValue(UsePropertyNameAsHeaderProperty);
-        }
-
-        public static void SetOldDataContext(this UIElement element, object value)
-        {
-            element.SetValue(OldDataContextProperty, value);
-        }
-
-        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(UIElement))]
-        public static object GetOldDataContext(this UIElement element)
-        {
-            return (object)element.GetValue(OldDataContextProperty);
         }
     }
 }

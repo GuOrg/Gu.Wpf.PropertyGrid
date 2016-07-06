@@ -5,6 +5,7 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Data;
+    using System.Windows.Threading;
 
     [TemplatePart(Name = ValueBoxName, Type = typeof(FrameworkElement))]
     public abstract partial class Row : Control
@@ -56,28 +57,42 @@ namespace Gu.Wpf.PropertyGrid
 
         protected abstract void UpdateIsDirty();
 
-        private static void OnOldDataContextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        protected virtual void OnOldDataContextChanged(object oldValue, object newValue)
         {
-            var controlBase = (Row)d;
-            var oldValueBinding = BindingOperations.GetBinding(controlBase, OldValueProperty);
+            var oldValueBinding = BindingOperations.GetBinding(this, OldValueProperty);
             if (oldValueBinding != null)
             {
                 // We don't replace any bindings.
                 return;
             }
 
-            var valueBinding = BindingOperations.GetBinding(controlBase, controlBase.ValueDependencyProperty);
+            var valueBinding = BindingOperations.GetBinding(this, this.ValueDependencyProperty);
             if (valueBinding != null)
             {
                 var path = $"{OldDataContextProperty.Name}.{valueBinding.Path.Path}";
                 oldValueBinding = new Binding(path)
                 {
                     Mode = BindingMode.OneWay,
-                    Source = controlBase,
+                    Source = this,
                     UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
                 };
 
-                BindingOperations.SetBinding(controlBase, OldValueProperty, oldValueBinding);
+                BindingOperations.SetBinding(this, OldValueProperty, oldValueBinding);
+            }
+        }
+
+        private static void OnOldDataContextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (Row)d;
+            if (row.IsLoaded)
+            {
+                row.OnOldDataContextChanged(e.OldValue, e.NewValue);
+            }
+            else
+            {
+                d.Dispatcher.BeginInvoke(
+                    DispatcherPriority.Loaded,
+                    new Action(() => row.OnOldDataContextChanged(e.OldValue, e.NewValue)));
             }
         }
 

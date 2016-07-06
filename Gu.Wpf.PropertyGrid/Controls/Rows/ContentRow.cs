@@ -1,16 +1,12 @@
 namespace Gu.Wpf.PropertyGrid
 {
+    using System;
     using System.Windows;
     using System.Windows.Controls;
+    using System.Windows.Threading;
 
     public partial class ContentRow : HeaderedContentControl
     {
-        public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
-            typeof(ContentRow),
-            new FrameworkPropertyMetadata(
-                default(object),
-                FrameworkPropertyMetadataOptions.Inherits));
-
         public static readonly DependencyProperty SuffixProperty = DependencyProperty.Register(
             "Suffix",
             typeof(object),
@@ -27,12 +23,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ContentRow), new FrameworkPropertyMetadata(typeof(ContentRow)));
             FocusableProperty.OverrideMetadata(typeof(ContentRow), new FrameworkPropertyMetadata(false));
-        }
-
-        public object OldDataContext
-        {
-            get { return (object)this.GetValue(OldDataContextProperty); }
-            set { this.SetValue(OldDataContextProperty, value); }
         }
 
         public object Suffix
@@ -54,6 +44,25 @@ namespace Gu.Wpf.PropertyGrid
 
         protected virtual void OnOldValueChanged(object oldValue, object newValue)
         {
+        }
+
+        protected virtual void OnOldDataContextChanged(object oldValue, object newValue)
+        {
+        }
+
+        private static void OnOldDataContextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (ContentRow)d;
+            if (row.IsLoaded)
+            {
+                row.OnOldDataContextChanged(e.OldValue, e.NewValue);
+            }
+            else
+            {
+                d.Dispatcher.BeginInvoke(
+                    DispatcherPriority.Loaded,
+                    new Action(() => row.OnOldDataContextChanged(e.OldValue, e.NewValue)));
+            }
         }
     }
 }

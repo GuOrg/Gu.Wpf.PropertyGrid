@@ -16,6 +16,7 @@ namespace Gu.Wpf.PropertyGrid
                      {
 						new PropertyMetaData("IsReadOnly","bool","false"),
 						new PropertyMetaData("OldValueStringFormat","string","\"Old value: {0}\""),
+						new PropertyMetaData("OldDataContext","object","null", "OnOldDataContextChanged"),
                      };
 
 	foreach(var propertyMetaData in propertyMetaDatas)
@@ -72,7 +73,7 @@ namespace Gu.Wpf.PropertyGrid
             typeof(<#= controlName.Name #>),
             new FrameworkPropertyMetadata(
                 <#= propertyMetaData.DefaultValue #>,
-                FrameworkPropertyMetadataOptions.Inherits));
+                FrameworkPropertyMetadataOptions.Inherits<#= propertyMetaData.OnPropertyChanged #>));
 
 <#
 		} 
@@ -100,12 +101,17 @@ namespace Gu.Wpf.PropertyGrid
        public readonly string Name;
        public readonly string Type;
        public readonly string DefaultValue;
+       public readonly string OnPropertyChanged;
 
-       public PropertyMetaData(string name, string type, string defaultValue)
+       public PropertyMetaData(string name, string type, string defaultValue, string onPropertyChanged = null)
        {
            this.Name = name;
            this.Type = type;
            this.DefaultValue = defaultValue;
+           this.OnPropertyChanged = string.IsNullOrEmpty(onPropertyChanged)
+                                        ? ""
+                                        : $@",
+                {onPropertyChanged}";
        }
    }
 

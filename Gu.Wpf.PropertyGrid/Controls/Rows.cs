@@ -5,15 +5,12 @@
 
     public partial class Rows : ItemsControl
     {
-        public static readonly DependencyProperty UsePropertyNameAsHeaderProperty = PropertyGrid.UsePropertyNameAsHeaderProperty.AddOwner(
+        public static readonly DependencyProperty UsePropertyNameAsHeaderProperty =
+            PropertyGrid.UsePropertyNameAsHeaderProperty.AddOwner(
                 typeof(Rows),
                 new FrameworkPropertyMetadata(
                     BooleanBoxes.False,
                     FrameworkPropertyMetadataOptions.Inherits | FrameworkPropertyMetadataOptions.NotDataBindable));
-
-        public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
-                typeof(Rows),
-                new FrameworkPropertyMetadata(default(object), FrameworkPropertyMetadataOptions.Inherits));
 
         static Rows()
         {
@@ -27,10 +24,9 @@
             set { this.SetValue(UsePropertyNameAsHeaderProperty, value); }
         }
 
-        public object OldDataContext
+        private static void OnOldDataContextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            get { return (object)this.GetValue(OldDataContextProperty); }
-            set { this.SetValue(OldDataContextProperty, value); }
+            // nop
         }
     }
 }
