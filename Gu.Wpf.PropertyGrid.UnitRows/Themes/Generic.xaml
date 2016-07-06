@@ -27,7 +27,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource AccelerationRowControlTemplateSelector}" />
     </Style>
 
@@ -50,7 +50,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource AmountOfSubstanceRowControlTemplateSelector}" />
     </Style>
 
@@ -73,7 +73,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource AngleRowControlTemplateSelector}" />
     </Style>
 
@@ -96,7 +96,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource AnglePerUnitlessRowControlTemplateSelector}" />
     </Style>
 
@@ -119,7 +119,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource AngularAccelerationRowControlTemplateSelector}" />
     </Style>
 
@@ -142,7 +142,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource AngularJerkRowControlTemplateSelector}" />
     </Style>
 
@@ -165,7 +165,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource AngularSpeedRowControlTemplateSelector}" />
     </Style>
 
@@ -188,7 +188,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource AreaRowControlTemplateSelector}" />
     </Style>
 
@@ -211,7 +211,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource AreaDensityRowControlTemplateSelector}" />
     </Style>
 
@@ -234,7 +234,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource CapacitanceRowControlTemplateSelector}" />
     </Style>
 
@@ -257,7 +257,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource CatalyticActivityRowControlTemplateSelector}" />
     </Style>
 
@@ -280,7 +280,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource CurrentRowControlTemplateSelector}" />
     </Style>
 
@@ -303,7 +303,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource DataRowControlTemplateSelector}" />
     </Style>
 
@@ -326,7 +326,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource DensityRowControlTemplateSelector}" />
     </Style>
 
@@ -349,7 +349,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource ElectricalConductanceRowControlTemplateSelector}" />
     </Style>
 
@@ -372,7 +372,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource ElectricChargeRowControlTemplateSelector}" />
     </Style>
 
@@ -395,7 +395,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource EnergyRowControlTemplateSelector}" />
     </Style>
 
@@ -418,7 +418,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource FlexibilityRowControlTemplateSelector}" />
     </Style>
 
@@ -441,7 +441,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource ForceRowControlTemplateSelector}" />
     </Style>
 
@@ -464,7 +464,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource ForcePerUnitlessRowControlTemplateSelector}" />
     </Style>
 
@@ -487,7 +487,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource FrequencyRowControlTemplateSelector}" />
     </Style>
 
@@ -510,7 +510,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource IlluminanceRowControlTemplateSelector}" />
     </Style>
 
@@ -533,7 +533,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource InductanceRowControlTemplateSelector}" />
     </Style>
 
@@ -556,7 +556,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource JerkRowControlTemplateSelector}" />
     </Style>
 
@@ -579,7 +579,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource KinematicViscosityRowControlTemplateSelector}" />
     </Style>
 
@@ -602,7 +602,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource LengthRowControlTemplateSelector}" />
     </Style>
 
@@ -625,7 +625,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource LengthPerUnitlessRowControlTemplateSelector}" />
     </Style>
 
@@ -648,7 +648,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource LuminousFluxRowControlTemplateSelector}" />
     </Style>
 
@@ -671,7 +671,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource LuminousIntensityRowControlTemplateSelector}" />
     </Style>
 
@@ -694,7 +694,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource MagneticFieldStrengthRowControlTemplateSelector}" />
     </Style>
 
@@ -717,7 +717,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource MagneticFluxRowControlTemplateSelector}" />
     </Style>
 
@@ -740,7 +740,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource MassRowControlTemplateSelector}" />
     </Style>
 
@@ -763,7 +763,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource MassFlowRowControlTemplateSelector}" />
     </Style>
 
@@ -786,7 +786,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource MomentumRowControlTemplateSelector}" />
     </Style>
 
@@ -809,7 +809,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource PowerRowControlTemplateSelector}" />
     </Style>
 
@@ -832,7 +832,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource PressureRowControlTemplateSelector}" />
     </Style>
 
@@ -855,7 +855,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource ResistanceRowControlTemplateSelector}" />
     </Style>
 
@@ -878,7 +878,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource SolidAngleRowControlTemplateSelector}" />
     </Style>
 
@@ -901,7 +901,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource SpecificEnergyRowControlTemplateSelector}" />
     </Style>
 
@@ -924,7 +924,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource SpecificVolumeRowControlTemplateSelector}" />
     </Style>
 
@@ -947,7 +947,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource SpeedRowControlTemplateSelector}" />
     </Style>
 
@@ -970,7 +970,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource StiffnessRowControlTemplateSelector}" />
     </Style>
 
@@ -993,7 +993,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource TemperatureRowControlTemplateSelector}" />
     </Style>
 
@@ -1016,7 +1016,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource TimeRowControlTemplateSelector}" />
     </Style>
 
@@ -1039,7 +1039,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource TorqueRowControlTemplateSelector}" />
     </Style>
 
@@ -1062,7 +1062,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource UnitlessRowControlTemplateSelector}" />
     </Style>
 
@@ -1085,7 +1085,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource VoltageRowControlTemplateSelector}" />
     </Style>
 
@@ -1108,7 +1108,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource VolumeRowControlTemplateSelector}" />
     </Style>
 
@@ -1131,7 +1131,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource VolumetricFlowRowControlTemplateSelector}" />
     </Style>
 
@@ -1154,7 +1154,7 @@
                  </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource WavenumberRowControlTemplateSelector}" />
     </Style>
 

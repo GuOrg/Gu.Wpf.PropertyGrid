@@ -10,7 +10,7 @@
     <Style TargetType="{x:Type propertyGrid:Row}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, Rows, TextBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, Gu.Wpf.PropertyGrid.Rows, System.Windows.Controls.TextBox" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="HeaderStyle" Value="{StaticResource {x:Type propertyGrid:HeaderBlock}}" />
         <Setter Property="SuffixStyle" Value="{StaticResource {x:Type propertyGrid:SuffixBlock}}" />
@@ -33,12 +33,12 @@
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:StringRow}">
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource StringRowControlTemplateSelector}" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:BoolRow}">
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, CheckBox, ToggleButton" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.CheckBox, System.Windows.Controls.Primitives.ToggleButton" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource BoolRowControlTemplateSelector}" />
     </Style>
 
@@ -51,12 +51,12 @@
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:EnumRow}">
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, ComboBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.ComboBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource EnumRowControlTemplateSelector}" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:SelectorRow}">
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, ComboBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.ComboBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource SelectorRowControlTemplateSelector}" />
     </Style>
 

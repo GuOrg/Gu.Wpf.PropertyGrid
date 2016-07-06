@@ -3,7 +3,7 @@
                     xmlns:numericRows="clr-namespace:Gu.Wpf.PropertyGrid.NumericRows"
                     xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid;assembly=Gu.Wpf.PropertyGrid"
                     xmlns:validationScope="clr-namespace:Gu.Wpf.ValidationScope;assembly=Gu.Wpf.ValidationScope"
-                    xmlns:numeric="http://gu.se/NumericInput">
+                    xmlns:numeric="clr-namespace:Gu.Wpf.NumericInput;assembly=Gu.Wpf.NumericInput">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.NumericRows;component/Themes/RowTemplateSelectors.xaml" />
@@ -26,7 +26,7 @@
                 </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource DoubleRowControlTemplateSelector}" />
     </Style>
 
@@ -47,7 +47,7 @@
                 </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, IntBox" />
+        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.IntBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource IntRowControlTemplateSelector}" />
     </Style>
 </ResourceDictionary>
