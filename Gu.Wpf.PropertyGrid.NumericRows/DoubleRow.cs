@@ -17,7 +17,6 @@
         static DoubleRow()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DoubleRow), new FrameworkPropertyMetadata(typeof(DoubleRow)));
-
             ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(DoubleRow), UpdateSourceTrigger.LostFocus);
         }
 

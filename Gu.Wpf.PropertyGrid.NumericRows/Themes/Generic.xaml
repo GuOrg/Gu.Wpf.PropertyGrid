@@ -2,18 +2,49 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:numericRows="clr-namespace:Gu.Wpf.PropertyGrid.NumericRows"
                     xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid;assembly=Gu.Wpf.PropertyGrid"
-                    xmlns:validationScope="clr-namespace:Gu.Wpf.ValidationScope;assembly=Gu.Wpf.ValidationScope">
+                    xmlns:validationScope="clr-namespace:Gu.Wpf.ValidationScope;assembly=Gu.Wpf.ValidationScope"
+                    xmlns:numeric="http://gu.se/NumericInput">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.NumericRows;component/Themes/RowTemplateSelectors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type numericRows:DoubleRow}">
+        <Setter Property="OldValueStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static numericRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type numericRows:DoubleRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type numericRows:DoubleRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type numericRows:DoubleRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, DoubleBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource DoubleRowControlTemplateSelector}" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type numericRows:IntRow}">
+        <Setter Property="OldValueStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Text">
+                        <Setter.Value>
+                            <MultiBinding Converter="{x:Static numericRows:OldValueConverter.Default}">
+                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type numericRows:IntRow}}" />
+                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type numericRows:IntRow}}" />
+                                <Binding Path="(numeric:NumericBox.Culture)" RelativeSource="{RelativeSource AncestorType={x:Type numericRows:IntRow}}" />
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Row, TextBox, IntBox" />
         <Setter Property="ControlTemplateSelector" Value="{StaticResource IntRowControlTemplateSelector}" />
     </Style>

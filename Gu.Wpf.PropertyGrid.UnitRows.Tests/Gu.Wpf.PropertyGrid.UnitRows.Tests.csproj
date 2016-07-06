@@ -56,6 +56,10 @@
   </Target>
   -->
   <ItemGroup>
+    <ProjectReference Include="..\Gu.Wpf.PropertyGrid.NumericRows\Gu.Wpf.PropertyGrid.NumericRows.csproj">
+      <Project>{aabf74d2-2282-4899-915d-409b1a6735c4}</Project>
+      <Name>Gu.Wpf.PropertyGrid.NumericRows</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gu.Wpf.PropertyGrid\Gu.Wpf.PropertyGrid.csproj">
       <Project>{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}</Project>
       <Name>Gu.Wpf.PropertyGrid</Name>

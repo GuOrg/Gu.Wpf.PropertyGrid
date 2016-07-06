@@ -52,6 +52,9 @@
   <ItemGroup>
     <Compile Include="DoubleRow.cs" />
     <Compile Include="IntRow.cs" />
+    <Compile Include="INumericFormatter.cs" />
+    <Compile Include="NumericRow{T}.cs" />
+    <Compile Include="OldValueConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

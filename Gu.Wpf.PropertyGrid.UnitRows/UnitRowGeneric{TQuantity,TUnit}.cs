@@ -4,6 +4,7 @@
     using System.Windows;
     using Gu.Units;
     using Gu.Wpf.NumericInput;
+    using Gu.Wpf.PropertyGrid.NumericRows;
 
     public abstract class UnitRowGeneric<TQuantity, TUnit> : NumericRow<TQuantity>, IQuantityFormatter
         where TQuantity : struct, IComparable<TQuantity>, IQuantity<TUnit>
@@ -101,7 +102,7 @@
 
             if (!(quantity is TQuantity))
             {
-                return "error";
+                return "wrong type";
             }
 
             var qty = (TQuantity)quantity;

@@ -1,10 +1,12 @@
-﻿namespace Gu.Wpf.PropertyGrid
+﻿namespace Gu.Wpf.PropertyGrid.NumericRows
 {
     using System;
     using System.Windows;
     using System.Windows.Data;
 
-    public abstract class NumericRow<T> : GenericRow<T?>
+    using Gu.Wpf.NumericInput;
+
+    public abstract class NumericRow<T> : GenericRow<T?>, INumericFormatter
         where T : struct, IComparable<T>
     {
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
@@ -34,6 +36,22 @@
         {
             get { return (T?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
+        }
+
+        string INumericFormatter.Format(IFormattable value)
+        {
+            if (value == null)
+            {
+                return string.Empty;
+            }
+
+            if (!(value is T))
+            {
+                return "wrong type";
+            }
+
+            var culture = NumericBox.GetCulture(this);
+            return value.ToString(string.Empty, culture);
         }
 
         protected virtual void OnMinValueChanged(T? oldValue, T? newValue)
