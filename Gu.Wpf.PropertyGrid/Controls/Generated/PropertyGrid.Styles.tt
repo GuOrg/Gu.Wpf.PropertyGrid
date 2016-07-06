@@ -1,6 +1,6 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ assembly name="System.Core" #>
-<#@ output extension=".cs" #>
+<#@ output extension=".generated.cs" #>
 #pragma warning disable SA1402 // File may only contain a single class
 namespace Gu.Wpf.PropertyGrid
 {
