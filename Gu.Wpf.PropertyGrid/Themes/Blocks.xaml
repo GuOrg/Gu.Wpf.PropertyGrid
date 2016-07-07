@@ -11,8 +11,10 @@
         <Setter Property="TextTrimming" Value="CharacterEllipsis" />
         <Setter Property="TextAlignment" Value="Right" />
     </Style>
-    
-    <Style x:Key="OldValueStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource InfoStyle}">
+
+    <Style x:Key="DefaultOldValueStyle"
+           BasedOn="{StaticResource InfoStyle}"
+           TargetType="{x:Type TextBlock}">
         <Setter Property="Foreground" Value="DodgerBlue" />
         <Setter Property="Text">
             <Setter.Value>

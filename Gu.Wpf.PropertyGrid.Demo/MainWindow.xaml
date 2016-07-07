@@ -13,9 +13,9 @@
             <local:InfoSettingsView />
         </TabItem>
 
-        <TabItem Header="plain">
+        <!--<TabItem Header="plain">
             <local:PlainSettingsView />
-        </TabItem>
+        </TabItem>-->
 
         <TabItem Header="Props as headers">
             <local:UsePropertyNamesAsHeadersView />

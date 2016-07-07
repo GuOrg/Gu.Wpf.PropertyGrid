@@ -11,6 +11,7 @@
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.UnitRows;component/Themes/RowTemplates.generated.xaml" />
     </ResourceDictionary.MergedDictionaries>
+	
 <#
 	foreach(var quantity in GetQuantityTypes())
 	{
@@ -18,7 +19,7 @@
     <Style TargetType="{x:Type unitRows:<#= quantity.Name #>Row}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+			    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource DefaultOldValueStyle}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">

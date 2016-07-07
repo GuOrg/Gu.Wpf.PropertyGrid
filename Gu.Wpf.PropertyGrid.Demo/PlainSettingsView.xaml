@@ -8,6 +8,11 @@
              xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows;assembly=Gu.Wpf.PropertyGrid.UnitRows"
              xmlns:validationScope="http://gu.se/ValidationScope"
              mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style BasedOn="{StaticResource {x:Type propertyGrid:StringRow}}" TargetType="{x:Type propertyGrid:StringRow}">
+            <Setter Property="Template" Value="{StaticResource StringRowPlainTemplate}" />
+        </Style>
+    </UserControl.Resources>
     <UserControl.DataContext>
         <demo:SettingsVm />
     </UserControl.DataContext>
@@ -16,8 +21,7 @@
             <RowDefinition />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <propertyGrid:Rows Grid.Row="0"
-                           DataContext="{Binding EditableCopy}">
+        <propertyGrid:Rows Grid.Row="0" DataContext="{Binding EditableCopy}">
             <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Core" />
 
             <propertyGrid:StringRow Header="string" Value="{Binding StringValue}" />

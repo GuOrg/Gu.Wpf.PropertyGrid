@@ -14,25 +14,10 @@
         <Setter Property="Focusable" Value="False" />
         <Setter Property="HeaderStyle" Value="{StaticResource {x:Type propertyGrid:HeaderBlock}}" />
         <Setter Property="SuffixStyle" Value="{StaticResource {x:Type propertyGrid:SuffixBlock}}" />
-        <Setter Property="OldValueStyle">
-            <Setter.Value>
-                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource InfoStyle}">
-                    <Setter Property="Foreground" Value="DodgerBlue" />
-                    <Setter Property="Text">
-                        <Setter.Value>
-                            <MultiBinding Converter="{x:Static propertyGrid:OldValueConverter.Default}">
-                                <Binding Path="." RelativeSource="{RelativeSource AncestorType={x:Type propertyGrid:Row}}" />
-                                <Binding Path="OldValue" RelativeSource="{RelativeSource AncestorType={x:Type propertyGrid:Row}}" />
-                                <Binding Path="OldValueStringFormat" RelativeSource="{RelativeSource AncestorType={x:Type propertyGrid:Row}}" />
-                            </MultiBinding>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="OldValueStyle" Value="{StaticResource DefaultOldValueStyle}" />
         <Setter Property="ErrorStyle">
             <Setter.Value>
-                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource InfoStyle}">
+                <Style BasedOn="{StaticResource InfoStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Foreground" Value="Red" />
                     <Setter Property="Text" Value="{Binding Path=(validationScope:Scope.Errors), RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:Row}}, Converter={x:Static propertyGrid:ValidationErrorsToStringConverter.Default}}" />
                 </Style>

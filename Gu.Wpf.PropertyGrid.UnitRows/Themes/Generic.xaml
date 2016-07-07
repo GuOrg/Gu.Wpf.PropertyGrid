@@ -1,17 +1,18 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:validationScope="clr-namespace:Gu.Wpf.ValidationScope;assembly=Gu.Wpf.ValidationScope"
-					xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows"
-					xmlns:numeric="clr-namespace:Gu.Wpf.NumericInput;assembly=Gu.Wpf.NumericInput"
-					xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid;assembly=Gu.Wpf.PropertyGrid">
+                    xmlns:numeric="clr-namespace:Gu.Wpf.NumericInput;assembly=Gu.Wpf.NumericInput"
+                    xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid;assembly=Gu.Wpf.PropertyGrid"
+                    xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows"
+                    xmlns:validationScope="clr-namespace:Gu.Wpf.ValidationScope;assembly=Gu.Wpf.ValidationScope">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.UnitRows;component/Themes/RowTemplates.generated.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    <Style TargetType="{x:Type unitRows:AccelerationRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:AccelerationRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -24,17 +25,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource AccelerationRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:AmountOfSubstanceRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:AmountOfSubstanceRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -47,17 +48,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource AmountOfSubstanceRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:AngleRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:AngleRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -70,17 +71,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource AngleRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:AnglePerUnitlessRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:AnglePerUnitlessRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -93,17 +94,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource AnglePerUnitlessRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:AngularAccelerationRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:AngularAccelerationRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -116,17 +117,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource AngularAccelerationRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:AngularJerkRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:AngularJerkRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -139,17 +140,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource AngularJerkRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:AngularSpeedRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:AngularSpeedRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -162,17 +163,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource AngularSpeedRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:AreaRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:AreaRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -185,17 +186,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource AreaRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:AreaDensityRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:AreaDensityRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -208,17 +209,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource AreaDensityRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:CapacitanceRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:CapacitanceRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -231,17 +232,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource CapacitanceRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:CatalyticActivityRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:CatalyticActivityRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -254,17 +255,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource CatalyticActivityRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:CurrentRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:CurrentRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -277,17 +278,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource CurrentRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:DataRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:DataRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -300,17 +301,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource DataRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:DensityRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:DensityRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -323,17 +324,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource DensityRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:ElectricalConductanceRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:ElectricalConductanceRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -346,17 +347,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource ElectricalConductanceRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:ElectricChargeRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:ElectricChargeRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -369,17 +370,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource ElectricChargeRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:EnergyRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:EnergyRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -392,17 +393,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource EnergyRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:FlexibilityRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:FlexibilityRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -415,17 +416,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource FlexibilityRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:ForceRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:ForceRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -438,17 +439,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource ForceRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:ForcePerUnitlessRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:ForcePerUnitlessRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -461,17 +462,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource ForcePerUnitlessRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:FrequencyRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:FrequencyRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -484,17 +485,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource FrequencyRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:IlluminanceRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:IlluminanceRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -507,17 +508,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource IlluminanceRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:InductanceRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:InductanceRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -530,17 +531,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource InductanceRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:JerkRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:JerkRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -553,17 +554,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource JerkRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:KinematicViscosityRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:KinematicViscosityRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -576,17 +577,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource KinematicViscosityRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:LengthRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:LengthRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -599,17 +600,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource LengthRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:LengthPerUnitlessRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:LengthPerUnitlessRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -622,17 +623,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource LengthPerUnitlessRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:LuminousFluxRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:LuminousFluxRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -645,17 +646,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource LuminousFluxRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:LuminousIntensityRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:LuminousIntensityRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -668,17 +669,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource LuminousIntensityRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:MagneticFieldStrengthRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:MagneticFieldStrengthRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -691,17 +692,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource MagneticFieldStrengthRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:MagneticFluxRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:MagneticFluxRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -714,17 +715,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource MagneticFluxRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:MassRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:MassRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -737,17 +738,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource MassRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:MassFlowRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:MassFlowRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -760,17 +761,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource MassFlowRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:MomentumRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:MomentumRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -783,17 +784,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource MomentumRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:PowerRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:PowerRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -806,17 +807,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource PowerRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:PressureRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:PressureRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -829,17 +830,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource PressureRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:ResistanceRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:ResistanceRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -852,17 +853,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource ResistanceRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:SolidAngleRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:SolidAngleRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -875,17 +876,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource SolidAngleRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:SpecificEnergyRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:SpecificEnergyRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -898,17 +899,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource SpecificEnergyRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:SpecificVolumeRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:SpecificVolumeRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -921,17 +922,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource SpecificVolumeRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:SpeedRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:SpeedRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -944,17 +945,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource SpeedRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:StiffnessRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:StiffnessRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -967,17 +968,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource StiffnessRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:TemperatureRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:TemperatureRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -990,17 +991,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource TemperatureRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:TimeRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:TimeRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -1013,17 +1014,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource TimeRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:TorqueRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:TorqueRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -1036,17 +1037,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource TorqueRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:UnitlessRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:UnitlessRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -1059,17 +1060,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource UnitlessRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:VoltageRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:VoltageRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -1082,17 +1083,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource VoltageRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:VolumeRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:VolumeRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -1105,17 +1106,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource VolumeRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:VolumetricFlowRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:VolumetricFlowRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -1128,17 +1129,17 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
         <Setter Property="Template" Value="{StaticResource VolumetricFlowRowInfoTemplate}" />
     </Style>
 
-    <Style TargetType="{x:Type unitRows:WavenumberRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
+    <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type unitRows:WavenumberRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-			    <Style TargetType="{x:Type TextBlock}">
+                <Style BasedOn="{StaticResource DefaultOldValueStyle}" TargetType="{x:Type TextBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static unitRows:OldValueConverter.Default}">
@@ -1151,7 +1152,7 @@
                             </MultiBinding>
                         </Setter.Value>
                     </Setter>
-                 </Style>
+                </Style>
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
