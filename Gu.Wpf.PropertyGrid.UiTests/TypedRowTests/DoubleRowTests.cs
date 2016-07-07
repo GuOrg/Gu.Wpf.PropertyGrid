@@ -1,7 +1,6 @@
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
     using NUnit.Framework;
-
     using TestStack.White.UIItems;
 
     public class DoubleRowTests : WindowTests
