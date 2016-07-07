@@ -32,7 +32,7 @@
             {
                 if (numberOfArguments == 1 && anyItemHasFormat == false)
                 {
-                    var formattedValue = formatter.Format(values[1] as IFormattable);
+                    var formattedValue = formatter.Format(row.OldValue as IFormattable);
                     return string.Format(row.OldValueStringFormat, formattedValue);
                 }
 
