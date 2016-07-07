@@ -14,7 +14,6 @@
     
     <Style x:Key="OldValueStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource InfoStyle}">
         <Setter Property="Foreground" Value="DodgerBlue" />
-
         <Setter Property="Text">
             <Setter.Value>
                 <MultiBinding Converter="{x:Static propertyGrid:OldValueConverter.Default}">
@@ -25,6 +24,4 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
-    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type propertyGrid:InfoBlock}" />
 </ResourceDictionary>
