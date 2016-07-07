@@ -143,7 +143,6 @@
         [Test]
         public void NoOldValue()
         {
-            var partOldValue = "PART_OldValue";
             var groupBox = this.Window.GetByText<GroupBox>("no old datacontext");
 
             var stringRow = groupBox.FindRow("string");

@@ -131,11 +131,6 @@
             container.Template = this.SelectTemplateCore(container, container.HeaderStyle, container.SuffixStyle, container.OldValueStyle, container.ErrorStyle);
         }
 
-        protected override ControlTemplate SelectTemplate(Row container)
-        {
-            return this.SelectTemplateCore(container, container.HeaderStyle, container.SuffixStyle, container.OldValueStyle, container.ErrorStyle);
-        }
-
         protected static bool IsTextBlockStyle(Style style)
         {
             var targetType = style?.TargetType ?? typeof(TextBlock);
@@ -146,6 +141,11 @@
         {
             var targetType = style?.TargetType ?? typeof(ContentPresenter);
             return typeof(TextBox).IsAssignableFrom(targetType);
+        }
+
+        protected override ControlTemplate SelectTemplate(Row container)
+        {
+            return this.SelectTemplateCore(container, container.HeaderStyle, container.SuffixStyle, container.OldValueStyle, container.ErrorStyle);
         }
 
         // ReSharper disable once UnusedParameter.Global
