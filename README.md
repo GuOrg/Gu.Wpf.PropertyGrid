@@ -1,5 +1,7 @@
 # Gu.PropertyGrid
 
+[![Join the chat at https://gitter.im/JohanLarsson/Gu.Wpf.PropertyGrid](https://badges.gitter.im/JohanLarsson/Gu.Wpf.PropertyGrid.svg)](https://gitter.im/JohanLarsson/Gu.Wpf.PropertyGrid?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 [![Build status](https://ci.appveyor.com/api/projects/status/vhg6ru7ennq82ek7/branch/master?svg=true)](https://ci.appveyor.com/project/JohanLarsson/gu-wpf-propertygrid/branch/master)
 [![NuGet](https://img.shields.io/nuget/v/Gu.Wpf.PropertyGrid.svg)](https://www.nuget.org/packages/Gu.Wpf.PropertyGrid/)
