@@ -70,7 +70,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -79,10 +83,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -93,7 +97,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -102,14 +112,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -179,7 +189,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -188,10 +202,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -202,7 +216,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -211,14 +231,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -288,7 +308,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -297,10 +321,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -311,7 +335,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -320,14 +350,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -397,7 +427,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -406,10 +440,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -420,7 +454,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -429,14 +469,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -506,7 +546,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -515,10 +559,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -529,7 +573,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -538,14 +588,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -615,7 +665,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -624,10 +678,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -638,7 +692,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -647,14 +707,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -724,7 +784,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -733,10 +797,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -747,7 +811,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -756,14 +826,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -833,7 +903,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -842,10 +916,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -856,7 +930,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -865,14 +945,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -942,7 +1022,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -951,10 +1035,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -965,7 +1049,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -974,14 +1064,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -1051,7 +1141,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -1060,10 +1154,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -1074,7 +1168,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -1083,14 +1183,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -1160,7 +1260,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -1169,10 +1273,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -1183,7 +1287,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -1192,14 +1302,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -1269,7 +1379,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -1278,10 +1392,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -1292,7 +1406,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -1301,14 +1421,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -1378,7 +1498,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -1387,10 +1511,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -1401,7 +1525,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -1410,14 +1540,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -1487,7 +1617,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -1496,10 +1630,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -1510,7 +1644,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -1519,14 +1659,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -1596,7 +1736,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -1605,10 +1749,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -1619,7 +1763,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -1628,14 +1778,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -1705,7 +1855,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -1714,10 +1868,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -1728,7 +1882,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -1737,14 +1897,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -1814,7 +1974,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -1823,10 +1987,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -1837,7 +2001,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -1846,14 +2016,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -1923,7 +2093,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -1932,10 +2106,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -1946,7 +2120,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -1955,14 +2135,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -2032,7 +2212,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -2041,10 +2225,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -2055,7 +2239,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -2064,14 +2254,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -2141,7 +2331,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -2150,10 +2344,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -2164,7 +2358,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -2173,14 +2373,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -2250,7 +2450,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -2259,10 +2463,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -2273,7 +2477,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -2282,14 +2492,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -2359,7 +2569,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -2368,10 +2582,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -2382,7 +2596,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -2391,14 +2611,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -2468,7 +2688,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -2477,10 +2701,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -2491,7 +2715,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -2500,14 +2730,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -2577,7 +2807,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -2586,10 +2820,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -2600,7 +2834,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -2609,14 +2849,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -2686,7 +2926,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -2695,10 +2939,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -2709,7 +2953,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -2718,14 +2968,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -2795,7 +3045,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -2804,10 +3058,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -2818,7 +3072,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -2827,14 +3087,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -2904,7 +3164,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -2913,10 +3177,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -2927,7 +3191,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -2936,14 +3206,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -3013,7 +3283,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -3022,10 +3296,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -3036,7 +3310,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -3045,14 +3325,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -3122,7 +3402,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -3131,10 +3415,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -3145,7 +3429,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -3154,14 +3444,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -3231,7 +3521,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -3240,10 +3534,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -3254,7 +3548,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -3263,14 +3563,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -3340,7 +3640,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -3349,10 +3653,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -3363,7 +3667,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -3372,14 +3682,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -3449,7 +3759,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -3458,10 +3772,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -3472,7 +3786,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -3481,14 +3801,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -3558,7 +3878,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -3567,10 +3891,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -3581,7 +3905,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -3590,14 +3920,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -3667,7 +3997,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -3676,10 +4010,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -3690,7 +4024,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -3699,14 +4039,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -3776,7 +4116,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -3785,10 +4129,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -3799,7 +4143,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -3808,14 +4158,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -3885,7 +4235,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -3894,10 +4248,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -3908,7 +4262,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -3917,14 +4277,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -3994,7 +4354,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -4003,10 +4367,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -4017,7 +4381,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -4026,14 +4396,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -4103,7 +4473,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -4112,10 +4486,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -4126,7 +4500,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -4135,14 +4515,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -4212,7 +4592,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -4221,10 +4605,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -4235,7 +4619,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -4244,14 +4634,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -4321,7 +4711,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -4330,10 +4724,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -4344,7 +4738,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -4353,14 +4753,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -4430,7 +4830,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -4439,10 +4843,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -4453,7 +4857,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -4462,14 +4872,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -4539,7 +4949,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -4548,10 +4962,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -4562,7 +4976,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -4571,14 +4991,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -4648,7 +5068,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -4657,10 +5081,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -4671,7 +5095,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -4680,14 +5110,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -4757,7 +5187,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -4766,10 +5200,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -4780,7 +5214,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -4789,14 +5229,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -4866,7 +5306,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -4875,10 +5319,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -4889,7 +5333,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -4898,14 +5348,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -4975,7 +5425,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -4984,10 +5438,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -4998,7 +5452,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -5007,14 +5467,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -5084,7 +5544,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -5093,10 +5557,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -5107,7 +5571,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -5116,14 +5586,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -5193,7 +5663,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -5202,10 +5676,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -5216,7 +5690,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -5225,14 +5705,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -5302,7 +5782,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -5311,10 +5795,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -5325,7 +5809,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -5334,14 +5824,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -5411,7 +5901,11 @@
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
 	
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
                             <numeric:DoubleBox x:Name="PART_Value"
                                                CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                                DecimalDigits="{TemplateBinding DecimalDigits}"
@@ -5420,10 +5914,10 @@
                                                MinValue="{TemplateBinding ScalarMinValue}"
                                                Value="{Binding ScalarValue,
                                                                RelativeSource={RelativeSource TemplatedParent},
-                                                               UpdateSourceTrigger=PropertyChanged}" />
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
@@ -5434,7 +5928,13 @@
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -5443,14 +5943,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>

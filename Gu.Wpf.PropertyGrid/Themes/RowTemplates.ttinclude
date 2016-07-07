@@ -142,7 +142,8 @@
 
 	private void WriteInfoTemplate(NameAndXaml nameAndXaml)
 	{
-	    var valueXaml = Indent(nameAndXaml.Xaml, "    ");
+	    var valueXaml = SetValidationTemplateToNull(nameAndXaml.Xaml);
+	    valueXaml = Indent(valueXaml, "    ");
 #>
     <ControlTemplate x:Key="<#= nameAndXaml.Name #>InfoTemplate" TargetType="{x:Type <#= nameAndXaml.PrefixedName #>}">
         <Border Margin="{TemplateBinding Padding}"
@@ -160,16 +161,25 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
                 </Grid.ColumnDefinitions> 
 <#= TextBlockHeaderXaml #>
-                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+                <Border Grid.Row="0"
+				        Grid.Column="1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
 <#= valueXaml #>
                 </Border>
-
 <#= TextBlockSuffixXaml #>
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2" />
+                                        Grid.ColumnSpan="2">
+                    <propertyGrid:InfoBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Foreground" Value="{x:Null}" />
+                        </Style>
+                    </propertyGrid:InfoBlock.Style>
+                </propertyGrid:InfoBlock>
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -178,14 +188,14 @@
             </Trigger>
 
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="validationScope:Scope.HasErrors" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
-                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+                <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
