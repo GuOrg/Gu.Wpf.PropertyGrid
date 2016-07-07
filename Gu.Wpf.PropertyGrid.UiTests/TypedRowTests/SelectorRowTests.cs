@@ -3,16 +3,11 @@ namespace Gu.Wpf.PropertyGrid.UiTests
     using System.Linq;
 
     using NUnit.Framework;
-
-    using TestStack.White;
     using TestStack.White.UIItems;
     using TestStack.White.UIItems.ListBoxItems;
-    using TestStack.White.UIItems.WindowItems;
 
-    public class SelectorRowTests
+    public class SelectorRowTests : WindowTests
     {
-        private Application application;
-        private Window window;
         private Button loseFocusButton;
         private Label currentCultureTextBlock;
 
@@ -21,25 +16,19 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         private ComboBox readonlyBox;
         private ComboBox editableBox;
 
+        protected override string WindowName { get; } = "SelectorRowWindow";
+
         [OneTimeSetUp]
-        public void OneTimeSetUp()
+        public override void OneTimeSetUp()
         {
-            var title = "SelectorRowWindow";
-            this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
-            this.window = this.application.GetWindow(title);
-            this.loseFocusButton = this.window.GetByText<Button>("lose focus");
-            this.currentCultureTextBlock = this.window.Get<Label>("currentCultureTextBlock");
+            base.OneTimeSetUp();
+            this.loseFocusButton = this.Window.GetByText<Button>("lose focus");
+            this.currentCultureTextBlock = this.Window.Get<Label>("currentCultureTextBlock");
 
-            this.defaultBox = this.window.FindRow("default").Value<ComboBox>();
-            this.lostFocusBox = this.window.FindRow("lostfocus").Value<ComboBox>();
-            this.readonlyBox = this.window.FindRow("readonly").Value<ComboBox>();
-            this.editableBox = this.window.FindRow("editable").Value<ComboBox>();
-        }
-
-        [OneTimeTearDown]
-        public void OneTimeTearDown()
-        {
-            this.application?.Dispose();
+            this.defaultBox = this.Window.FindRow("default").Value<ComboBox>();
+            this.lostFocusBox = this.Window.FindRow("lostfocus").Value<ComboBox>();
+            this.readonlyBox = this.Window.FindRow("readonly").Value<ComboBox>();
+            this.editableBox = this.Window.FindRow("editable").Value<ComboBox>();
         }
 
         [Test]

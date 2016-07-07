@@ -2,35 +2,22 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 {
     using NUnit.Framework;
 
-    using TestStack.White;
     using TestStack.White.UIItems;
     using TestStack.White.UIItems.ListBoxItems;
-    using TestStack.White.UIItems.WindowItems;
-    using TestStack.White.UIItems.WPFUIItems;
 
-    public class UnitsTests
+    public class UnitsTests : WindowTests
     {
-        private Application application;
-        private Window window;
-
         private Button loseFocusButton;
-
         private TextBox currentValueTextBox;
 
-        [OneTimeSetUp]
-        public void OneTimeSetUp()
-        {
-            var title = "UnitsWindow";
-            this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
-            this.window = this.application.GetWindow(title);
-            this.loseFocusButton = this.window.GetByText<Button>("lose focus");
-            this.currentValueTextBox = this.window.Get<TextBox>("currentValueTextBox");
-        }
+        protected override string WindowName { get; } = "UnitsWindow";
 
-        [OneTimeTearDown]
-        public void OneTimeTearDown()
+        [OneTimeSetUp]
+        public override void OneTimeSetUp()
         {
-            this.application?.Dispose();
+            base.OneTimeSetUp();
+            this.loseFocusButton = this.Window.GetByText<Button>("lose focus");
+            this.currentValueTextBox = this.Window.Get<TextBox>("currentValueTextBox");
         }
 
         [SetUp]
@@ -43,7 +30,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void ExplicitUnits()
         {
-            var groupBox = this.window.GetByText<GroupBox>("explicit");
+            var groupBox = this.Window.GetByText<GroupBox>("explicit");
             var metresSetting = groupBox.FindRow("length (m)");
             var metresBox = metresSetting.Value<TextBox>();
             var millimetresSetting = groupBox.FindRow("length (mm)");
@@ -62,7 +49,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void UnitFromStyle()
         {
-            var groupBox = this.window.GetByText<GroupBox>("style");
+            var groupBox = this.Window.GetByText<GroupBox>("style");
             var settingControl = groupBox.FindRow("length");
             var textBox = settingControl.Value<TextBox>();
 
@@ -78,7 +65,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void BoundUnit()
         {
-            var groupBox = this.window.GetByText<GroupBox>("bound");
+            var groupBox = this.Window.GetByText<GroupBox>("bound");
             var settingControl = groupBox.FindRow("length");
             var textBox = settingControl.Value<TextBox>();
 

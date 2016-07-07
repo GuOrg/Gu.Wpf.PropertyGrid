@@ -1,47 +1,31 @@
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
     using NUnit.Framework;
-    using TestStack.White;
+
     using TestStack.White.UIItems;
-    using TestStack.White.UIItems.WindowItems;
     using TestStack.White.WindowsAPI;
 
-    public class FocusTests
+    public class FocusTests : WindowTests
     {
-        private Application application;
-        private Window window;
-
-        [OneTimeSetUp]
-        public void OneTimeSetUp()
-        {
-            var title = "FocusWindow";
-            this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
-            this.window = this.application.GetWindow(title);
-        }
-
-        [OneTimeTearDown]
-        public void OneTimeTearDown()
-        {
-            this.application?.Dispose();
-        }
+        protected override string WindowName { get; } = "FocusWindow";
 
         [Test]
         public void CyclesFocus()
         {
-            var a = this.window.FindRow("a").Value<TextBox>();
-            var b = this.window.FindRow("b").Value<TextBox>();
-            var ro = this.window.FindRow("readonly").Value<TextBox>();
+            var a = this.Window.FindRow("a").Value<TextBox>();
+            var b = this.Window.FindRow("b").Value<TextBox>();
+            var ro = this.Window.FindRow("readonly").Value<TextBox>();
             a.Focus();
             Assert.True(a.IsFocussed);
             Assert.False(b.IsFocussed);
             Assert.False(ro.IsFocussed);
 
-            this.window.Keyboard.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+            this.Window.Keyboard.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
             Assert.False(a.IsFocussed);
             Assert.True(b.IsFocussed);
             Assert.False(ro.IsFocussed);
 
-            this.window.Keyboard.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
+            this.Window.Keyboard.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
             Assert.True(a.IsFocussed);
             Assert.False(b.IsFocussed);
             Assert.False(ro.IsFocussed);

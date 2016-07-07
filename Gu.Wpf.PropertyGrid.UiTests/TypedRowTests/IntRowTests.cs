@@ -1,15 +1,10 @@
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
     using NUnit.Framework;
-
-    using TestStack.White;
     using TestStack.White.UIItems;
-    using TestStack.White.UIItems.WindowItems;
 
-    public class IntRowTests
+    public class IntRowTests : WindowTests
     {
-        private Application application;
-        private Window window;
         private Button loseFocusButton;
         private TextBox currentValueTextBox;
 
@@ -19,26 +14,20 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         private TextBox currentNullableValueTextBox;
         private TextBox nullableBox;
 
+        protected override string WindowName { get; } = "IntRowWindow";
+
         [OneTimeSetUp]
-        public void OneTimeSetUp()
+        public override void OneTimeSetUp()
         {
-            var title = "IntRowWindow";
-            this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
-            this.window = this.application.GetWindow(title);
-            this.loseFocusButton = this.window.GetByText<Button>("lose focus");
-            this.currentValueTextBox = this.window.Get<TextBox>("currentValueTextBox");
-            this.currentNullableValueTextBox = this.window.Get<TextBox>("currentNullableValueTextBox");
+            base.OneTimeSetUp();
+            this.loseFocusButton = this.Window.GetByText<Button>("lose focus");
+            this.currentValueTextBox = this.Window.Get<TextBox>("currentValueTextBox");
+            this.currentNullableValueTextBox = this.Window.Get<TextBox>("currentNullableValueTextBox");
 
-            this.defaultBox = this.window.FindRow("default").Value<TextBox>();
-            this.propertychangedBox = this.window.FindRow("propertychanged").Value<TextBox>();
-            this.readonlyBox = this.window.FindRow("readonly").Value<TextBox>();
-            this.nullableBox = this.window.FindRow("nullable").Value<TextBox>();
-        }
-
-        [OneTimeTearDown]
-        public void OneTimeTearDown()
-        {
-            this.application?.Dispose();
+            this.defaultBox = this.Window.FindRow("default").Value<TextBox>();
+            this.propertychangedBox = this.Window.FindRow("propertychanged").Value<TextBox>();
+            this.readonlyBox = this.Window.FindRow("readonly").Value<TextBox>();
+            this.nullableBox = this.Window.FindRow("nullable").Value<TextBox>();
         }
 
         [SetUp]

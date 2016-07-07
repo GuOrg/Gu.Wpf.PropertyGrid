@@ -3,29 +3,17 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     using NUnit.Framework;
 
-    using TestStack.White;
-    using TestStack.White.UIItems.WindowItems;
-
-    public class SuffixTests
+    public class SuffixTests : WindowTests
     {
-        private Application application;
-        private Window window;
-
         private Row defaultRow;
 
-        [OneTimeSetUp]
-        public void OneTimeSetUp()
-        {
-            var title = "SuffixWindow";
-            this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
-            this.window = this.application.GetWindow(title);
-            this.defaultRow = this.window.FindRow("default");
-        }
+        protected override string WindowName { get; } = "SuffixWindow";
 
-        [OneTimeTearDown]
-        public void OneTimeTearDown()
+        [OneTimeSetUp]
+        public override void OneTimeSetUp()
         {
-            this.application?.Dispose();
+            base.OneTimeSetUp();
+            this.defaultRow = this.Window.FindRow("default");
         }
 
         [Test]
@@ -38,19 +26,19 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         public void UsesResourceStyle()
         {
             Assert.Inconclusive("not sure how to test this.");
-            Assert.AreEqual("implicit blue", this.window.FindRow("implicit suffixblock style").Suffix().ItemStatus());
+            Assert.AreEqual("implicit blue", this.Window.FindRow("implicit suffixblock style").Suffix().ItemStatus());
         }
 
         [Test]
         public void ExplicitSuffixStyle()
         {
-            Assert.AreEqual("explicit pink", this.window.FindRow("explicit suffixblock style").Suffix().ItemStatus());
+            Assert.AreEqual("explicit pink", this.Window.FindRow("explicit suffixblock style").Suffix().ItemStatus());
         }
 
         [Test]
         public void InheritSuffixStyle()
         {
-            Assert.AreEqual("inherit khaki", this.window.FindRow("inherit suffixblock style").Suffix().ItemStatus());
+            Assert.AreEqual("inherit khaki", this.Window.FindRow("inherit suffixblock style").Suffix().ItemStatus());
         }
     }
 }

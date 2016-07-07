@@ -149,7 +149,7 @@
             var stringRow = groupBox.FindRow("string");
             stringRow.Value<TextBox>().Text = "g";
             Assert.AreEqual(false, groupBox.Exists<Label>(partOldValue));
-            Assert.AreEqual(true, this.Window.GetByText<GroupBox>("default").Exists<Label>(partOldValue));
+            Assert.AreEqual(false, this.Window.GetByText<GroupBox>("default").Exists<Label>(partOldValue));
 
             var doubleRow = groupBox.FindRow("double");
             doubleRow.Value<TextBox>().Text = "1.23";

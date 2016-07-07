@@ -1,6 +1,5 @@
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
-    using System;
     using System.Linq;
 
     using NUnit.Framework;

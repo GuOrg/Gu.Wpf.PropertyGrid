@@ -1,36 +1,26 @@
 ﻿namespace Gu.Wpf.PropertyGrid.UiTests
 {
     using NUnit.Framework;
-    using TestStack.White;
+
     using TestStack.White.UIItems;
-    using TestStack.White.UIItems.WindowItems;
 
-    public class DecimalDigitsTests
+    public class DecimalDigitsTests : WindowTests
     {
-        private Application application;
-        private Window window;
-
         private Button loseFocusButton;
 
-        [OneTimeSetUp]
-        public void OneTimeSetUp()
-        {
-            var title = "DecimalDigitsWindow";
-            this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
-            this.window = this.application.GetWindow(title);
-            this.loseFocusButton = this.window.GetByText<Button>("lose focus");
-        }
+        protected override string WindowName { get; } = "DecimalDigitsWindow";
 
-        [OneTimeTearDown]
-        public void OneTimeTearDown()
+        [OneTimeSetUp]
+        public override void OneTimeSetUp()
         {
-            this.application?.Dispose();
+           base.OneTimeSetUp();
+            this.loseFocusButton = this.Window.GetByText<Button>("lose focus");
         }
 
         [Test]
         public void Inherits()
         {
-            var groupBox = this.window.GetByText<GroupBox>("attached prop");
+            var groupBox = this.Window.GetByText<GroupBox>("attached prop");
             var doubleBox = groupBox.FindRow("double").Value<TextBox>();
             var lengthBox = groupBox.FindRow("length").Value<TextBox>();
 
@@ -41,7 +31,7 @@
         [Test]
         public void Explicit()
         {
-            var groupBox = this.window.GetByText<GroupBox>("explicit");
+            var groupBox = this.Window.GetByText<GroupBox>("explicit");
             var doubleBox = groupBox.FindRow("double").Value<TextBox>();
             var lengthBox = groupBox.FindRow("length").Value<TextBox>();
 
@@ -52,7 +42,7 @@
         [Test]
         public void Bound()
         {
-            var groupBox = this.window.GetByText<GroupBox>("bound");
+            var groupBox = this.Window.GetByText<GroupBox>("bound");
             var doubleBox = groupBox.FindRow("double").Value<TextBox>();
             var lengthBox = groupBox.FindRow("length").Value<TextBox>();
             var digitsBox = groupBox.FindRow("digits").Value<TextBox>();

@@ -2,40 +2,28 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 {
     using NUnit.Framework;
 
-    using TestStack.White;
     using TestStack.White.UIItems;
-    using TestStack.White.UIItems.WindowItems;
 
-    public class StringRowTests
+    public class StringRowTests : WindowTests
     {
-        private Application application;
-        private Window window;
         private Button loseFocusButton;
-
+        private TextBox currentValueTextBox;
         private TextBox defaultBox;
         private TextBox propertychangedBox;
         private TextBox readonlyBox;
 
-        private TextBox currentValueTextBox;
+        protected override string WindowName { get; } = "StringRowWindow";
 
         [OneTimeSetUp]
-        public void OneTimeSetUp()
+        public override void OneTimeSetUp()
         {
-            var title = "StringRowWindow";
-            this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
-            this.window = this.application.GetWindow(title);
-            this.loseFocusButton = this.window.GetByText<Button>("lose focus");
-            this.currentValueTextBox = this.window.Get<TextBox>("currentValueTextBox");
+            base.OneTimeSetUp();
+            this.loseFocusButton = this.Window.GetByText<Button>("lose focus");
+            this.currentValueTextBox = this.Window.Get<TextBox>("currentValueTextBox");
 
-            this.defaultBox = this.window.FindRow("default").Value<TextBox>();
-            this.propertychangedBox = this.window.FindRow("propertychanged").Value<TextBox>();
-            this.readonlyBox = this.window.FindRow("readonly string").Value<TextBox>();
-        }
-
-        [OneTimeTearDown]
-        public void OneTimeTearDown()
-        {
-            this.application?.Dispose();
+            this.defaultBox = this.Window.FindRow("default").Value<TextBox>();
+            this.propertychangedBox = this.Window.FindRow("propertychanged").Value<TextBox>();
+            this.readonlyBox = this.Window.FindRow("readonly string").Value<TextBox>();
         }
 
         [SetUp]
