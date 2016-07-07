@@ -14,7 +14,6 @@ namespace Gu.Wpf.PropertyGrid
                          "HeaderStyle",
                          "ValueStyle",
                          "SuffixStyle",
-                         "InfoPresenterStyle",
                          "OldValueStyle",
                          "ErrorStyle", 
                      };

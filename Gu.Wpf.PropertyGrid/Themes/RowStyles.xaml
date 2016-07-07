@@ -4,7 +4,7 @@
                     xmlns:validationScope="http://gu.se/ValidationScope">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Blocks.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/RowTemplateSelectors.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/RowTemplates.generated.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type propertyGrid:Row}">
@@ -16,7 +16,8 @@
         <Setter Property="SuffixStyle" Value="{StaticResource {x:Type propertyGrid:SuffixBlock}}" />
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style TargetType="{x:Type TextBlock}">
+                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource InfoStyle}">
+                    <Setter Property="Foreground" Value="DodgerBlue" />
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static propertyGrid:OldValueConverter.Default}">
@@ -29,70 +30,52 @@
                 </Style>
             </Setter.Value>
         </Setter>
+        <Setter Property="ErrorStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource InfoStyle}">
+                    <Setter Property="Foreground" Value="Red" />
+                    <Setter Property="Text" Value="{Binding Path=(validationScope:Scope.Errors), RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:Row}}, Converter={x:Static propertyGrid:ValidationErrorsToStringConverter.Default}}" />
+                </Style>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:StringRow}">
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox" />
-        <Setter Property="ControlTemplateSelector" Value="{StaticResource StringRowControlTemplateSelector}" />
+        <Setter Property="Template" Value="{StaticResource StringRowInfoTemplate}" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:BoolRow}">
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.CheckBox, System.Windows.Controls.Primitives.ToggleButton" />
-        <Setter Property="ControlTemplateSelector" Value="{StaticResource BoolRowControlTemplateSelector}" />
+        <Setter Property="Template" Value="{StaticResource BoolRowInfoTemplate}" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:BoolRow}}" TargetType="{x:Type propertyGrid:CheckBoxRow}">
-        <Setter Property="ControlTemplateSelector" Value="{StaticResource CheckBoxRowControlTemplateSelector}" />
+        <Setter Property="Template" Value="{StaticResource CheckBoxRowInfoTemplate}" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:BoolRow}}" TargetType="{x:Type propertyGrid:ToggleButtonRow}">
-        <Setter Property="ControlTemplateSelector" Value="{StaticResource ToggleButtonRowControlTemplateSelector}" />
+        <Setter Property="Template" Value="{StaticResource ToggleButtonRowInfoTemplate}" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:EnumRow}">
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.ComboBox" />
-        <Setter Property="ControlTemplateSelector" Value="{StaticResource EnumRowControlTemplateSelector}" />
+        <Setter Property="Template" Value="{StaticResource EnumRowInfoTemplate}" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:SelectorRow}">
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.ComboBox" />
-        <Setter Property="ControlTemplateSelector" Value="{StaticResource SelectorRowControlTemplateSelector}" />
+        <Setter Property="Template" Value="{StaticResource SelectorRowInfoTemplate}" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:SelectorRow}}" TargetType="{x:Type propertyGrid:ComboBoxRow}">
-        <Setter Property="ControlTemplateSelector" Value="{StaticResource ComboBoxRowControlTemplateSelector}" />
+        <Setter Property="Template" Value="{StaticResource ComboBoxRowInfoTemplate}" />
     </Style>
 
     <Style TargetType="{x:Type propertyGrid:ContentRow}">
         <Setter Property="validationScope:Scope.ForInputTypes" Value="{x:Static validationScope:InputTypeCollection.Default}" />
         <Setter Property="HeaderStyle" Value="{StaticResource {x:Type propertyGrid:HeaderBlock}}" />
         <Setter Property="SuffixStyle" Value="{StaticResource {x:Type propertyGrid:SuffixBlock}}" />
-        <Setter Property="InfoPresenterStyle">
-            <Setter.Value>
-                <Style TargetType="{x:Type propertyGrid:RowInfoPresenter}">
-                    <Setter Property="Grid.Row" Value="1" />
-                    <Setter Property="Grid.Column" Value="0" />
-                    <Setter Property="Grid.ColumnSpan" Value="2" />
-                    <Setter Property="MinHeight" Value="18" />
-                    <Setter Property="OverridesDefaultStyle" Value="True" />
-                    <Setter Property="Template" Value="{x:Null}" />
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Path=(validationScope:Scope.HasErrors), RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:ContentRow}}}" Value="True">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type propertyGrid:RowInfoPresenter}">
-                                        <propertyGrid:ErrorPresenter x:Name="ErrorPresenter"
-                                                                     HorizontalAlignment="Right"
-                                                                     Content="{Binding Path=(validationScope:Scope.Errors),
-                                                                                       RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:ContentRow}}}" />
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </Setter.Value>
-        </Setter>
 
         <Setter Property="Template">
             <Setter.Value>

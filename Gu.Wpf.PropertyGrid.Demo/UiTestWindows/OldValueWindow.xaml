@@ -16,7 +16,7 @@
     <Window.DataContext>
         <demo:SettingsVm />
     </Window.DataContext>
-    <StackPanel propertyGrid:PropertyGrid.InfoPresenterStyle="{StaticResource {x:Type propertyGrid:RowInfoPresenter}}" propertyGrid:PropertyGrid.OldDataContext="{Binding LastSaved}">
+    <StackPanel propertyGrid:PropertyGrid.OldDataContext="{Binding LastSaved}">
         <Button Content="lose focus" />
         <Button Command="{Binding DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Content="save" />
 

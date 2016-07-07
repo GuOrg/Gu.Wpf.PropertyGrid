@@ -9,14 +9,14 @@
         Height="1200"
         mc:Ignorable="d">
     <TabControl>
+        <TabItem Header="with info">
+            <local:InfoSettingsView />
+        </TabItem>
+
         <TabItem Header="plain">
             <local:PlainSettingsView />
         </TabItem>
 
-        <TabItem Header="with info">
-            <local:InfoSettingsView />
-        </TabItem>
-        
         <TabItem Header="Props as headers">
             <local:UsePropertyNamesAsHeadersView />
         </TabItem>

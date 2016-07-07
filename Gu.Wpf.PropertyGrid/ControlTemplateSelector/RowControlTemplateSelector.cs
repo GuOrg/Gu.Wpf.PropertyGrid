@@ -128,12 +128,12 @@
 
         public void UpdateCurrentTemplate(ContentRow container)
         {
-            container.Template = this.SelectTemplateCore(container, container.HeaderStyle, container.SuffixStyle, container.InfoPresenterStyle);
+            container.Template = this.SelectTemplateCore(container, container.HeaderStyle, container.SuffixStyle, container.OldValueStyle, container.ErrorStyle);
         }
 
         protected override ControlTemplate SelectTemplate(Row container)
         {
-            return this.SelectTemplateCore(container, container.HeaderStyle, container.SuffixStyle, container.InfoPresenterStyle);
+            return this.SelectTemplateCore(container, container.HeaderStyle, container.SuffixStyle, container.OldValueStyle, container.ErrorStyle);
         }
 
         protected static bool IsTextBlockStyle(Style style)
@@ -149,9 +149,9 @@
         }
 
         // ReSharper disable once UnusedParameter.Global
-        protected ControlTemplate SelectTemplateCore(Control container, Style headerStyle, Style suffixStyle, Style infoStyle)
+        protected ControlTemplate SelectTemplateCore(Control container, Style headerStyle, Style suffixStyle, Style oldValueStyle, Style errorStyle)
         {
-            if (infoStyle == null)
+            if (oldValueStyle == null && errorStyle == null)
             {
                 if (IsTextBlockStyle(headerStyle) && IsTextBlockStyle(suffixStyle))
                 {

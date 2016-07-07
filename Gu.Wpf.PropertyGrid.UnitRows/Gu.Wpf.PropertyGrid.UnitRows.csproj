@@ -67,9 +67,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Generic.xaml</LastGenOutput>
     </Content>
-    <Content Include="Themes\RowTemplateSelectors.tt">
+    <Content Include="Themes\RowTemplates.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RowTemplateSelectors.xaml</LastGenOutput>
+      <LastGenOutput>RowTemplates.generated.xaml</LastGenOutput>
     </Content>
     <Content Include="UnitRow.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -106,11 +106,11 @@
       <DependentUpon>Generic.tt</DependentUpon>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\RowTemplateSelectors.xaml">
+    <Page Include="Themes\RowTemplates.generated.xaml">
       <Generator>MSBuild:Compile</Generator>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RowTemplateSelectors.tt</DependentUpon>
+      <DependentUpon>RowTemplates.tt</DependentUpon>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

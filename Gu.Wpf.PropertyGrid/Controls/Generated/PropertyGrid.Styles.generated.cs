@@ -29,14 +29,6 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty InfoPresenterStyleProperty = DependencyProperty.RegisterAttached(
-            "InfoPresenterStyle",
-            typeof(Style),
-            typeof(PropertyGrid),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits));
-
         public static readonly DependencyProperty OldValueStyleProperty = DependencyProperty.RegisterAttached(
             "OldValueStyle",
             typeof(Style),
@@ -90,18 +82,6 @@ namespace Gu.Wpf.PropertyGrid
             return (Style)element.GetValue(SuffixStyleProperty);
         }
 
-        public static void SetInfoPresenterStyle(this UIElement element, Style value)
-        {
-            element.SetValue(InfoPresenterStyleProperty, value);
-        }
-
-        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(UIElement))]
-        public static Style GetInfoPresenterStyle(this UIElement element)
-        {
-            return (Style)element.GetValue(InfoPresenterStyleProperty);
-        }
-
         public static void SetOldValueStyle(this UIElement element, Style value)
         {
             element.SetValue(OldValueStyleProperty, value);
@@ -147,12 +127,6 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
 
-        public static readonly DependencyProperty InfoPresenterStyleProperty = PropertyGrid.InfoPresenterStyleProperty.AddOwner(
-            typeof(Rows),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits));
-
         public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
@@ -182,12 +156,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (Style)this.GetValue(SuffixStyleProperty); }
             set { this.SetValue(SuffixStyleProperty, value); }
-        }
-
-        public Style InfoPresenterStyle
-        {
-            get { return (Style)this.GetValue(InfoPresenterStyleProperty); }
-            set { this.SetValue(InfoPresenterStyleProperty, value); }
         }
 
         public Style OldValueStyle
@@ -234,13 +202,6 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
 
-        public static readonly DependencyProperty InfoPresenterStyleProperty = PropertyGrid.InfoPresenterStyleProperty.AddOwner(
-            typeof(Row),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits,
-                OnPartStyleChanged));
-
         public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
@@ -277,12 +238,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (Style)this.GetValue(SuffixStyleProperty); }
             set { this.SetValue(SuffixStyleProperty, value); }
-        }
-
-        public Style InfoPresenterStyle
-        {
-            get { return (Style)this.GetValue(InfoPresenterStyleProperty); }
-            set { this.SetValue(InfoPresenterStyleProperty, value); }
         }
 
         public Style OldValueStyle
@@ -334,13 +289,6 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
 
-        public static readonly DependencyProperty InfoPresenterStyleProperty = PropertyGrid.InfoPresenterStyleProperty.AddOwner(
-            typeof(ContentRow),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits,
-                OnPartStyleChanged));
-
         public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
@@ -377,12 +325,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (Style)this.GetValue(SuffixStyleProperty); }
             set { this.SetValue(SuffixStyleProperty, value); }
-        }
-
-        public Style InfoPresenterStyle
-        {
-            get { return (Style)this.GetValue(InfoPresenterStyleProperty); }
-            set { this.SetValue(InfoPresenterStyleProperty, value); }
         }
 
         public Style OldValueStyle
