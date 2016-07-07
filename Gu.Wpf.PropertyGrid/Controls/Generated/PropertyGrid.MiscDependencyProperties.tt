@@ -1,5 +1,7 @@
 ﻿<#@ template language="C#" #>
 <#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
 <#@ output extension=".generated.cs" #>
 #pragma warning disable SA1402 // File may only contain a single class
 namespace Gu.Wpf.PropertyGrid
@@ -33,7 +35,6 @@ namespace Gu.Wpf.PropertyGrid
 	foreach(var propertyMetaData in propertyMetaDatas)
 	{
 		#>
-
         public static void Set<#= propertyMetaData.Name #>(this UIElement element, <#= propertyMetaData.Type #> value)
         {
             element.SetValue(<#= propertyMetaData.Name #>Property, value);
@@ -45,7 +46,9 @@ namespace Gu.Wpf.PropertyGrid
         {
             return (<#= propertyMetaData.Type #>)element.GetValue(<#= propertyMetaData.Name #>Property);
         }
-<#  }
+<#  
+	this.WriteLineIfNotLast(propertyMetaData, propertyMetaDatas);
+	}
 		 #>
     }
 <#
@@ -78,13 +81,13 @@ namespace Gu.Wpf.PropertyGrid
 		foreach(var propertyMetaData in propertyMetaDatas)
 		{
 			 #>
-
         public <#= propertyMetaData.Type #> <#= propertyMetaData.Name #>
         {
             get { return (<#= propertyMetaData.Type #>)this.GetValue(<#= propertyMetaData.Name #>Property); }
             set { this.SetValue(<#= propertyMetaData.Name #>Property, value); }
         }
 <#
+	this.WriteLineIfNotLast(propertyMetaData, propertyMetaDatas);
 	} 
 			#>
     }
@@ -93,6 +96,15 @@ namespace Gu.Wpf.PropertyGrid
 		#>
 }
 <#+
+    private void WriteLineIfNotLast<T>(T item, IEnumerable<T> items)
+		where T : class 
+    {
+        if (!ReferenceEquals(items.Last(), item))
+        {
+            this.WriteLine("");
+        }
+    }
+
    private class PropertyMetaData
    {
        public readonly string Name;

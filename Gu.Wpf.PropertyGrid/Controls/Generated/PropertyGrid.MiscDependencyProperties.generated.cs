@@ -29,7 +29,6 @@ namespace Gu.Wpf.PropertyGrid
                 null,
                 FrameworkPropertyMetadataOptions.Inherits));
 
-
         public static void SetIsReadOnly(this UIElement element, bool value)
         {
             element.SetValue(IsReadOnlyProperty, value);
@@ -88,7 +87,6 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnOldDataContextChanged));
 
-
         public bool IsReadOnly
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
@@ -129,7 +127,6 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnOldDataContextChanged));
 
-
         public bool IsReadOnly
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
@@ -169,7 +166,6 @@ namespace Gu.Wpf.PropertyGrid
                 null,
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnOldDataContextChanged));
-
 
         public bool IsReadOnly
         {
