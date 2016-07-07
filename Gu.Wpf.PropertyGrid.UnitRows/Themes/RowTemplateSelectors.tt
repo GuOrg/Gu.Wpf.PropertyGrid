@@ -7,7 +7,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:numeric="clr-namespace:Gu.Wpf.NumericInput;assembly=Gu.Wpf.NumericInput"
 					xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows"
-                    xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid;assembly=Gu.Wpf.PropertyGrid">
+                    xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid;assembly=Gu.Wpf.PropertyGrid"
+					xmlns:validationScope="clr-namespace:Gu.Wpf.ValidationScope;assembly=Gu.Wpf.ValidationScope">
 <#
     var prefix = "unitRows";
     var namesAndXamls = GetQuantityNames()
@@ -16,42 +17,10 @@
 
 	foreach(var nameAndXaml in namesAndXamls)
 	{
-		#>
-
-    <propertyGrid:RowControlTemplateSelector x:Key="<#= nameAndXaml.Name #>ControlTemplateSelector">
-        <propertyGrid:RowControlTemplateSelector.PlainTemplate>
-<#= GetPlainTemplate(nameAndXaml, TextBlockHeaderXaml, TextBlockSuffixXaml) #>
-        </propertyGrid:RowControlTemplateSelector.PlainTemplate>
-
-        <propertyGrid:RowControlTemplateSelector.TextBoxHeaderTemplate>
-<#= GetPlainTemplate(nameAndXaml, TextBoxHeaderXaml, TextBlockSuffixXaml) #>            
-        </propertyGrid:RowControlTemplateSelector.TextBoxHeaderTemplate>
-
-        <propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixTemplate>
-<#= GetPlainTemplate(nameAndXaml, TextBoxHeaderXaml, TextBoxSuffixXaml) #>              
-        </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixTemplate>
-
-        <propertyGrid:RowControlTemplateSelector.TextBoxSuffixTemplate>
-<#= GetPlainTemplate(nameAndXaml, TextBlockHeaderXaml, TextBoxSuffixXaml) #>              
-        </propertyGrid:RowControlTemplateSelector.TextBoxSuffixTemplate>
-
-        <propertyGrid:RowControlTemplateSelector.InfoTemplate>
-<#= GetInfoTemplate(nameAndXaml, TextBlockHeaderXaml, TextBlockSuffixXaml, InfoPresenterXaml) #>
-        </propertyGrid:RowControlTemplateSelector.InfoTemplate>
-
-        <propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndInfoTemplate>
-<#= GetInfoTemplate(nameAndXaml, TextBoxHeaderXaml, TextBlockSuffixXaml, InfoPresenterXaml) #>
-        </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndInfoTemplate>
-
-        <propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixAndInfoTemplate>
-<#= GetInfoTemplate(nameAndXaml, TextBoxHeaderXaml, TextBoxSuffixXaml, InfoPresenterXaml) #>
-        </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixAndInfoTemplate>
-
-        <propertyGrid:RowControlTemplateSelector.TextBoxSuffixInfoTemplate>
-<#= GetInfoTemplate(nameAndXaml, TextBlockHeaderXaml, TextBoxSuffixXaml, InfoPresenterXaml) #>
-        </propertyGrid:RowControlTemplateSelector.TextBoxSuffixInfoTemplate>
-    </propertyGrid:RowControlTemplateSelector>
-<#
+		this.WritePlainTemplate(nameAndXaml);
+		this.WriteLine("");
+		this.WriteInfoTemplate(nameAndXaml);
+		this.WriteLineIfNotLast(nameAndXaml, namesAndXamls);
 	} 
 		#>
 </ResourceDictionary>

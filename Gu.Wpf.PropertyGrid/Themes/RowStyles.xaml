@@ -16,7 +16,7 @@
         <Setter Property="SuffixStyle" Value="{StaticResource {x:Type propertyGrid:SuffixBlock}}" />
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style TargetType="{x:Type propertyGrid:InfoBlock}">
+                <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Foreground" Value="DodgerBlue" />
                     <Setter Property="FontSize" Value="12" />
                     <Setter Property="VerticalAlignment" Value="Top" />
@@ -37,7 +37,7 @@
         </Setter>
         <Setter Property="ErrorStyle">
             <Setter.Value>
-                <Style TargetType="{x:Type propertyGrid:InfoBlock}">
+                <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Foreground" Value="Red" />
                     <Setter Property="FontSize" Value="12" />
                     <Setter Property="VerticalAlignment" Value="Top" />

@@ -176,7 +176,7 @@
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
             </Trigger>
-			<!--
+
             <Trigger Property="validationScope:Scope.HasErrors" Value="True">
                 <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
             </Trigger>
@@ -187,7 +187,6 @@
                 </MultiTrigger.Conditions>
                 <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
             </MultiTrigger>
-			-->
         </ControlTemplate.Triggers>
     </ControlTemplate>
 <#+        
