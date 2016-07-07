@@ -45,7 +45,6 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
 
-
         public static void SetHeaderStyle(this UIElement element, Style value)
         {
             element.SetValue(HeaderStyleProperty, value);
@@ -138,7 +137,6 @@ namespace Gu.Wpf.PropertyGrid
             new FrameworkPropertyMetadata(
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
-
 
         public Style HeaderStyle
         {

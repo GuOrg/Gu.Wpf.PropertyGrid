@@ -1,5 +1,7 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
 <#@ output extension=".generated.cs" #>
 #pragma warning disable SA1402 // File may only contain a single class
 namespace Gu.Wpf.PropertyGrid
@@ -17,8 +19,8 @@ namespace Gu.Wpf.PropertyGrid
                          "OldValueStyle",
                          "ErrorStyle", 
                      };
-		foreach(var styleName in styles)
-		{
+	foreach(var styleName in styles)
+	{
 		#>
         public static readonly DependencyProperty <#= styleName #>Property = DependencyProperty.RegisterAttached(
             "<#= styleName #>",
@@ -29,12 +31,11 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits));
 
 <#
-		} 
+	} 
 
-		foreach(var styleName in styles)
-		{
+	foreach(var styleName in styles)
+	{
 		#>
-
         public static void Set<#= styleName #>(this UIElement element, Style value)
         {
             element.SetValue(<#= styleName #>Property, value);
@@ -46,15 +47,17 @@ namespace Gu.Wpf.PropertyGrid
         {
             return (Style)element.GetValue(<#= styleName #>Property);
         }
-<#      }
+<#    
+		this.WriteLineIfNotLast(styleName, styles);  
+	}
 		 #>
     }
 
     public partial class Rows
     {
 <#
-			foreach(var styleName in styles)
-			{
+	foreach(var styleName in styles)
+	{
 			 #>
         public static readonly DependencyProperty <#= styleName #>Property = PropertyGrid.<#= styleName #>Property.AddOwner(
             typeof(Rows),
@@ -63,29 +66,29 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits));
 
 <#
-			} 
+	} 
 
-			foreach(var styleName in styles)
-			{
+	foreach(var styleName in styles)
+	{
 			 #>
-
         public Style <#= styleName #>
         {
             get { return (Style)this.GetValue(<#= styleName #>Property); }
             set { this.SetValue(<#= styleName #>Property, value); }
         }
 <#
-			} 
+		this.WriteLineIfNotLast(styleName, styles);
+	} 
 			#>
     }
 <#
-       var controlNames = new[]
-                           {
-                               new ClassMetaData("Row", true),
-                               new ClassMetaData("ContentRow", false)
-                           };
-		foreach(var controlName in controlNames)
-		{
+    var controlNames = new[]
+                        {
+                            new ClassMetaData("Row", true),
+                            new ClassMetaData("ContentRow", false)
+                        };
+	foreach(var controlName in controlNames)
+	{
 		 #>
 
     public <#= controlName.IsAbstract ? "abstract " : "" #>partial class <#= controlName.Name #>
@@ -99,8 +102,8 @@ namespace Gu.Wpf.PropertyGrid
                OnPartStyleChanged));
 
 <#
-			foreach(var styleName in styles)
-			{
+		foreach(var styleName in styles)
+		{
 			 #>
         public static readonly DependencyProperty <#= styleName #>Property = PropertyGrid.<#= styleName #>Property.AddOwner(
             typeof(<#= controlName.Name #>),
@@ -110,24 +113,26 @@ namespace Gu.Wpf.PropertyGrid
                 OnPartStyleChanged));
 
 <#
-			} #>
+		} 
+			#>
         public RowControlTemplateSelector ControlTemplateSelector
         {
             get { return (RowControlTemplateSelector)this.GetValue(ControlTemplateSelectorProperty); }
             set { this.SetValue(ControlTemplateSelectorProperty, value); }
         }
-<#
-			foreach(var styleName in styles)
-			{
-			 #>
 
+<#
+		foreach(var styleName in styles)
+		{
+			 #>
         public Style <#= styleName #>
         {
             get { return (Style)this.GetValue(<#= styleName #>Property); }
             set { this.SetValue(<#= styleName #>Property, value); }
         }
 <#
-			} 
+			this.WriteLineIfNotLast(styleName, styles);
+		} 
 			#>
 
         private static void OnPartStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -140,6 +145,15 @@ namespace Gu.Wpf.PropertyGrid
 		#>
 }
 <#+
+    private void WriteLineIfNotLast<T>(T item, IEnumerable<T> items)
+		where T : class 
+    {
+        if (!ReferenceEquals(items.Last(), item))
+        {
+            this.WriteLine("");
+        }
+    }
+
    private class ClassMetaData
    {
        public readonly string Name;
