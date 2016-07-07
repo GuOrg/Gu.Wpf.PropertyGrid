@@ -21,7 +21,7 @@ namespace Gu.Wpf.PropertyGrid
             sc.UpdateIsDirty();
         }
 
-        /// <summary>Creates AutomationPeer (<see cref="UIElement.OnCreateAutomationPeer"/>)</summary>
+        /// <inheritdoc/>
         protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer()
         {
             return new RowAutomationPeer(this);
