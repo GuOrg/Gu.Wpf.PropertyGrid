@@ -5,7 +5,7 @@
 [![NuGet](https://img.shields.io/nuget/v/Gu.Wpf.PropertyGrid.svg)](https://www.nuget.org/packages/Gu.Wpf.PropertyGrid/)
 [![NuGet](https://img.shields.io/nuget/v/Gu.Wpf.PropertyGrid.NumericSettingControls.svg)](https://www.nuget.org/packages/Gu.Wpf.PropertyGrid.NumericSettingControls/)
 [![NuGet](https://img.shields.io/nuget/v/Gu.Wpf.PropertyGrid.UnitSettingControls.svg)](https://www.nuget.org/packages/Gu.Wpf.PropertyGrid.UnitSettingControls/)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JohanLarsson/Gu.Wpf.PropertyGrid?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JohanLarsson/WpfPropertyGrid?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Library with controls for making property grids
 
