@@ -25,9 +25,9 @@
             return this.Get<Label>("PART_Suffix");
         }
 
-        public Label OldValue()
+        public Label Info()
         {
-            return this.Get<Label>("PART_OldValue");
+            return this.Get<Label>("PART_Info");
         }
 
 #pragma warning disable SA1313 // ReSharper disable once InconsistentNaming we want PART_Name here

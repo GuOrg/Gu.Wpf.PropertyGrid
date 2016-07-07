@@ -36,23 +36,23 @@
 
             var stringRow = groupBox.FindRow("string");
             stringRow.Value<TextBox>().Text = "g";
-            var oldStringValue = stringRow.OldValue();
+            var oldStringValue = stringRow.Info();
             Assert.AreEqual("Old value: abc", oldStringValue.Text);
 
             var doubleRow = groupBox.FindRow("double");
             doubleRow.Value<TextBox>().Text = "1.23";
-            var oldDoubleValue = doubleRow.OldValue();
+            var oldDoubleValue = doubleRow.Info();
             Assert.AreEqual("Old value: 1.2", oldDoubleValue.Text);
 
             var lengthRow = groupBox.FindRow("length");
             lengthRow.Value<TextBox>().Text = "2";
-            var oldLengthValue = lengthRow.OldValue();
+            var oldLengthValue = lengthRow.Info();
             Assert.AreEqual("Old value: 2.3\u00A0mm", oldLengthValue.Text);
 
             this.saveButton.Click();
-            Assert.AreEqual(true, oldStringValue.IsOffScreen);
-            Assert.AreEqual(true, oldDoubleValue.IsOffScreen);
-            Assert.AreEqual(true, oldLengthValue.IsOffScreen);
+            Assert.AreEqual("", oldStringValue.Text);
+            Assert.AreEqual("", oldDoubleValue.Text);
+            Assert.AreEqual("", oldLengthValue.Text);
         }
 
         [Test]
@@ -62,23 +62,23 @@
 
             var stringRow = groupBox.FindRow("string");
             stringRow.Value<TextBox>().Text = "g";
-            var oldStringValue = stringRow.OldValue();
+            var oldStringValue = stringRow.Info();
             Assert.AreEqual("before: abc", oldStringValue.Text);
 
             var doubleRow = groupBox.FindRow("double");
             doubleRow.Value<TextBox>().Text = "1.23";
-            var oldDoubleValue = doubleRow.OldValue();
+            var oldDoubleValue = doubleRow.Info();
             Assert.AreEqual("before: 1.2", oldDoubleValue.Text);
 
             var lengthRow = groupBox.FindRow("length");
             lengthRow.Value<TextBox>().Text = "2";
-            var oldLengthValue = lengthRow.OldValue();
+            var oldLengthValue = lengthRow.Info();
             Assert.AreEqual("before: 2.3\u00A0mm", oldLengthValue.Text);
 
             this.saveButton.Click();
-            Assert.AreEqual(true, oldStringValue.IsOffScreen);
-            Assert.AreEqual(true, oldDoubleValue.IsOffScreen);
-            Assert.AreEqual(true, oldLengthValue.IsOffScreen);
+            Assert.AreEqual("", oldStringValue.Text);
+            Assert.AreEqual("", oldDoubleValue.Text);
+            Assert.AreEqual("", oldLengthValue.Text);
         }
 
         [Test]
@@ -88,23 +88,23 @@
 
             var stringRow = groupBox.FindRow("string");
             stringRow.Value<TextBox>().Text = "g";
-            var oldStringValue = stringRow.OldValue();
+            var oldStringValue = stringRow.Info();
             Assert.AreEqual("before: abc", oldStringValue.Text);
 
             var doubleRow = groupBox.FindRow("double");
             doubleRow.Value<TextBox>().Text = "1.23";
-            var oldDoubleValue = doubleRow.OldValue();
+            var oldDoubleValue = doubleRow.Info();
             Assert.AreEqual("before: 1.2", oldDoubleValue.Text);
 
             var lengthRow = groupBox.FindRow("length");
             lengthRow.Value<TextBox>().Text = "2";
-            var oldLengthValue = lengthRow.OldValue();
+            var oldLengthValue = lengthRow.Info();
             Assert.AreEqual("before: 2.3\u00A0mm", oldLengthValue.Text);
 
             this.saveButton.Click();
-            Assert.AreEqual(true, oldStringValue.IsOffScreen);
-            Assert.AreEqual(true, oldDoubleValue.IsOffScreen);
-            Assert.AreEqual(true, oldLengthValue.IsOffScreen);
+            Assert.AreEqual("", oldStringValue.Text);
+            Assert.AreEqual("", oldDoubleValue.Text);
+            Assert.AreEqual("", oldLengthValue.Text);
         }
 
         [Test]
@@ -114,17 +114,17 @@
 
             var stringRow = groupBox.FindRow("string");
             stringRow.Value<TextBox>().Text = "g";
-            var oldStringValue = stringRow.OldValue();
+            var oldStringValue = stringRow.Info();
             Assert.AreEqual("changed", oldStringValue.Text);
 
             var doubleRow = groupBox.FindRow("double");
             doubleRow.Value<TextBox>().Text = "1.23";
-            var oldDoubleValue = doubleRow.OldValue();
+            var oldDoubleValue = doubleRow.Info();
             Assert.AreEqual("changed", oldDoubleValue.Text);
 
             var lengthRow = groupBox.FindRow("length");
             lengthRow.Value<TextBox>().Text = "2";
-            var oldLengthValue = lengthRow.OldValue();
+            var oldLengthValue = lengthRow.Info();
             Assert.AreEqual("changed", oldLengthValue.Text);
 
             groupBox.FindRow("old value format").Value<TextBox>().Text = "before: {0}";
@@ -135,9 +135,9 @@
             Assert.AreEqual("before: 2.3\u00A0mm", oldLengthValue.Text);
 
             this.saveButton.Click();
-            Assert.AreEqual(true, oldStringValue.IsOffScreen);
-            Assert.AreEqual(true, oldDoubleValue.IsOffScreen);
-            Assert.AreEqual(true, oldLengthValue.IsOffScreen);
+            Assert.AreEqual("", oldStringValue.Text);
+            Assert.AreEqual("", oldDoubleValue.Text);
+            Assert.AreEqual("", oldLengthValue.Text);
         }
 
         [Test]
@@ -148,18 +148,18 @@
 
             var stringRow = groupBox.FindRow("string");
             stringRow.Value<TextBox>().Text = "g";
-            Assert.AreEqual(false, groupBox.Exists<Label>(partOldValue));
-            Assert.AreEqual(false, this.Window.GetByText<GroupBox>("default").Exists<Label>(partOldValue));
+            Assert.AreEqual("", stringRow.Info().Text);
 
             var doubleRow = groupBox.FindRow("double");
             doubleRow.Value<TextBox>().Text = "1.23";
-            Assert.AreEqual(false, groupBox.Exists<Label>(partOldValue));
-            Assert.AreEqual(true, this.Window.GetByText<GroupBox>("default").Exists<Label>(partOldValue));
+            Assert.AreEqual("", stringRow.Info().Text);
+            Assert.AreEqual("", doubleRow.Info().Text);
 
             var lengthRow = groupBox.FindRow("length");
             lengthRow.Value<TextBox>().Text = "2";
-            Assert.AreEqual(false, groupBox.Exists<Label>(partOldValue));
-            Assert.AreEqual(true, this.Window.GetByText<GroupBox>("default").Exists<Label>(partOldValue));
+            Assert.AreEqual("", stringRow.Info().Text);
+            Assert.AreEqual("", doubleRow.Info().Text);
+            Assert.AreEqual("", lengthRow.Info().Text);
         }
     }
 }
