@@ -1,17 +1,19 @@
 ﻿<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
+<#@ output extension=".txt" #>
 <#+
     private const string TextBlockHeaderXaml = 
-	@"                        <propertyGrid:HeaderBlock x:Name=""PART_Header""
-                                                  Grid.Row=""0""
-                                                  Grid.Column=""0""
-                                                  Style=""{TemplateBinding HeaderStyle}""
-                                                  Text=""{TemplateBinding Header}"" />
+	@"                <propertyGrid:HeaderBlock x:Name=""PART_Header""
+                                          Grid.Row=""0""
+                                          Grid.Column=""0""
+                                          Style=""{TemplateBinding HeaderStyle}""
+                                          Text=""{TemplateBinding Header}"" />
 	";
 
 	    private const string TextBoxHeaderXaml = 
-	@"                        <TextBox x:Name=""PART_Header""
+	@"                <TextBox x:Name=""PART_Header""
                                  Grid.Row=""0""
                                  Grid.Column=""0""
                                  Focusable=""False""
@@ -21,11 +23,11 @@
 	";
 
 	    private const string TextBlockSuffixXaml = 
-	@"                        <propertyGrid:SuffixBlock x:Name=""PART_Suffix""
-                                                  Grid.Row=""0""
-                                                  Grid.Column=""2""
-                                                  Style=""{TemplateBinding SuffixStyle}""
-                                                  Text=""{TemplateBinding Suffix}"" />
+	@"                <propertyGrid:SuffixBlock x:Name=""PART_Suffix""
+                                          Grid.Row=""0""
+                                          Grid.Column=""2""
+                                          Style=""{TemplateBinding SuffixStyle}""
+                                          Text=""{TemplateBinding Suffix}"" />
 	";
 
 	    private const string TextBoxSuffixXaml = 
@@ -64,7 +66,9 @@
 {1}
 {2}
 {3}
+<!--
 {4}
+-->
                     </Grid>
                 </Border>
                 <ControlTemplate.Triggers>
@@ -98,17 +102,108 @@
                 </ControlTemplate.Triggers>
             </ControlTemplate>";
 
+    private void WriteLineIfNotLast<T>(T item, IEnumerable<T> items)
+		where T : class 
+    {
+        if (!ReferenceEquals(items.Last(), item))
+        {
+            this.WriteLine("");
+        }
+    }
+
+    private void WritePlainTemplate(NameAndXaml nameAndXaml)
+    {
+		var valueXaml = SetValueRowColumn(nameAndXaml.Xaml);
+#>
+    <ControlTemplate x:Key="<#= nameAndXaml.Name #>PlainTemplate" TargetType="{x:Type <#= nameAndXaml.PrefixedName #>}">
+        <Border Margin="{TemplateBinding Padding}"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
+                    <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
+                    <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
+                </Grid.ColumnDefinitions> 
+<#= TextBlockHeaderXaml #>
+<#= valueXaml #>
+<#= TextBlockSuffixXaml #>
+            </Grid>
+        </Border> 
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+<#+        
+    }
+
+	private void WriteInfoTemplate(NameAndXaml nameAndXaml)
+	{
+	    var valueXaml = Indent(nameAndXaml.Xaml, "    ");
+#>
+    <ControlTemplate x:Key="<#= nameAndXaml.Name #>InfoTemplate" TargetType="{x:Type <#= nameAndXaml.PrefixedName #>}">
+        <Border Margin="{TemplateBinding Padding}"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition MinHeight="18" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
+                    <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
+                    <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
+                </Grid.ColumnDefinitions> 
+<#= TextBlockHeaderXaml #>
+                <Border Grid.Row="0" Grid.Column="1" BorderThickness="0,0,0,1">
+<#= valueXaml #>
+                </Border>
+
+<#= TextBlockSuffixXaml #>
+
+                <propertyGrid:InfoBlock x:Name="PART_Info"
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2" />
+            </Grid>
+        </Border> 
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+            </Trigger>
+			<!--
+            <Trigger Property="validationScope:Scope.HasErrors" Value="True">
+                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding ErrorStyle}" />
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="validationScope:Scope.HasErrors" Value="False" />
+                    <Condition Property="IsDirty" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="PART_Info" Property="Style" Value="{TemplateBinding OldValueStyle}" />
+            </MultiTrigger>
+			-->
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+<#+        
+    }
+
     private static string GetInfoTemplate(NameAndXaml nameAndXaml, string headerXaml, string suffixXaml, string infoXaml)
     {
         var valueXaml = SetValidationTemplateToNull(nameAndXaml.Xaml);
-        valueXaml = SetValueRowColumnAndFocusable(valueXaml);
-        return  string.Format(InfoTemplate, nameAndXaml.TargetType, headerXaml, valueXaml, suffixXaml, infoXaml);
+        valueXaml = SetValueRowColumn(valueXaml);
+        return  string.Format(InfoTemplate, nameAndXaml.PrefixedName, headerXaml, valueXaml, suffixXaml, infoXaml);
     }
 
 	private static string GetPlainTemplate(NameAndXaml nameAndXaml, string headerXaml, string suffixXaml)
     {
-	    var valueXaml = SetValueRowColumnAndFocusable(nameAndXaml.Xaml);
-        return  string.Format(PlainTemplate, nameAndXaml.TargetType, headerXaml, valueXaml, suffixXaml);
+	    var valueXaml = SetValueRowColumn(nameAndXaml.Xaml);
+        return  string.Format(PlainTemplate, nameAndXaml.PrefixedName, headerXaml, valueXaml, suffixXaml);
     }
 
     private static string SetValidationTemplateToNull(string valueXaml)
@@ -139,7 +234,7 @@
         return builder.ToString();
     }
 
-	private static string SetValueRowColumnAndFocusable(string valueXaml)
+	private static string SetValueRowColumn(string valueXaml)
     {
 		if(valueXaml.Contains("Grid.Row="))
 		{
@@ -162,13 +257,22 @@
         var indentation = GetIndentation(valueXaml);
 	    builder.AppendLine(indentation + "Grid.Row=\"0\"");
 	    builder.AppendLine(indentation + "Grid.Column=\"1\"");
-	    // builder.AppendLine(indentation + "Focusable=\"{Binding IsReadOnly,");
-	    // builder.AppendLine(indentation + "                    RelativeSource={RelativeSource TemplatedParent},");
-	    // builder.AppendLine(indentation + "                    Converter={x:Static propertyGrid:InvertBoolConverter.Default}}\"");
 
         for (int i = 1; i < rows.Length; i++)
         {
             builder.AppendLine(rows[i]);
+        }
+
+        return builder.ToString();
+    }
+
+    private static string Indent(string xaml, string indent)
+    {
+        var builder = new StringBuilder();
+        foreach (var row in GetRows(xaml))
+        {
+            builder.Append(indent);
+            builder.AppendLine(row);
         }
 
         return builder.ToString();
@@ -212,7 +316,7 @@
 	        this.Xaml = xaml;
 	    }
 
-	    public string TargetType
+	    public string PrefixedName
 	    {
 	        get { return this.Prefix + ":" + this.Name; }
 	    }

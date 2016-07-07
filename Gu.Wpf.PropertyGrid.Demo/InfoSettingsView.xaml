@@ -18,7 +18,6 @@
         </Grid.RowDefinitions>
         <propertyGrid:Rows Grid.Row="0"
                            DataContext="{Binding EditableCopy}"
-                           InfoPresenterStyle="{StaticResource {x:Type propertyGrid:RowInfoPresenter}}"
                            OldDataContext="{Binding DataContext.LastSaved,
                                                     RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
             <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Core" />

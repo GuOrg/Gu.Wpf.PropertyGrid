@@ -6,13 +6,13 @@
                     xmlns:numeric="clr-namespace:Gu.Wpf.NumericInput;assembly=Gu.Wpf.NumericInput">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.NumericRows;component/Themes/RowTemplateSelectors.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.NumericRows;component/Themes/RowTemplateSelectors.generated.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type numericRows:DoubleRow}">
         <Setter Property="OldValueStyle">
             <Setter.Value>
-                <Style TargetType="{x:Type TextBlock}">
+                <Style TargetType="{x:Type propertyGrid:InfoBlock}">
                     <Setter Property="Text">
                         <Setter.Value>
                             <MultiBinding Converter="{x:Static numericRows:OldValueConverter.Default}">
@@ -27,7 +27,7 @@
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
-        <Setter Property="ControlTemplateSelector" Value="{StaticResource DoubleRowControlTemplateSelector}" />
+        <Setter Property="Template" Value="{StaticResource DoubleRowInfoTemplate}" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type numericRows:IntRow}">
@@ -48,6 +48,6 @@
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.IntBox" />
-        <Setter Property="ControlTemplateSelector" Value="{StaticResource IntRowControlTemplateSelector}" />
+        <Setter Property="Template" Value="{StaticResource IntRowInfoTemplate}" />
     </Style>
 </ResourceDictionary>

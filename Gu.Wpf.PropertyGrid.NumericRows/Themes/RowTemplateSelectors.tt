@@ -1,7 +1,8 @@
 ﻿<#@ template language="C#" #>
-<#@ include file="..\..\Gu.Wpf.PropertyGrid\Themes\RowTemplateSelectors.ttinclude" #><##>
+<#@ output extension=".generated.xaml" #>
+<#@ include file="..\..\Gu.Wpf.PropertyGrid\Themes\RowTemplates.ttinclude" #><##>
 <#@ assembly name="System.Core" #>
-<#@ output extension=".xaml" #>
+
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:numeric="clr-namespace:Gu.Wpf.NumericInput;assembly=Gu.Wpf.NumericInput"
@@ -16,66 +17,34 @@
 	};
 	foreach(var nameAndXaml in namesAndXamls)
 	{
-		#>
-
-    <propertyGrid:RowControlTemplateSelector x:Key="<#= nameAndXaml.Name #>ControlTemplateSelector">
-        <propertyGrid:RowControlTemplateSelector.PlainTemplate>
-<#= GetPlainTemplate(nameAndXaml, TextBlockHeaderXaml, TextBlockSuffixXaml) #>
-        </propertyGrid:RowControlTemplateSelector.PlainTemplate>
-
-        <propertyGrid:RowControlTemplateSelector.TextBoxHeaderTemplate>
-<#= GetPlainTemplate(nameAndXaml, TextBoxHeaderXaml, TextBlockSuffixXaml) #>            
-        </propertyGrid:RowControlTemplateSelector.TextBoxHeaderTemplate>
-
-        <propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixTemplate>
-<#= GetPlainTemplate(nameAndXaml, TextBoxHeaderXaml, TextBoxSuffixXaml) #>              
-        </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixTemplate>
-
-        <propertyGrid:RowControlTemplateSelector.TextBoxSuffixTemplate>
-<#= GetPlainTemplate(nameAndXaml, TextBlockHeaderXaml, TextBoxSuffixXaml) #>              
-        </propertyGrid:RowControlTemplateSelector.TextBoxSuffixTemplate>
-
-        <propertyGrid:RowControlTemplateSelector.InfoTemplate>
-<#= GetInfoTemplate(nameAndXaml, TextBlockHeaderXaml, TextBlockSuffixXaml, InfoPresenterXaml) #>
-        </propertyGrid:RowControlTemplateSelector.InfoTemplate>
-
-        <propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndInfoTemplate>
-<#= GetInfoTemplate(nameAndXaml, TextBoxHeaderXaml, TextBlockSuffixXaml, InfoPresenterXaml) #>
-        </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndInfoTemplate>
-
-        <propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixAndInfoTemplate>
-<#= GetInfoTemplate(nameAndXaml, TextBoxHeaderXaml, TextBoxSuffixXaml, InfoPresenterXaml) #>
-        </propertyGrid:RowControlTemplateSelector.TextBoxHeaderAndSuffixAndInfoTemplate>
-
-        <propertyGrid:RowControlTemplateSelector.TextBoxSuffixInfoTemplate>
-<#= GetInfoTemplate(nameAndXaml, TextBlockHeaderXaml, TextBoxSuffixXaml, InfoPresenterXaml) #>
-        </propertyGrid:RowControlTemplateSelector.TextBoxSuffixInfoTemplate>
-    </propertyGrid:RowControlTemplateSelector>
-<#
+		this.WritePlainTemplate(nameAndXaml);
+		this.WriteLine("");
+		this.WriteInfoTemplate(nameAndXaml);
+		this.WriteLineIfNotLast(nameAndXaml, namesAndXamls);
 	} 
 		#>
 </ResourceDictionary>
 <#+
     private const string IntValueXaml = 
-	@"                        <numeric:IntBox x:Name=""PART_Value""
-                                        CanValueBeNull=""{TemplateBinding CanValueBeNull}""
-                                        IsReadOnly=""{TemplateBinding IsReadOnly}""
-                                        MaxValue=""{TemplateBinding MaxValue}""
-                                        MinValue=""{TemplateBinding MinValue}""
-                                        Value=""{Binding Value,
-                                                        RelativeSource={RelativeSource TemplatedParent},
-                                                        UpdateSourceTrigger=PropertyChanged}"" />
+	@"                <numeric:IntBox x:Name=""PART_Value""
+                                CanValueBeNull=""{TemplateBinding CanValueBeNull}""
+                                IsReadOnly=""{TemplateBinding IsReadOnly}""
+                                MaxValue=""{TemplateBinding MaxValue}""
+                                MinValue=""{TemplateBinding MinValue}""
+                                Value=""{Binding Value,
+                                                RelativeSource={RelativeSource TemplatedParent},
+                                                UpdateSourceTrigger=PropertyChanged}"" />
 	";
 
     private const string DoubleValueXaml =
-        @"                        <numeric:DoubleBox x:Name=""PART_Value""
-                                           CanValueBeNull=""{TemplateBinding CanValueBeNull}""
-                                           DecimalDigits=""{TemplateBinding DecimalDigits}""
-                                           IsReadOnly=""{TemplateBinding IsReadOnly}""
-                                           MaxValue=""{TemplateBinding MaxValue}""
-                                           MinValue=""{TemplateBinding MinValue}""
-                                           Value=""{Binding Value,
-                                                           RelativeSource={RelativeSource TemplatedParent},
-                                                           UpdateSourceTrigger=PropertyChanged}"" />";
+        @"                <numeric:DoubleBox x:Name=""PART_Value""
+                                   CanValueBeNull=""{TemplateBinding CanValueBeNull}""
+                                   DecimalDigits=""{TemplateBinding DecimalDigits}""
+                                   IsReadOnly=""{TemplateBinding IsReadOnly}""
+                                   MaxValue=""{TemplateBinding MaxValue}""
+                                   MinValue=""{TemplateBinding MinValue}""
+                                   Value=""{Binding Value,
+                                                   RelativeSource={RelativeSource TemplatedParent},
+                                                   UpdateSourceTrigger=PropertyChanged}"" />";
 
 #>

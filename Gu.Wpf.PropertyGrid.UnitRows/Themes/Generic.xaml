@@ -6,7 +6,7 @@
 					xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid;assembly=Gu.Wpf.PropertyGrid">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.UnitRows;component/Themes/RowTemplateSelectors.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.UnitRows;component/Themes/RowTemplateSelectors.generated.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type unitRows:AccelerationRow}" BasedOn="{StaticResource {x:Type propertyGrid:Row}}">
         <Setter Property="OldValueStyle">

@@ -55,7 +55,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PropertyGrid.Styles.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controls\TextBlocks\OldValueBlock.cs" />
+    <Compile Include="Controls\TextBlocks\InfoBlock.cs" />
     <Compile Include="ControlTemplateSelector\ControlTemplateSelector.cs" />
     <Compile Include="ControlTemplateSelector\RowControlTemplateSelector.cs" />
     <Compile Include="Controls\Rows\BaseClasses\Row.DependencyProperties.cs" />
@@ -64,13 +64,11 @@
     <Compile Include="Controls\Rows\ContentRow.cs" />
     <Compile Include="Controls\Rows\CheckBoxRow.cs" />
     <Compile Include="Controls\Rows\EnumRow.cs" />
-    <Compile Include="Controls\ErrorPresenter.cs" />
     <Compile Include="Controls\Generated\PropertyGrid.Columns.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PropertyGrid.Columns.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controls\RowInfoPresenter.cs" />
     <Compile Include="Controls\Rows\SelectorRow.cs" />
     <Compile Include="Controls\TextBlocks\HeaderBlock.cs" />
     <Compile Include="Controls\TextBlocks\SettingBlockAutomationPeer.cs" />
@@ -114,10 +112,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\ErrorPresenter.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -138,11 +132,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\RowTemplateSelectors.xaml">
+    <Page Include="Themes\RowTemplates.generated.xaml">
       <Generator>MSBuild:Compile</Generator>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RowTemplateSelectors.tt</DependentUpon>
+      <DependentUpon>RowTemplates.tt</DependentUpon>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Validation.xaml">
@@ -177,7 +171,10 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Themes\RowTemplateSelectors.ttinclude" />
+    <None Include="Themes\RowTemplates.ttinclude">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RowTemplates.txt</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -204,10 +201,15 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PropertyGrid.Styles.generated.cs</LastGenOutput>
     </Content>
-    <Content Include="Themes\RowTemplateSelectors.tt">
+    <Content Include="Themes\RowTemplates.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RowTemplateSelectors.xaml</LastGenOutput>
+      <LastGenOutput>RowTemplates.generated.xaml</LastGenOutput>
     </Content>
+    <Resource Include="Themes\RowTemplates.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RowTemplates.ttinclude</DependentUpon>
+    </Resource>
   </ItemGroup>
   <Choose>
     <When Condition="($(TargetFrameworkIdentifier) == '.NETStandard' And ($(TargetFrameworkVersion) == 'v1.1' Or $(TargetFrameworkVersion) == 'v1.2' Or $(TargetFrameworkVersion) == 'v1.3' Or $(TargetFrameworkVersion) == 'v1.4' Or $(TargetFrameworkVersion) == 'v1.5')) Or ($(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2'))">
