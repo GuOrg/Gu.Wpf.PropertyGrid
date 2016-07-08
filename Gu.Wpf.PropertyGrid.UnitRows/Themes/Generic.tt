@@ -36,7 +36,7 @@
             </Setter.Value>
         </Setter>
         <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox, Gu.Wpf.NumericInput.DoubleBox" />
-        <Setter Property="Template" Value="{StaticResource <#= quantity.Name #>RowInfoTemplate}" />
+        <Setter Property="Template" Value="{StaticResource UnitRowGenericInfoTemplate}" />
     </Style>
 
 <#

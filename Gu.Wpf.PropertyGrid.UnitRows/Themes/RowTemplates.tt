@@ -11,16 +11,16 @@
 					xmlns:validationScope="clr-namespace:Gu.Wpf.ValidationScope;assembly=Gu.Wpf.ValidationScope">
 <#
     var prefix = "unitRows";
-    var namesAndXamls = GetQuantityNames()
-        .Select(name => new NameAndXaml(prefix, name + "Row", UnitValueXaml))
-        .ToArray();
+    // var namesAndXamls = GetQuantityNames()
+    //    .Select(name => new NameAndXaml(prefix, name + "Row", UnitValueXaml))
+    //    .ToArray();
 
-	foreach(var nameAndXaml in namesAndXamls)
+	foreach(var nameAndXaml in new [] {new NameAndXaml(prefix,"UnitRowGeneric", UnitValueXaml) })
 	{
 		this.WritePlainTemplate(nameAndXaml);
 		this.WriteLine("");
 		this.WriteInfoTemplate(nameAndXaml);
-		this.WriteLineIfNotLast(nameAndXaml, namesAndXamls);
+		// this.WriteLineIfNotLast(nameAndXaml, namesAndXamls);
 	} 
 		#>
 </ResourceDictionary>
