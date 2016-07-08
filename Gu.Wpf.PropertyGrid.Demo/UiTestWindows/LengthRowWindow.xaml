@@ -4,7 +4,6 @@
         xmlns:converters="clr-namespace:Gu.Wpf.PropertyGrid.Demo.Converters"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:demo="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
-        xmlns:local="clr-namespace:Gu.Wpf.PropertyGrid.Demo.UiTestWindows"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:propertyGrid="http://gu.se/PropertyGrid"
         Title="LengthRowWindow"
@@ -15,15 +14,42 @@
     </Window.DataContext>
     <StackPanel>
         <Button Content="lose focus" />
+        <Button Command="{Binding SaveCommand}" Content="save" />
         <TextBox AutomationProperties.AutomationId="currentValueTextBox" Text="{Binding EditableCopy.LengthValue}" />
+        <TextBox AutomationProperties.AutomationId="currentMinValueTextBox" Text="{Binding EditableCopy.LengthMin, TargetNullValue=''}" />
+        <TextBox AutomationProperties.AutomationId="currentMaxValueTextBox" Text="{Binding EditableCopy.LengthMax, TargetNullValue=''}" />
         <TextBox AutomationProperties.AutomationId="currentNullableValueTextBox" Text="{Binding EditableCopy.NullableLengthValue, Converter={x:Static converters:NullableIntToStringConverter.Default}}" />
 
-        <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-            <propertyGrid:LengthRow Header="default" Value="{Binding LengthValue}" />
+        <propertyGrid:Rows DataContext="{Binding EditableCopy}"
+                           OldDataContext="{Binding DataContext.LastSaved,
+                                                    RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                           ValueWidth="70">
+            <propertyGrid:LengthRow Header="default"
+                                    MaxValue="{Binding LengthMax}"
+                                    MinValue="{Binding LengthMin}"
+                                    Value="{Binding LengthValue}" />
+
+            <propertyGrid:LengthRow Header="propertychanged"
+                                    MaxValue="{Binding LengthMax}"
+                                    MinValue="{Binding LengthMin}"
+                                    Value="{Binding LengthValue,
+                                                    UpdateSourceTrigger=PropertyChanged}" />
+
+            <propertyGrid:LengthRow Header="readonly"
+                                    IsReadOnly="True"
+                                    MaxValue="{Binding LengthMax}"
+                                    MinValue="{Binding LengthMin}"
+                                    Value="{Binding LengthValue}" />
+
             <propertyGrid:LengthRow CanValueBeNull="True"
                                     Header="nullable"
+                                    MaxValue="{Binding LengthMax}"
+                                    MinValue="{Binding LengthMin}"
                                     Value="{Binding NullableLengthValue}" />
+
             <propertyGrid:LengthRow Header="explicit cm"
+                                    MaxValue="{Binding LengthMax}"
+                                    MinValue="{Binding LengthMin}"
                                     Unit="cm"
                                     Value="{Binding LengthValue}" />
         </propertyGrid:Rows>

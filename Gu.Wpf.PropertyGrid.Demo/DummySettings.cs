@@ -29,6 +29,10 @@
 
         private CultureInfo currentCulture;
 
+        private Length? lengthMin;
+
+        private Length? lengthMax;
+
         public DummySettings()
         {
             this.currentCulture = this.Cultures[0];
@@ -142,6 +146,34 @@
                 }
 
                 this.lengthValue = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public Length? LengthMin
+        {
+            get
+            {
+                return this.lengthMin;
+            }
+            set
+            {
+                if (value.Equals(this.lengthMin)) return;
+                this.lengthMin = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public Length? LengthMax
+        {
+            get
+            {
+                return this.lengthMax;
+            }
+            set
+            {
+                if (value.Equals(this.lengthMax)) return;
+                this.lengthMax = value;
                 this.OnPropertyChanged();
             }
         }
