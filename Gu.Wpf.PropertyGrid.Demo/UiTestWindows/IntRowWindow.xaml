@@ -21,12 +21,12 @@
             <propertyGrid:IntRow Header="default" Value="{Binding IntValue}" />
             <propertyGrid:IntRow Header="propertychanged" Value="{Binding IntValue, UpdateSourceTrigger=PropertyChanged}" />
             <propertyGrid:IntRow Header="readonly"
-                                            IsReadOnly="True"
-                                            Value="{Binding IntValue}" />
+                                 IsReadOnly="True"
+                                 Value="{Binding IntValue}" />
 
             <propertyGrid:IntRow CanValueBeNull="True"
-                                            Header="nullable"
-                                            Value="{Binding NullableIntValue}" />
+                                 Header="nullable"
+                                 Value="{Binding NullableIntValue}" />
         </propertyGrid:Rows>
     </StackPanel>
 </Window>

@@ -52,7 +52,8 @@
                 </propertyGrid:ContentRow>
             </propertyGrid:Rows>
             
-            <propertyGrid:Rows DataContext="{Binding EditableCopy}">
+            <propertyGrid:Rows DataContext="{Binding EditableCopy}"
+                               ValueWidth="60">
                 <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Numeric" />
 
                 <propertyGrid:IntRow Header="int" Value="{Binding IntValue}" />
@@ -76,7 +77,8 @@
                                         Value="{Binding NullableDoubleValue}" />
             </propertyGrid:Rows>
 
-            <propertyGrid:Rows DataContext="{Binding EditableCopy}">
+            <propertyGrid:Rows DataContext="{Binding EditableCopy}"
+                               ValueWidth="60">
                 <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Units" />
 
                 <unitRows:LengthRow Header="Length" Value="{Binding LengthValue}" />

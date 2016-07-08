@@ -89,6 +89,9 @@
     <Compile Include="UiTestWindows\LengthRowStyleWindow.xaml.cs">
       <DependentUpon>LengthRowStyleWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\LengthRowWindow.xaml.cs">
+      <DependentUpon>LengthRowWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UiTestWindows\NestedWindow.xaml.cs">
       <DependentUpon>NestedWindow.xaml</DependentUpon>
     </Compile>
@@ -103,6 +106,9 @@
     </Compile>
     <Compile Include="UiTestWindows\StringRowWindow.xaml.cs">
       <DependentUpon>StringRowWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UiTestWindows\StyledOldValue.xaml.cs">
+      <DependentUpon>StyledOldValue.xaml</DependentUpon>
     </Compile>
     <Compile Include="UiTestWindows\SuffixBlockWindow.xaml.cs">
       <DependentUpon>SuffixBlockWindow.xaml</DependentUpon>
@@ -181,6 +187,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UiTestWindows\LengthRowWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UiTestWindows\NestedWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -198,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UiTestWindows\StringRowWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\StyledOldValue.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
