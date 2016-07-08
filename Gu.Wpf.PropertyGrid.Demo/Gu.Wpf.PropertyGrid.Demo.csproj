@@ -86,6 +86,9 @@
     <Compile Include="UiTestWindows\IntRowWindow.xaml.cs">
       <DependentUpon>IntRowWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UiTestWindows\LengthRowStyleWindow.xaml.cs">
+      <DependentUpon>LengthRowStyleWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UiTestWindows\NestedWindow.xaml.cs">
       <DependentUpon>NestedWindow.xaml</DependentUpon>
     </Compile>
@@ -171,6 +174,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UiTestWindows\IntRowWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UiTestWindows\LengthRowStyleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -64,6 +64,7 @@
     <Compile Include="NestedTests.cs" />
     <Compile Include="OldValueTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypedRowTests\LengthRowStyleTests.cs" />
     <Compile Include="TypedRowTests\SelectorRowTests.cs" />
     <Compile Include="TypedRowTests\StringRowTests.cs" />
     <Compile Include="ValueStylesTests.cs" />
