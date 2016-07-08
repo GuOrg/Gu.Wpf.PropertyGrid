@@ -131,7 +131,20 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         }
 
         [Test]
-        public void WhenUserTypesInLessThanMax()
+        public void WhenUserTypesInGreaterThanMaxCm()
+        {
+            this.currentMaxValueTextBox.Text = "2.3 m";
+            this.cmRow.Value<TextBox>().Text = "240";
+            Assert.AreEqual("Old value: 123 m", this.cmRow.Info().Text);
+            this.loseFocusButton.Click();
+
+            Assert.AreEqual("240 > max (230)", this.defaultRow.Info().Text);
+            Assert.AreEqual("2.3\u00A0m", this.currentValueTextBox.Text);
+        }
+
+
+        [Test]
+        public void WhenUserTypesInLessThanMin()
         {
             this.currentMinValueTextBox.Text = "-2.3 m";
             this.defaultRow.Value<TextBox>().Text = "-2.4";
@@ -139,6 +152,18 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             this.loseFocusButton.Click();
 
             Assert.AreEqual("-2,4 < min (-2,3)", this.defaultRow.Info().Text);
+            Assert.AreEqual("2.3\u00A0m", this.currentValueTextBox.Text);
+        }
+
+        [Test]
+        public void WhenUserTypesInLessThanMinCm()
+        {
+            this.currentMinValueTextBox.Text = "-2.3 m";
+            this.cmRow.Value<TextBox>().Text = "240";
+            Assert.AreEqual("Old value: 1.23 m", this.defaultRow.Info().Text);
+            this.loseFocusButton.Click();
+
+            Assert.AreEqual("-240 < min (-230)", this.defaultRow.Info().Text);
             Assert.AreEqual("2.3\u00A0m", this.currentValueTextBox.Text);
         }
     }

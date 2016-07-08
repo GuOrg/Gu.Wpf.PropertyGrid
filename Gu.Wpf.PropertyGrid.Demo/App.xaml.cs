@@ -1,7 +1,6 @@
 ﻿namespace Gu.Wpf.PropertyGrid.Demo
 {
     using System;
-    using System.Linq;
     using System.Windows;
 
     /// <summary>
