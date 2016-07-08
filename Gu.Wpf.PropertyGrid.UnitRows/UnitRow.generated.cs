@@ -55,19 +55,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Acceleration? Value
         {
-            get { return (Acceleration)this.GetValue(ValueProperty); }
+            get { return (Acceleration?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Acceleration? MinValue
         {
-            get { return (Acceleration)this.GetValue(MinValueProperty); }
+            get { return (Acceleration?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Acceleration? MaxValue
         {
-            get { return (Acceleration)this.GetValue(MaxValueProperty); }
+            get { return (Acceleration?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -248,19 +248,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public AmountOfSubstance? Value
         {
-            get { return (AmountOfSubstance)this.GetValue(ValueProperty); }
+            get { return (AmountOfSubstance?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public AmountOfSubstance? MinValue
         {
-            get { return (AmountOfSubstance)this.GetValue(MinValueProperty); }
+            get { return (AmountOfSubstance?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public AmountOfSubstance? MaxValue
         {
-            get { return (AmountOfSubstance)this.GetValue(MaxValueProperty); }
+            get { return (AmountOfSubstance?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -441,19 +441,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Angle? Value
         {
-            get { return (Angle)this.GetValue(ValueProperty); }
+            get { return (Angle?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Angle? MinValue
         {
-            get { return (Angle)this.GetValue(MinValueProperty); }
+            get { return (Angle?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Angle? MaxValue
         {
-            get { return (Angle)this.GetValue(MaxValueProperty); }
+            get { return (Angle?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -634,19 +634,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public AnglePerUnitless? Value
         {
-            get { return (AnglePerUnitless)this.GetValue(ValueProperty); }
+            get { return (AnglePerUnitless?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public AnglePerUnitless? MinValue
         {
-            get { return (AnglePerUnitless)this.GetValue(MinValueProperty); }
+            get { return (AnglePerUnitless?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public AnglePerUnitless? MaxValue
         {
-            get { return (AnglePerUnitless)this.GetValue(MaxValueProperty); }
+            get { return (AnglePerUnitless?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -827,19 +827,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public AngularAcceleration? Value
         {
-            get { return (AngularAcceleration)this.GetValue(ValueProperty); }
+            get { return (AngularAcceleration?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public AngularAcceleration? MinValue
         {
-            get { return (AngularAcceleration)this.GetValue(MinValueProperty); }
+            get { return (AngularAcceleration?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public AngularAcceleration? MaxValue
         {
-            get { return (AngularAcceleration)this.GetValue(MaxValueProperty); }
+            get { return (AngularAcceleration?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -1020,19 +1020,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public AngularJerk? Value
         {
-            get { return (AngularJerk)this.GetValue(ValueProperty); }
+            get { return (AngularJerk?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public AngularJerk? MinValue
         {
-            get { return (AngularJerk)this.GetValue(MinValueProperty); }
+            get { return (AngularJerk?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public AngularJerk? MaxValue
         {
-            get { return (AngularJerk)this.GetValue(MaxValueProperty); }
+            get { return (AngularJerk?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -1213,19 +1213,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public AngularSpeed? Value
         {
-            get { return (AngularSpeed)this.GetValue(ValueProperty); }
+            get { return (AngularSpeed?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public AngularSpeed? MinValue
         {
-            get { return (AngularSpeed)this.GetValue(MinValueProperty); }
+            get { return (AngularSpeed?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public AngularSpeed? MaxValue
         {
-            get { return (AngularSpeed)this.GetValue(MaxValueProperty); }
+            get { return (AngularSpeed?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -1406,19 +1406,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Area? Value
         {
-            get { return (Area)this.GetValue(ValueProperty); }
+            get { return (Area?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Area? MinValue
         {
-            get { return (Area)this.GetValue(MinValueProperty); }
+            get { return (Area?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Area? MaxValue
         {
-            get { return (Area)this.GetValue(MaxValueProperty); }
+            get { return (Area?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -1599,19 +1599,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public AreaDensity? Value
         {
-            get { return (AreaDensity)this.GetValue(ValueProperty); }
+            get { return (AreaDensity?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public AreaDensity? MinValue
         {
-            get { return (AreaDensity)this.GetValue(MinValueProperty); }
+            get { return (AreaDensity?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public AreaDensity? MaxValue
         {
-            get { return (AreaDensity)this.GetValue(MaxValueProperty); }
+            get { return (AreaDensity?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -1792,19 +1792,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Capacitance? Value
         {
-            get { return (Capacitance)this.GetValue(ValueProperty); }
+            get { return (Capacitance?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Capacitance? MinValue
         {
-            get { return (Capacitance)this.GetValue(MinValueProperty); }
+            get { return (Capacitance?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Capacitance? MaxValue
         {
-            get { return (Capacitance)this.GetValue(MaxValueProperty); }
+            get { return (Capacitance?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -1985,19 +1985,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public CatalyticActivity? Value
         {
-            get { return (CatalyticActivity)this.GetValue(ValueProperty); }
+            get { return (CatalyticActivity?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public CatalyticActivity? MinValue
         {
-            get { return (CatalyticActivity)this.GetValue(MinValueProperty); }
+            get { return (CatalyticActivity?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public CatalyticActivity? MaxValue
         {
-            get { return (CatalyticActivity)this.GetValue(MaxValueProperty); }
+            get { return (CatalyticActivity?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -2178,19 +2178,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Current? Value
         {
-            get { return (Current)this.GetValue(ValueProperty); }
+            get { return (Current?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Current? MinValue
         {
-            get { return (Current)this.GetValue(MinValueProperty); }
+            get { return (Current?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Current? MaxValue
         {
-            get { return (Current)this.GetValue(MaxValueProperty); }
+            get { return (Current?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -2371,19 +2371,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Data? Value
         {
-            get { return (Data)this.GetValue(ValueProperty); }
+            get { return (Data?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Data? MinValue
         {
-            get { return (Data)this.GetValue(MinValueProperty); }
+            get { return (Data?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Data? MaxValue
         {
-            get { return (Data)this.GetValue(MaxValueProperty); }
+            get { return (Data?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -2564,19 +2564,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Density? Value
         {
-            get { return (Density)this.GetValue(ValueProperty); }
+            get { return (Density?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Density? MinValue
         {
-            get { return (Density)this.GetValue(MinValueProperty); }
+            get { return (Density?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Density? MaxValue
         {
-            get { return (Density)this.GetValue(MaxValueProperty); }
+            get { return (Density?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -2757,19 +2757,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public ElectricalConductance? Value
         {
-            get { return (ElectricalConductance)this.GetValue(ValueProperty); }
+            get { return (ElectricalConductance?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public ElectricalConductance? MinValue
         {
-            get { return (ElectricalConductance)this.GetValue(MinValueProperty); }
+            get { return (ElectricalConductance?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public ElectricalConductance? MaxValue
         {
-            get { return (ElectricalConductance)this.GetValue(MaxValueProperty); }
+            get { return (ElectricalConductance?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -2950,19 +2950,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public ElectricCharge? Value
         {
-            get { return (ElectricCharge)this.GetValue(ValueProperty); }
+            get { return (ElectricCharge?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public ElectricCharge? MinValue
         {
-            get { return (ElectricCharge)this.GetValue(MinValueProperty); }
+            get { return (ElectricCharge?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public ElectricCharge? MaxValue
         {
-            get { return (ElectricCharge)this.GetValue(MaxValueProperty); }
+            get { return (ElectricCharge?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -3143,19 +3143,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Energy? Value
         {
-            get { return (Energy)this.GetValue(ValueProperty); }
+            get { return (Energy?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Energy? MinValue
         {
-            get { return (Energy)this.GetValue(MinValueProperty); }
+            get { return (Energy?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Energy? MaxValue
         {
-            get { return (Energy)this.GetValue(MaxValueProperty); }
+            get { return (Energy?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -3336,19 +3336,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Flexibility? Value
         {
-            get { return (Flexibility)this.GetValue(ValueProperty); }
+            get { return (Flexibility?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Flexibility? MinValue
         {
-            get { return (Flexibility)this.GetValue(MinValueProperty); }
+            get { return (Flexibility?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Flexibility? MaxValue
         {
-            get { return (Flexibility)this.GetValue(MaxValueProperty); }
+            get { return (Flexibility?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -3529,19 +3529,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Force? Value
         {
-            get { return (Force)this.GetValue(ValueProperty); }
+            get { return (Force?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Force? MinValue
         {
-            get { return (Force)this.GetValue(MinValueProperty); }
+            get { return (Force?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Force? MaxValue
         {
-            get { return (Force)this.GetValue(MaxValueProperty); }
+            get { return (Force?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -3722,19 +3722,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public ForcePerUnitless? Value
         {
-            get { return (ForcePerUnitless)this.GetValue(ValueProperty); }
+            get { return (ForcePerUnitless?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public ForcePerUnitless? MinValue
         {
-            get { return (ForcePerUnitless)this.GetValue(MinValueProperty); }
+            get { return (ForcePerUnitless?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public ForcePerUnitless? MaxValue
         {
-            get { return (ForcePerUnitless)this.GetValue(MaxValueProperty); }
+            get { return (ForcePerUnitless?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -3915,19 +3915,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Frequency? Value
         {
-            get { return (Frequency)this.GetValue(ValueProperty); }
+            get { return (Frequency?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Frequency? MinValue
         {
-            get { return (Frequency)this.GetValue(MinValueProperty); }
+            get { return (Frequency?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Frequency? MaxValue
         {
-            get { return (Frequency)this.GetValue(MaxValueProperty); }
+            get { return (Frequency?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -4108,19 +4108,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Illuminance? Value
         {
-            get { return (Illuminance)this.GetValue(ValueProperty); }
+            get { return (Illuminance?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Illuminance? MinValue
         {
-            get { return (Illuminance)this.GetValue(MinValueProperty); }
+            get { return (Illuminance?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Illuminance? MaxValue
         {
-            get { return (Illuminance)this.GetValue(MaxValueProperty); }
+            get { return (Illuminance?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -4301,19 +4301,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Inductance? Value
         {
-            get { return (Inductance)this.GetValue(ValueProperty); }
+            get { return (Inductance?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Inductance? MinValue
         {
-            get { return (Inductance)this.GetValue(MinValueProperty); }
+            get { return (Inductance?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Inductance? MaxValue
         {
-            get { return (Inductance)this.GetValue(MaxValueProperty); }
+            get { return (Inductance?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -4494,19 +4494,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Jerk? Value
         {
-            get { return (Jerk)this.GetValue(ValueProperty); }
+            get { return (Jerk?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Jerk? MinValue
         {
-            get { return (Jerk)this.GetValue(MinValueProperty); }
+            get { return (Jerk?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Jerk? MaxValue
         {
-            get { return (Jerk)this.GetValue(MaxValueProperty); }
+            get { return (Jerk?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -4687,19 +4687,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public KinematicViscosity? Value
         {
-            get { return (KinematicViscosity)this.GetValue(ValueProperty); }
+            get { return (KinematicViscosity?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public KinematicViscosity? MinValue
         {
-            get { return (KinematicViscosity)this.GetValue(MinValueProperty); }
+            get { return (KinematicViscosity?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public KinematicViscosity? MaxValue
         {
-            get { return (KinematicViscosity)this.GetValue(MaxValueProperty); }
+            get { return (KinematicViscosity?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -4880,19 +4880,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Length? Value
         {
-            get { return (Length)this.GetValue(ValueProperty); }
+            get { return (Length?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Length? MinValue
         {
-            get { return (Length)this.GetValue(MinValueProperty); }
+            get { return (Length?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Length? MaxValue
         {
-            get { return (Length)this.GetValue(MaxValueProperty); }
+            get { return (Length?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -5073,19 +5073,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public LengthPerUnitless? Value
         {
-            get { return (LengthPerUnitless)this.GetValue(ValueProperty); }
+            get { return (LengthPerUnitless?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public LengthPerUnitless? MinValue
         {
-            get { return (LengthPerUnitless)this.GetValue(MinValueProperty); }
+            get { return (LengthPerUnitless?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public LengthPerUnitless? MaxValue
         {
-            get { return (LengthPerUnitless)this.GetValue(MaxValueProperty); }
+            get { return (LengthPerUnitless?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -5266,19 +5266,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public LuminousFlux? Value
         {
-            get { return (LuminousFlux)this.GetValue(ValueProperty); }
+            get { return (LuminousFlux?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public LuminousFlux? MinValue
         {
-            get { return (LuminousFlux)this.GetValue(MinValueProperty); }
+            get { return (LuminousFlux?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public LuminousFlux? MaxValue
         {
-            get { return (LuminousFlux)this.GetValue(MaxValueProperty); }
+            get { return (LuminousFlux?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -5459,19 +5459,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public LuminousIntensity? Value
         {
-            get { return (LuminousIntensity)this.GetValue(ValueProperty); }
+            get { return (LuminousIntensity?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public LuminousIntensity? MinValue
         {
-            get { return (LuminousIntensity)this.GetValue(MinValueProperty); }
+            get { return (LuminousIntensity?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public LuminousIntensity? MaxValue
         {
-            get { return (LuminousIntensity)this.GetValue(MaxValueProperty); }
+            get { return (LuminousIntensity?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -5652,19 +5652,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public MagneticFieldStrength? Value
         {
-            get { return (MagneticFieldStrength)this.GetValue(ValueProperty); }
+            get { return (MagneticFieldStrength?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public MagneticFieldStrength? MinValue
         {
-            get { return (MagneticFieldStrength)this.GetValue(MinValueProperty); }
+            get { return (MagneticFieldStrength?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public MagneticFieldStrength? MaxValue
         {
-            get { return (MagneticFieldStrength)this.GetValue(MaxValueProperty); }
+            get { return (MagneticFieldStrength?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -5845,19 +5845,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public MagneticFlux? Value
         {
-            get { return (MagneticFlux)this.GetValue(ValueProperty); }
+            get { return (MagneticFlux?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public MagneticFlux? MinValue
         {
-            get { return (MagneticFlux)this.GetValue(MinValueProperty); }
+            get { return (MagneticFlux?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public MagneticFlux? MaxValue
         {
-            get { return (MagneticFlux)this.GetValue(MaxValueProperty); }
+            get { return (MagneticFlux?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -6038,19 +6038,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Mass? Value
         {
-            get { return (Mass)this.GetValue(ValueProperty); }
+            get { return (Mass?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Mass? MinValue
         {
-            get { return (Mass)this.GetValue(MinValueProperty); }
+            get { return (Mass?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Mass? MaxValue
         {
-            get { return (Mass)this.GetValue(MaxValueProperty); }
+            get { return (Mass?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -6231,19 +6231,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public MassFlow? Value
         {
-            get { return (MassFlow)this.GetValue(ValueProperty); }
+            get { return (MassFlow?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public MassFlow? MinValue
         {
-            get { return (MassFlow)this.GetValue(MinValueProperty); }
+            get { return (MassFlow?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public MassFlow? MaxValue
         {
-            get { return (MassFlow)this.GetValue(MaxValueProperty); }
+            get { return (MassFlow?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -6424,19 +6424,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Momentum? Value
         {
-            get { return (Momentum)this.GetValue(ValueProperty); }
+            get { return (Momentum?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Momentum? MinValue
         {
-            get { return (Momentum)this.GetValue(MinValueProperty); }
+            get { return (Momentum?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Momentum? MaxValue
         {
-            get { return (Momentum)this.GetValue(MaxValueProperty); }
+            get { return (Momentum?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -6617,19 +6617,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Power? Value
         {
-            get { return (Power)this.GetValue(ValueProperty); }
+            get { return (Power?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Power? MinValue
         {
-            get { return (Power)this.GetValue(MinValueProperty); }
+            get { return (Power?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Power? MaxValue
         {
-            get { return (Power)this.GetValue(MaxValueProperty); }
+            get { return (Power?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -6810,19 +6810,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Pressure? Value
         {
-            get { return (Pressure)this.GetValue(ValueProperty); }
+            get { return (Pressure?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Pressure? MinValue
         {
-            get { return (Pressure)this.GetValue(MinValueProperty); }
+            get { return (Pressure?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Pressure? MaxValue
         {
-            get { return (Pressure)this.GetValue(MaxValueProperty); }
+            get { return (Pressure?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -7003,19 +7003,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Resistance? Value
         {
-            get { return (Resistance)this.GetValue(ValueProperty); }
+            get { return (Resistance?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Resistance? MinValue
         {
-            get { return (Resistance)this.GetValue(MinValueProperty); }
+            get { return (Resistance?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Resistance? MaxValue
         {
-            get { return (Resistance)this.GetValue(MaxValueProperty); }
+            get { return (Resistance?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -7196,19 +7196,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public SolidAngle? Value
         {
-            get { return (SolidAngle)this.GetValue(ValueProperty); }
+            get { return (SolidAngle?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public SolidAngle? MinValue
         {
-            get { return (SolidAngle)this.GetValue(MinValueProperty); }
+            get { return (SolidAngle?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public SolidAngle? MaxValue
         {
-            get { return (SolidAngle)this.GetValue(MaxValueProperty); }
+            get { return (SolidAngle?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -7389,19 +7389,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public SpecificEnergy? Value
         {
-            get { return (SpecificEnergy)this.GetValue(ValueProperty); }
+            get { return (SpecificEnergy?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public SpecificEnergy? MinValue
         {
-            get { return (SpecificEnergy)this.GetValue(MinValueProperty); }
+            get { return (SpecificEnergy?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public SpecificEnergy? MaxValue
         {
-            get { return (SpecificEnergy)this.GetValue(MaxValueProperty); }
+            get { return (SpecificEnergy?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -7582,19 +7582,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public SpecificVolume? Value
         {
-            get { return (SpecificVolume)this.GetValue(ValueProperty); }
+            get { return (SpecificVolume?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public SpecificVolume? MinValue
         {
-            get { return (SpecificVolume)this.GetValue(MinValueProperty); }
+            get { return (SpecificVolume?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public SpecificVolume? MaxValue
         {
-            get { return (SpecificVolume)this.GetValue(MaxValueProperty); }
+            get { return (SpecificVolume?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -7775,19 +7775,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Speed? Value
         {
-            get { return (Speed)this.GetValue(ValueProperty); }
+            get { return (Speed?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Speed? MinValue
         {
-            get { return (Speed)this.GetValue(MinValueProperty); }
+            get { return (Speed?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Speed? MaxValue
         {
-            get { return (Speed)this.GetValue(MaxValueProperty); }
+            get { return (Speed?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -7968,19 +7968,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Stiffness? Value
         {
-            get { return (Stiffness)this.GetValue(ValueProperty); }
+            get { return (Stiffness?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Stiffness? MinValue
         {
-            get { return (Stiffness)this.GetValue(MinValueProperty); }
+            get { return (Stiffness?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Stiffness? MaxValue
         {
-            get { return (Stiffness)this.GetValue(MaxValueProperty); }
+            get { return (Stiffness?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -8161,19 +8161,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Temperature? Value
         {
-            get { return (Temperature)this.GetValue(ValueProperty); }
+            get { return (Temperature?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Temperature? MinValue
         {
-            get { return (Temperature)this.GetValue(MinValueProperty); }
+            get { return (Temperature?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Temperature? MaxValue
         {
-            get { return (Temperature)this.GetValue(MaxValueProperty); }
+            get { return (Temperature?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -8354,19 +8354,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Time? Value
         {
-            get { return (Time)this.GetValue(ValueProperty); }
+            get { return (Time?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Time? MinValue
         {
-            get { return (Time)this.GetValue(MinValueProperty); }
+            get { return (Time?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Time? MaxValue
         {
-            get { return (Time)this.GetValue(MaxValueProperty); }
+            get { return (Time?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -8547,19 +8547,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Torque? Value
         {
-            get { return (Torque)this.GetValue(ValueProperty); }
+            get { return (Torque?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Torque? MinValue
         {
-            get { return (Torque)this.GetValue(MinValueProperty); }
+            get { return (Torque?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Torque? MaxValue
         {
-            get { return (Torque)this.GetValue(MaxValueProperty); }
+            get { return (Torque?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -8740,19 +8740,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Unitless? Value
         {
-            get { return (Unitless)this.GetValue(ValueProperty); }
+            get { return (Unitless?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Unitless? MinValue
         {
-            get { return (Unitless)this.GetValue(MinValueProperty); }
+            get { return (Unitless?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Unitless? MaxValue
         {
-            get { return (Unitless)this.GetValue(MaxValueProperty); }
+            get { return (Unitless?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -8933,19 +8933,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Voltage? Value
         {
-            get { return (Voltage)this.GetValue(ValueProperty); }
+            get { return (Voltage?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Voltage? MinValue
         {
-            get { return (Voltage)this.GetValue(MinValueProperty); }
+            get { return (Voltage?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Voltage? MaxValue
         {
-            get { return (Voltage)this.GetValue(MaxValueProperty); }
+            get { return (Voltage?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -9126,19 +9126,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Volume? Value
         {
-            get { return (Volume)this.GetValue(ValueProperty); }
+            get { return (Volume?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Volume? MinValue
         {
-            get { return (Volume)this.GetValue(MinValueProperty); }
+            get { return (Volume?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Volume? MaxValue
         {
-            get { return (Volume)this.GetValue(MaxValueProperty); }
+            get { return (Volume?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -9319,19 +9319,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public VolumetricFlow? Value
         {
-            get { return (VolumetricFlow)this.GetValue(ValueProperty); }
+            get { return (VolumetricFlow?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public VolumetricFlow? MinValue
         {
-            get { return (VolumetricFlow)this.GetValue(MinValueProperty); }
+            get { return (VolumetricFlow?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public VolumetricFlow? MaxValue
         {
-            get { return (VolumetricFlow)this.GetValue(MaxValueProperty); }
+            get { return (VolumetricFlow?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
@@ -9512,19 +9512,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public Wavenumber? Value
         {
-            get { return (Wavenumber)this.GetValue(ValueProperty); }
+            get { return (Wavenumber?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public Wavenumber? MinValue
         {
-            get { return (Wavenumber)this.GetValue(MinValueProperty); }
+            get { return (Wavenumber?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public Wavenumber? MaxValue
         {
-            get { return (Wavenumber)this.GetValue(MaxValueProperty); }
+            get { return (Wavenumber?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 

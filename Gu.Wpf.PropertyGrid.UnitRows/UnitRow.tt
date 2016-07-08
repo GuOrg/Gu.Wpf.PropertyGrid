@@ -63,19 +63,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         public <#= quantityType.Name #>? Value
         {
-            get { return (<#= quantityType.Name #>)this.GetValue(ValueProperty); }
+            get { return (<#= quantityType.Name #>?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
         public <#= quantityType.Name #>? MinValue
         {
-            get { return (<#= quantityType.Name #>)this.GetValue(MinValueProperty); }
+            get { return (<#= quantityType.Name #>?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
         public <#= quantityType.Name #>? MaxValue
         {
-            get { return (<#= quantityType.Name #>)this.GetValue(MaxValueProperty); }
+            get { return (<#= quantityType.Name #>?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
