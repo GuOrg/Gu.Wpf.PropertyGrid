@@ -3,7 +3,6 @@
     using System;
     using System.Windows;
     using System.Windows.Data;
-
     using Gu.Wpf.NumericInput;
 
     public abstract class NumericRow<T> : GenericRow<T?>, INumericFormatter
@@ -54,22 +53,22 @@
             return value.ToString(string.Empty, culture);
         }
 
+        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((NumericRow<T>)d).OnMinValueChanged((T?)e.OldValue, (T?)e.NewValue);
+        }
+
+        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((NumericRow<T>)d).OnMaxValueChanged((T?)e.OldValue, (T?)e.NewValue);
+        }
+
         protected virtual void OnMinValueChanged(T? oldValue, T? newValue)
         {
         }
 
         protected virtual void OnMaxValueChanged(T? oldValue, T? newValue)
         {
-        }
-
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((NumericRow<T>)d).OnMinValueChanged((T?)e.OldValue, (T?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((NumericRow<T>)d).OnMaxValueChanged((T?)e.OldValue, (T?)e.NewValue);
         }
     }
 }
