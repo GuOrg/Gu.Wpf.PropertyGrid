@@ -13,8 +13,8 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 <#
 	foreach(var quantityType in GetQuantityTypes())
 	{
-		var className = quantityType.Name + "Row";
-		#>
+        var className = quantityType.Name + "Row";
+        #>
 
     public class <#= className #> : UnitRowGeneric, IQuantityFormatter
     {
@@ -53,7 +53,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static <#= className #>()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(<#= className #>), new FrameworkPropertyMetadata(typeof(<#= className #>)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(<#= className #>), new FrameworkPropertyMetadata(typeof(<#= className #>)));
             SuffixProperty.OverrideMetadata(
                 typeof(<#= className #>),
                 new FrameworkPropertyMetadata(
@@ -108,7 +108,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(<#= quantityType.Name #>).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((<#= className #>)d).OnMinValueChanged((<#= quantityType.Name #>?)e.OldValue, (<#= quantityType.Name #>?)e.NewValue);
@@ -210,5 +210,5 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     }
 <#
 	} 
-		#>
+        #>
 }

@@ -39,6 +39,11 @@
             typeof(UnitRowGeneric),
             new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
 
+        static UnitRowGeneric()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(UnitRowGeneric), new FrameworkPropertyMetadata(typeof(UnitRowGeneric)));
+        }
+
         public double? ScalarValue
         {
             get { return (double?)this.GetValue(ScalarValueProperty); }

@@ -45,7 +45,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static AccelerationRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AccelerationRow), new FrameworkPropertyMetadata(typeof(AccelerationRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(AccelerationRow), new FrameworkPropertyMetadata(typeof(AccelerationRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(AccelerationRow),
                 new FrameworkPropertyMetadata(
@@ -100,7 +100,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Acceleration).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((AccelerationRow)d).OnMinValueChanged((Acceleration?)e.OldValue, (Acceleration?)e.NewValue);
@@ -238,7 +238,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static AmountOfSubstanceRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AmountOfSubstanceRow), new FrameworkPropertyMetadata(typeof(AmountOfSubstanceRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(AmountOfSubstanceRow), new FrameworkPropertyMetadata(typeof(AmountOfSubstanceRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(AmountOfSubstanceRow),
                 new FrameworkPropertyMetadata(
@@ -293,7 +293,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(AmountOfSubstance).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((AmountOfSubstanceRow)d).OnMinValueChanged((AmountOfSubstance?)e.OldValue, (AmountOfSubstance?)e.NewValue);
@@ -431,7 +431,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static AngleRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AngleRow), new FrameworkPropertyMetadata(typeof(AngleRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(AngleRow), new FrameworkPropertyMetadata(typeof(AngleRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(AngleRow),
                 new FrameworkPropertyMetadata(
@@ -486,7 +486,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Angle).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((AngleRow)d).OnMinValueChanged((Angle?)e.OldValue, (Angle?)e.NewValue);
@@ -624,7 +624,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static AnglePerUnitlessRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AnglePerUnitlessRow), new FrameworkPropertyMetadata(typeof(AnglePerUnitlessRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(AnglePerUnitlessRow), new FrameworkPropertyMetadata(typeof(AnglePerUnitlessRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(AnglePerUnitlessRow),
                 new FrameworkPropertyMetadata(
@@ -679,7 +679,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(AnglePerUnitless).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((AnglePerUnitlessRow)d).OnMinValueChanged((AnglePerUnitless?)e.OldValue, (AnglePerUnitless?)e.NewValue);
@@ -817,7 +817,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static AngularAccelerationRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AngularAccelerationRow), new FrameworkPropertyMetadata(typeof(AngularAccelerationRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(AngularAccelerationRow), new FrameworkPropertyMetadata(typeof(AngularAccelerationRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(AngularAccelerationRow),
                 new FrameworkPropertyMetadata(
@@ -872,7 +872,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(AngularAcceleration).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((AngularAccelerationRow)d).OnMinValueChanged((AngularAcceleration?)e.OldValue, (AngularAcceleration?)e.NewValue);
@@ -1010,7 +1010,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static AngularJerkRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AngularJerkRow), new FrameworkPropertyMetadata(typeof(AngularJerkRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(AngularJerkRow), new FrameworkPropertyMetadata(typeof(AngularJerkRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(AngularJerkRow),
                 new FrameworkPropertyMetadata(
@@ -1065,7 +1065,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(AngularJerk).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((AngularJerkRow)d).OnMinValueChanged((AngularJerk?)e.OldValue, (AngularJerk?)e.NewValue);
@@ -1203,7 +1203,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static AngularSpeedRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AngularSpeedRow), new FrameworkPropertyMetadata(typeof(AngularSpeedRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(AngularSpeedRow), new FrameworkPropertyMetadata(typeof(AngularSpeedRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(AngularSpeedRow),
                 new FrameworkPropertyMetadata(
@@ -1258,7 +1258,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(AngularSpeed).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((AngularSpeedRow)d).OnMinValueChanged((AngularSpeed?)e.OldValue, (AngularSpeed?)e.NewValue);
@@ -1396,7 +1396,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static AreaRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AreaRow), new FrameworkPropertyMetadata(typeof(AreaRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(AreaRow), new FrameworkPropertyMetadata(typeof(AreaRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(AreaRow),
                 new FrameworkPropertyMetadata(
@@ -1451,7 +1451,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Area).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((AreaRow)d).OnMinValueChanged((Area?)e.OldValue, (Area?)e.NewValue);
@@ -1589,7 +1589,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static AreaDensityRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AreaDensityRow), new FrameworkPropertyMetadata(typeof(AreaDensityRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(AreaDensityRow), new FrameworkPropertyMetadata(typeof(AreaDensityRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(AreaDensityRow),
                 new FrameworkPropertyMetadata(
@@ -1644,7 +1644,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(AreaDensity).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((AreaDensityRow)d).OnMinValueChanged((AreaDensity?)e.OldValue, (AreaDensity?)e.NewValue);
@@ -1782,7 +1782,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static CapacitanceRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(CapacitanceRow), new FrameworkPropertyMetadata(typeof(CapacitanceRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(CapacitanceRow), new FrameworkPropertyMetadata(typeof(CapacitanceRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(CapacitanceRow),
                 new FrameworkPropertyMetadata(
@@ -1837,7 +1837,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Capacitance).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((CapacitanceRow)d).OnMinValueChanged((Capacitance?)e.OldValue, (Capacitance?)e.NewValue);
@@ -1975,7 +1975,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static CatalyticActivityRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(CatalyticActivityRow), new FrameworkPropertyMetadata(typeof(CatalyticActivityRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(CatalyticActivityRow), new FrameworkPropertyMetadata(typeof(CatalyticActivityRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(CatalyticActivityRow),
                 new FrameworkPropertyMetadata(
@@ -2030,7 +2030,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(CatalyticActivity).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((CatalyticActivityRow)d).OnMinValueChanged((CatalyticActivity?)e.OldValue, (CatalyticActivity?)e.NewValue);
@@ -2168,7 +2168,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static CurrentRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(CurrentRow), new FrameworkPropertyMetadata(typeof(CurrentRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(CurrentRow), new FrameworkPropertyMetadata(typeof(CurrentRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(CurrentRow),
                 new FrameworkPropertyMetadata(
@@ -2223,7 +2223,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Current).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((CurrentRow)d).OnMinValueChanged((Current?)e.OldValue, (Current?)e.NewValue);
@@ -2361,7 +2361,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static DataRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(DataRow), new FrameworkPropertyMetadata(typeof(DataRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(DataRow), new FrameworkPropertyMetadata(typeof(DataRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(DataRow),
                 new FrameworkPropertyMetadata(
@@ -2416,7 +2416,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Data).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((DataRow)d).OnMinValueChanged((Data?)e.OldValue, (Data?)e.NewValue);
@@ -2554,7 +2554,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static DensityRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(DensityRow), new FrameworkPropertyMetadata(typeof(DensityRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(DensityRow), new FrameworkPropertyMetadata(typeof(DensityRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(DensityRow),
                 new FrameworkPropertyMetadata(
@@ -2609,7 +2609,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Density).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((DensityRow)d).OnMinValueChanged((Density?)e.OldValue, (Density?)e.NewValue);
@@ -2747,7 +2747,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static ElectricalConductanceRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ElectricalConductanceRow), new FrameworkPropertyMetadata(typeof(ElectricalConductanceRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(ElectricalConductanceRow), new FrameworkPropertyMetadata(typeof(ElectricalConductanceRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(ElectricalConductanceRow),
                 new FrameworkPropertyMetadata(
@@ -2802,7 +2802,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(ElectricalConductance).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((ElectricalConductanceRow)d).OnMinValueChanged((ElectricalConductance?)e.OldValue, (ElectricalConductance?)e.NewValue);
@@ -2940,7 +2940,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static ElectricChargeRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ElectricChargeRow), new FrameworkPropertyMetadata(typeof(ElectricChargeRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(ElectricChargeRow), new FrameworkPropertyMetadata(typeof(ElectricChargeRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(ElectricChargeRow),
                 new FrameworkPropertyMetadata(
@@ -2995,7 +2995,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(ElectricCharge).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((ElectricChargeRow)d).OnMinValueChanged((ElectricCharge?)e.OldValue, (ElectricCharge?)e.NewValue);
@@ -3133,7 +3133,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static EnergyRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(EnergyRow), new FrameworkPropertyMetadata(typeof(EnergyRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(EnergyRow), new FrameworkPropertyMetadata(typeof(EnergyRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(EnergyRow),
                 new FrameworkPropertyMetadata(
@@ -3188,7 +3188,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Energy).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((EnergyRow)d).OnMinValueChanged((Energy?)e.OldValue, (Energy?)e.NewValue);
@@ -3326,7 +3326,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static FlexibilityRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(FlexibilityRow), new FrameworkPropertyMetadata(typeof(FlexibilityRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(FlexibilityRow), new FrameworkPropertyMetadata(typeof(FlexibilityRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(FlexibilityRow),
                 new FrameworkPropertyMetadata(
@@ -3381,7 +3381,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Flexibility).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((FlexibilityRow)d).OnMinValueChanged((Flexibility?)e.OldValue, (Flexibility?)e.NewValue);
@@ -3519,7 +3519,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static ForceRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ForceRow), new FrameworkPropertyMetadata(typeof(ForceRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(ForceRow), new FrameworkPropertyMetadata(typeof(ForceRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(ForceRow),
                 new FrameworkPropertyMetadata(
@@ -3574,7 +3574,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Force).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((ForceRow)d).OnMinValueChanged((Force?)e.OldValue, (Force?)e.NewValue);
@@ -3712,7 +3712,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static ForcePerUnitlessRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ForcePerUnitlessRow), new FrameworkPropertyMetadata(typeof(ForcePerUnitlessRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(ForcePerUnitlessRow), new FrameworkPropertyMetadata(typeof(ForcePerUnitlessRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(ForcePerUnitlessRow),
                 new FrameworkPropertyMetadata(
@@ -3767,7 +3767,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(ForcePerUnitless).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((ForcePerUnitlessRow)d).OnMinValueChanged((ForcePerUnitless?)e.OldValue, (ForcePerUnitless?)e.NewValue);
@@ -3905,7 +3905,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static FrequencyRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(FrequencyRow), new FrameworkPropertyMetadata(typeof(FrequencyRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(FrequencyRow), new FrameworkPropertyMetadata(typeof(FrequencyRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(FrequencyRow),
                 new FrameworkPropertyMetadata(
@@ -3960,7 +3960,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Frequency).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((FrequencyRow)d).OnMinValueChanged((Frequency?)e.OldValue, (Frequency?)e.NewValue);
@@ -4098,7 +4098,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static IlluminanceRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(IlluminanceRow), new FrameworkPropertyMetadata(typeof(IlluminanceRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(IlluminanceRow), new FrameworkPropertyMetadata(typeof(IlluminanceRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(IlluminanceRow),
                 new FrameworkPropertyMetadata(
@@ -4153,7 +4153,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Illuminance).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((IlluminanceRow)d).OnMinValueChanged((Illuminance?)e.OldValue, (Illuminance?)e.NewValue);
@@ -4291,7 +4291,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static InductanceRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(InductanceRow), new FrameworkPropertyMetadata(typeof(InductanceRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(InductanceRow), new FrameworkPropertyMetadata(typeof(InductanceRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(InductanceRow),
                 new FrameworkPropertyMetadata(
@@ -4346,7 +4346,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Inductance).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((InductanceRow)d).OnMinValueChanged((Inductance?)e.OldValue, (Inductance?)e.NewValue);
@@ -4484,7 +4484,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static JerkRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(JerkRow), new FrameworkPropertyMetadata(typeof(JerkRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(JerkRow), new FrameworkPropertyMetadata(typeof(JerkRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(JerkRow),
                 new FrameworkPropertyMetadata(
@@ -4539,7 +4539,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Jerk).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((JerkRow)d).OnMinValueChanged((Jerk?)e.OldValue, (Jerk?)e.NewValue);
@@ -4677,7 +4677,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static KinematicViscosityRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(KinematicViscosityRow), new FrameworkPropertyMetadata(typeof(KinematicViscosityRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(KinematicViscosityRow), new FrameworkPropertyMetadata(typeof(KinematicViscosityRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(KinematicViscosityRow),
                 new FrameworkPropertyMetadata(
@@ -4732,7 +4732,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(KinematicViscosity).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((KinematicViscosityRow)d).OnMinValueChanged((KinematicViscosity?)e.OldValue, (KinematicViscosity?)e.NewValue);
@@ -4870,7 +4870,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static LengthRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(LengthRow), new FrameworkPropertyMetadata(typeof(LengthRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(LengthRow), new FrameworkPropertyMetadata(typeof(LengthRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(LengthRow),
                 new FrameworkPropertyMetadata(
@@ -4925,7 +4925,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Length).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((LengthRow)d).OnMinValueChanged((Length?)e.OldValue, (Length?)e.NewValue);
@@ -5063,7 +5063,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static LengthPerUnitlessRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(LengthPerUnitlessRow), new FrameworkPropertyMetadata(typeof(LengthPerUnitlessRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(LengthPerUnitlessRow), new FrameworkPropertyMetadata(typeof(LengthPerUnitlessRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(LengthPerUnitlessRow),
                 new FrameworkPropertyMetadata(
@@ -5118,7 +5118,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(LengthPerUnitless).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((LengthPerUnitlessRow)d).OnMinValueChanged((LengthPerUnitless?)e.OldValue, (LengthPerUnitless?)e.NewValue);
@@ -5256,7 +5256,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static LuminousFluxRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(LuminousFluxRow), new FrameworkPropertyMetadata(typeof(LuminousFluxRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(LuminousFluxRow), new FrameworkPropertyMetadata(typeof(LuminousFluxRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(LuminousFluxRow),
                 new FrameworkPropertyMetadata(
@@ -5311,7 +5311,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(LuminousFlux).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((LuminousFluxRow)d).OnMinValueChanged((LuminousFlux?)e.OldValue, (LuminousFlux?)e.NewValue);
@@ -5449,7 +5449,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static LuminousIntensityRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(LuminousIntensityRow), new FrameworkPropertyMetadata(typeof(LuminousIntensityRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(LuminousIntensityRow), new FrameworkPropertyMetadata(typeof(LuminousIntensityRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(LuminousIntensityRow),
                 new FrameworkPropertyMetadata(
@@ -5504,7 +5504,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(LuminousIntensity).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((LuminousIntensityRow)d).OnMinValueChanged((LuminousIntensity?)e.OldValue, (LuminousIntensity?)e.NewValue);
@@ -5642,7 +5642,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static MagneticFieldStrengthRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(MagneticFieldStrengthRow), new FrameworkPropertyMetadata(typeof(MagneticFieldStrengthRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(MagneticFieldStrengthRow), new FrameworkPropertyMetadata(typeof(MagneticFieldStrengthRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(MagneticFieldStrengthRow),
                 new FrameworkPropertyMetadata(
@@ -5697,7 +5697,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(MagneticFieldStrength).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((MagneticFieldStrengthRow)d).OnMinValueChanged((MagneticFieldStrength?)e.OldValue, (MagneticFieldStrength?)e.NewValue);
@@ -5835,7 +5835,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static MagneticFluxRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(MagneticFluxRow), new FrameworkPropertyMetadata(typeof(MagneticFluxRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(MagneticFluxRow), new FrameworkPropertyMetadata(typeof(MagneticFluxRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(MagneticFluxRow),
                 new FrameworkPropertyMetadata(
@@ -5890,7 +5890,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(MagneticFlux).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((MagneticFluxRow)d).OnMinValueChanged((MagneticFlux?)e.OldValue, (MagneticFlux?)e.NewValue);
@@ -6028,7 +6028,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static MassRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(MassRow), new FrameworkPropertyMetadata(typeof(MassRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(MassRow), new FrameworkPropertyMetadata(typeof(MassRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(MassRow),
                 new FrameworkPropertyMetadata(
@@ -6083,7 +6083,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Mass).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((MassRow)d).OnMinValueChanged((Mass?)e.OldValue, (Mass?)e.NewValue);
@@ -6221,7 +6221,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static MassFlowRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(MassFlowRow), new FrameworkPropertyMetadata(typeof(MassFlowRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(MassFlowRow), new FrameworkPropertyMetadata(typeof(MassFlowRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(MassFlowRow),
                 new FrameworkPropertyMetadata(
@@ -6276,7 +6276,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(MassFlow).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((MassFlowRow)d).OnMinValueChanged((MassFlow?)e.OldValue, (MassFlow?)e.NewValue);
@@ -6414,7 +6414,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static MomentumRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(MomentumRow), new FrameworkPropertyMetadata(typeof(MomentumRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(MomentumRow), new FrameworkPropertyMetadata(typeof(MomentumRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(MomentumRow),
                 new FrameworkPropertyMetadata(
@@ -6469,7 +6469,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Momentum).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((MomentumRow)d).OnMinValueChanged((Momentum?)e.OldValue, (Momentum?)e.NewValue);
@@ -6607,7 +6607,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static PowerRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(PowerRow), new FrameworkPropertyMetadata(typeof(PowerRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(PowerRow), new FrameworkPropertyMetadata(typeof(PowerRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(PowerRow),
                 new FrameworkPropertyMetadata(
@@ -6662,7 +6662,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Power).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((PowerRow)d).OnMinValueChanged((Power?)e.OldValue, (Power?)e.NewValue);
@@ -6800,7 +6800,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static PressureRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(PressureRow), new FrameworkPropertyMetadata(typeof(PressureRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(PressureRow), new FrameworkPropertyMetadata(typeof(PressureRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(PressureRow),
                 new FrameworkPropertyMetadata(
@@ -6855,7 +6855,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Pressure).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((PressureRow)d).OnMinValueChanged((Pressure?)e.OldValue, (Pressure?)e.NewValue);
@@ -6993,7 +6993,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static ResistanceRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ResistanceRow), new FrameworkPropertyMetadata(typeof(ResistanceRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(ResistanceRow), new FrameworkPropertyMetadata(typeof(ResistanceRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(ResistanceRow),
                 new FrameworkPropertyMetadata(
@@ -7048,7 +7048,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Resistance).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((ResistanceRow)d).OnMinValueChanged((Resistance?)e.OldValue, (Resistance?)e.NewValue);
@@ -7186,7 +7186,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static SolidAngleRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SolidAngleRow), new FrameworkPropertyMetadata(typeof(SolidAngleRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(SolidAngleRow), new FrameworkPropertyMetadata(typeof(SolidAngleRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(SolidAngleRow),
                 new FrameworkPropertyMetadata(
@@ -7241,7 +7241,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(SolidAngle).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((SolidAngleRow)d).OnMinValueChanged((SolidAngle?)e.OldValue, (SolidAngle?)e.NewValue);
@@ -7379,7 +7379,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static SpecificEnergyRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SpecificEnergyRow), new FrameworkPropertyMetadata(typeof(SpecificEnergyRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(SpecificEnergyRow), new FrameworkPropertyMetadata(typeof(SpecificEnergyRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(SpecificEnergyRow),
                 new FrameworkPropertyMetadata(
@@ -7434,7 +7434,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(SpecificEnergy).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((SpecificEnergyRow)d).OnMinValueChanged((SpecificEnergy?)e.OldValue, (SpecificEnergy?)e.NewValue);
@@ -7572,7 +7572,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static SpecificVolumeRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SpecificVolumeRow), new FrameworkPropertyMetadata(typeof(SpecificVolumeRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(SpecificVolumeRow), new FrameworkPropertyMetadata(typeof(SpecificVolumeRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(SpecificVolumeRow),
                 new FrameworkPropertyMetadata(
@@ -7627,7 +7627,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(SpecificVolume).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((SpecificVolumeRow)d).OnMinValueChanged((SpecificVolume?)e.OldValue, (SpecificVolume?)e.NewValue);
@@ -7765,7 +7765,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static SpeedRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SpeedRow), new FrameworkPropertyMetadata(typeof(SpeedRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(SpeedRow), new FrameworkPropertyMetadata(typeof(SpeedRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(SpeedRow),
                 new FrameworkPropertyMetadata(
@@ -7820,7 +7820,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Speed).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((SpeedRow)d).OnMinValueChanged((Speed?)e.OldValue, (Speed?)e.NewValue);
@@ -7958,7 +7958,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static StiffnessRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(StiffnessRow), new FrameworkPropertyMetadata(typeof(StiffnessRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(StiffnessRow), new FrameworkPropertyMetadata(typeof(StiffnessRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(StiffnessRow),
                 new FrameworkPropertyMetadata(
@@ -8013,7 +8013,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Stiffness).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((StiffnessRow)d).OnMinValueChanged((Stiffness?)e.OldValue, (Stiffness?)e.NewValue);
@@ -8151,7 +8151,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static TemperatureRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(TemperatureRow), new FrameworkPropertyMetadata(typeof(TemperatureRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(TemperatureRow), new FrameworkPropertyMetadata(typeof(TemperatureRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(TemperatureRow),
                 new FrameworkPropertyMetadata(
@@ -8206,7 +8206,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Temperature).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((TemperatureRow)d).OnMinValueChanged((Temperature?)e.OldValue, (Temperature?)e.NewValue);
@@ -8344,7 +8344,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static TimeRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(TimeRow), new FrameworkPropertyMetadata(typeof(TimeRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(TimeRow), new FrameworkPropertyMetadata(typeof(TimeRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(TimeRow),
                 new FrameworkPropertyMetadata(
@@ -8399,7 +8399,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Time).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((TimeRow)d).OnMinValueChanged((Time?)e.OldValue, (Time?)e.NewValue);
@@ -8537,7 +8537,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static TorqueRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(TorqueRow), new FrameworkPropertyMetadata(typeof(TorqueRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(TorqueRow), new FrameworkPropertyMetadata(typeof(TorqueRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(TorqueRow),
                 new FrameworkPropertyMetadata(
@@ -8592,7 +8592,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Torque).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((TorqueRow)d).OnMinValueChanged((Torque?)e.OldValue, (Torque?)e.NewValue);
@@ -8730,7 +8730,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static UnitlessRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(UnitlessRow), new FrameworkPropertyMetadata(typeof(UnitlessRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(UnitlessRow), new FrameworkPropertyMetadata(typeof(UnitlessRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(UnitlessRow),
                 new FrameworkPropertyMetadata(
@@ -8785,7 +8785,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Unitless).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((UnitlessRow)d).OnMinValueChanged((Unitless?)e.OldValue, (Unitless?)e.NewValue);
@@ -8923,7 +8923,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static VoltageRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(VoltageRow), new FrameworkPropertyMetadata(typeof(VoltageRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(VoltageRow), new FrameworkPropertyMetadata(typeof(VoltageRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(VoltageRow),
                 new FrameworkPropertyMetadata(
@@ -8978,7 +8978,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Voltage).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((VoltageRow)d).OnMinValueChanged((Voltage?)e.OldValue, (Voltage?)e.NewValue);
@@ -9116,7 +9116,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static VolumeRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(VolumeRow), new FrameworkPropertyMetadata(typeof(VolumeRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(VolumeRow), new FrameworkPropertyMetadata(typeof(VolumeRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(VolumeRow),
                 new FrameworkPropertyMetadata(
@@ -9171,7 +9171,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Volume).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((VolumeRow)d).OnMinValueChanged((Volume?)e.OldValue, (Volume?)e.NewValue);
@@ -9309,7 +9309,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static VolumetricFlowRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(VolumetricFlowRow), new FrameworkPropertyMetadata(typeof(VolumetricFlowRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(VolumetricFlowRow), new FrameworkPropertyMetadata(typeof(VolumetricFlowRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(VolumetricFlowRow),
                 new FrameworkPropertyMetadata(
@@ -9364,7 +9364,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(VolumetricFlow).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((VolumetricFlowRow)d).OnMinValueChanged((VolumetricFlow?)e.OldValue, (VolumetricFlow?)e.NewValue);
@@ -9502,7 +9502,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         static WavenumberRow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(WavenumberRow), new FrameworkPropertyMetadata(typeof(WavenumberRow)));
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(WavenumberRow), new FrameworkPropertyMetadata(typeof(WavenumberRow)));
             SuffixProperty.OverrideMetadata(
                 typeof(WavenumberRow),
                 new FrameworkPropertyMetadata(
@@ -9557,7 +9557,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(Wavenumber).ToString(unit, format).Trim('0');
         }
-		
+
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((WavenumberRow)d).OnMinValueChanged((Wavenumber?)e.OldValue, (Wavenumber?)e.NewValue);
