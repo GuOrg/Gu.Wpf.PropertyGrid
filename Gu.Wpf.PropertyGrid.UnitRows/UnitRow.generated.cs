@@ -146,17 +146,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -339,17 +339,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -532,17 +532,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -725,17 +725,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -918,17 +918,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -1111,17 +1111,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -1304,17 +1304,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -1497,17 +1497,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -1690,17 +1690,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -1883,17 +1883,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -2076,17 +2076,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -2269,17 +2269,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -2462,17 +2462,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -2655,17 +2655,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -2848,17 +2848,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -3041,17 +3041,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -3234,17 +3234,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -3427,17 +3427,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -3620,17 +3620,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -3813,17 +3813,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -4006,17 +4006,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -4199,17 +4199,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -4392,17 +4392,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -4585,17 +4585,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -4778,17 +4778,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -4971,17 +4971,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -5164,17 +5164,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -5357,17 +5357,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -5550,17 +5550,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -5743,17 +5743,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -5936,17 +5936,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -6129,17 +6129,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -6322,17 +6322,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -6515,17 +6515,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -6708,17 +6708,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -6901,17 +6901,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -7094,17 +7094,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -7287,17 +7287,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -7480,17 +7480,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -7673,17 +7673,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -7866,17 +7866,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -8059,17 +8059,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -8252,17 +8252,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -8445,17 +8445,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -8638,17 +8638,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -8831,17 +8831,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -9024,17 +9024,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -9217,17 +9217,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -9410,17 +9410,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
@@ -9603,17 +9603,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override void OnScalarValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarValueProperty, newValue);
+            this.SetQuantityValue(ValueProperty, newValue);
         }
 
         protected override void OnScalarMinValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+            this.SetQuantityValue(MinValueProperty, newValue);
         }
 
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
-            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+            this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
         protected override void UpdateIsDirty()
