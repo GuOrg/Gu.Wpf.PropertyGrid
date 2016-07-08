@@ -37,9 +37,9 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             var millimetresBox = millimetresSetting.Value<TextBox>();
 
             Assert.AreEqual("0.0123456", metresBox.Text);
-            Assert.AreEqual("m", metresSetting.Suffix().Text);
+            Assert.AreEqual("\u00A0m", metresSetting.Suffix().Text);
             Assert.AreEqual("12.3456", millimetresBox.Text);
-            Assert.AreEqual("mm", millimetresSetting.Suffix().Text);
+            Assert.AreEqual("\u00A0mm", millimetresSetting.Suffix().Text);
 
             metresBox.Text = "2.4";
             this.loseFocusButton.Click();
@@ -54,7 +54,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             var textBox = settingControl.Value<TextBox>();
 
             Assert.AreEqual("12.3456", textBox.Text);
-            Assert.AreEqual("mm", settingControl.Suffix().Text);
+            Assert.AreEqual("\u00A0mm", settingControl.Suffix().Text);
 
             textBox.Text = "2";
             Assert.AreEqual("0.0123456\u00A0m", this.currentValueTextBox.Text);
@@ -70,12 +70,12 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             var textBox = settingControl.Value<TextBox>();
 
             Assert.AreEqual("1.23456", textBox.Text);
-            Assert.AreEqual("cm", settingControl.Suffix().Text);
+            Assert.AreEqual("\u00A0cm", settingControl.Suffix().Text);
 
             groupBox.FindRow("selector").Value<ComboBox>().Select("m");
 
             Assert.AreEqual("0.0123456", textBox.Text);
-            Assert.AreEqual("m", settingControl.Suffix().Text);
+            Assert.AreEqual("\u00A0m", settingControl.Suffix().Text);
         }
     }
 }
