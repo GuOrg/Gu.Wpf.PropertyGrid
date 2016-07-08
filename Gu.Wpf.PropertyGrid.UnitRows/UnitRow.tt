@@ -9,27 +9,203 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     using System.Windows;
     using System.Windows.Data;
     using Gu.Units;
+    using Gu.Wpf.NumericInput;
 <#
 	foreach(var quantityType in GetQuantityTypes())
 	{
 		var className = quantityType.Name + "Row";
 		#>
 
-    public class <#= className #> : UnitRowGeneric<<#= quantityType.Name #>, <#= quantityType.Name #>Unit>
+    public class <#= className #> : UnitRowGeneric, IQuantityFormatter
     {
+        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
+        "Value",
+        typeof(<#= quantityType.Name #>?),
+        typeof(<#= className #>),
+        new FrameworkPropertyMetadata(
+            default(<#= quantityType.Name #>?),
+            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+            OnValueChanged,
+            null,
+            true,
+            UpdateSourceTrigger.LostFocus));
+
+        public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
+            "MinValue",
+            typeof(<#= quantityType.Name #>?),
+            typeof(<#= className #>),
+            new PropertyMetadata(null, OnMinValueChanged));
+
+        public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
+            "MaxValue",
+            typeof(<#= quantityType.Name #>?),
+            typeof(<#= className #>),
+            new PropertyMetadata(null, OnMaxValueChanged));
+
+        public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
+            "Unit",
+            typeof(<#= quantityType.Name #>Unit),
+            typeof(<#= className #>),
+            new PropertyMetadata(default(<#= quantityType.Name #>Unit).SiUnit, OnUnitChanged));
+
         public static readonly <#= quantityType.Name #>Unit DefaultUnit = default(<#= quantityType.Name #>Unit).SiUnit;
+        private bool isUpdatingScalarValue;
 
         static <#= className #>()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(<#= className #>), new FrameworkPropertyMetadata(typeof(<#= className #>)));
-            UnitProperty.OverrideMetadata(typeof(<#= className #>), new PropertyMetadata(DefaultUnit, OnUnitChanged));
             SuffixProperty.OverrideMetadata(
                 typeof(<#= className #>),
                 new FrameworkPropertyMetadata(
-                    CreateSuffix(DefaultUnit, UnitRow.DefaultSymbolFormat),
+                    CreateSuffix(UnitRow.DefaultSymbolFormat, DefaultUnit),
                     FrameworkPropertyMetadataOptions.NotDataBindable));
+        }
 
-            ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(<#= className #>), UpdateSourceTrigger.LostFocus);
+        public <#= quantityType.Name #>? Value
+        {
+            get { return (<#= quantityType.Name #>)this.GetValue(ValueProperty); }
+            set { this.SetValue(ValueProperty, value); }
+        }
+
+        public <#= quantityType.Name #>? MinValue
+        {
+            get { return (<#= quantityType.Name #>)this.GetValue(MinValueProperty); }
+            set { this.SetValue(MinValueProperty, value); }
+        }
+
+        public <#= quantityType.Name #>? MaxValue
+        {
+            get { return (<#= quantityType.Name #>)this.GetValue(MaxValueProperty); }
+            set { this.SetValue(MaxValueProperty, value); }
+        }
+
+        public <#= quantityType.Name #>Unit Unit
+        {
+            get { return (<#= quantityType.Name #>Unit)this.GetValue(UnitProperty); }
+            set { this.SetValue(UnitProperty, value); }
+        }
+
+        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+        string IQuantityFormatter.Format(IQuantity quantity)
+        {
+            if (quantity == null)
+            {
+                return string.Empty;
+            }
+
+            if (!(quantity is <#= quantityType.Name #>))
+            {
+                return "wrong type";
+            }
+
+            var qty = (<#= quantityType.Name #>)quantity;
+            var culture = NumericBox.GetCulture(this);
+            return qty.ToString(this.Unit, this.SymbolFormat, culture);
+        }
+
+        protected static string CreateSuffix(SymbolFormat format, <#= quantityType.Name#>Unit unit)
+        {
+            return unit.ToString(format);
+        }
+
+        protected override void OnValueChanged(object oldValue, object newValue)
+        {
+            this.SetScalarValue(ScalarValueProperty, (<#= quantityType.Name #>)newValue);
+            base.OnValueChanged(oldValue, newValue);
+        }
+
+        protected virtual void OnMinValueChanged(<#= quantityType.Name #> oldValue, <#= quantityType.Name #> newValue)
+        {
+            this.SetScalarValue(ScalarMinValueProperty, newValue);
+        }
+
+        protected virtual void OnMaxValueChanged(<#= quantityType.Name #> oldValue, <#= quantityType.Name #> newValue)
+        {
+            this.SetScalarValue(ScalarMaxValueProperty, newValue);
+        }
+
+        protected override void OnScalarValueChanged(double? newValue)
+        {
+            this.SetQuantityValue(ScalarValueProperty, newValue);
+        }
+
+        protected override void OnScalarMinValueChanged(double? newValue)
+        {
+            this.SetQuantityValue(ScalarMinValueProperty, newValue);
+        }
+
+        protected override void OnScalarMaxValueChanged(double? newValue)
+        {
+            this.SetQuantityValue(ScalarMaxValueProperty, newValue);
+        }
+
+        protected override void UpdateIsDirty()
+        {
+            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            {
+                this.IsDirty = null;
+            }
+            else
+            {
+                this.IsDirty = !Equals(this.OldValue, this.Value);
+            }
+        }
+
+        protected void SetScalarValue(DependencyProperty property, <#= quantityType.Name #>? quantity)
+        {
+            // we set this flag to prevent from setting scalar value changing quantity values.
+            this.isUpdatingScalarValue = true;
+            var value = quantity != null
+                ? this.Unit.GetScalarValue(quantity.Value)
+                : (double?)null;
+            this.SetCurrentValue(property, value);
+            this.isUpdatingScalarValue = false;
+        }
+
+        protected virtual void SetQuantityValue(DependencyProperty property, double? value)
+        {
+            if (this.isUpdatingScalarValue)
+            {
+                return;
+            }
+
+            var qty = value != null
+                ? this.Unit.CreateQuantity(value.Value)
+                : (<#= quantityType.Name #>?)null;
+            this.SetCurrentValue(property, qty);
+        }
+
+        protected override string CreateSuffix(SymbolFormat format)
+        {
+            return CreateSuffix(format, this.Unit);
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((<#= className #>)d).OnMinValueChanged((<#= quantityType.Name #>)e.OldValue, (<#= quantityType.Name #>)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((<#= className #>)d).OnMaxValueChanged((<#= quantityType.Name #>)e.OldValue, (<#= quantityType.Name #>)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (<#= className #>)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (<#= quantityType.Name #>Unit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (<#= quantityType.Name #>Unit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 <#
