@@ -106,7 +106,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, <#= quantityType.Name#>Unit unit)
         {
-            return unit.ToString(format);
+            return default(<#= quantityType.Name #>).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)

@@ -98,7 +98,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, AccelerationUnit unit)
         {
-            return unit.ToString(format);
+            return default(Acceleration).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -291,7 +291,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, AmountOfSubstanceUnit unit)
         {
-            return unit.ToString(format);
+            return default(AmountOfSubstance).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -484,7 +484,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, AngleUnit unit)
         {
-            return unit.ToString(format);
+            return default(Angle).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -677,7 +677,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, AnglePerUnitlessUnit unit)
         {
-            return unit.ToString(format);
+            return default(AnglePerUnitless).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -870,7 +870,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, AngularAccelerationUnit unit)
         {
-            return unit.ToString(format);
+            return default(AngularAcceleration).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -1063,7 +1063,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, AngularJerkUnit unit)
         {
-            return unit.ToString(format);
+            return default(AngularJerk).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -1256,7 +1256,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, AngularSpeedUnit unit)
         {
-            return unit.ToString(format);
+            return default(AngularSpeed).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -1449,7 +1449,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, AreaUnit unit)
         {
-            return unit.ToString(format);
+            return default(Area).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -1642,7 +1642,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, AreaDensityUnit unit)
         {
-            return unit.ToString(format);
+            return default(AreaDensity).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -1835,7 +1835,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, CapacitanceUnit unit)
         {
-            return unit.ToString(format);
+            return default(Capacitance).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -2028,7 +2028,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, CatalyticActivityUnit unit)
         {
-            return unit.ToString(format);
+            return default(CatalyticActivity).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -2221,7 +2221,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, CurrentUnit unit)
         {
-            return unit.ToString(format);
+            return default(Current).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -2414,7 +2414,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, DataUnit unit)
         {
-            return unit.ToString(format);
+            return default(Data).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -2607,7 +2607,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, DensityUnit unit)
         {
-            return unit.ToString(format);
+            return default(Density).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -2800,7 +2800,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, ElectricalConductanceUnit unit)
         {
-            return unit.ToString(format);
+            return default(ElectricalConductance).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -2993,7 +2993,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, ElectricChargeUnit unit)
         {
-            return unit.ToString(format);
+            return default(ElectricCharge).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -3186,7 +3186,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, EnergyUnit unit)
         {
-            return unit.ToString(format);
+            return default(Energy).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -3379,7 +3379,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, FlexibilityUnit unit)
         {
-            return unit.ToString(format);
+            return default(Flexibility).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -3572,7 +3572,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, ForceUnit unit)
         {
-            return unit.ToString(format);
+            return default(Force).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -3765,7 +3765,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, ForcePerUnitlessUnit unit)
         {
-            return unit.ToString(format);
+            return default(ForcePerUnitless).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -3958,7 +3958,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, FrequencyUnit unit)
         {
-            return unit.ToString(format);
+            return default(Frequency).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -4151,7 +4151,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, IlluminanceUnit unit)
         {
-            return unit.ToString(format);
+            return default(Illuminance).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -4344,7 +4344,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, InductanceUnit unit)
         {
-            return unit.ToString(format);
+            return default(Inductance).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -4537,7 +4537,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, JerkUnit unit)
         {
-            return unit.ToString(format);
+            return default(Jerk).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -4730,7 +4730,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, KinematicViscosityUnit unit)
         {
-            return unit.ToString(format);
+            return default(KinematicViscosity).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -4923,7 +4923,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, LengthUnit unit)
         {
-            return unit.ToString(format);
+            return default(Length).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -5116,7 +5116,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, LengthPerUnitlessUnit unit)
         {
-            return unit.ToString(format);
+            return default(LengthPerUnitless).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -5309,7 +5309,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, LuminousFluxUnit unit)
         {
-            return unit.ToString(format);
+            return default(LuminousFlux).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -5502,7 +5502,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, LuminousIntensityUnit unit)
         {
-            return unit.ToString(format);
+            return default(LuminousIntensity).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -5695,7 +5695,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, MagneticFieldStrengthUnit unit)
         {
-            return unit.ToString(format);
+            return default(MagneticFieldStrength).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -5888,7 +5888,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, MagneticFluxUnit unit)
         {
-            return unit.ToString(format);
+            return default(MagneticFlux).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -6081,7 +6081,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, MassUnit unit)
         {
-            return unit.ToString(format);
+            return default(Mass).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -6274,7 +6274,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, MassFlowUnit unit)
         {
-            return unit.ToString(format);
+            return default(MassFlow).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -6467,7 +6467,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, MomentumUnit unit)
         {
-            return unit.ToString(format);
+            return default(Momentum).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -6660,7 +6660,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, PowerUnit unit)
         {
-            return unit.ToString(format);
+            return default(Power).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -6853,7 +6853,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, PressureUnit unit)
         {
-            return unit.ToString(format);
+            return default(Pressure).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -7046,7 +7046,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, ResistanceUnit unit)
         {
-            return unit.ToString(format);
+            return default(Resistance).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -7239,7 +7239,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, SolidAngleUnit unit)
         {
-            return unit.ToString(format);
+            return default(SolidAngle).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -7432,7 +7432,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, SpecificEnergyUnit unit)
         {
-            return unit.ToString(format);
+            return default(SpecificEnergy).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -7625,7 +7625,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, SpecificVolumeUnit unit)
         {
-            return unit.ToString(format);
+            return default(SpecificVolume).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -7818,7 +7818,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, SpeedUnit unit)
         {
-            return unit.ToString(format);
+            return default(Speed).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -8011,7 +8011,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, StiffnessUnit unit)
         {
-            return unit.ToString(format);
+            return default(Stiffness).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -8204,7 +8204,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, TemperatureUnit unit)
         {
-            return unit.ToString(format);
+            return default(Temperature).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -8397,7 +8397,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, TimeUnit unit)
         {
-            return unit.ToString(format);
+            return default(Time).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -8590,7 +8590,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, TorqueUnit unit)
         {
-            return unit.ToString(format);
+            return default(Torque).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -8783,7 +8783,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, UnitlessUnit unit)
         {
-            return unit.ToString(format);
+            return default(Unitless).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -8976,7 +8976,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, VoltageUnit unit)
         {
-            return unit.ToString(format);
+            return default(Voltage).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -9169,7 +9169,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, VolumeUnit unit)
         {
-            return unit.ToString(format);
+            return default(Volume).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -9362,7 +9362,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, VolumetricFlowUnit unit)
         {
-            return unit.ToString(format);
+            return default(VolumetricFlow).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
@@ -9555,7 +9555,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected static string CreateSuffix(SymbolFormat format, WavenumberUnit unit)
         {
-            return unit.ToString(format);
+            return default(Wavenumber).ToString(unit, format).Trim('0');
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)
