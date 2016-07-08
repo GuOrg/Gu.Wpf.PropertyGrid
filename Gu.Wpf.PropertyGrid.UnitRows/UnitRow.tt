@@ -108,19 +108,46 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             return default(<#= quantityType.Name #>).ToString(unit, format).Trim('0');
         }
+		
+        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((<#= className #>)d).OnMinValueChanged((<#= quantityType.Name #>?)e.OldValue, (<#= quantityType.Name #>?)e.NewValue);
+        }
+
+        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((<#= className #>)d).OnMaxValueChanged((<#= quantityType.Name #>?)e.OldValue, (<#= quantityType.Name #>?)e.NewValue);
+        }
+
+        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (<#= className #>)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (<#= quantityType.Name #>Unit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (<#= quantityType.Name #>Unit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
+        }
 
         protected override void OnValueChanged(object oldValue, object newValue)
         {
-            this.SetScalarValue(ScalarValueProperty, (<#= quantityType.Name #>)newValue);
+            this.SetScalarValue(ScalarValueProperty, (<#= quantityType.Name #>?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
-        protected virtual void OnMinValueChanged(<#= quantityType.Name #> oldValue, <#= quantityType.Name #> newValue)
+        protected virtual void OnMinValueChanged(<#= quantityType.Name #>? oldValue, <#= quantityType.Name #>? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
-        protected virtual void OnMaxValueChanged(<#= quantityType.Name #> oldValue, <#= quantityType.Name #> newValue)
+        protected virtual void OnMaxValueChanged(<#= quantityType.Name #>? oldValue, <#= quantityType.Name #>? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
@@ -179,33 +206,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
-        }
-
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((<#= className #>)d).OnMinValueChanged((<#= quantityType.Name #>)e.OldValue, (<#= quantityType.Name #>)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((<#= className #>)d).OnMaxValueChanged((<#= quantityType.Name #>)e.OldValue, (<#= quantityType.Name #>)e.NewValue);
-        }
-
-        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (<#= className #>)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (<#= quantityType.Name #>Unit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (<#= quantityType.Name #>Unit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 <#
