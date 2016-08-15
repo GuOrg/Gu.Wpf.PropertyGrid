@@ -5,7 +5,7 @@ NUGET
     Gu.Units (0.10)
     Gu.Units.Wpf (0.10)
       Gu.Units (>= 0.10)
-    Gu.Wpf.NumericInput (0.4.8)
+    Gu.Wpf.NumericInput (0.5.1)
     Gu.Wpf.ValidationScope (0.1.5.2)
     JetBrains.Annotations (10.1.5)
       System.Runtime (>= 4.0) - framework: dnxcore50
