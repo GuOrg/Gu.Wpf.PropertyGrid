@@ -33,6 +33,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>Gu.Wpf.PropertyGrid.NumericRows.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Release\Gu.Wpf.PropertyGrid.NumericRows.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
