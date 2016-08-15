@@ -6,12 +6,12 @@ NUGET
     Gu.Units.Wpf (0.10)
       Gu.Units (>= 0.10)
     Gu.Wpf.NumericInput (0.4.8)
-    Gu.Wpf.ValidationScope (0.1.5.1)
+    Gu.Wpf.ValidationScope (0.1.5.2)
     JetBrains.Annotations (10.1.5)
       System.Runtime (>= 4.0) - framework: dnxcore50
     Microsoft.NETCore.Platforms (1.0.1) - framework: dnxcore50
     Microsoft.NETCore.Targets (1.0.1) - framework: dnxcore50
-    Moq (4.5.10)
+    Moq (4.5.21)
       Castle.Core (>= 3.3.3) - framework: >= net45
     NUnit (3.4.1)
     StyleCop.Analyzers (1.0)
