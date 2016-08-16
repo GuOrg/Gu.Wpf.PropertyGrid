@@ -34,34 +34,16 @@
             var enumerable = value as IEnumerable<object>;
             if (enumerable != null)
             {
-                return this.Convert(enumerable.FirstOrDefault(), targetType, parameter, culture);
+                return ValidationErrorToStringConverter.Default.Convert(enumerable.FirstOrDefault(), targetType, parameter, culture);
             }
 
-            var text = value as string;
-            if (text != null)
-            {
-                return text;
-            }
-
-            var result = value as ValidationResult;
-            if (result != null)
-            {
-                return this.Convert(result.ErrorContent, targetType, parameter, culture);
-            }
-
-            var error = value as ValidationError;
-            if (error != null)
-            {
-                return this.Convert(error.ErrorContent, targetType, parameter, culture);
-            }
-
-            return value;
+            return ValidationErrorToStringConverter.Default.Convert(value, targetType, parameter, culture);
         }
 
         /// <inheritdoc/>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotSupportedException($"{nameof(ValidationErrorsToStringConverter)} only supports one-way conversion.");
+            throw new NotSupportedException($"{this.GetType().Name} only supports one-way conversion.");
         }
     }
 }

@@ -26,7 +26,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="{x:Static l:Keys.NestedSettingListStyle}" TargetType="{x:Type l:Rows}">
+    <Style x:Key="{x:Static l:Keys.NestedPropertyGridStyleKey}" TargetType="{x:Type l:Rows}">
         <Setter Property="Grid.IsSharedSizeScope" Value="False" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="Continue" />
     </Style>

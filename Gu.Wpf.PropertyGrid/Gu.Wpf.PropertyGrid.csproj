@@ -80,6 +80,7 @@
     <Compile Include="Converters\InvertBoolConverter.cs" />
     <Compile Include="Converters\ValidationErrorsToStringConverter.cs" />
     <Compile Include="Converters\MultiplyConverter.cs" />
+    <Compile Include="Converters\ValidationErrorToStringConverter.cs" />
     <Compile Include="Grid\ColumnDefinitions.cs" />
     <Compile Include="Grid\ColumnDefinitionsConverter.cs" />
     <Compile Include="Grid\ColumnDefinition.Sources.cs" />

@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid">
+                    xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid"
+                    xmlns:validationScope="http://gu.se/ValidationScope">
     <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type propertyGrid:SuffixBlock}" />
     <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type propertyGrid:HeaderBlock}" />
 
@@ -25,5 +26,15 @@
                 </MultiBinding>
             </Setter.Value>
         </Setter>
+    </Style>
+
+    <Style x:Key="DefaultErrorTextStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="Red" />
+
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=(validationScope:Scope.Errors).HasErrors, RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:Row}}}" Value="True">
+                <Setter Property="Text" Value="{Binding Path=(validationScope:Scope.Errors).Errors[0], RelativeSource={RelativeSource AncestorType={x:Type propertyGrid:Row}}, Converter={x:Static propertyGrid:ValidationErrorToStringConverter.Default}}" />
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>

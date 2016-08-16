@@ -5,13 +5,9 @@
 
     public static class Keys
     {
-        public static ResourceKey NestedSettingListStyle { get; } = CreateKey();
-
-        public static ResourceKey ValidationErrorTemplateSelectorKey { get; } = CreateKey();
+        public static ResourceKey NestedPropertyGridStyleKey { get; } = CreateKey();
 
         public static ResourceKey ValidationErrorRedBorderTemplateKey { get; } = CreateKey();
-
-        public static ResourceKey ValidationErrorTextUnderTemplateKey { get; } = CreateKey();
 
         private static ComponentResourceKey CreateKey([CallerMemberName] string caller = null)
         {
