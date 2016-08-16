@@ -1,10 +1,10 @@
 ﻿
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:numeric="clr-namespace:Gu.Wpf.NumericInput;assembly=Gu.Wpf.NumericInput"
+					xmlns:numeric="clr-namespace:Gu.Wpf.NumericInput;assembly=Gu.Wpf.NumericInput"
+					xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows"
                     xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid;assembly=Gu.Wpf.PropertyGrid"
-                    xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows"
-                    xmlns:validationScope="clr-namespace:Gu.Wpf.ValidationScope;assembly=Gu.Wpf.ValidationScope">
+					xmlns:validationScope="clr-namespace:Gu.Wpf.ValidationScope;assembly=Gu.Wpf.ValidationScope">
     <ControlTemplate x:Key="UnitRowGenericPlainTemplate" TargetType="{x:Type unitRows:UnitRowGeneric}">
         <Border Margin="{TemplateBinding Padding}"
                 Background="{TemplateBinding Background}"
@@ -15,33 +15,34 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
-                <numeric:DoubleBox x:Name="PART_Value"
-                                   Grid.Row="0"
-                                   Grid.Column="1"
-                                   CanValueBeNull="{TemplateBinding CanValueBeNull}"
-                                   DecimalDigits="{TemplateBinding DecimalDigits}"
-                                   IsReadOnly="{TemplateBinding IsReadOnly}"
-                                   MaxValue="{TemplateBinding ScalarMaxValue}"
-                                   MinValue="{TemplateBinding ScalarMinValue}"
-                                   Value="{Binding ScalarValue,
-                                                   RelativeSource={RelativeSource TemplatedParent},
-                                                   UpdateSourceTrigger=PropertyChanged}" />
+	
+                        <numeric:DoubleBox x:Name="PART_Value"
+                                           Grid.Row="0"
+                                           Grid.Column="1"
+                                           CanValueBeNull="{TemplateBinding CanValueBeNull}"
+                                           DecimalDigits="{TemplateBinding DecimalDigits}"
+                                           IsReadOnly="{TemplateBinding IsReadOnly}"
+                                           MaxValue="{TemplateBinding ScalarMaxValue}"
+                                           MinValue="{TemplateBinding ScalarMinValue}"
+                                           ValidationTrigger="PropertyChanged"
+                                           Value="{Binding ScalarValue,
+                                                           RelativeSource={RelativeSource TemplatedParent},
+                                                           UpdateSourceTrigger=PropertyChanged}" />
 
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+	
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -63,29 +64,30 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
+	
                 <Border Grid.Row="0"
-                        Grid.Column="1"
-                        Margin="0,0,0,-1"
+				        Grid.Column="1"
                         BorderBrush="{Binding Foreground,
                                               ElementName=PART_Info}"
+                        Margin="0,0,0,-1"
                         BorderThickness="0,0,0,1">
-                    <numeric:DoubleBox x:Name="PART_Value"
-                                       CanValueBeNull="{TemplateBinding CanValueBeNull}"
-                                       DecimalDigits="{TemplateBinding DecimalDigits}"
-                                       IsReadOnly="{TemplateBinding IsReadOnly}"
-                                       MaxValue="{TemplateBinding ScalarMaxValue}"
-                                       MinValue="{TemplateBinding ScalarMinValue}"
-                                       Validation.ErrorTemplate="{x:Null}"
-                                       Value="{Binding ScalarValue,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       UpdateSourceTrigger=PropertyChanged}" />
+                            <numeric:DoubleBox x:Name="PART_Value"
+                                               CanValueBeNull="{TemplateBinding CanValueBeNull}"
+                                               DecimalDigits="{TemplateBinding DecimalDigits}"
+                                               IsReadOnly="{TemplateBinding IsReadOnly}"
+                                               MaxValue="{TemplateBinding ScalarMaxValue}"
+                                               MinValue="{TemplateBinding ScalarMinValue}"
+                                               ValidationTrigger="PropertyChanged"
+                                               Value="{Binding ScalarValue,
+                                                               RelativeSource={RelativeSource TemplatedParent},
+                                                               UpdateSourceTrigger=PropertyChanged}"
+                                               Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -93,7 +95,7 @@
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+	
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
@@ -106,7 +108,7 @@
                     </propertyGrid:InfoBlock.Style>
                 </propertyGrid:InfoBlock>
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
