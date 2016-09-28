@@ -3,7 +3,7 @@ NUGET
     Gu.Units (0.10)
     Gu.Units.Wpf (0.10)
       Gu.Units (>= 0.10)
-    Gu.Wpf.NumericInput (0.5.1)
+    Gu.Wpf.NumericInput (0.5.1.1)
     Gu.Wpf.ValidationScope (0.1.5.2)
 
 GROUP Analyzers
