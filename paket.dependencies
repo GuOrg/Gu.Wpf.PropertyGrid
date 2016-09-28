@@ -1,13 +1,24 @@
 source http://www.nuget.org/api/v2/
 
-nuget Gu.State
 nuget Gu.Wpf.NumericInput ~> 0.5.1
 nuget Gu.Units.Wpf ~> 0.10
 nuget Gu.Wpf.ValidationScope ~> 0.1.5.2
 
-nuget NUnit
-nuget Moq
-nuget TestStack.White
+group Test
+  source http://www.nuget.org/api/v2/
+  framework: >= net45
+  nuget NUnit
+  nuget Moq
+  nuget TestStack.White
 
-nuget JetBrains.Annotations
-nuget StyleCop.Analyzers
+group Analyzers
+  source http://www.nuget.org/api/v2/
+  framework: >= net45
+  nuget StyleCop.Analyzers
+  nuget WpfAnalyzers
+  nuget JetBrains.Annotations
+
+group Demo
+  source http://www.nuget.org/api/v2/
+  framework: >= net45
+  nuget Gu.State

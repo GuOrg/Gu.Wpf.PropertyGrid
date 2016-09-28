@@ -1,3 +1,9 @@
 ﻿Gu.Units.Wpf
-NUnit
-JetBrains.Annotations
+
+group Analyzers
+  StyleCop.Analyzers
+  WpfAnalyzers
+  JetBrains.Annotations
+
+group Test
+  NUnit

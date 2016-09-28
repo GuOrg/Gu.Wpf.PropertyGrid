@@ -1,4 +1,7 @@
 ﻿Gu.Wpf.NumericInput
 Gu.Wpf.ValidationScope
-JetBrains.Annotations
-StyleCop.Analyzers
+
+group Analyzers
+  StyleCop.Analyzers
+  WpfAnalyzers
+  JetBrains.Annotations

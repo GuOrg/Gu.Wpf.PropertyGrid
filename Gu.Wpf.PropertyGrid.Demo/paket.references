@@ -1,5 +1,10 @@
-Gu.State
 Gu.Units.Wpf
 Gu.Wpf.NumericInput
 Gu.Wpf.ValidationScope
-JetBrains.Annotations
+
+group Analyzers
+  JetBrains.Annotations
+
+group Demo
+Gu.State
+  
