@@ -9,7 +9,7 @@
 
 Library with controls for making property grids
 
-**Note:** Master branch & docs are not insync with the nuget, sry about this.
+**Note:** Master branch & docs are not in sync with the nuget, sry about this.
 
 ## Sample
 
