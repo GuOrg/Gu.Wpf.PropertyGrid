@@ -14,7 +14,7 @@
             typeof(Type),
             typeof(EnumRow),
             new PropertyMetadata(default(Type), OnEnumTypeChanged),
-            OnEnumTypeValidate);
+            EnumTypeValidateValue);
 
         private static readonly DependencyPropertyKey EnumValuesPropertyKey = DependencyProperty.RegisterReadOnly(
             "EnumValues",
@@ -67,7 +67,7 @@
             }
         }
 
-        private static bool OnEnumTypeValidate(object value)
+        private static bool EnumTypeValidateValue(object value)
         {
             return ((Type)value)?.IsEnum != false;
         }

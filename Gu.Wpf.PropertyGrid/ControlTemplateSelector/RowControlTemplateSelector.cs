@@ -128,7 +128,7 @@
 
         public void UpdateCurrentTemplate(ContentRow container)
         {
-            container.Template = this.SelectTemplateCore(container, container.HeaderStyle, container.SuffixStyle, container.OldValueStyle, container.ErrorStyle);
+            container.SetCurrentValue(Control.TemplateProperty, this.SelectTemplateCore(container, container.HeaderStyle, container.SuffixStyle, container.OldValueStyle, container.ErrorStyle));
         }
 
         protected static bool IsTextBlockStyle(Style style)

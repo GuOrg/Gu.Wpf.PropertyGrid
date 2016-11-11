@@ -17,8 +17,8 @@
             typeof(ColumnDefinition),
             new PropertyMetadata(
                 default(string),
-                OnColumnDefinitionSourceChanged),
-            OnValidateColumnDefinitionSource);
+                OnSourceChanged),
+            SourceValidateValue);
 
         private static readonly PropertyPaths HeaderPropertyPaths = new PropertyPaths("Header", SharedSizeGroups.HeaderColumn);
         private static readonly PropertyPaths ValuePropertyPaths = new PropertyPaths("Value", SharedSizeGroups.ValueColumn);
@@ -36,7 +36,7 @@
             return (string)element.GetValue(SourceProperty);
         }
 
-        private static void OnColumnDefinitionSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var source = e.NewValue as string;
             if (string.IsNullOrWhiteSpace(source))
@@ -107,7 +107,7 @@
             }
         }
 
-        private static bool OnValidateColumnDefinitionSource(object value)
+        private static bool SourceValidateValue(object value)
         {
             if (value == null)
             {

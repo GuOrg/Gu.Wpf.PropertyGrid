@@ -91,8 +91,8 @@
                 return;
             }
 
-            d.SetValue(System.Windows.Controls.Grid.RowProperty, cell.Row);
-            d.SetValue(System.Windows.Controls.Grid.ColumnProperty, cell.Column);
+            d.SetCurrentValue(System.Windows.Controls.Grid.RowProperty, cell.Row);
+            d.SetCurrentValue(System.Windows.Controls.Grid.ColumnProperty, cell.Column);
         }
 
         private static void OnRowDefinitionsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

@@ -8,7 +8,7 @@
     {
         public virtual void UpdateCurrentTemplate(T container)
         {
-            container.Template = this.SelectTemplate(container);
+            container.SetCurrentValue(Control.TemplateProperty, this.SelectTemplate(container));
         }
 
         protected static void AssertIsValidTemplate(ControlTemplate template)

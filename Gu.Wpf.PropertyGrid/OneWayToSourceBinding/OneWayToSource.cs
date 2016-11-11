@@ -10,7 +10,7 @@
             "Bind",
             typeof(ProxyBinding),
             typeof(OneWayToSource),
-            new PropertyMetadata(default(Paths), OnBindChanged));
+            new PropertyMetadata(default(ProxyBinding), OnBindChanged));
 
         public static void SetBind(this UIElement element, ProxyBinding value)
         {

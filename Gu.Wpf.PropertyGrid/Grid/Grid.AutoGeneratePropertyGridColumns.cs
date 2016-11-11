@@ -13,7 +13,7 @@
             new FrameworkPropertyMetadata(
                 default(bool),
                 FrameworkPropertyMetadataOptions.NotDataBindable,
-                AutoGeneratePropertyGridColumnsChanged));
+                OnAutoGeneratePropertyGridColumnsChanged));
 
         internal static void SetAutoGeneratePropertyGridColumns(this System.Windows.Controls.Grid element, bool value)
         {
@@ -27,7 +27,7 @@
             return (bool)element.GetValue(AutoGeneratePropertyGridColumnsProperty);
         }
 
-        private static void AutoGeneratePropertyGridColumnsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnAutoGeneratePropertyGridColumnsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if ((bool)e.NewValue)
             {
