@@ -5,7 +5,6 @@ namespace Gu.Wpf.PropertyGrid
     using System.Globalization;
     using System.Linq;
     using System.Security;
-    using System.Windows.Controls;
 
     public class ColumnDefinitionsConverter : TypeConverter
     {
