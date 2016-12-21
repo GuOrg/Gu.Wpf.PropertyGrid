@@ -7,7 +7,7 @@
     {
         public static string ItemStatus(this IUIItem item)
         {
-            return (string)item.AutomationElement.Current.ItemStatus;
+            return item.AutomationElement.Current.ItemStatus;
         }
 
         public static T GetByText<T>(this UIItemContainer container, string text)

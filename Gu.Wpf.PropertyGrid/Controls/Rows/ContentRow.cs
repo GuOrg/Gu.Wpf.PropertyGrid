@@ -1,6 +1,7 @@
 namespace Gu.Wpf.PropertyGrid
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Threading;
@@ -33,7 +34,7 @@ namespace Gu.Wpf.PropertyGrid
 
         public object OldValue
         {
-            get { return (object)this.GetValue(OldValueProperty); }
+            get { return this.GetValue(OldValueProperty); }
             set { this.SetValue(OldValueProperty, value); }
         }
 
@@ -42,10 +43,12 @@ namespace Gu.Wpf.PropertyGrid
             this.ControlTemplateSelector?.UpdateCurrentTemplate(this);
         }
 
+        [SuppressMessage("ReSharper", "UnusedParameter.Global")]
         protected virtual void OnOldValueChanged(object oldValue, object newValue)
         {
         }
 
+        [SuppressMessage("ReSharper", "UnusedParameter.Global")]
         protected virtual void OnOldDataContextChanged(object oldValue, object newValue)
         {
         }

@@ -10,7 +10,7 @@
     public class OneWayToSourceBindingVm : INotifyDataErrorInfo, INotifyPropertyChanged
     {
         private string text;
-        private bool hasErrors = false;
+        private bool hasErrors;
         private bool viewHasErrors;
 
         public event PropertyChangedEventHandler PropertyChanged;

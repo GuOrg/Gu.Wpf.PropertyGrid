@@ -1,3 +1,4 @@
+// ReSharper disable HeuristicUnreachableCode
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
 
