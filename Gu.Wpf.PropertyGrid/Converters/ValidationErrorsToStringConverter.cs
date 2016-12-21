@@ -12,6 +12,7 @@
     {
         public static readonly ValidationErrorsToStringConverter Default = new ValidationErrorsToStringConverter();
 
+        // ReSharper disable once EmptyConstructor think the xaml parse needs it
         public ValidationErrorsToStringConverter()
         {
         }

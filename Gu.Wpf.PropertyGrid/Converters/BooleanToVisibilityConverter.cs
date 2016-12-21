@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
     using System;
     using System.Globalization;
@@ -38,7 +38,7 @@
                 return this.WhenFalse;
             }
 
-            throw new ArgumentOutOfRangeException("Expected value to be of type bool or Nullable<bool>");
+            throw new ArgumentOutOfRangeException(nameof(value), value, "Expected value to be of type bool or Nullable<bool>");
         }
 
         /// <inheritdoc/>

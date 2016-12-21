@@ -3,7 +3,7 @@ NUGET
     Gu.Units (0.10)
     Gu.Units.Wpf (0.10)
       Gu.Units (>= 0.10)
-    Gu.Wpf.NumericInput (0.5.1.3)
+    Gu.Wpf.NumericInput (0.5.1.4)
     Gu.Wpf.ValidationScope (0.1.5.2)
 
 GROUP Analyzers
@@ -12,7 +12,7 @@ NUGET
   remote: http://www.nuget.org/api/v2
     JetBrains.Annotations (10.2.1)
     StyleCop.Analyzers (1.0)
-    WpfAnalyzers (0.2.4-dev)
+    WpfAnalyzers (0.2.6.9-dev)
 
 GROUP Demo
 FRAMEWORK: >= NET45
@@ -25,7 +25,7 @@ FRAMEWORK: >= NET45
 NUGET
   remote: http://www.nuget.org/api/v2
     Castle.Core (3.3.3)
-    Moq (4.5.28)
+    Moq (4.5.29)
       Castle.Core (>= 3.3.3)
     NUnit (3.5)
     TestStack.White (0.13.3)

@@ -12,6 +12,7 @@ namespace Gu.Wpf.PropertyGrid
     {
         public static readonly FirstOrDefaultConverter Default = new FirstOrDefaultConverter();
 
+        // ReSharper disable once EmptyConstructor think the xaml parse needs it
         public FirstOrDefaultConverter()
         {
         }

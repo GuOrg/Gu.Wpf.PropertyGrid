@@ -13,6 +13,7 @@
     {
         public static readonly FirstValidationResultConverter Default = new FirstValidationResultConverter();
 
+        // ReSharper disable once EmptyConstructor think the xaml parse needs it
         public FirstValidationResultConverter()
         {
         }

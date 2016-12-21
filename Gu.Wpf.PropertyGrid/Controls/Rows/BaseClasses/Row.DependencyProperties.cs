@@ -28,7 +28,9 @@
             "OldValue",
             typeof(object),
             typeof(Row),
+#pragma warning disable WPF0016 // Default value is shared reference type.
             new PropertyMetadata(new object(), OnOldValueChanged));
+#pragma warning restore WPF0016 // Default value is shared reference type.
 
         private static readonly DependencyPropertyKey IsDirtyPropertyKey = DependencyProperty.RegisterReadOnly(
             "IsDirty",

@@ -1,4 +1,5 @@
-﻿namespace Gu.Wpf.PropertyGrid
+﻿#pragma warning disable WPF1011
+namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
     using System.Windows.Controls;
