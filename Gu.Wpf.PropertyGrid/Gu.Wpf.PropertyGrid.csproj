@@ -188,7 +188,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <Import Project="..\.paket\paket.targets" />
   <ItemGroup>
     <Content Include="Controls\Generated\PropertyGrid.Columns.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -253,4 +252,5 @@
       </ItemGroup>
     </When>
   </Choose>
+  <Import Project="..\.paket\paket.targets" />
 </Project>

@@ -59,7 +59,6 @@
   <ItemGroup>
     <Folder Include="CodeGen\" />
   </ItemGroup>
-  <Import Project="..\.paket\paket.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Gu.Wpf.PropertyGrid\Gu.Wpf.PropertyGrid.csproj">
       <Project>{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}</Project>
@@ -110,4 +109,5 @@
       </ItemGroup>
     </When>
   </Choose>
+  <Import Project="..\.paket\paket.targets" />
 </Project>

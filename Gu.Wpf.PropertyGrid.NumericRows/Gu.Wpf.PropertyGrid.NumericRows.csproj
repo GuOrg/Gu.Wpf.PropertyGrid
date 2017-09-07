@@ -85,7 +85,6 @@
       <Name>Gu.Wpf.PropertyGrid</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="..\.paket\paket.targets" />
   <ItemGroup>
     <Content Include="Themes\RowTemplates.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -147,4 +146,5 @@
       </ItemGroup>
     </When>
   </Choose>
+  <Import Project="..\.paket\paket.targets" />
 </Project>
