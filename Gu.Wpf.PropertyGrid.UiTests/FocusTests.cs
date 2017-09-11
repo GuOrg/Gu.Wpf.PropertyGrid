@@ -33,6 +33,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
                 Assert.False(ro.HasKeyboardFocus);
 
                 Keyboard.Type(Key.TAB);
+                window.WaitUntilResponsive();
                 Assert.True(a.HasKeyboardFocus);
                 Assert.False(b.HasKeyboardFocus);
                 Assert.False(ro.HasKeyboardFocus);

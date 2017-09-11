@@ -55,7 +55,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("nested longer");
                 var row = groupBox.FindTextBoxRow(name);
-                var expected = new[] {64, 92, 86};
+                var expected = new[] { 64, 96, 86 };
                 CollectionAssert.AreEqual(expected, row.ColumnsWidths());
             }
         }
@@ -67,7 +67,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("nested shorter");
-                var expected = new[] {22, 34, 57};
+                var expected = new[] { 22, 38, 53 };
                 CollectionAssert.AreEqual(expected, groupBox.FindTextBoxRow("root").ColumnsWidths());
                 expected[2] = 28;
                 CollectionAssert.AreEqual(expected, groupBox.FindTextBoxRow("a").ColumnsWidths());
