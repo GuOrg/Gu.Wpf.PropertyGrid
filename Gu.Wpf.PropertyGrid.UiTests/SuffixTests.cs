@@ -1,45 +1,59 @@
-// ReSharper disable HeuristicUnreachableCode
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
-
+    using System.Diagnostics.CodeAnalysis;
+    using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
 
-    public class SuffixTests : WindowTests
+    public class SuffixTests
     {
-        private Row defaultRow;
+        private static readonly string WindowName = "SuffixWindow";
 
-        protected override string WindowName { get; } = "SuffixWindow";
-
-        [OneTimeSetUp]
-        public override void OneTimeSetUp()
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
         {
-            base.OneTimeSetUp();
-            this.defaultRow = this.Window.FindRow("default");
+            Application.KillLaunched(Info.ExeFileName);
         }
 
         [Test]
         public void Default()
         {
-            Assert.AreEqual("suffix", this.defaultRow.Suffix().Text);
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                Assert.AreEqual("suffix", window.FindTextBoxRow("default").Suffix().Text);
+            }
         }
 
         [Test]
+        [SuppressMessage("ReSharper", "HeuristicUnreachableCode")]
         public void UsesResourceStyle()
         {
-            Assert.Inconclusive("not sure how to test this.");
-            Assert.AreEqual("implicit blue", this.Window.FindRow("implicit suffixblock style").Suffix().ItemStatus());
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                Assert.Inconclusive("not sure how to test this.");
+                Assert.AreEqual("implicit blue", window.FindTextBoxRow("implicit suffixblock style").Suffix().ItemStatus);
+            }
         }
 
         [Test]
         public void ExplicitSuffixStyle()
         {
-            Assert.AreEqual("explicit pink", this.Window.FindRow("explicit suffixblock style").Suffix().ItemStatus());
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                Assert.AreEqual("explicit pink", window.FindTextBoxRow("explicit suffixblock style").Suffix().ItemStatus);
+            }
         }
 
         [Test]
         public void InheritSuffixStyle()
         {
-            Assert.AreEqual("inherit khaki", this.Window.FindRow("inherit suffixblock style").Suffix().ItemStatus());
+            using (var app = Application.Launch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                Assert.AreEqual("inherit khaki", window.FindTextBoxRow("inherit suffixblock style").Suffix().ItemStatus);
+            }
         }
     }
 }
