@@ -49,7 +49,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void InheritSuffixStyle()
         {
-            using (var app = Application.Launch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 Assert.AreEqual("inherit khaki", window.FindTextBoxRow("inherit suffixblock style").Suffix().ItemStatus);
