@@ -9,6 +9,7 @@ group Test
   framework: >= net45
   nuget NUnit
   nuget Moq
+  nuget Gu.Wpf.UiAutomation
   nuget TestStack.White
 
 group Analyzers

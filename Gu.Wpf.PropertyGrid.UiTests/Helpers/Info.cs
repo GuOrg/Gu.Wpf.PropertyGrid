@@ -7,6 +7,8 @@
 
     public static class Info
     {
+        public static string ExeFileName { get; } = GetExeFileName();
+
         public static ProcessStartInfo ProcessStartInfo { get; } = CreateStartInfo(null);
 
         internal static ProcessStartInfo CreateStartInfo(string args)

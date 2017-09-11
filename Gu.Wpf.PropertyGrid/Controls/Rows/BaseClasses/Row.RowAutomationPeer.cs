@@ -13,7 +13,7 @@ namespace Gu.Wpf.PropertyGrid
 
             protected override string GetClassNameCore()
             {
-                return typeof(PropertyGrid).FullName;
+                return typeof(Row).Name;
             }
 
             protected override AutomationControlType GetAutomationControlTypeCore()
