@@ -15,6 +15,21 @@
             return FindRow(container, header, x => new ComboBox(x));
         }
 
+        public static Row<CheckBox> FindCheckBoxRow(this AutomationElement container, string header)
+        {
+            return FindRow(container, header, x => new CheckBox(x));
+        }
+
+        public static Row<Button> FindButtonRow(this AutomationElement container, string header)
+        {
+            return FindRow(container, header, x => new Button(x));
+        }
+
+        public static Row<AutomationElement> FindRow(this AutomationElement container, string header)
+        {
+            return FindRow(container, header, x => new AutomationElement(x));
+        }
+
         public static Row<T> FindRow<T>(this AutomationElement container, string header, Func<BasicAutomationElementBase, T> wrap)
             where T : AutomationElement
         {

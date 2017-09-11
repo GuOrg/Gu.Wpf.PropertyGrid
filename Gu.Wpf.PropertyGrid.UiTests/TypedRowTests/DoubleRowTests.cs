@@ -1,81 +1,87 @@
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
+    using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
-    using TestStack.White.UIItems;
 
-    public class DoubleRowTests : WindowTests
+    public class DoubleRowTests
     {
-        private Button loseFocusButton;
-        private TextBox currentValueTextBox;
+        private static readonly string WindowName = "DoubleRowWindow";
 
-        private TextBox defaultBox;
-        private TextBox propertychangedBox;
-        private TextBox readonlyBox;
-        private TextBox currentNullableValueTextBox;
-        private TextBox nullableBox;
-
-        protected override string WindowName { get; } = "DoubleRowWindow";
-
-        [OneTimeSetUp]
-        public override void OneTimeSetUp()
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
         {
-            base.OneTimeSetUp();
-            this.loseFocusButton = this.Window.GetByText<Button>("lose focus");
-            this.currentValueTextBox = this.Window.Get<TextBox>("currentValueTextBox");
-            this.currentNullableValueTextBox = this.Window.Get<TextBox>("currentNullableValueTextBox");
-
-            this.defaultBox = this.Window.FindRow("default").Value<TextBox>();
-            this.propertychangedBox = this.Window.FindRow("propertychanged").Value<TextBox>();
-            this.readonlyBox = this.Window.FindRow("readonly").Value<TextBox>();
-            this.nullableBox = this.Window.FindRow("nullable").Value<TextBox>();
+            Application.KillLaunched(Info.ExeFileName);
         }
 
         [SetUp]
         public void SetUp()
         {
-            this.currentValueTextBox.Text = "0.0123456";
-            this.currentNullableValueTextBox.Text = "0.0123456";
-            this.loseFocusButton.Click();
+            Application.TryWithAttached(
+                Info.ExeFileName,
+                WindowName,
+                app =>
+                {
+                    var window = app.MainWindow;
+                    window.FindTextBox("currentValueTextBox").Text = "0.0123456";
+                    window.FindTextBox("currentNullableValueTextBox").Text = "0.0123456";
+                    window.FindButton("lose focus").Click();
+                });
         }
 
         [Test]
         public void UpdatesWhenLostFocus()
         {
-            this.defaultBox.Text = "1";
-            Assert.AreEqual("1", this.defaultBox.Text);
-            Assert.AreEqual("0.0123456", this.propertychangedBox.Text);
-            Assert.AreEqual("0.0123456", this.readonlyBox.Text);
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                window.FindTextBoxRow("default").Value().Text = "1";
+                Assert.AreEqual("1", window.FindTextBoxRow("default").Value().Text);
+                Assert.AreEqual("0.0123456", window.FindTextBoxRow("propertychanged").Value().Text);
+                Assert.AreEqual("0.0123456", window.FindTextBoxRow("readonly").Value().Text);
 
-            this.loseFocusButton.Click();
-            Assert.AreEqual("1", this.defaultBox.Text);
-            Assert.AreEqual("1", this.propertychangedBox.Text);
-            Assert.AreEqual("1", this.readonlyBox.Text);
+                window.FindButton("lose focus").Click();
+                Assert.AreEqual("1", window.FindTextBoxRow("default").Value().Text);
+                Assert.AreEqual("1", window.FindTextBoxRow("propertychanged").Value().Text);
+                Assert.AreEqual("1", window.FindTextBoxRow("readonly").Value().Text);
+            }
         }
 
         [Test]
         public void UpdatesWhenPropertyChanged()
         {
-            this.propertychangedBox.Text = "2";
-            Assert.AreEqual("2", this.defaultBox.Text);
-            Assert.AreEqual("2", this.propertychangedBox.Text);
-            Assert.AreEqual("2", this.readonlyBox.Text);
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                window.FindTextBoxRow("propertychanged").Value().Text = "2";
+                Assert.AreEqual("2", window.FindTextBoxRow("default").Value().Text);
+                Assert.AreEqual("2", window.FindTextBoxRow("propertychanged").Value().Text);
+                Assert.AreEqual("2", window.FindTextBoxRow("readonly").Value().Text);
+            }
         }
 
         [Test]
         public void Nullable()
         {
-            this.nullableBox.Text = string.Empty;
-            this.loseFocusButton.Click();
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                window.FindTextBoxRow("nullable").Value().Text = string.Empty;
+                window.FindButton("lose focus").Click();
 
-            Assert.AreEqual("null", this.currentNullableValueTextBox.Text);
+                Assert.AreEqual("null", window.FindTextBox("currentNullableValueTextBox").Text);
+            }
         }
 
         [Test]
         public void IsReadonly()
         {
-            Assert.IsFalse(this.defaultBox.IsReadOnly);
-            Assert.IsFalse(this.propertychangedBox.IsReadOnly);
-            Assert.IsTrue(this.readonlyBox.IsReadOnly);
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                Assert.IsFalse(window.FindTextBoxRow("default").Value().IsReadOnly);
+                Assert.IsFalse(window.FindTextBoxRow("propertychanged").Value().IsReadOnly);
+                Assert.IsTrue(window.FindTextBoxRow("readonly").Value().IsReadOnly);
+            }
         }
     }
 }
