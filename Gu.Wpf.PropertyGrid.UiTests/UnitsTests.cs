@@ -1,81 +1,93 @@
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
+    using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
 
-    using TestStack.White.UIItems;
-    using TestStack.White.UIItems.ListBoxItems;
-
-    public class UnitsTests : WindowTests
+    public class UnitsTests
     {
-        private Button loseFocusButton;
-        private TextBox currentValueTextBox;
+        private static readonly string WindowName = "UnitsWindow";
 
-        protected override string WindowName { get; } = "UnitsWindow";
-
-        [OneTimeSetUp]
-        public override void OneTimeSetUp()
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
         {
-            base.OneTimeSetUp();
-            this.loseFocusButton = this.Window.GetByText<Button>("lose focus");
-            this.currentValueTextBox = this.Window.Get<TextBox>("currentValueTextBox");
+            Application.KillLaunched(Info.ExeFileName);
         }
 
         [SetUp]
         public void SetUp()
         {
-            this.currentValueTextBox.Text = "0.0123456 m";
-            this.loseFocusButton.Click();
+            Application.TryWithAttached(
+                Info.ExeFileName,
+                WindowName,
+                app =>
+                {
+                    var window = app.MainWindow;
+                    window.FindTextBox("currentValueTextBox").Text = "0.0123456 m";
+                    window.FindButton("lose focus").Click();
+                });
         }
 
         [Test]
         public void ExplicitUnits()
         {
-            var groupBox = this.Window.GetByText<GroupBox>("explicit");
-            var metresSetting = groupBox.FindRow("length (m)");
-            var metresBox = metresSetting.Value<TextBox>();
-            var millimetresSetting = groupBox.FindRow("length (mm)");
-            var millimetresBox = millimetresSetting.Value<TextBox>();
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                var groupBox =  window.FindGroupBox("explicit");
+                var metresSetting = groupBox.FindTextBoxRow("length (m)");
+                var metresBox = metresSetting.Value();
+                var millimetresSetting = groupBox.FindTextBoxRow("length (mm)");
+                var millimetresBox = millimetresSetting.Value();
 
-            Assert.AreEqual("0.0123456", metresBox.Text);
-            Assert.AreEqual("\u00A0m", metresSetting.Suffix().Text);
-            Assert.AreEqual("12.3456", millimetresBox.Text);
-            Assert.AreEqual("\u00A0mm", millimetresSetting.Suffix().Text);
+                Assert.AreEqual("0.0123456", metresBox.Text);
+                Assert.AreEqual("\u00A0m", metresSetting.Suffix().Text);
+                Assert.AreEqual("12.3456", millimetresBox.Text);
+                Assert.AreEqual("\u00A0mm", millimetresSetting.Suffix().Text);
 
-            metresBox.Text = "2.4";
-            this.loseFocusButton.Click();
-            Assert.AreEqual("2400", millimetresBox.Text);
+                metresBox.Text = "2.4";
+                 window.FindButton("lose focus").Click();
+                Assert.AreEqual("2400", millimetresBox.Text);
+            }
         }
 
         [Test]
         public void UnitFromStyle()
         {
-            var groupBox = this.Window.GetByText<GroupBox>("style");
-            var settingControl = groupBox.FindRow("length");
-            var textBox = settingControl.Value<TextBox>();
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                var groupBox =  window.FindGroupBox("style");
+                var settingControl = groupBox.FindTextBoxRow("length");
+                var textBox = settingControl.Value();
 
-            Assert.AreEqual("12.3456", textBox.Text);
-            Assert.AreEqual("\u00A0mm", settingControl.Suffix().Text);
+                Assert.AreEqual("12.3456", textBox.Text);
+                Assert.AreEqual("\u00A0mm", settingControl.Suffix().Text);
 
-            textBox.Text = "2";
-            Assert.AreEqual("0.0123456\u00A0m", this.currentValueTextBox.Text);
-            this.loseFocusButton.Click();
-            Assert.AreEqual("0.002\u00A0m", this.currentValueTextBox.Text);
+                textBox.Text = "2";
+                Assert.AreEqual("0.0123456\u00A0m", window.FindTextBox("currentValueTextBox").Text);
+                 window.FindButton("lose focus").Click();
+                Assert.AreEqual("0.002\u00A0m", window.FindTextBox("currentValueTextBox").Text);
+            }
         }
 
         [Test]
         public void BoundUnit()
         {
-            var groupBox = this.Window.GetByText<GroupBox>("bound");
-            var settingControl = groupBox.FindRow("length");
-            var textBox = settingControl.Value<TextBox>();
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                var groupBox =  window.FindGroupBox("bound");
+                var settingControl = groupBox.FindTextBoxRow("length");
+                var textBox = settingControl.Value();
 
-            Assert.AreEqual("1.23456", textBox.Text);
-            Assert.AreEqual("\u00A0cm", settingControl.Suffix().Text);
+                Assert.AreEqual("1.23456", textBox.Text);
+                Assert.AreEqual("\u00A0cm", settingControl.Suffix().Text);
 
-            groupBox.FindRow("selector").Value<ComboBox>().Select("m");
+                groupBox.FindComboBoxRow("selector").Value().Select("m");
 
-            Assert.AreEqual("0.0123456", textBox.Text);
-            Assert.AreEqual("\u00A0m", settingControl.Suffix().Text);
+                Assert.AreEqual("0.0123456", textBox.Text);
+                Assert.AreEqual("\u00A0m", settingControl.Suffix().Text);
+            }
         }
     }
 }
