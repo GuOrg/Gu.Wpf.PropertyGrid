@@ -1,78 +1,77 @@
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
+    using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
-
-    using TestStack.White;
-    using TestStack.White.UIItems;
-    using TestStack.White.UIItems.WindowItems;
-    using TestStack.White.WindowsAPI;
 
     public class NestedTests
     {
-        private Application application;
-        private Window window;
-
-        [OneTimeSetUp]
-        public void OneTimeSetUp()
-        {
-            var title = "NestedWindow";
-            this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
-            this.window = this.application.GetWindow(title);
-        }
+        private static readonly string WindowName = "NestedWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            this.application?.Dispose();
+            Application.KillLaunched(Info.ExeFileName);
         }
 
         [Test]
         public void CyclesFocus()
         {
-            var groupBox = this.window.GetByText<GroupBox>("nested longer");
-            var rootBox = groupBox.FindRow("root").Value<TextBox>();
-            var shortBox = groupBox.FindRow("a").Value<TextBox>();
-            var longBox = groupBox.FindRow("long header").Value<TextBox>();
-            rootBox.Focus();
-            Assert.True(rootBox.IsFocussed);
-            Assert.False(shortBox.IsFocussed);
-            Assert.False(longBox.IsFocussed);
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                var groupBox = window.FindGroupBox("nested longer");
+                var rootBox = groupBox.FindTextBoxRow("root").Value();
+                var shortBox = groupBox.FindTextBoxRow("a").Value();
+                var longBox = groupBox.FindTextBoxRow("long header").Value();
+                rootBox.Focus();
+                Assert.True(rootBox.HasKeyboardFocus);
+                Assert.False(shortBox.HasKeyboardFocus);
+                Assert.False(longBox.HasKeyboardFocus);
 
-            this.window.Keyboard.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
-            Assert.False(rootBox.IsFocussed);
-            Assert.True(shortBox.IsFocussed);
-            Assert.False(longBox.IsFocussed);
+                Keyboard.Type(Key.TAB);
+                Assert.False(rootBox.HasKeyboardFocus);
+                Assert.True(shortBox.HasKeyboardFocus);
+                Assert.False(longBox.HasKeyboardFocus);
 
-            this.window.Keyboard.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
-            Assert.False(rootBox.IsFocussed);
-            Assert.False(shortBox.IsFocussed);
-            Assert.True(longBox.IsFocussed);
+                Keyboard.Type(Key.TAB);
+                Assert.False(rootBox.HasKeyboardFocus);
+                Assert.False(shortBox.HasKeyboardFocus);
+                Assert.True(longBox.HasKeyboardFocus);
 
-            this.window.Keyboard.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
-            Assert.True(rootBox.IsFocussed);
-            Assert.False(shortBox.IsFocussed);
-            Assert.False(longBox.IsFocussed);
+                Keyboard.Type(Key.TAB);
+                Assert.True(rootBox.HasKeyboardFocus);
+                Assert.False(shortBox.HasKeyboardFocus);
+                Assert.False(longBox.HasKeyboardFocus);
+            }
         }
 
         [Test]
         public void ColumnWidthsWhenNestedLonger()
         {
-            var groupBox = this.window.GetByText<GroupBox>("nested longer");
-            var expected = new[] { 64, 92, 86 };
-            CollectionAssert.AreEqual(expected, groupBox.FindRow("root").ColumnsWidths<TextBox>());
-            CollectionAssert.AreEqual(expected, groupBox.FindRow("a").ColumnsWidths<TextBox>());
-            CollectionAssert.AreEqual(expected, groupBox.FindRow("long header").ColumnsWidths<TextBox>());
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                var groupBox = window.FindGroupBox("nested longer");
+                var expected = new[] {64, 92, 86};
+                CollectionAssert.AreEqual(expected, groupBox.FindTextBoxRow("root").ColumnsWidths());
+                CollectionAssert.AreEqual(expected, groupBox.FindTextBoxRow("a").ColumnsWidths());
+                CollectionAssert.AreEqual(expected, groupBox.FindTextBoxRow("long header").ColumnsWidths());
+            }
         }
 
         [Test]
         public void ColumnWidthsWhenNestedShorter()
         {
-            var groupBox = this.window.GetByText<GroupBox>("nested shorter");
-            var expected = new[] { 22, 34, 57 };
-            CollectionAssert.AreEqual(expected, groupBox.FindRow("root").ColumnsWidths<TextBox>());
-            expected[2] = 28;
-            CollectionAssert.AreEqual(expected, groupBox.FindRow("a").ColumnsWidths<TextBox>());
-            CollectionAssert.AreEqual(expected, groupBox.FindRow("b").ColumnsWidths<TextBox>());
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                var groupBox = window.FindGroupBox("nested shorter");
+                var expected = new[] {22, 34, 57};
+                CollectionAssert.AreEqual(expected, groupBox.FindTextBoxRow("root").ColumnsWidths());
+                expected[2] = 28;
+                CollectionAssert.AreEqual(expected, groupBox.FindTextBoxRow("a").ColumnsWidths());
+                CollectionAssert.AreEqual(expected, groupBox.FindTextBoxRow("b").ColumnsWidths());
+            }
         }
     }
 }
