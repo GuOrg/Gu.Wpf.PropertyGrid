@@ -130,7 +130,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
                 var actual = groupBox.FindTextBoxRow("a").ColumnsWidths();
                 CollectionAssert.AreEqual(expected, actual);
 
-                expected = new[] { 15, 46, 3 }; // this looks strange but the textbox gets clipped here.
+                expected = new[] { 15, 46, -1 }; // this looks strange but the textbox gets clipped here.
                 actual = groupBox.FindTextBoxRow("abcd").ColumnsWidths();
                 CollectionAssert.AreEqual(expected, actual);
             }
