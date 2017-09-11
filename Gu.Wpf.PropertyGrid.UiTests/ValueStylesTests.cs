@@ -1,24 +1,32 @@
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
+    using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
 
-    using TestStack.White.UIItems;
-    using TestStack.White.UIItems.ListBoxItems;
-
-    public class ValueStylesTests : WindowTests
+    public class ValueStylesTests
     {
-        protected override string WindowName { get; } = "ValueStylesWindow";
+        private static readonly string WindowName = "ValueStylesWindow";
+
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
+        {
+            Application.KillLaunched(Info.ExeFileName);
+        }
 
         [Test]
         public void UsesStyle()
         {
-            Assert.AreEqual("Green", this.Window.FindRow("checkbox").Value<CheckBox>().ItemStatus());
-            Assert.AreEqual("Green", this.Window.FindRow("togglebutton").Value<Button>().ItemStatus());
-            Assert.AreEqual("Green", this.Window.FindRow("enum").Value<ComboBox>().ItemStatus());
-            Assert.AreEqual("Green", this.Window.FindRow("selector").Value<ComboBox>().ItemStatus());
-            Assert.AreEqual("Green", this.Window.FindRow("string").Value<TextBox>().ItemStatus());
-            Assert.AreEqual("Blue", this.Window.FindRow("double").Value<TextBox>().ItemStatus());
-            Assert.AreEqual("Blue", this.Window.FindRow("length").Value<TextBox>().ItemStatus());
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                Assert.AreEqual("Green", window.FindCheckBoxRow("checkbox").Value().ItemStatus);
+                Assert.AreEqual("Green", window.FindButtonRow("togglebutton").Value().ItemStatus);
+                Assert.AreEqual("Green", window.FindComboBoxRow("enum").Value().ItemStatus);
+                Assert.AreEqual("Green", window.FindComboBoxRow("selector").Value().ItemStatus);
+                Assert.AreEqual("Green", window.FindTextBoxRow("string").Value().ItemStatus);
+                Assert.AreEqual("Blue", window.FindTextBoxRow("double").Value().ItemStatus);
+                Assert.AreEqual("Blue", window.FindTextBoxRow("length").Value().ItemStatus);
+            }
         }
     }
 }
