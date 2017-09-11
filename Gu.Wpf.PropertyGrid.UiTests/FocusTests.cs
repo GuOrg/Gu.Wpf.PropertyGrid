@@ -1,34 +1,42 @@
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
+    using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
 
-    using TestStack.White.UIItems;
-    using TestStack.White.WindowsAPI;
-
-    public class FocusTests : WindowTests
+    public class FocusTests
     {
-        protected override string WindowName { get; } = "FocusWindow";
+        private static readonly string WindowName = "FocusWindow";
+
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
+        {
+            Application.KillLaunched(Info.ExeFileName);
+        }
 
         [Test]
         public void CyclesFocus()
         {
-            var a = this.Window.FindRow("a").Value<TextBox>();
-            var b = this.Window.FindRow("b").Value<TextBox>();
-            var ro = this.Window.FindRow("readonly").Value<TextBox>();
-            a.Focus();
-            Assert.True(a.IsFocussed);
-            Assert.False(b.IsFocussed);
-            Assert.False(ro.IsFocussed);
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                var a = window.FindTextBoxRow("a").Value();
+                var b = window.FindTextBoxRow("b").Value();
+                var ro = window.FindTextBoxRow("readonly").Value();
+                a.Focus();
+                Assert.True(a.HasKeyboardFocus);
+                Assert.False(b.HasKeyboardFocus);
+                Assert.False(ro.HasKeyboardFocus);
 
-            this.Window.Keyboard.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
-            Assert.False(a.IsFocussed);
-            Assert.True(b.IsFocussed);
-            Assert.False(ro.IsFocussed);
+                Keyboard.Type(Key.TAB);
+                Assert.False(a.HasKeyboardFocus);
+                Assert.True(b.HasKeyboardFocus);
+                Assert.False(ro.HasKeyboardFocus);
 
-            this.Window.Keyboard.PressSpecialKey(KeyboardInput.SpecialKeys.TAB);
-            Assert.True(a.IsFocussed);
-            Assert.False(b.IsFocussed);
-            Assert.False(ro.IsFocussed);
+                Keyboard.Type(Key.TAB);
+                Assert.True(a.HasKeyboardFocus);
+                Assert.False(b.HasKeyboardFocus);
+                Assert.False(ro.HasKeyboardFocus);
+            }
         }
     }
 }
