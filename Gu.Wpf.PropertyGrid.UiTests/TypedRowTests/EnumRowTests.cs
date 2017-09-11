@@ -1,97 +1,87 @@
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
     using System.Linq;
-
+    using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
-
-    using TestStack.White;
-    using TestStack.White.UIItems;
-    using TestStack.White.UIItems.ListBoxItems;
-    using TestStack.White.UIItems.WindowItems;
 
     public class EnumRowTests
     {
-        private Application application;
-        private Window window;
-        private Button loseFocusButton;
-        private Label currentCultureTextBlock;
-
-        private ComboBox currentBox;
-        private ComboBox lostFocusBox;
-        private ComboBox readonlyBox;
-        private ComboBox editableBox;
-        private ComboBox explicitTypeBox;
-
-        [OneTimeSetUp]
-        public void OneTimeSetUp()
-        {
-            var title = "EnumRowWindow";
-            this.application = Application.AttachOrLaunch(Info.CreateStartInfo(title));
-            this.window = this.application.GetWindow(title);
-            this.loseFocusButton = this.window.GetByText<Button>("lose focus");
-            this.currentCultureTextBlock = this.window.Get<Label>("currentTextBlock");
-
-            this.currentBox = this.window.FindRow("current").Value<ComboBox>();
-            this.explicitTypeBox = this.window.FindRow("explicit_type").Value<ComboBox>();
-            this.lostFocusBox = this.window.FindRow("lostfocus").Value<ComboBox>();
-            this.readonlyBox = this.window.FindRow("readonly").Value<ComboBox>();
-            this.editableBox = this.window.FindRow("editable").Value<ComboBox>();
-        }
+        private static readonly string WindowName = "EnumRowWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            this.application?.Dispose();
+            Application.KillLaunched(Info.ExeFileName);
         }
 
         [Test]
         public void UpdatesWhenLostFocus()
         {
-            this.currentBox.Select("CurrentCultureIgnoreCase");
-            Assert.AreEqual("CurrentCultureIgnoreCase", this.currentCultureTextBlock.Text);
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                 window.FindComboBoxRow("current").Value().Select("CurrentCultureIgnoreCase");
+                Assert.AreEqual("CurrentCultureIgnoreCase", window.FindTextBlock("currentTextBlock").Text);
 
-            this.lostFocusBox.EditableText = "InvariantCulture";
-            Assert.AreEqual("CurrentCultureIgnoreCase", this.currentCultureTextBlock.Text);
+                window.FindComboBoxRow("lostfocus").Value().EditableText = "InvariantCulture";
+                Assert.AreEqual("CurrentCultureIgnoreCase", window.FindTextBlock("currentTextBlock").Text);
 
-            this.loseFocusButton.Click();
-            Assert.AreEqual("InvariantCulture", this.currentCultureTextBlock.Text);
+                window.FindButton("lose focus").Click();
+                Assert.AreEqual("InvariantCulture", window.FindTextBlock("currentTextBlock").Text);
+            }
         }
 
         [Test]
         public void UpdatesWhenPropertyChanged()
         {
-            this.currentBox.Select("CurrentCultureIgnoreCase");
-            Assert.AreEqual("CurrentCultureIgnoreCase", this.currentCultureTextBlock.Text);
-            Assert.AreEqual("CurrentCultureIgnoreCase", this.currentBox.SelectedItemText);
-            Assert.AreEqual("CurrentCultureIgnoreCase", this.lostFocusBox.SelectedItemText);
-            Assert.AreEqual("CurrentCultureIgnoreCase", this.readonlyBox.SelectedItemText);
-            Assert.AreEqual("CurrentCultureIgnoreCase", this.editableBox.SelectedItemText);
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                 window.FindComboBoxRow("current").Value().Select("CurrentCultureIgnoreCase");
+                Assert.AreEqual("CurrentCultureIgnoreCase", window.FindTextBlock("currentTextBlock").Text);
+                Assert.AreEqual("CurrentCultureIgnoreCase",  window.FindComboBoxRow("current").Value().SelectedItem.Text);
+                Assert.AreEqual("CurrentCultureIgnoreCase", window.FindComboBoxRow("lostfocus").Value().SelectedItem.Text);
+                Assert.AreEqual("CurrentCultureIgnoreCase", window.FindComboBoxRow("readonly").Value().SelectedItem.Text);
+                Assert.AreEqual("CurrentCultureIgnoreCase", window.FindComboBoxRow("editable").Value().SelectedItem.Text);
 
-            this.currentBox.Select("Ordinal");
-            Assert.AreEqual("Ordinal", this.currentCultureTextBlock.Text);
-            Assert.AreEqual("Ordinal", this.currentBox.SelectedItemText);
-            Assert.AreEqual("Ordinal", this.lostFocusBox.SelectedItemText);
-            Assert.AreEqual("Ordinal", this.readonlyBox.SelectedItemText);
-            Assert.AreEqual("Ordinal", this.editableBox.SelectedItemText);
+                 window.FindComboBoxRow("current").Value().Select("Ordinal");
+                Assert.AreEqual("Ordinal", window.FindTextBlock("currentTextBlock").Text);
+                Assert.AreEqual("Ordinal",  window.FindComboBoxRow("current").Value().SelectedItem.Text);
+                Assert.AreEqual("Ordinal", window.FindComboBoxRow("lostfocus").Value().SelectedItem.Text);
+                Assert.AreEqual("Ordinal", window.FindComboBoxRow("readonly").Value().SelectedItem.Text);
+                Assert.AreEqual("Ordinal", window.FindComboBoxRow("editable").Value().SelectedItem.Text);
+            }
         }
 
         [Test]
         public void IsEditable()
         {
-            Assert.False(this.currentBox.IsEditable);
-            Assert.True(this.lostFocusBox.IsEditable);
-            Assert.False(this.readonlyBox.IsEditable);
-            Assert.True(this.editableBox.IsEditable);
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                Assert.False( window.FindComboBoxRow("current").Value().IsEditable);
+                Assert.True(window.FindComboBoxRow("lostfocus").Value().IsEditable);
+                Assert.False(window.FindComboBoxRow("readonly").Value().IsEditable);
+                Assert.True(window.FindComboBoxRow("editable").Value().IsEditable);
+            }
         }
 
         [Test]
         public void Items()
         {
-            var expected = new[] { "CurrentCulture", "CurrentCultureIgnoreCase", "InvariantCulture", "InvariantCultureIgnoreCase", "Ordinal", "OrdinalIgnoreCase" };
-            CollectionAssert.AreEqual(expected, this.currentBox.Items.AsReadOnly().Select(x => x.Text));
-            CollectionAssert.AreEqual(expected, this.explicitTypeBox.Items.AsReadOnly().Select(x => x.Text));
-            CollectionAssert.AreEqual(expected, this.lostFocusBox.Items.AsReadOnly().Select(x => x.Text));
-            CollectionAssert.AreEqual(expected, this.readonlyBox.Items.AsReadOnly().Select(x => x.Text));
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                var expected = new[]
+                               {
+                                   "CurrentCulture", "CurrentCultureIgnoreCase", "InvariantCulture",
+                                   "InvariantCultureIgnoreCase", "Ordinal", "OrdinalIgnoreCase"
+                               };
+                CollectionAssert.AreEqual(expected,  window.FindComboBoxRow("current").Value().Items.Select(x => x.Text));
+                CollectionAssert.AreEqual(expected, window.FindComboBoxRow("explicit_type").Value().Items.Select(x => x.Text));
+                CollectionAssert.AreEqual(expected, window.FindComboBoxRow("lostfocus").Value().Items.Select(x => x.Text));
+                CollectionAssert.AreEqual(expected, window.FindComboBoxRow("readonly").Value().Items.Select(x => x.Text));
+            }
         }
     }
 }
