@@ -74,8 +74,12 @@ namespace Gu.Wpf.PropertyGrid.UiTests
                 var window = app.MainWindow;
                 var expected = new[]
                                {
-                                   "CurrentCulture", "CurrentCultureIgnoreCase", "InvariantCulture",
-                                   "InvariantCultureIgnoreCase", "Ordinal", "OrdinalIgnoreCase"
+                                   "CurrentCulture",
+                                   "CurrentCultureIgnoreCase",
+                                   "InvariantCulture",
+                                   "InvariantCultureIgnoreCase",
+                                   "Ordinal",
+                                   "OrdinalIgnoreCase"
                                };
                 CollectionAssert.AreEqual(expected,  window.FindComboBoxRow("current").Value().Items.Select(x => x.Text));
                 CollectionAssert.AreEqual(expected, window.FindComboBoxRow("explicit_type").Value().Items.Select(x => x.Text));
