@@ -1,60 +1,68 @@
 ﻿namespace Gu.Wpf.PropertyGrid.UiTests
 {
+    using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
 
-    using TestStack.White.UIItems;
-    using TestStack.White.UIItems.ListBoxItems;
-
-    public class CultureTests : WindowTests
+    public class CultureTests
     {
-        private Button loseFocusButton;
-        protected override string WindowName { get; } = "CultureWindow";
+        private static readonly string WindowName  = "CultureWindow";
 
-        [OneTimeSetUp]
-        public override void OneTimeSetUp()
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
         {
-            base.OneTimeSetUp();
-            this.loseFocusButton = this.Window.GetByText<Button>("lose focus");
+            Application.KillLaunched(Info.ExeFileName);
         }
 
         [Test]
         public void SvSe()
         {
-            var groupBox = this.Window.GetByText<GroupBox>("sv-se");
-            var doubleBox = groupBox.FindRow("double").Value<TextBox>();
-            var lengthBox = groupBox.FindRow("length").Value<TextBox>();
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                var groupBox = window.FindGroupBox("sv-se");
+                var doubleBox = groupBox.FindTextBoxRow("double").Value();
+                var lengthBox = groupBox.FindTextBoxRow("length").Value();
 
-            Assert.AreEqual("0,0000", doubleBox.FormattedText());
-            Assert.AreEqual("0,0123", lengthBox.FormattedText());
+                Assert.AreEqual("0,0000", doubleBox.FormattedText());
+                Assert.AreEqual("0,0123", lengthBox.FormattedText());
+            }
         }
 
         [Test]
         public void EnUs()
         {
-            var groupBox = this.Window.GetByText<GroupBox>("en-us");
-            var doubleBox = groupBox.FindRow("double").Value<TextBox>();
-            var lengthBox = groupBox.FindRow("length").Value<TextBox>();
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                var groupBox = window.FindGroupBox("en-us");
+                var doubleBox = groupBox.FindTextBoxRow("double").Value();
+                var lengthBox = groupBox.FindTextBoxRow("length").Value();
 
-            Assert.AreEqual("0.0000", doubleBox.FormattedText());
-            Assert.AreEqual("0.0123", lengthBox.FormattedText());
+                Assert.AreEqual("0.0000", doubleBox.FormattedText());
+                Assert.AreEqual("0.0123", lengthBox.FormattedText());
+            }
         }
 
         [Test]
         public void Bound()
         {
-            var groupBox = this.Window.GetByText<GroupBox>("bound");
-            var doubleBox = groupBox.FindRow("double").Value<TextBox>();
-            var lengthBox = groupBox.FindRow("length").Value<TextBox>();
-            var cultureBox = groupBox.FindRow("culture").Value<ComboBox>();
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                var groupBox = window.FindGroupBox("bound");
+                var doubleBox = groupBox.FindTextBoxRow("double").Value();
+                var lengthBox = groupBox.FindTextBoxRow("length").Value();
+                var cultureBox = groupBox.FindComboBoxRow("culture").Value();
 
-            Assert.AreEqual("0,0000", doubleBox.FormattedText());
-            Assert.AreEqual("0,0123", lengthBox.FormattedText());
+                Assert.AreEqual("0,0000", doubleBox.FormattedText());
+                Assert.AreEqual("0,0123", lengthBox.FormattedText());
 
-            cultureBox.Select("en-US");
-            this.loseFocusButton.Click();
+                cultureBox.Select("en-US");
+                window.FindButton("lose focus").Click();
 
-            Assert.AreEqual("0.0000", doubleBox.FormattedText());
-            Assert.AreEqual("0.0123", lengthBox.FormattedText());
+                Assert.AreEqual("0.0000", doubleBox.FormattedText());
+                Assert.AreEqual("0.0123", lengthBox.FormattedText());
+            }
         }
     }
 }
