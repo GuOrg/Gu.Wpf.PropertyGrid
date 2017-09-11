@@ -8,7 +8,6 @@ namespace Gu.Wpf.PropertyGrid.UiTests
     {
         private static readonly string WindowName = "SelectorRowWindow";
 
-
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {

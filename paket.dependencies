@@ -10,7 +10,6 @@ group Test
   nuget NUnit
   nuget Moq
   nuget Gu.Wpf.UiAutomation
-  nuget TestStack.White
 
 group Analyzers
   source http://www.nuget.org/api/v2/

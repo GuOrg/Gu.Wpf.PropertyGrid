@@ -4,5 +4,4 @@
 group Test
   NUnit
   Gu.Wpf.UiAutomation
-  TestStack.White
 
