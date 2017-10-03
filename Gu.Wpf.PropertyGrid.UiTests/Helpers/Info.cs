@@ -1,13 +1,11 @@
 ﻿namespace Gu.Wpf.PropertyGrid.UiTests
 {
-    using System;
     using System.Diagnostics;
-    using System.IO;
-    using System.Reflection;
+    using Gu.Wpf.UiAutomation;
 
     public static class Info
     {
-        public static string ExeFileName { get; } = GetExeFileName();
+        public static string ExeFileName { get; } = Application.FindExe("Gu.Wpf.PropertyGrid.Demo.exe");
 
         public static ProcessStartInfo ProcessStartInfo { get; } = CreateStartInfo(null);
 
@@ -15,7 +13,7 @@
         {
             var processStartInfo = new ProcessStartInfo
             {
-                FileName = GetExeFileName(),
+                FileName = ExeFileName,
                 Arguments = args,
                 UseShellExecute = false,
                 //CreateNoWindow = false,
@@ -23,18 +21,6 @@
                 RedirectStandardError = true
             };
             return processStartInfo;
-        }
-
-        private static string GetExeFileName()
-        {
-            var assembly = Assembly.GetExecutingAssembly();
-            var testDirestory = Path.GetDirectoryName(new Uri(assembly.CodeBase).AbsolutePath);
-            var assemblyName = assembly.GetName().Name;
-            var exeDirectoryName = assemblyName.Replace("UiTests", "Demo");
-            var exeDirectory = testDirestory.Replace(assemblyName, exeDirectoryName);
-            var fileName = Path.Combine(exeDirectory, "Gu.Wpf.PropertyGrid.Demo.exe");
-
-            return fileName;
         }
     }
 }

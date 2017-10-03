@@ -20,7 +20,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("default");
-                var expected = new[] { 6, 16, 7 };
+                var expected = new[] { 7, 16, 6 };
                 CollectionAssert.AreEqual(expected, groupBox.FindTextBoxRow("a").ColumnsWidths());
             }
         }
@@ -114,7 +114,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("MaxWidth 15 20 25");
-                var expected = new[] { 6, 17, 7 };
+                var expected = new[] { 7, 16, 7 };
                 CollectionAssert.AreEqual(expected, groupBox.FindTextBoxRow("a").ColumnsWidths());
             }
         }
