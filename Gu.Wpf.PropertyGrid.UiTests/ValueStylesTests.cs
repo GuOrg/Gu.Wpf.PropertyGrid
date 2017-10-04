@@ -5,7 +5,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class ValueStylesTests
     {
-        private static readonly string WindowName = "ValueStylesWindow";
+        private const string WindowName = "ValueStylesWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()

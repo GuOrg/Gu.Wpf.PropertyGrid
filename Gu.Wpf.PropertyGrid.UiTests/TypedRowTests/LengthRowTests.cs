@@ -5,7 +5,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class LengthRowTests
     {
-        private static readonly string WindowName = "LengthRowWindow";
+        private const string WindowName = "LengthRowWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()

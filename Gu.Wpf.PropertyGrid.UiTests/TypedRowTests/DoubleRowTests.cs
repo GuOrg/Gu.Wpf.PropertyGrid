@@ -5,7 +5,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class DoubleRowTests
     {
-        private static readonly string WindowName = "DoubleRowWindow";
+        private const string WindowName = "DoubleRowWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()

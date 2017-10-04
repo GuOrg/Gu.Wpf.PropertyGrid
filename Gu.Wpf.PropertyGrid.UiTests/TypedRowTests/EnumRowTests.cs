@@ -6,7 +6,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class EnumRowTests
     {
-        private static readonly string WindowName = "EnumRowWindow";
+        private const string WindowName = "EnumRowWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()

@@ -5,7 +5,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class FocusTests
     {
-        private static readonly string WindowName = "FocusWindow";
+        private const string WindowName = "FocusWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()

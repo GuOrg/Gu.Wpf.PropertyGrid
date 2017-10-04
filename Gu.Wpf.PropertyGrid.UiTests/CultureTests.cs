@@ -5,7 +5,7 @@
 
     public class CultureTests
     {
-        private static readonly string WindowName  = "CultureWindow";
+        private const string WindowName  = "CultureWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()

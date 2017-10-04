@@ -5,7 +5,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class NestedTests
     {
-        private static readonly string WindowName = "NestedWindow";
+        private const string WindowName = "NestedWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()

@@ -6,7 +6,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class SelectorRowTests
     {
-        private static readonly string WindowName = "SelectorRowWindow";
+        private const string WindowName = "SelectorRowWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()

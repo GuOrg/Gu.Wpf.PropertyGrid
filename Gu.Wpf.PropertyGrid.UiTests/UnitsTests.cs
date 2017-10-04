@@ -5,7 +5,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class UnitsTests
     {
-        private static readonly string WindowName = "UnitsWindow";
+        private const string WindowName = "UnitsWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()

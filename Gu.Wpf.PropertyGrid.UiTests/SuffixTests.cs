@@ -6,7 +6,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class SuffixTests
     {
-        private static readonly string WindowName = "SuffixWindow";
+        private const string WindowName = "SuffixWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()

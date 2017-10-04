@@ -5,7 +5,7 @@
 
     public class OldValueTests
     {
-        private static readonly string WindowName = "OldValueWindow";
+        private const string WindowName = "OldValueWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()

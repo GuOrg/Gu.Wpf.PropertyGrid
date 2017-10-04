@@ -5,7 +5,7 @@
 
     public class DecimalDigitsTests
     {
-        private static readonly string WindowName = "DecimalDigitsWindow";
+        private const string WindowName = "DecimalDigitsWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()

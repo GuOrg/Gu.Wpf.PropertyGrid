@@ -5,7 +5,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class LengthRowStyleTests
     {
-        private static readonly string WindowName = "LengthRowStyleWindow";
+        private const string WindowName = "LengthRowStyleWindow";
 
         [Test]
         public void CorrectValuesAndSuffixes()
