@@ -7,7 +7,6 @@
     using System.Windows.Input;
     using Gu.State;
     using Gu.Units;
-    using JetBrains.Annotations;
 
     public class SettingsVm : INotifyPropertyChanged
     {
@@ -29,6 +28,8 @@
             this.UndoAllCommand = new RelayCommand(
                 _ => Copy.PropertyValues(this.LastSaved, this.EditableCopy, PropertiesSettings),
                 _ => !EqualBy.PropertyValues(this.EditableCopy, this.LastSaved, PropertiesSettings));
+
+            this.ResetCommand = new RelayCommand(_ => this.EditableCopy.Reset());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -39,14 +40,13 @@
 
         public ICommand SaveCommand { get; }
 
+        public ICommand ResetCommand { get; }
+
         public ICommand UndoAllCommand { get; }
 
         public bool ViewHasErrors
         {
-            get
-            {
-                return this.viewHasErrors;
-            }
+            get => this.viewHasErrors;
             set
             {
                 if (value == this.viewHasErrors)
@@ -58,7 +58,6 @@
             }
         }
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

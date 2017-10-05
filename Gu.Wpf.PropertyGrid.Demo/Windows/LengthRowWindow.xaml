@@ -15,6 +15,7 @@
     <StackPanel>
         <Button Content="lose focus" />
         <Button Command="{Binding SaveCommand}" Content="save" />
+        <Button Command="{Binding ResetCommand}" Content="reset" />
         <TextBox AutomationProperties.AutomationId="currentValueTextBox" Text="{Binding EditableCopy.LengthValue}" />
         <TextBox AutomationProperties.AutomationId="currentMinValueTextBox" Text="{Binding EditableCopy.LengthMin, TargetNullValue=''}" />
         <TextBox AutomationProperties.AutomationId="currentMaxValueTextBox" Text="{Binding EditableCopy.LengthMax, TargetNullValue=''}" />

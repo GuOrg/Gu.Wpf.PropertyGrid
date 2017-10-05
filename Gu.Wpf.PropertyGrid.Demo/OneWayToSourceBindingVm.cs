@@ -17,7 +17,7 @@
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
         public string Text
         {
-            get { return this.text; }
+            get => this.text;
             set
             {
                 if (value == this.text) return;
@@ -28,7 +28,7 @@
 
         public bool HasErrors
         {
-            get { return this.hasErrors; }
+            get => this.hasErrors;
             set
             {
                 if (value == this.hasErrors)
@@ -43,7 +43,7 @@
 
         public bool ViewHasErrors
         {
-            get { return this.viewHasErrors; }
+            get => this.viewHasErrors;
             set
             {
                 if (value == this.viewHasErrors) return;

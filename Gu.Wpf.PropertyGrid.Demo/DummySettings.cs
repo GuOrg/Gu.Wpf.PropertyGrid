@@ -26,11 +26,8 @@
         private string stringValue = string.Empty;
         private bool boolValue;
         private bool hasErrors;
-
         private CultureInfo currentCulture;
-
         private Length? lengthMin;
-
         private Length? lengthMax;
 
         public DummySettings()
@@ -44,10 +41,7 @@
 
         public bool HasErrors
         {
-            get
-            {
-                return this.hasErrors;
-            }
+            get => this.hasErrors;
             set
             {
                 if (value == this.hasErrors)
@@ -62,7 +56,7 @@
 
         public string StringValue
         {
-            get { return this.stringValue; }
+            get => this.stringValue;
             set
             {
                 if (value == this.stringValue)
@@ -76,7 +70,7 @@
 
         public bool BoolValue
         {
-            get { return this.boolValue; }
+            get => this.boolValue;
             set
             {
                 if (value == this.boolValue)
@@ -90,7 +84,7 @@
 
         public int IntValue
         {
-            get { return this.intValue; }
+            get => this.intValue;
             set
             {
                 if (value == this.intValue)
@@ -104,7 +98,7 @@
 
         public int? NullableIntValue
         {
-            get { return this.nullableIntValue; }
+            get => this.nullableIntValue;
             set
             {
                 if (value == this.nullableIntValue) return;
@@ -115,7 +109,7 @@
 
         public double DoubleValue
         {
-            get { return this.doubleValue; }
+            get => this.doubleValue;
             set
             {
                 if (value.Equals(this.doubleValue)) return;
@@ -126,7 +120,7 @@
 
         public double? NullableDoubleValue
         {
-            get { return this.nullableDoubleValue; }
+            get => this.nullableDoubleValue;
             set
             {
                 if (value.Equals(this.nullableDoubleValue)) return;
@@ -137,7 +131,7 @@
 
         public Length LengthValue
         {
-            get { return this.lengthValue; }
+            get => this.lengthValue;
             set
             {
                 if (value.Equals(this.lengthValue))
@@ -152,10 +146,7 @@
 
         public Length? LengthMin
         {
-            get
-            {
-                return this.lengthMin;
-            }
+            get => this.lengthMin;
             set
             {
                 if (value.Equals(this.lengthMin)) return;
@@ -166,10 +157,7 @@
 
         public Length? LengthMax
         {
-            get
-            {
-                return this.lengthMax;
-            }
+            get => this.lengthMax;
             set
             {
                 if (value.Equals(this.lengthMax)) return;
@@ -180,7 +168,7 @@
 
         public Length? NullableLengthValue
         {
-            get { return this.nullableLengthValue; }
+            get => this.nullableLengthValue;
             set
             {
                 if (value.Equals(this.nullableLengthValue)) return;
@@ -191,7 +179,7 @@
 
         public Speed SpeedValue
         {
-            get { return this.speedValue; }
+            get => this.speedValue;
             set
             {
                 if (value.Equals(this.speedValue)) return;
@@ -202,7 +190,7 @@
 
         public LengthUnit CurrentLengthUnit
         {
-            get { return this.currentLengthUnit; }
+            get => this.currentLengthUnit;
             set
             {
                 if (value.Equals(this.currentLengthUnit))
@@ -217,7 +205,7 @@
 
         public StringComparison CurrentStringComparison
         {
-            get { return this.currentStringComparison; }
+            get => this.currentStringComparison;
             set
             {
                 if (value == this.currentStringComparison)
@@ -248,10 +236,7 @@
 
         public CultureInfo CurrentCulture
         {
-            get
-            {
-                return this.currentCulture;
-            }
+            get => this.currentCulture;
             set
             {
                 if (Equals(value, this.currentCulture)) return;
@@ -260,7 +245,6 @@
             }
         }
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -270,6 +254,27 @@
         {
             this.ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
             this.ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(nameof(this.StringValue)));
+        }
+
+        public void Reset()
+        {
+            this.intValue = 0;
+            this.nullableIntValue = null;
+            this.doubleValue = 0;
+            this.nullableDoubleValue = null;
+            this.lengthValue = Length.FromMillimetres(12.3456);
+            this.currentLengthUnit = LengthUnit.Centimetres;
+            this.currentStringComparison = default(StringComparison);
+            this.speedValue = default(Speed);
+            this.nullableLengthValue = null;
+            this.stringValue = string.Empty;
+            this.boolValue = false;
+            this.hasErrors = false;
+            this.currentCulture = null;
+            this.lengthMin = null;
+            this.lengthMax = null;
+            this.OnPropertyChanged(string.Empty);
+            this.ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(string.Empty));
         }
     }
 }
