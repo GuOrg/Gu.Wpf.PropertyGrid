@@ -11,16 +11,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class AccelerationRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Acceleration?),
-        typeof(AccelerationRow),
-        new FrameworkPropertyMetadata(
-            default(Acceleration?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Acceleration?),
+            typeof(AccelerationRow),
+            new FrameworkPropertyMetadata(
+                default(Acceleration?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -53,24 +53,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Acceleration? Value
         {
             get { return (Acceleration?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Acceleration? MinValue
         {
             get { return (Acceleration?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Acceleration? MaxValue
         {
             get { return (Acceleration?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public AccelerationUnit Unit
         {
             get { return (AccelerationUnit)this.GetValue(UnitProperty); }
@@ -79,6 +91,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -204,16 +217,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class AmountOfSubstanceRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(AmountOfSubstance?),
-        typeof(AmountOfSubstanceRow),
-        new FrameworkPropertyMetadata(
-            default(AmountOfSubstance?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(AmountOfSubstance?),
+            typeof(AmountOfSubstanceRow),
+            new FrameworkPropertyMetadata(
+                default(AmountOfSubstance?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -246,24 +259,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public AmountOfSubstance? Value
         {
             get { return (AmountOfSubstance?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public AmountOfSubstance? MinValue
         {
             get { return (AmountOfSubstance?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public AmountOfSubstance? MaxValue
         {
             get { return (AmountOfSubstance?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public AmountOfSubstanceUnit Unit
         {
             get { return (AmountOfSubstanceUnit)this.GetValue(UnitProperty); }
@@ -272,6 +297,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -397,16 +423,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class AngleRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Angle?),
-        typeof(AngleRow),
-        new FrameworkPropertyMetadata(
-            default(Angle?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Angle?),
+            typeof(AngleRow),
+            new FrameworkPropertyMetadata(
+                default(Angle?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -439,24 +465,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Angle? Value
         {
             get { return (Angle?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Angle? MinValue
         {
             get { return (Angle?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Angle? MaxValue
         {
             get { return (Angle?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public AngleUnit Unit
         {
             get { return (AngleUnit)this.GetValue(UnitProperty); }
@@ -465,6 +503,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -590,16 +629,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class AnglePerUnitlessRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(AnglePerUnitless?),
-        typeof(AnglePerUnitlessRow),
-        new FrameworkPropertyMetadata(
-            default(AnglePerUnitless?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(AnglePerUnitless?),
+            typeof(AnglePerUnitlessRow),
+            new FrameworkPropertyMetadata(
+                default(AnglePerUnitless?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -632,24 +671,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public AnglePerUnitless? Value
         {
             get { return (AnglePerUnitless?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public AnglePerUnitless? MinValue
         {
             get { return (AnglePerUnitless?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public AnglePerUnitless? MaxValue
         {
             get { return (AnglePerUnitless?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public AnglePerUnitlessUnit Unit
         {
             get { return (AnglePerUnitlessUnit)this.GetValue(UnitProperty); }
@@ -658,6 +709,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -783,16 +835,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class AngularAccelerationRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(AngularAcceleration?),
-        typeof(AngularAccelerationRow),
-        new FrameworkPropertyMetadata(
-            default(AngularAcceleration?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(AngularAcceleration?),
+            typeof(AngularAccelerationRow),
+            new FrameworkPropertyMetadata(
+                default(AngularAcceleration?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -825,24 +877,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public AngularAcceleration? Value
         {
             get { return (AngularAcceleration?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public AngularAcceleration? MinValue
         {
             get { return (AngularAcceleration?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public AngularAcceleration? MaxValue
         {
             get { return (AngularAcceleration?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public AngularAccelerationUnit Unit
         {
             get { return (AngularAccelerationUnit)this.GetValue(UnitProperty); }
@@ -851,6 +915,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -976,16 +1041,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class AngularJerkRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(AngularJerk?),
-        typeof(AngularJerkRow),
-        new FrameworkPropertyMetadata(
-            default(AngularJerk?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(AngularJerk?),
+            typeof(AngularJerkRow),
+            new FrameworkPropertyMetadata(
+                default(AngularJerk?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -1018,24 +1083,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public AngularJerk? Value
         {
             get { return (AngularJerk?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public AngularJerk? MinValue
         {
             get { return (AngularJerk?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public AngularJerk? MaxValue
         {
             get { return (AngularJerk?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public AngularJerkUnit Unit
         {
             get { return (AngularJerkUnit)this.GetValue(UnitProperty); }
@@ -1044,6 +1121,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -1169,16 +1247,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class AngularSpeedRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(AngularSpeed?),
-        typeof(AngularSpeedRow),
-        new FrameworkPropertyMetadata(
-            default(AngularSpeed?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(AngularSpeed?),
+            typeof(AngularSpeedRow),
+            new FrameworkPropertyMetadata(
+                default(AngularSpeed?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -1211,24 +1289,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public AngularSpeed? Value
         {
             get { return (AngularSpeed?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public AngularSpeed? MinValue
         {
             get { return (AngularSpeed?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public AngularSpeed? MaxValue
         {
             get { return (AngularSpeed?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public AngularSpeedUnit Unit
         {
             get { return (AngularSpeedUnit)this.GetValue(UnitProperty); }
@@ -1237,6 +1327,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -1362,16 +1453,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class AreaRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Area?),
-        typeof(AreaRow),
-        new FrameworkPropertyMetadata(
-            default(Area?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Area?),
+            typeof(AreaRow),
+            new FrameworkPropertyMetadata(
+                default(Area?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -1404,24 +1495,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Area? Value
         {
             get { return (Area?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Area? MinValue
         {
             get { return (Area?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Area? MaxValue
         {
             get { return (Area?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public AreaUnit Unit
         {
             get { return (AreaUnit)this.GetValue(UnitProperty); }
@@ -1430,6 +1533,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -1555,16 +1659,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class AreaDensityRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(AreaDensity?),
-        typeof(AreaDensityRow),
-        new FrameworkPropertyMetadata(
-            default(AreaDensity?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(AreaDensity?),
+            typeof(AreaDensityRow),
+            new FrameworkPropertyMetadata(
+                default(AreaDensity?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -1597,24 +1701,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public AreaDensity? Value
         {
             get { return (AreaDensity?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public AreaDensity? MinValue
         {
             get { return (AreaDensity?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public AreaDensity? MaxValue
         {
             get { return (AreaDensity?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public AreaDensityUnit Unit
         {
             get { return (AreaDensityUnit)this.GetValue(UnitProperty); }
@@ -1623,6 +1739,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -1748,16 +1865,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class CapacitanceRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Capacitance?),
-        typeof(CapacitanceRow),
-        new FrameworkPropertyMetadata(
-            default(Capacitance?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Capacitance?),
+            typeof(CapacitanceRow),
+            new FrameworkPropertyMetadata(
+                default(Capacitance?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -1790,24 +1907,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Capacitance? Value
         {
             get { return (Capacitance?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Capacitance? MinValue
         {
             get { return (Capacitance?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Capacitance? MaxValue
         {
             get { return (Capacitance?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public CapacitanceUnit Unit
         {
             get { return (CapacitanceUnit)this.GetValue(UnitProperty); }
@@ -1816,6 +1945,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -1941,16 +2071,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class CatalyticActivityRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(CatalyticActivity?),
-        typeof(CatalyticActivityRow),
-        new FrameworkPropertyMetadata(
-            default(CatalyticActivity?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(CatalyticActivity?),
+            typeof(CatalyticActivityRow),
+            new FrameworkPropertyMetadata(
+                default(CatalyticActivity?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -1983,24 +2113,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public CatalyticActivity? Value
         {
             get { return (CatalyticActivity?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public CatalyticActivity? MinValue
         {
             get { return (CatalyticActivity?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public CatalyticActivity? MaxValue
         {
             get { return (CatalyticActivity?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public CatalyticActivityUnit Unit
         {
             get { return (CatalyticActivityUnit)this.GetValue(UnitProperty); }
@@ -2009,6 +2151,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -2131,19 +2274,225 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    public class ConductivityRow : UnitRowGeneric, IQuantityFormatter
+    {
+        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
+            "Value",
+            typeof(Conductivity?),
+            typeof(ConductivityRow),
+            new FrameworkPropertyMetadata(
+                default(Conductivity?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
+
+        public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
+            "MinValue",
+            typeof(Conductivity?),
+            typeof(ConductivityRow),
+            new PropertyMetadata(null, OnMinValueChanged));
+
+        public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
+            "MaxValue",
+            typeof(Conductivity?),
+            typeof(ConductivityRow),
+            new PropertyMetadata(null, OnMaxValueChanged));
+
+        public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
+            "Unit",
+            typeof(ConductivityUnit),
+            typeof(ConductivityRow),
+            new PropertyMetadata(default(ConductivityUnit).SiUnit, OnUnitChanged));
+
+        public static readonly ConductivityUnit DefaultUnit = default(ConductivityUnit).SiUnit;
+        private bool isUpdatingScalarValue;
+
+        static ConductivityRow()
+        {
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(ConductivityRow), new FrameworkPropertyMetadata(typeof(ConductivityRow)));
+            SuffixProperty.OverrideMetadata(
+                typeof(ConductivityRow),
+                new FrameworkPropertyMetadata(
+                    CreateSuffix(UnitRow.DefaultSymbolFormat, DefaultUnit),
+                    FrameworkPropertyMetadataOptions.NotDataBindable));
+        }
+
+        /// <summary>
+        /// The value.
+        /// </summary>
+        public Conductivity? Value
+        {
+            get { return (Conductivity?)this.GetValue(ValueProperty); }
+            set { this.SetValue(ValueProperty, value); }
+        }
+
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
+        public Conductivity? MinValue
+        {
+            get { return (Conductivity?)this.GetValue(MinValueProperty); }
+            set { this.SetValue(MinValueProperty, value); }
+        }
+
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
+        public Conductivity? MaxValue
+        {
+            get { return (Conductivity?)this.GetValue(MaxValueProperty); }
+            set { this.SetValue(MaxValueProperty, value); }
+        }
+
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
+        public ConductivityUnit Unit
+        {
+            get { return (ConductivityUnit)this.GetValue(UnitProperty); }
+            set { this.SetValue(UnitProperty, value); }
+        }
+
+        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+        /// <inheritdoc/>
+        string IQuantityFormatter.Format(IQuantity quantity)
+        {
+            if (quantity == null)
+            {
+                return string.Empty;
+            }
+
+            if (!(quantity is Conductivity))
+            {
+                return "wrong type";
+            }
+
+            var qty = (Conductivity)quantity;
+            var culture = NumericBox.GetCulture(this);
+            return qty.ToString(this.Unit, this.SymbolFormat, culture);
+        }
+
+        protected static string CreateSuffix(SymbolFormat format, ConductivityUnit unit)
+        {
+            return default(Conductivity).ToString(unit, format).Trim('0');
+        }
+
+        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((ConductivityRow)d).OnMinValueChanged((Conductivity?)e.OldValue, (Conductivity?)e.NewValue);
+        }
+
+        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((ConductivityRow)d).OnMaxValueChanged((Conductivity?)e.OldValue, (Conductivity?)e.NewValue);
+        }
+
+        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (ConductivityRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (ConductivityUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (ConductivityUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
+        }
+
+        protected override void OnValueChanged(object oldValue, object newValue)
+        {
+            this.SetScalarValue(ScalarValueProperty, (Conductivity?)newValue);
+            base.OnValueChanged(oldValue, newValue);
+        }
+
+        protected virtual void OnMinValueChanged(Conductivity? oldValue, Conductivity? newValue)
+        {
+            this.SetScalarValue(ScalarMinValueProperty, newValue);
+        }
+
+        protected virtual void OnMaxValueChanged(Conductivity? oldValue, Conductivity? newValue)
+        {
+            this.SetScalarValue(ScalarMaxValueProperty, newValue);
+        }
+
+        protected override void OnScalarValueChanged(double? newValue)
+        {
+            this.SetQuantityValue(ValueProperty, newValue);
+        }
+
+        protected override void OnScalarMinValueChanged(double? newValue)
+        {
+            this.SetQuantityValue(MinValueProperty, newValue);
+        }
+
+        protected override void OnScalarMaxValueChanged(double? newValue)
+        {
+            this.SetQuantityValue(MaxValueProperty, newValue);
+        }
+
+        protected override void UpdateIsDirty()
+        {
+            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            {
+                this.IsDirty = null;
+            }
+            else
+            {
+                this.IsDirty = !Equals(this.OldValue, this.Value);
+            }
+        }
+
+        protected void SetScalarValue(DependencyProperty property, Conductivity? quantity)
+        {
+            // we set this flag to prevent from setting scalar value changing quantity values.
+            this.isUpdatingScalarValue = true;
+            var value = quantity != null
+                ? this.Unit.GetScalarValue(quantity.Value)
+                : (double?)null;
+            this.SetCurrentValue(property, value);
+            this.isUpdatingScalarValue = false;
+        }
+
+        protected virtual void SetQuantityValue(DependencyProperty property, double? value)
+        {
+            if (this.isUpdatingScalarValue)
+            {
+                return;
+            }
+
+            var qty = value != null
+                ? this.Unit.CreateQuantity(value.Value)
+                : (Conductivity?)null;
+            this.SetCurrentValue(property, qty);
+        }
+
+        protected override string CreateSuffix(SymbolFormat format)
+        {
+            return CreateSuffix(format, this.Unit);
+        }
+    }
+
     public class CurrentRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Current?),
-        typeof(CurrentRow),
-        new FrameworkPropertyMetadata(
-            default(Current?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Current?),
+            typeof(CurrentRow),
+            new FrameworkPropertyMetadata(
+                default(Current?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -2176,24 +2525,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Current? Value
         {
             get { return (Current?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Current? MinValue
         {
             get { return (Current?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Current? MaxValue
         {
             get { return (Current?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public CurrentUnit Unit
         {
             get { return (CurrentUnit)this.GetValue(UnitProperty); }
@@ -2202,6 +2563,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -2327,16 +2689,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class DataRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Data?),
-        typeof(DataRow),
-        new FrameworkPropertyMetadata(
-            default(Data?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Data?),
+            typeof(DataRow),
+            new FrameworkPropertyMetadata(
+                default(Data?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -2369,24 +2731,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Data? Value
         {
             get { return (Data?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Data? MinValue
         {
             get { return (Data?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Data? MaxValue
         {
             get { return (Data?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public DataUnit Unit
         {
             get { return (DataUnit)this.GetValue(UnitProperty); }
@@ -2395,6 +2769,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -2520,16 +2895,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class DensityRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Density?),
-        typeof(DensityRow),
-        new FrameworkPropertyMetadata(
-            default(Density?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Density?),
+            typeof(DensityRow),
+            new FrameworkPropertyMetadata(
+                default(Density?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -2562,24 +2937,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Density? Value
         {
             get { return (Density?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Density? MinValue
         {
             get { return (Density?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Density? MaxValue
         {
             get { return (Density?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public DensityUnit Unit
         {
             get { return (DensityUnit)this.GetValue(UnitProperty); }
@@ -2588,6 +2975,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -2713,16 +3101,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class ElectricalConductanceRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(ElectricalConductance?),
-        typeof(ElectricalConductanceRow),
-        new FrameworkPropertyMetadata(
-            default(ElectricalConductance?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(ElectricalConductance?),
+            typeof(ElectricalConductanceRow),
+            new FrameworkPropertyMetadata(
+                default(ElectricalConductance?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -2755,24 +3143,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public ElectricalConductance? Value
         {
             get { return (ElectricalConductance?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public ElectricalConductance? MinValue
         {
             get { return (ElectricalConductance?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public ElectricalConductance? MaxValue
         {
             get { return (ElectricalConductance?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public ElectricalConductanceUnit Unit
         {
             get { return (ElectricalConductanceUnit)this.GetValue(UnitProperty); }
@@ -2781,6 +3181,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -2906,16 +3307,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class ElectricChargeRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(ElectricCharge?),
-        typeof(ElectricChargeRow),
-        new FrameworkPropertyMetadata(
-            default(ElectricCharge?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(ElectricCharge?),
+            typeof(ElectricChargeRow),
+            new FrameworkPropertyMetadata(
+                default(ElectricCharge?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -2948,24 +3349,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public ElectricCharge? Value
         {
             get { return (ElectricCharge?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public ElectricCharge? MinValue
         {
             get { return (ElectricCharge?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public ElectricCharge? MaxValue
         {
             get { return (ElectricCharge?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public ElectricChargeUnit Unit
         {
             get { return (ElectricChargeUnit)this.GetValue(UnitProperty); }
@@ -2974,6 +3387,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -3099,16 +3513,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class EnergyRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Energy?),
-        typeof(EnergyRow),
-        new FrameworkPropertyMetadata(
-            default(Energy?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Energy?),
+            typeof(EnergyRow),
+            new FrameworkPropertyMetadata(
+                default(Energy?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -3141,24 +3555,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Energy? Value
         {
             get { return (Energy?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Energy? MinValue
         {
             get { return (Energy?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Energy? MaxValue
         {
             get { return (Energy?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public EnergyUnit Unit
         {
             get { return (EnergyUnit)this.GetValue(UnitProperty); }
@@ -3167,6 +3593,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -3292,16 +3719,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class FlexibilityRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Flexibility?),
-        typeof(FlexibilityRow),
-        new FrameworkPropertyMetadata(
-            default(Flexibility?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Flexibility?),
+            typeof(FlexibilityRow),
+            new FrameworkPropertyMetadata(
+                default(Flexibility?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -3334,24 +3761,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Flexibility? Value
         {
             get { return (Flexibility?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Flexibility? MinValue
         {
             get { return (Flexibility?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Flexibility? MaxValue
         {
             get { return (Flexibility?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public FlexibilityUnit Unit
         {
             get { return (FlexibilityUnit)this.GetValue(UnitProperty); }
@@ -3360,6 +3799,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -3485,16 +3925,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class ForceRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Force?),
-        typeof(ForceRow),
-        new FrameworkPropertyMetadata(
-            default(Force?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Force?),
+            typeof(ForceRow),
+            new FrameworkPropertyMetadata(
+                default(Force?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -3527,24 +3967,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Force? Value
         {
             get { return (Force?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Force? MinValue
         {
             get { return (Force?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Force? MaxValue
         {
             get { return (Force?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public ForceUnit Unit
         {
             get { return (ForceUnit)this.GetValue(UnitProperty); }
@@ -3553,6 +4005,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -3678,16 +4131,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class ForcePerUnitlessRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(ForcePerUnitless?),
-        typeof(ForcePerUnitlessRow),
-        new FrameworkPropertyMetadata(
-            default(ForcePerUnitless?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(ForcePerUnitless?),
+            typeof(ForcePerUnitlessRow),
+            new FrameworkPropertyMetadata(
+                default(ForcePerUnitless?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -3720,24 +4173,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public ForcePerUnitless? Value
         {
             get { return (ForcePerUnitless?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public ForcePerUnitless? MinValue
         {
             get { return (ForcePerUnitless?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public ForcePerUnitless? MaxValue
         {
             get { return (ForcePerUnitless?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public ForcePerUnitlessUnit Unit
         {
             get { return (ForcePerUnitlessUnit)this.GetValue(UnitProperty); }
@@ -3746,6 +4211,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -3871,16 +4337,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class FrequencyRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Frequency?),
-        typeof(FrequencyRow),
-        new FrameworkPropertyMetadata(
-            default(Frequency?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Frequency?),
+            typeof(FrequencyRow),
+            new FrameworkPropertyMetadata(
+                default(Frequency?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -3913,24 +4379,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Frequency? Value
         {
             get { return (Frequency?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Frequency? MinValue
         {
             get { return (Frequency?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Frequency? MaxValue
         {
             get { return (Frequency?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public FrequencyUnit Unit
         {
             get { return (FrequencyUnit)this.GetValue(UnitProperty); }
@@ -3939,6 +4417,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -4064,16 +4543,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class IlluminanceRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Illuminance?),
-        typeof(IlluminanceRow),
-        new FrameworkPropertyMetadata(
-            default(Illuminance?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Illuminance?),
+            typeof(IlluminanceRow),
+            new FrameworkPropertyMetadata(
+                default(Illuminance?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -4106,24 +4585,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Illuminance? Value
         {
             get { return (Illuminance?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Illuminance? MinValue
         {
             get { return (Illuminance?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Illuminance? MaxValue
         {
             get { return (Illuminance?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public IlluminanceUnit Unit
         {
             get { return (IlluminanceUnit)this.GetValue(UnitProperty); }
@@ -4132,6 +4623,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -4257,16 +4749,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class InductanceRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Inductance?),
-        typeof(InductanceRow),
-        new FrameworkPropertyMetadata(
-            default(Inductance?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Inductance?),
+            typeof(InductanceRow),
+            new FrameworkPropertyMetadata(
+                default(Inductance?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -4299,24 +4791,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Inductance? Value
         {
             get { return (Inductance?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Inductance? MinValue
         {
             get { return (Inductance?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Inductance? MaxValue
         {
             get { return (Inductance?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public InductanceUnit Unit
         {
             get { return (InductanceUnit)this.GetValue(UnitProperty); }
@@ -4325,6 +4829,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -4450,16 +4955,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class JerkRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Jerk?),
-        typeof(JerkRow),
-        new FrameworkPropertyMetadata(
-            default(Jerk?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Jerk?),
+            typeof(JerkRow),
+            new FrameworkPropertyMetadata(
+                default(Jerk?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -4492,24 +4997,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Jerk? Value
         {
             get { return (Jerk?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Jerk? MinValue
         {
             get { return (Jerk?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Jerk? MaxValue
         {
             get { return (Jerk?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public JerkUnit Unit
         {
             get { return (JerkUnit)this.GetValue(UnitProperty); }
@@ -4518,6 +5035,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -4643,16 +5161,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class KinematicViscosityRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(KinematicViscosity?),
-        typeof(KinematicViscosityRow),
-        new FrameworkPropertyMetadata(
-            default(KinematicViscosity?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(KinematicViscosity?),
+            typeof(KinematicViscosityRow),
+            new FrameworkPropertyMetadata(
+                default(KinematicViscosity?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -4685,24 +5203,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public KinematicViscosity? Value
         {
             get { return (KinematicViscosity?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public KinematicViscosity? MinValue
         {
             get { return (KinematicViscosity?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public KinematicViscosity? MaxValue
         {
             get { return (KinematicViscosity?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public KinematicViscosityUnit Unit
         {
             get { return (KinematicViscosityUnit)this.GetValue(UnitProperty); }
@@ -4711,6 +5241,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -4836,16 +5367,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class LengthRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Length?),
-        typeof(LengthRow),
-        new FrameworkPropertyMetadata(
-            default(Length?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Length?),
+            typeof(LengthRow),
+            new FrameworkPropertyMetadata(
+                default(Length?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -4878,24 +5409,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Length? Value
         {
             get { return (Length?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Length? MinValue
         {
             get { return (Length?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Length? MaxValue
         {
             get { return (Length?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public LengthUnit Unit
         {
             get { return (LengthUnit)this.GetValue(UnitProperty); }
@@ -4904,6 +5447,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -5029,16 +5573,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class LengthPerUnitlessRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(LengthPerUnitless?),
-        typeof(LengthPerUnitlessRow),
-        new FrameworkPropertyMetadata(
-            default(LengthPerUnitless?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(LengthPerUnitless?),
+            typeof(LengthPerUnitlessRow),
+            new FrameworkPropertyMetadata(
+                default(LengthPerUnitless?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -5071,24 +5615,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public LengthPerUnitless? Value
         {
             get { return (LengthPerUnitless?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public LengthPerUnitless? MinValue
         {
             get { return (LengthPerUnitless?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public LengthPerUnitless? MaxValue
         {
             get { return (LengthPerUnitless?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public LengthPerUnitlessUnit Unit
         {
             get { return (LengthPerUnitlessUnit)this.GetValue(UnitProperty); }
@@ -5097,6 +5653,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -5222,16 +5779,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class LuminousFluxRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(LuminousFlux?),
-        typeof(LuminousFluxRow),
-        new FrameworkPropertyMetadata(
-            default(LuminousFlux?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(LuminousFlux?),
+            typeof(LuminousFluxRow),
+            new FrameworkPropertyMetadata(
+                default(LuminousFlux?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -5264,24 +5821,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public LuminousFlux? Value
         {
             get { return (LuminousFlux?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public LuminousFlux? MinValue
         {
             get { return (LuminousFlux?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public LuminousFlux? MaxValue
         {
             get { return (LuminousFlux?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public LuminousFluxUnit Unit
         {
             get { return (LuminousFluxUnit)this.GetValue(UnitProperty); }
@@ -5290,6 +5859,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -5415,16 +5985,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class LuminousIntensityRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(LuminousIntensity?),
-        typeof(LuminousIntensityRow),
-        new FrameworkPropertyMetadata(
-            default(LuminousIntensity?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(LuminousIntensity?),
+            typeof(LuminousIntensityRow),
+            new FrameworkPropertyMetadata(
+                default(LuminousIntensity?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -5457,24 +6027,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public LuminousIntensity? Value
         {
             get { return (LuminousIntensity?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public LuminousIntensity? MinValue
         {
             get { return (LuminousIntensity?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public LuminousIntensity? MaxValue
         {
             get { return (LuminousIntensity?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public LuminousIntensityUnit Unit
         {
             get { return (LuminousIntensityUnit)this.GetValue(UnitProperty); }
@@ -5483,6 +6065,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -5608,16 +6191,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class MagneticFieldStrengthRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(MagneticFieldStrength?),
-        typeof(MagneticFieldStrengthRow),
-        new FrameworkPropertyMetadata(
-            default(MagneticFieldStrength?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(MagneticFieldStrength?),
+            typeof(MagneticFieldStrengthRow),
+            new FrameworkPropertyMetadata(
+                default(MagneticFieldStrength?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -5650,24 +6233,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public MagneticFieldStrength? Value
         {
             get { return (MagneticFieldStrength?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public MagneticFieldStrength? MinValue
         {
             get { return (MagneticFieldStrength?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public MagneticFieldStrength? MaxValue
         {
             get { return (MagneticFieldStrength?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public MagneticFieldStrengthUnit Unit
         {
             get { return (MagneticFieldStrengthUnit)this.GetValue(UnitProperty); }
@@ -5676,6 +6271,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -5801,16 +6397,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class MagneticFluxRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(MagneticFlux?),
-        typeof(MagneticFluxRow),
-        new FrameworkPropertyMetadata(
-            default(MagneticFlux?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(MagneticFlux?),
+            typeof(MagneticFluxRow),
+            new FrameworkPropertyMetadata(
+                default(MagneticFlux?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -5843,24 +6439,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public MagneticFlux? Value
         {
             get { return (MagneticFlux?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public MagneticFlux? MinValue
         {
             get { return (MagneticFlux?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public MagneticFlux? MaxValue
         {
             get { return (MagneticFlux?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public MagneticFluxUnit Unit
         {
             get { return (MagneticFluxUnit)this.GetValue(UnitProperty); }
@@ -5869,6 +6477,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -5994,16 +6603,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class MassRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Mass?),
-        typeof(MassRow),
-        new FrameworkPropertyMetadata(
-            default(Mass?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Mass?),
+            typeof(MassRow),
+            new FrameworkPropertyMetadata(
+                default(Mass?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -6036,24 +6645,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Mass? Value
         {
             get { return (Mass?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Mass? MinValue
         {
             get { return (Mass?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Mass? MaxValue
         {
             get { return (Mass?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public MassUnit Unit
         {
             get { return (MassUnit)this.GetValue(UnitProperty); }
@@ -6062,6 +6683,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -6187,16 +6809,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class MassFlowRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(MassFlow?),
-        typeof(MassFlowRow),
-        new FrameworkPropertyMetadata(
-            default(MassFlow?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(MassFlow?),
+            typeof(MassFlowRow),
+            new FrameworkPropertyMetadata(
+                default(MassFlow?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -6229,24 +6851,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public MassFlow? Value
         {
             get { return (MassFlow?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public MassFlow? MinValue
         {
             get { return (MassFlow?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public MassFlow? MaxValue
         {
             get { return (MassFlow?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public MassFlowUnit Unit
         {
             get { return (MassFlowUnit)this.GetValue(UnitProperty); }
@@ -6255,6 +6889,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -6377,19 +7012,431 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    public class MolarHeatCapacityRow : UnitRowGeneric, IQuantityFormatter
+    {
+        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
+            "Value",
+            typeof(MolarHeatCapacity?),
+            typeof(MolarHeatCapacityRow),
+            new FrameworkPropertyMetadata(
+                default(MolarHeatCapacity?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
+
+        public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
+            "MinValue",
+            typeof(MolarHeatCapacity?),
+            typeof(MolarHeatCapacityRow),
+            new PropertyMetadata(null, OnMinValueChanged));
+
+        public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
+            "MaxValue",
+            typeof(MolarHeatCapacity?),
+            typeof(MolarHeatCapacityRow),
+            new PropertyMetadata(null, OnMaxValueChanged));
+
+        public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
+            "Unit",
+            typeof(MolarHeatCapacityUnit),
+            typeof(MolarHeatCapacityRow),
+            new PropertyMetadata(default(MolarHeatCapacityUnit).SiUnit, OnUnitChanged));
+
+        public static readonly MolarHeatCapacityUnit DefaultUnit = default(MolarHeatCapacityUnit).SiUnit;
+        private bool isUpdatingScalarValue;
+
+        static MolarHeatCapacityRow()
+        {
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(MolarHeatCapacityRow), new FrameworkPropertyMetadata(typeof(MolarHeatCapacityRow)));
+            SuffixProperty.OverrideMetadata(
+                typeof(MolarHeatCapacityRow),
+                new FrameworkPropertyMetadata(
+                    CreateSuffix(UnitRow.DefaultSymbolFormat, DefaultUnit),
+                    FrameworkPropertyMetadataOptions.NotDataBindable));
+        }
+
+        /// <summary>
+        /// The value.
+        /// </summary>
+        public MolarHeatCapacity? Value
+        {
+            get { return (MolarHeatCapacity?)this.GetValue(ValueProperty); }
+            set { this.SetValue(ValueProperty, value); }
+        }
+
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
+        public MolarHeatCapacity? MinValue
+        {
+            get { return (MolarHeatCapacity?)this.GetValue(MinValueProperty); }
+            set { this.SetValue(MinValueProperty, value); }
+        }
+
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
+        public MolarHeatCapacity? MaxValue
+        {
+            get { return (MolarHeatCapacity?)this.GetValue(MaxValueProperty); }
+            set { this.SetValue(MaxValueProperty, value); }
+        }
+
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
+        public MolarHeatCapacityUnit Unit
+        {
+            get { return (MolarHeatCapacityUnit)this.GetValue(UnitProperty); }
+            set { this.SetValue(UnitProperty, value); }
+        }
+
+        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+        /// <inheritdoc/>
+        string IQuantityFormatter.Format(IQuantity quantity)
+        {
+            if (quantity == null)
+            {
+                return string.Empty;
+            }
+
+            if (!(quantity is MolarHeatCapacity))
+            {
+                return "wrong type";
+            }
+
+            var qty = (MolarHeatCapacity)quantity;
+            var culture = NumericBox.GetCulture(this);
+            return qty.ToString(this.Unit, this.SymbolFormat, culture);
+        }
+
+        protected static string CreateSuffix(SymbolFormat format, MolarHeatCapacityUnit unit)
+        {
+            return default(MolarHeatCapacity).ToString(unit, format).Trim('0');
+        }
+
+        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MolarHeatCapacityRow)d).OnMinValueChanged((MolarHeatCapacity?)e.OldValue, (MolarHeatCapacity?)e.NewValue);
+        }
+
+        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MolarHeatCapacityRow)d).OnMaxValueChanged((MolarHeatCapacity?)e.OldValue, (MolarHeatCapacity?)e.NewValue);
+        }
+
+        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (MolarHeatCapacityRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (MolarHeatCapacityUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (MolarHeatCapacityUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
+        }
+
+        protected override void OnValueChanged(object oldValue, object newValue)
+        {
+            this.SetScalarValue(ScalarValueProperty, (MolarHeatCapacity?)newValue);
+            base.OnValueChanged(oldValue, newValue);
+        }
+
+        protected virtual void OnMinValueChanged(MolarHeatCapacity? oldValue, MolarHeatCapacity? newValue)
+        {
+            this.SetScalarValue(ScalarMinValueProperty, newValue);
+        }
+
+        protected virtual void OnMaxValueChanged(MolarHeatCapacity? oldValue, MolarHeatCapacity? newValue)
+        {
+            this.SetScalarValue(ScalarMaxValueProperty, newValue);
+        }
+
+        protected override void OnScalarValueChanged(double? newValue)
+        {
+            this.SetQuantityValue(ValueProperty, newValue);
+        }
+
+        protected override void OnScalarMinValueChanged(double? newValue)
+        {
+            this.SetQuantityValue(MinValueProperty, newValue);
+        }
+
+        protected override void OnScalarMaxValueChanged(double? newValue)
+        {
+            this.SetQuantityValue(MaxValueProperty, newValue);
+        }
+
+        protected override void UpdateIsDirty()
+        {
+            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            {
+                this.IsDirty = null;
+            }
+            else
+            {
+                this.IsDirty = !Equals(this.OldValue, this.Value);
+            }
+        }
+
+        protected void SetScalarValue(DependencyProperty property, MolarHeatCapacity? quantity)
+        {
+            // we set this flag to prevent from setting scalar value changing quantity values.
+            this.isUpdatingScalarValue = true;
+            var value = quantity != null
+                ? this.Unit.GetScalarValue(quantity.Value)
+                : (double?)null;
+            this.SetCurrentValue(property, value);
+            this.isUpdatingScalarValue = false;
+        }
+
+        protected virtual void SetQuantityValue(DependencyProperty property, double? value)
+        {
+            if (this.isUpdatingScalarValue)
+            {
+                return;
+            }
+
+            var qty = value != null
+                ? this.Unit.CreateQuantity(value.Value)
+                : (MolarHeatCapacity?)null;
+            this.SetCurrentValue(property, qty);
+        }
+
+        protected override string CreateSuffix(SymbolFormat format)
+        {
+            return CreateSuffix(format, this.Unit);
+        }
+    }
+
+    public class MolarMassRow : UnitRowGeneric, IQuantityFormatter
+    {
+        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
+            "Value",
+            typeof(MolarMass?),
+            typeof(MolarMassRow),
+            new FrameworkPropertyMetadata(
+                default(MolarMass?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
+
+        public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
+            "MinValue",
+            typeof(MolarMass?),
+            typeof(MolarMassRow),
+            new PropertyMetadata(null, OnMinValueChanged));
+
+        public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
+            "MaxValue",
+            typeof(MolarMass?),
+            typeof(MolarMassRow),
+            new PropertyMetadata(null, OnMaxValueChanged));
+
+        public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
+            "Unit",
+            typeof(MolarMassUnit),
+            typeof(MolarMassRow),
+            new PropertyMetadata(default(MolarMassUnit).SiUnit, OnUnitChanged));
+
+        public static readonly MolarMassUnit DefaultUnit = default(MolarMassUnit).SiUnit;
+        private bool isUpdatingScalarValue;
+
+        static MolarMassRow()
+        {
+            // DefaultStyleKeyProperty.OverrideMetadata(typeof(MolarMassRow), new FrameworkPropertyMetadata(typeof(MolarMassRow)));
+            SuffixProperty.OverrideMetadata(
+                typeof(MolarMassRow),
+                new FrameworkPropertyMetadata(
+                    CreateSuffix(UnitRow.DefaultSymbolFormat, DefaultUnit),
+                    FrameworkPropertyMetadataOptions.NotDataBindable));
+        }
+
+        /// <summary>
+        /// The value.
+        /// </summary>
+        public MolarMass? Value
+        {
+            get { return (MolarMass?)this.GetValue(ValueProperty); }
+            set { this.SetValue(ValueProperty, value); }
+        }
+
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
+        public MolarMass? MinValue
+        {
+            get { return (MolarMass?)this.GetValue(MinValueProperty); }
+            set { this.SetValue(MinValueProperty, value); }
+        }
+
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
+        public MolarMass? MaxValue
+        {
+            get { return (MolarMass?)this.GetValue(MaxValueProperty); }
+            set { this.SetValue(MaxValueProperty, value); }
+        }
+
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
+        public MolarMassUnit Unit
+        {
+            get { return (MolarMassUnit)this.GetValue(UnitProperty); }
+            set { this.SetValue(UnitProperty, value); }
+        }
+
+        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+        /// <inheritdoc/>
+        string IQuantityFormatter.Format(IQuantity quantity)
+        {
+            if (quantity == null)
+            {
+                return string.Empty;
+            }
+
+            if (!(quantity is MolarMass))
+            {
+                return "wrong type";
+            }
+
+            var qty = (MolarMass)quantity;
+            var culture = NumericBox.GetCulture(this);
+            return qty.ToString(this.Unit, this.SymbolFormat, culture);
+        }
+
+        protected static string CreateSuffix(SymbolFormat format, MolarMassUnit unit)
+        {
+            return default(MolarMass).ToString(unit, format).Trim('0');
+        }
+
+        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MolarMassRow)d).OnMinValueChanged((MolarMass?)e.OldValue, (MolarMass?)e.NewValue);
+        }
+
+        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MolarMassRow)d).OnMaxValueChanged((MolarMass?)e.OldValue, (MolarMass?)e.NewValue);
+        }
+
+        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (MolarMassRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (MolarMassUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (MolarMassUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
+        }
+
+        protected override void OnValueChanged(object oldValue, object newValue)
+        {
+            this.SetScalarValue(ScalarValueProperty, (MolarMass?)newValue);
+            base.OnValueChanged(oldValue, newValue);
+        }
+
+        protected virtual void OnMinValueChanged(MolarMass? oldValue, MolarMass? newValue)
+        {
+            this.SetScalarValue(ScalarMinValueProperty, newValue);
+        }
+
+        protected virtual void OnMaxValueChanged(MolarMass? oldValue, MolarMass? newValue)
+        {
+            this.SetScalarValue(ScalarMaxValueProperty, newValue);
+        }
+
+        protected override void OnScalarValueChanged(double? newValue)
+        {
+            this.SetQuantityValue(ValueProperty, newValue);
+        }
+
+        protected override void OnScalarMinValueChanged(double? newValue)
+        {
+            this.SetQuantityValue(MinValueProperty, newValue);
+        }
+
+        protected override void OnScalarMaxValueChanged(double? newValue)
+        {
+            this.SetQuantityValue(MaxValueProperty, newValue);
+        }
+
+        protected override void UpdateIsDirty()
+        {
+            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            {
+                this.IsDirty = null;
+            }
+            else
+            {
+                this.IsDirty = !Equals(this.OldValue, this.Value);
+            }
+        }
+
+        protected void SetScalarValue(DependencyProperty property, MolarMass? quantity)
+        {
+            // we set this flag to prevent from setting scalar value changing quantity values.
+            this.isUpdatingScalarValue = true;
+            var value = quantity != null
+                ? this.Unit.GetScalarValue(quantity.Value)
+                : (double?)null;
+            this.SetCurrentValue(property, value);
+            this.isUpdatingScalarValue = false;
+        }
+
+        protected virtual void SetQuantityValue(DependencyProperty property, double? value)
+        {
+            if (this.isUpdatingScalarValue)
+            {
+                return;
+            }
+
+            var qty = value != null
+                ? this.Unit.CreateQuantity(value.Value)
+                : (MolarMass?)null;
+            this.SetCurrentValue(property, qty);
+        }
+
+        protected override string CreateSuffix(SymbolFormat format)
+        {
+            return CreateSuffix(format, this.Unit);
+        }
+    }
+
     public class MomentumRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Momentum?),
-        typeof(MomentumRow),
-        new FrameworkPropertyMetadata(
-            default(Momentum?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Momentum?),
+            typeof(MomentumRow),
+            new FrameworkPropertyMetadata(
+                default(Momentum?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -6422,24 +7469,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Momentum? Value
         {
             get { return (Momentum?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Momentum? MinValue
         {
             get { return (Momentum?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Momentum? MaxValue
         {
             get { return (Momentum?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public MomentumUnit Unit
         {
             get { return (MomentumUnit)this.GetValue(UnitProperty); }
@@ -6448,6 +7507,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -6573,16 +7633,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class PowerRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Power?),
-        typeof(PowerRow),
-        new FrameworkPropertyMetadata(
-            default(Power?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Power?),
+            typeof(PowerRow),
+            new FrameworkPropertyMetadata(
+                default(Power?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -6615,24 +7675,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Power? Value
         {
             get { return (Power?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Power? MinValue
         {
             get { return (Power?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Power? MaxValue
         {
             get { return (Power?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public PowerUnit Unit
         {
             get { return (PowerUnit)this.GetValue(UnitProperty); }
@@ -6641,6 +7713,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -6766,16 +7839,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class PressureRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Pressure?),
-        typeof(PressureRow),
-        new FrameworkPropertyMetadata(
-            default(Pressure?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Pressure?),
+            typeof(PressureRow),
+            new FrameworkPropertyMetadata(
+                default(Pressure?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -6808,24 +7881,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Pressure? Value
         {
             get { return (Pressure?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Pressure? MinValue
         {
             get { return (Pressure?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Pressure? MaxValue
         {
             get { return (Pressure?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public PressureUnit Unit
         {
             get { return (PressureUnit)this.GetValue(UnitProperty); }
@@ -6834,6 +7919,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -6959,16 +8045,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class ResistanceRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Resistance?),
-        typeof(ResistanceRow),
-        new FrameworkPropertyMetadata(
-            default(Resistance?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Resistance?),
+            typeof(ResistanceRow),
+            new FrameworkPropertyMetadata(
+                default(Resistance?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -7001,24 +8087,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Resistance? Value
         {
             get { return (Resistance?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Resistance? MinValue
         {
             get { return (Resistance?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Resistance? MaxValue
         {
             get { return (Resistance?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public ResistanceUnit Unit
         {
             get { return (ResistanceUnit)this.GetValue(UnitProperty); }
@@ -7027,6 +8125,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -7152,16 +8251,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class SolidAngleRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(SolidAngle?),
-        typeof(SolidAngleRow),
-        new FrameworkPropertyMetadata(
-            default(SolidAngle?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(SolidAngle?),
+            typeof(SolidAngleRow),
+            new FrameworkPropertyMetadata(
+                default(SolidAngle?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -7194,24 +8293,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public SolidAngle? Value
         {
             get { return (SolidAngle?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public SolidAngle? MinValue
         {
             get { return (SolidAngle?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public SolidAngle? MaxValue
         {
             get { return (SolidAngle?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public SolidAngleUnit Unit
         {
             get { return (SolidAngleUnit)this.GetValue(UnitProperty); }
@@ -7220,6 +8331,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -7345,16 +8457,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class SpecificEnergyRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(SpecificEnergy?),
-        typeof(SpecificEnergyRow),
-        new FrameworkPropertyMetadata(
-            default(SpecificEnergy?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(SpecificEnergy?),
+            typeof(SpecificEnergyRow),
+            new FrameworkPropertyMetadata(
+                default(SpecificEnergy?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -7387,24 +8499,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public SpecificEnergy? Value
         {
             get { return (SpecificEnergy?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public SpecificEnergy? MinValue
         {
             get { return (SpecificEnergy?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public SpecificEnergy? MaxValue
         {
             get { return (SpecificEnergy?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public SpecificEnergyUnit Unit
         {
             get { return (SpecificEnergyUnit)this.GetValue(UnitProperty); }
@@ -7413,6 +8537,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -7538,16 +8663,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class SpecificVolumeRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(SpecificVolume?),
-        typeof(SpecificVolumeRow),
-        new FrameworkPropertyMetadata(
-            default(SpecificVolume?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(SpecificVolume?),
+            typeof(SpecificVolumeRow),
+            new FrameworkPropertyMetadata(
+                default(SpecificVolume?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -7580,24 +8705,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public SpecificVolume? Value
         {
             get { return (SpecificVolume?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public SpecificVolume? MinValue
         {
             get { return (SpecificVolume?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public SpecificVolume? MaxValue
         {
             get { return (SpecificVolume?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public SpecificVolumeUnit Unit
         {
             get { return (SpecificVolumeUnit)this.GetValue(UnitProperty); }
@@ -7606,6 +8743,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -7731,16 +8869,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class SpeedRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Speed?),
-        typeof(SpeedRow),
-        new FrameworkPropertyMetadata(
-            default(Speed?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Speed?),
+            typeof(SpeedRow),
+            new FrameworkPropertyMetadata(
+                default(Speed?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -7773,24 +8911,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Speed? Value
         {
             get { return (Speed?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Speed? MinValue
         {
             get { return (Speed?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Speed? MaxValue
         {
             get { return (Speed?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public SpeedUnit Unit
         {
             get { return (SpeedUnit)this.GetValue(UnitProperty); }
@@ -7799,6 +8949,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -7924,16 +9075,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class StiffnessRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Stiffness?),
-        typeof(StiffnessRow),
-        new FrameworkPropertyMetadata(
-            default(Stiffness?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Stiffness?),
+            typeof(StiffnessRow),
+            new FrameworkPropertyMetadata(
+                default(Stiffness?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -7966,24 +9117,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Stiffness? Value
         {
             get { return (Stiffness?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Stiffness? MinValue
         {
             get { return (Stiffness?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Stiffness? MaxValue
         {
             get { return (Stiffness?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public StiffnessUnit Unit
         {
             get { return (StiffnessUnit)this.GetValue(UnitProperty); }
@@ -7992,6 +9155,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -8117,16 +9281,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class TemperatureRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Temperature?),
-        typeof(TemperatureRow),
-        new FrameworkPropertyMetadata(
-            default(Temperature?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Temperature?),
+            typeof(TemperatureRow),
+            new FrameworkPropertyMetadata(
+                default(Temperature?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -8159,24 +9323,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Temperature? Value
         {
             get { return (Temperature?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Temperature? MinValue
         {
             get { return (Temperature?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Temperature? MaxValue
         {
             get { return (Temperature?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public TemperatureUnit Unit
         {
             get { return (TemperatureUnit)this.GetValue(UnitProperty); }
@@ -8185,6 +9361,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -8310,16 +9487,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class TimeRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Time?),
-        typeof(TimeRow),
-        new FrameworkPropertyMetadata(
-            default(Time?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Time?),
+            typeof(TimeRow),
+            new FrameworkPropertyMetadata(
+                default(Time?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -8352,24 +9529,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Time? Value
         {
             get { return (Time?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Time? MinValue
         {
             get { return (Time?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Time? MaxValue
         {
             get { return (Time?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public TimeUnit Unit
         {
             get { return (TimeUnit)this.GetValue(UnitProperty); }
@@ -8378,6 +9567,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -8503,16 +9693,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class TorqueRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Torque?),
-        typeof(TorqueRow),
-        new FrameworkPropertyMetadata(
-            default(Torque?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Torque?),
+            typeof(TorqueRow),
+            new FrameworkPropertyMetadata(
+                default(Torque?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -8545,24 +9735,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Torque? Value
         {
             get { return (Torque?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Torque? MinValue
         {
             get { return (Torque?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Torque? MaxValue
         {
             get { return (Torque?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public TorqueUnit Unit
         {
             get { return (TorqueUnit)this.GetValue(UnitProperty); }
@@ -8571,6 +9773,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -8696,16 +9899,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class UnitlessRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Unitless?),
-        typeof(UnitlessRow),
-        new FrameworkPropertyMetadata(
-            default(Unitless?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Unitless?),
+            typeof(UnitlessRow),
+            new FrameworkPropertyMetadata(
+                default(Unitless?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -8738,24 +9941,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Unitless? Value
         {
             get { return (Unitless?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Unitless? MinValue
         {
             get { return (Unitless?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Unitless? MaxValue
         {
             get { return (Unitless?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public UnitlessUnit Unit
         {
             get { return (UnitlessUnit)this.GetValue(UnitProperty); }
@@ -8764,6 +9979,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -8889,16 +10105,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class VoltageRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Voltage?),
-        typeof(VoltageRow),
-        new FrameworkPropertyMetadata(
-            default(Voltage?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Voltage?),
+            typeof(VoltageRow),
+            new FrameworkPropertyMetadata(
+                default(Voltage?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -8931,24 +10147,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Voltage? Value
         {
             get { return (Voltage?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Voltage? MinValue
         {
             get { return (Voltage?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Voltage? MaxValue
         {
             get { return (Voltage?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public VoltageUnit Unit
         {
             get { return (VoltageUnit)this.GetValue(UnitProperty); }
@@ -8957,6 +10185,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -9082,16 +10311,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class VolumeRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Volume?),
-        typeof(VolumeRow),
-        new FrameworkPropertyMetadata(
-            default(Volume?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Volume?),
+            typeof(VolumeRow),
+            new FrameworkPropertyMetadata(
+                default(Volume?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -9124,24 +10353,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Volume? Value
         {
             get { return (Volume?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Volume? MinValue
         {
             get { return (Volume?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Volume? MaxValue
         {
             get { return (Volume?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public VolumeUnit Unit
         {
             get { return (VolumeUnit)this.GetValue(UnitProperty); }
@@ -9150,6 +10391,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -9275,16 +10517,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class VolumetricFlowRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(VolumetricFlow?),
-        typeof(VolumetricFlowRow),
-        new FrameworkPropertyMetadata(
-            default(VolumetricFlow?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(VolumetricFlow?),
+            typeof(VolumetricFlowRow),
+            new FrameworkPropertyMetadata(
+                default(VolumetricFlow?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -9317,24 +10559,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public VolumetricFlow? Value
         {
             get { return (VolumetricFlow?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public VolumetricFlow? MinValue
         {
             get { return (VolumetricFlow?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public VolumetricFlow? MaxValue
         {
             get { return (VolumetricFlow?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public VolumetricFlowUnit Unit
         {
             get { return (VolumetricFlowUnit)this.GetValue(UnitProperty); }
@@ -9343,6 +10597,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -9468,16 +10723,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     public class WavenumberRow : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(Wavenumber?),
-        typeof(WavenumberRow),
-        new FrameworkPropertyMetadata(
-            default(Wavenumber?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(Wavenumber?),
+            typeof(WavenumberRow),
+            new FrameworkPropertyMetadata(
+                default(Wavenumber?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -9510,24 +10765,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public Wavenumber? Value
         {
             get { return (Wavenumber?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public Wavenumber? MinValue
         {
             get { return (Wavenumber?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public Wavenumber? MaxValue
         {
             get { return (Wavenumber?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public WavenumberUnit Unit
         {
             get { return (WavenumberUnit)this.GetValue(UnitProperty); }
@@ -9536,6 +10803,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)

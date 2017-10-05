@@ -20,7 +20,7 @@
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-	
+    
                         <numeric:DoubleBox x:Name="PART_Value"
                                            Grid.Row="0"
                                            Grid.Column="1"
@@ -39,7 +39,7 @@
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-	
+    
             </Grid>
         </Border> 
         <ControlTemplate.Triggers>
@@ -69,9 +69,9 @@
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-	
+    
                 <Border Grid.Row="0"
-				        Grid.Column="1"
+                        Grid.Column="1"
                         BorderBrush="{Binding Foreground,
                                               ElementName=PART_Info}"
                         Margin="0,0,0,-1"
@@ -94,7 +94,7 @@
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-	
+    
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"

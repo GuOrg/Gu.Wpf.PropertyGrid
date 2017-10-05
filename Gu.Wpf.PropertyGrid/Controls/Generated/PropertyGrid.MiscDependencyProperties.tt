@@ -13,14 +13,14 @@ namespace Gu.Wpf.PropertyGrid
 <#
     var propertyMetaDatas = new[]
                      {
-						new PropertyMetaData("IsReadOnly","bool","false"),
-						new PropertyMetaData("OldValueStringFormat","string","\"Old value: {0}\""),
-						new PropertyMetaData("OldDataContext","object","null", "OnOldDataContextChanged"),
+                        new PropertyMetaData("IsReadOnly","bool","false"),
+                        new PropertyMetaData("OldValueStringFormat","string","\"Old value: {0}\""),
+                        new PropertyMetaData("OldDataContext","object","null", "OnOldDataContextChanged"),
                      };
 
-	foreach(var propertyMetaData in propertyMetaDatas)
-	{
-		#>
+    foreach(var propertyMetaData in propertyMetaDatas)
+    {
+        #>
         public static readonly DependencyProperty <#= propertyMetaData.Name #>Property = DependencyProperty.RegisterAttached(
             "<#= propertyMetaData.Name #>",
             typeof(<#= propertyMetaData.Type #>),
@@ -30,11 +30,11 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits));
 
 <#
-	} 
+    } 
 
-	foreach(var propertyMetaData in propertyMetaDatas)
-	{
-		#>
+    foreach(var propertyMetaData in propertyMetaDatas)
+    {
+        #>
         public static void Set<#= propertyMetaData.Name #>(this UIElement element, <#= propertyMetaData.Type #> value)
         {
             element.SetValue(<#= propertyMetaData.Name #>Property, value);
@@ -47,9 +47,9 @@ namespace Gu.Wpf.PropertyGrid
             return (<#= propertyMetaData.Type #>)element.GetValue(<#= propertyMetaData.Name #>Property);
         }
 <#  
-	this.WriteLineIfNotLast(propertyMetaData, propertyMetaDatas);
-	}
-		 #>
+    this.WriteLineIfNotLast(propertyMetaData, propertyMetaDatas);
+    }
+         #>
     }
 <#
     var controlNames = new[]
@@ -59,16 +59,16 @@ namespace Gu.Wpf.PropertyGrid
                             new ClassMetaData("ContentRow", false)
                         };
 
-	foreach(var controlName in controlNames)
-	{ 
-	#>
+    foreach(var controlName in controlNames)
+    { 
+    #>
 
     public <#= controlName.IsAbstract ? "abstract " : "" #>partial class <#= controlName.Name #>
     {
 <#
-		foreach(var propertyMetaData in propertyMetaDatas)
-		{
-			 #>
+        foreach(var propertyMetaData in propertyMetaDatas)
+        {
+             #>
         public static readonly DependencyProperty <#= propertyMetaData.Name #>Property = PropertyGrid.<#= propertyMetaData.Name #>Property.AddOwner(
             typeof(<#= controlName.Name #>),
             new FrameworkPropertyMetadata(
@@ -76,28 +76,28 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits<#= propertyMetaData.OnPropertyChanged #>));
 
 <#
-		} 
+        } 
 
-		foreach(var propertyMetaData in propertyMetaDatas)
-		{
-			 #>
+        foreach(var propertyMetaData in propertyMetaDatas)
+        {
+             #>
         public <#= propertyMetaData.Type #> <#= propertyMetaData.Name #>
         {
             get { return (<#= propertyMetaData.Type #>)this.GetValue(<#= propertyMetaData.Name #>Property); }
             set { this.SetValue(<#= propertyMetaData.Name #>Property, value); }
         }
 <#
-	this.WriteLineIfNotLast(propertyMetaData, propertyMetaDatas);
-	} 
-			#>
+    this.WriteLineIfNotLast(propertyMetaData, propertyMetaDatas);
+    } 
+            #>
     }
 <#
-		} 
-		#>
+        } 
+        #>
 }
 <#+
     private void WriteLineIfNotLast<T>(T item, IEnumerable<T> items)
-		where T : class 
+        where T : class 
     {
         if (!ReferenceEquals(items.Last(), item))
         {

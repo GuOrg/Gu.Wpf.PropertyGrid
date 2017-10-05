@@ -14,16 +14,16 @@ namespace Gu.Wpf.PropertyGrid
     public static partial class PropertyGrid
     {
 <#
-	var columns = new[]
-		                    {
-		                        new ColumnMetaData("Header"), 
-								new ColumnMetaData("Value"), 
-								new ColumnMetaData("Suffix")
-		                    };
-	var widths = columns.SelectMany(x => x.Widths).ToArray();
-	foreach(var columnWidth in widths)
-	{
-		#>
+    var columns = new[]
+                            {
+                                new ColumnMetaData("Header"), 
+                                new ColumnMetaData("Value"), 
+                                new ColumnMetaData("Suffix")
+                            };
+    var widths = columns.SelectMany(x => x.Widths).ToArray();
+    foreach(var columnWidth in widths)
+    {
+        #>
         public static readonly DependencyProperty <#= columnWidth.PropertyName #>Property = DependencyProperty.RegisterAttached(
             "<#= columnWidth.PropertyName #>",
             typeof(<#= columnWidth.Type #>),
@@ -33,11 +33,11 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
 <#
-	}
+    }
 
-	foreach(var columnWidth in widths)
-	{
-		#>
+    foreach(var columnWidth in widths)
+    {
+        #>
         public static void Set<#= columnWidth.PropertyName #>(this UIElement element, <#= columnWidth.Type #> value)
         {
             element.SetValue(<#= columnWidth.PropertyName #>Property, value);
@@ -50,9 +50,9 @@ namespace Gu.Wpf.PropertyGrid
             return (<#= columnWidth.Type #>)element.GetValue(<#= columnWidth.PropertyName #>Property);
         }
 <#   
-		this.WriteLineIfNotLast(columnWidth, widths);
-	}
-		 #>
+        this.WriteLineIfNotLast(columnWidth, widths);
+    }
+         #>
     }
 <#
     var controlNames = new[]
@@ -61,16 +61,16 @@ namespace Gu.Wpf.PropertyGrid
                                new ClassMetaData("Row", true),
                                new ClassMetaData("ContentRow", false)
                            };
-	foreach(var controlName in controlNames)
-	{
-		 #>
+    foreach(var controlName in controlNames)
+    {
+         #>
 
     public <#= controlName.IsAbstract ? "abstract " : "" #>partial class <#= controlName.Name #>
     {
 <#
-		foreach(var columnWidth in widths)
-		{
-			 #>
+        foreach(var columnWidth in widths)
+        {
+             #>
         public static readonly DependencyProperty <#= columnWidth.PropertyName #>Property = PropertyGrid.<#= columnWidth.PropertyName #>Property.AddOwner(
             typeof(<#= controlName.Name #>),
             new FrameworkPropertyMetadata(
@@ -78,29 +78,29 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
 <#
-		} 
+        } 
 
-		foreach(var columnWidth in widths)
-		{
-			 #>
+        foreach(var columnWidth in widths)
+        {
+             #>
         public <#= columnWidth.Type #> <#= columnWidth.PropertyName #>
         {
             get { return (<#= columnWidth.Type #>)this.GetValue(<#= columnWidth.PropertyName #>Property); }
             set { this.SetValue(<#= columnWidth.PropertyName #>Property, value); }
         }
 <#
-			this.WriteLineIfNotLast(columnWidth, widths);
-		} 
-			#>
+            this.WriteLineIfNotLast(columnWidth, widths);
+        } 
+            #>
     }
 <#
-		} 
-		#>
+        } 
+        #>
 }
 <#+
 
     private void WriteLineIfNotLast<T>(T item, IEnumerable<T> items)
-		where T : class 
+        where T : class 
     {
         if (!ReferenceEquals(items.Last(), item))
         {
@@ -108,17 +108,17 @@ namespace Gu.Wpf.PropertyGrid
         }
     }
 
-	private class ClassMetaData
-	{
-		public readonly string Name;
-		public readonly bool IsAbstract;
+    private class ClassMetaData
+    {
+        public readonly string Name;
+        public readonly bool IsAbstract;
 
-		public ClassMetaData(string name, bool isAbstract)
-		{
-			this.Name = name;
-			this.IsAbstract = isAbstract;
-		}
-	}
+        public ClassMetaData(string name, bool isAbstract)
+        {
+            this.Name = name;
+            this.IsAbstract = isAbstract;
+        }
+    }
 
     private class ColumnMetaData 
     {

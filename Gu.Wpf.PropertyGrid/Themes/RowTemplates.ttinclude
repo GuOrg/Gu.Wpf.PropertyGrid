@@ -5,43 +5,43 @@
 <#@ output extension=".txt" #>
 <#+
     private const string TextBlockHeaderXaml = 
-	@"                <propertyGrid:HeaderBlock x:Name=""PART_Header""
+    @"                <propertyGrid:HeaderBlock x:Name=""PART_Header""
                                           Grid.Row=""0""
                                           Grid.Column=""0""
                                           Style=""{TemplateBinding HeaderStyle}""
                                           Text=""{TemplateBinding Header}"" />
-	";
+    ";
 
-	    private const string TextBoxHeaderXaml = 
-	@"                <TextBox x:Name=""PART_Header""
+        private const string TextBoxHeaderXaml = 
+    @"                <TextBox x:Name=""PART_Header""
                                  Grid.Row=""0""
                                  Grid.Column=""0""
                                  Focusable=""False""
                                  IsReadOnly=""True""
                                  Style=""{TemplateBinding HeaderStyle}""
                                  Text=""{TemplateBinding Header}"" />
-	";
+    ";
 
-	    private const string TextBlockSuffixXaml = 
-	@"                <propertyGrid:SuffixBlock x:Name=""PART_Suffix""
+        private const string TextBlockSuffixXaml = 
+    @"                <propertyGrid:SuffixBlock x:Name=""PART_Suffix""
                                           Grid.Row=""0""
                                           Grid.Column=""2""
                                           Style=""{TemplateBinding SuffixStyle}""
                                           Text=""{TemplateBinding Suffix}"" />
-	";
+    ";
 
-	    private const string TextBoxSuffixXaml = 
-	@"                        <TextBox x:Name=""PART_Suffix""
+        private const string TextBoxSuffixXaml = 
+    @"                        <TextBox x:Name=""PART_Suffix""
                                  Grid.Row=""0""
                                  Grid.Column=""2""
                                  Focusable=""False""
                                  IsReadOnly=""True""
                                  Style=""{TemplateBinding SuffixStyle}""
                                  Text=""{TemplateBinding Suffix}"" />
-	";
+    ";
 
-	    private const string InfoPresenterXaml = 
-	@"                        <propertyGrid:RowInfoPresenter x:Name=""InfoPresenter""
+        private const string InfoPresenterXaml = 
+    @"                        <propertyGrid:RowInfoPresenter x:Name=""InfoPresenter""
                                                        Grid.Row=""1""
                                                        Grid.Column=""0""
                                                        Grid.ColumnSpan=""2""
@@ -103,7 +103,7 @@
             </ControlTemplate>";
 
     private void WriteLineIfNotLast<T>(T item, IEnumerable<T> items)
-		where T : class 
+        where T : class 
     {
         if (!ReferenceEquals(items.Last(), item))
         {
@@ -113,7 +113,7 @@
 
     private void WritePlainTemplate(NameAndXaml nameAndXaml)
     {
-		var valueXaml = SetValueRowColumn(nameAndXaml.Xaml);
+        var valueXaml = SetValueRowColumn(nameAndXaml.Xaml);
 #>
     <ControlTemplate x:Key="<#= nameAndXaml.Name #>PlainTemplate" TargetType="{x:Type <#= nameAndXaml.PrefixedName #>}">
         <Border Margin="{TemplateBinding Padding}"
@@ -140,10 +140,10 @@
 <#+        
     }
 
-	private void WriteInfoTemplate(NameAndXaml nameAndXaml)
-	{
-	    var valueXaml = SetValidationTemplateToNull(nameAndXaml.Xaml);
-	    valueXaml = Indent(valueXaml, "    ");
+    private void WriteInfoTemplate(NameAndXaml nameAndXaml)
+    {
+        var valueXaml = SetValidationTemplateToNull(nameAndXaml.Xaml);
+        valueXaml = Indent(valueXaml, "    ");
 #>
     <ControlTemplate x:Key="<#= nameAndXaml.Name #>InfoTemplate" TargetType="{x:Type <#= nameAndXaml.PrefixedName #>}">
         <Border Margin="{TemplateBinding Padding}"
@@ -162,7 +162,7 @@
                 </Grid.ColumnDefinitions> 
 <#= TextBlockHeaderXaml #>
                 <Border Grid.Row="0"
-				        Grid.Column="1"
+                        Grid.Column="1"
                         BorderBrush="{Binding Foreground,
                                               ElementName=PART_Info}"
                         Margin="0,0,0,-1"
@@ -210,18 +210,18 @@
         return  string.Format(InfoTemplate, nameAndXaml.PrefixedName, headerXaml, valueXaml, suffixXaml, infoXaml);
     }
 
-	private static string GetPlainTemplate(NameAndXaml nameAndXaml, string headerXaml, string suffixXaml)
+    private static string GetPlainTemplate(NameAndXaml nameAndXaml, string headerXaml, string suffixXaml)
     {
-	    var valueXaml = SetValueRowColumn(nameAndXaml.Xaml);
+        var valueXaml = SetValueRowColumn(nameAndXaml.Xaml);
         return  string.Format(PlainTemplate, nameAndXaml.PrefixedName, headerXaml, valueXaml, suffixXaml);
     }
 
     private static string SetValidationTemplateToNull(string valueXaml)
     {
-		if(valueXaml.Contains("Validation.ErrorTemplate"))
-		{
-		    return "Should not contain Validation.ErrorTemplate";
-		}
+        if(valueXaml.Contains("Validation.ErrorTemplate"))
+        {
+            return "Should not contain Validation.ErrorTemplate";
+        }
 
         var builder = new StringBuilder();
         var rows = GetRows(valueXaml);
@@ -244,29 +244,29 @@
         return builder.ToString();
     }
 
-	private static string SetValueRowColumn(string valueXaml)
+    private static string SetValueRowColumn(string valueXaml)
     {
-		if(valueXaml.Contains("Grid.Row="))
-		{
-		    return "Template should not contain Grid.Row";
-		}
+        if(valueXaml.Contains("Grid.Row="))
+        {
+            return "Template should not contain Grid.Row";
+        }
 
-		if(valueXaml.Contains("Grid.Column="))
-		{
-		    return "Template should not contain Grid.Column";
-		}
+        if(valueXaml.Contains("Grid.Column="))
+        {
+            return "Template should not contain Grid.Column";
+        }
 
-	    if (valueXaml.Contains("Focusable="))
-	    {
-	           return "Template should not contain Focusable";
-	    }
+        if (valueXaml.Contains("Focusable="))
+        {
+               return "Template should not contain Focusable";
+        }
 
         var builder = new StringBuilder();
         var rows = GetRows(valueXaml);
-	    builder.AppendLine(rows[0]);
+        builder.AppendLine(rows[0]);
         var indentation = GetIndentation(valueXaml);
-	    builder.AppendLine(indentation + "Grid.Row=\"0\"");
-	    builder.AppendLine(indentation + "Grid.Column=\"1\"");
+        builder.AppendLine(indentation + "Grid.Row=\"0\"");
+        builder.AppendLine(indentation + "Grid.Column=\"1\"");
 
         for (int i = 1; i < rows.Length; i++)
         {
@@ -295,40 +295,40 @@
                    .ToArray();
     }
 
-	private static string GetIndentation(string text)
-	{
-	    var row = GetRows(text)[0];
-	    var xNamePartValue = @"x:Name=""PART_Value""";
-	    var indexOf = row.IndexOf(xNamePartValue);
-	    if (indexOf < 0)
-	    {
-	        return $"first attribute should  be: '{xNamePartValue}'";
-	    }
-	    return new string(' ', indexOf);
-	}
+    private static string GetIndentation(string text)
+    {
+        var row = GetRows(text)[0];
+        var xNamePartValue = @"x:Name=""PART_Value""";
+        var indexOf = row.IndexOf(xNamePartValue);
+        if (indexOf < 0)
+        {
+            return $"first attribute should  be: '{xNamePartValue}'";
+        }
+        return new string(' ', indexOf);
+    }
 
-	private static string RemoveEndTag(string text)
-	{
-	    return text.Substring(0, text.LastIndexOf("/>"))
-	               .TrimEnd();
-	}
+    private static string RemoveEndTag(string text)
+    {
+        return text.Substring(0, text.LastIndexOf("/>"))
+                   .TrimEnd();
+    }
 
-	public  class NameAndXaml
-	{
-	    internal readonly string Prefix;
-	    internal readonly string Name;
-	    internal readonly string Xaml;
+    public  class NameAndXaml
+    {
+        internal readonly string Prefix;
+        internal readonly string Name;
+        internal readonly string Xaml;
 
-	    public NameAndXaml(string prefix,string name, string xaml)
-	    {
-	        this.Prefix = prefix;
-	        this.Name = name;
-	        this.Xaml = xaml;
-	    }
+        public NameAndXaml(string prefix,string name, string xaml)
+        {
+            this.Prefix = prefix;
+            this.Name = name;
+            this.Xaml = xaml;
+        }
 
-	    public string PrefixedName
-	    {
-	        get { return this.Prefix + ":" + this.Name; }
-	    }
-	}
+        public string PrefixedName
+        {
+            get { return this.Prefix + ":" + this.Name; }
+        }
+    }
 #>

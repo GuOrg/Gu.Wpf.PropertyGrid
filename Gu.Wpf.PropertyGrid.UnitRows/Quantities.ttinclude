@@ -8,7 +8,7 @@
     public static Type[] GetQuantityTypes()
     {
         return typeof(Gu.Units.Length).Assembly
-			.GetTypes()
+            .GetTypes()
             .Where(x => !x.IsInterface)
             .Where(x => x.GetInterfaces().Any(i => i == typeof(Gu.Units.IQuantity)))
             .ToArray();

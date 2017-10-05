@@ -11,24 +11,24 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     using Gu.Units;
     using Gu.Wpf.NumericInput;
 <#
-	foreach(var quantityType in GetQuantityTypes())
-	{
+    foreach(var quantityType in GetQuantityTypes())
+    {
         var className = quantityType.Name + "Row";
         #>
 
     public class <#= className #> : UnitRowGeneric, IQuantityFormatter
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-        "Value",
-        typeof(<#= quantityType.Name #>?),
-        typeof(<#= className #>),
-        new FrameworkPropertyMetadata(
-            default(<#= quantityType.Name #>?),
-            FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-            OnValueChanged,
-            null,
-            true,
-            UpdateSourceTrigger.LostFocus));
+            "Value",
+            typeof(<#= quantityType.Name #>?),
+            typeof(<#= className #>),
+            new FrameworkPropertyMetadata(
+                default(<#= quantityType.Name #>?),
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                OnValueChanged,
+                null,
+                true,
+                UpdateSourceTrigger.LostFocus));
 
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
@@ -61,24 +61,36 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        /// <summary>
+        /// The value.
+        /// </summary>
         public <#= quantityType.Name #>? Value
         {
             get { return (<#= quantityType.Name #>?)this.GetValue(ValueProperty); }
             set { this.SetValue(ValueProperty, value); }
         }
 
+        /// <summary>
+        /// The mimimum allowed value. If null no check is performed.
+        /// </summary>
         public <#= quantityType.Name #>? MinValue
         {
             get { return (<#= quantityType.Name #>?)this.GetValue(MinValueProperty); }
             set { this.SetValue(MinValueProperty, value); }
         }
 
+        /// <summary>
+        /// The maximum allowed value. If null no check is performed.
+        /// </summary>
         public <#= quantityType.Name #>? MaxValue
         {
             get { return (<#= quantityType.Name #>?)this.GetValue(MaxValueProperty); }
             set { this.SetValue(MaxValueProperty, value); }
         }
 
+        /// <summary>
+        /// The unit of the <see cref="Value"/>
+        /// </summary>
         public <#= quantityType.Name #>Unit Unit
         {
             get { return (<#= quantityType.Name #>Unit)this.GetValue(UnitProperty); }
@@ -87,6 +99,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
             if (quantity == null)
@@ -209,6 +222,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 <#
-	} 
+    } 
         #>
 }
