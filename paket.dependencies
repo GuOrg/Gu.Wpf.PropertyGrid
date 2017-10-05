@@ -1,7 +1,7 @@
 source http://www.nuget.org/api/v2/
 
-nuget Gu.Wpf.NumericInput ~> 0.5.1
-nuget Gu.Units.Wpf ~> 0.10
+nuget Gu.Wpf.NumericInput ~> 0.5.3
+nuget Gu.Units.Wpf ~> 0.10.6
 nuget Gu.Wpf.ValidationScope ~> 0.1.5.2
 
 group Test
