@@ -1,0 +1,11 @@
+version: 1.0.{build}
+configuration: Release
+platform: Any CPU
+cache:
+- .paket -> paket.lock
+- packages -> paket.lock
+build:
+  verbosity: minimal
+
+on_failure:
+  - ps: Get-ChildItem $env:temp\*.png | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
