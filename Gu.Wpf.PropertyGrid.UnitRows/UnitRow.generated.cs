@@ -150,7 +150,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -159,7 +159,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -168,7 +168,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -392,7 +392,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -401,7 +401,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -410,7 +410,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -634,7 +634,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -643,7 +643,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -652,7 +652,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -876,7 +876,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -885,7 +885,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -894,7 +894,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -1118,7 +1118,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -1127,7 +1127,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -1136,7 +1136,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -1360,7 +1360,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -1369,7 +1369,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -1378,7 +1378,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -1602,7 +1602,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -1611,7 +1611,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -1620,7 +1620,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -1844,7 +1844,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -1853,7 +1853,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -1862,7 +1862,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -2086,7 +2086,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -2095,7 +2095,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -2104,7 +2104,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -2328,7 +2328,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -2337,7 +2337,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -2346,7 +2346,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -2570,7 +2570,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -2579,7 +2579,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -2588,7 +2588,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -2812,7 +2812,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -2821,7 +2821,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -2830,7 +2830,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -3054,7 +3054,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -3063,7 +3063,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -3072,7 +3072,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -3296,7 +3296,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -3305,7 +3305,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -3314,7 +3314,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -3538,7 +3538,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -3547,7 +3547,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -3556,7 +3556,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -3780,7 +3780,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -3789,7 +3789,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -3798,7 +3798,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -4022,7 +4022,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -4031,7 +4031,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -4040,7 +4040,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -4264,7 +4264,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -4273,7 +4273,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -4282,7 +4282,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -4506,7 +4506,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -4515,7 +4515,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -4524,7 +4524,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -4748,7 +4748,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -4757,7 +4757,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -4766,7 +4766,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -4990,7 +4990,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -4999,7 +4999,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -5008,7 +5008,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -5232,7 +5232,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -5241,7 +5241,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -5250,7 +5250,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -5474,7 +5474,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -5483,7 +5483,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -5492,7 +5492,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -5716,7 +5716,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -5725,7 +5725,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -5734,7 +5734,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -5958,7 +5958,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -5967,7 +5967,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -5976,7 +5976,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -6200,7 +6200,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -6209,7 +6209,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -6218,7 +6218,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -6442,7 +6442,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -6451,7 +6451,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -6460,7 +6460,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -6684,7 +6684,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -6693,7 +6693,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -6702,7 +6702,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -6926,7 +6926,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -6935,7 +6935,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -6944,7 +6944,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -7168,7 +7168,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -7177,7 +7177,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -7186,7 +7186,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -7410,7 +7410,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -7419,7 +7419,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -7428,7 +7428,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -7652,7 +7652,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -7661,7 +7661,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -7670,7 +7670,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -7894,7 +7894,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -7903,7 +7903,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -7912,7 +7912,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -8136,7 +8136,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -8145,7 +8145,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -8154,7 +8154,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -8378,7 +8378,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -8387,7 +8387,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -8396,7 +8396,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -8620,7 +8620,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -8629,7 +8629,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -8638,7 +8638,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -8862,7 +8862,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -8871,7 +8871,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -8880,7 +8880,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -9104,7 +9104,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -9113,7 +9113,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -9122,7 +9122,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -9346,7 +9346,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -9355,7 +9355,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -9364,7 +9364,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -9588,7 +9588,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -9597,7 +9597,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -9606,7 +9606,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -9830,7 +9830,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -9839,7 +9839,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -9848,7 +9848,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -10072,7 +10072,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -10081,7 +10081,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -10090,7 +10090,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -10314,7 +10314,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -10323,7 +10323,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -10332,7 +10332,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -10556,7 +10556,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -10565,7 +10565,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -10574,7 +10574,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -10798,7 +10798,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -10807,7 +10807,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -10816,7 +10816,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -11040,7 +11040,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -11049,7 +11049,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -11058,7 +11058,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -11282,7 +11282,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -11291,7 +11291,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -11300,7 +11300,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -11524,7 +11524,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -11533,7 +11533,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -11542,7 +11542,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -11766,7 +11766,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -11775,7 +11775,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -11784,7 +11784,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -12008,7 +12008,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -12017,7 +12017,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -12026,7 +12026,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -12250,7 +12250,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -12259,7 +12259,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -12268,7 +12268,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -12492,7 +12492,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -12501,7 +12501,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -12510,7 +12510,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
@@ -12734,7 +12734,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -12743,7 +12743,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -12752,7 +12752,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)

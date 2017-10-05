@@ -16,6 +16,7 @@
                                                                                           .AddImmutableType<CultureInfo>()
                                                                                           .IgnoreProperty<DummySettings>(nameof(DummySettings.Cultures))
                                                                                           .CreateSettings();
+
         private bool viewHasErrors;
 
         public SettingsVm()

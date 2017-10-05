@@ -14,7 +14,9 @@
         private bool viewHasErrors;
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+
         public string Text
         {
             get => this.text;

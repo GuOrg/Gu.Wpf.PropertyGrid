@@ -16,9 +16,9 @@ namespace Gu.Wpf.PropertyGrid
 
         protected static void OnValueChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
-            var sc = (Row)o;
-            sc.OnValueChanged(e.OldValue, e.NewValue);
-            sc.UpdateIsDirty();
+            var row = (Row)o;
+            row.OnValueChanged(e.OldValue, e.NewValue);
+            row.UpdateIsDirty();
         }
 
         /// <inheritdoc/>

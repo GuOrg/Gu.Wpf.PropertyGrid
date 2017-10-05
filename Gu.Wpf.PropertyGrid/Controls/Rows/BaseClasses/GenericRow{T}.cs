@@ -10,12 +10,12 @@ namespace Gu.Wpf.PropertyGrid
             typeof(T),
             typeof(GenericRow<T>),
             new FrameworkPropertyMetadata(
-                default(T),
-                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
-                null,
-                true,
-                UpdateSourceTrigger.PropertyChanged));
+                defaultValue: default(T),
+                flags: FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                propertyChangedCallback: OnValueChanged,
+                coerceValueCallback: null,
+                isAnimationProhibited: true,
+                defaultUpdateSourceTrigger: UpdateSourceTrigger.PropertyChanged));
 
         public T Value
         {

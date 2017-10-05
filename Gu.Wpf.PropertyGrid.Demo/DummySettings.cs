@@ -280,18 +280,7 @@
             return new[] { $"{propertyName} has {nameof(INotifyDataErrorInfo)} error" };
         }
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        protected virtual void OnErrorsChanged([CallerMemberName] string propertyName = null)
-        {
-            this.ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
-            this.ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(nameof(this.StringValue)));
-        }
-
-        public void Reset()
+        internal void Reset()
         {
             this.intValue = 0;
             this.nullableIntValue = null;
@@ -310,6 +299,17 @@
             this.lengthMax = null;
             this.OnPropertyChanged(string.Empty);
             this.ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(string.Empty));
+        }
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected virtual void OnErrorsChanged([CallerMemberName] string propertyName = null)
+        {
+            this.ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
+            this.ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(nameof(this.StringValue)));
         }
     }
 }

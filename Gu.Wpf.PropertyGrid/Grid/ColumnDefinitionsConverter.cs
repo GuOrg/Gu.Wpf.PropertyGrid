@@ -27,8 +27,7 @@ namespace Gu.Wpf.PropertyGrid
             CultureInfo cultureInfo,
             object source)
         {
-            var text = source as string;
-            if (text != null)
+            if (source is string text)
             {
                 var lengths = GridLengthsParser.Parse(typeDescriptorContext, cultureInfo, text);
                 var columnDefinitions = lengths.Select(gl => new System.Windows.Controls.ColumnDefinition { Width = gl });
