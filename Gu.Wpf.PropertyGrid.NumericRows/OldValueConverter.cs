@@ -17,20 +17,18 @@
             var formatter = values[0] as INumericFormatter;
             if (formatter == null)
             {
-                return "first must be a INumericFormatter";
+                return "first argument must be a IQuantityFormatter";
             }
 
-            var row = values[1] as Row;
+            var row = values[0] as Row;
             if (row == null)
             {
-                return "second must be a Row";
+                return "first argument must be a Row";
             }
 
             var oldValueStringFormat = row.OldValueStringFormat;
-            bool? anyItemHasFormat;
-            int numberOfArguments;
             if (!string.IsNullOrEmpty(oldValueStringFormat) &&
-                FormatString.IsValidFormat(oldValueStringFormat, out numberOfArguments, out anyItemHasFormat))
+                FormatString.IsValidFormat(oldValueStringFormat, out var numberOfArguments, out var anyItemHasFormat))
             {
                 if (numberOfArguments == 1 && anyItemHasFormat == false)
                 {

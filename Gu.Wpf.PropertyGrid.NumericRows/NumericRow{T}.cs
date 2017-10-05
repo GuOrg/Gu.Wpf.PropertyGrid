@@ -27,14 +27,14 @@
 
         public T? MinValue
         {
-            get { return (T?)this.GetValue(MinValueProperty); }
-            set { this.SetValue(MinValueProperty, value); }
+            get => (T?)this.GetValue(MinValueProperty);
+            set => this.SetValue(MinValueProperty, value);
         }
 
         public T? MaxValue
         {
-            get { return (T?)this.GetValue(MaxValueProperty); }
-            set { this.SetValue(MaxValueProperty, value); }
+            get => (T?)this.GetValue(MaxValueProperty);
+            set => this.SetValue(MaxValueProperty, value);
         }
 
         string INumericFormatter.Format(IFormattable value)
