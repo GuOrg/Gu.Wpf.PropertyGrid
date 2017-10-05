@@ -70,9 +70,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <Folder Include="CodeGen\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Gu.Wpf.PropertyGrid\Gu.Wpf.PropertyGrid.csproj">
       <Project>{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}</Project>

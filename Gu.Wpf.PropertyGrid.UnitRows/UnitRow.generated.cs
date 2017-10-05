@@ -112,49 +112,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, AccelerationUnit unit)
-        {
-            return default(Acceleration).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AccelerationRow)d).OnMinValueChanged((Acceleration?)e.OldValue, (Acceleration?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AccelerationRow)d).OnMaxValueChanged((Acceleration?)e.OldValue, (Acceleration?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (AccelerationRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (AccelerationUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (AccelerationUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Acceleration?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Acceleration? oldValue, Acceleration? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Acceleration? oldValue, Acceleration? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -214,6 +197,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, AccelerationUnit unit)
+        {
+            return default(Acceleration).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AccelerationRow)d).OnMinValueChanged((Acceleration?)e.OldValue, (Acceleration?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AccelerationRow)d).OnMaxValueChanged((Acceleration?)e.OldValue, (Acceleration?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (AccelerationRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (AccelerationUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (AccelerationUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -321,49 +336,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, AmountOfSubstanceUnit unit)
-        {
-            return default(AmountOfSubstance).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AmountOfSubstanceRow)d).OnMinValueChanged((AmountOfSubstance?)e.OldValue, (AmountOfSubstance?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AmountOfSubstanceRow)d).OnMaxValueChanged((AmountOfSubstance?)e.OldValue, (AmountOfSubstance?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (AmountOfSubstanceRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (AmountOfSubstanceUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (AmountOfSubstanceUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (AmountOfSubstance?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(AmountOfSubstance? oldValue, AmountOfSubstance? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(AmountOfSubstance? oldValue, AmountOfSubstance? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -423,6 +421,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, AmountOfSubstanceUnit unit)
+        {
+            return default(AmountOfSubstance).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AmountOfSubstanceRow)d).OnMinValueChanged((AmountOfSubstance?)e.OldValue, (AmountOfSubstance?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AmountOfSubstanceRow)d).OnMaxValueChanged((AmountOfSubstance?)e.OldValue, (AmountOfSubstance?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (AmountOfSubstanceRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (AmountOfSubstanceUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (AmountOfSubstanceUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -530,49 +560,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, AngleUnit unit)
-        {
-            return default(Angle).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngleRow)d).OnMinValueChanged((Angle?)e.OldValue, (Angle?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngleRow)d).OnMaxValueChanged((Angle?)e.OldValue, (Angle?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (AngleRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (AngleUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (AngleUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Angle?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Angle? oldValue, Angle? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Angle? oldValue, Angle? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -632,6 +645,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, AngleUnit unit)
+        {
+            return default(Angle).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AngleRow)d).OnMinValueChanged((Angle?)e.OldValue, (Angle?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AngleRow)d).OnMaxValueChanged((Angle?)e.OldValue, (Angle?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (AngleRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (AngleUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (AngleUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -739,49 +784,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, AnglePerUnitlessUnit unit)
-        {
-            return default(AnglePerUnitless).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AnglePerUnitlessRow)d).OnMinValueChanged((AnglePerUnitless?)e.OldValue, (AnglePerUnitless?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AnglePerUnitlessRow)d).OnMaxValueChanged((AnglePerUnitless?)e.OldValue, (AnglePerUnitless?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (AnglePerUnitlessRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (AnglePerUnitlessUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (AnglePerUnitlessUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (AnglePerUnitless?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(AnglePerUnitless? oldValue, AnglePerUnitless? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(AnglePerUnitless? oldValue, AnglePerUnitless? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -841,6 +869,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, AnglePerUnitlessUnit unit)
+        {
+            return default(AnglePerUnitless).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AnglePerUnitlessRow)d).OnMinValueChanged((AnglePerUnitless?)e.OldValue, (AnglePerUnitless?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AnglePerUnitlessRow)d).OnMaxValueChanged((AnglePerUnitless?)e.OldValue, (AnglePerUnitless?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (AnglePerUnitlessRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (AnglePerUnitlessUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (AnglePerUnitlessUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -948,49 +1008,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, AngularAccelerationUnit unit)
-        {
-            return default(AngularAcceleration).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngularAccelerationRow)d).OnMinValueChanged((AngularAcceleration?)e.OldValue, (AngularAcceleration?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngularAccelerationRow)d).OnMaxValueChanged((AngularAcceleration?)e.OldValue, (AngularAcceleration?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (AngularAccelerationRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (AngularAccelerationUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (AngularAccelerationUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (AngularAcceleration?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(AngularAcceleration? oldValue, AngularAcceleration? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(AngularAcceleration? oldValue, AngularAcceleration? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -1050,6 +1093,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, AngularAccelerationUnit unit)
+        {
+            return default(AngularAcceleration).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AngularAccelerationRow)d).OnMinValueChanged((AngularAcceleration?)e.OldValue, (AngularAcceleration?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AngularAccelerationRow)d).OnMaxValueChanged((AngularAcceleration?)e.OldValue, (AngularAcceleration?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (AngularAccelerationRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (AngularAccelerationUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (AngularAccelerationUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -1157,49 +1232,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, AngularJerkUnit unit)
-        {
-            return default(AngularJerk).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngularJerkRow)d).OnMinValueChanged((AngularJerk?)e.OldValue, (AngularJerk?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngularJerkRow)d).OnMaxValueChanged((AngularJerk?)e.OldValue, (AngularJerk?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (AngularJerkRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (AngularJerkUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (AngularJerkUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (AngularJerk?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(AngularJerk? oldValue, AngularJerk? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(AngularJerk? oldValue, AngularJerk? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -1259,6 +1317,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, AngularJerkUnit unit)
+        {
+            return default(AngularJerk).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AngularJerkRow)d).OnMinValueChanged((AngularJerk?)e.OldValue, (AngularJerk?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AngularJerkRow)d).OnMaxValueChanged((AngularJerk?)e.OldValue, (AngularJerk?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (AngularJerkRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (AngularJerkUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (AngularJerkUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -1366,49 +1456,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, AngularSpeedUnit unit)
-        {
-            return default(AngularSpeed).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngularSpeedRow)d).OnMinValueChanged((AngularSpeed?)e.OldValue, (AngularSpeed?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngularSpeedRow)d).OnMaxValueChanged((AngularSpeed?)e.OldValue, (AngularSpeed?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (AngularSpeedRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (AngularSpeedUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (AngularSpeedUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (AngularSpeed?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(AngularSpeed? oldValue, AngularSpeed? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(AngularSpeed? oldValue, AngularSpeed? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -1468,6 +1541,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, AngularSpeedUnit unit)
+        {
+            return default(AngularSpeed).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AngularSpeedRow)d).OnMinValueChanged((AngularSpeed?)e.OldValue, (AngularSpeed?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AngularSpeedRow)d).OnMaxValueChanged((AngularSpeed?)e.OldValue, (AngularSpeed?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (AngularSpeedRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (AngularSpeedUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (AngularSpeedUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -1575,49 +1680,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, AreaUnit unit)
-        {
-            return default(Area).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AreaRow)d).OnMinValueChanged((Area?)e.OldValue, (Area?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AreaRow)d).OnMaxValueChanged((Area?)e.OldValue, (Area?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (AreaRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (AreaUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (AreaUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Area?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Area? oldValue, Area? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Area? oldValue, Area? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -1677,6 +1765,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, AreaUnit unit)
+        {
+            return default(Area).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AreaRow)d).OnMinValueChanged((Area?)e.OldValue, (Area?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AreaRow)d).OnMaxValueChanged((Area?)e.OldValue, (Area?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (AreaRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (AreaUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (AreaUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -1784,49 +1904,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, AreaDensityUnit unit)
-        {
-            return default(AreaDensity).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AreaDensityRow)d).OnMinValueChanged((AreaDensity?)e.OldValue, (AreaDensity?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AreaDensityRow)d).OnMaxValueChanged((AreaDensity?)e.OldValue, (AreaDensity?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (AreaDensityRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (AreaDensityUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (AreaDensityUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (AreaDensity?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(AreaDensity? oldValue, AreaDensity? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(AreaDensity? oldValue, AreaDensity? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -1886,6 +1989,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, AreaDensityUnit unit)
+        {
+            return default(AreaDensity).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AreaDensityRow)d).OnMinValueChanged((AreaDensity?)e.OldValue, (AreaDensity?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((AreaDensityRow)d).OnMaxValueChanged((AreaDensity?)e.OldValue, (AreaDensity?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (AreaDensityRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (AreaDensityUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (AreaDensityUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -1993,49 +2128,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, CapacitanceUnit unit)
-        {
-            return default(Capacitance).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((CapacitanceRow)d).OnMinValueChanged((Capacitance?)e.OldValue, (Capacitance?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((CapacitanceRow)d).OnMaxValueChanged((Capacitance?)e.OldValue, (Capacitance?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (CapacitanceRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (CapacitanceUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (CapacitanceUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Capacitance?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Capacitance? oldValue, Capacitance? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Capacitance? oldValue, Capacitance? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -2095,6 +2213,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, CapacitanceUnit unit)
+        {
+            return default(Capacitance).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((CapacitanceRow)d).OnMinValueChanged((Capacitance?)e.OldValue, (Capacitance?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((CapacitanceRow)d).OnMaxValueChanged((Capacitance?)e.OldValue, (Capacitance?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (CapacitanceRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (CapacitanceUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (CapacitanceUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -2202,49 +2352,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, CatalyticActivityUnit unit)
-        {
-            return default(CatalyticActivity).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((CatalyticActivityRow)d).OnMinValueChanged((CatalyticActivity?)e.OldValue, (CatalyticActivity?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((CatalyticActivityRow)d).OnMaxValueChanged((CatalyticActivity?)e.OldValue, (CatalyticActivity?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (CatalyticActivityRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (CatalyticActivityUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (CatalyticActivityUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (CatalyticActivity?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(CatalyticActivity? oldValue, CatalyticActivity? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(CatalyticActivity? oldValue, CatalyticActivity? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -2304,6 +2437,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, CatalyticActivityUnit unit)
+        {
+            return default(CatalyticActivity).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((CatalyticActivityRow)d).OnMinValueChanged((CatalyticActivity?)e.OldValue, (CatalyticActivity?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((CatalyticActivityRow)d).OnMaxValueChanged((CatalyticActivity?)e.OldValue, (CatalyticActivity?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (CatalyticActivityRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (CatalyticActivityUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (CatalyticActivityUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -2411,49 +2576,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, ConductivityUnit unit)
-        {
-            return default(Conductivity).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ConductivityRow)d).OnMinValueChanged((Conductivity?)e.OldValue, (Conductivity?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ConductivityRow)d).OnMaxValueChanged((Conductivity?)e.OldValue, (Conductivity?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (ConductivityRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (ConductivityUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (ConductivityUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Conductivity?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Conductivity? oldValue, Conductivity? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Conductivity? oldValue, Conductivity? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -2513,6 +2661,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, ConductivityUnit unit)
+        {
+            return default(Conductivity).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((ConductivityRow)d).OnMinValueChanged((Conductivity?)e.OldValue, (Conductivity?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((ConductivityRow)d).OnMaxValueChanged((Conductivity?)e.OldValue, (Conductivity?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (ConductivityRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (ConductivityUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (ConductivityUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -2620,49 +2800,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, CurrentUnit unit)
-        {
-            return default(Current).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((CurrentRow)d).OnMinValueChanged((Current?)e.OldValue, (Current?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((CurrentRow)d).OnMaxValueChanged((Current?)e.OldValue, (Current?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (CurrentRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (CurrentUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (CurrentUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Current?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Current? oldValue, Current? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Current? oldValue, Current? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -2722,6 +2885,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, CurrentUnit unit)
+        {
+            return default(Current).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((CurrentRow)d).OnMinValueChanged((Current?)e.OldValue, (Current?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((CurrentRow)d).OnMaxValueChanged((Current?)e.OldValue, (Current?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (CurrentRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (CurrentUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (CurrentUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -2829,49 +3024,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, DataUnit unit)
-        {
-            return default(Data).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((DataRow)d).OnMinValueChanged((Data?)e.OldValue, (Data?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((DataRow)d).OnMaxValueChanged((Data?)e.OldValue, (Data?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (DataRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (DataUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (DataUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Data?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Data? oldValue, Data? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Data? oldValue, Data? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -2931,6 +3109,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, DataUnit unit)
+        {
+            return default(Data).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((DataRow)d).OnMinValueChanged((Data?)e.OldValue, (Data?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((DataRow)d).OnMaxValueChanged((Data?)e.OldValue, (Data?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (DataRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (DataUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (DataUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -3038,49 +3248,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, DensityUnit unit)
-        {
-            return default(Density).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((DensityRow)d).OnMinValueChanged((Density?)e.OldValue, (Density?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((DensityRow)d).OnMaxValueChanged((Density?)e.OldValue, (Density?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (DensityRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (DensityUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (DensityUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Density?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Density? oldValue, Density? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Density? oldValue, Density? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -3140,6 +3333,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, DensityUnit unit)
+        {
+            return default(Density).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((DensityRow)d).OnMinValueChanged((Density?)e.OldValue, (Density?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((DensityRow)d).OnMaxValueChanged((Density?)e.OldValue, (Density?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (DensityRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (DensityUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (DensityUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -3247,49 +3472,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, ElectricalConductanceUnit unit)
-        {
-            return default(ElectricalConductance).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ElectricalConductanceRow)d).OnMinValueChanged((ElectricalConductance?)e.OldValue, (ElectricalConductance?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ElectricalConductanceRow)d).OnMaxValueChanged((ElectricalConductance?)e.OldValue, (ElectricalConductance?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (ElectricalConductanceRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (ElectricalConductanceUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (ElectricalConductanceUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (ElectricalConductance?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(ElectricalConductance? oldValue, ElectricalConductance? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(ElectricalConductance? oldValue, ElectricalConductance? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -3349,6 +3557,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, ElectricalConductanceUnit unit)
+        {
+            return default(ElectricalConductance).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((ElectricalConductanceRow)d).OnMinValueChanged((ElectricalConductance?)e.OldValue, (ElectricalConductance?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((ElectricalConductanceRow)d).OnMaxValueChanged((ElectricalConductance?)e.OldValue, (ElectricalConductance?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (ElectricalConductanceRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (ElectricalConductanceUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (ElectricalConductanceUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -3456,49 +3696,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, ElectricChargeUnit unit)
-        {
-            return default(ElectricCharge).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ElectricChargeRow)d).OnMinValueChanged((ElectricCharge?)e.OldValue, (ElectricCharge?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ElectricChargeRow)d).OnMaxValueChanged((ElectricCharge?)e.OldValue, (ElectricCharge?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (ElectricChargeRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (ElectricChargeUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (ElectricChargeUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (ElectricCharge?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(ElectricCharge? oldValue, ElectricCharge? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(ElectricCharge? oldValue, ElectricCharge? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -3558,6 +3781,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, ElectricChargeUnit unit)
+        {
+            return default(ElectricCharge).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((ElectricChargeRow)d).OnMinValueChanged((ElectricCharge?)e.OldValue, (ElectricCharge?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((ElectricChargeRow)d).OnMaxValueChanged((ElectricCharge?)e.OldValue, (ElectricCharge?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (ElectricChargeRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (ElectricChargeUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (ElectricChargeUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -3665,49 +3920,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, EnergyUnit unit)
-        {
-            return default(Energy).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((EnergyRow)d).OnMinValueChanged((Energy?)e.OldValue, (Energy?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((EnergyRow)d).OnMaxValueChanged((Energy?)e.OldValue, (Energy?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (EnergyRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (EnergyUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (EnergyUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Energy?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Energy? oldValue, Energy? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Energy? oldValue, Energy? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -3767,6 +4005,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, EnergyUnit unit)
+        {
+            return default(Energy).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((EnergyRow)d).OnMinValueChanged((Energy?)e.OldValue, (Energy?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((EnergyRow)d).OnMaxValueChanged((Energy?)e.OldValue, (Energy?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (EnergyRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (EnergyUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (EnergyUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -3874,49 +4144,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, FlexibilityUnit unit)
-        {
-            return default(Flexibility).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((FlexibilityRow)d).OnMinValueChanged((Flexibility?)e.OldValue, (Flexibility?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((FlexibilityRow)d).OnMaxValueChanged((Flexibility?)e.OldValue, (Flexibility?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (FlexibilityRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (FlexibilityUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (FlexibilityUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Flexibility?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Flexibility? oldValue, Flexibility? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Flexibility? oldValue, Flexibility? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -3976,6 +4229,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, FlexibilityUnit unit)
+        {
+            return default(Flexibility).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((FlexibilityRow)d).OnMinValueChanged((Flexibility?)e.OldValue, (Flexibility?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((FlexibilityRow)d).OnMaxValueChanged((Flexibility?)e.OldValue, (Flexibility?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (FlexibilityRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (FlexibilityUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (FlexibilityUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -4083,49 +4368,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, ForceUnit unit)
-        {
-            return default(Force).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ForceRow)d).OnMinValueChanged((Force?)e.OldValue, (Force?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ForceRow)d).OnMaxValueChanged((Force?)e.OldValue, (Force?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (ForceRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (ForceUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (ForceUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Force?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Force? oldValue, Force? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Force? oldValue, Force? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -4185,6 +4453,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, ForceUnit unit)
+        {
+            return default(Force).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((ForceRow)d).OnMinValueChanged((Force?)e.OldValue, (Force?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((ForceRow)d).OnMaxValueChanged((Force?)e.OldValue, (Force?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (ForceRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (ForceUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (ForceUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -4292,49 +4592,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, ForcePerUnitlessUnit unit)
-        {
-            return default(ForcePerUnitless).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ForcePerUnitlessRow)d).OnMinValueChanged((ForcePerUnitless?)e.OldValue, (ForcePerUnitless?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ForcePerUnitlessRow)d).OnMaxValueChanged((ForcePerUnitless?)e.OldValue, (ForcePerUnitless?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (ForcePerUnitlessRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (ForcePerUnitlessUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (ForcePerUnitlessUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (ForcePerUnitless?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(ForcePerUnitless? oldValue, ForcePerUnitless? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(ForcePerUnitless? oldValue, ForcePerUnitless? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -4394,6 +4677,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, ForcePerUnitlessUnit unit)
+        {
+            return default(ForcePerUnitless).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((ForcePerUnitlessRow)d).OnMinValueChanged((ForcePerUnitless?)e.OldValue, (ForcePerUnitless?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((ForcePerUnitlessRow)d).OnMaxValueChanged((ForcePerUnitless?)e.OldValue, (ForcePerUnitless?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (ForcePerUnitlessRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (ForcePerUnitlessUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (ForcePerUnitlessUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -4501,49 +4816,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, FrequencyUnit unit)
-        {
-            return default(Frequency).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((FrequencyRow)d).OnMinValueChanged((Frequency?)e.OldValue, (Frequency?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((FrequencyRow)d).OnMaxValueChanged((Frequency?)e.OldValue, (Frequency?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (FrequencyRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (FrequencyUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (FrequencyUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Frequency?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Frequency? oldValue, Frequency? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Frequency? oldValue, Frequency? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -4603,6 +4901,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, FrequencyUnit unit)
+        {
+            return default(Frequency).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((FrequencyRow)d).OnMinValueChanged((Frequency?)e.OldValue, (Frequency?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((FrequencyRow)d).OnMaxValueChanged((Frequency?)e.OldValue, (Frequency?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (FrequencyRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (FrequencyUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (FrequencyUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -4710,49 +5040,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, IlluminanceUnit unit)
-        {
-            return default(Illuminance).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((IlluminanceRow)d).OnMinValueChanged((Illuminance?)e.OldValue, (Illuminance?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((IlluminanceRow)d).OnMaxValueChanged((Illuminance?)e.OldValue, (Illuminance?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (IlluminanceRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (IlluminanceUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (IlluminanceUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Illuminance?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Illuminance? oldValue, Illuminance? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Illuminance? oldValue, Illuminance? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -4812,6 +5125,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, IlluminanceUnit unit)
+        {
+            return default(Illuminance).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((IlluminanceRow)d).OnMinValueChanged((Illuminance?)e.OldValue, (Illuminance?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((IlluminanceRow)d).OnMaxValueChanged((Illuminance?)e.OldValue, (Illuminance?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (IlluminanceRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (IlluminanceUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (IlluminanceUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -4919,49 +5264,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, InductanceUnit unit)
-        {
-            return default(Inductance).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((InductanceRow)d).OnMinValueChanged((Inductance?)e.OldValue, (Inductance?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((InductanceRow)d).OnMaxValueChanged((Inductance?)e.OldValue, (Inductance?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (InductanceRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (InductanceUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (InductanceUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Inductance?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Inductance? oldValue, Inductance? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Inductance? oldValue, Inductance? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -5021,6 +5349,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, InductanceUnit unit)
+        {
+            return default(Inductance).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((InductanceRow)d).OnMinValueChanged((Inductance?)e.OldValue, (Inductance?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((InductanceRow)d).OnMaxValueChanged((Inductance?)e.OldValue, (Inductance?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (InductanceRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (InductanceUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (InductanceUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -5128,49 +5488,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, JerkUnit unit)
-        {
-            return default(Jerk).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((JerkRow)d).OnMinValueChanged((Jerk?)e.OldValue, (Jerk?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((JerkRow)d).OnMaxValueChanged((Jerk?)e.OldValue, (Jerk?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (JerkRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (JerkUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (JerkUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Jerk?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Jerk? oldValue, Jerk? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Jerk? oldValue, Jerk? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -5230,6 +5573,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, JerkUnit unit)
+        {
+            return default(Jerk).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((JerkRow)d).OnMinValueChanged((Jerk?)e.OldValue, (Jerk?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((JerkRow)d).OnMaxValueChanged((Jerk?)e.OldValue, (Jerk?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (JerkRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (JerkUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (JerkUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -5337,49 +5712,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, KinematicViscosityUnit unit)
-        {
-            return default(KinematicViscosity).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((KinematicViscosityRow)d).OnMinValueChanged((KinematicViscosity?)e.OldValue, (KinematicViscosity?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((KinematicViscosityRow)d).OnMaxValueChanged((KinematicViscosity?)e.OldValue, (KinematicViscosity?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (KinematicViscosityRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (KinematicViscosityUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (KinematicViscosityUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (KinematicViscosity?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(KinematicViscosity? oldValue, KinematicViscosity? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(KinematicViscosity? oldValue, KinematicViscosity? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -5439,6 +5797,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, KinematicViscosityUnit unit)
+        {
+            return default(KinematicViscosity).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((KinematicViscosityRow)d).OnMinValueChanged((KinematicViscosity?)e.OldValue, (KinematicViscosity?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((KinematicViscosityRow)d).OnMaxValueChanged((KinematicViscosity?)e.OldValue, (KinematicViscosity?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (KinematicViscosityRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (KinematicViscosityUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (KinematicViscosityUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -5546,49 +5936,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, LengthUnit unit)
-        {
-            return default(Length).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LengthRow)d).OnMinValueChanged((Length?)e.OldValue, (Length?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LengthRow)d).OnMaxValueChanged((Length?)e.OldValue, (Length?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (LengthRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (LengthUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (LengthUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Length?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Length? oldValue, Length? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Length? oldValue, Length? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -5648,6 +6021,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, LengthUnit unit)
+        {
+            return default(Length).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((LengthRow)d).OnMinValueChanged((Length?)e.OldValue, (Length?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((LengthRow)d).OnMaxValueChanged((Length?)e.OldValue, (Length?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (LengthRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (LengthUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (LengthUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -5755,49 +6160,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, LengthPerUnitlessUnit unit)
-        {
-            return default(LengthPerUnitless).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LengthPerUnitlessRow)d).OnMinValueChanged((LengthPerUnitless?)e.OldValue, (LengthPerUnitless?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LengthPerUnitlessRow)d).OnMaxValueChanged((LengthPerUnitless?)e.OldValue, (LengthPerUnitless?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (LengthPerUnitlessRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (LengthPerUnitlessUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (LengthPerUnitlessUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (LengthPerUnitless?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(LengthPerUnitless? oldValue, LengthPerUnitless? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(LengthPerUnitless? oldValue, LengthPerUnitless? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -5857,6 +6245,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, LengthPerUnitlessUnit unit)
+        {
+            return default(LengthPerUnitless).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((LengthPerUnitlessRow)d).OnMinValueChanged((LengthPerUnitless?)e.OldValue, (LengthPerUnitless?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((LengthPerUnitlessRow)d).OnMaxValueChanged((LengthPerUnitless?)e.OldValue, (LengthPerUnitless?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (LengthPerUnitlessRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (LengthPerUnitlessUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (LengthPerUnitlessUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -5964,49 +6384,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, LuminousFluxUnit unit)
-        {
-            return default(LuminousFlux).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LuminousFluxRow)d).OnMinValueChanged((LuminousFlux?)e.OldValue, (LuminousFlux?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LuminousFluxRow)d).OnMaxValueChanged((LuminousFlux?)e.OldValue, (LuminousFlux?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (LuminousFluxRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (LuminousFluxUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (LuminousFluxUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (LuminousFlux?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(LuminousFlux? oldValue, LuminousFlux? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(LuminousFlux? oldValue, LuminousFlux? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -6066,6 +6469,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, LuminousFluxUnit unit)
+        {
+            return default(LuminousFlux).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((LuminousFluxRow)d).OnMinValueChanged((LuminousFlux?)e.OldValue, (LuminousFlux?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((LuminousFluxRow)d).OnMaxValueChanged((LuminousFlux?)e.OldValue, (LuminousFlux?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (LuminousFluxRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (LuminousFluxUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (LuminousFluxUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -6173,49 +6608,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, LuminousIntensityUnit unit)
-        {
-            return default(LuminousIntensity).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LuminousIntensityRow)d).OnMinValueChanged((LuminousIntensity?)e.OldValue, (LuminousIntensity?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LuminousIntensityRow)d).OnMaxValueChanged((LuminousIntensity?)e.OldValue, (LuminousIntensity?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (LuminousIntensityRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (LuminousIntensityUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (LuminousIntensityUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (LuminousIntensity?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(LuminousIntensity? oldValue, LuminousIntensity? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(LuminousIntensity? oldValue, LuminousIntensity? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -6275,6 +6693,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, LuminousIntensityUnit unit)
+        {
+            return default(LuminousIntensity).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((LuminousIntensityRow)d).OnMinValueChanged((LuminousIntensity?)e.OldValue, (LuminousIntensity?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((LuminousIntensityRow)d).OnMaxValueChanged((LuminousIntensity?)e.OldValue, (LuminousIntensity?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (LuminousIntensityRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (LuminousIntensityUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (LuminousIntensityUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -6382,49 +6832,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, MagneticFieldStrengthUnit unit)
-        {
-            return default(MagneticFieldStrength).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MagneticFieldStrengthRow)d).OnMinValueChanged((MagneticFieldStrength?)e.OldValue, (MagneticFieldStrength?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MagneticFieldStrengthRow)d).OnMaxValueChanged((MagneticFieldStrength?)e.OldValue, (MagneticFieldStrength?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (MagneticFieldStrengthRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (MagneticFieldStrengthUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (MagneticFieldStrengthUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (MagneticFieldStrength?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(MagneticFieldStrength? oldValue, MagneticFieldStrength? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(MagneticFieldStrength? oldValue, MagneticFieldStrength? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -6484,6 +6917,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, MagneticFieldStrengthUnit unit)
+        {
+            return default(MagneticFieldStrength).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MagneticFieldStrengthRow)d).OnMinValueChanged((MagneticFieldStrength?)e.OldValue, (MagneticFieldStrength?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MagneticFieldStrengthRow)d).OnMaxValueChanged((MagneticFieldStrength?)e.OldValue, (MagneticFieldStrength?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (MagneticFieldStrengthRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (MagneticFieldStrengthUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (MagneticFieldStrengthUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -6591,49 +7056,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, MagneticFluxUnit unit)
-        {
-            return default(MagneticFlux).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MagneticFluxRow)d).OnMinValueChanged((MagneticFlux?)e.OldValue, (MagneticFlux?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MagneticFluxRow)d).OnMaxValueChanged((MagneticFlux?)e.OldValue, (MagneticFlux?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (MagneticFluxRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (MagneticFluxUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (MagneticFluxUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (MagneticFlux?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(MagneticFlux? oldValue, MagneticFlux? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(MagneticFlux? oldValue, MagneticFlux? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -6693,6 +7141,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, MagneticFluxUnit unit)
+        {
+            return default(MagneticFlux).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MagneticFluxRow)d).OnMinValueChanged((MagneticFlux?)e.OldValue, (MagneticFlux?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MagneticFluxRow)d).OnMaxValueChanged((MagneticFlux?)e.OldValue, (MagneticFlux?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (MagneticFluxRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (MagneticFluxUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (MagneticFluxUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -6800,49 +7280,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, MassUnit unit)
-        {
-            return default(Mass).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MassRow)d).OnMinValueChanged((Mass?)e.OldValue, (Mass?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MassRow)d).OnMaxValueChanged((Mass?)e.OldValue, (Mass?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (MassRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (MassUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (MassUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Mass?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Mass? oldValue, Mass? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Mass? oldValue, Mass? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -6902,6 +7365,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, MassUnit unit)
+        {
+            return default(Mass).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MassRow)d).OnMinValueChanged((Mass?)e.OldValue, (Mass?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MassRow)d).OnMaxValueChanged((Mass?)e.OldValue, (Mass?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (MassRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (MassUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (MassUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -7009,49 +7504,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, MassFlowUnit unit)
-        {
-            return default(MassFlow).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MassFlowRow)d).OnMinValueChanged((MassFlow?)e.OldValue, (MassFlow?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MassFlowRow)d).OnMaxValueChanged((MassFlow?)e.OldValue, (MassFlow?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (MassFlowRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (MassFlowUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (MassFlowUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (MassFlow?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(MassFlow? oldValue, MassFlow? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(MassFlow? oldValue, MassFlow? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -7111,6 +7589,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, MassFlowUnit unit)
+        {
+            return default(MassFlow).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MassFlowRow)d).OnMinValueChanged((MassFlow?)e.OldValue, (MassFlow?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MassFlowRow)d).OnMaxValueChanged((MassFlow?)e.OldValue, (MassFlow?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (MassFlowRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (MassFlowUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (MassFlowUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -7218,49 +7728,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, MolarHeatCapacityUnit unit)
-        {
-            return default(MolarHeatCapacity).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MolarHeatCapacityRow)d).OnMinValueChanged((MolarHeatCapacity?)e.OldValue, (MolarHeatCapacity?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MolarHeatCapacityRow)d).OnMaxValueChanged((MolarHeatCapacity?)e.OldValue, (MolarHeatCapacity?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (MolarHeatCapacityRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (MolarHeatCapacityUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (MolarHeatCapacityUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (MolarHeatCapacity?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(MolarHeatCapacity? oldValue, MolarHeatCapacity? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(MolarHeatCapacity? oldValue, MolarHeatCapacity? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -7320,6 +7813,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, MolarHeatCapacityUnit unit)
+        {
+            return default(MolarHeatCapacity).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MolarHeatCapacityRow)d).OnMinValueChanged((MolarHeatCapacity?)e.OldValue, (MolarHeatCapacity?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MolarHeatCapacityRow)d).OnMaxValueChanged((MolarHeatCapacity?)e.OldValue, (MolarHeatCapacity?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (MolarHeatCapacityRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (MolarHeatCapacityUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (MolarHeatCapacityUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -7427,49 +7952,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, MolarMassUnit unit)
-        {
-            return default(MolarMass).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MolarMassRow)d).OnMinValueChanged((MolarMass?)e.OldValue, (MolarMass?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MolarMassRow)d).OnMaxValueChanged((MolarMass?)e.OldValue, (MolarMass?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (MolarMassRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (MolarMassUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (MolarMassUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (MolarMass?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(MolarMass? oldValue, MolarMass? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(MolarMass? oldValue, MolarMass? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -7529,6 +8037,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, MolarMassUnit unit)
+        {
+            return default(MolarMass).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MolarMassRow)d).OnMinValueChanged((MolarMass?)e.OldValue, (MolarMass?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MolarMassRow)d).OnMaxValueChanged((MolarMass?)e.OldValue, (MolarMass?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (MolarMassRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (MolarMassUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (MolarMassUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -7636,49 +8176,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, MomentumUnit unit)
-        {
-            return default(Momentum).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MomentumRow)d).OnMinValueChanged((Momentum?)e.OldValue, (Momentum?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MomentumRow)d).OnMaxValueChanged((Momentum?)e.OldValue, (Momentum?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (MomentumRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (MomentumUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (MomentumUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Momentum?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Momentum? oldValue, Momentum? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Momentum? oldValue, Momentum? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -7738,6 +8261,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, MomentumUnit unit)
+        {
+            return default(Momentum).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MomentumRow)d).OnMinValueChanged((Momentum?)e.OldValue, (Momentum?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((MomentumRow)d).OnMaxValueChanged((Momentum?)e.OldValue, (Momentum?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (MomentumRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (MomentumUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (MomentumUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -7845,49 +8400,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, PowerUnit unit)
-        {
-            return default(Power).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((PowerRow)d).OnMinValueChanged((Power?)e.OldValue, (Power?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((PowerRow)d).OnMaxValueChanged((Power?)e.OldValue, (Power?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (PowerRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (PowerUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (PowerUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Power?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Power? oldValue, Power? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Power? oldValue, Power? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -7947,6 +8485,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, PowerUnit unit)
+        {
+            return default(Power).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((PowerRow)d).OnMinValueChanged((Power?)e.OldValue, (Power?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((PowerRow)d).OnMaxValueChanged((Power?)e.OldValue, (Power?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (PowerRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (PowerUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (PowerUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -8054,49 +8624,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, PressureUnit unit)
-        {
-            return default(Pressure).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((PressureRow)d).OnMinValueChanged((Pressure?)e.OldValue, (Pressure?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((PressureRow)d).OnMaxValueChanged((Pressure?)e.OldValue, (Pressure?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (PressureRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (PressureUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (PressureUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Pressure?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Pressure? oldValue, Pressure? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Pressure? oldValue, Pressure? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -8156,6 +8709,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, PressureUnit unit)
+        {
+            return default(Pressure).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((PressureRow)d).OnMinValueChanged((Pressure?)e.OldValue, (Pressure?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((PressureRow)d).OnMaxValueChanged((Pressure?)e.OldValue, (Pressure?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (PressureRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (PressureUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (PressureUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -8263,49 +8848,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, ResistanceUnit unit)
-        {
-            return default(Resistance).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ResistanceRow)d).OnMinValueChanged((Resistance?)e.OldValue, (Resistance?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ResistanceRow)d).OnMaxValueChanged((Resistance?)e.OldValue, (Resistance?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (ResistanceRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (ResistanceUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (ResistanceUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Resistance?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Resistance? oldValue, Resistance? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Resistance? oldValue, Resistance? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -8365,6 +8933,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, ResistanceUnit unit)
+        {
+            return default(Resistance).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((ResistanceRow)d).OnMinValueChanged((Resistance?)e.OldValue, (Resistance?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((ResistanceRow)d).OnMaxValueChanged((Resistance?)e.OldValue, (Resistance?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (ResistanceRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (ResistanceUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (ResistanceUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -8472,49 +9072,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, SolidAngleUnit unit)
-        {
-            return default(SolidAngle).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SolidAngleRow)d).OnMinValueChanged((SolidAngle?)e.OldValue, (SolidAngle?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SolidAngleRow)d).OnMaxValueChanged((SolidAngle?)e.OldValue, (SolidAngle?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (SolidAngleRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (SolidAngleUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (SolidAngleUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (SolidAngle?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(SolidAngle? oldValue, SolidAngle? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(SolidAngle? oldValue, SolidAngle? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -8574,6 +9157,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, SolidAngleUnit unit)
+        {
+            return default(SolidAngle).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((SolidAngleRow)d).OnMinValueChanged((SolidAngle?)e.OldValue, (SolidAngle?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((SolidAngleRow)d).OnMaxValueChanged((SolidAngle?)e.OldValue, (SolidAngle?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (SolidAngleRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (SolidAngleUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (SolidAngleUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -8681,49 +9296,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, SpecificEnergyUnit unit)
-        {
-            return default(SpecificEnergy).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SpecificEnergyRow)d).OnMinValueChanged((SpecificEnergy?)e.OldValue, (SpecificEnergy?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SpecificEnergyRow)d).OnMaxValueChanged((SpecificEnergy?)e.OldValue, (SpecificEnergy?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (SpecificEnergyRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (SpecificEnergyUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (SpecificEnergyUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (SpecificEnergy?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(SpecificEnergy? oldValue, SpecificEnergy? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(SpecificEnergy? oldValue, SpecificEnergy? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -8783,6 +9381,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, SpecificEnergyUnit unit)
+        {
+            return default(SpecificEnergy).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((SpecificEnergyRow)d).OnMinValueChanged((SpecificEnergy?)e.OldValue, (SpecificEnergy?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((SpecificEnergyRow)d).OnMaxValueChanged((SpecificEnergy?)e.OldValue, (SpecificEnergy?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (SpecificEnergyRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (SpecificEnergyUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (SpecificEnergyUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -8890,49 +9520,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, SpecificVolumeUnit unit)
-        {
-            return default(SpecificVolume).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SpecificVolumeRow)d).OnMinValueChanged((SpecificVolume?)e.OldValue, (SpecificVolume?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SpecificVolumeRow)d).OnMaxValueChanged((SpecificVolume?)e.OldValue, (SpecificVolume?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (SpecificVolumeRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (SpecificVolumeUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (SpecificVolumeUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (SpecificVolume?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(SpecificVolume? oldValue, SpecificVolume? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(SpecificVolume? oldValue, SpecificVolume? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -8992,6 +9605,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, SpecificVolumeUnit unit)
+        {
+            return default(SpecificVolume).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((SpecificVolumeRow)d).OnMinValueChanged((SpecificVolume?)e.OldValue, (SpecificVolume?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((SpecificVolumeRow)d).OnMaxValueChanged((SpecificVolume?)e.OldValue, (SpecificVolume?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (SpecificVolumeRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (SpecificVolumeUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (SpecificVolumeUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -9099,49 +9744,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, SpeedUnit unit)
-        {
-            return default(Speed).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SpeedRow)d).OnMinValueChanged((Speed?)e.OldValue, (Speed?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SpeedRow)d).OnMaxValueChanged((Speed?)e.OldValue, (Speed?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (SpeedRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (SpeedUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (SpeedUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Speed?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Speed? oldValue, Speed? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Speed? oldValue, Speed? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -9201,6 +9829,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, SpeedUnit unit)
+        {
+            return default(Speed).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((SpeedRow)d).OnMinValueChanged((Speed?)e.OldValue, (Speed?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((SpeedRow)d).OnMaxValueChanged((Speed?)e.OldValue, (Speed?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (SpeedRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (SpeedUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (SpeedUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -9308,49 +9968,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, StiffnessUnit unit)
-        {
-            return default(Stiffness).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((StiffnessRow)d).OnMinValueChanged((Stiffness?)e.OldValue, (Stiffness?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((StiffnessRow)d).OnMaxValueChanged((Stiffness?)e.OldValue, (Stiffness?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (StiffnessRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (StiffnessUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (StiffnessUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Stiffness?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Stiffness? oldValue, Stiffness? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Stiffness? oldValue, Stiffness? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -9410,6 +10053,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, StiffnessUnit unit)
+        {
+            return default(Stiffness).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((StiffnessRow)d).OnMinValueChanged((Stiffness?)e.OldValue, (Stiffness?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((StiffnessRow)d).OnMaxValueChanged((Stiffness?)e.OldValue, (Stiffness?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (StiffnessRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (StiffnessUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (StiffnessUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -9517,49 +10192,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, TemperatureUnit unit)
-        {
-            return default(Temperature).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((TemperatureRow)d).OnMinValueChanged((Temperature?)e.OldValue, (Temperature?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((TemperatureRow)d).OnMaxValueChanged((Temperature?)e.OldValue, (Temperature?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (TemperatureRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (TemperatureUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (TemperatureUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Temperature?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Temperature? oldValue, Temperature? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Temperature? oldValue, Temperature? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -9619,6 +10277,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, TemperatureUnit unit)
+        {
+            return default(Temperature).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((TemperatureRow)d).OnMinValueChanged((Temperature?)e.OldValue, (Temperature?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((TemperatureRow)d).OnMaxValueChanged((Temperature?)e.OldValue, (Temperature?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (TemperatureRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (TemperatureUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (TemperatureUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -9726,49 +10416,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, TimeUnit unit)
-        {
-            return default(Time).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((TimeRow)d).OnMinValueChanged((Time?)e.OldValue, (Time?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((TimeRow)d).OnMaxValueChanged((Time?)e.OldValue, (Time?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (TimeRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (TimeUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (TimeUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Time?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Time? oldValue, Time? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Time? oldValue, Time? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -9828,6 +10501,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, TimeUnit unit)
+        {
+            return default(Time).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((TimeRow)d).OnMinValueChanged((Time?)e.OldValue, (Time?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((TimeRow)d).OnMaxValueChanged((Time?)e.OldValue, (Time?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (TimeRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (TimeUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (TimeUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -9935,49 +10640,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, TorqueUnit unit)
-        {
-            return default(Torque).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((TorqueRow)d).OnMinValueChanged((Torque?)e.OldValue, (Torque?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((TorqueRow)d).OnMaxValueChanged((Torque?)e.OldValue, (Torque?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (TorqueRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (TorqueUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (TorqueUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Torque?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Torque? oldValue, Torque? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Torque? oldValue, Torque? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -10037,6 +10725,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, TorqueUnit unit)
+        {
+            return default(Torque).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((TorqueRow)d).OnMinValueChanged((Torque?)e.OldValue, (Torque?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((TorqueRow)d).OnMaxValueChanged((Torque?)e.OldValue, (Torque?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (TorqueRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (TorqueUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (TorqueUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -10144,49 +10864,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, UnitlessUnit unit)
-        {
-            return default(Unitless).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((UnitlessRow)d).OnMinValueChanged((Unitless?)e.OldValue, (Unitless?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((UnitlessRow)d).OnMaxValueChanged((Unitless?)e.OldValue, (Unitless?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (UnitlessRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (UnitlessUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (UnitlessUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Unitless?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Unitless? oldValue, Unitless? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Unitless? oldValue, Unitless? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -10246,6 +10949,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, UnitlessUnit unit)
+        {
+            return default(Unitless).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((UnitlessRow)d).OnMinValueChanged((Unitless?)e.OldValue, (Unitless?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((UnitlessRow)d).OnMaxValueChanged((Unitless?)e.OldValue, (Unitless?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (UnitlessRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (UnitlessUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (UnitlessUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -10353,49 +11088,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, VoltageUnit unit)
-        {
-            return default(Voltage).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((VoltageRow)d).OnMinValueChanged((Voltage?)e.OldValue, (Voltage?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((VoltageRow)d).OnMaxValueChanged((Voltage?)e.OldValue, (Voltage?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (VoltageRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (VoltageUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (VoltageUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Voltage?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Voltage? oldValue, Voltage? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Voltage? oldValue, Voltage? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -10455,6 +11173,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, VoltageUnit unit)
+        {
+            return default(Voltage).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((VoltageRow)d).OnMinValueChanged((Voltage?)e.OldValue, (Voltage?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((VoltageRow)d).OnMaxValueChanged((Voltage?)e.OldValue, (Voltage?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (VoltageRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (VoltageUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (VoltageUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -10562,49 +11312,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, VolumeUnit unit)
-        {
-            return default(Volume).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((VolumeRow)d).OnMinValueChanged((Volume?)e.OldValue, (Volume?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((VolumeRow)d).OnMaxValueChanged((Volume?)e.OldValue, (Volume?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (VolumeRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (VolumeUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (VolumeUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Volume?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Volume? oldValue, Volume? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Volume? oldValue, Volume? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -10664,6 +11397,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, VolumeUnit unit)
+        {
+            return default(Volume).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((VolumeRow)d).OnMinValueChanged((Volume?)e.OldValue, (Volume?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((VolumeRow)d).OnMaxValueChanged((Volume?)e.OldValue, (Volume?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (VolumeRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (VolumeUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (VolumeUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -10771,49 +11536,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, VolumetricFlowUnit unit)
-        {
-            return default(VolumetricFlow).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((VolumetricFlowRow)d).OnMinValueChanged((VolumetricFlow?)e.OldValue, (VolumetricFlow?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((VolumetricFlowRow)d).OnMaxValueChanged((VolumetricFlow?)e.OldValue, (VolumetricFlow?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (VolumetricFlowRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (VolumetricFlowUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (VolumetricFlowUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (VolumetricFlow?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(VolumetricFlow? oldValue, VolumetricFlow? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(VolumetricFlow? oldValue, VolumetricFlow? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -10873,6 +11621,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, VolumetricFlowUnit unit)
+        {
+            return default(VolumetricFlow).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((VolumetricFlowRow)d).OnMinValueChanged((VolumetricFlow?)e.OldValue, (VolumetricFlow?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((VolumetricFlowRow)d).OnMaxValueChanged((VolumetricFlow?)e.OldValue, (VolumetricFlow?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (VolumetricFlowRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (VolumetricFlowUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (VolumetricFlowUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 
@@ -10980,49 +11760,32 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
         }
 
-        protected static string CreateSuffix(SymbolFormat format, WavenumberUnit unit)
-        {
-            return default(Wavenumber).ToString(unit, format).Trim('0');
-        }
-
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((WavenumberRow)d).OnMinValueChanged((Wavenumber?)e.OldValue, (Wavenumber?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((WavenumberRow)d).OnMaxValueChanged((Wavenumber?)e.OldValue, (Wavenumber?)e.NewValue);
-        }
-
-        protected static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (WavenumberRow)d;
-            var oldSuffix = CreateSuffix(row.SymbolFormat, (WavenumberUnit)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.Suffix = CreateSuffix(row.SymbolFormat, (WavenumberUnit)e.NewValue);
-            }
-
-            row.SetScalarValue(ScalarValueProperty, row.Value);
-            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
-            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
-        }
-
+        /// <summary>
+        /// Called when the <see cref="ValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (Wavenumber?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(Wavenumber? oldValue, Wavenumber? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(Wavenumber? oldValue, Wavenumber? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -11082,6 +11845,38 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);
+        }
+
+        private static string CreateSuffix(SymbolFormat format, WavenumberUnit unit)
+        {
+            return default(Wavenumber).ToString(unit, format).Trim('0');
+        }
+
+        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((WavenumberRow)d).OnMinValueChanged((Wavenumber?)e.OldValue, (Wavenumber?)e.NewValue);
+        }
+
+        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((WavenumberRow)d).OnMaxValueChanged((Wavenumber?)e.OldValue, (Wavenumber?)e.NewValue);
+        }
+
+        private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var row = (WavenumberRow)d;
+            var oldSuffix = CreateSuffix(row.SymbolFormat, (WavenumberUnit)e.OldValue);
+            if (Equals(row.Suffix, oldSuffix))
+            {
+                // the old suffix was set via code, ok to update it.
+                // if user has set suffix to something localized we don't touch it.
+                // user is responsible for updating then.
+                row.Suffix = CreateSuffix(row.SymbolFormat, (WavenumberUnit)e.NewValue);
+            }
+
+            row.SetScalarValue(ScalarValueProperty, row.Value);
+            row.SetScalarValue(ScalarMinValueProperty, row.MinValue);
+            row.SetScalarValue(ScalarMaxValueProperty, row.MaxValue);
         }
     }
 }

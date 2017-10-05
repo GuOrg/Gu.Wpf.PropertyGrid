@@ -6,22 +6,24 @@
 
     using Gu.Wpf.NumericInput;
 
+    /// <inheritdoc />
     public class OldValueConverter : IMultiValueConverter
     {
         public static readonly OldValueConverter Default = new OldValueConverter();
 
+        /// <inheritdoc />
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             var formatter = values[0] as INumericFormatter;
             if (formatter == null)
             {
-                return "first parameter must be a INumericFormatter";
+                return "first must be a INumericFormatter";
             }
 
-            var row = values[0] as Row;
+            var row = values[1] as Row;
             if (row == null)
             {
-                return "first parameter must be a Row";
+                return "second must be a Row";
             }
 
             var oldValueStringFormat = row.OldValueStringFormat;
@@ -42,7 +44,8 @@
             return oldValueStringFormat;
         }
 
-        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        /// <inheritdoc />
+        object[] IMultiValueConverter.ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             throw new NotSupportedException();
         }

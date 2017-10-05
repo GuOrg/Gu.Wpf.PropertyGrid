@@ -104,7 +104,7 @@
                 // the old suffix was set via code, ok to update it.
                 // if user has set suffix to something localized we don't touch it.
                 // user is responsible for updating then.
-                row.Suffix = row.CreateSuffix((SymbolFormat)e.NewValue);
+                row.SetCurrentValue(SuffixProperty, row.CreateSuffix((SymbolFormat)e.NewValue));
             }
         }
 
