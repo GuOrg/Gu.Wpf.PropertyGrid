@@ -121,11 +121,8 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
                 window.FindTextBox("currentMaxValueTextBox").Text = "2.3 m";
                 defaultRow.Value().Text = "2.4";
-                Assert.AreEqual("Old value: 1.23 m", defaultRow.Info().Text);
-                window.FindButton("lose focus").Click();
-
-                Assert.AreEqual("2,4 > max (2,3)", defaultRow.Info().Text);
-                Assert.AreEqual("2.3\u00A0m", window.FindTextBox("currentValueTextBox").Text);
+                Assert.AreEqual("Please enter a value less than or equal to 2.3.", defaultRow.Info().Text);
+                Assert.AreEqual("1.23\u00A0m", window.FindTextBox("currentValueTextBox").Text);
             }
         }
 
@@ -135,13 +132,12 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                window.FindTextBox("currentMaxValueTextBox").Text = "2.3 m";
-                window.FindTextBoxRow("explicit cm").Value().Text = "240";
-                Assert.AreEqual("Old value: 123 m", window.FindTextBoxRow("explicit cm").Info().Text);
-                window.FindButton("lose focus").Click();
+                var row = window.FindTextBoxRow("explicit cm");
 
-                Assert.AreEqual("240 > max (230)", window.FindTextBoxRow("default").Info().Text);
-                Assert.AreEqual("2.3\u00A0m", window.FindTextBox("currentValueTextBox").Text);
+                window.FindTextBox("currentMaxValueTextBox").Text = "2.3 m";
+                row.Value().Text = "240";
+                Assert.AreEqual("Please enter a value less than or equal to 230.", row.Info().Text);
+                Assert.AreEqual("1.23\u00A0m", window.FindTextBox("currentValueTextBox").Text);
             }
         }
 
@@ -152,12 +148,10 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             {
                 var window = app.MainWindow;
                 window.FindTextBox("currentMinValueTextBox").Text = "-2.3 m";
-                window.FindTextBoxRow("default").Value().Text = "-2.4";
-                Assert.AreEqual("Old value: 1.23 m", window.FindTextBoxRow("default").Info().Text);
-                window.FindButton("lose focus").Click();
-
-                Assert.AreEqual("-2,4 < min (-2,3)", window.FindTextBoxRow("default").Info().Text);
-                Assert.AreEqual("2.3\u00A0m", window.FindTextBox("currentValueTextBox").Text);
+                var row = window.FindTextBoxRow("default");
+                row.Value().Text = "-2.4";
+                Assert.AreEqual("Please enter a value greater than or equal to -2.3.", row.Info().Text);
+                Assert.AreEqual("1.23\u00A0m", window.FindTextBox("currentValueTextBox").Text);
             }
         }
 
@@ -168,12 +162,10 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             {
                 var window = app.MainWindow;
                 window.FindTextBox("currentMinValueTextBox").Text = "-2.3 m";
-                window.FindTextBoxRow("explicit cm").Value().Text = "240";
-                Assert.AreEqual("Old value: 1.23 m", window.FindTextBoxRow("default").Info().Text);
-                window.FindButton("lose focus").Click();
-
-                Assert.AreEqual("-240 < min (-230)", window.FindTextBoxRow("default").Info().Text);
-                Assert.AreEqual("2.3\u00A0m", window.FindTextBox("currentValueTextBox").Text);
+                var row = window.FindTextBoxRow("explicit cm");
+                row.Value().Text = "-240";
+                Assert.AreEqual("Please enter a value greater than or equal to -230.", row.Info().Text);
+                Assert.AreEqual("1.23\u00A0m", window.FindTextBox("currentValueTextBox").Text);
             }
         }
     }

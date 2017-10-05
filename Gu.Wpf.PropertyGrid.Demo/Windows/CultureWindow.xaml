@@ -21,7 +21,8 @@
             <propertyGrid:Rows numeric:NumericBox.Culture="sv-se"
                                numeric:NumericBox.DecimalDigits="4"
                                DataContext="{Binding EditableCopy}"
-                               OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+                               OldDataContext="{Binding DataContext.LastSaved,
+                                                        RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
                 <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
 
                 <unitRows:LengthRow Header="length" Value="{Binding LengthValue}" />
@@ -32,7 +33,8 @@
             <propertyGrid:Rows numeric:NumericBox.Culture="en-us"
                                numeric:NumericBox.DecimalDigits="4"
                                DataContext="{Binding EditableCopy}"
-                               OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+                               OldDataContext="{Binding DataContext.LastSaved,
+                                                        RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
                 <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
 
                 <unitRows:LengthRow Header="length" Value="{Binding LengthValue}" />
@@ -43,7 +45,8 @@
             <propertyGrid:Rows numeric:NumericBox.Culture="{Binding CurrentCulture}"
                                numeric:NumericBox.DecimalDigits="4"
                                DataContext="{Binding EditableCopy}"
-                               OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+                               OldDataContext="{Binding DataContext.LastSaved,
+                                                        RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
                 <propertyGrid:SelectorRow Header="culture"
                                           ItemsSource="{Binding Cultures}"
                                           Value="{Binding CurrentCulture}" />

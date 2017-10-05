@@ -47,6 +47,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         }
 
         [Test]
+        [Explicit]
         public void InheritSuffixStyle()
         {
             using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
