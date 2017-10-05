@@ -4,6 +4,9 @@ Gu.Wpf.ValidationScope
 
 group Analyzers
   JetBrains.Annotations
+  StyleCop.Analyzers
+  WpfAnalyzers
+  Gu.Analyzers
 
 group Demo
 Gu.State
