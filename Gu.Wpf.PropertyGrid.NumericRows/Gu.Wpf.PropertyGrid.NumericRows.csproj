@@ -36,6 +36,10 @@
     <CodeAnalysisRuleSet>Gu.Wpf.PropertyGrid.NumericRows.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\Release\Gu.Wpf.PropertyGrid.NumericRows.XML</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Gu.Wpf.PropertyGrid.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xaml">

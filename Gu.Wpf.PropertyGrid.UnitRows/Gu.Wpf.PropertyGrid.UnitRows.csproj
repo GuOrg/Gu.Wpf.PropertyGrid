@@ -35,6 +35,10 @@
     <CodeAnalysisRuleSet>Gu.Wpf.PropertyGrid.UnitRows.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\Release\Gu.Wpf.PropertyGrid.UnitRows.XML</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Gu.Wpf.PropertyGrid.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>  
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />

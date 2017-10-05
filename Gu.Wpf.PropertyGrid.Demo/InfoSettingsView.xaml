@@ -1,4 +1,4 @@
-﻿<!-- ReSharper disable Xaml.BindingWithContextNotResolved -->
+﻿<!--  ReSharper disable Xaml.BindingWithContextNotResolved  -->
 <UserControl x:Class="Gu.Wpf.PropertyGrid.Demo.InfoSettingsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -20,7 +20,7 @@
         <UniformGrid Grid.Row="0"
                      propertyGrid:PropertyGrid.OldDataContext="{Binding LastSaved}"
                      Columns="3">
-            <!-- ReSharper disable once Xaml.BindingWithContextNotResolved -->
+            <!--  ReSharper disable once Xaml.BindingWithContextNotResolved  -->
             <propertyGrid:Rows DataContext="{Binding EditableCopy}">
                 <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Core" />
 
@@ -53,9 +53,8 @@
                     <Button Command="{Binding DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Content="Save" />
                 </propertyGrid:ContentRow>
             </propertyGrid:Rows>
-            
-            <propertyGrid:Rows DataContext="{Binding EditableCopy}"
-                               ValueWidth="60">
+
+            <propertyGrid:Rows DataContext="{Binding EditableCopy}" ValueWidth="60">
                 <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Numeric" />
 
                 <propertyGrid:IntRow Header="int" Value="{Binding IntValue}" />
@@ -79,8 +78,7 @@
                                         Value="{Binding NullableDoubleValue}" />
             </propertyGrid:Rows>
 
-            <propertyGrid:Rows DataContext="{Binding EditableCopy}"
-                               ValueWidth="60">
+            <propertyGrid:Rows DataContext="{Binding EditableCopy}" ValueWidth="60">
                 <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Units" />
 
                 <unitRows:LengthRow Header="Length" Value="{Binding LengthValue}" />
