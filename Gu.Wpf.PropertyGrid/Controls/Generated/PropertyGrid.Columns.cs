@@ -5,6 +5,7 @@ namespace Gu.Wpf.PropertyGrid
 
     public static partial class PropertyGrid
     {
+        /// <summary>Identifies the HeaderWidth attached dependency property.</summary>
         public static readonly DependencyProperty HeaderWidthProperty = DependencyProperty.RegisterAttached(
             "HeaderWidth",
             typeof(GridLength),
@@ -13,6 +14,7 @@ namespace Gu.Wpf.PropertyGrid
                 GridLength.Auto,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the HeaderMinWidth attached dependency property.</summary>
         public static readonly DependencyProperty HeaderMinWidthProperty = DependencyProperty.RegisterAttached(
             "HeaderMinWidth",
             typeof(double),
@@ -21,6 +23,7 @@ namespace Gu.Wpf.PropertyGrid
                 0.0,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the HeaderMaxWidth attached dependency property.</summary>
         public static readonly DependencyProperty HeaderMaxWidthProperty = DependencyProperty.RegisterAttached(
             "HeaderMaxWidth",
             typeof(double),
@@ -29,6 +32,7 @@ namespace Gu.Wpf.PropertyGrid
                 double.PositiveInfinity,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ValueWidth attached dependency property.</summary>
         public static readonly DependencyProperty ValueWidthProperty = DependencyProperty.RegisterAttached(
             "ValueWidth",
             typeof(GridLength),
@@ -37,6 +41,7 @@ namespace Gu.Wpf.PropertyGrid
                 GridLength.Auto,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ValueMinWidth attached dependency property.</summary>
         public static readonly DependencyProperty ValueMinWidthProperty = DependencyProperty.RegisterAttached(
             "ValueMinWidth",
             typeof(double),
@@ -45,6 +50,7 @@ namespace Gu.Wpf.PropertyGrid
                 0.0,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ValueMaxWidth attached dependency property.</summary>
         public static readonly DependencyProperty ValueMaxWidthProperty = DependencyProperty.RegisterAttached(
             "ValueMaxWidth",
             typeof(double),
@@ -53,6 +59,7 @@ namespace Gu.Wpf.PropertyGrid
                 double.PositiveInfinity,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the SuffixWidth attached dependency property.</summary>
         public static readonly DependencyProperty SuffixWidthProperty = DependencyProperty.RegisterAttached(
             "SuffixWidth",
             typeof(GridLength),
@@ -61,6 +68,7 @@ namespace Gu.Wpf.PropertyGrid
                 GridLength.Auto,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the SuffixMinWidth attached dependency property.</summary>
         public static readonly DependencyProperty SuffixMinWidthProperty = DependencyProperty.RegisterAttached(
             "SuffixMinWidth",
             typeof(double),
@@ -69,6 +77,7 @@ namespace Gu.Wpf.PropertyGrid
                 0.0,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the SuffixMaxWidth attached dependency property.</summary>
         public static readonly DependencyProperty SuffixMaxWidthProperty = DependencyProperty.RegisterAttached(
             "SuffixMaxWidth",
             typeof(double),
@@ -188,54 +197,63 @@ namespace Gu.Wpf.PropertyGrid
 
     public partial class Rows
     {
+        /// <summary>Identifies the HeaderWidth attached dependency property.</summary>
         public static readonly DependencyProperty HeaderWidthProperty = PropertyGrid.HeaderWidthProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 GridLength.Auto,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the HeaderMinWidth attached dependency property.</summary>
         public static readonly DependencyProperty HeaderMinWidthProperty = PropertyGrid.HeaderMinWidthProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 0.0,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the HeaderMaxWidth attached dependency property.</summary>
         public static readonly DependencyProperty HeaderMaxWidthProperty = PropertyGrid.HeaderMaxWidthProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 double.PositiveInfinity,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ValueWidth attached dependency property.</summary>
         public static readonly DependencyProperty ValueWidthProperty = PropertyGrid.ValueWidthProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 GridLength.Auto,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ValueMinWidth attached dependency property.</summary>
         public static readonly DependencyProperty ValueMinWidthProperty = PropertyGrid.ValueMinWidthProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 0.0,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ValueMaxWidth attached dependency property.</summary>
         public static readonly DependencyProperty ValueMaxWidthProperty = PropertyGrid.ValueMaxWidthProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 double.PositiveInfinity,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the SuffixWidth attached dependency property.</summary>
         public static readonly DependencyProperty SuffixWidthProperty = PropertyGrid.SuffixWidthProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 GridLength.Auto,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the SuffixMinWidth attached dependency property.</summary>
         public static readonly DependencyProperty SuffixMinWidthProperty = PropertyGrid.SuffixMinWidthProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 0.0,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the SuffixMaxWidth attached dependency property.</summary>
         public static readonly DependencyProperty SuffixMaxWidthProperty = PropertyGrid.SuffixMaxWidthProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
@@ -299,54 +317,63 @@ namespace Gu.Wpf.PropertyGrid
 
     public abstract partial class Row
     {
+        /// <summary>Identifies the HeaderWidth attached dependency property.</summary>
         public static readonly DependencyProperty HeaderWidthProperty = PropertyGrid.HeaderWidthProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
                 GridLength.Auto,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the HeaderMinWidth attached dependency property.</summary>
         public static readonly DependencyProperty HeaderMinWidthProperty = PropertyGrid.HeaderMinWidthProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
                 0.0,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the HeaderMaxWidth attached dependency property.</summary>
         public static readonly DependencyProperty HeaderMaxWidthProperty = PropertyGrid.HeaderMaxWidthProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
                 double.PositiveInfinity,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ValueWidth attached dependency property.</summary>
         public static readonly DependencyProperty ValueWidthProperty = PropertyGrid.ValueWidthProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
                 GridLength.Auto,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ValueMinWidth attached dependency property.</summary>
         public static readonly DependencyProperty ValueMinWidthProperty = PropertyGrid.ValueMinWidthProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
                 0.0,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ValueMaxWidth attached dependency property.</summary>
         public static readonly DependencyProperty ValueMaxWidthProperty = PropertyGrid.ValueMaxWidthProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
                 double.PositiveInfinity,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the SuffixWidth attached dependency property.</summary>
         public static readonly DependencyProperty SuffixWidthProperty = PropertyGrid.SuffixWidthProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
                 GridLength.Auto,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the SuffixMinWidth attached dependency property.</summary>
         public static readonly DependencyProperty SuffixMinWidthProperty = PropertyGrid.SuffixMinWidthProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
                 0.0,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the SuffixMaxWidth attached dependency property.</summary>
         public static readonly DependencyProperty SuffixMaxWidthProperty = PropertyGrid.SuffixMaxWidthProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
@@ -410,54 +437,63 @@ namespace Gu.Wpf.PropertyGrid
 
     public partial class ContentRow
     {
+        /// <summary>Identifies the HeaderWidth attached dependency property.</summary>
         public static readonly DependencyProperty HeaderWidthProperty = PropertyGrid.HeaderWidthProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
                 GridLength.Auto,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the HeaderMinWidth attached dependency property.</summary>
         public static readonly DependencyProperty HeaderMinWidthProperty = PropertyGrid.HeaderMinWidthProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
                 0.0,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the HeaderMaxWidth attached dependency property.</summary>
         public static readonly DependencyProperty HeaderMaxWidthProperty = PropertyGrid.HeaderMaxWidthProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
                 double.PositiveInfinity,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ValueWidth attached dependency property.</summary>
         public static readonly DependencyProperty ValueWidthProperty = PropertyGrid.ValueWidthProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
                 GridLength.Auto,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ValueMinWidth attached dependency property.</summary>
         public static readonly DependencyProperty ValueMinWidthProperty = PropertyGrid.ValueMinWidthProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
                 0.0,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ValueMaxWidth attached dependency property.</summary>
         public static readonly DependencyProperty ValueMaxWidthProperty = PropertyGrid.ValueMaxWidthProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
                 double.PositiveInfinity,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the SuffixWidth attached dependency property.</summary>
         public static readonly DependencyProperty SuffixWidthProperty = PropertyGrid.SuffixWidthProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
                 GridLength.Auto,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the SuffixMinWidth attached dependency property.</summary>
         public static readonly DependencyProperty SuffixMinWidthProperty = PropertyGrid.SuffixMinWidthProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
                 0.0,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the SuffixMaxWidth attached dependency property.</summary>
         public static readonly DependencyProperty SuffixMaxWidthProperty = PropertyGrid.SuffixMaxWidthProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(

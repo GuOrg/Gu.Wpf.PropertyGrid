@@ -16,8 +16,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         var className = quantityType.Name + "Row";
         #>
 
+    /// <inheritdoc />
     public class <#= className #> : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(<#= quantityType.Name #>?),
@@ -30,24 +32,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(<#= quantityType.Name #>?),
             typeof(<#= className #>),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(<#= quantityType.Name #>?),
             typeof(<#= className #>),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(<#= quantityType.Name #>Unit),
             typeof(<#= className #>),
             new PropertyMetadata(default(<#= quantityType.Name #>Unit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the <#= quantityType.Name #>Unit.</summary>
         public static readonly <#= quantityType.Name #>Unit DefaultUnit = default(<#= quantityType.Name #>Unit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -151,16 +157,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);

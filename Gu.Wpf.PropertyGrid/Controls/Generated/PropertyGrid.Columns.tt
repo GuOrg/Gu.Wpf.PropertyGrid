@@ -24,6 +24,7 @@ namespace Gu.Wpf.PropertyGrid
     foreach(var columnWidth in widths)
     {
         #>
+        /// <summary>Identifies the <#= columnWidth.PropertyName #> attached dependency property.</summary>
         public static readonly DependencyProperty <#= columnWidth.PropertyName #>Property = DependencyProperty.RegisterAttached(
             "<#= columnWidth.PropertyName #>",
             typeof(<#= columnWidth.Type #>),
@@ -71,6 +72,7 @@ namespace Gu.Wpf.PropertyGrid
         foreach(var columnWidth in widths)
         {
              #>
+        /// <summary>Identifies the <#= columnWidth.PropertyName #> attached dependency property.</summary>
         public static readonly DependencyProperty <#= columnWidth.PropertyName #>Property = PropertyGrid.<#= columnWidth.PropertyName #>Property.AddOwner(
             typeof(<#= controlName.Name #>),
             new FrameworkPropertyMetadata(

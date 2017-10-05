@@ -8,8 +8,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     using Gu.Units;
     using Gu.Wpf.NumericInput;
 
+    /// <inheritdoc />
     public class AccelerationRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Acceleration?),
@@ -22,24 +24,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Acceleration?),
             typeof(AccelerationRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Acceleration?),
             typeof(AccelerationRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(AccelerationUnit),
             typeof(AccelerationRow),
             new PropertyMetadata(default(AccelerationUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the AccelerationUnit.</summary>
         public static readonly AccelerationUnit DefaultUnit = default(AccelerationUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -143,16 +149,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -232,8 +250,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class AmountOfSubstanceRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(AmountOfSubstance?),
@@ -246,24 +266,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(AmountOfSubstance?),
             typeof(AmountOfSubstanceRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(AmountOfSubstance?),
             typeof(AmountOfSubstanceRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(AmountOfSubstanceUnit),
             typeof(AmountOfSubstanceRow),
             new PropertyMetadata(default(AmountOfSubstanceUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the AmountOfSubstanceUnit.</summary>
         public static readonly AmountOfSubstanceUnit DefaultUnit = default(AmountOfSubstanceUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -367,16 +391,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -456,8 +492,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class AngleRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Angle?),
@@ -470,24 +508,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Angle?),
             typeof(AngleRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Angle?),
             typeof(AngleRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(AngleUnit),
             typeof(AngleRow),
             new PropertyMetadata(default(AngleUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the AngleUnit.</summary>
         public static readonly AngleUnit DefaultUnit = default(AngleUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -591,16 +633,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -680,8 +734,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class AnglePerUnitlessRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(AnglePerUnitless?),
@@ -694,24 +750,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(AnglePerUnitless?),
             typeof(AnglePerUnitlessRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(AnglePerUnitless?),
             typeof(AnglePerUnitlessRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(AnglePerUnitlessUnit),
             typeof(AnglePerUnitlessRow),
             new PropertyMetadata(default(AnglePerUnitlessUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the AnglePerUnitlessUnit.</summary>
         public static readonly AnglePerUnitlessUnit DefaultUnit = default(AnglePerUnitlessUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -815,16 +875,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -904,8 +976,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class AngularAccelerationRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(AngularAcceleration?),
@@ -918,24 +992,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(AngularAcceleration?),
             typeof(AngularAccelerationRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(AngularAcceleration?),
             typeof(AngularAccelerationRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(AngularAccelerationUnit),
             typeof(AngularAccelerationRow),
             new PropertyMetadata(default(AngularAccelerationUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the AngularAccelerationUnit.</summary>
         public static readonly AngularAccelerationUnit DefaultUnit = default(AngularAccelerationUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -1039,16 +1117,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -1128,8 +1218,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class AngularJerkRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(AngularJerk?),
@@ -1142,24 +1234,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(AngularJerk?),
             typeof(AngularJerkRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(AngularJerk?),
             typeof(AngularJerkRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(AngularJerkUnit),
             typeof(AngularJerkRow),
             new PropertyMetadata(default(AngularJerkUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the AngularJerkUnit.</summary>
         public static readonly AngularJerkUnit DefaultUnit = default(AngularJerkUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -1263,16 +1359,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -1352,8 +1460,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class AngularSpeedRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(AngularSpeed?),
@@ -1366,24 +1476,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(AngularSpeed?),
             typeof(AngularSpeedRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(AngularSpeed?),
             typeof(AngularSpeedRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(AngularSpeedUnit),
             typeof(AngularSpeedRow),
             new PropertyMetadata(default(AngularSpeedUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the AngularSpeedUnit.</summary>
         public static readonly AngularSpeedUnit DefaultUnit = default(AngularSpeedUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -1487,16 +1601,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -1576,8 +1702,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class AreaRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Area?),
@@ -1590,24 +1718,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Area?),
             typeof(AreaRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Area?),
             typeof(AreaRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(AreaUnit),
             typeof(AreaRow),
             new PropertyMetadata(default(AreaUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the AreaUnit.</summary>
         public static readonly AreaUnit DefaultUnit = default(AreaUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -1711,16 +1843,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -1800,8 +1944,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class AreaDensityRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(AreaDensity?),
@@ -1814,24 +1960,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(AreaDensity?),
             typeof(AreaDensityRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(AreaDensity?),
             typeof(AreaDensityRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(AreaDensityUnit),
             typeof(AreaDensityRow),
             new PropertyMetadata(default(AreaDensityUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the AreaDensityUnit.</summary>
         public static readonly AreaDensityUnit DefaultUnit = default(AreaDensityUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -1935,16 +2085,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -2024,8 +2186,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class CapacitanceRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Capacitance?),
@@ -2038,24 +2202,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Capacitance?),
             typeof(CapacitanceRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Capacitance?),
             typeof(CapacitanceRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(CapacitanceUnit),
             typeof(CapacitanceRow),
             new PropertyMetadata(default(CapacitanceUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the CapacitanceUnit.</summary>
         public static readonly CapacitanceUnit DefaultUnit = default(CapacitanceUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -2159,16 +2327,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -2248,8 +2428,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class CatalyticActivityRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(CatalyticActivity?),
@@ -2262,24 +2444,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(CatalyticActivity?),
             typeof(CatalyticActivityRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(CatalyticActivity?),
             typeof(CatalyticActivityRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(CatalyticActivityUnit),
             typeof(CatalyticActivityRow),
             new PropertyMetadata(default(CatalyticActivityUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the CatalyticActivityUnit.</summary>
         public static readonly CatalyticActivityUnit DefaultUnit = default(CatalyticActivityUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -2383,16 +2569,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -2472,8 +2670,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class ConductivityRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Conductivity?),
@@ -2486,24 +2686,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Conductivity?),
             typeof(ConductivityRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Conductivity?),
             typeof(ConductivityRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(ConductivityUnit),
             typeof(ConductivityRow),
             new PropertyMetadata(default(ConductivityUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the ConductivityUnit.</summary>
         public static readonly ConductivityUnit DefaultUnit = default(ConductivityUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -2607,16 +2811,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -2696,8 +2912,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class CurrentRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Current?),
@@ -2710,24 +2928,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Current?),
             typeof(CurrentRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Current?),
             typeof(CurrentRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(CurrentUnit),
             typeof(CurrentRow),
             new PropertyMetadata(default(CurrentUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the CurrentUnit.</summary>
         public static readonly CurrentUnit DefaultUnit = default(CurrentUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -2831,16 +3053,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -2920,8 +3154,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class DataRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Data?),
@@ -2934,24 +3170,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Data?),
             typeof(DataRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Data?),
             typeof(DataRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(DataUnit),
             typeof(DataRow),
             new PropertyMetadata(default(DataUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the DataUnit.</summary>
         public static readonly DataUnit DefaultUnit = default(DataUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -3055,16 +3295,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -3144,8 +3396,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class DensityRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Density?),
@@ -3158,24 +3412,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Density?),
             typeof(DensityRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Density?),
             typeof(DensityRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(DensityUnit),
             typeof(DensityRow),
             new PropertyMetadata(default(DensityUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the DensityUnit.</summary>
         public static readonly DensityUnit DefaultUnit = default(DensityUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -3279,16 +3537,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -3368,8 +3638,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class ElectricalConductanceRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(ElectricalConductance?),
@@ -3382,24 +3654,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(ElectricalConductance?),
             typeof(ElectricalConductanceRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(ElectricalConductance?),
             typeof(ElectricalConductanceRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(ElectricalConductanceUnit),
             typeof(ElectricalConductanceRow),
             new PropertyMetadata(default(ElectricalConductanceUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the ElectricalConductanceUnit.</summary>
         public static readonly ElectricalConductanceUnit DefaultUnit = default(ElectricalConductanceUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -3503,16 +3779,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -3592,8 +3880,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class ElectricChargeRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(ElectricCharge?),
@@ -3606,24 +3896,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(ElectricCharge?),
             typeof(ElectricChargeRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(ElectricCharge?),
             typeof(ElectricChargeRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(ElectricChargeUnit),
             typeof(ElectricChargeRow),
             new PropertyMetadata(default(ElectricChargeUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the ElectricChargeUnit.</summary>
         public static readonly ElectricChargeUnit DefaultUnit = default(ElectricChargeUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -3727,16 +4021,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -3816,8 +4122,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class EnergyRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Energy?),
@@ -3830,24 +4138,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Energy?),
             typeof(EnergyRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Energy?),
             typeof(EnergyRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(EnergyUnit),
             typeof(EnergyRow),
             new PropertyMetadata(default(EnergyUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the EnergyUnit.</summary>
         public static readonly EnergyUnit DefaultUnit = default(EnergyUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -3951,16 +4263,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -4040,8 +4364,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class FlexibilityRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Flexibility?),
@@ -4054,24 +4380,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Flexibility?),
             typeof(FlexibilityRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Flexibility?),
             typeof(FlexibilityRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(FlexibilityUnit),
             typeof(FlexibilityRow),
             new PropertyMetadata(default(FlexibilityUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the FlexibilityUnit.</summary>
         public static readonly FlexibilityUnit DefaultUnit = default(FlexibilityUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -4175,16 +4505,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -4264,8 +4606,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class ForceRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Force?),
@@ -4278,24 +4622,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Force?),
             typeof(ForceRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Force?),
             typeof(ForceRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(ForceUnit),
             typeof(ForceRow),
             new PropertyMetadata(default(ForceUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the ForceUnit.</summary>
         public static readonly ForceUnit DefaultUnit = default(ForceUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -4399,16 +4747,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -4488,8 +4848,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class ForcePerUnitlessRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(ForcePerUnitless?),
@@ -4502,24 +4864,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(ForcePerUnitless?),
             typeof(ForcePerUnitlessRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(ForcePerUnitless?),
             typeof(ForcePerUnitlessRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(ForcePerUnitlessUnit),
             typeof(ForcePerUnitlessRow),
             new PropertyMetadata(default(ForcePerUnitlessUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the ForcePerUnitlessUnit.</summary>
         public static readonly ForcePerUnitlessUnit DefaultUnit = default(ForcePerUnitlessUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -4623,16 +4989,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -4712,8 +5090,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class FrequencyRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Frequency?),
@@ -4726,24 +5106,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Frequency?),
             typeof(FrequencyRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Frequency?),
             typeof(FrequencyRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(FrequencyUnit),
             typeof(FrequencyRow),
             new PropertyMetadata(default(FrequencyUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the FrequencyUnit.</summary>
         public static readonly FrequencyUnit DefaultUnit = default(FrequencyUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -4847,16 +5231,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -4936,8 +5332,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class IlluminanceRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Illuminance?),
@@ -4950,24 +5348,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Illuminance?),
             typeof(IlluminanceRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Illuminance?),
             typeof(IlluminanceRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(IlluminanceUnit),
             typeof(IlluminanceRow),
             new PropertyMetadata(default(IlluminanceUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the IlluminanceUnit.</summary>
         public static readonly IlluminanceUnit DefaultUnit = default(IlluminanceUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -5071,16 +5473,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -5160,8 +5574,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class InductanceRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Inductance?),
@@ -5174,24 +5590,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Inductance?),
             typeof(InductanceRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Inductance?),
             typeof(InductanceRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(InductanceUnit),
             typeof(InductanceRow),
             new PropertyMetadata(default(InductanceUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the InductanceUnit.</summary>
         public static readonly InductanceUnit DefaultUnit = default(InductanceUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -5295,16 +5715,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -5384,8 +5816,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class JerkRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Jerk?),
@@ -5398,24 +5832,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Jerk?),
             typeof(JerkRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Jerk?),
             typeof(JerkRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(JerkUnit),
             typeof(JerkRow),
             new PropertyMetadata(default(JerkUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the JerkUnit.</summary>
         public static readonly JerkUnit DefaultUnit = default(JerkUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -5519,16 +5957,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -5608,8 +6058,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class KinematicViscosityRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(KinematicViscosity?),
@@ -5622,24 +6074,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(KinematicViscosity?),
             typeof(KinematicViscosityRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(KinematicViscosity?),
             typeof(KinematicViscosityRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(KinematicViscosityUnit),
             typeof(KinematicViscosityRow),
             new PropertyMetadata(default(KinematicViscosityUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the KinematicViscosityUnit.</summary>
         public static readonly KinematicViscosityUnit DefaultUnit = default(KinematicViscosityUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -5743,16 +6199,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -5832,8 +6300,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class LengthRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Length?),
@@ -5846,24 +6316,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Length?),
             typeof(LengthRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Length?),
             typeof(LengthRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(LengthUnit),
             typeof(LengthRow),
             new PropertyMetadata(default(LengthUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the LengthUnit.</summary>
         public static readonly LengthUnit DefaultUnit = default(LengthUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -5967,16 +6441,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -6056,8 +6542,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class LengthPerUnitlessRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(LengthPerUnitless?),
@@ -6070,24 +6558,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(LengthPerUnitless?),
             typeof(LengthPerUnitlessRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(LengthPerUnitless?),
             typeof(LengthPerUnitlessRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(LengthPerUnitlessUnit),
             typeof(LengthPerUnitlessRow),
             new PropertyMetadata(default(LengthPerUnitlessUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the LengthPerUnitlessUnit.</summary>
         public static readonly LengthPerUnitlessUnit DefaultUnit = default(LengthPerUnitlessUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -6191,16 +6683,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -6280,8 +6784,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class LuminousFluxRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(LuminousFlux?),
@@ -6294,24 +6800,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(LuminousFlux?),
             typeof(LuminousFluxRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(LuminousFlux?),
             typeof(LuminousFluxRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(LuminousFluxUnit),
             typeof(LuminousFluxRow),
             new PropertyMetadata(default(LuminousFluxUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the LuminousFluxUnit.</summary>
         public static readonly LuminousFluxUnit DefaultUnit = default(LuminousFluxUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -6415,16 +6925,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -6504,8 +7026,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class LuminousIntensityRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(LuminousIntensity?),
@@ -6518,24 +7042,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(LuminousIntensity?),
             typeof(LuminousIntensityRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(LuminousIntensity?),
             typeof(LuminousIntensityRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(LuminousIntensityUnit),
             typeof(LuminousIntensityRow),
             new PropertyMetadata(default(LuminousIntensityUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the LuminousIntensityUnit.</summary>
         public static readonly LuminousIntensityUnit DefaultUnit = default(LuminousIntensityUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -6639,16 +7167,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -6728,8 +7268,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class MagneticFieldStrengthRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(MagneticFieldStrength?),
@@ -6742,24 +7284,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(MagneticFieldStrength?),
             typeof(MagneticFieldStrengthRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(MagneticFieldStrength?),
             typeof(MagneticFieldStrengthRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(MagneticFieldStrengthUnit),
             typeof(MagneticFieldStrengthRow),
             new PropertyMetadata(default(MagneticFieldStrengthUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the MagneticFieldStrengthUnit.</summary>
         public static readonly MagneticFieldStrengthUnit DefaultUnit = default(MagneticFieldStrengthUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -6863,16 +7409,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -6952,8 +7510,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class MagneticFluxRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(MagneticFlux?),
@@ -6966,24 +7526,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(MagneticFlux?),
             typeof(MagneticFluxRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(MagneticFlux?),
             typeof(MagneticFluxRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(MagneticFluxUnit),
             typeof(MagneticFluxRow),
             new PropertyMetadata(default(MagneticFluxUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the MagneticFluxUnit.</summary>
         public static readonly MagneticFluxUnit DefaultUnit = default(MagneticFluxUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -7087,16 +7651,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -7176,8 +7752,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class MassRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Mass?),
@@ -7190,24 +7768,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Mass?),
             typeof(MassRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Mass?),
             typeof(MassRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(MassUnit),
             typeof(MassRow),
             new PropertyMetadata(default(MassUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the MassUnit.</summary>
         public static readonly MassUnit DefaultUnit = default(MassUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -7311,16 +7893,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -7400,8 +7994,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class MassFlowRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(MassFlow?),
@@ -7414,24 +8010,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(MassFlow?),
             typeof(MassFlowRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(MassFlow?),
             typeof(MassFlowRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(MassFlowUnit),
             typeof(MassFlowRow),
             new PropertyMetadata(default(MassFlowUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the MassFlowUnit.</summary>
         public static readonly MassFlowUnit DefaultUnit = default(MassFlowUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -7535,16 +8135,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -7624,8 +8236,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class MolarHeatCapacityRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(MolarHeatCapacity?),
@@ -7638,24 +8252,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(MolarHeatCapacity?),
             typeof(MolarHeatCapacityRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(MolarHeatCapacity?),
             typeof(MolarHeatCapacityRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(MolarHeatCapacityUnit),
             typeof(MolarHeatCapacityRow),
             new PropertyMetadata(default(MolarHeatCapacityUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the MolarHeatCapacityUnit.</summary>
         public static readonly MolarHeatCapacityUnit DefaultUnit = default(MolarHeatCapacityUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -7759,16 +8377,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -7848,8 +8478,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class MolarMassRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(MolarMass?),
@@ -7862,24 +8494,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(MolarMass?),
             typeof(MolarMassRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(MolarMass?),
             typeof(MolarMassRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(MolarMassUnit),
             typeof(MolarMassRow),
             new PropertyMetadata(default(MolarMassUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the MolarMassUnit.</summary>
         public static readonly MolarMassUnit DefaultUnit = default(MolarMassUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -7983,16 +8619,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -8072,8 +8720,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class MomentumRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Momentum?),
@@ -8086,24 +8736,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Momentum?),
             typeof(MomentumRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Momentum?),
             typeof(MomentumRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(MomentumUnit),
             typeof(MomentumRow),
             new PropertyMetadata(default(MomentumUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the MomentumUnit.</summary>
         public static readonly MomentumUnit DefaultUnit = default(MomentumUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -8207,16 +8861,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -8296,8 +8962,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class PowerRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Power?),
@@ -8310,24 +8978,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Power?),
             typeof(PowerRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Power?),
             typeof(PowerRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(PowerUnit),
             typeof(PowerRow),
             new PropertyMetadata(default(PowerUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the PowerUnit.</summary>
         public static readonly PowerUnit DefaultUnit = default(PowerUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -8431,16 +9103,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -8520,8 +9204,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class PressureRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Pressure?),
@@ -8534,24 +9220,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Pressure?),
             typeof(PressureRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Pressure?),
             typeof(PressureRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(PressureUnit),
             typeof(PressureRow),
             new PropertyMetadata(default(PressureUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the PressureUnit.</summary>
         public static readonly PressureUnit DefaultUnit = default(PressureUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -8655,16 +9345,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -8744,8 +9446,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class ResistanceRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Resistance?),
@@ -8758,24 +9462,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Resistance?),
             typeof(ResistanceRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Resistance?),
             typeof(ResistanceRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(ResistanceUnit),
             typeof(ResistanceRow),
             new PropertyMetadata(default(ResistanceUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the ResistanceUnit.</summary>
         public static readonly ResistanceUnit DefaultUnit = default(ResistanceUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -8879,16 +9587,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -8968,8 +9688,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class SolidAngleRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(SolidAngle?),
@@ -8982,24 +9704,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(SolidAngle?),
             typeof(SolidAngleRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(SolidAngle?),
             typeof(SolidAngleRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(SolidAngleUnit),
             typeof(SolidAngleRow),
             new PropertyMetadata(default(SolidAngleUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the SolidAngleUnit.</summary>
         public static readonly SolidAngleUnit DefaultUnit = default(SolidAngleUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -9103,16 +9829,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -9192,8 +9930,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class SpecificEnergyRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(SpecificEnergy?),
@@ -9206,24 +9946,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(SpecificEnergy?),
             typeof(SpecificEnergyRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(SpecificEnergy?),
             typeof(SpecificEnergyRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(SpecificEnergyUnit),
             typeof(SpecificEnergyRow),
             new PropertyMetadata(default(SpecificEnergyUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the SpecificEnergyUnit.</summary>
         public static readonly SpecificEnergyUnit DefaultUnit = default(SpecificEnergyUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -9327,16 +10071,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -9416,8 +10172,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class SpecificVolumeRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(SpecificVolume?),
@@ -9430,24 +10188,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(SpecificVolume?),
             typeof(SpecificVolumeRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(SpecificVolume?),
             typeof(SpecificVolumeRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(SpecificVolumeUnit),
             typeof(SpecificVolumeRow),
             new PropertyMetadata(default(SpecificVolumeUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the SpecificVolumeUnit.</summary>
         public static readonly SpecificVolumeUnit DefaultUnit = default(SpecificVolumeUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -9551,16 +10313,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -9640,8 +10414,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class SpeedRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Speed?),
@@ -9654,24 +10430,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Speed?),
             typeof(SpeedRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Speed?),
             typeof(SpeedRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(SpeedUnit),
             typeof(SpeedRow),
             new PropertyMetadata(default(SpeedUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the SpeedUnit.</summary>
         public static readonly SpeedUnit DefaultUnit = default(SpeedUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -9775,16 +10555,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -9864,8 +10656,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class StiffnessRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Stiffness?),
@@ -9878,24 +10672,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Stiffness?),
             typeof(StiffnessRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Stiffness?),
             typeof(StiffnessRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(StiffnessUnit),
             typeof(StiffnessRow),
             new PropertyMetadata(default(StiffnessUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the StiffnessUnit.</summary>
         public static readonly StiffnessUnit DefaultUnit = default(StiffnessUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -9999,16 +10797,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -10088,8 +10898,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class TemperatureRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Temperature?),
@@ -10102,24 +10914,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Temperature?),
             typeof(TemperatureRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Temperature?),
             typeof(TemperatureRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(TemperatureUnit),
             typeof(TemperatureRow),
             new PropertyMetadata(default(TemperatureUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the TemperatureUnit.</summary>
         public static readonly TemperatureUnit DefaultUnit = default(TemperatureUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -10223,16 +11039,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -10312,8 +11140,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class TimeRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Time?),
@@ -10326,24 +11156,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Time?),
             typeof(TimeRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Time?),
             typeof(TimeRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(TimeUnit),
             typeof(TimeRow),
             new PropertyMetadata(default(TimeUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the TimeUnit.</summary>
         public static readonly TimeUnit DefaultUnit = default(TimeUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -10447,16 +11281,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -10536,8 +11382,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class TorqueRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Torque?),
@@ -10550,24 +11398,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Torque?),
             typeof(TorqueRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Torque?),
             typeof(TorqueRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(TorqueUnit),
             typeof(TorqueRow),
             new PropertyMetadata(default(TorqueUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the TorqueUnit.</summary>
         public static readonly TorqueUnit DefaultUnit = default(TorqueUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -10671,16 +11523,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -10760,8 +11624,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class UnitlessRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Unitless?),
@@ -10774,24 +11640,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Unitless?),
             typeof(UnitlessRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Unitless?),
             typeof(UnitlessRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(UnitlessUnit),
             typeof(UnitlessRow),
             new PropertyMetadata(default(UnitlessUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the UnitlessUnit.</summary>
         public static readonly UnitlessUnit DefaultUnit = default(UnitlessUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -10895,16 +11765,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -10984,8 +11866,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class VoltageRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Voltage?),
@@ -10998,24 +11882,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Voltage?),
             typeof(VoltageRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Voltage?),
             typeof(VoltageRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(VoltageUnit),
             typeof(VoltageRow),
             new PropertyMetadata(default(VoltageUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the VoltageUnit.</summary>
         public static readonly VoltageUnit DefaultUnit = default(VoltageUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -11119,16 +12007,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -11208,8 +12108,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class VolumeRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Volume?),
@@ -11222,24 +12124,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Volume?),
             typeof(VolumeRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Volume?),
             typeof(VolumeRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(VolumeUnit),
             typeof(VolumeRow),
             new PropertyMetadata(default(VolumeUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the VolumeUnit.</summary>
         public static readonly VolumeUnit DefaultUnit = default(VolumeUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -11343,16 +12249,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -11432,8 +12350,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class VolumetricFlowRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(VolumetricFlow?),
@@ -11446,24 +12366,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(VolumetricFlow?),
             typeof(VolumetricFlowRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(VolumetricFlow?),
             typeof(VolumetricFlowRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(VolumetricFlowUnit),
             typeof(VolumetricFlowRow),
             new PropertyMetadata(default(VolumetricFlowUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the VolumetricFlowUnit.</summary>
         public static readonly VolumetricFlowUnit DefaultUnit = default(VolumetricFlowUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -11567,16 +12491,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
@@ -11656,8 +12592,10 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
     }
 
+    /// <inheritdoc />
     public class WavenumberRow : UnitRowGeneric, IQuantityFormatter
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(Wavenumber?),
@@ -11670,24 +12608,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 true,
                 UpdateSourceTrigger.LostFocus));
 
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             "MinValue",
             typeof(Wavenumber?),
             typeof(WavenumberRow),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Wavenumber?),
             typeof(WavenumberRow),
             new PropertyMetadata(null, OnMaxValueChanged));
 
+        /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
             "Unit",
             typeof(WavenumberUnit),
             typeof(WavenumberRow),
             new PropertyMetadata(default(WavenumberUnit).SiUnit, OnUnitChanged));
 
+        /// <summary>The SI-unit for the WavenumberUnit.</summary>
         public static readonly WavenumberUnit DefaultUnit = default(WavenumberUnit).SiUnit;
         private bool isUpdatingScalarValue;
 
@@ -11791,16 +12733,28 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
         {
             this.SetQuantityValue(ValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
         {
             this.SetQuantityValue(MinValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Called when the <see cref="ScalarMaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)
         {
             this.SetQuantityValue(MaxValueProperty, newValue);
