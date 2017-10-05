@@ -34,26 +34,22 @@
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("default");
-
                 var stringRow = groupBox.FindTextBoxRow("string");
                 stringRow.Value().Text = "g";
-                var oldStringValue = stringRow.Info();
-                Assert.AreEqual("Old value: abc", oldStringValue.Text);
+                Assert.AreEqual("Old value: abc", stringRow.Info().Text);
 
                 var doubleRow = groupBox.FindTextBoxRow("double");
                 doubleRow.Value().Text = "1.23";
-                var oldDoubleValue = doubleRow.Info();
-                Assert.AreEqual("Old value: 1.2", oldDoubleValue.Text);
+                Assert.AreEqual("Old value: 1.2", doubleRow.Info().Text);
 
                 var lengthRow = groupBox.FindTextBoxRow("length");
                 lengthRow.Value().Text = "2";
-                var oldLengthValue = lengthRow.Info();
-                Assert.AreEqual("Old value: 2.3\u00A0mm", oldLengthValue.Text);
+                Assert.AreEqual("Old value: 2.3\u00A0mm", lengthRow.Info().Text);
 
                 window.FindButton("save").Click();
-                Assert.AreEqual("", oldStringValue.Text);
-                Assert.AreEqual("", oldDoubleValue.Text);
-                Assert.AreEqual("", oldLengthValue.Text);
+                Assert.AreEqual("", stringRow.Info().Text);
+                Assert.AreEqual("", doubleRow.Info().Text);
+                Assert.AreEqual("", lengthRow.Info().Text);
             }
         }
 
