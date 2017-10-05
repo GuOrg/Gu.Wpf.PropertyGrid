@@ -5,7 +5,7 @@
 
     public class CultureTests
     {
-        private const string WindowName  = "CultureWindow";
+        private const string WindowName = "CultureWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()

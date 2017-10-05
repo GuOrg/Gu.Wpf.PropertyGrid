@@ -49,32 +49,32 @@
 
         public bool UsePropertyNameAsHeader
         {
-            get { return (bool)this.GetValue(UsePropertyNameAsHeaderProperty); }
-            set { this.SetValue(UsePropertyNameAsHeaderProperty, BooleanBoxes.Box(value)); }
+            get => (bool)this.GetValue(UsePropertyNameAsHeaderProperty);
+            set => this.SetValue(UsePropertyNameAsHeaderProperty, BooleanBoxes.Box(value));
         }
 
         public string Header
         {
-            get { return (string)this.GetValue(HeaderProperty); }
-            set { this.SetValue(HeaderProperty, value); }
+            get => (string)this.GetValue(HeaderProperty);
+            set => this.SetValue(HeaderProperty, value);
         }
 
         public string Suffix
         {
-            get { return (string)this.GetValue(SuffixProperty); }
-            set { this.SetValue(SuffixProperty, value); }
+            get => (string)this.GetValue(SuffixProperty);
+            set => this.SetValue(SuffixProperty, value);
         }
 
         public object OldValue
         {
-            get { return this.GetValue(OldValueProperty); }
-            set { this.SetValue(OldValueProperty, value); }
+            get => this.GetValue(OldValueProperty);
+            set => this.SetValue(OldValueProperty, value);
         }
 
         public bool? IsDirty
         {
-            get { return (bool?)this.GetValue(IsDirtyProperty); }
-            protected set { this.SetValue(IsDirtyPropertyKey, value); }
+            get => (bool?)this.GetValue(IsDirtyProperty);
+            protected set => this.SetValue(IsDirtyPropertyKey, value);
         }
     }
 }

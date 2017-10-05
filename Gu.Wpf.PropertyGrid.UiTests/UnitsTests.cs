@@ -33,7 +33,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                var groupBox =  window.FindGroupBox("explicit");
+                var groupBox = window.FindGroupBox("explicit");
                 var metresSetting = groupBox.FindTextBoxRow("length (m)");
                 var metresBox = metresSetting.Value();
                 var millimetresSetting = groupBox.FindTextBoxRow("length (mm)");
@@ -45,7 +45,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
                 Assert.AreEqual("\u00A0mm", millimetresSetting.Suffix().Text);
 
                 metresBox.Text = "2.4";
-                 window.FindButton("lose focus").Click();
+                window.FindButton("lose focus").Click();
                 Assert.AreEqual("2400", millimetresBox.Text);
             }
         }
@@ -56,7 +56,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                var groupBox =  window.FindGroupBox("style");
+                var groupBox = window.FindGroupBox("style");
                 var settingControl = groupBox.FindTextBoxRow("length");
                 var textBox = settingControl.Value();
 
@@ -65,7 +65,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
                 textBox.Text = "2";
                 Assert.AreEqual("0.0123456\u00A0m", window.FindTextBox("currentValueTextBox").Text);
-                 window.FindButton("lose focus").Click();
+                window.FindButton("lose focus").Click();
                 Assert.AreEqual("0.002\u00A0m", window.FindTextBox("currentValueTextBox").Text);
             }
         }
@@ -76,7 +76,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                var groupBox =  window.FindGroupBox("bound");
+                var groupBox = window.FindGroupBox("bound");
                 var settingControl = groupBox.FindTextBoxRow("length");
                 var textBox = settingControl.Value();
 

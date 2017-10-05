@@ -16,7 +16,6 @@
                 FileName = ExeFileName,
                 Arguments = args,
                 UseShellExecute = false,
-                //CreateNoWindow = false,
                 RedirectStandardOutput = true,
                 RedirectStandardError = true
             };

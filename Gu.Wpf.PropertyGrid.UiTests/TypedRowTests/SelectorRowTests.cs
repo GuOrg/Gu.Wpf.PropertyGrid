@@ -62,7 +62,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                Assert.AreEqual(expected ,window.FindComboBoxRow(header).Value().IsEditable);
+                Assert.AreEqual(expected, window.FindComboBoxRow(header).Value().IsEditable);
             }
         }
 
