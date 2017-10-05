@@ -67,60 +67,60 @@
       <DependentUpon>PlainSettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="SettingsVm.cs" />
-    <Compile Include="UiTestWindows\Converters\NullableDoubleToStringConverter.cs" />
-    <Compile Include="UiTestWindows\Converters\NullableIntToStringConverter.cs" />
-    <Compile Include="UiTestWindows\CultureWindow.xaml.cs">
+    <Compile Include="Windows\Converters\NullableDoubleToStringConverter.cs" />
+    <Compile Include="Windows\Converters\NullableIntToStringConverter.cs" />
+    <Compile Include="Windows\CultureWindow.xaml.cs">
       <DependentUpon>CultureWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\DecimalDigitsWindow.xaml.cs">
+    <Compile Include="Windows\DecimalDigitsWindow.xaml.cs">
       <DependentUpon>DecimalDigitsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\DoubleRowWindow.xaml.cs">
+    <Compile Include="Windows\DoubleRowWindow.xaml.cs">
       <DependentUpon>DoubleRowWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\FocusWindow.xaml.cs">
+    <Compile Include="Windows\FocusWindow.xaml.cs">
       <DependentUpon>FocusWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\IntRowWindow.xaml.cs">
+    <Compile Include="Windows\IntRowWindow.xaml.cs">
       <DependentUpon>IntRowWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\LengthRowStyleWindow.xaml.cs">
+    <Compile Include="Windows\LengthRowStyleWindow.xaml.cs">
       <DependentUpon>LengthRowStyleWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\LengthRowWindow.xaml.cs">
+    <Compile Include="Windows\LengthRowWindow.xaml.cs">
       <DependentUpon>LengthRowWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\OldValueWindow.xaml.cs">
+    <Compile Include="Windows\OldValueWindow.xaml.cs">
       <DependentUpon>OldValueWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\SelectorRowWindow.xaml.cs">
+    <Compile Include="Windows\SelectorRowWindow.xaml.cs">
       <DependentUpon>SelectorRowWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\SingleRowWindow.xaml.cs">
+    <Compile Include="Windows\SingleRowWindow.xaml.cs">
       <DependentUpon>SingleRowWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\StringRowWindow.xaml.cs">
+    <Compile Include="Windows\StringRowWindow.xaml.cs">
       <DependentUpon>StringRowWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\StyledOldValue.xaml.cs">
+    <Compile Include="Windows\StyledOldValue.xaml.cs">
       <DependentUpon>StyledOldValue.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\SuffixBlockWindow.xaml.cs">
+    <Compile Include="Windows\SuffixBlockWindow.xaml.cs">
       <DependentUpon>SuffixBlockWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\SuffixWindow.xaml.cs">
+    <Compile Include="Windows\SuffixWindow.xaml.cs">
       <DependentUpon>SuffixWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\UnitsWindow.xaml.cs">
+    <Compile Include="Windows\UnitsWindow.xaml.cs">
       <DependentUpon>UnitsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\RowStyleWindow.xaml.cs">
+    <Compile Include="Windows\RowStyleWindow.xaml.cs">
       <DependentUpon>RowStyleWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\ValueStylesWindow.xaml.cs">
+    <Compile Include="Windows\ValueStylesWindow.xaml.cs">
       <DependentUpon>ValueStylesWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UiTestWindows\EnumRowWindow.xaml.cs">
+    <Compile Include="Windows\EnumRowWindow.xaml.cs">
       <DependentUpon>EnumRowWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UsePropertyNamesAsHeadersView.xaml.cs">
@@ -154,83 +154,83 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\ColumnsWindow.xaml">
+    <Page Include="Windows\ColumnsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\CultureWindow.xaml">
+    <Page Include="Windows\CultureWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\DecimalDigitsWindow.xaml">
+    <Page Include="Windows\DecimalDigitsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\DoubleRowWindow.xaml">
+    <Page Include="Windows\DoubleRowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\FocusWindow.xaml">
+    <Page Include="Windows\FocusWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\IntRowWindow.xaml">
+    <Page Include="Windows\IntRowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\LengthRowStyleWindow.xaml">
+    <Page Include="Windows\LengthRowStyleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\LengthRowWindow.xaml">
+    <Page Include="Windows\LengthRowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\NestedWindow.xaml">
+    <Page Include="Windows\NestedWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\OldValueWindow.xaml">
+    <Page Include="Windows\OldValueWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\SelectorRowWindow.xaml">
+    <Page Include="Windows\SelectorRowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\SingleRowWindow.xaml">
+    <Page Include="Windows\SingleRowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\StringRowWindow.xaml">
+    <Page Include="Windows\StringRowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\StyledOldValue.xaml">
+    <Page Include="Windows\StyledOldValue.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\SuffixBlockWindow.xaml">
+    <Page Include="Windows\SuffixBlockWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\SuffixWindow.xaml">
+    <Page Include="Windows\SuffixWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\UnitsWindow.xaml">
+    <Page Include="Windows\UnitsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\RowStyleWindow.xaml">
+    <Page Include="Windows\RowStyleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\ValueStylesWindow.xaml">
+    <Page Include="Windows\ValueStylesWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UiTestWindows\EnumRowWindow.xaml">
+    <Page Include="Windows\EnumRowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -53,29 +53,29 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             }
         }
 
-        [Test]
-        public void IsEditable()
+        [TestCase("default", false)]
+        [TestCase("lostfocus", true)]
+        [TestCase("readonly", false)]
+        [TestCase("editable", true)]
+        public void IsEditable(string header, bool expected)
         {
             using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                Assert.False(window.FindComboBoxRow("default").Value().IsEditable);
-                Assert.True(window.FindComboBoxRow("lostfocus").Value().IsEditable);
-                Assert.False(window.FindComboBoxRow("readonly").Value().IsEditable);
-                Assert.True(window.FindComboBoxRow("editable").Value().IsEditable);
+                Assert.AreEqual(expected ,window.FindComboBoxRow(header).Value().IsEditable);
             }
         }
 
-        [Test]
-        public void Items()
+        [TestCase("default")]
+        [TestCase("lostfocus")]
+        [TestCase("editable")]
+        public void Items(string header)
         {
             using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var expected = new[] { "sv-SE", "en-US" };
-                CollectionAssert.AreEqual(expected, window.FindComboBoxRow("default").Value().Items.Select(x => x.Text));
-                CollectionAssert.AreEqual(expected, window.FindComboBoxRow("lostfocus").Value().Items.Select(x => x.Text));
-                CollectionAssert.AreEqual(expected, window.FindComboBoxRow("readonly").Value().Items.Select(x => x.Text));
+                CollectionAssert.AreEqual(expected, window.FindComboBoxRow(header).Value().Items.Select(x => x.Text));
             }
         }
     }

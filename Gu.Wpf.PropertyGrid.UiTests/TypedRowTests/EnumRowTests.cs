@@ -20,7 +20,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                 window.FindComboBoxRow("current").Value().Select("CurrentCultureIgnoreCase");
+                window.FindComboBoxRow("current").Value().Select("CurrentCultureIgnoreCase");
                 Assert.AreEqual("CurrentCultureIgnoreCase", window.FindTextBlock("currentTextBlock").Text);
 
                 window.FindComboBoxRow("lostfocus").Value().EditableText = "InvariantCulture";
@@ -31,22 +31,25 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             }
         }
 
-        [Test]
-        public void UpdatesWhenPropertyChanged()
+        [TestCase("current")]
+        [TestCase("explicit_type")]
+        [TestCase("editable")]
+        public void UpdatesWhenPropertyChanged(string header)
         {
             using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                 window.FindComboBoxRow("current").Value().Select("CurrentCultureIgnoreCase");
+                var row = window.FindComboBoxRow(header);
+                row.Value().Select("CurrentCultureIgnoreCase");
                 Assert.AreEqual("CurrentCultureIgnoreCase", window.FindTextBlock("currentTextBlock").Text);
-                Assert.AreEqual("CurrentCultureIgnoreCase",  window.FindComboBoxRow("current").Value().SelectedItem.Text);
+                Assert.AreEqual("CurrentCultureIgnoreCase", row.Value().SelectedItem.Text);
                 Assert.AreEqual("CurrentCultureIgnoreCase", window.FindComboBoxRow("lostfocus").Value().SelectedItem.Text);
                 Assert.AreEqual("CurrentCultureIgnoreCase", window.FindComboBoxRow("readonly").Value().SelectedItem.Text);
                 Assert.AreEqual("CurrentCultureIgnoreCase", window.FindComboBoxRow("editable").Value().SelectedItem.Text);
 
-                 window.FindComboBoxRow("current").Value().Select("Ordinal");
+                row.Value().Select("Ordinal");
                 Assert.AreEqual("Ordinal", window.FindTextBlock("currentTextBlock").Text);
-                Assert.AreEqual("Ordinal",  window.FindComboBoxRow("current").Value().SelectedItem.Text);
+                Assert.AreEqual("Ordinal", row.Value().SelectedItem.Text);
                 Assert.AreEqual("Ordinal", window.FindComboBoxRow("lostfocus").Value().SelectedItem.Text);
                 Assert.AreEqual("Ordinal", window.FindComboBoxRow("readonly").Value().SelectedItem.Text);
                 Assert.AreEqual("Ordinal", window.FindComboBoxRow("editable").Value().SelectedItem.Text);
@@ -54,20 +57,44 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         }
 
         [Test]
-        public void IsEditable()
+        public void UpdatesWhenPropertyChangedReadOnly()
         {
             using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                Assert.False( window.FindComboBoxRow("current").Value().IsEditable);
-                Assert.True(window.FindComboBoxRow("lostfocus").Value().IsEditable);
-                Assert.False(window.FindComboBoxRow("readonly").Value().IsEditable);
-                Assert.True(window.FindComboBoxRow("editable").Value().IsEditable);
+                var row = window.FindComboBoxRow("current");
+                var readonlyRow = window.FindComboBoxRow("readonly");
+
+                row.Value().Select("CurrentCultureIgnoreCase");
+                Assert.AreEqual("CurrentCultureIgnoreCase", window.FindTextBlock("currentTextBlock").Text);
+                Assert.AreEqual("CurrentCultureIgnoreCase", row.Value().SelectedItem.Text);
+                Assert.AreEqual("CurrentCultureIgnoreCase", readonlyRow.Value().SelectedItem.Text);
+
+                row.Value().Select("Ordinal");
+                Assert.AreEqual("Ordinal", window.FindTextBlock("currentTextBlock").Text);
+                Assert.AreEqual("Ordinal", row.Value().SelectedItem.Text);
+                Assert.AreEqual("Ordinal", readonlyRow.Value().SelectedItem.Text);
             }
         }
 
-        [Test]
-        public void Items()
+        [TestCase("current", false)]
+        [TestCase("explicit_type", false)]
+        [TestCase("lostfocus", true)]
+        [TestCase("readonly", false)]
+        [TestCase("editable", true)]
+        public void IsEditable(string header, bool expected)
+        {
+            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                Assert.AreEqual(expected, window.FindComboBoxRow(header).Value().IsEditable);
+            }
+        }
+
+        [TestCase("current")]
+        [TestCase("explicit_type")]
+        [TestCase("lostfocus")]
+        public void Items(string header)
         {
             using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
             {
@@ -81,10 +108,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
                                    "Ordinal",
                                    "OrdinalIgnoreCase"
                                };
-                CollectionAssert.AreEqual(expected,  window.FindComboBoxRow("current").Value().Items.Select(x => x.Text));
-                CollectionAssert.AreEqual(expected, window.FindComboBoxRow("explicit_type").Value().Items.Select(x => x.Text));
-                CollectionAssert.AreEqual(expected, window.FindComboBoxRow("lostfocus").Value().Items.Select(x => x.Text));
-                CollectionAssert.AreEqual(expected, window.FindComboBoxRow("readonly").Value().Items.Select(x => x.Text));
+                CollectionAssert.AreEqual(expected, window.FindComboBoxRow(header).Value().Items.Select(x => x.Text));
             }
         }
     }

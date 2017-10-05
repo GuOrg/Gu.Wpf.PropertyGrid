@@ -39,6 +39,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
                 Assert.True(longBox.HasKeyboardFocus);
 
                 Keyboard.Type(Key.TAB);
+                window.WaitUntilResponsive();
                 Assert.True(rootBox.HasKeyboardFocus);
                 Assert.False(shortBox.HasKeyboardFocus);
                 Assert.False(longBox.HasKeyboardFocus);
