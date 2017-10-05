@@ -53,6 +53,7 @@
                 {
                     return;
                 }
+
                 this.viewHasErrors = value;
                 this.OnPropertyChanged();
             }

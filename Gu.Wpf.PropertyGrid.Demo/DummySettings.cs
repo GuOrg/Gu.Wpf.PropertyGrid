@@ -10,8 +10,6 @@
 
     using Gu.Units;
 
-    using JetBrains.Annotations;
-
     public class DummySettings : INotifyPropertyChanged, INotifyDataErrorInfo
     {
         private int intValue;
@@ -48,6 +46,7 @@
                 {
                     return;
                 }
+
                 this.hasErrors = value;
                 this.OnPropertyChanged();
                 this.OnErrorsChanged();
@@ -63,6 +62,7 @@
                 {
                     return;
                 }
+
                 this.stringValue = value;
                 this.OnPropertyChanged();
             }
@@ -77,6 +77,7 @@
                 {
                     return;
                 }
+
                 this.boolValue = value;
                 this.OnPropertyChanged();
             }
@@ -91,6 +92,7 @@
                 {
                     return;
                 }
+
                 this.intValue = value;
                 this.OnPropertyChanged();
             }
@@ -101,7 +103,11 @@
             get => this.nullableIntValue;
             set
             {
-                if (value == this.nullableIntValue) return;
+                if (value == this.nullableIntValue)
+                {
+                    return;
+                }
+
                 this.nullableIntValue = value;
                 this.OnPropertyChanged();
             }
@@ -112,7 +118,11 @@
             get => this.doubleValue;
             set
             {
-                if (value.Equals(this.doubleValue)) return;
+                if (value.Equals(this.doubleValue))
+                {
+                    return;
+                }
+
                 this.doubleValue = value;
                 this.OnPropertyChanged();
             }
@@ -123,7 +133,11 @@
             get => this.nullableDoubleValue;
             set
             {
-                if (value.Equals(this.nullableDoubleValue)) return;
+                if (value.Equals(this.nullableDoubleValue))
+                {
+                    return;
+                }
+
                 this.nullableDoubleValue = value;
                 this.OnPropertyChanged();
             }
@@ -149,7 +163,11 @@
             get => this.lengthMin;
             set
             {
-                if (value.Equals(this.lengthMin)) return;
+                if (value.Equals(this.lengthMin))
+                {
+                    return;
+                }
+
                 this.lengthMin = value;
                 this.OnPropertyChanged();
             }
@@ -160,7 +178,11 @@
             get => this.lengthMax;
             set
             {
-                if (value.Equals(this.lengthMax)) return;
+                if (value.Equals(this.lengthMax))
+                {
+                    return;
+                }
+
                 this.lengthMax = value;
                 this.OnPropertyChanged();
             }
@@ -171,7 +193,11 @@
             get => this.nullableLengthValue;
             set
             {
-                if (value.Equals(this.nullableLengthValue)) return;
+                if (value.Equals(this.nullableLengthValue))
+                {
+                    return;
+                }
+
                 this.nullableLengthValue = value;
                 this.OnPropertyChanged();
             }
@@ -182,7 +208,11 @@
             get => this.speedValue;
             set
             {
-                if (value.Equals(this.speedValue)) return;
+                if (value.Equals(this.speedValue))
+                {
+                    return;
+                }
+
                 this.speedValue = value;
                 this.OnPropertyChanged();
             }
@@ -212,7 +242,25 @@
                 {
                     return;
                 }
+
                 this.currentStringComparison = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public IReadOnlyList<CultureInfo> Cultures { get; } = new[] { CultureInfo.GetCultureInfo("sv-se"), CultureInfo.GetCultureInfo("en-us"), };
+
+        public CultureInfo CurrentCulture
+        {
+            get => this.currentCulture;
+            set
+            {
+                if (Equals(value, this.currentCulture))
+                {
+                    return;
+                }
+
+                this.currentCulture = value;
                 this.OnPropertyChanged();
             }
         }
@@ -230,19 +278,6 @@
             }
 
             return new[] { $"{propertyName} has {nameof(INotifyDataErrorInfo)} error" };
-        }
-
-        public IReadOnlyList<CultureInfo> Cultures { get; } = new[] { CultureInfo.GetCultureInfo("sv-se"), CultureInfo.GetCultureInfo("en-us"), };
-
-        public CultureInfo CurrentCulture
-        {
-            get => this.currentCulture;
-            set
-            {
-                if (Equals(value, this.currentCulture)) return;
-                this.currentCulture = value;
-                this.OnPropertyChanged();
-            }
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

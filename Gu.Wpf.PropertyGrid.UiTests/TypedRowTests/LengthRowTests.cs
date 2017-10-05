@@ -53,7 +53,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
                 Assert.AreEqual("2.3", window.FindTextBoxRow("default").Value().Text);
                 Assert.AreEqual("Old value: 0.0123456 m", window.FindTextBoxRow("default").Info().Text);
                 Assert.AreEqual("0.0123456", window.FindTextBoxRow("propertychanged").Value().Text);
-                Assert.AreEqual("", window.FindTextBoxRow("propertychanged").Info().Text);
+                Assert.AreEqual(string.Empty, window.FindTextBoxRow("propertychanged").Info().Text);
                 Assert.AreEqual("0.0123456", window.FindTextBoxRow("readonly").Value().Text);
                 Assert.AreEqual("1.23456", window.FindTextBoxRow("explicit cm").Value().Text);
 

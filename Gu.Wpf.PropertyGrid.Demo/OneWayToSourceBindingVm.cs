@@ -20,7 +20,11 @@
             get => this.text;
             set
             {
-                if (value == this.text) return;
+                if (value == this.text)
+                {
+                    return;
+                }
+
                 this.text = value;
                 this.OnPropertyChanged();
             }
@@ -35,6 +39,7 @@
                 {
                     return;
                 }
+
                 this.hasErrors = value;
                 this.OnPropertyChanged();
                 this.OnErrorsChanged(nameof(this.Text));
@@ -46,7 +51,11 @@
             get => this.viewHasErrors;
             set
             {
-                if (value == this.viewHasErrors) return;
+                if (value == this.viewHasErrors)
+                {
+                    return;
+                }
+
                 this.viewHasErrors = value;
                 this.OnPropertyChanged();
             }

@@ -65,7 +65,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                window.FindTextBoxRow("nullable").Value().Text = "";
+                window.FindTextBoxRow("nullable").Value().Text = string.Empty;
                 window.FindButton("lose focus").Click();
 
                 Assert.AreEqual("null", window.FindTextBox("currentNullableValueTextBox").Text);

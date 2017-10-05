@@ -89,6 +89,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -295,6 +298,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -501,6 +507,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -707,6 +716,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -913,6 +925,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -1119,6 +1134,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -1325,6 +1343,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -1531,6 +1552,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -1737,6 +1761,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -1943,6 +1970,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -2149,6 +2179,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -2355,6 +2388,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -2561,6 +2597,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -2767,6 +2806,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -2973,6 +3015,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -3179,6 +3224,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -3385,6 +3433,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -3591,6 +3642,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -3797,6 +3851,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -4003,6 +4060,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -4209,6 +4269,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -4415,6 +4478,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -4621,6 +4687,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -4827,6 +4896,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -5033,6 +5105,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -5239,6 +5314,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -5445,6 +5523,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -5651,6 +5732,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -5857,6 +5941,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -6063,6 +6150,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -6269,6 +6359,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -6475,6 +6568,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -6681,6 +6777,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -6887,6 +6986,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -7093,6 +7195,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -7299,6 +7404,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -7505,6 +7613,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -7711,6 +7822,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -7917,6 +8031,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -8123,6 +8240,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -8329,6 +8449,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -8535,6 +8658,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -8741,6 +8867,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -8947,6 +9076,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -9153,6 +9285,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -9359,6 +9494,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -9565,6 +9703,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -9771,6 +9912,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -9977,6 +10121,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -10183,6 +10330,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -10389,6 +10539,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -10595,6 +10748,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>
@@ -10801,6 +10957,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             set { this.SetValue(UnitProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the dependency property that corresponds to Value.
+        /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <inheritdoc/>

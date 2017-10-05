@@ -47,9 +47,9 @@
                 Assert.AreEqual("Old value: 2.3\u00A0mm", lengthRow.Info().Text);
 
                 window.FindButton("save").Click();
-                Assert.AreEqual("", stringRow.Info().Text);
-                Assert.AreEqual("", doubleRow.Info().Text);
-                Assert.AreEqual("", lengthRow.Info().Text);
+                Assert.AreEqual(string.Empty, stringRow.Info().Text);
+                Assert.AreEqual(string.Empty, doubleRow.Info().Text);
+                Assert.AreEqual(string.Empty, lengthRow.Info().Text);
             }
         }
 
@@ -77,9 +77,9 @@
                 Assert.AreEqual("before: 2.3\u00A0mm", oldLengthValue.Text);
 
                 window.FindButton("save").Click();
-                Assert.AreEqual("", oldStringValue.Text);
-                Assert.AreEqual("", oldDoubleValue.Text);
-                Assert.AreEqual("", oldLengthValue.Text);
+                Assert.AreEqual(string.Empty, oldStringValue.Text);
+                Assert.AreEqual(string.Empty, oldDoubleValue.Text);
+                Assert.AreEqual(string.Empty, oldLengthValue.Text);
             }
         }
 
@@ -107,9 +107,9 @@
                 Assert.AreEqual("before: 2.3\u00A0mm", oldLengthValue.Text);
 
                 window.FindButton("save").Click();
-                Assert.AreEqual("", oldStringValue.Text);
-                Assert.AreEqual("", oldDoubleValue.Text);
-                Assert.AreEqual("", oldLengthValue.Text);
+                Assert.AreEqual(string.Empty, oldStringValue.Text);
+                Assert.AreEqual(string.Empty, oldDoubleValue.Text);
+                Assert.AreEqual(string.Empty, oldLengthValue.Text);
             }
         }
 
@@ -144,9 +144,9 @@
                 Assert.AreEqual("before: 2.3\u00A0mm", oldLengthValue.Text);
 
                 window.FindButton("save").Click();
-                Assert.AreEqual("", oldStringValue.Text);
-                Assert.AreEqual("", oldDoubleValue.Text);
-                Assert.AreEqual("", oldLengthValue.Text);
+                Assert.AreEqual(string.Empty, oldStringValue.Text);
+                Assert.AreEqual(string.Empty, oldDoubleValue.Text);
+                Assert.AreEqual(string.Empty, oldLengthValue.Text);
             }
         }
 
@@ -160,18 +160,18 @@
 
                 var stringRow = groupBox.FindTextBoxRow("string");
                 stringRow.Value().Text = "g";
-                Assert.AreEqual("", stringRow.Info().Text);
+                Assert.AreEqual(string.Empty, stringRow.Info().Text);
 
                 var doubleRow = groupBox.FindTextBoxRow("double");
                 doubleRow.Value().Text = "1.23";
-                Assert.AreEqual("", stringRow.Info().Text);
-                Assert.AreEqual("", doubleRow.Info().Text);
+                Assert.AreEqual(string.Empty, stringRow.Info().Text);
+                Assert.AreEqual(string.Empty, doubleRow.Info().Text);
 
                 var lengthRow = groupBox.FindTextBoxRow("length");
                 lengthRow.Value().Text = "2";
-                Assert.AreEqual("", stringRow.Info().Text);
-                Assert.AreEqual("", doubleRow.Info().Text);
-                Assert.AreEqual("", lengthRow.Info().Text);
+                Assert.AreEqual(string.Empty, stringRow.Info().Text);
+                Assert.AreEqual(string.Empty, doubleRow.Info().Text);
+                Assert.AreEqual(string.Empty, lengthRow.Info().Text);
             }
         }
     }

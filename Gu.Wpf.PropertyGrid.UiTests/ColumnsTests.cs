@@ -5,7 +5,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class ColumnsTests
     {
-        private static string WindowName = "ColumnsWindow";
+        private const string WindowName = "ColumnsWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
