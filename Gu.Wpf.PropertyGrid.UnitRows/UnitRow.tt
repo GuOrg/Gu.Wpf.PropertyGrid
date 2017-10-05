@@ -62,7 +62,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public <#= quantityType.Name #>? Value
         {
@@ -71,7 +71,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public <#= quantityType.Name #>? MinValue
         {
@@ -80,7 +80,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public <#= quantityType.Name #>? MaxValue
         {
@@ -89,7 +89,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public <#= quantityType.Name #>Unit Unit
         {

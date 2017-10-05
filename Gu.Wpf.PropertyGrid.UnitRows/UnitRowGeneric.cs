@@ -46,38 +46,38 @@
 
         public double? ScalarValue
         {
-            get { return (double?)this.GetValue(ScalarValueProperty); }
-            set { this.SetValue(ScalarValueProperty, value); }
+            get => (double?)this.GetValue(ScalarValueProperty);
+            set => this.SetValue(ScalarValueProperty, value);
         }
 
         public double? ScalarMinValue
         {
-            get { return (double?)this.GetValue(ScalarMinValueProperty); }
-            set { this.SetValue(ScalarMinValueProperty, value); }
+            get => (double?)this.GetValue(ScalarMinValueProperty);
+            set => this.SetValue(ScalarMinValueProperty, value);
         }
 
         public double? ScalarMaxValue
         {
-            get { return (double?)this.GetValue(ScalarMaxValueProperty); }
-            set { this.SetValue(ScalarMaxValueProperty, value); }
+            get => (double?)this.GetValue(ScalarMaxValueProperty);
+            set => this.SetValue(ScalarMaxValueProperty, value);
         }
 
         public SymbolFormat SymbolFormat
         {
-            get { return (SymbolFormat)this.GetValue(SymbolFormatProperty); }
-            set { this.SetValue(SymbolFormatProperty, value); }
+            get => (SymbolFormat)this.GetValue(SymbolFormatProperty);
+            set => this.SetValue(SymbolFormatProperty, value);
         }
 
         public int? DecimalDigits
         {
-            get { return (int?)this.GetValue(DecimalDigitsProperty); }
-            set { this.SetValue(DecimalDigitsProperty, value); }
+            get => (int?)this.GetValue(DecimalDigitsProperty);
+            set => this.SetValue(DecimalDigitsProperty, value);
         }
 
         public bool CanValueBeNull
         {
-            get { return (bool)this.GetValue(CanValueBeNullProperty); }
-            set { this.SetValue(CanValueBeNullProperty, value); }
+            get => (bool)this.GetValue(CanValueBeNullProperty);
+            set => this.SetValue(CanValueBeNullProperty, value);
         }
 
         protected static void OnScalarValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

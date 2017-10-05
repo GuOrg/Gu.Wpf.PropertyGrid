@@ -54,7 +54,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Acceleration? Value
         {
@@ -63,7 +63,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Acceleration? MinValue
         {
@@ -72,7 +72,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Acceleration? MaxValue
         {
@@ -81,7 +81,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public AccelerationUnit Unit
         {
@@ -260,7 +260,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public AmountOfSubstance? Value
         {
@@ -269,7 +269,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public AmountOfSubstance? MinValue
         {
@@ -278,7 +278,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public AmountOfSubstance? MaxValue
         {
@@ -287,7 +287,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public AmountOfSubstanceUnit Unit
         {
@@ -466,7 +466,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Angle? Value
         {
@@ -475,7 +475,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Angle? MinValue
         {
@@ -484,7 +484,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Angle? MaxValue
         {
@@ -493,7 +493,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public AngleUnit Unit
         {
@@ -672,7 +672,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public AnglePerUnitless? Value
         {
@@ -681,7 +681,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public AnglePerUnitless? MinValue
         {
@@ -690,7 +690,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public AnglePerUnitless? MaxValue
         {
@@ -699,7 +699,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public AnglePerUnitlessUnit Unit
         {
@@ -878,7 +878,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public AngularAcceleration? Value
         {
@@ -887,7 +887,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public AngularAcceleration? MinValue
         {
@@ -896,7 +896,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public AngularAcceleration? MaxValue
         {
@@ -905,7 +905,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public AngularAccelerationUnit Unit
         {
@@ -1084,7 +1084,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public AngularJerk? Value
         {
@@ -1093,7 +1093,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public AngularJerk? MinValue
         {
@@ -1102,7 +1102,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public AngularJerk? MaxValue
         {
@@ -1111,7 +1111,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public AngularJerkUnit Unit
         {
@@ -1290,7 +1290,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public AngularSpeed? Value
         {
@@ -1299,7 +1299,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public AngularSpeed? MinValue
         {
@@ -1308,7 +1308,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public AngularSpeed? MaxValue
         {
@@ -1317,7 +1317,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public AngularSpeedUnit Unit
         {
@@ -1496,7 +1496,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Area? Value
         {
@@ -1505,7 +1505,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Area? MinValue
         {
@@ -1514,7 +1514,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Area? MaxValue
         {
@@ -1523,7 +1523,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public AreaUnit Unit
         {
@@ -1702,7 +1702,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public AreaDensity? Value
         {
@@ -1711,7 +1711,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public AreaDensity? MinValue
         {
@@ -1720,7 +1720,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public AreaDensity? MaxValue
         {
@@ -1729,7 +1729,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public AreaDensityUnit Unit
         {
@@ -1908,7 +1908,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Capacitance? Value
         {
@@ -1917,7 +1917,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Capacitance? MinValue
         {
@@ -1926,7 +1926,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Capacitance? MaxValue
         {
@@ -1935,7 +1935,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public CapacitanceUnit Unit
         {
@@ -2114,7 +2114,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public CatalyticActivity? Value
         {
@@ -2123,7 +2123,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public CatalyticActivity? MinValue
         {
@@ -2132,7 +2132,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public CatalyticActivity? MaxValue
         {
@@ -2141,7 +2141,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public CatalyticActivityUnit Unit
         {
@@ -2320,7 +2320,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Conductivity? Value
         {
@@ -2329,7 +2329,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Conductivity? MinValue
         {
@@ -2338,7 +2338,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Conductivity? MaxValue
         {
@@ -2347,7 +2347,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public ConductivityUnit Unit
         {
@@ -2526,7 +2526,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Current? Value
         {
@@ -2535,7 +2535,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Current? MinValue
         {
@@ -2544,7 +2544,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Current? MaxValue
         {
@@ -2553,7 +2553,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public CurrentUnit Unit
         {
@@ -2732,7 +2732,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Data? Value
         {
@@ -2741,7 +2741,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Data? MinValue
         {
@@ -2750,7 +2750,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Data? MaxValue
         {
@@ -2759,7 +2759,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public DataUnit Unit
         {
@@ -2938,7 +2938,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Density? Value
         {
@@ -2947,7 +2947,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Density? MinValue
         {
@@ -2956,7 +2956,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Density? MaxValue
         {
@@ -2965,7 +2965,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public DensityUnit Unit
         {
@@ -3144,7 +3144,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public ElectricalConductance? Value
         {
@@ -3153,7 +3153,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public ElectricalConductance? MinValue
         {
@@ -3162,7 +3162,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public ElectricalConductance? MaxValue
         {
@@ -3171,7 +3171,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public ElectricalConductanceUnit Unit
         {
@@ -3350,7 +3350,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public ElectricCharge? Value
         {
@@ -3359,7 +3359,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public ElectricCharge? MinValue
         {
@@ -3368,7 +3368,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public ElectricCharge? MaxValue
         {
@@ -3377,7 +3377,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public ElectricChargeUnit Unit
         {
@@ -3556,7 +3556,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Energy? Value
         {
@@ -3565,7 +3565,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Energy? MinValue
         {
@@ -3574,7 +3574,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Energy? MaxValue
         {
@@ -3583,7 +3583,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public EnergyUnit Unit
         {
@@ -3762,7 +3762,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Flexibility? Value
         {
@@ -3771,7 +3771,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Flexibility? MinValue
         {
@@ -3780,7 +3780,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Flexibility? MaxValue
         {
@@ -3789,7 +3789,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public FlexibilityUnit Unit
         {
@@ -3968,7 +3968,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Force? Value
         {
@@ -3977,7 +3977,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Force? MinValue
         {
@@ -3986,7 +3986,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Force? MaxValue
         {
@@ -3995,7 +3995,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public ForceUnit Unit
         {
@@ -4174,7 +4174,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public ForcePerUnitless? Value
         {
@@ -4183,7 +4183,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public ForcePerUnitless? MinValue
         {
@@ -4192,7 +4192,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public ForcePerUnitless? MaxValue
         {
@@ -4201,7 +4201,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public ForcePerUnitlessUnit Unit
         {
@@ -4380,7 +4380,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Frequency? Value
         {
@@ -4389,7 +4389,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Frequency? MinValue
         {
@@ -4398,7 +4398,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Frequency? MaxValue
         {
@@ -4407,7 +4407,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public FrequencyUnit Unit
         {
@@ -4586,7 +4586,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Illuminance? Value
         {
@@ -4595,7 +4595,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Illuminance? MinValue
         {
@@ -4604,7 +4604,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Illuminance? MaxValue
         {
@@ -4613,7 +4613,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public IlluminanceUnit Unit
         {
@@ -4792,7 +4792,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Inductance? Value
         {
@@ -4801,7 +4801,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Inductance? MinValue
         {
@@ -4810,7 +4810,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Inductance? MaxValue
         {
@@ -4819,7 +4819,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public InductanceUnit Unit
         {
@@ -4998,7 +4998,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Jerk? Value
         {
@@ -5007,7 +5007,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Jerk? MinValue
         {
@@ -5016,7 +5016,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Jerk? MaxValue
         {
@@ -5025,7 +5025,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public JerkUnit Unit
         {
@@ -5204,7 +5204,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public KinematicViscosity? Value
         {
@@ -5213,7 +5213,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public KinematicViscosity? MinValue
         {
@@ -5222,7 +5222,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public KinematicViscosity? MaxValue
         {
@@ -5231,7 +5231,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public KinematicViscosityUnit Unit
         {
@@ -5410,7 +5410,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Length? Value
         {
@@ -5419,7 +5419,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Length? MinValue
         {
@@ -5428,7 +5428,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Length? MaxValue
         {
@@ -5437,7 +5437,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public LengthUnit Unit
         {
@@ -5616,7 +5616,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public LengthPerUnitless? Value
         {
@@ -5625,7 +5625,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public LengthPerUnitless? MinValue
         {
@@ -5634,7 +5634,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public LengthPerUnitless? MaxValue
         {
@@ -5643,7 +5643,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public LengthPerUnitlessUnit Unit
         {
@@ -5822,7 +5822,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public LuminousFlux? Value
         {
@@ -5831,7 +5831,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public LuminousFlux? MinValue
         {
@@ -5840,7 +5840,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public LuminousFlux? MaxValue
         {
@@ -5849,7 +5849,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public LuminousFluxUnit Unit
         {
@@ -6028,7 +6028,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public LuminousIntensity? Value
         {
@@ -6037,7 +6037,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public LuminousIntensity? MinValue
         {
@@ -6046,7 +6046,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public LuminousIntensity? MaxValue
         {
@@ -6055,7 +6055,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public LuminousIntensityUnit Unit
         {
@@ -6234,7 +6234,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public MagneticFieldStrength? Value
         {
@@ -6243,7 +6243,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public MagneticFieldStrength? MinValue
         {
@@ -6252,7 +6252,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public MagneticFieldStrength? MaxValue
         {
@@ -6261,7 +6261,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public MagneticFieldStrengthUnit Unit
         {
@@ -6440,7 +6440,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public MagneticFlux? Value
         {
@@ -6449,7 +6449,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public MagneticFlux? MinValue
         {
@@ -6458,7 +6458,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public MagneticFlux? MaxValue
         {
@@ -6467,7 +6467,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public MagneticFluxUnit Unit
         {
@@ -6646,7 +6646,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Mass? Value
         {
@@ -6655,7 +6655,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Mass? MinValue
         {
@@ -6664,7 +6664,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Mass? MaxValue
         {
@@ -6673,7 +6673,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public MassUnit Unit
         {
@@ -6852,7 +6852,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public MassFlow? Value
         {
@@ -6861,7 +6861,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public MassFlow? MinValue
         {
@@ -6870,7 +6870,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public MassFlow? MaxValue
         {
@@ -6879,7 +6879,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public MassFlowUnit Unit
         {
@@ -7058,7 +7058,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public MolarHeatCapacity? Value
         {
@@ -7067,7 +7067,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public MolarHeatCapacity? MinValue
         {
@@ -7076,7 +7076,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public MolarHeatCapacity? MaxValue
         {
@@ -7085,7 +7085,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public MolarHeatCapacityUnit Unit
         {
@@ -7264,7 +7264,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public MolarMass? Value
         {
@@ -7273,7 +7273,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public MolarMass? MinValue
         {
@@ -7282,7 +7282,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public MolarMass? MaxValue
         {
@@ -7291,7 +7291,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public MolarMassUnit Unit
         {
@@ -7470,7 +7470,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Momentum? Value
         {
@@ -7479,7 +7479,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Momentum? MinValue
         {
@@ -7488,7 +7488,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Momentum? MaxValue
         {
@@ -7497,7 +7497,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public MomentumUnit Unit
         {
@@ -7676,7 +7676,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Power? Value
         {
@@ -7685,7 +7685,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Power? MinValue
         {
@@ -7694,7 +7694,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Power? MaxValue
         {
@@ -7703,7 +7703,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public PowerUnit Unit
         {
@@ -7882,7 +7882,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Pressure? Value
         {
@@ -7891,7 +7891,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Pressure? MinValue
         {
@@ -7900,7 +7900,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Pressure? MaxValue
         {
@@ -7909,7 +7909,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public PressureUnit Unit
         {
@@ -8088,7 +8088,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Resistance? Value
         {
@@ -8097,7 +8097,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Resistance? MinValue
         {
@@ -8106,7 +8106,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Resistance? MaxValue
         {
@@ -8115,7 +8115,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public ResistanceUnit Unit
         {
@@ -8294,7 +8294,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public SolidAngle? Value
         {
@@ -8303,7 +8303,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public SolidAngle? MinValue
         {
@@ -8312,7 +8312,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public SolidAngle? MaxValue
         {
@@ -8321,7 +8321,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public SolidAngleUnit Unit
         {
@@ -8500,7 +8500,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public SpecificEnergy? Value
         {
@@ -8509,7 +8509,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public SpecificEnergy? MinValue
         {
@@ -8518,7 +8518,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public SpecificEnergy? MaxValue
         {
@@ -8527,7 +8527,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public SpecificEnergyUnit Unit
         {
@@ -8706,7 +8706,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public SpecificVolume? Value
         {
@@ -8715,7 +8715,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public SpecificVolume? MinValue
         {
@@ -8724,7 +8724,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public SpecificVolume? MaxValue
         {
@@ -8733,7 +8733,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public SpecificVolumeUnit Unit
         {
@@ -8912,7 +8912,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Speed? Value
         {
@@ -8921,7 +8921,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Speed? MinValue
         {
@@ -8930,7 +8930,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Speed? MaxValue
         {
@@ -8939,7 +8939,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public SpeedUnit Unit
         {
@@ -9118,7 +9118,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Stiffness? Value
         {
@@ -9127,7 +9127,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Stiffness? MinValue
         {
@@ -9136,7 +9136,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Stiffness? MaxValue
         {
@@ -9145,7 +9145,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public StiffnessUnit Unit
         {
@@ -9324,7 +9324,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Temperature? Value
         {
@@ -9333,7 +9333,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Temperature? MinValue
         {
@@ -9342,7 +9342,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Temperature? MaxValue
         {
@@ -9351,7 +9351,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public TemperatureUnit Unit
         {
@@ -9530,7 +9530,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Time? Value
         {
@@ -9539,7 +9539,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Time? MinValue
         {
@@ -9548,7 +9548,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Time? MaxValue
         {
@@ -9557,7 +9557,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public TimeUnit Unit
         {
@@ -9736,7 +9736,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Torque? Value
         {
@@ -9745,7 +9745,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Torque? MinValue
         {
@@ -9754,7 +9754,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Torque? MaxValue
         {
@@ -9763,7 +9763,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public TorqueUnit Unit
         {
@@ -9942,7 +9942,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Unitless? Value
         {
@@ -9951,7 +9951,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Unitless? MinValue
         {
@@ -9960,7 +9960,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Unitless? MaxValue
         {
@@ -9969,7 +9969,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public UnitlessUnit Unit
         {
@@ -10148,7 +10148,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Voltage? Value
         {
@@ -10157,7 +10157,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Voltage? MinValue
         {
@@ -10166,7 +10166,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Voltage? MaxValue
         {
@@ -10175,7 +10175,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public VoltageUnit Unit
         {
@@ -10354,7 +10354,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Volume? Value
         {
@@ -10363,7 +10363,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Volume? MinValue
         {
@@ -10372,7 +10372,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Volume? MaxValue
         {
@@ -10381,7 +10381,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public VolumeUnit Unit
         {
@@ -10560,7 +10560,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public VolumetricFlow? Value
         {
@@ -10569,7 +10569,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public VolumetricFlow? MinValue
         {
@@ -10578,7 +10578,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public VolumetricFlow? MaxValue
         {
@@ -10587,7 +10587,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public VolumetricFlowUnit Unit
         {
@@ -10766,7 +10766,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The value.
+        /// Gets or sets the value.
         /// </summary>
         public Wavenumber? Value
         {
@@ -10775,7 +10775,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The mimimum allowed value. If null no check is performed.
+        /// Gets or sets the mimimum allowed value. If null no check is performed.
         /// </summary>
         public Wavenumber? MinValue
         {
@@ -10784,7 +10784,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum allowed value. If null no check is performed.
         /// </summary>
         public Wavenumber? MaxValue
         {
@@ -10793,7 +10793,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// The unit of the <see cref="Value"/>
+        /// Gets or sets the unit of the <see cref="Value"/>
         /// </summary>
         public WavenumberUnit Unit
         {
