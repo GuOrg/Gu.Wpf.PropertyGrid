@@ -55,13 +55,12 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="UnitRow.cs" />
     <Compile Include="UnitRow.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UnitRow.tt</DependentUpon>
     </Compile>
-    <Compile Include="UnitRowGeneric.cs" />
+    <Compile Include="UnitRow.cs" />
     <None Include="Gu.Wpf.PropertyGrid.UnitRows.ruleset" />
     <None Include="paket.references" />
     <None Include="paket.template" />

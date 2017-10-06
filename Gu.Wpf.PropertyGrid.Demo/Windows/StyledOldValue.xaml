@@ -14,7 +14,7 @@
                 <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.UnitRows;component/Themes/Generic.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <Style TargetType="{x:Type propertyGrid:UnitRowGeneric}">
+            <Style TargetType="{x:Type propertyGrid:UnitRow}">
                 <Setter Property="OldValueStyle">
                     <Setter.Value>
                         <Style BasedOn="{StaticResource DefaultUnitOldValueStyle}" TargetType="{x:Type TextBlock}">
@@ -25,7 +25,7 @@
                 </Setter>
             </Style>
 
-            <Style BasedOn="{StaticResource {x:Type propertyGrid:UnitRowGeneric}}" TargetType="{x:Type propertyGrid:LengthRow}" />
+            <Style BasedOn="{StaticResource {x:Type propertyGrid:UnitRow}}" TargetType="{x:Type propertyGrid:LengthRow}" />
         </ResourceDictionary>
     </Window.Resources>
     <Window.DataContext>

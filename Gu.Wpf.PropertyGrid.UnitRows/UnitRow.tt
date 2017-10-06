@@ -17,7 +17,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         #>
 
     /// <inheritdoc />
-    public class <#= className #> : UnitRowGeneric, IQuantityFormatter
+    public class <#= className #> : UnitRow, IQuantityFormatter
     {
         /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
@@ -158,7 +158,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="UnitRowGeneric.ScalarValueProperty"/> changes.
+        /// Called when the <see cref="UnitRow.ScalarValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarValueChanged(double? newValue)
@@ -167,7 +167,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="UnitRowGeneric.ScalarMinValueProperty"/> changes.
+        /// Called when the <see cref="UnitRow.ScalarMinValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMinValueChanged(double? newValue)
@@ -176,7 +176,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="UnitRowGeneric.ScalarMaxValueProperty"/> changes.
+        /// Called when the <see cref="UnitRow.ScalarMaxValueProperty"/> changes.
         /// </summary>
         /// <param name="newValue">The new value.</param>
         protected override void OnScalarMaxValueChanged(double? newValue)

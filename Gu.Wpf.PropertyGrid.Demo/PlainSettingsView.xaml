@@ -48,12 +48,12 @@
                 <Setter Property="Template" Value="{StaticResource DoubleRowPlainTemplate}" />
             </Style>
 
-            <Style BasedOn="{StaticResource {x:Type propertyGrid:UnitRowGeneric}}" TargetType="{x:Type propertyGrid:UnitRowGeneric}">
+            <Style BasedOn="{StaticResource {x:Type propertyGrid:UnitRow}}" TargetType="{x:Type propertyGrid:UnitRow}">
                 <Setter Property="Template" Value="{StaticResource UnitRowGenericPlainTemplate}" />
             </Style>
 
-            <Style BasedOn="{StaticResource {x:Type propertyGrid:UnitRowGeneric}}" TargetType="{x:Type propertyGrid:LengthRow}" />
-            <Style BasedOn="{StaticResource {x:Type propertyGrid:UnitRowGeneric}}" TargetType="{x:Type propertyGrid:SpeedRow}" />
+            <Style BasedOn="{StaticResource {x:Type propertyGrid:UnitRow}}" TargetType="{x:Type propertyGrid:LengthRow}" />
+            <Style BasedOn="{StaticResource {x:Type propertyGrid:UnitRow}}" TargetType="{x:Type propertyGrid:SpeedRow}" />
         </ResourceDictionary>
     </UserControl.Resources>
     <UserControl.DataContext>

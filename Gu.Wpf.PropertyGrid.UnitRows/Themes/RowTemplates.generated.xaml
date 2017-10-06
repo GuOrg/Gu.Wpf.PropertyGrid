@@ -4,7 +4,7 @@
                     xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid;assembly=Gu.Wpf.PropertyGrid"
                     xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows"
                     xmlns:validationScope="clr-namespace:Gu.Wpf.ValidationScope;assembly=Gu.Wpf.ValidationScope">
-    <ControlTemplate x:Key="UnitRowGenericPlainTemplate" TargetType="{x:Type unitRows:UnitRowGeneric}">
+    <ControlTemplate x:Key="UnitRowGenericPlainTemplate" TargetType="{x:Type unitRows:UnitRow}">
         <Border Margin="{TemplateBinding Padding}"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
@@ -49,7 +49,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <ControlTemplate x:Key="UnitRowGenericInfoTemplate" TargetType="{x:Type unitRows:UnitRowGeneric}">
+    <ControlTemplate x:Key="UnitRowGenericInfoTemplate" TargetType="{x:Type unitRows:UnitRow}">
         <Border Margin="{TemplateBinding Padding}"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
