@@ -6,6 +6,9 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows.Controls;
     using System.Windows.Threading;
 
+    /// <summary>
+    /// A property grid row for arbitrary content.
+    /// </summary>
     public partial class ContentRow : HeaderedContentControl
     {
         public static readonly DependencyProperty SuffixProperty = DependencyProperty.Register(
@@ -28,14 +31,14 @@ namespace Gu.Wpf.PropertyGrid
 
         public object Suffix
         {
-            get { return this.GetValue(SuffixProperty); }
-            set { this.SetValue(SuffixProperty, value); }
+            get => this.GetValue(SuffixProperty);
+            set => this.SetValue(SuffixProperty, value);
         }
 
         public object OldValue
         {
-            get { return this.GetValue(OldValueProperty); }
-            set { this.SetValue(OldValueProperty, value); }
+            get => this.GetValue(OldValueProperty);
+            set => this.SetValue(OldValueProperty, value);
         }
 
         protected virtual void UpdateTemplate()

@@ -72,8 +72,8 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         public <#= quantityType.Name #>? Value
         {
-            get { return (<#= quantityType.Name #>?)this.GetValue(ValueProperty); }
-            set { this.SetValue(ValueProperty, value); }
+            get => (<#= quantityType.Name #>?)this.GetValue(ValueProperty);
+            set => this.SetValue(ValueProperty, value);
         }
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         public <#= quantityType.Name #>? MinValue
         {
-            get { return (<#= quantityType.Name #>?)this.GetValue(MinValueProperty); }
-            set { this.SetValue(MinValueProperty, value); }
+            get => (<#= quantityType.Name #>?)this.GetValue(MinValueProperty);
+            set => this.SetValue(MinValueProperty, value);
         }
 
         /// <summary>
@@ -90,8 +90,8 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         public <#= quantityType.Name #>? MaxValue
         {
-            get { return (<#= quantityType.Name #>?)this.GetValue(MaxValueProperty); }
-            set { this.SetValue(MaxValueProperty, value); }
+            get => (<#= quantityType.Name #>?)this.GetValue(MaxValueProperty);
+            set => this.SetValue(MaxValueProperty, value);
         }
 
         /// <summary>
@@ -99,8 +99,8 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         public <#= quantityType.Name #>Unit Unit
         {
-            get { return (<#= quantityType.Name #>Unit)this.GetValue(UnitProperty); }
-            set { this.SetValue(UnitProperty, value); }
+            get => (<#= quantityType.Name #>Unit)this.GetValue(UnitProperty);
+            set => this.SetValue(UnitProperty, value);
         }
 
         /// <summary>
@@ -184,6 +184,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
+        /// <summary>
+        /// Upate the value of the <see cref="Row.IsDirty"/> property
+        /// </summary>
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -196,6 +199,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             }
         }
 
+        /// <summary>
+        /// Set <paramref name="property"/> to a value in <see cref="Unit"/>
+        /// </summary>
+        /// <param name="property">The property on this instance.</param>
+        /// <param name="quantity">The value to convert to current unit</param>
         protected void SetScalarValue(DependencyProperty property, <#= quantityType.Name #>? quantity)
         {
             // we set this flag to prevent from setting scalar value changing quantity values.
@@ -207,6 +215,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.isUpdatingScalarValue = false;
         }
 
+        /// <summary>
+        /// Set <paramref name="property"/> to a value in <see cref="Unit"/>
+        /// </summary>
+        /// <param name="property">The property on this instance.</param>
+        /// <param name="value">The value to convert to current unit</param>
         protected virtual void SetQuantityValue(DependencyProperty property, double? value)
         {
             if (this.isUpdatingScalarValue)
@@ -220,6 +233,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetCurrentValue(property, qty);
         }
 
+        /// <summary>
+        /// Create the suffix from the current <see cref="Unit"/>
+        /// </summary>
+        /// <param name="format">The <see cref="SymbolFormat"/></param>
+        /// <returns>The string representation of the unit.</returns>
         protected override string CreateSuffix(SymbolFormat format)
         {
             return CreateSuffix(format, this.Unit);

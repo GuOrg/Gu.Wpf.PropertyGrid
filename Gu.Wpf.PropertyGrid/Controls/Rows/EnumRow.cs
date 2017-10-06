@@ -5,6 +5,9 @@
     using System.Linq;
     using System.Windows;
 
+    /// <summary>
+    /// A property grid row for enum values that renders combo boxes.
+    /// </summary>
     public class EnumRow : GenericRow<object>
     {
 #pragma warning disable SA1202 // Elements must be ordered by access
@@ -33,14 +36,14 @@
 
         public Type EnumType
         {
-            get { return (Type)this.GetValue(EnumTypeProperty); }
-            set { this.SetValue(EnumTypeProperty, value); }
+            get => (Type)this.GetValue(EnumTypeProperty);
+            set => this.SetValue(EnumTypeProperty, value);
         }
 
         public IReadOnlyList<IFormattable> EnumValues
         {
-            get { return (IReadOnlyList<IFormattable>)this.GetValue(EnumValuesProperty); }
-            protected set { this.SetValue(EnumValuesPropertyKey, value); }
+            get => (IReadOnlyList<IFormattable>)this.GetValue(EnumValuesProperty);
+            protected set => this.SetValue(EnumValuesPropertyKey, value);
         }
 
         protected override void OnValueChanged(object oldValue, object newValue)

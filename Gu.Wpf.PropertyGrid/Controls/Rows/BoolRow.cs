@@ -2,6 +2,9 @@
 {
     using System.Windows;
 
+    /// <summary>
+    /// A property grid row for boolean values.
+    /// </summary>
     public class BoolRow : GenericRow<bool>
     {
         static BoolRow()

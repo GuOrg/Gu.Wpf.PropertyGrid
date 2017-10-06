@@ -12,7 +12,7 @@ namespace Gu.Wpf.PropertyGrid
         private static readonly GridLengthConverter GridLengthConverter = new GridLengthConverter();
         private static readonly char[] SeparatorChars = { ',', ' ' };
 
-        public static IEnumerable<GridLength> Parse(ITypeDescriptorContext typeDescriptorContext, CultureInfo cultureInfo, string text)
+        internal static IEnumerable<GridLength> Parse(ITypeDescriptorContext typeDescriptorContext, CultureInfo cultureInfo, string text)
         {
             try
             {
@@ -22,7 +22,7 @@ namespace Gu.Wpf.PropertyGrid
             }
             catch (Exception e)
             {
-                var message = $"Could not parse gridlengts from {text}.\r\n" +
+                var message = $"Could not parse grid lengts from {text}.\r\n" +
                               $"Expected a string like '* 20 Auto'\r\n" +
                               $"Valid separators are {{{string.Join(", ", SeparatorChars.Select(x => $"'x'"))}}}";
                 throw new FormatException(message, e);

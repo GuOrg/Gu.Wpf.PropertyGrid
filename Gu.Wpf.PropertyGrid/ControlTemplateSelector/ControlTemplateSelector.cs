@@ -3,6 +3,9 @@
     using System.Windows.Controls;
     using System.Xaml;
 
+    /// <summary>
+    /// For dynamic control templates, like <see cref="DataTemplateSelector"/>
+    /// </summary>
     public abstract class ControlTemplateSelector<T>
         where T : Control
     {

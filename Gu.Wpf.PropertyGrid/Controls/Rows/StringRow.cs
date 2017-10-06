@@ -3,6 +3,9 @@
     using System.Windows;
     using System.Windows.Data;
 
+    /// <summary>
+    /// A property grid row for string values.
+    /// </summary>
     public class StringRow : GenericRow<string>
     {
         static StringRow()

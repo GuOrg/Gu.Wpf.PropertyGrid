@@ -4,10 +4,14 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows;
     using System.Windows.Controls;
 
+    /// <summary>
+    /// A property grid row for selecting values from a list.
+    /// </summary>
     public class SelectorRow : GenericRow<object>
     {
         public static readonly DependencyProperty ItemsSourceProperty = ItemsControl.ItemsSourceProperty.AddOwner(
-            typeof(SelectorRow), new FrameworkPropertyMetadata(default(IEnumerable)));
+            typeof(SelectorRow),
+            new FrameworkPropertyMetadata(default(IEnumerable)));
 
         static SelectorRow()
         {
@@ -16,8 +20,8 @@ namespace Gu.Wpf.PropertyGrid
 
         public IEnumerable ItemsSource
         {
-            get { return (IEnumerable)this.GetValue(ItemsSourceProperty); }
-            set { this.SetValue(ItemsSourceProperty, value); }
+            get => (IEnumerable)this.GetValue(ItemsSourceProperty);
+            set => this.SetValue(ItemsSourceProperty, value);
         }
     }
 }

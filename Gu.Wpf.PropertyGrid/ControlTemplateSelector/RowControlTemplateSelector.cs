@@ -17,10 +17,7 @@ namespace Gu.Wpf.PropertyGrid
 
         public ControlTemplate PlainTemplate
         {
-            get
-            {
-                return this.plainTemplate;
-            }
+            get => this.plainTemplate;
 
             set
             {
@@ -31,10 +28,7 @@ namespace Gu.Wpf.PropertyGrid
 
         public ControlTemplate InfoTemplate
         {
-            get
-            {
-                return this.infoTemplate;
-            }
+            get => this.infoTemplate;
 
             set
             {
@@ -45,10 +39,7 @@ namespace Gu.Wpf.PropertyGrid
 
         public ControlTemplate TextBoxHeaderTemplate
         {
-            get
-            {
-                return this.textBoxHeaderTemplate;
-            }
+            get => this.textBoxHeaderTemplate;
 
             set
             {
@@ -59,10 +50,7 @@ namespace Gu.Wpf.PropertyGrid
 
         public ControlTemplate TextBoxHeaderAndInfoTemplate
         {
-            get
-            {
-                return this.textBoxHeaderAndInfoTemplate;
-            }
+            get => this.textBoxHeaderAndInfoTemplate;
 
             set
             {
@@ -73,10 +61,7 @@ namespace Gu.Wpf.PropertyGrid
 
         public ControlTemplate TextBoxSuffixTemplate
         {
-            get
-            {
-                return this.textBoxSuffixTemplate;
-            }
+            get => this.textBoxSuffixTemplate;
 
             set
             {
@@ -87,10 +72,7 @@ namespace Gu.Wpf.PropertyGrid
 
         public ControlTemplate TextBoxSuffixInfoTemplate
         {
-            get
-            {
-                return this.textBoxSuffixInfoTemplate;
-            }
+            get => this.textBoxSuffixInfoTemplate;
 
             set
             {
@@ -101,10 +83,7 @@ namespace Gu.Wpf.PropertyGrid
 
         public ControlTemplate TextBoxHeaderAndSuffixTemplate
         {
-            get
-            {
-                return this.textBoxHeaderAndSuffixTemplate;
-            }
+            get => this.textBoxHeaderAndSuffixTemplate;
 
             set
             {
@@ -115,10 +94,7 @@ namespace Gu.Wpf.PropertyGrid
 
         public ControlTemplate TextBoxHeaderAndSuffixAndInfoTemplate
         {
-            get
-            {
-                return this.textBoxHeaderAndSuffixAndInfoTemplate;
-            }
+            get => this.textBoxHeaderAndSuffixAndInfoTemplate;
 
             set
             {

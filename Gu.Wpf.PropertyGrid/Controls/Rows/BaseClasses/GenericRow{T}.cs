@@ -19,8 +19,8 @@ namespace Gu.Wpf.PropertyGrid
 
         public T Value
         {
-            get { return (T)this.GetValue(ValueProperty); }
-            set { this.SetValue(ValueProperty, value); }
+            get => (T)this.GetValue(ValueProperty);
+            set => this.SetValue(ValueProperty, value);
         }
 
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;

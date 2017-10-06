@@ -20,8 +20,8 @@
 
         public bool UsePropertyNameAsHeader
         {
-            get { return (bool)this.GetValue(UsePropertyNameAsHeaderProperty); }
-            set { this.SetValue(UsePropertyNameAsHeaderProperty, value); }
+            get => (bool)this.GetValue(UsePropertyNameAsHeaderProperty);
+            set => this.SetValue(UsePropertyNameAsHeaderProperty, value);
         }
 
         private static void OnOldDataContextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
