@@ -2,8 +2,6 @@
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ output extension=".cs" #>
-<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ assembly name="System.Core" #>
 <#@ output extension=".generated.cs" #>
 #pragma warning disable SA1402 // File may only contain a single class
@@ -40,11 +38,21 @@ namespace Gu.Wpf.PropertyGrid
     foreach(var columnWidth in widths)
     {
         #>
+        /// <summary>
+        /// Helper for setting <#= columnWidth.PropertyName #> property on a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to set <#= columnWidth.PropertyName #> property on.</param>
+        /// <param name="value"><#= columnWidth.PropertyName #> property value.</param>
         public static void Set<#= columnWidth.PropertyName #>(this UIElement element, <#= columnWidth.Type #> value)
         {
             element.SetValue(<#= columnWidth.PropertyName #>Property, value);
         }
 
+        /// <summary>
+        /// Helper for reading <#= columnWidth.PropertyName #> property from a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to read <#= columnWidth.PropertyName #> property from.</param>
+        /// <returns><#= columnWidth.PropertyName #> property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
         public static <#= columnWidth.Type #> Get<#= columnWidth.PropertyName #>(this UIElement element)
@@ -139,16 +147,17 @@ namespace Gu.Wpf.PropertyGrid
     }
 
     private class WidthMetaData
-   {
+    {
         public readonly string PropertyName;
         public readonly string DefaultValue;
         public readonly string Type;
 
-       public WidthMetaData(string propertyName, string type, string defaultValue)
-       {
-           this.PropertyName = propertyName;
-           this.Type = type;
-           this.DefaultValue = defaultValue;
-       }
-   }
+        public WidthMetaData(string propertyName, string type, string defaultValue)
+        {
+            this.PropertyName = propertyName;
+            this.Type = type;
+            this.DefaultValue = defaultValue;
+        }
+    }
+
 #>

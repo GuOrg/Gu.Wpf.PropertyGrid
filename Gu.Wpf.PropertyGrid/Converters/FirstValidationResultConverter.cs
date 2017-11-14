@@ -8,7 +8,7 @@
     using System.Windows.Data;
     using System.Windows.Markup;
 
-    [MarkupExtensionReturnType(typeof(IValueConverter))]
+    [MarkupExtensionReturnType(typeof(FirstValidationResultConverter))]
     public class FirstValidationResultConverter : MarkupExtension, IValueConverter
     {
         public static readonly FirstValidationResultConverter Default = new FirstValidationResultConverter();
@@ -25,20 +25,17 @@
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var enumerable = value as IEnumerable<object>;
-            if (enumerable != null)
-            {
-                value = enumerable.FirstOrDefault();
-            }
-
             if (value == null)
             {
                 return null;
             }
 
-            var error = value as ValidationError;
+            if (value is IEnumerable<object> enumerable)
+            {
+                value = enumerable.FirstOrDefault();
+            }
 
-            if (error != null)
+            if (value is ValidationError error)
             {
                 return error.ErrorContent;
             }

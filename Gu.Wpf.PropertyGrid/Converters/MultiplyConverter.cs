@@ -5,7 +5,7 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows.Data;
     using System.Windows.Markup;
 
-    [MarkupExtensionReturnType(typeof(IValueConverter))]
+    [MarkupExtensionReturnType(typeof(MultiplyConverter))]
     public class MultiplyConverter : MarkupExtension, IValueConverter
     {
         public MultiplyConverter(double factor)

@@ -7,7 +7,8 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows.Data;
     using System.Windows.Markup;
 
-    [MarkupExtensionReturnType(typeof(IValueConverter))]
+    [MarkupExtensionReturnType(typeof(FirstOrDefaultConverter))]
+    [ValueConversion(typeof(IEnumerable<object>), typeof(object))]
     public class FirstOrDefaultConverter : MarkupExtension, IValueConverter
     {
         public static readonly FirstOrDefaultConverter Default = new FirstOrDefaultConverter();

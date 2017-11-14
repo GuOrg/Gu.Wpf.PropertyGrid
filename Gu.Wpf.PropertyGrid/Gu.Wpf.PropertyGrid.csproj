@@ -50,6 +50,11 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Generated\PropertyGrid.Columns.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PropertyGrid.Columns.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Generated\PropertyGrid.MiscDependencyProperties.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,11 +74,6 @@
     <Compile Include="Controls\Rows\ContentRow.cs" />
     <Compile Include="Controls\Rows\CheckBoxRow.cs" />
     <Compile Include="Controls\Rows\EnumRow.cs" />
-    <Compile Include="Controls\Generated\PropertyGrid.Columns.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PropertyGrid.Columns.tt</DependentUpon>
-    </Compile>
     <Compile Include="Controls\Rows\SelectorRow.cs" />
     <Compile Include="Controls\TextBlocks\HeaderBlock.cs" />
     <Compile Include="Controls\TextBlocks\SettingBlockAutomationPeer.cs" />
@@ -178,7 +178,7 @@
   <ItemGroup>
     <Content Include="Controls\Generated\PropertyGrid.Columns.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PropertyGrid.Columns.cs</LastGenOutput>
+      <LastGenOutput>PropertyGrid.Columns.generated.cs</LastGenOutput>
     </Content>
     <Content Include="Controls\Generated\PropertyGrid.MiscDependencyProperties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -198,6 +198,7 @@
       <DependentUpon>RowTemplates.ttinclude</DependentUpon>
     </Resource>
   </ItemGroup>
+  <Import Project="..\.paket\paket.targets" />
   <ItemGroup>
     <Analyzer Include="..\packages\analyzers\Gu.Analyzers\analyzers\dotnet\cs\Gu.Analyzers.Analyzers.dll">
       <Paket>True</Paket>
@@ -244,5 +245,4 @@
       </ItemGroup>
     </When>
   </Choose>
-  <Import Project="..\.paket\paket.targets" />
 </Project>

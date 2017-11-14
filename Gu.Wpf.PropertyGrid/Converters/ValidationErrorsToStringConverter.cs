@@ -7,7 +7,7 @@
     using System.Windows.Data;
     using System.Windows.Markup;
 
-    [MarkupExtensionReturnType(typeof(IValueConverter))]
+    [MarkupExtensionReturnType(typeof(ValidationErrorsToStringConverter))]
     public class ValidationErrorsToStringConverter : MarkupExtension, IValueConverter
     {
         public static readonly ValidationErrorsToStringConverter Default = new ValidationErrorsToStringConverter();
@@ -31,8 +31,7 @@
                 return null;
             }
 
-            var enumerable = value as IEnumerable<object>;
-            if (enumerable != null)
+            if (value is IEnumerable<object> enumerable)
             {
                 return ValidationErrorToStringConverter.Default.Convert(enumerable.FirstOrDefault(), targetType, parameter, culture);
             }
