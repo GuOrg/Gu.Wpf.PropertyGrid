@@ -15,11 +15,12 @@ namespace Gu.Wpf.PropertyGrid
     {
 <#
     var columns = new[]
-                            {
-                                new ColumnMetaData("Header"), 
-                                new ColumnMetaData("Value"), 
-                                new ColumnMetaData("Suffix")
-                            };
+        {
+            new ColumnMetaData("Header"), 
+            new ColumnMetaData("Value"), 
+            new ColumnMetaData("Suffix")
+        };
+
     var widths = columns.SelectMany(x => x.Widths).ToArray();
     foreach(var columnWidth in widths)
     {
@@ -57,11 +58,11 @@ namespace Gu.Wpf.PropertyGrid
     }
 <#
     var controlNames = new[]
-                           {
-                               new ClassMetaData("Rows", false),
-                               new ClassMetaData("Row", true),
-                               new ClassMetaData("ContentRow", false)
-                           };
+        {
+            new ClassMetaData("Rows", false),
+            new ClassMetaData("Row", true),
+            new ClassMetaData("ContentRow", false)
+        };
     foreach(var controlName in controlNames)
     {
          #>
