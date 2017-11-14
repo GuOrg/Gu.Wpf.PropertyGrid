@@ -35,11 +35,21 @@ namespace Gu.Wpf.PropertyGrid
     foreach(var propertyMetaData in propertyMetaDatas)
     {
         #>
+        /// <summary>
+        /// Helper for setting <#= propertyMetaData.Name #> property on a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to set <#= propertyMetaData.Name #> property on.</param>
+        /// <param name="value"><#= propertyMetaData.Name #> property value.</param>
         public static void Set<#= propertyMetaData.Name #>(this UIElement element, <#= propertyMetaData.Type #> value)
         {
             element.SetValue(<#= propertyMetaData.Name #>Property, value);
         }
 
+        /// <summary>
+        /// Helper for reading <#= propertyMetaData.Name #> property from a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to read <#= propertyMetaData.Name #> property from.</param>
+        /// <returns><#= propertyMetaData.Name #> property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
         public static <#= propertyMetaData.Type #> Get<#= propertyMetaData.Name #>(this UIElement element)

@@ -45,11 +45,21 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>
+        /// Helper for setting HeaderStyle property on a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to set HeaderStyle property on.</param>
+        /// <param name="value">HeaderStyle property value.</param>
         public static void SetHeaderStyle(this UIElement element, Style value)
         {
             element.SetValue(HeaderStyleProperty, value);
         }
 
+        /// <summary>
+        /// Helper for reading HeaderStyle property from a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to read HeaderStyle property from.</param>
+        /// <returns>HeaderStyle property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
         public static Style GetHeaderStyle(this UIElement element)
@@ -57,11 +67,21 @@ namespace Gu.Wpf.PropertyGrid
             return (Style)element.GetValue(HeaderStyleProperty);
         }
 
+        /// <summary>
+        /// Helper for setting ValueStyle property on a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to set ValueStyle property on.</param>
+        /// <param name="value">ValueStyle property value.</param>
         public static void SetValueStyle(this UIElement element, Style value)
         {
             element.SetValue(ValueStyleProperty, value);
         }
 
+        /// <summary>
+        /// Helper for reading ValueStyle property from a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to read ValueStyle property from.</param>
+        /// <returns>ValueStyle property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
         public static Style GetValueStyle(this UIElement element)
@@ -69,11 +89,21 @@ namespace Gu.Wpf.PropertyGrid
             return (Style)element.GetValue(ValueStyleProperty);
         }
 
+        /// <summary>
+        /// Helper for setting SuffixStyle property on a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to set SuffixStyle property on.</param>
+        /// <param name="value">SuffixStyle property value.</param>
         public static void SetSuffixStyle(this UIElement element, Style value)
         {
             element.SetValue(SuffixStyleProperty, value);
         }
 
+        /// <summary>
+        /// Helper for reading SuffixStyle property from a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to read SuffixStyle property from.</param>
+        /// <returns>SuffixStyle property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
         public static Style GetSuffixStyle(this UIElement element)
@@ -81,11 +111,21 @@ namespace Gu.Wpf.PropertyGrid
             return (Style)element.GetValue(SuffixStyleProperty);
         }
 
+        /// <summary>
+        /// Helper for setting OldValueStyle property on a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to set OldValueStyle property on.</param>
+        /// <param name="value">OldValueStyle property value.</param>
         public static void SetOldValueStyle(this UIElement element, Style value)
         {
             element.SetValue(OldValueStyleProperty, value);
         }
 
+        /// <summary>
+        /// Helper for reading OldValueStyle property from a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to read OldValueStyle property from.</param>
+        /// <returns>OldValueStyle property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
         public static Style GetOldValueStyle(this UIElement element)
@@ -93,11 +133,21 @@ namespace Gu.Wpf.PropertyGrid
             return (Style)element.GetValue(OldValueStyleProperty);
         }
 
+        /// <summary>
+        /// Helper for setting ErrorStyle property on a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to set ErrorStyle property on.</param>
+        /// <param name="value">ErrorStyle property value.</param>
         public static void SetErrorStyle(this UIElement element, Style value)
         {
             element.SetValue(ErrorStyleProperty, value);
         }
 
+        /// <summary>
+        /// Helper for reading ErrorStyle property from a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to read ErrorStyle property from.</param>
+        /// <returns>ErrorStyle property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
         public static Style GetErrorStyle(this UIElement element)

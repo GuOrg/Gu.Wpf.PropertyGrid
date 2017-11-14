@@ -36,11 +36,21 @@ namespace Gu.Wpf.PropertyGrid
     foreach(var styleName in styles)
     {
         #>
+        /// <summary>
+        /// Helper for setting <#= styleName #> property on a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to set <#= styleName #> property on.</param>
+        /// <param name="value"><#= styleName #> property value.</param>
         public static void Set<#= styleName #>(this UIElement element, Style value)
         {
             element.SetValue(<#= styleName #>Property, value);
         }
 
+        /// <summary>
+        /// Helper for reading <#= styleName #> property from a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to read <#= styleName #> property from.</param>
+        /// <returns><#= styleName #> property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
         public static Style Get<#= styleName #>(this UIElement element)
