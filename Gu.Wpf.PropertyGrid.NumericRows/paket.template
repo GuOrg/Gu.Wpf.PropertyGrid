@@ -4,8 +4,5 @@ tags wpf xaml propertygrid styles itemscontrol numeric
 projectUrl https://github.com/JohanLarsson/Gu.Wpf.PropertyGrid
 licenseUrl http://opensource.org/licenses/MIT
 
-excludeddependencies
-  JetBrains.Annotations
-  StyleCop.Analyzers
-  WpfAnalyzers
-  Gu.Analyzers
+excludedgroups
+  Analyzers

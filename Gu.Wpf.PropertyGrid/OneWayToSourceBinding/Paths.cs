@@ -11,6 +11,7 @@ namespace Gu.Wpf.PropertyGrid
 
         public string To { get; set; }
 
+        /// <inheritdoc />
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             var provideValueTarget = (IProvideValueTarget)serviceProvider.GetService(typeof(IProvideValueTarget));

@@ -11,14 +11,16 @@ namespace Gu.Wpf.PropertyGrid
     /// </summary>
     public partial class ContentRow : HeaderedContentControl
     {
+        /// <summary>Identifies the <see cref="Suffix"/> dependency property.</summary>
         public static readonly DependencyProperty SuffixProperty = DependencyProperty.Register(
-            "Suffix",
+            nameof(Suffix),
             typeof(object),
             typeof(ContentRow),
             new PropertyMetadata(default(object)));
 
+        /// <summary>Identifies the <see cref="OldValue"/> dependency property.</summary>
         public static readonly DependencyProperty OldValueProperty = DependencyProperty.Register(
-            "OldValue",
+            nameof(OldValue),
             typeof(object),
             typeof(ContentRow),
             new PropertyMetadata(null));

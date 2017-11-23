@@ -6,7 +6,7 @@ namespace Gu.Wpf.PropertyGrid
     public abstract class GenericRow<T> : Row
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-            "Value",
+            nameof(Value),
             typeof(T),
             typeof(GenericRow<T>),
             new FrameworkPropertyMetadata(

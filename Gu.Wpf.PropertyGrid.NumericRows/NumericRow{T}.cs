@@ -8,14 +8,16 @@
     public abstract class NumericRow<T> : GenericRow<T?>, INumericFormatter
         where T : struct, IComparable<T>
     {
+        /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
-            "MinValue",
+            nameof(MinValue),
             typeof(T?),
             typeof(NumericRow<T>),
             new PropertyMetadata(null, OnMinValueChanged));
 
+        /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
-            "MaxValue",
+            nameof(MaxValue),
             typeof(T?),
             typeof(NumericRow<T>),
             new PropertyMetadata(null, OnMaxValueChanged));

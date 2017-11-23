@@ -12,19 +12,21 @@
     {
 #pragma warning disable SA1202 // Elements must be ordered by access
 
+        /// <summary>Identifies the <see cref="EnumType"/> dependency property.</summary>
         public static readonly DependencyProperty EnumTypeProperty = DependencyProperty.Register(
-            "EnumType",
+            nameof(EnumType),
             typeof(Type),
             typeof(EnumRow),
             new PropertyMetadata(default(Type), OnEnumTypeChanged),
             EnumTypeValidateValue);
 
         private static readonly DependencyPropertyKey EnumValuesPropertyKey = DependencyProperty.RegisterReadOnly(
-            "EnumValues",
+            nameof(EnumValues),
             typeof(IReadOnlyList<IFormattable>),
             typeof(EnumRow),
             new PropertyMetadata(default(IReadOnlyList<IFormattable>)));
 
+        /// <summary>Identifies the <see cref="EnumValues"/> dependency property.</summary>
         public static readonly DependencyProperty EnumValuesProperty = EnumValuesPropertyKey.DependencyProperty;
 
 #pragma warning restore SA1202 // Elements must be ordered by access
