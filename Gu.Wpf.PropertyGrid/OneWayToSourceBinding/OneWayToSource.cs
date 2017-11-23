@@ -12,11 +12,21 @@
             typeof(OneWayToSource),
             new PropertyMetadata(default(ProxyBinding), OnBindChanged));
 
+        /// <summary>
+        /// Helper for setting Bind property on a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to set Bind property on.</param>
+        /// <param name="value">Bind property value.</param>
         public static void SetBind(this UIElement element, ProxyBinding value)
         {
             element.SetValue(BindProperty, value);
         }
 
+        /// <summary>
+        /// Helper for reading Bind property from a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to read Bind property from.</param>
+        /// <returns>Bind property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
         public static ProxyBinding GetBind(this UIElement element)
