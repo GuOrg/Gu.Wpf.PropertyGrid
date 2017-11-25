@@ -24,11 +24,21 @@
         private static readonly PropertyPaths ValuePropertyPaths = new PropertyPaths("Value", SharedSizeGroups.ValueColumn);
         private static readonly PropertyPaths SuffixPropertyPaths = new PropertyPaths("Suffix", SharedSizeGroups.SuffixColumn);
 
+        /// <summary>
+        /// Helper for setting Source property on a ColumnDefinition.
+        /// </summary>
+        /// <param name="element">ColumnDefinition to set Source property on.</param>
+        /// <param name="value">Source property value.</param>
         public static void SetSource(this System.Windows.Controls.ColumnDefinition element, string value)
         {
             element.SetValue(SourceProperty, value);
         }
 
+        /// <summary>
+        /// Helper for reading Source property from a ColumnDefinition.
+        /// </summary>
+        /// <param name="element">ColumnDefinition to read Source property from.</param>
+        /// <returns>Source property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(System.Windows.Controls.ColumnDefinition))]
         public static string GetSource(this System.Windows.Controls.ColumnDefinition element)

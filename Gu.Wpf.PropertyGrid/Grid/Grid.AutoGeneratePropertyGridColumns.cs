@@ -15,11 +15,21 @@
                 FrameworkPropertyMetadataOptions.NotDataBindable,
                 OnAutoGeneratePropertyGridColumnsChanged));
 
+        /// <summary>
+        /// Helper for setting AutoGeneratePropertyGridColumns property on a Grid.
+        /// </summary>
+        /// <param name="element">Grid to set AutoGeneratePropertyGridColumns property on.</param>
+        /// <param name="value">AutoGeneratePropertyGridColumns property value.</param>
         internal static void SetAutoGeneratePropertyGridColumns(this System.Windows.Controls.Grid element, bool value)
         {
             element.SetValue(AutoGeneratePropertyGridColumnsProperty, value);
         }
 
+        /// <summary>
+        /// Helper for reading AutoGeneratePropertyGridColumns property from a Grid.
+        /// </summary>
+        /// <param name="element">Grid to read AutoGeneratePropertyGridColumns property from.</param>
+        /// <returns>AutoGeneratePropertyGridColumns property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(Grid))]
         internal static bool GetAutoGeneratePropertyGridColumns(this System.Windows.Controls.Grid element)

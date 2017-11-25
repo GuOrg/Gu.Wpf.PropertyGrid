@@ -36,11 +36,21 @@
             typeof(Grid),
             new PropertyMetadata(BooleanBoxes.False));
 
+        /// <summary>
+        /// Helper for setting Cell property on a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to set Cell property on.</param>
+        /// <param name="value">Cell property value.</param>
         public static void SetCell(UIElement element, GridCell value)
         {
             element.SetValue(CellProperty, value);
         }
 
+        /// <summary>
+        /// Helper for reading Cell property from a UIElement.
+        /// </summary>
+        /// <param name="element">UIElement to read Cell property from.</param>
+        /// <returns>Cell property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
         public static GridCell GetCell(UIElement element)
@@ -48,11 +58,21 @@
             return (GridCell)element.GetValue(CellProperty);
         }
 
+        /// <summary>
+        /// Helper for setting RowDefinitions property on a Grid.
+        /// </summary>
+        /// <param name="element">Grid to set RowDefinitions property on.</param>
+        /// <param name="value">RowDefinitions property value.</param>
         public static void SetRowDefinitions(System.Windows.Controls.Grid element, RowDefinitions value)
         {
             element.SetValue(RowDefinitionsProperty, value);
         }
 
+        /// <summary>
+        /// Helper for reading RowDefinitions property from a Grid.
+        /// </summary>
+        /// <param name="element">Grid to read RowDefinitions property from.</param>
+        /// <returns>RowDefinitions property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(Grid))]
         public static RowDefinitions GetRowDefinitions(System.Windows.Controls.Grid element)
@@ -60,11 +80,21 @@
             return (RowDefinitions)element.GetValue(RowDefinitionsProperty);
         }
 
+        /// <summary>
+        /// Helper for setting ColumnDefinitions property on a Grid.
+        /// </summary>
+        /// <param name="element">Grid to set ColumnDefinitions property on.</param>
+        /// <param name="value">ColumnDefinitions property value.</param>
         public static void SetColumnDefinitions(System.Windows.Controls.Grid element, ColumnDefinitions value)
         {
             element.SetValue(ColumnDefinitionsProperty, value);
         }
 
+        /// <summary>
+        /// Helper for reading ColumnDefinitions property from a Grid.
+        /// </summary>
+        /// <param name="element">Grid to read ColumnDefinitions property from.</param>
+        /// <returns>ColumnDefinitions property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(Grid))]
         public static ColumnDefinitions GetColumnDefinitions(System.Windows.Controls.Grid element)
