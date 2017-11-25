@@ -31,7 +31,7 @@ namespace Gu.Wpf.PropertyGrid
         }
 
         /// <inheritdoc/>
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        object IValueConverter.ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotSupportedException($"{nameof(FirstOrDefaultConverter)} only supports one-way conversion.");
         }

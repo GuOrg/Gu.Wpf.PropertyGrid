@@ -4,10 +4,12 @@
     using System.Globalization;
     using System.Windows.Data;
 
-    public class OldValueConverter : IMultiValueConverter
+    public sealed class OldValueConverter : IMultiValueConverter
     {
+        /// <summary> Gets the default instance </summary>
         public static readonly OldValueConverter Default = new OldValueConverter();
 
+        /// <inheritdoc />
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             var row = values[0] as Row;
@@ -17,10 +19,8 @@
             }
 
             var oldValueStringFormat = row.OldValueStringFormat;
-            bool? anyItemHasFormat;
-            int numberOfArguments;
             if (!string.IsNullOrEmpty(oldValueStringFormat) &&
-                FormatString.IsValidFormat(oldValueStringFormat, out numberOfArguments, out anyItemHasFormat))
+                FormatString.IsValidFormat(oldValueStringFormat, out var numberOfArguments, out _))
             {
                 if (numberOfArguments == 1)
                 {
@@ -31,6 +31,7 @@
             return oldValueStringFormat;
         }
 
+        /// <inheritdoc />
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             throw new NotSupportedException($"{this.GetType().Name} can only be used in one way bindings.");

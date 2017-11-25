@@ -7,24 +7,23 @@
 
     public class ValidationErrorToStringConverter : IValueConverter
     {
+        /// <summary> Gets the default instance </summary>
         public static readonly ValidationErrorToStringConverter Default = new ValidationErrorToStringConverter();
 
+        /// <inheritdoc />
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var text = value as string;
-            if (text != null)
+            if (value is string text)
             {
                 return text;
             }
 
-            var result = value as ValidationResult;
-            if (result != null)
+            if (value is ValidationResult result)
             {
                 return this.Convert(result.ErrorContent, targetType, parameter, culture);
             }
 
-            var error = value as ValidationError;
-            if (error != null)
+            if (value is ValidationError error)
             {
                 return this.Convert(error.ErrorContent, targetType, parameter, culture);
             }
@@ -32,7 +31,8 @@
             return value;
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        /// <inheritdoc />
+        object IValueConverter.ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotSupportedException($"{this.GetType().Name} only supports one-way conversion.");
         }

@@ -10,6 +10,7 @@
     [MarkupExtensionReturnType(typeof(ValidationErrorsToStringConverter))]
     public class ValidationErrorsToStringConverter : MarkupExtension, IValueConverter
     {
+        /// <summary> Gets the default instance </summary>
         public static readonly ValidationErrorsToStringConverter Default = new ValidationErrorsToStringConverter();
 
         // ReSharper disable once EmptyConstructor think the xaml parse needs it

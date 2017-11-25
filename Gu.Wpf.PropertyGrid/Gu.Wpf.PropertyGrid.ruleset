@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RuleSet Name="Rules for Gu.Wpf.PropertyGrid" Description="Code analysis rules for Gu.Wpf.PropertyGrid.csproj." ToolsVersion="15.0">
+  <Rules AnalyzerId="Gu.Analyzers.Analyzers" RuleNamespace="Gu.Analyzers.Analyzers">
+    <Rule Id="GU0006" Action="Warning" />
+  </Rules>
   <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
     <Rule Id="CA1001" Action="Warning" />
     <Rule Id="CA1009" Action="Warning" />
@@ -76,5 +79,11 @@
     <Rule Id="WA1201" Action="Error" />
     <Rule Id="WA1202" Action="Error" />
     <Rule Id="WA1210" Action="Error" />
+    <Rule Id="WPF0052" Action="Warning" />
+    <Rule Id="WPF0060" Action="Warning" />
+    <Rule Id="WPF0061" Action="Warning" />
+    <Rule Id="WPF0070" Action="Warning" />
+    <Rule Id="WPF0071" Action="Warning" />
+    <Rule Id="WPF0080" Action="Warning" />
   </Rules>
 </RuleSet>
