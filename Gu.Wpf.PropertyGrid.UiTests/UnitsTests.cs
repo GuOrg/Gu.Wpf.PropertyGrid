@@ -5,19 +5,20 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class UnitsTests
     {
+        private const string ExeFileName = "Gu.Wpf.PropertyGrid.Demo.exe";
         private const string WindowName = "UnitsWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            Application.KillLaunched(Info.ExeFileName);
+            Application.KillLaunched(ExeFileName);
         }
 
         [SetUp]
         public void SetUp()
         {
             Application.TryWithAttached(
-                Info.ExeFileName,
+                ExeFileName,
                 WindowName,
                 app =>
                 {
@@ -30,7 +31,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void ExplicitUnits()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("explicit");
@@ -53,7 +54,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void UnitFromStyle()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("style");
@@ -73,7 +74,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void BoundUnit()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("bound");

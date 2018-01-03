@@ -59,7 +59,6 @@
     <Compile Include="TypedRowTests\DoubleRowTests.cs" />
     <Compile Include="TypedRowTests\EnumRowTests.cs" />
     <Compile Include="FocusTests.cs" />
-    <Compile Include="Helpers\Info.cs" />
     <Compile Include="TypedRowTests\IntRowTests.cs" />
     <Compile Include="NestedTests.cs" />
     <Compile Include="OldValueTests.cs" />
@@ -104,6 +103,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Import Project="..\.paket\paket.targets" />
   <ItemGroup>
     <Analyzer Include="..\packages\analyzers\AsyncUsageAnalyzers\analyzers\dotnet\AsyncUsageAnalyzers.dll">
       <Paket>True</Paket>
@@ -233,11 +233,6 @@
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
-        <Reference Include="Interop.UIAutomationClient">
-          <HintPath>..\packages\test\Gu.Wpf.UiAutomation\lib\net45\Interop.UIAutomationClient.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
       </ItemGroup>
     </When>
   </Choose>
@@ -252,5 +247,4 @@
       </ItemGroup>
     </When>
   </Choose>
-  <Import Project="..\.paket\paket.targets" />
 </Project>

@@ -1,41 +1,42 @@
-﻿namespace Gu.Wpf.PropertyGrid.UiTests
+namespace Gu.Wpf.PropertyGrid.UiTests
 {
     using System;
+    using System.Windows.Automation;
     using Gu.Wpf.UiAutomation;
 
     public static class AutomationElementExt
     {
-        public static Row<TextBox> FindTextBoxRow(this AutomationElement container, string header)
+        public static Row<TextBox> FindTextBoxRow(this UiElement container, string header)
         {
             return FindRow(container, header, x => new TextBox(x));
         }
 
-        public static Row<ComboBox> FindComboBoxRow(this AutomationElement container, string header)
+        public static Row<ComboBox> FindComboBoxRow(this UiElement container, string header)
         {
             return FindRow(container, header, x => new ComboBox(x));
         }
 
-        public static Row<CheckBox> FindCheckBoxRow(this AutomationElement container, string header)
+        public static Row<CheckBox> FindCheckBoxRow(this UiElement container, string header)
         {
             return FindRow(container, header, x => new CheckBox(x));
         }
 
-        public static Row<Button> FindButtonRow(this AutomationElement container, string header)
+        public static Row<Button> FindButtonRow(this UiElement container, string header)
         {
             return FindRow(container, header, x => new Button(x));
         }
 
-        public static Row<AutomationElement> FindRow(this AutomationElement container, string header)
+        public static Row<UiElement> FindRow(this UiElement container, string header)
         {
-            return FindRow(container, header, x => new AutomationElement(x));
+            return FindRow(container, header, x => new UiElement(x));
         }
 
-        public static Row<T> FindRow<T>(this AutomationElement container, string header, Func<BasicAutomationElementBase, T> wrap)
-            where T : AutomationElement
+        public static Row<T> FindRow<T>(this UiElement container, string header, Func<AutomationElement, T> wrap)
+            where T : UiElement
         {
             return container.FindFirst(
                 TreeScope.Children,
-                container.CreateCondition(ControlType.Custom, header),
+                new AndCondition(Conditions.ControlTypeCustom, Conditions.ByNameOrAutomationId(header)),
                 x => new Row<T>(x, wrap));
         }
 

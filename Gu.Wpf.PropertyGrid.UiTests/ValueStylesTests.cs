@@ -5,18 +5,19 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class ValueStylesTests
     {
+        private const string ExeFileName = "Gu.Wpf.PropertyGrid.Demo.exe";
         private const string WindowName = "ValueStylesWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            Application.KillLaunched(Info.ExeFileName);
+            Application.KillLaunched(ExeFileName);
         }
 
         [Test]
         public void UsesStyle()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 Assert.AreEqual("Green", window.FindCheckBoxRow("checkbox").Value().ItemStatus);

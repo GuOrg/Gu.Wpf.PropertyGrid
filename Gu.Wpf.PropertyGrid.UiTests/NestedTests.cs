@@ -5,18 +5,19 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class NestedTests
     {
+        private const string ExeFileName = "Gu.Wpf.PropertyGrid.Demo.exe";
         private const string WindowName = "NestedWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            Application.KillLaunched(Info.ExeFileName);
+            Application.KillLaunched(ExeFileName);
         }
 
         [Test]
         public void CyclesFocus()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("nested longer");
@@ -51,7 +52,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [TestCase("long header")]
         public void ColumnWidthsWhenNestedLonger(string name)
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("nested longer");
@@ -64,7 +65,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void ColumnWidthsWhenNestedShorter()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("nested shorter");

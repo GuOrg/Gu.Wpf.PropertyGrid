@@ -5,12 +5,13 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class LengthRowStyleTests
     {
+        private const string ExeFileName = "Gu.Wpf.PropertyGrid.Demo.exe";
         private const string WindowName = "LengthRowStyleWindow";
 
         [Test]
         public void CorrectValuesAndSuffixes()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var defaultRow = window.FindTextBoxRow("default");

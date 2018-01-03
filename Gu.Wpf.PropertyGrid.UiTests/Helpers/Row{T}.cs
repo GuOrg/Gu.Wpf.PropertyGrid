@@ -1,14 +1,15 @@
-﻿namespace Gu.Wpf.PropertyGrid.UiTests
+namespace Gu.Wpf.PropertyGrid.UiTests
 {
     using System;
+    using System.Windows.Automation;
     using Gu.Wpf.UiAutomation;
 
-    public class Row<T> : AutomationElement
-        where T : AutomationElement
+    public class Row<T> : UiElement
+        where T : UiElement
     {
-        private readonly Func<BasicAutomationElementBase, T> wrap;
+        private readonly Func<AutomationElement, T> wrap;
 
-        public Row(BasicAutomationElementBase item, Func<BasicAutomationElementBase, T> wrap)
+        public Row(AutomationElement item, Func<AutomationElement, T> wrap)
             : base(item)
         {
             this.wrap = wrap;
@@ -16,7 +17,7 @@
 
         public T Value()
         {
-            return this.FindFirst(TreeScope.Children, this.ConditionFactory.ByAutomationId("PART_Value"), x => this.wrap(x));
+            return this.FindFirst(TreeScope.Children, Conditions.ByAutomationId("PART_Value"), x => this.wrap(x));
         }
 
         public TextBlock Suffix()

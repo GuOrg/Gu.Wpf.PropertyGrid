@@ -6,18 +6,19 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class SelectorRowTests
     {
+        private const string ExeFileName = "Gu.Wpf.PropertyGrid.Demo.exe";
         private const string WindowName = "SelectorRowWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            Application.KillLaunched(Info.ExeFileName);
+            Application.KillLaunched(ExeFileName);
         }
 
         [Test]
         public void UpdatesWhenLostFocus()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 window.FindComboBoxRow("default").Value().Select("sv-SE");
@@ -34,7 +35,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void UpdatesWhenPropertyChanged()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 window.FindComboBoxRow("default").Value().Select("en-US");
@@ -59,7 +60,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [TestCase("editable", true)]
         public void IsEditable(string header, bool expected)
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 Assert.AreEqual(expected, window.FindComboBoxRow(header).Value().IsEditable);
@@ -71,7 +72,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [TestCase("editable")]
         public void Items(string header)
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var expected = new[] { "sv-SE", "en-US" };

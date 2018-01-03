@@ -5,18 +5,19 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class SuffixBlockTests
     {
+        private const string ExeFileName = "Gu.Wpf.PropertyGrid.Demo.exe";
         private const string WindowName = "SuffixBlockWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            Application.KillLaunched(Info.ExeFileName);
+            Application.KillLaunched(ExeFileName);
         }
 
         [Test]
         public void SuffixBlockStyle()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("suffixblock style");
@@ -27,7 +28,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void InheritsTextBlockStyle()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("inherits textblock style");

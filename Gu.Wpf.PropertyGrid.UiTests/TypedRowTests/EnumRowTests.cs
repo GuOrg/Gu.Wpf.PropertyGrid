@@ -6,18 +6,19 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class EnumRowTests
     {
+        private const string ExeFileName = "Gu.Wpf.PropertyGrid.Demo.exe";
         private const string WindowName = "EnumRowWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            Application.KillLaunched(Info.ExeFileName);
+            Application.KillLaunched(ExeFileName);
         }
 
         [Test]
         public void UpdatesWhenLostFocus()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 window.FindComboBoxRow("current").Value().Select("CurrentCultureIgnoreCase");
@@ -36,7 +37,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [TestCase("editable")]
         public void UpdatesWhenPropertyChanged(string header)
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var row = window.FindComboBoxRow(header);
@@ -59,7 +60,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void UpdatesWhenPropertyChangedReadOnly()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var row = window.FindComboBoxRow("current");
@@ -84,7 +85,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [TestCase("editable", true)]
         public void IsEditable(string header, bool expected)
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 Assert.AreEqual(expected, window.FindComboBoxRow(header).Value().IsEditable);
@@ -96,7 +97,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [TestCase("lostfocus")]
         public void Items(string header)
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var expected = new[]

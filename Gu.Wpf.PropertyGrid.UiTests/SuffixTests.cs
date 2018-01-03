@@ -6,18 +6,19 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class SuffixTests
     {
+        private const string ExeFileName = "Gu.Wpf.PropertyGrid.Demo.exe";
         private const string WindowName = "SuffixWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            Application.KillLaunched(Info.ExeFileName);
+            Application.KillLaunched(ExeFileName);
         }
 
         [Test]
         public void Default()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 Assert.AreEqual("suffix", window.FindTextBoxRow("default").Suffix().Text);
@@ -28,7 +29,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [SuppressMessage("ReSharper", "HeuristicUnreachableCode")]
         public void UsesResourceStyle()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 Assert.Inconclusive("not sure how to test this.");
@@ -39,7 +40,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void ExplicitSuffixStyle()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 Assert.AreEqual("explicit pink", window.FindTextBoxRow("explicit suffixblock style").Suffix().ItemStatus);
@@ -50,7 +51,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Explicit]
         public void InheritSuffixStyle()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 Assert.AreEqual("inherit khaki", window.FindTextBoxRow("inherit suffixblock style").Suffix().ItemStatus);

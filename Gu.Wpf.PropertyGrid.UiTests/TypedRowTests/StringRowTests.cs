@@ -5,18 +5,19 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class StringRowTests
     {
+        private const string ExeFileName = "Gu.Wpf.PropertyGrid.Demo.exe";
         private const string WindowName = "StringRowWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            Application.KillLaunched(Info.ExeFileName);
+            Application.KillLaunched(ExeFileName);
         }
 
         [SetUp]
         public void SetUp()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 window.FindTextBox("currentValueTextBox").Text = string.Empty;
@@ -27,7 +28,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void UpdatesWhenLostFocus()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 window.FindTextBoxRow("default").Value().Text = "1";
@@ -45,7 +46,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void UpdatesWhenPropertyChanged()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 window.FindTextBoxRow("propertychanged").Value().Text = "2";
@@ -58,7 +59,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void IsReadonly()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 Assert.IsFalse(window.FindTextBoxRow("default").Value().IsReadOnly);

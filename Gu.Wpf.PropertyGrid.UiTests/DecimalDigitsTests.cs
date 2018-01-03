@@ -1,22 +1,23 @@
-﻿namespace Gu.Wpf.PropertyGrid.UiTests
+namespace Gu.Wpf.PropertyGrid.UiTests
 {
     using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
 
     public class DecimalDigitsTests
     {
+        private const string ExeFileName = "Gu.Wpf.PropertyGrid.Demo.exe";
         private const string WindowName = "DecimalDigitsWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            Application.KillLaunched(Info.ExeFileName);
+            Application.KillLaunched(ExeFileName);
         }
 
         [Test]
         public void Inherits()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("attached prop");
@@ -31,7 +32,7 @@
         [Test]
         public void Explicit()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("explicit");
@@ -46,7 +47,7 @@
         [Test]
         public void Bound()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("bound");

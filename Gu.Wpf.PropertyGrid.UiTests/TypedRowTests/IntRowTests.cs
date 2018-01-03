@@ -5,19 +5,20 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class IntRowTests
     {
+        private const string ExeFileName = "Gu.Wpf.PropertyGrid.Demo.exe";
         private const string WindowName = "IntRowWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            Application.KillLaunched(Info.ExeFileName);
+            Application.KillLaunched(ExeFileName);
         }
 
         [SetUp]
         public void SetUp()
         {
             Application.TryWithAttached(
-                Info.ExeFileName,
+                ExeFileName,
                 WindowName,
                 app =>
                 {
@@ -31,7 +32,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void UpdatesWhenLostFocus()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 window.FindTextBoxRow("default").Value().Text = "2";
@@ -49,7 +50,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void UpdatesWhenPropertyChanged()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 window.FindTextBoxRow("propertychanged").Value().Text = "2";
@@ -62,7 +63,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void Nullable()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 window.FindTextBoxRow("nullable").Value().Text = string.Empty;
@@ -75,7 +76,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void IsReadonly()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 Assert.IsFalse(window.FindTextBoxRow("default").Value().IsReadOnly);

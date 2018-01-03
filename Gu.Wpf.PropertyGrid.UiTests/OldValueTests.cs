@@ -1,22 +1,23 @@
-﻿namespace Gu.Wpf.PropertyGrid.UiTests
+namespace Gu.Wpf.PropertyGrid.UiTests
 {
     using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
 
     public class OldValueTests
     {
+        private const string ExeFileName = "Gu.Wpf.PropertyGrid.Demo.exe";
         private const string WindowName = "OldValueWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            Application.KillLaunched(Info.ExeFileName);
+            Application.KillLaunched(ExeFileName);
         }
 
         [SetUp]
         public void SetUp()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("default");
@@ -30,7 +31,7 @@
         [Test]
         public void Default()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("default");
@@ -56,7 +57,7 @@
         [Test]
         public void Inherits()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("inherits");
@@ -86,7 +87,7 @@
         [Test]
         public void Explicit()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("explicit");
@@ -116,7 +117,7 @@
         [Test]
         public void Bound()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("bound");
@@ -153,7 +154,7 @@
         [Test]
         public void NoOldValue()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("no old datacontext");

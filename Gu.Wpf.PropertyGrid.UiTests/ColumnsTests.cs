@@ -5,18 +5,19 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
     public class ColumnsTests
     {
+        private const string ExeFileName = "Gu.Wpf.PropertyGrid.Demo.exe";
         private const string WindowName = "ColumnsWindow";
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            Application.KillLaunched(Info.ExeFileName);
+            Application.KillLaunched(ExeFileName);
         }
 
         [Test]
         public void Default()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("default");
@@ -28,7 +29,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void Default_abcd()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("default abcd");
@@ -43,7 +44,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void Star_star_star()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("* * *");
@@ -58,7 +59,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void Width_15_20_25()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("Width 15 20 25");
@@ -70,7 +71,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void Width_15_20_25_abcd()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("Width 15 20 25 abcd");
@@ -83,7 +84,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void MinWidth_15_20_25()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("MinWidth 15 20 25");
@@ -95,7 +96,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void MinWidth_15_20_25_abcd()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("MinWidth 15 20 25 abcd");
@@ -110,7 +111,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void MaxWidth_15_20_25()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("MaxWidth 15 20 25");
@@ -122,7 +123,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [Test]
         public void MaxWidth_15_20_25_abcd()
         {
-            using (var app = Application.AttachOrLaunch(Info.ExeFileName, WindowName))
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("MaxWidth 15 20 25 abcd");
