@@ -1,5 +1,6 @@
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
+    using System;
     using System.Linq;
     using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
@@ -28,6 +29,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
                 Assert.AreEqual("CurrentCultureIgnoreCase", window.FindTextBlock("currentTextBlock").Text);
 
                 window.FindButton("lose focus").Click();
+                Wait.For(TimeSpan.FromMilliseconds(100));
                 Assert.AreEqual("InvariantCulture", window.FindTextBlock("currentTextBlock").Text);
             }
         }
