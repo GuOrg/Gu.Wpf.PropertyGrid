@@ -27,9 +27,8 @@ namespace Gu.Wpf.PropertyGrid.UiTests
 
                 window.FindComboBoxRow("lostfocus").Value().EditableText = "InvariantCulture";
                 Assert.AreEqual("CurrentCultureIgnoreCase", window.FindTextBlock("currentTextBlock").Text);
-
+                window.FindComboBoxRow("lostfocus").Value().Click();
                 window.FindButton("lose focus").Click();
-                Wait.For(TimeSpan.FromMilliseconds(100));
                 Assert.AreEqual("InvariantCulture", window.FindTextBlock("currentTextBlock").Text);
             }
         }
