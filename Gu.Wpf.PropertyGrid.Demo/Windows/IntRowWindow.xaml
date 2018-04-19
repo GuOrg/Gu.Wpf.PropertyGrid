@@ -1,4 +1,4 @@
-﻿<Window x:Class="Gu.Wpf.PropertyGrid.Demo.IntRowWindow"
+<Window x:Class="Gu.Wpf.PropertyGrid.Demo.IntRowWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:converters="clr-namespace:Gu.Wpf.PropertyGrid.Demo.Converters"
@@ -9,25 +9,26 @@
         Title="IntRowWindow"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d">
-    <Window.DataContext>
-        <demo:SettingsVm />
-    </Window.DataContext>
-    <StackPanel>
-        <Button Content="lose focus" />
-        <TextBox AutomationProperties.AutomationId="currentValueTextBox" Text="{Binding EditableCopy.IntValue}" />
-        <TextBox AutomationProperties.AutomationId="currentNullableValueTextBox" Text="{Binding EditableCopy.NullableIntValue, Converter={x:Static converters:NullableIntToStringConverter.Default}}" />
+  <Window.DataContext>
+    <demo:SettingsVm />
+  </Window.DataContext>
+  <StackPanel>
+    <Button Content="lose focus" />
+    <TextBox AutomationProperties.AutomationId="currentValueTextBox" Text="{Binding EditableCopy.IntValue}" />
+    <TextBox AutomationProperties.AutomationId="currentNullableValueTextBox" Text="{Binding EditableCopy.NullableIntValue, Converter={x:Static converters:NullableIntToStringConverter.Default}}" />
 
-        <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-            <propertyGrid:IntRow Header="default" Value="{Binding IntValue}" />
-            <propertyGrid:IntRow Header="propertychanged" Value="{Binding IntValue, UpdateSourceTrigger=PropertyChanged}" />
-            <propertyGrid:IntRow Header="readonly"
-                                 IsReadOnly="True"
-                                 Value="{Binding IntValue}" />
-
-            <propertyGrid:IntRow CanValueBeNull="True"
-                                 Header="nullable"
-                                 Value="{Binding NullableIntValue}" />
-        </propertyGrid:Rows>
-    </StackPanel>
+    <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+      <propertyGrid:IntRow Header="default" Value="{Binding IntValue}" />
+      <propertyGrid:IntRow Header="propertychanged" Value="{Binding IntValue, UpdateSourceTrigger=PropertyChanged}" />
+      <propertyGrid:IntRow Header="readonly"
+                           IsReadOnly="True"
+                           Value="{Binding IntValue}" />
+      <propertyGrid:IntRow CanValueBeNull="True"
+                           Header="nullable"
+                           Value="{Binding NullableIntValue}" />
+      <propertyGrid:IntRow Header="lostfocus"
+                           Value="{Binding IntValue, UpdateSourceTrigger=LostFocus}" />
+    </propertyGrid:Rows>
+  </StackPanel>
 </Window>
 
