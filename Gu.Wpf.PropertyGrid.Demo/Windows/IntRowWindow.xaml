@@ -12,23 +12,50 @@
   <Window.DataContext>
     <demo:SettingsVm />
   </Window.DataContext>
-  <StackPanel>
-    <Button Content="lose focus" />
-    <TextBox AutomationProperties.AutomationId="currentValueTextBox" Text="{Binding EditableCopy.IntValue}" />
-    <TextBox AutomationProperties.AutomationId="currentNullableValueTextBox" Text="{Binding EditableCopy.NullableIntValue, Converter={x:Static converters:NullableIntToStringConverter.Default}}" />
+  <Window.Resources>
+    <ControlTemplate x:Key="ValidationTemplate">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <AdornedElementPlaceholder />
+        <TextBlock Grid.Column="1"
+                   FontSize="20"
+                   Foreground="Red"
+                   Text="!" />
+      </Grid>
+    </ControlTemplate>
+  </Window.Resources>
+  <AdornerDecorator>
+    <StackPanel>
+      <Button Content="lose focus" />
+      <TextBox AutomationProperties.AutomationId="currentValueTextBox" Text="{Binding EditableCopy.IntValue}" />
+      <TextBox AutomationProperties.AutomationId="currentNullableValueTextBox" Text="{Binding EditableCopy.NullableIntValue, Converter={x:Static converters:NullableIntToStringConverter.Default}}" />
 
-    <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
-      <propertyGrid:IntRow Header="default" Value="{Binding IntValue}" />
-      <propertyGrid:IntRow Header="propertychanged" Value="{Binding IntValue, UpdateSourceTrigger=PropertyChanged}" />
-      <propertyGrid:IntRow Header="readonly"
-                           IsReadOnly="True"
-                           Value="{Binding IntValue}" />
-      <propertyGrid:IntRow CanValueBeNull="True"
-                           Header="nullable"
-                           Value="{Binding NullableIntValue}" />
-      <propertyGrid:IntRow Header="lostfocus"
-                           Value="{Binding IntValue, UpdateSourceTrigger=LostFocus}" />
-    </propertyGrid:Rows>
-  </StackPanel>
+      <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{Binding DataContext.LastSaved, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+        <propertyGrid:IntRow Header="default" Value="{Binding IntValue}" />
+        <propertyGrid:IntRow Header="propertychanged" Value="{Binding IntValue, UpdateSourceTrigger=PropertyChanged}" />
+        <propertyGrid:IntRow Header="readonly"
+                             IsReadOnly="True"
+                             Value="{Binding IntValue}" />
+        <propertyGrid:IntRow CanValueBeNull="True"
+                             Header="nullable"
+                             Value="{Binding NullableIntValue}" />
+        <propertyGrid:IntRow Header="lostfocus" Value="{Binding IntValue, UpdateSourceTrigger=LostFocus}" />
+        <TextBox AutomationProperties.AutomationId="lostfocusTextBox"
+                 Validation.ErrorTemplate="{StaticResource ValidationTemplate}">
+          <TextBox.Text>
+            <Binding Path="IntValue"
+                     UpdateSourceTrigger="LostFocus">
+              <Binding.ValidationRules>
+                <demo:IntValidationRule />
+              </Binding.ValidationRules>
+            </Binding>
+          </TextBox.Text>
+        </TextBox>
+      </propertyGrid:Rows>
+    </StackPanel>
+  </AdornerDecorator>
 </Window>
 

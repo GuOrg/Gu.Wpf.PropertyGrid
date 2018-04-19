@@ -87,6 +87,9 @@
     <Compile Include="Windows\IntRowWindow.xaml.cs">
       <DependentUpon>IntRowWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\IntValidationRule.cs">
+      <DependentUpon>IntRowWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\LengthRowStyleWindow.xaml.cs">
       <DependentUpon>LengthRowStyleWindow.xaml</DependentUpon>
     </Compile>
