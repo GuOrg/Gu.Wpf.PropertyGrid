@@ -68,6 +68,7 @@
     <Compile Include="TypedRowTests\LengthRowTests.cs" />
     <Compile Include="TypedRowTests\SelectorRowTests.cs" />
     <Compile Include="TypedRowTests\StringRowTests.cs" />
+    <Compile Include="TypedRowTests\TemplateWarningTests.cs" />
     <Compile Include="ValueStylesTests.cs" />
     <Compile Include="SuffixBlockTests.cs" />
     <Compile Include="SuffixTests.cs" />

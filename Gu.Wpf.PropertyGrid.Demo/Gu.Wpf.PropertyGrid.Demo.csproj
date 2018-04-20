@@ -117,6 +117,9 @@
     <Compile Include="Windows\SuffixWindow.xaml.cs">
       <DependentUpon>SuffixWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\TemplateBindingWindow.xaml.cs">
+      <DependentUpon>TemplateBindingWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\UnitsWindow.xaml.cs">
       <DependentUpon>UnitsWindow.xaml</DependentUpon>
     </Compile>
@@ -225,6 +228,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\SuffixWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TemplateBindingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
