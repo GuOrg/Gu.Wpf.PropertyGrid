@@ -29,8 +29,7 @@
                                 MaxValue="{TemplateBinding MaxValue}"
                                 MinValue="{TemplateBinding MinValue}"
                                 Value="{Binding Value,
-                                                RelativeSource={RelativeSource TemplatedParent},
-                                                UpdateSourceTrigger=PropertyChanged}" />
+                                                RelativeSource={RelativeSource TemplatedParent}}" />
 
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
@@ -80,8 +79,7 @@
                                     MaxValue="{TemplateBinding MaxValue}"
                                     MinValue="{TemplateBinding MinValue}"
                                     Value="{Binding Value,
-                                                    RelativeSource={RelativeSource TemplatedParent},
-                                                    UpdateSourceTrigger=PropertyChanged}"
+                                                    RelativeSource={RelativeSource TemplatedParent}}"
                                     Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
@@ -148,8 +146,7 @@
                                    MaxValue="{TemplateBinding MaxValue}"
                                    MinValue="{TemplateBinding MinValue}"
                                    Value="{Binding Value,
-                                                   RelativeSource={RelativeSource TemplatedParent},
-                                                   UpdateSourceTrigger=PropertyChanged}" />
+                                                RelativeSource={RelativeSource TemplatedParent}}" />
 
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
@@ -200,8 +197,7 @@
                                        MaxValue="{TemplateBinding MaxValue}"
                                        MinValue="{TemplateBinding MinValue}"
                                        Value="{Binding Value,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       UpdateSourceTrigger=PropertyChanged}"
+                                                    RelativeSource={RelativeSource TemplatedParent}}"
                                        Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>

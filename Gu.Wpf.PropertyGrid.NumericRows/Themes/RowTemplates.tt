@@ -32,8 +32,7 @@
                                 MaxValue=""{TemplateBinding MaxValue}""
                                 MinValue=""{TemplateBinding MinValue}""
                                 Value=""{Binding Value,
-                                                RelativeSource={RelativeSource TemplatedParent},
-                                                UpdateSourceTrigger=PropertyChanged}"" />
+                                                RelativeSource={RelativeSource TemplatedParent}}"" />
     ";
 
     private const string DoubleValueXaml =
@@ -44,7 +43,6 @@
                                    MaxValue=""{TemplateBinding MaxValue}""
                                    MinValue=""{TemplateBinding MinValue}""
                                    Value=""{Binding Value,
-                                                   RelativeSource={RelativeSource TemplatedParent},
-                                                   UpdateSourceTrigger=PropertyChanged}"" />";
+                                                RelativeSource={RelativeSource TemplatedParent}}"" />";
 
 #>
