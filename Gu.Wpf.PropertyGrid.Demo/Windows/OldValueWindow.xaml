@@ -1,89 +1,103 @@
-﻿<!-- ReSharper disable Xaml.BindingWithContextNotResolved -->
+<!--  ReSharper disable Xaml.BindingWithContextNotResolved  -->
 <Window x:Class="Gu.Wpf.PropertyGrid.Demo.OldValueWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:demo="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:numeric="http://gu.se/NumericInput"
         xmlns:propertyGrid="http://gu.se/PropertyGrid"
+        xmlns:validationScope="http://gu.se/ValidationScope"
         Title="OldValueWindow"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d">
-    <Window.Resources>
-        <Style TargetType="{x:Type propertyGrid:LengthRow}">
-            <Setter Property="Unit" Value="mm" />
-        </Style>
-    </Window.Resources>
-    <Window.DataContext>
-        <demo:SettingsVm />
-    </Window.DataContext>
-    <StackPanel propertyGrid:PropertyGrid.OldDataContext="{Binding LastSaved}">
-        <Button Content="lose focus" />
-        <Button Command="{Binding DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Content="save" />
+  <Window.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Resources/RowStyle.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      
+      <Style TargetType="{x:Type propertyGrid:DoubleRow}">
+        <Setter Property="Template" Value="{StaticResource DoubleRowPropChangeControlTemplate}" />
+      </Style>
 
-        <GroupBox Header="default">
-            <propertyGrid:Rows DataContext="{Binding EditableCopy}">
-                <propertyGrid:StringRow Header="string" Value="{Binding StringValue}" />
-                <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
-                <propertyGrid:LengthRow Header="length" Value="{Binding LengthValue}" />
-            </propertyGrid:Rows>
-        </GroupBox>
+      <Style TargetType="{x:Type propertyGrid:LengthRow}">
+        <Setter Property="Template" Value="{StaticResource UnitRowPropChangeInfoTemplate}" />
+        <Setter Property="Unit" Value="mm" />
+      </Style>
+    </ResourceDictionary>
 
-        <GroupBox Header="inherits">
-            <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldValueStringFormat="before: {0}">
-                <propertyGrid:StringRow Header="string" Value="{Binding StringValue}" />
-                <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
-                <propertyGrid:LengthRow Header="length" Value="{Binding LengthValue}" />
-            </propertyGrid:Rows>
-        </GroupBox>
+  </Window.Resources>
+  <Window.DataContext>
+    <demo:SettingsVm />
+  </Window.DataContext>
+  <StackPanel propertyGrid:PropertyGrid.OldDataContext="{Binding LastSaved}">
+    <Button Content="lose focus" />
+    <Button Command="{Binding DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Content="save" />
 
-        <GroupBox Header="explicit">
-            <propertyGrid:Rows DataContext="{Binding EditableCopy}">
-                <propertyGrid:StringRow Header="string"
-                                        OldValueStringFormat="before: {0}"
-                                        Value="{Binding StringValue}" />
-                <propertyGrid:DoubleRow Header="double"
-                                        OldValueStringFormat="before: {0}"
-                                        Value="{Binding DoubleValue}" />
-                <propertyGrid:LengthRow Header="length"
-                                        OldValueStringFormat="before: {0}"
-                                        Value="{Binding LengthValue}" />
-            </propertyGrid:Rows>
-        </GroupBox>
+    <GroupBox Header="default">
+      <propertyGrid:Rows DataContext="{Binding EditableCopy}">
+        <propertyGrid:StringRow Header="string" Value="{Binding StringValue}" />
+        <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
+        <propertyGrid:LengthRow Header="length" Value="{Binding LengthValue}" />
+      </propertyGrid:Rows>
+    </GroupBox>
 
-        <GroupBox Header="bound">
-            <propertyGrid:Rows DataContext="{Binding EditableCopy}">
-                <propertyGrid:StringRow x:Name="OldValueFormat"
-                                        Header="old value format"
-                                        Value="changed" />
+    <GroupBox Header="inherits">
+      <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldValueStringFormat="before: {0}">
+        <propertyGrid:StringRow Header="string" Value="{Binding StringValue}" />
+        <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
+        <propertyGrid:LengthRow Header="length" Value="{Binding LengthValue}" />
+      </propertyGrid:Rows>
+    </GroupBox>
 
-                <propertyGrid:StringRow Header="string"
-                                        OldValueStringFormat="{Binding Value,
-                                                                       ElementName=OldValueFormat}"
-                                        Value="{Binding StringValue}" />
-                <propertyGrid:DoubleRow Header="double"
-                                        OldValueStringFormat="{Binding Value,
-                                                                       ElementName=OldValueFormat}"
-                                        Value="{Binding DoubleValue}" />
-                <propertyGrid:LengthRow Header="length"
-                                        OldValueStringFormat="{Binding Value,
-                                                                       ElementName=OldValueFormat}"
-                                        Value="{Binding LengthValue}" />
-            </propertyGrid:Rows>
-        </GroupBox>
+    <GroupBox Header="explicit">
+      <propertyGrid:Rows DataContext="{Binding EditableCopy}">
+        <propertyGrid:StringRow Header="string"
+                                OldValueStringFormat="before: {0}"
+                                Value="{Binding StringValue}" />
+        <propertyGrid:DoubleRow Header="double"
+                                OldValueStringFormat="before: {0}"
+                                Value="{Binding DoubleValue}" />
+        <propertyGrid:LengthRow Header="length"
+                                OldValueStringFormat="before: {0}"
+                                Value="{Binding LengthValue}" />
+      </propertyGrid:Rows>
+    </GroupBox>
 
-        <GroupBox Header="no old datacontext">
-            <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{x:Null}">
-                <propertyGrid:StringRow Header="string"
-                                        OldValueStringFormat="before {0}"
-                                        Value="{Binding StringValue}" />
-                <propertyGrid:DoubleRow Header="double"
-                                        OldValueStringFormat="before {0}"
-                                        Value="{Binding DoubleValue}" />
-                <propertyGrid:LengthRow Header="length"
-                                        OldValueStringFormat="before {0}"
-                                        Value="{Binding LengthValue}" />
-            </propertyGrid:Rows>
-        </GroupBox>
-    </StackPanel>
+    <GroupBox Header="bound">
+      <propertyGrid:Rows DataContext="{Binding EditableCopy}">
+        <propertyGrid:StringRow x:Name="OldValueFormat"
+                                Header="old value format"
+                                Value="changed" />
+
+        <propertyGrid:StringRow Header="string"
+                                OldValueStringFormat="{Binding Value,
+                                                               ElementName=OldValueFormat}"
+                                Value="{Binding StringValue}" />
+        <propertyGrid:DoubleRow Header="double"
+                                OldValueStringFormat="{Binding Value,
+                                                               ElementName=OldValueFormat}"
+                                Value="{Binding DoubleValue}" />
+        <propertyGrid:LengthRow Header="length"
+                                OldValueStringFormat="{Binding Value,
+                                                               ElementName=OldValueFormat}"
+                                Value="{Binding LengthValue}" />
+      </propertyGrid:Rows>
+    </GroupBox>
+
+    <GroupBox Header="no old datacontext">
+      <propertyGrid:Rows DataContext="{Binding EditableCopy}" OldDataContext="{x:Null}">
+        <propertyGrid:StringRow Header="string"
+                                OldValueStringFormat="before {0}"
+                                Value="{Binding StringValue}" />
+        <propertyGrid:DoubleRow Header="double"
+                                OldValueStringFormat="before {0}"
+                                Value="{Binding DoubleValue}" />
+        <propertyGrid:LengthRow Header="length"
+                                OldValueStringFormat="before {0}"
+                                Value="{Binding LengthValue}" />
+      </propertyGrid:Rows>
+    </GroupBox>
+  </StackPanel>
 </Window>

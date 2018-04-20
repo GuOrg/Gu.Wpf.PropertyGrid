@@ -72,14 +72,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Content Include="Themes\RowTemplates.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RowTemplates.generated.xaml</LastGenOutput>
-    </Content>
     <Content Include="UnitRow.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UnitRow.generated.cs</LastGenOutput>
     </Content>
+    <Page Include="Themes\RowTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -97,15 +97,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Themes\RowTemplates.generated.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RowTemplates.tt</DependentUpon>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
   <Import Project="..\.paket\paket.targets" />
   <ItemGroup>

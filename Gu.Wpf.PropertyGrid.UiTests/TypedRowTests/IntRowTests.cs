@@ -84,5 +84,59 @@ namespace Gu.Wpf.PropertyGrid.UiTests
                 Assert.IsTrue(window.FindTextBoxRow("readonly").Value().IsReadOnly);
             }
         }
+
+        [Test]
+        public void LostFocusOnError()
+        {
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                {
+                    window.FindTextBoxRow("lostfocus").Value().Text = "2";
+                    window.FindButton("lose focus").Click();
+                    Assert.AreEqual("2", window.FindTextBoxRow("default").Value().Text);
+                    Assert.AreEqual("2", window.FindTextBoxRow("readonly").Value().Text);
+
+                    window.FindTextBoxRow("lostfocus").Value().Text = "-1";
+                    Assert.AreEqual("2", window.FindTextBoxRow("default").Value().Text);
+                    Assert.AreEqual("2", window.FindTextBoxRow("readonly").Value().Text);
+
+                    window.FindTextBoxRow("lostfocus").Value().Text = "--1";
+                    Assert.AreEqual("2", window.FindTextBoxRow("default").Value().Text);
+                    Assert.AreEqual("2", window.FindTextBoxRow("readonly").Value().Text);
+
+                    window.FindButton("lose focus").Click();
+                    Assert.AreEqual("2", window.FindTextBoxRow("default").Value().Text);
+                    Assert.AreEqual("2", window.FindTextBoxRow("readonly").Value().Text);
+                }
+            }
+        }
+
+        [Test]
+        public void LostFocusOnStandardTextBox()
+        {
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                {
+                    window.FindTextBox("lostfocusTextBox").Text = "2";
+                    window.FindButton("lose focus").Click();
+                    Assert.AreEqual("2", window.FindTextBoxRow("default").Value().Text);
+                    Assert.AreEqual("2", window.FindTextBoxRow("readonly").Value().Text);
+
+                    window.FindTextBox("lostfocusTextBox").Text = "-1";
+                    Assert.AreEqual("2", window.FindTextBoxRow("default").Value().Text);
+                    Assert.AreEqual("2", window.FindTextBoxRow("readonly").Value().Text);
+
+                    window.FindTextBox("lostfocusTextBox").Text = "a-1";
+                    Assert.AreEqual("2", window.FindTextBoxRow("default").Value().Text);
+                    Assert.AreEqual("2", window.FindTextBoxRow("readonly").Value().Text);
+
+                    window.FindButton("lose focus").Click();
+                    Assert.AreEqual("2", window.FindTextBoxRow("default").Value().Text);
+                    Assert.AreEqual("2", window.FindTextBoxRow("readonly").Value().Text);
+                }
+            }
+        }
     }
 }

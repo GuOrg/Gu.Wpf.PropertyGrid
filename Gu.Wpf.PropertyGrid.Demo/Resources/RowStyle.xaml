@@ -1,0 +1,160 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:propertyGrid="http://gu.se/PropertyGrid"
+                    xmlns:numeric="http://gu.se/NumericInput"
+                    xmlns:validationScope="http://gu.se/ValidationScope">
+
+  <ControlTemplate x:Key="UnitRowPropChangeInfoTemplate" TargetType="{x:Type propertyGrid:UnitRow}">
+    <Border Margin="{TemplateBinding Padding}"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition MinHeight="18" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
+          <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
+          <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
+        </Grid.ColumnDefinitions>
+        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                          Grid.Row="0"
+                                          Grid.Column="0"
+                                          Style="{TemplateBinding HeaderStyle}"
+                                          Text="{TemplateBinding Header}" />
+
+        <Border Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="0,0,0,-1"
+                        BorderBrush="{Binding Foreground,
+                                              ElementName=PART_Info}"
+                        BorderThickness="0,0,0,1">
+          <numeric:DoubleBox x:Name="PART_Value"
+                                       CanValueBeNull="{TemplateBinding CanValueBeNull}"
+                                       DecimalDigits="{TemplateBinding DecimalDigits}"
+                                       IsReadOnly="{TemplateBinding IsReadOnly}"
+                                       MaxValue="{TemplateBinding ScalarMaxValue}"
+                                       MinValue="{TemplateBinding ScalarMinValue}"
+                                       Validation.ErrorTemplate="{x:Null}"
+                                       ValidationTrigger="PropertyChanged"
+                                       Value="{Binding ScalarValue,
+                                                       RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}" />
+
+        </Border>
+        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+                                          Grid.Row="0"
+                                          Grid.Column="2"
+                                          Style="{TemplateBinding SuffixStyle}"
+                                          Text="{TemplateBinding Suffix}" />
+
+
+        <propertyGrid:InfoBlock x:Name="PART_Info"
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2">
+          <propertyGrid:InfoBlock.Style>
+            <Style TargetType="{x:Type TextBlock}">
+              <Setter Property="Foreground" Value="{x:Null}" />
+            </Style>
+          </propertyGrid:InfoBlock.Style>
+        </propertyGrid:InfoBlock>
+      </Grid>
+    </Border>
+    <ControlTemplate.Triggers>
+      <Trigger Property="IsReadOnly" Value="True">
+        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+      </Trigger>
+
+      <Trigger Property="validationScope:Scope.HasErrors" Value="True">
+        <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
+      </Trigger>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="validationScope:Scope.HasErrors" Value="False" />
+          <Condition Property="IsDirty" Value="True" />
+        </MultiTrigger.Conditions>
+        <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
+      </MultiTrigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+
+  <ControlTemplate x:Key="DoubleRowPropChangeControlTemplate" TargetType="{x:Type propertyGrid:DoubleRow}">
+    <Border Margin="{TemplateBinding Padding}"
+              Background="{TemplateBinding Background}"
+              BorderBrush="{TemplateBinding BorderBrush}"
+              BorderThickness="{TemplateBinding BorderThickness}">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition MinHeight="18" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
+          <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
+          <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
+        </Grid.ColumnDefinitions>
+        <propertyGrid:HeaderBlock x:Name="PART_Header"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Style="{TemplateBinding HeaderStyle}"
+                                    Text="{TemplateBinding Header}" />
+
+        <Border Grid.Row="0"
+                  Grid.Column="1"
+                  Margin="0,0,0,-1"
+                  BorderBrush="{Binding Foreground,
+                                        ElementName=PART_Info}"
+                  BorderThickness="0,0,0,1">
+          <numeric:DoubleBox x:Name="PART_Value"
+                               CanValueBeNull="{TemplateBinding CanValueBeNull}"
+                               DecimalDigits="{TemplateBinding DecimalDigits}"
+                               IsReadOnly="{TemplateBinding IsReadOnly}"
+                               MaxValue="{TemplateBinding MaxValue}"
+                               MinValue="{TemplateBinding MinValue}"
+                               Validation.ErrorTemplate="{x:Null}"
+                               ValidationTrigger="PropertyChanged"
+                               Value="{Binding Value,
+                                               RelativeSource={RelativeSource TemplatedParent},
+                                               UpdateSourceTrigger=PropertyChanged}" />
+
+        </Border>
+        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Style="{TemplateBinding SuffixStyle}"
+                                    Text="{TemplateBinding Suffix}" />
+
+
+        <propertyGrid:InfoBlock x:Name="PART_Info"
+                                  Grid.Row="1"
+                                  Grid.Column="0"
+                                  Grid.ColumnSpan="2">
+          <propertyGrid:InfoBlock.Style>
+            <Style TargetType="{x:Type TextBlock}">
+              <Setter Property="Foreground" Value="{x:Null}" />
+            </Style>
+          </propertyGrid:InfoBlock.Style>
+        </propertyGrid:InfoBlock>
+      </Grid>
+    </Border>
+    <ControlTemplate.Triggers>
+      <Trigger Property="IsReadOnly" Value="True">
+        <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
+      </Trigger>
+
+      <Trigger Property="validationScope:Scope.HasErrors" Value="True">
+        <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
+      </Trigger>
+      <MultiTrigger>
+        <MultiTrigger.Conditions>
+          <Condition Property="validationScope:Scope.HasErrors" Value="False" />
+          <Condition Property="IsDirty" Value="True" />
+        </MultiTrigger.Conditions>
+        <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
+      </MultiTrigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+
+</ResourceDictionary>

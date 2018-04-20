@@ -31,10 +31,8 @@
                                 IsReadOnly=""{TemplateBinding IsReadOnly}""
                                 MaxValue=""{TemplateBinding MaxValue}""
                                 MinValue=""{TemplateBinding MinValue}""
-                                ValidationTrigger=""PropertyChanged""
                                 Value=""{Binding Value,
-                                                RelativeSource={RelativeSource TemplatedParent},
-                                                UpdateSourceTrigger=PropertyChanged}"" />
+                                                RelativeSource={RelativeSource TemplatedParent}}"" />
     ";
 
     private const string DoubleValueXaml =
@@ -44,9 +42,7 @@
                                    IsReadOnly=""{TemplateBinding IsReadOnly}""
                                    MaxValue=""{TemplateBinding MaxValue}""
                                    MinValue=""{TemplateBinding MinValue}""
-                                   ValidationTrigger=""PropertyChanged""
                                    Value=""{Binding Value,
-                                                   RelativeSource={RelativeSource TemplatedParent},
-                                                   UpdateSourceTrigger=PropertyChanged}"" />";
+                                                RelativeSource={RelativeSource TemplatedParent}}"" />";
 
 #>

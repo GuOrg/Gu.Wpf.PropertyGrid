@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:numeric="clr-namespace:Gu.Wpf.NumericInput;assembly=Gu.Wpf.NumericInput"
                     xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid;assembly=Gu.Wpf.PropertyGrid"
@@ -6,7 +6,7 @@
                     xmlns:validationScope="clr-namespace:Gu.Wpf.ValidationScope;assembly=Gu.Wpf.ValidationScope">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.UnitRows;component/Themes/RowTemplates.generated.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.UnitRows;component/Themes/RowTemplates.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <Style x:Key="DefaultUnitOldValueStyle"
            BasedOn="{StaticResource DefaultOldValueStyle}"
