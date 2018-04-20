@@ -1,7 +1,5 @@
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
-    using System;
-    using System.Windows.Automation;
     using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
 
