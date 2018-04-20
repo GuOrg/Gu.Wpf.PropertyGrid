@@ -29,7 +29,6 @@
                                    IsReadOnly="{TemplateBinding IsReadOnly}"
                                    MaxValue="{TemplateBinding ScalarMaxValue}"
                                    MinValue="{TemplateBinding ScalarMinValue}"
-                                   ValidationTrigger="PropertyChanged"
                                    Value="{Binding ScalarValue,
                                                    RelativeSource={RelativeSource TemplatedParent},
                                                    UpdateSourceTrigger=PropertyChanged}" />
@@ -83,7 +82,6 @@
                                        MaxValue="{TemplateBinding ScalarMaxValue}"
                                        MinValue="{TemplateBinding ScalarMinValue}"
                                        Validation.ErrorTemplate="{x:Null}"
-                                       ValidationTrigger="PropertyChanged"
                                        Value="{Binding ScalarValue,
                                                        RelativeSource={RelativeSource TemplatedParent},
                                                        UpdateSourceTrigger=PropertyChanged}" />
