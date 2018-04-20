@@ -30,8 +30,7 @@
                                    MaxValue="{TemplateBinding ScalarMaxValue}"
                                    MinValue="{TemplateBinding ScalarMinValue}"
                                    Value="{Binding ScalarValue,
-                                                   RelativeSource={RelativeSource TemplatedParent},
-                                                   UpdateSourceTrigger=PropertyChanged}" />
+                                                   RelativeSource={RelativeSource TemplatedParent}}" />
 
         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
@@ -83,8 +82,7 @@
                                        MinValue="{TemplateBinding ScalarMinValue}"
                                        Validation.ErrorTemplate="{x:Null}"
                                        Value="{Binding ScalarValue,
-                                                       RelativeSource={RelativeSource TemplatedParent},
-                                                       UpdateSourceTrigger=PropertyChanged}" />
+                                                       RelativeSource={RelativeSource TemplatedParent}}" />
 
         </Border>
         <propertyGrid:SuffixBlock x:Name="PART_Suffix"
