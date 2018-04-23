@@ -12,29 +12,28 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
+    
                 <TextBox x:Name="PART_Value"
                          Grid.Row="0"
                          Grid.Column="1"
                          IsReadOnly="{TemplateBinding IsReadOnly}"
                          Text="{Binding Value,
-                                        RelativeSource={RelativeSource TemplatedParent},
-                                        UpdateSourceTrigger=PropertyChanged}" />
+                                        RelativeSource={RelativeSource TemplatedParent}}" />
 
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+    
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -56,24 +55,23 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
+    
                 <Border Grid.Row="0"
                         Grid.Column="1"
-                        Margin="0,0,0,-1"
                         BorderBrush="{Binding Foreground,
                                               ElementName=PART_Info}"
+                        Margin="0,0,0,-1"
                         BorderThickness="0,0,0,1">
                     <TextBox x:Name="PART_Value"
                              IsReadOnly="{TemplateBinding IsReadOnly}"
                              Text="{Binding Value,
-                                            RelativeSource={RelativeSource TemplatedParent},
-                                            UpdateSourceTrigger=PropertyChanged}"
+                                            RelativeSource={RelativeSource TemplatedParent}}"
                              Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
@@ -82,7 +80,7 @@
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+    
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
@@ -95,7 +93,7 @@
                     </propertyGrid:InfoBlock.Style>
                 </propertyGrid:InfoBlock>
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -124,32 +122,32 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
-                <CheckBox x:Name="PART_Value"
-                          Grid.Row="0"
-                          Grid.Column="1"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          IsChecked="{Binding Value,
-                                              RelativeSource={RelativeSource TemplatedParent}}"
-                          IsEnabled="{Binding IsReadOnly,
-                                              RelativeSource={RelativeSource TemplatedParent},
-                                              Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
+    
+                        <CheckBox x:Name="PART_Value"
+                                  Grid.Row="0"
+                                  Grid.Column="1"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  IsChecked="{Binding Value,
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                  IsEnabled="{Binding IsReadOnly,
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+    
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -171,28 +169,28 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
+    
                 <Border Grid.Row="0"
                         Grid.Column="1"
-                        Margin="0,0,0,-1"
                         BorderBrush="{Binding Foreground,
                                               ElementName=PART_Info}"
+                        Margin="0,0,0,-1"
                         BorderThickness="0,0,0,1">
-                    <CheckBox x:Name="PART_Value"
-                              HorizontalAlignment="Center"
-                              VerticalAlignment="Center"
-                              IsChecked="{Binding Value,
-                                                  RelativeSource={RelativeSource TemplatedParent}}"
-                              IsEnabled="{Binding IsReadOnly,
-                                                  RelativeSource={RelativeSource TemplatedParent},
-                                                  Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                              Validation.ErrorTemplate="{x:Null}" />
+                            <CheckBox x:Name="PART_Value"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      IsChecked="{Binding Value,
+                                                          RelativeSource={RelativeSource TemplatedParent}}"
+                                      IsEnabled="{Binding IsReadOnly,
+                                                          RelativeSource={RelativeSource TemplatedParent},
+                                                          Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                      Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -200,7 +198,7 @@
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+    
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
@@ -213,7 +211,7 @@
                     </propertyGrid:InfoBlock.Style>
                 </propertyGrid:InfoBlock>
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -242,32 +240,32 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
-                <CheckBox x:Name="PART_Value"
-                          Grid.Row="0"
-                          Grid.Column="1"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          IsChecked="{Binding Value,
-                                              RelativeSource={RelativeSource TemplatedParent}}"
-                          IsEnabled="{Binding IsReadOnly,
-                                              RelativeSource={RelativeSource TemplatedParent},
-                                              Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
+    
+                        <CheckBox x:Name="PART_Value"
+                                  Grid.Row="0"
+                                  Grid.Column="1"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  IsChecked="{Binding Value,
+                                                      RelativeSource={RelativeSource TemplatedParent}}"
+                                  IsEnabled="{Binding IsReadOnly,
+                                                      RelativeSource={RelativeSource TemplatedParent},
+                                                      Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+    
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -289,28 +287,28 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
+    
                 <Border Grid.Row="0"
                         Grid.Column="1"
-                        Margin="0,0,0,-1"
                         BorderBrush="{Binding Foreground,
                                               ElementName=PART_Info}"
+                        Margin="0,0,0,-1"
                         BorderThickness="0,0,0,1">
-                    <CheckBox x:Name="PART_Value"
-                              HorizontalAlignment="Center"
-                              VerticalAlignment="Center"
-                              IsChecked="{Binding Value,
-                                                  RelativeSource={RelativeSource TemplatedParent}}"
-                              IsEnabled="{Binding IsReadOnly,
-                                                  RelativeSource={RelativeSource TemplatedParent},
-                                                  Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                              Validation.ErrorTemplate="{x:Null}" />
+                            <CheckBox x:Name="PART_Value"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      IsChecked="{Binding Value,
+                                                          RelativeSource={RelativeSource TemplatedParent}}"
+                                      IsEnabled="{Binding IsReadOnly,
+                                                          RelativeSource={RelativeSource TemplatedParent},
+                                                          Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                      Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -318,7 +316,7 @@
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+    
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
@@ -331,7 +329,7 @@
                     </propertyGrid:InfoBlock.Style>
                 </propertyGrid:InfoBlock>
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -360,29 +358,29 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
-                <ToggleButton x:Name="PART_Value"
-                              Grid.Row="0"
-                              Grid.Column="1"
-                              IsChecked="{Binding Value,
-                                                  RelativeSource={RelativeSource TemplatedParent}}"
-                              IsEnabled="{TemplateBinding IsReadOnly,
-                                                          Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
+    
+                        <ToggleButton x:Name="PART_Value"
+                                      Grid.Row="0"
+                                      Grid.Column="1"
+                                      IsChecked="{Binding Value,
+                                                           RelativeSource={RelativeSource TemplatedParent}}"
+                                      IsEnabled="{TemplateBinding IsReadOnly,
+                                                                   Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+    
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -404,25 +402,25 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
+    
                 <Border Grid.Row="0"
                         Grid.Column="1"
-                        Margin="0,0,0,-1"
                         BorderBrush="{Binding Foreground,
                                               ElementName=PART_Info}"
+                        Margin="0,0,0,-1"
                         BorderThickness="0,0,0,1">
-                    <ToggleButton x:Name="PART_Value"
-                                  IsChecked="{Binding Value,
-                                                      RelativeSource={RelativeSource TemplatedParent}}"
-                                  IsEnabled="{TemplateBinding IsReadOnly,
-                                                              Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
-                                  Validation.ErrorTemplate="{x:Null}" />
+                            <ToggleButton x:Name="PART_Value"
+                                          IsChecked="{Binding Value,
+                                                               RelativeSource={RelativeSource TemplatedParent}}"
+                                          IsEnabled="{TemplateBinding IsReadOnly,
+                                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}"
+                                          Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -430,7 +428,7 @@
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+    
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
@@ -443,7 +441,7 @@
                     </propertyGrid:InfoBlock.Style>
                 </propertyGrid:InfoBlock>
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -472,30 +470,30 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
-                <ComboBox x:Name="PART_Value"
-                          Grid.Row="0"
-                          Grid.Column="1"
-                          IsReadOnly="{TemplateBinding IsReadOnly}"
-                          ItemsSource="{TemplateBinding EnumValues}"
-                          SelectedItem="{Binding Value,
-                                                 RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}" />
+    
+                        <ComboBox x:Name="PART_Value"
+                                  Grid.Row="0"
+                                  Grid.Column="1"
+                                  IsReadOnly="{TemplateBinding IsReadOnly}"
+                                  ItemsSource="{TemplateBinding EnumValues}"
+                                  SelectedItem="{Binding Value,
+                                                         RelativeSource={RelativeSource TemplatedParent},
+                                                         UpdateSourceTrigger=PropertyChanged}" />
 
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+    
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -517,26 +515,26 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
+    
                 <Border Grid.Row="0"
                         Grid.Column="1"
-                        Margin="0,0,0,-1"
                         BorderBrush="{Binding Foreground,
                                               ElementName=PART_Info}"
+                        Margin="0,0,0,-1"
                         BorderThickness="0,0,0,1">
-                    <ComboBox x:Name="PART_Value"
-                              IsReadOnly="{TemplateBinding IsReadOnly}"
-                              ItemsSource="{TemplateBinding EnumValues}"
-                              SelectedItem="{Binding Value,
-                                                     RelativeSource={RelativeSource TemplatedParent},
-                                                     UpdateSourceTrigger=PropertyChanged}"
-                              Validation.ErrorTemplate="{x:Null}" />
+                            <ComboBox x:Name="PART_Value"
+                                      IsReadOnly="{TemplateBinding IsReadOnly}"
+                                      ItemsSource="{TemplateBinding EnumValues}"
+                                      SelectedItem="{Binding Value,
+                                                             RelativeSource={RelativeSource TemplatedParent},
+                                                             UpdateSourceTrigger=PropertyChanged}"
+                                      Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -544,7 +542,7 @@
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+    
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
@@ -557,7 +555,7 @@
                     </propertyGrid:InfoBlock.Style>
                 </propertyGrid:InfoBlock>
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -586,30 +584,30 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
-                <ComboBox x:Name="PART_Value"
-                          Grid.Row="0"
-                          Grid.Column="1"
-                          IsReadOnly="{TemplateBinding IsReadOnly}"
-                          ItemsSource="{TemplateBinding ItemsSource}"
-                          SelectedItem="{Binding Value,
-                                                 RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}" />
+    
+                        <ComboBox x:Name="PART_Value"
+                                  Grid.Row="0"
+                                  Grid.Column="1"
+                                  IsReadOnly="{TemplateBinding IsReadOnly}"
+                                  ItemsSource="{TemplateBinding ItemsSource}"
+                                  SelectedItem="{Binding Value,
+                                                         RelativeSource={RelativeSource TemplatedParent},
+                                                         UpdateSourceTrigger=PropertyChanged}" />
 
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+    
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -631,26 +629,26 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
+    
                 <Border Grid.Row="0"
                         Grid.Column="1"
-                        Margin="0,0,0,-1"
                         BorderBrush="{Binding Foreground,
                                               ElementName=PART_Info}"
+                        Margin="0,0,0,-1"
                         BorderThickness="0,0,0,1">
-                    <ComboBox x:Name="PART_Value"
-                              IsReadOnly="{TemplateBinding IsReadOnly}"
-                              ItemsSource="{TemplateBinding ItemsSource}"
-                              SelectedItem="{Binding Value,
-                                                     RelativeSource={RelativeSource TemplatedParent},
-                                                     UpdateSourceTrigger=PropertyChanged}"
-                              Validation.ErrorTemplate="{x:Null}" />
+                            <ComboBox x:Name="PART_Value"
+                                      IsReadOnly="{TemplateBinding IsReadOnly}"
+                                      ItemsSource="{TemplateBinding ItemsSource}"
+                                      SelectedItem="{Binding Value,
+                                                             RelativeSource={RelativeSource TemplatedParent},
+                                                             UpdateSourceTrigger=PropertyChanged}"
+                                      Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -658,7 +656,7 @@
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+    
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
@@ -671,7 +669,7 @@
                     </propertyGrid:InfoBlock.Style>
                 </propertyGrid:InfoBlock>
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -700,30 +698,30 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
-                <ComboBox x:Name="PART_Value"
-                          Grid.Row="0"
-                          Grid.Column="1"
-                          IsReadOnly="{TemplateBinding IsReadOnly}"
-                          ItemsSource="{TemplateBinding ItemsSource}"
-                          SelectedItem="{Binding Value,
-                                                 RelativeSource={RelativeSource TemplatedParent},
-                                                 UpdateSourceTrigger=PropertyChanged}" />
+    
+                        <ComboBox x:Name="PART_Value"
+                                  Grid.Row="0"
+                                  Grid.Column="1"
+                                  IsReadOnly="{TemplateBinding IsReadOnly}"
+                                  ItemsSource="{TemplateBinding ItemsSource}"
+                                  SelectedItem="{Binding Value,
+                                                         RelativeSource={RelativeSource TemplatedParent},
+                                                         UpdateSourceTrigger=PropertyChanged}" />
 
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+    
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -745,26 +743,26 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions> 
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-
+    
                 <Border Grid.Row="0"
                         Grid.Column="1"
-                        Margin="0,0,0,-1"
                         BorderBrush="{Binding Foreground,
                                               ElementName=PART_Info}"
+                        Margin="0,0,0,-1"
                         BorderThickness="0,0,0,1">
-                    <ComboBox x:Name="PART_Value"
-                              IsReadOnly="{TemplateBinding IsReadOnly}"
-                              ItemsSource="{TemplateBinding ItemsSource}"
-                              SelectedItem="{Binding Value,
-                                                     RelativeSource={RelativeSource TemplatedParent},
-                                                     UpdateSourceTrigger=PropertyChanged}"
-                              Validation.ErrorTemplate="{x:Null}" />
+                            <ComboBox x:Name="PART_Value"
+                                      IsReadOnly="{TemplateBinding IsReadOnly}"
+                                      ItemsSource="{TemplateBinding ItemsSource}"
+                                      SelectedItem="{Binding Value,
+                                                             RelativeSource={RelativeSource TemplatedParent},
+                                                             UpdateSourceTrigger=PropertyChanged}"
+                                      Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -772,7 +770,7 @@
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-
+    
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
@@ -785,7 +783,7 @@
                     </propertyGrid:InfoBlock.Style>
                 </propertyGrid:InfoBlock>
             </Grid>
-        </Border>
+        </Border> 
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
