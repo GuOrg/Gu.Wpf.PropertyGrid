@@ -89,6 +89,9 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
                         case ShortBox shortBox:
                             bindingExpression = shortBox.GetBindingExpression(ShortBox.ValueProperty);
                             break;
+                        case System.Windows.Controls.TextBox textBox:
+                            bindingExpression = textBox.GetBindingExpression(System.Windows.Controls.TextBox.TextProperty);
+                            break;
                     }
 
                     if (bindingExpression != null && bindingExpression.ParentBinding.UpdateSourceTrigger != UpdateSourceTrigger.PropertyChanged)
