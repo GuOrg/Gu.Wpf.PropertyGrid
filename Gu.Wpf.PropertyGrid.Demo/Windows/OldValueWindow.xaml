@@ -21,6 +21,10 @@
         <Setter Property="Template" Value="{StaticResource DoubleRowPropChangeControlTemplate}" />
       </Style>
 
+      <Style TargetType="{x:Type propertyGrid:StringRow}">
+        <Setter Property="Template" Value="{StaticResource StringRowPropChangeControlTemplate}" />
+      </Style>
+
       <Style TargetType="{x:Type propertyGrid:LengthRow}">
         <Setter Property="Template" Value="{StaticResource UnitRowPropChangeInfoTemplate}" />
         <Setter Property="Unit" Value="mm" />

@@ -34,6 +34,8 @@
       <propertyGrid:DoubleRow Header="readonly"
                               IsReadOnly="True"
                               Value="{Binding DoubleValue}" />
+      <propertyGrid:StringRow Header="stringRow"
+                              Value="{Binding DoubleValue, UpdateSourceTrigger=PropertyChanged}" />
     </propertyGrid:Rows>
   </StackPanel>
 </Window>
