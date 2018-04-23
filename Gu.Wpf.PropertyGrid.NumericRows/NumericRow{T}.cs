@@ -66,7 +66,7 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
             var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
             if (valueBinding?.ParentBinding.UpdateSourceTrigger == UpdateSourceTrigger.PropertyChanged)
             {
-                foreach (var dependencyObject in RecursiveChildren(this))
+                foreach (var dependencyObject in this.RecursiveChildren())
                 {
                     BindingExpression bindingExpression = null;
                     switch (dependencyObject)
@@ -97,22 +97,6 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
                         dependencyObject.SetCurrentValue(
                             System.Windows.Controls.TextBox.TextProperty,
                             "Binding of value with UpdateSourceTrigger.PropertyChanged does not match the binding for the value by the current controltemplate");
-                    }
-                }
-            }
-        }
-
-        internal static IEnumerable<DependencyObject> RecursiveChildren(DependencyObject parent)
-        {
-            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
-            {
-                var child = VisualTreeHelper.GetChild(parent, i);
-                yield return child;
-                if (VisualTreeHelper.GetChildrenCount(child) != 0)
-                {
-                    foreach (var nestedChild in RecursiveChildren(child))
-                    {
-                        yield return nestedChild;
                     }
                 }
             }

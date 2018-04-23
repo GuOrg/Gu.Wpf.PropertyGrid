@@ -78,7 +78,6 @@ namespace Gu.Wpf.PropertyGrid.UiTests
                     Assert.AreEqual("Binding of value with UpdateSourceTrigger.PropertyChanged does not match the binding for the value by the current controltemplate", lengthRow.Value().Text);
                 }
             }
-
         }
     }
 }

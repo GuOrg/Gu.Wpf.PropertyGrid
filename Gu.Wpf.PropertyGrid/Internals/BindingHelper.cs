@@ -3,6 +3,7 @@ namespace Gu.Wpf.PropertyGrid
     using System.Collections.Generic;
     using System.Windows;
     using System.Windows.Data;
+    using System.Windows.Media;
 
     internal static class BindingHelper
     {
@@ -42,6 +43,22 @@ namespace Gu.Wpf.PropertyGrid
             path = new PropertyPath(property);
             PropertyPaths[property] = path;
             return path;
+        }
+
+        internal static IEnumerable<DependencyObject> RecursiveChildren(this DependencyObject parent)
+        {
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
+            {
+                var child = VisualTreeHelper.GetChild(parent, i);
+                yield return child;
+                if (VisualTreeHelper.GetChildrenCount(child) != 0)
+                {
+                    foreach (var nestedChild in RecursiveChildren(child))
+                    {
+                        yield return nestedChild;
+                    }
+                }
+            }
         }
 
         internal struct BindingBuilder
