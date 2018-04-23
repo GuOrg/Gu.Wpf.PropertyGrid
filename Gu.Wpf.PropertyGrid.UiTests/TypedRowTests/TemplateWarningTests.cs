@@ -58,12 +58,23 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             }
 
             [Test]
-            public void UpdatesOnPropChangeStandardStyle()
+            public void SetErrorForPropChangeDoubleRow()
             {
                 using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
                 {
                     var window = app.MainWindow;
                     var lengthRow = window.FindTextBoxRow("propertychangedStandardStyle");
+                    Assert.AreEqual("Binding of value with UpdateSourceTrigger.PropertyChanged does not match the binding for the value by the current controltemplate", lengthRow.Value().Text);
+                }
+            }
+
+            [Test]
+            public void SetErrorForPropChangeStringRow()
+            {
+                using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
+                {
+                    var window = app.MainWindow;
+                    var lengthRow = window.FindTextBoxRow("stringRow");
                     Assert.AreEqual("Binding of value with UpdateSourceTrigger.PropertyChanged does not match the binding for the value by the current controltemplate", lengthRow.Value().Text);
                 }
             }
