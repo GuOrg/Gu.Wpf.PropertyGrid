@@ -49,16 +49,25 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             }
         }
 
-        [Test]
-        public void UpdatesOnPropChangeStandardStyle()
+        private class TemplateBindingError
         {
-            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
+            [OneTimeTearDown]
+            public void OneTimeTearDown()
             {
-                var window = app.MainWindow;
-                window.FindTextBoxRow("propertychangedStandardStyle").Value().Text = "12";
-                var lengthRow = window.FindTextBoxRow("propertychangedStandardStyle");
-                Assert.AreEqual("Template does not support propertychange", lengthRow.Info().Text);
+                Application.KillLaunched(ExeFileName);
             }
+
+            [Test]
+            public void UpdatesOnPropChangeStandardStyle()
+            {
+                using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
+                {
+                    var window = app.MainWindow;
+                    var lengthRow = window.FindTextBoxRow("propertychangedStandardStyle");
+                    Assert.AreEqual("Binding of value with UpdateSourceTrigger.PropertyChanged does not match the binding for the value by the current controltemplate", lengthRow.Value().Text);
+                }
+            }
+
         }
     }
 }
