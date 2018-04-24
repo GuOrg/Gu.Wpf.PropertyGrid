@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid.Demo
+namespace Gu.Wpf.PropertyGrid.Demo
 {
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -66,3 +66,10 @@
         }
     }
 }
+
+
+
+namespace Gu.Wpf.PropertyGrid.Demo
+{
+}
+
