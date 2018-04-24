@@ -4,8 +4,7 @@
 <#@ assembly name="System.Core" #>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid"
-                    xmlns:validationScope="clr-namespace:Gu.Wpf.ValidationScope;assembly=Gu.Wpf.ValidationScope">
+                    xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid">
 <#
     var prefix = "propertyGrid";
         var namesAndXamls = new[]

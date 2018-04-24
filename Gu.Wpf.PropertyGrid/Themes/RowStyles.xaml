@@ -1,7 +1,6 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid"
-                    xmlns:validationScope="http://gu.se/ValidationScope">
+                    xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Blocks.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/RowTemplates.generated.xaml" />
@@ -10,7 +9,6 @@
     <Style TargetType="{x:Type propertyGrid:Row}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, Gu.Wpf.PropertyGrid.Rows, System.Windows.Controls.TextBox" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="HeaderStyle" Value="{StaticResource {x:Type propertyGrid:HeaderBlock}}" />
         <Setter Property="SuffixStyle" Value="{StaticResource {x:Type propertyGrid:SuffixBlock}}" />
@@ -19,12 +17,10 @@
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:StringRow}">
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.TextBox" />
         <Setter Property="Template" Value="{StaticResource StringRowInfoTemplate}" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:BoolRow}">
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.CheckBox, System.Windows.Controls.Primitives.ToggleButton" />
         <Setter Property="Template" Value="{StaticResource BoolRowInfoTemplate}" />
     </Style>
 
@@ -37,12 +33,10 @@
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:EnumRow}">
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.ComboBox" />
         <Setter Property="Template" Value="{StaticResource EnumRowInfoTemplate}" />
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type propertyGrid:Row}}" TargetType="{x:Type propertyGrid:SelectorRow}">
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="Gu.Wpf.PropertyGrid.Row, System.Windows.Controls.ComboBox" />
         <Setter Property="Template" Value="{StaticResource SelectorRowInfoTemplate}" />
     </Style>
 
@@ -51,7 +45,6 @@
     </Style>
 
     <Style TargetType="{x:Type propertyGrid:ContentRow}">
-        <Setter Property="validationScope:Scope.ForInputTypes" Value="{x:Static validationScope:InputTypeCollection.Default}" />
         <Setter Property="HeaderStyle" Value="{StaticResource {x:Type propertyGrid:HeaderBlock}}" />
         <Setter Property="SuffixStyle" Value="{StaticResource {x:Type propertyGrid:SuffixBlock}}" />
 

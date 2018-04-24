@@ -1,16 +1,12 @@
 Gu.Units.Wpf
 Gu.Wpf.NumericInput
-Gu.Wpf.ValidationScope
-
 group Analyzers
-  AsyncUsageAnalyzers
-  IDisposableAnalyzers
-  PropertyChangedAnalyzers
-  StyleCop.Analyzers
-  WpfAnalyzers
-  Gu.Analyzers
-  JetBrains.Annotations
-
+AsyncUsageAnalyzers
+IDisposableAnalyzers
+PropertyChangedAnalyzers
+StyleCop.Analyzers
+WpfAnalyzers
+Gu.Analyzers
+JetBrains.Annotations
 group Demo
-  Gu.State
-  
+Gu.State
