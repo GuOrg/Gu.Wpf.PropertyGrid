@@ -1,7 +1,6 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid"
-                    xmlns:validationScope="http://gu.se/ValidationScope">
+                    xmlns:l="clr-namespace:Gu.Wpf.PropertyGrid">
 
     <!--<Style TargetType="{x:Type l:RowInfoPresenter}">
         <Setter Property="MinHeight" Value="18" />

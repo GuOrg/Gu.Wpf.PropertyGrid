@@ -1,4 +1,4 @@
-﻿<!-- ReSharper disable Xaml.BindingWithContextNotResolved -->
+<!--  ReSharper disable Xaml.BindingWithContextNotResolved  -->
 <UserControl x:Class="Gu.Wpf.PropertyGrid.Demo.PlainSettingsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -7,182 +7,166 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:propertyGrid="http://gu.se/PropertyGrid"
              xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows;assembly=Gu.Wpf.PropertyGrid.UnitRows"
-             xmlns:validationScope="http://gu.se/ValidationScope"
              mc:Ignorable="d">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.NumericRows;component/Themes/Generic.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.UnitRows;component/Themes/Generic.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-            <Style BasedOn="{StaticResource {x:Type propertyGrid:StringRow}}" TargetType="{x:Type propertyGrid:StringRow}">
-                <Setter Property="Template" Value="{StaticResource StringRowPlainTemplate}" />
-            </Style>
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.NumericRows;component/Themes/Generic.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.UnitRows;component/Themes/Generic.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <Style BasedOn="{StaticResource {x:Type propertyGrid:StringRow}}" TargetType="{x:Type propertyGrid:StringRow}">
+        <Setter Property="Template" Value="{StaticResource StringRowPlainTemplate}" />
+      </Style>
 
-            <Style BasedOn="{StaticResource {x:Type propertyGrid:CheckBoxRow}}" TargetType="{x:Type propertyGrid:CheckBoxRow}">
-                <Setter Property="Template" Value="{StaticResource CheckBoxRowPlainTemplate}" />
-            </Style>
+      <Style BasedOn="{StaticResource {x:Type propertyGrid:CheckBoxRow}}" TargetType="{x:Type propertyGrid:CheckBoxRow}">
+        <Setter Property="Template" Value="{StaticResource CheckBoxRowPlainTemplate}" />
+      </Style>
 
-            <Style BasedOn="{StaticResource {x:Type propertyGrid:ToggleButtonRow}}" TargetType="{x:Type propertyGrid:ToggleButtonRow}">
-                <Setter Property="Template" Value="{StaticResource ToggleButtonRowPlainTemplate}" />
-            </Style>
+      <Style BasedOn="{StaticResource {x:Type propertyGrid:ToggleButtonRow}}" TargetType="{x:Type propertyGrid:ToggleButtonRow}">
+        <Setter Property="Template" Value="{StaticResource ToggleButtonRowPlainTemplate}" />
+      </Style>
 
-            <Style BasedOn="{StaticResource {x:Type propertyGrid:SelectorRow}}" TargetType="{x:Type propertyGrid:SelectorRow}">
-                <Setter Property="Template" Value="{StaticResource SelectorRowPlainTemplate}" />
-            </Style>
+      <Style BasedOn="{StaticResource {x:Type propertyGrid:SelectorRow}}" TargetType="{x:Type propertyGrid:SelectorRow}">
+        <Setter Property="Template" Value="{StaticResource SelectorRowPlainTemplate}" />
+      </Style>
 
-            <Style BasedOn="{StaticResource {x:Type propertyGrid:ComboBoxRow}}" TargetType="{x:Type propertyGrid:ComboBoxRow}">
-                <Setter Property="Template" Value="{StaticResource ComboBoxRowPlainTemplate}" />
-            </Style>
+      <Style BasedOn="{StaticResource {x:Type propertyGrid:ComboBoxRow}}" TargetType="{x:Type propertyGrid:ComboBoxRow}">
+        <Setter Property="Template" Value="{StaticResource ComboBoxRowPlainTemplate}" />
+      </Style>
 
-            <Style BasedOn="{StaticResource {x:Type propertyGrid:EnumRow}}" TargetType="{x:Type propertyGrid:EnumRow}">
-                <Setter Property="Template" Value="{StaticResource EnumRowPlainTemplate}" />
-            </Style>
+      <Style BasedOn="{StaticResource {x:Type propertyGrid:EnumRow}}" TargetType="{x:Type propertyGrid:EnumRow}">
+        <Setter Property="Template" Value="{StaticResource EnumRowPlainTemplate}" />
+      </Style>
 
-            <Style BasedOn="{StaticResource {x:Type propertyGrid:IntRow}}" TargetType="{x:Type propertyGrid:IntRow}">
-                <Setter Property="Template" Value="{StaticResource IntRowPlainTemplate}" />
-            </Style>
+      <Style BasedOn="{StaticResource {x:Type propertyGrid:IntRow}}" TargetType="{x:Type propertyGrid:IntRow}">
+        <Setter Property="Template" Value="{StaticResource IntRowPlainTemplate}" />
+      </Style>
 
-            <Style BasedOn="{StaticResource {x:Type propertyGrid:DoubleRow}}" TargetType="{x:Type propertyGrid:DoubleRow}">
-                <Setter Property="Template" Value="{StaticResource DoubleRowPlainTemplate}" />
-            </Style>
+      <Style BasedOn="{StaticResource {x:Type propertyGrid:DoubleRow}}" TargetType="{x:Type propertyGrid:DoubleRow}">
+        <Setter Property="Template" Value="{StaticResource DoubleRowPlainTemplate}" />
+      </Style>
 
-            <Style BasedOn="{StaticResource {x:Type propertyGrid:UnitRow}}" TargetType="{x:Type propertyGrid:UnitRow}">
-                <Setter Property="Template" Value="{StaticResource UnitRowGenericPlainTemplate}" />
-            </Style>
+      <Style BasedOn="{StaticResource {x:Type propertyGrid:UnitRow}}" TargetType="{x:Type propertyGrid:UnitRow}">
+        <Setter Property="Template" Value="{StaticResource UnitRowGenericPlainTemplate}" />
+      </Style>
 
-            <Style BasedOn="{StaticResource {x:Type propertyGrid:UnitRow}}" TargetType="{x:Type propertyGrid:LengthRow}" />
-            <Style BasedOn="{StaticResource {x:Type propertyGrid:UnitRow}}" TargetType="{x:Type propertyGrid:SpeedRow}" />
-        </ResourceDictionary>
-    </UserControl.Resources>
-    <UserControl.DataContext>
-        <demo:SettingsVm />
-    </UserControl.DataContext>
-    <Grid validationScope:Scope.ForInputTypes="Scope" validationScope:Scope.HasErrorsOneWayToSourceBinding="{Binding ViewHasErrors, Mode=OneWayToSource}">
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <UniformGrid Grid.Row="0"
-                     propertyGrid:PropertyGrid.OldDataContext="{Binding LastSaved}"
-                     Columns="3">
-            <propertyGrid:Rows Margin="6,0"
-                               DataContext="{Binding EditableCopy}"
-                               ValueWidth="120">
-                <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Core" />
+      <Style BasedOn="{StaticResource {x:Type propertyGrid:UnitRow}}" TargetType="{x:Type propertyGrid:LengthRow}" />
+      <Style BasedOn="{StaticResource {x:Type propertyGrid:UnitRow}}" TargetType="{x:Type propertyGrid:SpeedRow}" />
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <UserControl.DataContext>
+    <demo:SettingsVm />
+  </UserControl.DataContext>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <UniformGrid Grid.Row="0"
+                 propertyGrid:PropertyGrid.OldDataContext="{Binding LastSaved}"
+                 Columns="3">
+      <propertyGrid:Rows Margin="6,0"
+                         DataContext="{Binding EditableCopy}"
+                         ValueWidth="120">
+        <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Core" />
 
-                <propertyGrid:StringRow Header="string" Value="{Binding StringValue}" />
+        <propertyGrid:StringRow Header="string" Value="{Binding StringValue}" />
 
-                <propertyGrid:StringRow Header="readonly string"
-                                        IsReadOnly="True"
-                                        Value="{Binding StringValue}" />
+        <propertyGrid:StringRow Header="readonly string"
+                                IsReadOnly="True"
+                                Value="{Binding StringValue}" />
 
-                <propertyGrid:CheckBoxRow Header="INotifyDataErrorInfo has error" Value="{Binding HasErrors, ValidatesOnNotifyDataErrors=True}" />
+        <propertyGrid:CheckBoxRow Header="INotifyDataErrorInfo has error" Value="{Binding HasErrors, ValidatesOnNotifyDataErrors=True}" />
 
-                <propertyGrid:CheckBoxRow Header="checkbox" Value="{Binding BoolValue}" />
+        <propertyGrid:CheckBoxRow Header="checkbox" Value="{Binding BoolValue}" />
 
-                <propertyGrid:BoolRow Header="bool" Value="{Binding BoolValue}" />
+        <propertyGrid:BoolRow Header="bool" Value="{Binding BoolValue}" />
 
-                <propertyGrid:ToggleButtonRow Header="togglebutton" Value="{Binding BoolValue}" />
+        <propertyGrid:ToggleButtonRow Header="togglebutton" Value="{Binding BoolValue}" />
 
 
-                <propertyGrid:EnumRow Header="enum" Value="{Binding CurrentStringComparison}" />
+        <propertyGrid:EnumRow Header="enum" Value="{Binding CurrentStringComparison}" />
 
-                <propertyGrid:SelectorRow Header="selector"
-                                          ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
-                                          Value="{Binding CurrentLengthUnit}" />
+        <propertyGrid:SelectorRow Header="selector"
+                                  ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
+                                  Value="{Binding CurrentLengthUnit}" />
 
-                <propertyGrid:ComboBoxRow Header="combobox"
-                                          ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
-                                          Value="{Binding CurrentLengthUnit}" />
+        <propertyGrid:ComboBoxRow Header="combobox"
+                                  ItemsSource="{x:Static demo:SettingsVm.LengthUnits}"
+                                  Value="{Binding CurrentLengthUnit}" />
 
-                <propertyGrid:ContentRow Header="content">
-                    <Button Command="{Binding DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Content="Save" />
-                </propertyGrid:ContentRow>
-            </propertyGrid:Rows>
+        <propertyGrid:ContentRow Header="content">
+          <Button Command="{Binding DataContext.SaveCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" Content="Save" />
+        </propertyGrid:ContentRow>
+      </propertyGrid:Rows>
 
-            <propertyGrid:Rows Margin="6,0"
-                               DataContext="{Binding EditableCopy}"
-                               ValueWidth="60">
-                <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Numeric" />
+      <propertyGrid:Rows Margin="6,0"
+                         DataContext="{Binding EditableCopy}"
+                         ValueWidth="60">
+        <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Numeric" />
 
-                <propertyGrid:IntRow Header="int" Value="{Binding IntValue}" />
+        <propertyGrid:IntRow Header="int" Value="{Binding IntValue}" />
 
-                <propertyGrid:IntRow Header="readonly int"
-                                     IsReadOnly="True"
-                                     Value="{Binding IntValue}" />
+        <propertyGrid:IntRow Header="readonly int"
+                             IsReadOnly="True"
+                             Value="{Binding IntValue}" />
 
-                <propertyGrid:IntRow CanValueBeNull="True"
-                                     Header="int?"
-                                     Value="{Binding NullableIntValue}" />
+        <propertyGrid:IntRow CanValueBeNull="True"
+                             Header="int?"
+                             Value="{Binding NullableIntValue}" />
 
-                <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
+        <propertyGrid:DoubleRow Header="double" Value="{Binding DoubleValue}" />
 
-                <propertyGrid:DoubleRow Header="readonly double"
-                                        IsReadOnly="True"
-                                        Value="{Binding DoubleValue}" />
+        <propertyGrid:DoubleRow Header="readonly double"
+                                IsReadOnly="True"
+                                Value="{Binding DoubleValue}" />
 
-                <propertyGrid:DoubleRow CanValueBeNull="True"
-                                        Header="double?"
-                                        Value="{Binding NullableDoubleValue}" />
-            </propertyGrid:Rows>
+        <propertyGrid:DoubleRow CanValueBeNull="True"
+                                Header="double?"
+                                Value="{Binding NullableDoubleValue}" />
+      </propertyGrid:Rows>
 
-            <propertyGrid:Rows Margin="6,0"
-                               DataContext="{Binding EditableCopy}"
-                               ValueWidth="60">
-                <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Units" />
+      <propertyGrid:Rows Margin="6,0"
+                         DataContext="{Binding EditableCopy}"
+                         ValueWidth="60">
+        <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Units" />
 
-                <unitRows:LengthRow Header="Length" Value="{Binding LengthValue}" />
+        <unitRows:LengthRow Header="Length" Value="{Binding LengthValue}" />
 
-                <unitRows:LengthRow Header="readonly length"
-                                    IsReadOnly="True"
-                                    Value="{Binding LengthValue}" />
+        <unitRows:LengthRow Header="readonly length"
+                            IsReadOnly="True"
+                            Value="{Binding LengthValue}" />
 
-                <unitRows:LengthRow CanValueBeNull="True"
-                                    Header="Nullable length"
-                                    Value="{Binding NullableLengthValue}" />
+        <unitRows:LengthRow CanValueBeNull="True"
+                            Header="Nullable length"
+                            Value="{Binding NullableLengthValue}" />
 
-                <unitRows:SpeedRow Header="Speed (readonly)"
-                                   IsReadOnly="True"
-                                   Unit="km/h"
-                                   Value="{Binding SpeedValue}" />
+        <unitRows:SpeedRow Header="Speed (readonly)"
+                           IsReadOnly="True"
+                           Unit="km/h"
+                           Value="{Binding SpeedValue}" />
 
-                <unitRows:LengthRow DecimalDigits="2"
-                                    Header="Length"
-                                    MaxValue="15 mm"
-                                    MinValue="-15 mm"
-                                    Unit="{Binding CurrentLengthUnit}"
-                                    Value="{Binding LengthValue}" />
-            </propertyGrid:Rows>
-        </UniformGrid>
+        <unitRows:LengthRow DecimalDigits="2"
+                            Header="Length"
+                            MaxValue="15 mm"
+                            MinValue="-15 mm"
+                            Unit="{Binding CurrentLengthUnit}"
+                            Value="{Binding LengthValue}" />
+      </propertyGrid:Rows>
+    </UniformGrid>
 
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0"
-                    Command="{Binding SaveCommand}"
-                    Content="Save" />
-            <Button Grid.Column="1"
-                    Command="{Binding UndoAllCommand}"
-                    Content="Undo" />
-        </Grid>
+    <Grid Grid.Row="1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Button Grid.Column="0"
+              Command="{Binding SaveCommand}"
+              Content="Save" />
+      <Button Grid.Column="1"
+              Command="{Binding UndoAllCommand}"
+              Content="Undo" />
     </Grid>
+  </Grid>
 </UserControl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

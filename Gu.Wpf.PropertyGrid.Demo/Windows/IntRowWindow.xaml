@@ -7,7 +7,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:propertyGrid="http://gu.se/PropertyGrid"
         xmlns:numeric="http://gu.se/NumericInput"
-        xmlns:validationScope="http://gu.se/ValidationScope"
         Title="IntRowWindow"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d">
@@ -77,12 +76,12 @@
           <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
         </Trigger>
 
-        <Trigger Property="validationScope:Scope.HasErrors" Value="True">
+        <Trigger Property="Validation.HasError" Value="True">
           <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
         </Trigger>
         <MultiTrigger>
           <MultiTrigger.Conditions>
-            <Condition Property="validationScope:Scope.HasErrors" Value="False" />
+            <Condition Property="Validation.HasError" Value="False" />
             <Condition Property="IsDirty" Value="True" />
           </MultiTrigger.Conditions>
           <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />

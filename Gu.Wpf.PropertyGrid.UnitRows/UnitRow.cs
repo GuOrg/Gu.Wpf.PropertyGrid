@@ -1,6 +1,12 @@
-﻿namespace Gu.Wpf.PropertyGrid.UnitRows
+namespace Gu.Wpf.PropertyGrid.UnitRows
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Data;
+    using System.Windows.Media;
     using Gu.Units;
     using Gu.Wpf.NumericInput;
 
@@ -52,6 +58,8 @@
         public static readonly DependencyProperty CanValueBeNullProperty = NumericBox.CanValueBeNullProperty.AddOwner(
             typeof(UnitRow),
             new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
+
+        private readonly List<DependencyObject> templateChildren = new List<DependencyObject>();
 
         static UnitRow()
         {
@@ -133,6 +141,89 @@
         public static void SetSymbolFormat(UIElement element, SymbolFormat value)
         {
             element.SetValue(SymbolFormatProperty, value);
+        }
+
+
+        /// <summary>
+        /// To be called from generated codes error eventhandler
+        /// </summary>
+        /// <param name="dependencyObject">error object</param>
+        /// <param name="dependencyProperty">error property</param>
+        protected void OnTemplateChildErrorBase(DependencyObject dependencyObject, DependencyProperty dependencyProperty)
+        {
+            var errors = Validation.GetErrors(dependencyObject);
+            var valueBinding = BindingOperations.GetBindingExpression(this, dependencyProperty);
+            if (valueBinding != null)
+            {
+                Validation.ClearInvalid(valueBinding);
+                foreach (var validationError in errors)
+                {
+                    Validation.MarkInvalid(valueBinding, validationError);
+                }
+            }
+        }
+
+        /// <summary>
+        /// To be called from generated code to register listening for errors
+        /// </summary>
+        /// <param name="valueBinding">error binding</param>
+        /// <param name="onTemplateChildError">error eventargs</param>
+        protected void OnApplyTemplateBase(BindingExpression valueBinding, EventHandler<ValidationErrorEventArgs> onTemplateChildError)
+        {
+            if (valueBinding != null && this.templateChildren.Any())
+            {
+                Validation.ClearInvalid(valueBinding);
+                foreach (var dependencyObject in this.templateChildren)
+                {
+                    Validation.RemoveErrorHandler(dependencyObject, onTemplateChildError);
+                }
+            }
+
+            if (valueBinding?.ParentBinding != null)
+            {
+                foreach (var dependencyObject in this.RecursiveChildren())
+                {
+                    BindingExpression bindingExpression = null;
+                    switch (dependencyObject)
+                    {
+                        case DecimalBox decimalBox:
+                            bindingExpression = decimalBox.GetBindingExpression(DecimalBox.ValueProperty);
+                            break;
+                        case DoubleBox doubleBox:
+                            bindingExpression = doubleBox.GetBindingExpression(DoubleBox.ValueProperty);
+                            break;
+                        case FloatBox floatBox:
+                            bindingExpression = floatBox.GetBindingExpression(FloatBox.ValueProperty);
+                            break;
+                        case IntBox intBox:
+                            bindingExpression = intBox.GetBindingExpression(IntBox.ValueProperty);
+                            break;
+                        case LongBox longBox:
+                            bindingExpression = longBox.GetBindingExpression(LongBox.ValueProperty);
+                            break;
+                        case ShortBox shortBox:
+                            bindingExpression = shortBox.GetBindingExpression(ShortBox.ValueProperty);
+                            break;
+                        case TextBox textBox:
+                            bindingExpression = textBox.GetBindingExpression(TextBox.TextProperty);
+                            break;
+                    }
+
+                    if (bindingExpression != null)
+                    {
+                        if (valueBinding.ParentBinding.UpdateSourceTrigger == UpdateSourceTrigger.PropertyChanged && bindingExpression.ParentBinding.UpdateSourceTrigger != UpdateSourceTrigger.PropertyChanged)
+                        {
+                            dependencyObject.SetCurrentValue(ForegroundProperty, Brushes.Red);
+                            dependencyObject.SetCurrentValue(
+                                TextBox.TextProperty,
+                                "Binding of value with UpdateSourceTrigger.PropertyChanged does not match the binding for the value by the current controltemplate");
+                        }
+
+                        Validation.AddErrorHandler(dependencyObject, onTemplateChildError);
+                        this.templateChildren.Add(dependencyObject);
+                    }
+                }
+            }
         }
 
         /// <summary>

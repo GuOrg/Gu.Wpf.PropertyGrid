@@ -96,6 +96,9 @@
     <Compile Include="Windows\LengthRowWindow.xaml.cs">
       <DependentUpon>LengthRowWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\NumberValidationRule.cs">
+      <DependentUpon>ValidationErrorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\OldValueWindow.xaml.cs">
       <DependentUpon>OldValueWindow.xaml</DependentUpon>
     </Compile>
@@ -125,6 +128,9 @@
     </Compile>
     <Compile Include="Windows\RowStyleWindow.xaml.cs">
       <DependentUpon>RowStyleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ValidationErrorWindow.xaml.cs">
+      <DependentUpon>ValidationErrorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ValueStylesWindow.xaml.cs">
       <DependentUpon>ValueStylesWindow.xaml</DependentUpon>
@@ -240,6 +246,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\RowStyleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ValidationErrorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -411,7 +421,6 @@
       <Paket>True</Paket>
     </Analyzer>
   </ItemGroup>
-  <ItemGroup />
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1')">
       <ItemGroup>
@@ -450,17 +459,6 @@
       <ItemGroup>
         <Reference Include="Gu.Wpf.NumericInput">
           <HintPath>..\packages\Gu.Wpf.NumericInput\lib\net45\Gu.Wpf.NumericInput.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1')">
-      <ItemGroup>
-        <Reference Include="Gu.Wpf.ValidationScope">
-          <HintPath>..\packages\Gu.Wpf.ValidationScope\lib\net45\Gu.Wpf.ValidationScope.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>

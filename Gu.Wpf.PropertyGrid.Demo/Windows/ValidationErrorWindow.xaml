@@ -1,0 +1,113 @@
+<Window x:Class="Gu.Wpf.PropertyGrid.Demo.Windows.ValidationErrorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:demo="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:propertyGrid="http://gu.se/PropertyGrid"
+        Title="ValidationErrorWindow"
+        Width="800"
+        Height="450"
+        mc:Ignorable="d">
+  <Window.DataContext>
+    <demo:SettingsVm />
+  </Window.DataContext>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <UniformGrid Grid.Row="0" Columns="3">
+      <propertyGrid:Rows Margin="6,0" ValueWidth="120">
+        <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Core" />
+
+        <propertyGrid:StringRow Header="string">
+          <propertyGrid:StringRow.Value>
+            <Binding Path="EditableCopy.StringValue">
+              <Binding.ValidationRules>
+                <demo:NumberValidationRule />
+              </Binding.ValidationRules>
+            </Binding>
+          </propertyGrid:StringRow.Value>
+        </propertyGrid:StringRow>
+
+        <propertyGrid:StringRow Header="readonly string"
+                                IsReadOnly="True"
+                                Value="{Binding EditableCopy.StringValue}" />
+
+        <propertyGrid:ContentRow Header="Lose focus">
+          <Button Content="Lose" x:Name="Lose"/>
+        </propertyGrid:ContentRow>
+      </propertyGrid:Rows>
+
+      <propertyGrid:Rows Margin="6,0" ValueWidth="60">
+        <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Numeric" />
+
+        <propertyGrid:IntRow Header="int" Value="{Binding EditableCopy.IntValue}" />
+
+        <propertyGrid:IntRow Header="readonly int"
+                             IsReadOnly="True"
+                             Value="{Binding EditableCopy.IntValue}" />
+
+        <propertyGrid:IntRow CanValueBeNull="True"
+                             Header="int?"
+                             Value="{Binding EditableCopy.NullableIntValue}" />
+
+        <propertyGrid:DoubleRow Header="double" Value="{Binding EditableCopy.DoubleValue}" />
+
+        <propertyGrid:DoubleRow Header="readonly double"
+                                IsReadOnly="True"
+                                Value="{Binding EditableCopy.DoubleValue, NotifyOnValidationError=True}" />
+
+        <propertyGrid:DoubleRow CanValueBeNull="True"
+                                Header="double?"
+                                Value="{Binding EditableCopy.NullableDoubleValue}" />
+      </propertyGrid:Rows>
+
+      <propertyGrid:Rows Margin="6,0" ValueWidth="60">
+        <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Text="Units" />
+
+        <propertyGrid:LengthRow Header="Length" Value="{Binding EditableCopy.LengthValue}" />
+
+        <propertyGrid:LengthRow Header="readonly length"
+                                IsReadOnly="True"
+                                Value="{Binding EditableCopy.LengthValue}" />
+
+        <propertyGrid:LengthRow CanValueBeNull="True"
+                                Header="Nullable length"
+                                Value="{Binding EditableCopy.NullableLengthValue}" />
+
+        <propertyGrid:SpeedRow Header="Speed (readonly)"
+                               IsReadOnly="True"
+                               Unit="km/h"
+                               Value="{Binding EditableCopy.SpeedValue}" />
+
+        <propertyGrid:SpeedRow Header="Speed"
+                               Unit="km/h"
+                               Value="{Binding EditableCopy.SpeedValue}" />
+
+        <propertyGrid:LengthRow DecimalDigits="2"
+                                Header="Length +-15 mm"
+                                MaxValue="15 mm"
+                                MinValue="-15 mm"
+                                Unit="mm"
+                                Value="{Binding EditableCopy.LengthValue}" />
+      </propertyGrid:Rows>
+    </UniformGrid>
+
+    <Grid Grid.Row="1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Button Grid.Column="0"
+              Command="{Binding SaveCommand}"
+              Content="Save" />
+      <Button Grid.Column="1"
+              Command="{Binding UndoAllCommand}"
+              Content="Undo" />
+    </Grid>
+  </Grid>
+</Window>
+
+

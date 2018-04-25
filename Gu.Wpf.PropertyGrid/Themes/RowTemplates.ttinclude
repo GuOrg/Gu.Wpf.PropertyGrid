@@ -188,12 +188,12 @@
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
             </Trigger>
 
-            <Trigger Property="validationScope:Scope.HasErrors" Value="True">
+            <Trigger Property="Validation.HasError" Value="True">
                 <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
-                    <Condition Property="validationScope:Scope.HasErrors" Value="False" />
+                    <Condition Property="Validation.HasError" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
                 <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />

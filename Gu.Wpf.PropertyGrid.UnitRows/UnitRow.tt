@@ -7,6 +7,7 @@
 namespace Gu.Wpf.PropertyGrid.UnitRows
 {
     using System.Windows;
+    using System.Windows.Controls;
     using System.Windows.Data;
     using Gu.Units;
     using Gu.Wpf.NumericInput;
@@ -108,6 +109,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+        /// <summary>
+        /// Overrirde of OnApplyTemplate
+        /// </summary>
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -124,6 +135,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             var qty = (<#= quantityType.Name #>)quantity;
             var culture = NumericBox.GetCulture(this);
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
+        }
+
+        /// <summary>
+        /// Error eventhandler
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="args">arguments</param>
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
         }
 
         /// <summary>

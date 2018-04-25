@@ -4,7 +4,6 @@ NUGET
     Gu.Units.Wpf (0.10.6.1)
       Gu.Units (0.10.6.1) - restriction: >= net45
     Gu.Wpf.NumericInput (0.5.3)
-    Gu.Wpf.ValidationScope (0.1.5.2)
 
 GROUP Analyzers
 NUGET
