@@ -28,7 +28,7 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
             typeof(NumericRow<T>),
             new PropertyMetadata(null, OnMaxValueChanged));
 
-        private List<DependencyObject> templateChildren = new List<DependencyObject>();
+        private readonly List<DependencyObject> templateChildren = new List<DependencyObject>();
 
         static NumericRow()
         {
@@ -129,6 +129,7 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
                         }
 
                         Validation.AddErrorHandler(dependencyObject, this.OnTemplateChildError);
+                        this.templateChildren.Add(dependencyObject);
                     }
                 }
             }

@@ -9,7 +9,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     using System.Windows.Media;
     using Gu.Units;
     using Gu.Wpf.NumericInput;
-    using JetBrains.Annotations;
 
     /// <summary>
     /// Base class for unit row.
@@ -60,7 +59,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             typeof(UnitRow),
             new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
 
-        protected readonly List<DependencyObject> templateChildren = new List<DependencyObject>();
+        private readonly List<DependencyObject> templateChildren = new List<DependencyObject>();
 
         static UnitRow()
         {
@@ -144,6 +143,12 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             element.SetValue(SymbolFormatProperty, value);
         }
 
+
+        /// <summary>
+        /// To be called from generated codes error eventhandler
+        /// </summary>
+        /// <param name="dependencyObject">error object</param>
+        /// <param name="dependencyProperty">error property</param>
         protected void OnTemplateChildErrorBase(DependencyObject dependencyObject, DependencyProperty dependencyProperty)
         {
             var errors = Validation.GetErrors(dependencyObject);
@@ -158,6 +163,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             }
         }
 
+        /// <summary>
+        /// To be called from generated code to register listening for errors
+        /// </summary>
+        /// <param name="valueBinding">error binding</param>
+        /// <param name="onTemplateChildError">error eventargs</param>
         protected void OnApplyTemplateBase(BindingExpression valueBinding, EventHandler<ValidationErrorEventArgs> onTemplateChildError)
         {
             if (valueBinding != null && this.templateChildren.Any())
@@ -194,8 +204,8 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                         case ShortBox shortBox:
                             bindingExpression = shortBox.GetBindingExpression(ShortBox.ValueProperty);
                             break;
-                        case System.Windows.Controls.TextBox textBox:
-                            bindingExpression = textBox.GetBindingExpression(System.Windows.Controls.TextBox.TextProperty);
+                        case TextBox textBox:
+                            bindingExpression = textBox.GetBindingExpression(TextBox.TextProperty);
                             break;
                     }
 
@@ -205,11 +215,12 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                         {
                             dependencyObject.SetCurrentValue(ForegroundProperty, Brushes.Red);
                             dependencyObject.SetCurrentValue(
-                                System.Windows.Controls.TextBox.TextProperty,
+                                TextBox.TextProperty,
                                 "Binding of value with UpdateSourceTrigger.PropertyChanged does not match the binding for the value by the current controltemplate");
                         }
 
                         Validation.AddErrorHandler(dependencyObject, onTemplateChildError);
+                        this.templateChildren.Add(dependencyObject);
                     }
                 }
             }

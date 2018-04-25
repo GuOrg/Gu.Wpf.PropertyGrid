@@ -109,17 +109,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
-
+        /// <summary>
+        /// Overrirde of OnApplyTemplate
+        /// </summary>
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
             var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
             this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
-        }
-
-        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
-        {
-            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
         }
 
         /// <inheritdoc/>
@@ -138,6 +135,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             var qty = (<#= quantityType.Name #>)quantity;
             var culture = NumericBox.GetCulture(this);
             return qty.ToString(this.Unit, this.SymbolFormat, culture);
+        }
+
+        /// <summary>
+        /// Error eventhandler
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="args">arguments</param>
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
         }
 
         /// <summary>
