@@ -36,7 +36,7 @@
                                 Value="{Binding EditableCopy.StringValue}" />
 
         <propertyGrid:ContentRow Header="Lose focus">
-          <Button Content="Lose" />
+          <Button Content="Lose" x:Name="Lose"/>
         </propertyGrid:ContentRow>
       </propertyGrid:Rows>
 
