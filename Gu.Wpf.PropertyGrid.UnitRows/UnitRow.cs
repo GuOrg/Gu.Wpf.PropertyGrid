@@ -226,7 +226,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             }
         }
 
-
         /// <summary>
         /// Create a suffix sting for the current Unit
         /// </summary>
