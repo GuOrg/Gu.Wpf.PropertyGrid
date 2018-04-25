@@ -1,8 +1,15 @@
-﻿namespace Gu.Wpf.PropertyGrid.UnitRows
+namespace Gu.Wpf.PropertyGrid.UnitRows
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Data;
+    using System.Windows.Media;
     using Gu.Units;
     using Gu.Wpf.NumericInput;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Base class for unit row.
@@ -52,6 +59,8 @@
         public static readonly DependencyProperty CanValueBeNullProperty = NumericBox.CanValueBeNullProperty.AddOwner(
             typeof(UnitRow),
             new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
+
+        protected readonly List<DependencyObject> templateChildren = new List<DependencyObject>();
 
         static UnitRow()
         {
@@ -134,6 +143,78 @@
         {
             element.SetValue(SymbolFormatProperty, value);
         }
+
+        protected void OnTemplateChildErrorBase(DependencyObject dependencyObject, DependencyProperty dependencyProperty)
+        {
+            var errors = Validation.GetErrors(dependencyObject);
+            var valueBinding = BindingOperations.GetBindingExpression(this, dependencyProperty);
+            if (valueBinding != null)
+            {
+                Validation.ClearInvalid(valueBinding);
+                foreach (var validationError in errors)
+                {
+                    Validation.MarkInvalid(valueBinding, validationError);
+                }
+            }
+        }
+
+        protected void OnApplyTemplateBase(BindingExpression valueBinding, EventHandler<ValidationErrorEventArgs> onTemplateChildError)
+        {
+            if (valueBinding != null && this.templateChildren.Any())
+            {
+                Validation.ClearInvalid(valueBinding);
+                foreach (var dependencyObject in this.templateChildren)
+                {
+                    Validation.RemoveErrorHandler(dependencyObject, onTemplateChildError);
+                }
+            }
+
+            if (valueBinding?.ParentBinding != null)
+            {
+                foreach (var dependencyObject in this.RecursiveChildren())
+                {
+                    BindingExpression bindingExpression = null;
+                    switch (dependencyObject)
+                    {
+                        case DecimalBox decimalBox:
+                            bindingExpression = decimalBox.GetBindingExpression(DecimalBox.ValueProperty);
+                            break;
+                        case DoubleBox doubleBox:
+                            bindingExpression = doubleBox.GetBindingExpression(DoubleBox.ValueProperty);
+                            break;
+                        case FloatBox floatBox:
+                            bindingExpression = floatBox.GetBindingExpression(FloatBox.ValueProperty);
+                            break;
+                        case IntBox intBox:
+                            bindingExpression = intBox.GetBindingExpression(IntBox.ValueProperty);
+                            break;
+                        case LongBox longBox:
+                            bindingExpression = longBox.GetBindingExpression(LongBox.ValueProperty);
+                            break;
+                        case ShortBox shortBox:
+                            bindingExpression = shortBox.GetBindingExpression(ShortBox.ValueProperty);
+                            break;
+                        case System.Windows.Controls.TextBox textBox:
+                            bindingExpression = textBox.GetBindingExpression(System.Windows.Controls.TextBox.TextProperty);
+                            break;
+                    }
+
+                    if (bindingExpression != null)
+                    {
+                        if (valueBinding.ParentBinding.UpdateSourceTrigger == UpdateSourceTrigger.PropertyChanged && bindingExpression.ParentBinding.UpdateSourceTrigger != UpdateSourceTrigger.PropertyChanged)
+                        {
+                            dependencyObject.SetCurrentValue(ForegroundProperty, Brushes.Red);
+                            dependencyObject.SetCurrentValue(
+                                System.Windows.Controls.TextBox.TextProperty,
+                                "Binding of value with UpdateSourceTrigger.PropertyChanged does not match the binding for the value by the current controltemplate");
+                        }
+
+                        Validation.AddErrorHandler(dependencyObject, onTemplateChildError);
+                    }
+                }
+            }
+        }
+
 
         /// <summary>
         /// Create a suffix sting for the current Unit

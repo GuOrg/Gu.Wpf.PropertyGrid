@@ -4,6 +4,7 @@
 namespace Gu.Wpf.PropertyGrid.UnitRows
 {
     using System.Windows;
+    using System.Windows.Controls;
     using System.Windows.Data;
     using Gu.Units;
     using Gu.Wpf.NumericInput;
@@ -99,6 +100,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -360,6 +374,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -619,6 +646,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -880,6 +920,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -1139,6 +1192,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -1400,6 +1466,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -1659,6 +1738,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -1920,6 +2012,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -2179,6 +2284,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -2440,6 +2558,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -2699,6 +2830,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -2960,6 +3104,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -3219,6 +3376,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -3480,6 +3650,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -3739,6 +3922,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -4000,6 +4196,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -4259,6 +4468,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -4520,6 +4742,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -4779,6 +5014,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -5040,6 +5288,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -5299,6 +5560,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -5560,6 +5834,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -5819,6 +6106,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -6080,6 +6380,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -6339,6 +6652,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -6600,6 +6926,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -6859,6 +7198,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -7120,6 +7472,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -7379,6 +7744,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -7640,6 +8018,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -7899,6 +8290,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -8160,6 +8564,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -8419,6 +8836,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -8680,6 +9110,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -8939,6 +9382,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -9200,6 +9656,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -9459,6 +9928,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -9720,6 +10202,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -9979,6 +10474,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -10240,6 +10748,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -10499,6 +11020,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -10760,6 +11294,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -11019,6 +11566,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -11280,6 +11840,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -11539,6 +12112,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -11800,6 +12386,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -12059,6 +12658,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -12320,6 +12932,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -12579,6 +13204,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -12840,6 +13478,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -13099,6 +13750,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
@@ -13360,6 +14024,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
+
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
         {
@@ -13619,6 +14296,19 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// Gets the dependency property that corresponds to Value.
         /// </summary>
         protected override DependencyProperty ValueDependencyProperty => ValueProperty;
+
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            this.OnApplyTemplateBase(valueBinding, this.OnTemplateChildError);
+        }
+
+        protected void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
+        }
 
         /// <inheritdoc/>
         string IQuantityFormatter.Format(IQuantity quantity)
