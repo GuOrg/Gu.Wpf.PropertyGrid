@@ -2,6 +2,8 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.Specialized;
+    using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Data;
@@ -25,6 +27,8 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
             typeof(T?),
             typeof(NumericRow<T>),
             new PropertyMetadata(null, OnMaxValueChanged));
+
+        private List<DependencyObject> templateChildren = new List<DependencyObject>();
 
         static NumericRow()
         {
@@ -59,12 +63,32 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
             return value.ToString(string.Empty, culture);
         }
 
+        protected virtual void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            var errors2 = Validation.GetErrors((DependencyObject)args.Source);
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            Validation.ClearInvalid(valueBinding);
+            foreach (var validationError in errors2)
+            {
+                Validation.MarkInvalid(valueBinding, validationError);
+            }
+        }
+
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
 
             var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
-            if (valueBinding?.ParentBinding.UpdateSourceTrigger == UpdateSourceTrigger.PropertyChanged)
+            if (valueBinding != null && this.templateChildren.Any())
+            {
+                Validation.ClearInvalid(valueBinding);
+                foreach (var dependencyObject in this.templateChildren)
+                {
+                    Validation.RemoveErrorHandler(dependencyObject, this.OnTemplateChildError);
+                }
+            }
+
+            if (valueBinding?.ParentBinding != null)
             {
                 foreach (var dependencyObject in this.RecursiveChildren())
                 {
@@ -78,10 +102,10 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
                             bindingExpression = doubleBox.GetBindingExpression(DoubleBox.ValueProperty);
                             break;
                         case FloatBox floatBox:
-                            bindingExpression = floatBox.GetBindingExpression(DecimalBox.ValueProperty);
+                            bindingExpression = floatBox.GetBindingExpression(FloatBox.ValueProperty);
                             break;
                         case IntBox intBox:
-                            bindingExpression = intBox.GetBindingExpression(FloatBox.ValueProperty);
+                            bindingExpression = intBox.GetBindingExpression(IntBox.ValueProperty);
                             break;
                         case LongBox longBox:
                             bindingExpression = longBox.GetBindingExpression(LongBox.ValueProperty);
@@ -94,12 +118,17 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
                             break;
                     }
 
-                    if (bindingExpression != null && bindingExpression.ParentBinding.UpdateSourceTrigger != UpdateSourceTrigger.PropertyChanged)
+                    if (bindingExpression != null)
                     {
-                        dependencyObject.SetCurrentValue(ForegroundProperty, Brushes.Red);
-                        dependencyObject.SetCurrentValue(
-                            System.Windows.Controls.TextBox.TextProperty,
-                            "Binding of value with UpdateSourceTrigger.PropertyChanged does not match the binding for the value by the current controltemplate");
+                        if (valueBinding.ParentBinding.UpdateSourceTrigger == UpdateSourceTrigger.PropertyChanged && bindingExpression.ParentBinding.UpdateSourceTrigger != UpdateSourceTrigger.PropertyChanged)
+                        {
+                            dependencyObject.SetCurrentValue(ForegroundProperty, Brushes.Red);
+                            dependencyObject.SetCurrentValue(
+                                System.Windows.Controls.TextBox.TextProperty,
+                                "Binding of value with UpdateSourceTrigger.PropertyChanged does not match the binding for the value by the current controltemplate");
+                        }
+
+                        Validation.AddErrorHandler(dependencyObject, this.OnTemplateChildError);
                     }
                 }
             }

@@ -57,7 +57,7 @@
 
         <propertyGrid:DoubleRow Header="readonly double"
                                 IsReadOnly="True"
-                                Value="{Binding EditableCopy.DoubleValue}" />
+                                Value="{Binding EditableCopy.DoubleValue, NotifyOnValidationError=True}" />
 
         <propertyGrid:DoubleRow CanValueBeNull="True"
                                 Header="double?"
