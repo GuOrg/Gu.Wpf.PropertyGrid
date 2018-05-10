@@ -238,10 +238,10 @@
     <Analyzer Include="..\packages\analyzers\WpfAnalyzers\analyzers\dotnet\cs\Gu.Roslyn.CodeFixExtensions.dll">
       <Paket>True</Paket>
     </Analyzer>
-    <Analyzer Include="..\packages\analyzers\WpfAnalyzers\analyzers\dotnet\cs\WpfAnalyzers.Analyzers.dll">
+    <Analyzer Include="..\packages\analyzers\WpfAnalyzers\analyzers\dotnet\cs\WpfAnalyzers.CodeFixes.dll">
       <Paket>True</Paket>
     </Analyzer>
-    <Analyzer Include="..\packages\analyzers\WpfAnalyzers\analyzers\dotnet\cs\WpfAnalyzers.CodeFixes.dll">
+    <Analyzer Include="..\packages\analyzers\WpfAnalyzers\analyzers\dotnet\cs\WpfAnalyzers.dll">
       <Paket>True</Paket>
     </Analyzer>
   </ItemGroup>

@@ -61,17 +61,6 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
             return value.ToString(string.Empty, culture);
         }
 
-        protected virtual void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
-        {
-            var errors2 = Validation.GetErrors((DependencyObject)args.Source);
-            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
-            Validation.ClearInvalid(valueBinding);
-            foreach (var validationError in errors2)
-            {
-                Validation.MarkInvalid(valueBinding, validationError);
-            }
-        }
-
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -130,6 +119,17 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
                         this.templateChildren.Add(dependencyObject);
                     }
                 }
+            }
+        }
+
+        protected virtual void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            var errors2 = Validation.GetErrors((DependencyObject)args.Source);
+            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
+            Validation.ClearInvalid(valueBinding);
+            foreach (var validationError in errors2)
+            {
+                Validation.MarkInvalid(valueBinding, validationError);
             }
         }
 

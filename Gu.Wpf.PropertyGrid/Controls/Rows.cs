@@ -1,12 +1,12 @@
-﻿namespace Gu.Wpf.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
     using System.Windows.Controls;
 
     public partial class Rows : ItemsControl
     {
-        public static readonly DependencyProperty UsePropertyNameAsHeaderProperty =
-            PropertyGrid.UsePropertyNameAsHeaderProperty.AddOwner(
+        /// <summary>Identifies the <see cref="UsePropertyNameAsHeader"/> dependency property.</summary>
+        public static readonly DependencyProperty UsePropertyNameAsHeaderProperty = PropertyGrid.UsePropertyNameAsHeaderProperty.AddOwner(
                 typeof(Rows),
                 new FrameworkPropertyMetadata(
                     BooleanBoxes.False,

@@ -5,6 +5,7 @@ namespace Gu.Wpf.PropertyGrid
 
     public abstract class GenericRow<T> : Row
     {
+        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             nameof(Value),
             typeof(T),

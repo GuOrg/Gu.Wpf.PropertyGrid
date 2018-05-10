@@ -41,6 +41,5 @@ namespace Gu.Wpf.PropertyGrid
                 }
             }
         }
-
     }
 }

@@ -143,7 +143,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             element.SetValue(SymbolFormatProperty, value);
         }
 
-
         /// <summary>
         /// To be called from generated codes error eventhandler
         /// </summary>

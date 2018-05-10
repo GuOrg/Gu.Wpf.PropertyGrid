@@ -66,10 +66,3 @@ namespace Gu.Wpf.PropertyGrid.Demo
         }
     }
 }
-
-
-
-namespace Gu.Wpf.PropertyGrid.Demo
-{
-}
-
