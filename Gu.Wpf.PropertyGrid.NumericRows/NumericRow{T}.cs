@@ -2,14 +2,12 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
 {
     using System;
     using System.Collections.Generic;
-    using System.Collections.Specialized;
     using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Data;
     using System.Windows.Media;
     using Gu.Wpf.NumericInput;
-    using Gu.Wpf.NumericInput.Select;
 
     public abstract class NumericRow<T> : GenericRow<T?>, INumericFormatter
         where T : struct, IComparable<T>

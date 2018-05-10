@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
     using System.Collections.Generic;
     using System.Windows;
@@ -74,7 +74,7 @@
         /// <param name="element">Grid to read RowDefinitions property from.</param>
         /// <returns>RowDefinitions property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(Grid))]
+        [AttachedPropertyBrowsableForType(typeof(System.Windows.Controls.Grid))]
         public static RowDefinitions GetRowDefinitions(System.Windows.Controls.Grid element)
         {
             return (RowDefinitions)element.GetValue(RowDefinitionsProperty);

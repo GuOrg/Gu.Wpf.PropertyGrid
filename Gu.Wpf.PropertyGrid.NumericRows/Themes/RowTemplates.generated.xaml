@@ -13,13 +13,13 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions> 
+                </Grid.ColumnDefinitions>
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-    
+
                 <numeric:IntBox x:Name="PART_Value"
                                 Grid.Row="0"
                                 Grid.Column="1"
@@ -35,9 +35,9 @@
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-    
+
             </Grid>
-        </Border> 
+        </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -59,27 +59,27 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions> 
+                </Grid.ColumnDefinitions>
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-    
+
                 <Border Grid.Row="0"
                         Grid.Column="1"
+                        Margin="0,0,0,-1"
                         BorderBrush="{Binding Foreground,
                                               ElementName=PART_Info}"
-                        Margin="0,0,0,-1"
                         BorderThickness="0,0,0,1">
                     <numeric:IntBox x:Name="PART_Value"
                                     CanValueBeNull="{TemplateBinding CanValueBeNull}"
                                     IsReadOnly="{TemplateBinding IsReadOnly}"
                                     MaxValue="{TemplateBinding MaxValue}"
                                     MinValue="{TemplateBinding MinValue}"
+                                    Validation.ErrorTemplate="{x:Null}"
                                     Value="{Binding Value,
-                                                    RelativeSource={RelativeSource TemplatedParent}}"
-                                    Validation.ErrorTemplate="{x:Null}" />
+                                                    RelativeSource={RelativeSource TemplatedParent}}" />
 
                 </Border>
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -87,7 +87,7 @@
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-    
+
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
@@ -100,18 +100,18 @@
                     </propertyGrid:InfoBlock.Style>
                 </propertyGrid:InfoBlock>
             </Grid>
-        </Border> 
+        </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
             </Trigger>
 
-      <Trigger Property="Validation.HasError" Value="True">
+            <Trigger Property="Validation.HasError" Value="True">
                 <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
-          <Condition Property="Validation.HasError" Value="False" />
+                    <Condition Property="Validation.HasError" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
                 <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
@@ -129,13 +129,13 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions> 
+                </Grid.ColumnDefinitions>
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-    
+
                 <numeric:DoubleBox x:Name="PART_Value"
                                    Grid.Row="0"
                                    Grid.Column="1"
@@ -145,16 +145,16 @@
                                    MaxValue="{TemplateBinding MaxValue}"
                                    MinValue="{TemplateBinding MinValue}"
                                    Value="{Binding Value,
-                                                RelativeSource={RelativeSource TemplatedParent}}" />
+                                                   RelativeSource={RelativeSource TemplatedParent}}" />
 
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-    
+
             </Grid>
-        </Border> 
+        </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
@@ -176,18 +176,18 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Header" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
-                </Grid.ColumnDefinitions> 
+                </Grid.ColumnDefinitions>
                 <propertyGrid:HeaderBlock x:Name="PART_Header"
                                           Grid.Row="0"
                                           Grid.Column="0"
                                           Style="{TemplateBinding HeaderStyle}"
                                           Text="{TemplateBinding Header}" />
-    
+
                 <Border Grid.Row="0"
                         Grid.Column="1"
+                        Margin="0,0,0,-1"
                         BorderBrush="{Binding Foreground,
                                               ElementName=PART_Info}"
-                        Margin="0,0,0,-1"
                         BorderThickness="0,0,0,1">
                     <numeric:DoubleBox x:Name="PART_Value"
                                        CanValueBeNull="{TemplateBinding CanValueBeNull}"
@@ -195,9 +195,9 @@
                                        IsReadOnly="{TemplateBinding IsReadOnly}"
                                        MaxValue="{TemplateBinding MaxValue}"
                                        MinValue="{TemplateBinding MinValue}"
+                                       Validation.ErrorTemplate="{x:Null}"
                                        Value="{Binding Value,
-                                                    RelativeSource={RelativeSource TemplatedParent}}"
-                                       Validation.ErrorTemplate="{x:Null}" />
+                                                       RelativeSource={RelativeSource TemplatedParent}}" />
 
                 </Border>
                 <propertyGrid:SuffixBlock x:Name="PART_Suffix"
@@ -205,7 +205,7 @@
                                           Grid.Column="2"
                                           Style="{TemplateBinding SuffixStyle}"
                                           Text="{TemplateBinding Suffix}" />
-    
+
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
                                         Grid.Row="1"
@@ -218,18 +218,18 @@
                     </propertyGrid:InfoBlock.Style>
                 </propertyGrid:InfoBlock>
             </Grid>
-        </Border> 
+        </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="IsReadOnly" Value="True">
                 <Setter TargetName="PART_Value" Property="Focusable" Value="False" />
             </Trigger>
 
-      <Trigger Property="Validation.HasError" Value="True">
+            <Trigger Property="Validation.HasError" Value="True">
                 <Setter TargetName="PART_Info" Property="Style" Value="{Binding ErrorStyle, RelativeSource={RelativeSource TemplatedParent}}" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
-          <Condition Property="Validation.HasError" Value="False" />
+                    <Condition Property="Validation.HasError" Value="False" />
                     <Condition Property="IsDirty" Value="True" />
                 </MultiTrigger.Conditions>
                 <Setter TargetName="PART_Info" Property="Style" Value="{Binding OldValueStyle, RelativeSource={RelativeSource TemplatedParent}}" />
