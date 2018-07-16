@@ -7,7 +7,7 @@ namespace Gu.Wpf.PropertyGrid.Demo
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
-            var canConvert = value != null && int.TryParse(value.ToString(), out var intVal);
+            var canConvert = value != null && int.TryParse(value.ToString(), out var _);
             return canConvert ? new ValidationResult(isValid: true, errorContent: null) : new ValidationResult(isValid: false, errorContent: $"Input should be type of Int32");
         }
     }
