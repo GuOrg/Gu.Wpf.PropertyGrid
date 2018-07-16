@@ -8,6 +8,7 @@ namespace Gu.Wpf.PropertyGrid
 
     public class ColumnDefinitionsConverter : TypeConverter
     {
+        /// <inheritdoc />
         public override bool CanConvertFrom(
             ITypeDescriptorContext typeDescriptorContext,
             Type sourceType)
@@ -15,6 +16,7 @@ namespace Gu.Wpf.PropertyGrid
             return sourceType == typeof(string);
         }
 
+        /// <inheritdoc />
         public override bool CanConvertTo(
             ITypeDescriptorContext typeDescriptorContext,
             Type destinationType)
@@ -22,6 +24,7 @@ namespace Gu.Wpf.PropertyGrid
             return false;
         }
 
+        /// <inheritdoc />
         public override object ConvertFrom(
             ITypeDescriptorContext typeDescriptorContext,
             CultureInfo cultureInfo,
@@ -37,6 +40,7 @@ namespace Gu.Wpf.PropertyGrid
             return base.ConvertFrom(typeDescriptorContext, cultureInfo, source);
         }
 
+        /// <inheritdoc />
         [SecurityCritical]
         public override object ConvertTo(
             ITypeDescriptorContext typeDescriptorContext,

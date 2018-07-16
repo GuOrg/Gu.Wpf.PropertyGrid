@@ -12,16 +12,6 @@
                                           Text=""{TemplateBinding Header}"" />
     ";
 
-        private const string TextBoxHeaderXaml = 
-    @"                <TextBox x:Name=""PART_Header""
-                                 Grid.Row=""0""
-                                 Grid.Column=""0""
-                                 Focusable=""False""
-                                 IsReadOnly=""True""
-                                 Style=""{TemplateBinding HeaderStyle}""
-                                 Text=""{TemplateBinding Header}"" />
-    ";
-
         private const string TextBlockSuffixXaml = 
     @"                <propertyGrid:SuffixBlock x:Name=""PART_Suffix""
                                           Grid.Row=""0""
@@ -29,23 +19,6 @@
                                           Style=""{TemplateBinding SuffixStyle}""
                                           Text=""{TemplateBinding Suffix}"" />
     ";
-
-        private const string TextBoxSuffixXaml = 
-    @"                        <TextBox x:Name=""PART_Suffix""
-                                 Grid.Row=""0""
-                                 Grid.Column=""2""
-                                 Focusable=""False""
-                                 IsReadOnly=""True""
-                                 Style=""{TemplateBinding SuffixStyle}""
-                                 Text=""{TemplateBinding Suffix}"" />
-    ";
-
-        private const string InfoPresenterXaml = 
-    @"                        <propertyGrid:RowInfoPresenter x:Name=""InfoPresenter""
-                                                       Grid.Row=""1""
-                                                       Grid.Column=""0""
-                                                       Grid.ColumnSpan=""2""
-                                                       Style=""{TemplateBinding InfoPresenterStyle}"" />";
 
     private const string InfoTemplate =
         @"            <ControlTemplate TargetType=""{{x:Type {0}}}"">

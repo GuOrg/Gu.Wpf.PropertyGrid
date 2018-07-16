@@ -71,6 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <AdditionalFiles Include="..\stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
     <None Include="Gu.Wpf.PropertyGrid.NumericRows.ruleset" />
     <None Include="paket.references" />
     <None Include="paket.template" />

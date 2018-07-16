@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
     using System;
     using System.ComponentModel;
@@ -18,7 +18,7 @@
             new PropertyMetadata(
                 default(string),
                 OnSourceChanged),
-            SourceValidateValue);
+            ValidateSource);
 
         private static readonly PropertyPaths HeaderPropertyPaths = new PropertyPaths("Header", SharedSizeGroups.HeaderColumn);
         private static readonly PropertyPaths ValuePropertyPaths = new PropertyPaths("Value", SharedSizeGroups.ValueColumn);
@@ -81,17 +81,17 @@
 
             var paths = GetPropertyPaths(source);
 
-            d.Bind(System.Windows.Controls.ColumnDefinition.WidthProperty)
-             .OneWayTo(parent, paths.WidthPath);
+            _ = d.Bind(System.Windows.Controls.ColumnDefinition.WidthProperty)
+                 .OneWayTo(parent, paths.WidthPath);
 
-            d.Bind(System.Windows.Controls.ColumnDefinition.MaxWidthProperty)
-             .OneWayTo(parent, paths.MaxWidthPath);
+            _ = d.Bind(System.Windows.Controls.ColumnDefinition.MaxWidthProperty)
+                 .OneWayTo(parent, paths.MaxWidthPath);
 
-            d.Bind(System.Windows.Controls.ColumnDefinition.MinWidthProperty)
-             .OneWayTo(parent, paths.MinWidthPath);
+            _ = d.Bind(System.Windows.Controls.ColumnDefinition.MinWidthProperty)
+                 .OneWayTo(parent, paths.MinWidthPath);
 
-            d.Bind(System.Windows.Controls.DefinitionBase.SharedSizeGroupProperty)
-             .OneWayTo(parent, paths.WidthPath, paths.SharedSizeGroupConverter);
+            _ = d.Bind(System.Windows.Controls.DefinitionBase.SharedSizeGroupProperty)
+                 .OneWayTo(parent, paths.WidthPath, paths.SharedSizeGroupConverter);
         }
 
         private static Control GetParentOrDefault<T>(System.Windows.Controls.Grid grid)
@@ -117,7 +117,7 @@
             }
         }
 
-        private static bool SourceValidateValue(object value)
+        private static bool ValidateSource(object value)
         {
             if (value == null)
             {
@@ -169,18 +169,12 @@
 
                 public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
                 {
-                    var gridLength = (GridLength)value;
-                    if (gridLength == GridLength.Auto)
-                    {
-                        return this.groupName;
-                    }
-
-                    return null;
+                    return (GridLength)value == GridLength.Auto ? this.groupName : null;
                 }
 
-                public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+                object IValueConverter.ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
                 {
-                    throw new NotSupportedException();
+                    throw new NotSupportedException($"{nameof(SharedSizeGroupConverter_)} can only be used in OneWay bindings");
                 }
             }
         }
