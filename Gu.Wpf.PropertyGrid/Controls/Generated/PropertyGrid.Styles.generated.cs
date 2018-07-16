@@ -5,6 +5,7 @@ namespace Gu.Wpf.PropertyGrid
 
     public static partial class PropertyGrid
     {
+        /// <summary>Identifies the HeaderStyle attached dependency property.</summary>
         public static readonly DependencyProperty HeaderStyleProperty = DependencyProperty.RegisterAttached(
             "HeaderStyle",
             typeof(Style),
@@ -13,6 +14,7 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ValueStyle attached dependency property.</summary>
         public static readonly DependencyProperty ValueStyleProperty = DependencyProperty.RegisterAttached(
             "ValueStyle",
             typeof(Style),
@@ -21,6 +23,7 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the SuffixStyle attached dependency property.</summary>
         public static readonly DependencyProperty SuffixStyleProperty = DependencyProperty.RegisterAttached(
             "SuffixStyle",
             typeof(Style),
@@ -29,6 +32,7 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the OldValueStyle attached dependency property.</summary>
         public static readonly DependencyProperty OldValueStyleProperty = DependencyProperty.RegisterAttached(
             "OldValueStyle",
             typeof(Style),
@@ -37,6 +41,7 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ErrorStyle attached dependency property.</summary>
         public static readonly DependencyProperty ErrorStyleProperty = DependencyProperty.RegisterAttached(
             "ErrorStyle",
             typeof(Style),
@@ -158,60 +163,80 @@ namespace Gu.Wpf.PropertyGrid
 
     public partial class Rows
     {
+        /// <summary>Identifies the HeaderStyle dependency property.</summary>
         public static readonly DependencyProperty HeaderStyleProperty = PropertyGrid.HeaderStyleProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ValueStyle dependency property.</summary>
         public static readonly DependencyProperty ValueStyleProperty = PropertyGrid.ValueStyleProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the SuffixStyle dependency property.</summary>
         public static readonly DependencyProperty SuffixStyleProperty = PropertyGrid.SuffixStyleProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the OldValueStyle dependency property.</summary>
         public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the ErrorStyle dependency property.</summary>
         public static readonly DependencyProperty ErrorStyleProperty = PropertyGrid.ErrorStyleProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>
+        /// Gets or sets the HeaderStyle.
+        /// </summary>
         public Style HeaderStyle
         {
             get { return (Style)this.GetValue(HeaderStyleProperty); }
             set { this.SetValue(HeaderStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the ValueStyle.
+        /// </summary>
         public Style ValueStyle
         {
             get { return (Style)this.GetValue(ValueStyleProperty); }
             set { this.SetValue(ValueStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the SuffixStyle.
+        /// </summary>
         public Style SuffixStyle
         {
             get { return (Style)this.GetValue(SuffixStyleProperty); }
             set { this.SetValue(SuffixStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the OldValueStyle.
+        /// </summary>
         public Style OldValueStyle
         {
             get { return (Style)this.GetValue(OldValueStyleProperty); }
             set { this.SetValue(OldValueStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the ErrorStyle.
+        /// </summary>
         public Style ErrorStyle
         {
             get { return (Style)this.GetValue(ErrorStyleProperty); }
@@ -229,6 +254,7 @@ namespace Gu.Wpf.PropertyGrid
                default(RowControlTemplateSelector),
                OnPartStyleChanged));
 
+        /// <summary>Identifies the HeaderStyle dependency property.</summary>
         public static readonly DependencyProperty HeaderStyleProperty = PropertyGrid.HeaderStyleProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
@@ -236,6 +262,7 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
 
+        /// <summary>Identifies the ValueStyle dependency property.</summary>
         public static readonly DependencyProperty ValueStyleProperty = PropertyGrid.ValueStyleProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
@@ -243,6 +270,7 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
 
+        /// <summary>Identifies the SuffixStyle dependency property.</summary>
         public static readonly DependencyProperty SuffixStyleProperty = PropertyGrid.SuffixStyleProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
@@ -250,6 +278,7 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
 
+        /// <summary>Identifies the OldValueStyle dependency property.</summary>
         public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
@@ -257,6 +286,7 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
 
+        /// <summary>Identifies the ErrorStyle dependency property.</summary>
         public static readonly DependencyProperty ErrorStyleProperty = PropertyGrid.ErrorStyleProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
@@ -270,30 +300,45 @@ namespace Gu.Wpf.PropertyGrid
             set { this.SetValue(ControlTemplateSelectorProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the HeaderStyle.
+        /// </summary>
         public Style HeaderStyle
         {
             get { return (Style)this.GetValue(HeaderStyleProperty); }
             set { this.SetValue(HeaderStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the ValueStyle.
+        /// </summary>
         public Style ValueStyle
         {
             get { return (Style)this.GetValue(ValueStyleProperty); }
             set { this.SetValue(ValueStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the SuffixStyle.
+        /// </summary>
         public Style SuffixStyle
         {
             get { return (Style)this.GetValue(SuffixStyleProperty); }
             set { this.SetValue(SuffixStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the OldValueStyle.
+        /// </summary>
         public Style OldValueStyle
         {
             get { return (Style)this.GetValue(OldValueStyleProperty); }
             set { this.SetValue(OldValueStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the ErrorStyle.
+        /// </summary>
         public Style ErrorStyle
         {
             get { return (Style)this.GetValue(ErrorStyleProperty); }
@@ -316,6 +361,7 @@ namespace Gu.Wpf.PropertyGrid
                default(RowControlTemplateSelector),
                OnPartStyleChanged));
 
+        /// <summary>Identifies the HeaderStyle dependency property.</summary>
         public static readonly DependencyProperty HeaderStyleProperty = PropertyGrid.HeaderStyleProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
@@ -323,6 +369,7 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
 
+        /// <summary>Identifies the ValueStyle dependency property.</summary>
         public static readonly DependencyProperty ValueStyleProperty = PropertyGrid.ValueStyleProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
@@ -330,6 +377,7 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
 
+        /// <summary>Identifies the SuffixStyle dependency property.</summary>
         public static readonly DependencyProperty SuffixStyleProperty = PropertyGrid.SuffixStyleProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
@@ -337,6 +385,7 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
 
+        /// <summary>Identifies the OldValueStyle dependency property.</summary>
         public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
@@ -344,6 +393,7 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
 
+        /// <summary>Identifies the ErrorStyle dependency property.</summary>
         public static readonly DependencyProperty ErrorStyleProperty = PropertyGrid.ErrorStyleProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
@@ -357,30 +407,45 @@ namespace Gu.Wpf.PropertyGrid
             set { this.SetValue(ControlTemplateSelectorProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the HeaderStyle.
+        /// </summary>
         public Style HeaderStyle
         {
             get { return (Style)this.GetValue(HeaderStyleProperty); }
             set { this.SetValue(HeaderStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the ValueStyle.
+        /// </summary>
         public Style ValueStyle
         {
             get { return (Style)this.GetValue(ValueStyleProperty); }
             set { this.SetValue(ValueStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the SuffixStyle.
+        /// </summary>
         public Style SuffixStyle
         {
             get { return (Style)this.GetValue(SuffixStyleProperty); }
             set { this.SetValue(SuffixStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the OldValueStyle.
+        /// </summary>
         public Style OldValueStyle
         {
             get { return (Style)this.GetValue(OldValueStyleProperty); }
             set { this.SetValue(OldValueStyleProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the ErrorStyle.
+        /// </summary>
         public Style ErrorStyle
         {
             get { return (Style)this.GetValue(ErrorStyleProperty); }

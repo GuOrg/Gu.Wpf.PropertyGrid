@@ -22,6 +22,7 @@ namespace Gu.Wpf.PropertyGrid
     foreach(var styleName in styles)
     {
         #>
+        /// <summary>Identifies the <#= styleName #> attached dependency property.</summary>
         public static readonly DependencyProperty <#= styleName #>Property = DependencyProperty.RegisterAttached(
             "<#= styleName #>",
             typeof(Style),
@@ -69,6 +70,7 @@ namespace Gu.Wpf.PropertyGrid
     foreach(var styleName in styles)
     {
              #>
+        /// <summary>Identifies the <#= styleName #> dependency property.</summary>
         public static readonly DependencyProperty <#= styleName #>Property = PropertyGrid.<#= styleName #>Property.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
@@ -81,6 +83,9 @@ namespace Gu.Wpf.PropertyGrid
     foreach(var styleName in styles)
     {
              #>
+        /// <summary>
+        /// Gets or sets the <#= styleName #>.
+        /// </summary>
         public Style <#= styleName #>
         {
             get { return (Style)this.GetValue(<#= styleName #>Property); }
@@ -115,6 +120,7 @@ namespace Gu.Wpf.PropertyGrid
         foreach(var styleName in styles)
         {
              #>
+        /// <summary>Identifies the <#= styleName #> dependency property.</summary>
         public static readonly DependencyProperty <#= styleName #>Property = PropertyGrid.<#= styleName #>Property.AddOwner(
             typeof(<#= controlName.Name #>),
             new FrameworkPropertyMetadata(
@@ -135,6 +141,9 @@ namespace Gu.Wpf.PropertyGrid
         foreach(var styleName in styles)
         {
              #>
+        /// <summary>
+        /// Gets or sets the <#= styleName #>.
+        /// </summary>
         public Style <#= styleName #>
         {
             get { return (Style)this.GetValue(<#= styleName #>Property); }

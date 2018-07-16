@@ -5,6 +5,7 @@ namespace Gu.Wpf.PropertyGrid
 
     public static partial class PropertyGrid
     {
+        /// <summary>Identifies the IsReadOnly attached dependency property.</summary>
         public static readonly DependencyProperty IsReadOnlyProperty = DependencyProperty.RegisterAttached(
             "IsReadOnly",
             typeof(bool),
@@ -13,6 +14,7 @@ namespace Gu.Wpf.PropertyGrid
                 false,
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the OldValueStringFormat attached dependency property.</summary>
         public static readonly DependencyProperty OldValueStringFormatProperty = DependencyProperty.RegisterAttached(
             "OldValueStringFormat",
             typeof(string),
@@ -21,6 +23,7 @@ namespace Gu.Wpf.PropertyGrid
                 "Old value: {0}",
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the OldDataContext attached dependency property.</summary>
         public static readonly DependencyProperty OldDataContextProperty = DependencyProperty.RegisterAttached(
             "OldDataContext",
             typeof(object),
@@ -98,18 +101,21 @@ namespace Gu.Wpf.PropertyGrid
 
     public abstract partial class Row
     {
+        /// <summary>Identifies the IsReadOnly dependency property.</summary>
         public static readonly DependencyProperty IsReadOnlyProperty = PropertyGrid.IsReadOnlyProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
                 false,
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the OldValueStringFormat dependency property.</summary>
         public static readonly DependencyProperty OldValueStringFormatProperty = PropertyGrid.OldValueStringFormatProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
                 "Old value: {0}",
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the OldDataContext dependency property.</summary>
         public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
@@ -117,18 +123,27 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnOldDataContextChanged));
 
+        /// <summary>
+        /// Gets or sets the IsReadOnly.
+        /// </summary>
         public bool IsReadOnly
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
             set { this.SetValue(IsReadOnlyProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the OldValueStringFormat.
+        /// </summary>
         public string OldValueStringFormat
         {
             get { return (string)this.GetValue(OldValueStringFormatProperty); }
             set { this.SetValue(OldValueStringFormatProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the OldDataContext.
+        /// </summary>
         public object OldDataContext
         {
             get { return (object)this.GetValue(OldDataContextProperty); }
@@ -138,18 +153,21 @@ namespace Gu.Wpf.PropertyGrid
 
     public partial class Rows
     {
+        /// <summary>Identifies the IsReadOnly dependency property.</summary>
         public static readonly DependencyProperty IsReadOnlyProperty = PropertyGrid.IsReadOnlyProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 false,
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the OldValueStringFormat dependency property.</summary>
         public static readonly DependencyProperty OldValueStringFormatProperty = PropertyGrid.OldValueStringFormatProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 "Old value: {0}",
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the OldDataContext dependency property.</summary>
         public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
@@ -157,18 +175,27 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnOldDataContextChanged));
 
+        /// <summary>
+        /// Gets or sets the IsReadOnly.
+        /// </summary>
         public bool IsReadOnly
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
             set { this.SetValue(IsReadOnlyProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the OldValueStringFormat.
+        /// </summary>
         public string OldValueStringFormat
         {
             get { return (string)this.GetValue(OldValueStringFormatProperty); }
             set { this.SetValue(OldValueStringFormatProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the OldDataContext.
+        /// </summary>
         public object OldDataContext
         {
             get { return (object)this.GetValue(OldDataContextProperty); }
@@ -178,18 +205,21 @@ namespace Gu.Wpf.PropertyGrid
 
     public partial class ContentRow
     {
+        /// <summary>Identifies the IsReadOnly dependency property.</summary>
         public static readonly DependencyProperty IsReadOnlyProperty = PropertyGrid.IsReadOnlyProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
                 false,
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the OldValueStringFormat dependency property.</summary>
         public static readonly DependencyProperty OldValueStringFormatProperty = PropertyGrid.OldValueStringFormatProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
                 "Old value: {0}",
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the OldDataContext dependency property.</summary>
         public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
             typeof(ContentRow),
             new FrameworkPropertyMetadata(
@@ -197,18 +227,27 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnOldDataContextChanged));
 
+        /// <summary>
+        /// Gets or sets the IsReadOnly.
+        /// </summary>
         public bool IsReadOnly
         {
             get { return (bool)this.GetValue(IsReadOnlyProperty); }
             set { this.SetValue(IsReadOnlyProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the OldValueStringFormat.
+        /// </summary>
         public string OldValueStringFormat
         {
             get { return (string)this.GetValue(OldValueStringFormatProperty); }
             set { this.SetValue(OldValueStringFormatProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the OldDataContext.
+        /// </summary>
         public object OldDataContext
         {
             get { return (object)this.GetValue(OldDataContextProperty); }

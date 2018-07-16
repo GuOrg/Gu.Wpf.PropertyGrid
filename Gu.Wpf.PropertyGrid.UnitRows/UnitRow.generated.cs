@@ -70,7 +70,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Acceleration? MinValue
         {
@@ -79,7 +81,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Acceleration? MaxValue
         {
@@ -350,7 +354,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public AmountOfSubstance? MinValue
         {
@@ -359,7 +365,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public AmountOfSubstance? MaxValue
         {
@@ -630,7 +638,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Angle? MinValue
         {
@@ -639,7 +649,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Angle? MaxValue
         {
@@ -910,7 +922,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public AnglePerUnitless? MinValue
         {
@@ -919,7 +933,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public AnglePerUnitless? MaxValue
         {
@@ -1190,7 +1206,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public AngularAcceleration? MinValue
         {
@@ -1199,7 +1217,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public AngularAcceleration? MaxValue
         {
@@ -1470,7 +1490,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public AngularJerk? MinValue
         {
@@ -1479,7 +1501,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public AngularJerk? MaxValue
         {
@@ -1750,7 +1774,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public AngularSpeed? MinValue
         {
@@ -1759,7 +1785,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public AngularSpeed? MaxValue
         {
@@ -2030,7 +2058,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Area? MinValue
         {
@@ -2039,7 +2069,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Area? MaxValue
         {
@@ -2310,7 +2342,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public AreaDensity? MinValue
         {
@@ -2319,7 +2353,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public AreaDensity? MaxValue
         {
@@ -2590,7 +2626,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Capacitance? MinValue
         {
@@ -2599,7 +2637,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Capacitance? MaxValue
         {
@@ -2870,7 +2910,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public CatalyticActivity? MinValue
         {
@@ -2879,7 +2921,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public CatalyticActivity? MaxValue
         {
@@ -3150,7 +3194,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Conductivity? MinValue
         {
@@ -3159,7 +3205,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Conductivity? MaxValue
         {
@@ -3430,7 +3478,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Current? MinValue
         {
@@ -3439,7 +3489,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Current? MaxValue
         {
@@ -3710,7 +3762,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Data? MinValue
         {
@@ -3719,7 +3773,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Data? MaxValue
         {
@@ -3990,7 +4046,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Density? MinValue
         {
@@ -3999,7 +4057,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Density? MaxValue
         {
@@ -4270,7 +4330,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public ElectricalConductance? MinValue
         {
@@ -4279,7 +4341,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public ElectricalConductance? MaxValue
         {
@@ -4550,7 +4614,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public ElectricCharge? MinValue
         {
@@ -4559,7 +4625,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public ElectricCharge? MaxValue
         {
@@ -4830,7 +4898,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Energy? MinValue
         {
@@ -4839,7 +4909,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Energy? MaxValue
         {
@@ -5110,7 +5182,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Flexibility? MinValue
         {
@@ -5119,7 +5193,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Flexibility? MaxValue
         {
@@ -5390,7 +5466,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Force? MinValue
         {
@@ -5399,7 +5477,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Force? MaxValue
         {
@@ -5670,7 +5750,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public ForcePerUnitless? MinValue
         {
@@ -5679,7 +5761,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public ForcePerUnitless? MaxValue
         {
@@ -5950,7 +6034,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Frequency? MinValue
         {
@@ -5959,7 +6045,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Frequency? MaxValue
         {
@@ -6230,7 +6318,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Illuminance? MinValue
         {
@@ -6239,7 +6329,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Illuminance? MaxValue
         {
@@ -6510,7 +6602,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Inductance? MinValue
         {
@@ -6519,7 +6613,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Inductance? MaxValue
         {
@@ -6790,7 +6886,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Jerk? MinValue
         {
@@ -6799,7 +6897,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Jerk? MaxValue
         {
@@ -7070,7 +7170,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public KinematicViscosity? MinValue
         {
@@ -7079,7 +7181,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public KinematicViscosity? MaxValue
         {
@@ -7350,7 +7454,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Length? MinValue
         {
@@ -7359,7 +7465,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Length? MaxValue
         {
@@ -7630,7 +7738,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public LengthPerUnitless? MinValue
         {
@@ -7639,7 +7749,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public LengthPerUnitless? MaxValue
         {
@@ -7910,7 +8022,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public LuminousFlux? MinValue
         {
@@ -7919,7 +8033,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public LuminousFlux? MaxValue
         {
@@ -8190,7 +8306,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public LuminousIntensity? MinValue
         {
@@ -8199,7 +8317,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public LuminousIntensity? MaxValue
         {
@@ -8470,7 +8590,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public MagneticFieldStrength? MinValue
         {
@@ -8479,7 +8601,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public MagneticFieldStrength? MaxValue
         {
@@ -8750,7 +8874,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public MagneticFlux? MinValue
         {
@@ -8759,7 +8885,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public MagneticFlux? MaxValue
         {
@@ -9030,7 +9158,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Mass? MinValue
         {
@@ -9039,7 +9169,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Mass? MaxValue
         {
@@ -9310,7 +9442,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public MassFlow? MinValue
         {
@@ -9319,7 +9453,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public MassFlow? MaxValue
         {
@@ -9590,7 +9726,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public MolarHeatCapacity? MinValue
         {
@@ -9599,7 +9737,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public MolarHeatCapacity? MaxValue
         {
@@ -9870,7 +10010,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public MolarMass? MinValue
         {
@@ -9879,7 +10021,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public MolarMass? MaxValue
         {
@@ -10150,7 +10294,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Momentum? MinValue
         {
@@ -10159,7 +10305,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Momentum? MaxValue
         {
@@ -10430,7 +10578,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Power? MinValue
         {
@@ -10439,7 +10589,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Power? MaxValue
         {
@@ -10710,7 +10862,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Pressure? MinValue
         {
@@ -10719,7 +10873,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Pressure? MaxValue
         {
@@ -10990,7 +11146,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Resistance? MinValue
         {
@@ -10999,7 +11157,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Resistance? MaxValue
         {
@@ -11270,7 +11430,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public SolidAngle? MinValue
         {
@@ -11279,7 +11441,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public SolidAngle? MaxValue
         {
@@ -11550,7 +11714,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public SpecificEnergy? MinValue
         {
@@ -11559,7 +11725,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public SpecificEnergy? MaxValue
         {
@@ -11830,7 +11998,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public SpecificVolume? MinValue
         {
@@ -11839,7 +12009,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public SpecificVolume? MaxValue
         {
@@ -12110,7 +12282,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Speed? MinValue
         {
@@ -12119,7 +12293,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Speed? MaxValue
         {
@@ -12390,7 +12566,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Stiffness? MinValue
         {
@@ -12399,7 +12577,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Stiffness? MaxValue
         {
@@ -12670,7 +12850,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Temperature? MinValue
         {
@@ -12679,7 +12861,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Temperature? MaxValue
         {
@@ -12950,7 +13134,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Time? MinValue
         {
@@ -12959,7 +13145,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Time? MaxValue
         {
@@ -13230,7 +13418,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Torque? MinValue
         {
@@ -13239,7 +13429,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Torque? MaxValue
         {
@@ -13510,7 +13702,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Unitless? MinValue
         {
@@ -13519,7 +13713,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Unitless? MaxValue
         {
@@ -13790,7 +13986,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Voltage? MinValue
         {
@@ -13799,7 +13997,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Voltage? MaxValue
         {
@@ -14070,7 +14270,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Volume? MinValue
         {
@@ -14079,7 +14281,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Volume? MaxValue
         {
@@ -14350,7 +14554,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public VolumetricFlow? MinValue
         {
@@ -14359,7 +14565,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public VolumetricFlow? MaxValue
         {
@@ -14630,7 +14838,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public Wavenumber? MinValue
         {
@@ -14639,7 +14849,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public Wavenumber? MaxValue
         {

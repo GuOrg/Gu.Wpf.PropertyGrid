@@ -21,6 +21,7 @@ namespace Gu.Wpf.PropertyGrid
     foreach(var propertyMetaData in propertyMetaDatas)
     {
         #>
+        /// <summary>Identifies the <#= propertyMetaData.Name #> attached dependency property.</summary>
         public static readonly DependencyProperty <#= propertyMetaData.Name #>Property = DependencyProperty.RegisterAttached(
             "<#= propertyMetaData.Name #>",
             typeof(<#= propertyMetaData.Type #>),
@@ -79,6 +80,7 @@ namespace Gu.Wpf.PropertyGrid
         foreach(var propertyMetaData in propertyMetaDatas)
         {
              #>
+        /// <summary>Identifies the <#= propertyMetaData.Name #> dependency property.</summary>
         public static readonly DependencyProperty <#= propertyMetaData.Name #>Property = PropertyGrid.<#= propertyMetaData.Name #>Property.AddOwner(
             typeof(<#= controlName.Name #>),
             new FrameworkPropertyMetadata(
@@ -91,6 +93,9 @@ namespace Gu.Wpf.PropertyGrid
         foreach(var propertyMetaData in propertyMetaDatas)
         {
              #>
+        /// <summary>
+        /// Gets or sets the <#= propertyMetaData.Name #>.
+        /// </summary>
         public <#= propertyMetaData.Type #> <#= propertyMetaData.Name #>
         {
             get { return (<#= propertyMetaData.Type #>)this.GetValue(<#= propertyMetaData.Name #>Property); }

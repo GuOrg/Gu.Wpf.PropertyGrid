@@ -1,10 +1,12 @@
-﻿#pragma warning disable WPF1011
+#pragma warning disable WPF1011
 namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
     using System.Windows.Controls;
 
+#pragma warning disable INPC001 // Implement INotifyPropertyChanged.
     public class RowControlTemplateSelector : ControlTemplateSelector<Row>
+#pragma warning restore INPC001 // Implement INotifyPropertyChanged.
     {
         private ControlTemplate textBoxHeaderTemplate;
         private ControlTemplate textBoxHeaderAndSuffixTemplate;

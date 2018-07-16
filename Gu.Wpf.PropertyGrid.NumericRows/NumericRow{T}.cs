@@ -33,18 +33,29 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
             ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(NumericRow<T>), UpdateSourceTrigger.LostFocus);
         }
 
+        /// <summary>
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
+        /// </summary>
         public T? MinValue
         {
             get => (T?)this.GetValue(MinValueProperty);
             set => this.SetValue(MinValueProperty, value);
         }
 
+        /// <summary>
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
+        /// </summary>
         public T? MaxValue
         {
             get => (T?)this.GetValue(MaxValueProperty);
             set => this.SetValue(MaxValueProperty, value);
         }
 
+        /// <inheritdoc />
         string INumericFormatter.Format(IFormattable value)
         {
             if (value == null)
@@ -61,6 +72,7 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
             return value.ToString(string.Empty, culture);
         }
 
+        /// <inheritdoc />
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -122,17 +134,6 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
             }
         }
 
-        protected virtual void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
-        {
-            var errors2 = Validation.GetErrors((DependencyObject)args.Source);
-            var valueBinding = BindingOperations.GetBindingExpression(this, ValueProperty);
-            Validation.ClearInvalid(valueBinding);
-            foreach (var validationError in errors2)
-            {
-                Validation.MarkInvalid(valueBinding, validationError);
-            }
-        }
-
         protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((NumericRow<T>)d).OnMinValueChanged((T?)e.OldValue, (T?)e.NewValue);
@@ -143,10 +144,37 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
             ((NumericRow<T>)d).OnMaxValueChanged((T?)e.OldValue, (T?)e.NewValue);
         }
 
+        /// <summary>
+        /// Called when the template child bound to the ValueProperty has changes in validation errors.
+        /// </summary>
+        /// <param name="sender">The template child.</param>
+        /// <param name="args">The <see cref="ValidationErrorEventArgs"/></param>
+        protected virtual void OnTemplateChildError(object sender, ValidationErrorEventArgs args)
+        {
+            if (BindingOperations.GetBindingExpression(this, ValueProperty) is BindingExpression valueBinding)
+            {
+                Validation.ClearInvalid(valueBinding);
+                foreach (var validationError in Validation.GetErrors((DependencyObject)args.Source))
+                {
+                    Validation.MarkInvalid(valueBinding, validationError);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Called when the <see cref="MinValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMinValueChanged(T? oldValue, T? newValue)
         {
         }
 
+        /// <summary>
+        /// Called when the <see cref="MaxValueProperty"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The previous value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnMaxValueChanged(T? oldValue, T? newValue)
         {
         }

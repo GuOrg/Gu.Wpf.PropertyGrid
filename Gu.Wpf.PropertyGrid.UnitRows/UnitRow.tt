@@ -78,7 +78,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the mimimum allowed value. If null no check is performed.
+        /// Gets or sets the minimum value.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public <#= quantityType.Name #>? MinValue
         {
@@ -87,7 +89,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Gets or sets the maximum allowed value. If null no check is performed.
+        /// Gets or sets the maximum value.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public <#= quantityType.Name #>? MaxValue
         {

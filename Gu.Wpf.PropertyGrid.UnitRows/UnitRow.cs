@@ -77,6 +77,8 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         /// <summary>
         /// Gets or sets the MinValue property as a double.
+        /// The value is inclusive.
+        /// If set to null no check for min is done.
         /// </summary>
         public double? ScalarMinValue
         {
@@ -86,6 +88,8 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 
         /// <summary>
         /// Gets or sets the MaxValue property as a double.
+        /// The value is inclusive.
+        /// If set to null no check for max is done.
         /// </summary>
         public double? ScalarMaxValue
         {

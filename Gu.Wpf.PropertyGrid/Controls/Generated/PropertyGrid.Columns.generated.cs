@@ -350,54 +350,81 @@ namespace Gu.Wpf.PropertyGrid
                 double.PositiveInfinity,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>
+        /// Gets or sets the HeaderWidth.
+        /// </summary>
         public GridLength HeaderWidth
         {
             get { return (GridLength)this.GetValue(HeaderWidthProperty); }
             set { this.SetValue(HeaderWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the HeaderMinWidth.
+        /// </summary>
         public double HeaderMinWidth
         {
             get { return (double)this.GetValue(HeaderMinWidthProperty); }
             set { this.SetValue(HeaderMinWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the HeaderMaxWidth.
+        /// </summary>
         public double HeaderMaxWidth
         {
             get { return (double)this.GetValue(HeaderMaxWidthProperty); }
             set { this.SetValue(HeaderMaxWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the ValueWidth.
+        /// </summary>
         public GridLength ValueWidth
         {
             get { return (GridLength)this.GetValue(ValueWidthProperty); }
             set { this.SetValue(ValueWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the ValueMinWidth.
+        /// </summary>
         public double ValueMinWidth
         {
             get { return (double)this.GetValue(ValueMinWidthProperty); }
             set { this.SetValue(ValueMinWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the ValueMaxWidth.
+        /// </summary>
         public double ValueMaxWidth
         {
             get { return (double)this.GetValue(ValueMaxWidthProperty); }
             set { this.SetValue(ValueMaxWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the SuffixWidth.
+        /// </summary>
         public GridLength SuffixWidth
         {
             get { return (GridLength)this.GetValue(SuffixWidthProperty); }
             set { this.SetValue(SuffixWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the SuffixMinWidth.
+        /// </summary>
         public double SuffixMinWidth
         {
             get { return (double)this.GetValue(SuffixMinWidthProperty); }
             set { this.SetValue(SuffixMinWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the SuffixMaxWidth.
+        /// </summary>
         public double SuffixMaxWidth
         {
             get { return (double)this.GetValue(SuffixMaxWidthProperty); }
@@ -470,54 +497,81 @@ namespace Gu.Wpf.PropertyGrid
                 double.PositiveInfinity,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>
+        /// Gets or sets the HeaderWidth.
+        /// </summary>
         public GridLength HeaderWidth
         {
             get { return (GridLength)this.GetValue(HeaderWidthProperty); }
             set { this.SetValue(HeaderWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the HeaderMinWidth.
+        /// </summary>
         public double HeaderMinWidth
         {
             get { return (double)this.GetValue(HeaderMinWidthProperty); }
             set { this.SetValue(HeaderMinWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the HeaderMaxWidth.
+        /// </summary>
         public double HeaderMaxWidth
         {
             get { return (double)this.GetValue(HeaderMaxWidthProperty); }
             set { this.SetValue(HeaderMaxWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the ValueWidth.
+        /// </summary>
         public GridLength ValueWidth
         {
             get { return (GridLength)this.GetValue(ValueWidthProperty); }
             set { this.SetValue(ValueWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the ValueMinWidth.
+        /// </summary>
         public double ValueMinWidth
         {
             get { return (double)this.GetValue(ValueMinWidthProperty); }
             set { this.SetValue(ValueMinWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the ValueMaxWidth.
+        /// </summary>
         public double ValueMaxWidth
         {
             get { return (double)this.GetValue(ValueMaxWidthProperty); }
             set { this.SetValue(ValueMaxWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the SuffixWidth.
+        /// </summary>
         public GridLength SuffixWidth
         {
             get { return (GridLength)this.GetValue(SuffixWidthProperty); }
             set { this.SetValue(SuffixWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the SuffixMinWidth.
+        /// </summary>
         public double SuffixMinWidth
         {
             get { return (double)this.GetValue(SuffixMinWidthProperty); }
             set { this.SetValue(SuffixMinWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the SuffixMaxWidth.
+        /// </summary>
         public double SuffixMaxWidth
         {
             get { return (double)this.GetValue(SuffixMaxWidthProperty); }
@@ -590,54 +644,81 @@ namespace Gu.Wpf.PropertyGrid
                 double.PositiveInfinity,
                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsArrange | FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>
+        /// Gets or sets the HeaderWidth.
+        /// </summary>
         public GridLength HeaderWidth
         {
             get { return (GridLength)this.GetValue(HeaderWidthProperty); }
             set { this.SetValue(HeaderWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the HeaderMinWidth.
+        /// </summary>
         public double HeaderMinWidth
         {
             get { return (double)this.GetValue(HeaderMinWidthProperty); }
             set { this.SetValue(HeaderMinWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the HeaderMaxWidth.
+        /// </summary>
         public double HeaderMaxWidth
         {
             get { return (double)this.GetValue(HeaderMaxWidthProperty); }
             set { this.SetValue(HeaderMaxWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the ValueWidth.
+        /// </summary>
         public GridLength ValueWidth
         {
             get { return (GridLength)this.GetValue(ValueWidthProperty); }
             set { this.SetValue(ValueWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the ValueMinWidth.
+        /// </summary>
         public double ValueMinWidth
         {
             get { return (double)this.GetValue(ValueMinWidthProperty); }
             set { this.SetValue(ValueMinWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the ValueMaxWidth.
+        /// </summary>
         public double ValueMaxWidth
         {
             get { return (double)this.GetValue(ValueMaxWidthProperty); }
             set { this.SetValue(ValueMaxWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the SuffixWidth.
+        /// </summary>
         public GridLength SuffixWidth
         {
             get { return (GridLength)this.GetValue(SuffixWidthProperty); }
             set { this.SetValue(SuffixWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the SuffixMinWidth.
+        /// </summary>
         public double SuffixMinWidth
         {
             get { return (double)this.GetValue(SuffixMinWidthProperty); }
             set { this.SetValue(SuffixMinWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the SuffixMaxWidth.
+        /// </summary>
         public double SuffixMaxWidth
         {
             get { return (double)this.GetValue(SuffixMaxWidthProperty); }

@@ -94,6 +94,9 @@ namespace Gu.Wpf.PropertyGrid
         foreach(var columnWidth in widths)
         {
              #>
+        /// <summary>
+        /// Gets or sets the <#= columnWidth.PropertyName #>.
+        /// </summary>
         public <#= columnWidth.Type #> <#= columnWidth.PropertyName #>
         {
             get { return (<#= columnWidth.Type #>)this.GetValue(<#= columnWidth.PropertyName #>Property); }
