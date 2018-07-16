@@ -20,6 +20,12 @@ namespace Gu.Wpf.PropertyGrid
         /// </summary>
         protected DependencyProperty ValueDependencyProperty { get; }
 
+        static Row()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(Row), new FrameworkPropertyMetadata(typeof(Row)));
+            FocusableProperty.OverrideMetadata(typeof(Row), new FrameworkPropertyMetadata(BooleanBoxes.False));
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Row"/> class.
         /// </summary>

@@ -46,12 +46,6 @@ namespace Gu.Wpf.PropertyGrid
         public static readonly DependencyProperty IsDirtyProperty = IsDirtyPropertyKey.DependencyProperty;
 #pragma warning restore SA1202 // Elements must be ordered by access
 
-        static Row()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(Row), new FrameworkPropertyMetadata(typeof(Row)));
-            FocusableProperty.OverrideMetadata(typeof(Row), new FrameworkPropertyMetadata(BooleanBoxes.False));
-        }
-
         /// <summary>
         /// Gets or sets a value indicating whether the bond property name should be used as header value.
         /// </summary>
