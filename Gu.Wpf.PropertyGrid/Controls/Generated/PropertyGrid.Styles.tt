@@ -108,6 +108,7 @@ namespace Gu.Wpf.PropertyGrid
 
     public <#= controlName.IsAbstract ? "abstract " : "" #>partial class <#= controlName.Name #>
     {
+        /// <summary>Identifies the ControlTemplateSelector dependency property.</summary>
         public static readonly DependencyProperty ControlTemplateSelectorProperty = DependencyProperty.Register(
             nameof(ControlTemplateSelector),
             typeof(RowControlTemplateSelector),
@@ -131,6 +132,9 @@ namespace Gu.Wpf.PropertyGrid
 <#
         } 
             #>
+        /// <summary>
+        /// Gets or sets the RowControlTemplateSelector.
+        /// </summary>
         public RowControlTemplateSelector ControlTemplateSelector
         {
             get { return (RowControlTemplateSelector)this.GetValue(ControlTemplateSelectorProperty); }

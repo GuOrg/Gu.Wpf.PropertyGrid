@@ -16,6 +16,7 @@ namespace Gu.Wpf.PropertyGrid
             ValueProperty.OverrideMetadataWithUpdateSourceTrigger(typeof(StringRow), UpdateSourceTrigger.LostFocus);
         }
 
+        /// <inheritdoc />
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();

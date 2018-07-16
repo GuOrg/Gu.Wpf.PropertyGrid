@@ -10,15 +10,25 @@ namespace Gu.Wpf.PropertyGrid
     [TemplatePart(Name = ValueBoxName, Type = typeof(FrameworkElement))]
     public abstract partial class Row : Control
     {
+        /// <summary>
+        /// The name of the template child used to edit the Value property
+        /// </summary>
         public const string ValueBoxName = "PART_Value";
 
+        /// <summary>
+        /// Gets the dependency property for the value of this row.
+        /// </summary>
         protected abstract DependencyProperty ValueDependencyProperty { get; }
 
+        /// <summary>
+        /// Called when the Value property changes value.
+        /// </summary>
+        /// <param name="o">The sender.</param>
+        /// <param name="e">The <see cref="DependencyPropertyChangedEventArgs"/></param>
         protected static void OnValueChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
             var row = (Row)o;
             row.OnValueChanged(e.OldValue, e.NewValue);
-            row.UpdateIsDirty();
         }
 
         /// <inheritdoc/>
@@ -27,14 +37,21 @@ namespace Gu.Wpf.PropertyGrid
             return new RowAutomationPeer(this);
         }
 
+        /// <summary>
+        /// Called when the Value property changes value.
+        /// </summary>
+        /// <param name="oldValue">The old value.</param>
+        /// <param name="newValue">The new value.</param>
         protected virtual void OnValueChanged(object oldValue, object newValue)
         {
+            this.UpdateIsDirty();
         }
 
         protected virtual void OnOldValueChanged(object oldValue, object newValue)
         {
         }
 
+        /// <inheritdoc />
         protected override void OnInitialized(EventArgs e)
         {
             base.OnInitialized(e);
@@ -55,6 +72,9 @@ namespace Gu.Wpf.PropertyGrid
             this.ControlTemplateSelector?.UpdateCurrentTemplate(this);
         }
 
+        /// <summary>
+        /// Update the value of the <see cref="Row.IsDirty"/> property
+        /// </summary>
         protected abstract void UpdateIsDirty();
 
         protected virtual void OnOldDataContextChanged(object oldValue, object newValue)
@@ -77,7 +97,7 @@ namespace Gu.Wpf.PropertyGrid
                     UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
                 };
 
-                BindingOperations.SetBinding(this, OldValueProperty, oldValueBinding);
+                _ = BindingOperations.SetBinding(this, OldValueProperty, oldValueBinding);
             }
         }
 

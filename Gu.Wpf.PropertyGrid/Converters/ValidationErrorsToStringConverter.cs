@@ -8,12 +8,14 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows.Markup;
 
     [MarkupExtensionReturnType(typeof(ValidationErrorsToStringConverter))]
-    public class ValidationErrorsToStringConverter : MarkupExtension, IValueConverter
+    public sealed class ValidationErrorsToStringConverter : MarkupExtension, IValueConverter
     {
         /// <summary> Gets the default instance </summary>
         public static readonly ValidationErrorsToStringConverter Default = new ValidationErrorsToStringConverter();
 
-        // ReSharper disable once EmptyConstructor think the xaml parse needs it
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidationErrorsToStringConverter"/> class.
+        /// </summary>
         public ValidationErrorsToStringConverter()
         {
         }
@@ -41,7 +43,7 @@ namespace Gu.Wpf.PropertyGrid
         }
 
         /// <inheritdoc/>
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        object IValueConverter.ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotSupportedException($"{this.GetType().Name} only supports one-way conversion.");
         }

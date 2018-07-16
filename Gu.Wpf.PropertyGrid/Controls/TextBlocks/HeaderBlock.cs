@@ -4,6 +4,9 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows.Automation.Peers;
     using System.Windows.Controls;
 
+    /// <summary>
+    /// The text block used for rendering the header text.
+    /// </summary>
     public class HeaderBlock : TextBlock
     {
         static HeaderBlock()
@@ -13,6 +16,7 @@ namespace Gu.Wpf.PropertyGrid
             HorizontalAlignmentProperty.OverrideMetadataWithDefaultValue(typeof(HeaderBlock), HorizontalAlignment.Left);
         }
 
+        /// <inheritdoc />
         protected override AutomationPeer OnCreateAutomationPeer()
         {
             return new SettingBlockAutomationPeer(this);

@@ -5,7 +5,7 @@ namespace Gu.Wpf.PropertyGrid
 
     public static partial class PropertyGrid
     {
-        /// <summary>Identifies the IsReadOnly attached dependency property.</summary>
+        /// Gets or sets a value indicating whether the row is read only. </summary>
         public static readonly DependencyProperty IsReadOnlyProperty = DependencyProperty.RegisterAttached(
             "IsReadOnly",
             typeof(bool),
@@ -14,7 +14,7 @@ namespace Gu.Wpf.PropertyGrid
                 false,
                 FrameworkPropertyMetadataOptions.Inherits));
 
-        /// <summary>Identifies the OldValueStringFormat attached dependency property.</summary>
+        /// Gets or sets the string format for the old value. </summary>
         public static readonly DependencyProperty OldValueStringFormatProperty = DependencyProperty.RegisterAttached(
             "OldValueStringFormat",
             typeof(string),
@@ -23,7 +23,7 @@ namespace Gu.Wpf.PropertyGrid
                 "Old value: {0}",
                 FrameworkPropertyMetadataOptions.Inherits));
 
-        /// <summary>Identifies the OldDataContext attached dependency property.</summary>
+        /// Gets or sets the data context with old values. </summary>
         public static readonly DependencyProperty OldDataContextProperty = DependencyProperty.RegisterAttached(
             "OldDataContext",
             typeof(object),
@@ -124,7 +124,7 @@ namespace Gu.Wpf.PropertyGrid
                 OnOldDataContextChanged));
 
         /// <summary>
-        /// Gets or sets the IsReadOnly.
+        /// Gets or sets a value indicating whether the row is read only.
         /// </summary>
         public bool IsReadOnly
         {
@@ -133,7 +133,7 @@ namespace Gu.Wpf.PropertyGrid
         }
 
         /// <summary>
-        /// Gets or sets the OldValueStringFormat.
+        /// Gets or sets the string format for the old value.
         /// </summary>
         public string OldValueStringFormat
         {
@@ -142,7 +142,7 @@ namespace Gu.Wpf.PropertyGrid
         }
 
         /// <summary>
-        /// Gets or sets the OldDataContext.
+        /// Gets or sets the data context with old values.
         /// </summary>
         public object OldDataContext
         {
@@ -176,7 +176,7 @@ namespace Gu.Wpf.PropertyGrid
                 OnOldDataContextChanged));
 
         /// <summary>
-        /// Gets or sets the IsReadOnly.
+        /// Gets or sets a value indicating whether the row is read only.
         /// </summary>
         public bool IsReadOnly
         {
@@ -185,7 +185,7 @@ namespace Gu.Wpf.PropertyGrid
         }
 
         /// <summary>
-        /// Gets or sets the OldValueStringFormat.
+        /// Gets or sets the string format for the old value.
         /// </summary>
         public string OldValueStringFormat
         {
@@ -194,7 +194,7 @@ namespace Gu.Wpf.PropertyGrid
         }
 
         /// <summary>
-        /// Gets or sets the OldDataContext.
+        /// Gets or sets the data context with old values.
         /// </summary>
         public object OldDataContext
         {
@@ -228,7 +228,7 @@ namespace Gu.Wpf.PropertyGrid
                 OnOldDataContextChanged));
 
         /// <summary>
-        /// Gets or sets the IsReadOnly.
+        /// Gets or sets a value indicating whether the row is read only.
         /// </summary>
         public bool IsReadOnly
         {
@@ -237,7 +237,7 @@ namespace Gu.Wpf.PropertyGrid
         }
 
         /// <summary>
-        /// Gets or sets the OldValueStringFormat.
+        /// Gets or sets the string format for the old value.
         /// </summary>
         public string OldValueStringFormat
         {
@@ -246,7 +246,7 @@ namespace Gu.Wpf.PropertyGrid
         }
 
         /// <summary>
-        /// Gets or sets the OldDataContext.
+        /// Gets or sets the data context with old values.
         /// </summary>
         public object OldDataContext
         {

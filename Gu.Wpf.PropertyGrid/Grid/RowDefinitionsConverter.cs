@@ -7,8 +7,10 @@ namespace Gu.Wpf.PropertyGrid
     using System.Security;
     using System.Windows.Controls;
 
+    /// <inheritdoc />
     public class RowDefinitionsConverter : TypeConverter
     {
+        /// <inheritdoc />
         public override bool CanConvertFrom(
             ITypeDescriptorContext typeDescriptorContext,
             Type sourceType)
@@ -16,6 +18,7 @@ namespace Gu.Wpf.PropertyGrid
             return sourceType == typeof(string);
         }
 
+        /// <inheritdoc />
         public override bool CanConvertTo(
             ITypeDescriptorContext typeDescriptorContext,
             Type destinationType)
@@ -25,13 +28,13 @@ namespace Gu.Wpf.PropertyGrid
             ////       destinationType == typeof(string);
         }
 
+        /// <inheritdoc />
         public override object ConvertFrom(
             ITypeDescriptorContext typeDescriptorContext,
             CultureInfo cultureInfo,
             object source)
         {
-            var text = source as string;
-            if (text != null)
+            if (source is string text)
             {
                 var lengths = GridLengthsParser.Parse(typeDescriptorContext, cultureInfo, text);
                 var rowDefinitions = lengths.Select(gl => new RowDefinition { Height = gl });
@@ -41,6 +44,7 @@ namespace Gu.Wpf.PropertyGrid
             return base.ConvertFrom(typeDescriptorContext, cultureInfo, source);
         }
 
+        /// <inheritdoc />
         [SecurityCritical]
         public override object ConvertTo(
             ITypeDescriptorContext typeDescriptorContext,

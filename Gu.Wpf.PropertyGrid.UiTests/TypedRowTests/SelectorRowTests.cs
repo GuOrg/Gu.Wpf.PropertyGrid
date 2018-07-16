@@ -21,7 +21,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                window.FindComboBoxRow("default").Value().Select("sv-SE");
+                _ = window.FindComboBoxRow("default").Value().Select("sv-SE");
                 Assert.AreEqual("sv-SE", window.FindComboBoxRow("lostfocus").Value().SelectedItem.Text);
 
                 window.FindComboBoxRow("lostfocus").Value().EditableText = "en-US";
@@ -38,14 +38,14 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                window.FindComboBoxRow("default").Value().Select("en-US");
+                _ = window.FindComboBoxRow("default").Value().Select("en-US");
                 Assert.AreEqual("en-US", window.FindTextBlock("currentCultureTextBlock").Text);
                 Assert.AreEqual("en-US", window.FindComboBoxRow("default").Value().SelectedItem.Text);
                 Assert.AreEqual("en-US", window.FindComboBoxRow("lostfocus").Value().SelectedItem.Text);
                 Assert.AreEqual("en-US", window.FindComboBoxRow("readonly").Value().SelectedItem.Text);
                 Assert.AreEqual("en-US", window.FindComboBoxRow("editable").Value().SelectedItem.Text);
 
-                window.FindComboBoxRow("default").Value().Select("sv-SE");
+                _ = window.FindComboBoxRow("default").Value().Select("sv-SE");
                 Assert.AreEqual("sv-SE", window.FindTextBlock("currentCultureTextBlock").Text);
                 Assert.AreEqual("sv-SE", window.FindComboBoxRow("default").Value().SelectedItem.Text);
                 Assert.AreEqual("sv-SE", window.FindComboBoxRow("lostfocus").Value().SelectedItem.Text);

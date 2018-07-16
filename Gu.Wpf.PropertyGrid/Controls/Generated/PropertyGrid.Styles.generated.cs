@@ -246,6 +246,7 @@ namespace Gu.Wpf.PropertyGrid
 
     public abstract partial class Row
     {
+        /// <summary>Identifies the ControlTemplateSelector dependency property.</summary>
         public static readonly DependencyProperty ControlTemplateSelectorProperty = DependencyProperty.Register(
             nameof(ControlTemplateSelector),
             typeof(RowControlTemplateSelector),
@@ -294,6 +295,9 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
 
+        /// <summary>
+        /// Gets or sets the RowControlTemplateSelector.
+        /// </summary>
         public RowControlTemplateSelector ControlTemplateSelector
         {
             get { return (RowControlTemplateSelector)this.GetValue(ControlTemplateSelectorProperty); }
@@ -353,6 +357,7 @@ namespace Gu.Wpf.PropertyGrid
 
     public partial class ContentRow
     {
+        /// <summary>Identifies the ControlTemplateSelector dependency property.</summary>
         public static readonly DependencyProperty ControlTemplateSelectorProperty = DependencyProperty.Register(
             nameof(ControlTemplateSelector),
             typeof(RowControlTemplateSelector),
@@ -401,6 +406,9 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
 
+        /// <summary>
+        /// Gets or sets the RowControlTemplateSelector.
+        /// </summary>
         public RowControlTemplateSelector ControlTemplateSelector
         {
             get { return (RowControlTemplateSelector)this.GetValue(ControlTemplateSelectorProperty); }

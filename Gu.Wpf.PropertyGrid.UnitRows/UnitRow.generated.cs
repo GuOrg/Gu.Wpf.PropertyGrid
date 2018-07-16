@@ -201,9 +201,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -485,9 +483,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -769,9 +765,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -1053,9 +1047,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -1337,9 +1329,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -1621,9 +1611,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -1905,9 +1893,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -2189,9 +2175,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -2473,9 +2457,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -2757,9 +2739,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -3041,9 +3021,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -3325,9 +3303,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -3609,9 +3585,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -3893,9 +3867,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -4177,9 +4149,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -4461,9 +4431,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -4745,9 +4713,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -5029,9 +4995,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -5313,9 +5277,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -5597,9 +5559,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -5881,9 +5841,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -6165,9 +6123,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -6449,9 +6405,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -6733,9 +6687,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -7017,9 +6969,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -7301,9 +7251,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -7585,9 +7533,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -7869,9 +7815,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -8153,9 +8097,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -8437,9 +8379,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -8721,9 +8661,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -9005,9 +8943,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -9289,9 +9225,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -9573,9 +9507,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -9857,9 +9789,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -10141,9 +10071,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -10425,9 +10353,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -10709,9 +10635,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -10993,9 +10917,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -11277,9 +11199,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -11561,9 +11481,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -11845,9 +11763,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -12129,9 +12045,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -12413,9 +12327,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -12697,9 +12609,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -12981,9 +12891,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -13265,9 +13173,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -13549,9 +13455,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -13833,9 +13737,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -14117,9 +14019,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -14401,9 +14301,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -14685,9 +14583,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
@@ -14969,9 +14865,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Upate the value of the <see cref="Row.IsDirty"/> property
-        /// </summary>
+        /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
             if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))

@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
     using System.Collections.Generic;
     using System.Windows.Automation.Peers;
@@ -6,10 +6,12 @@
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc />
     internal class SettingBlockAutomationPeer : FrameworkElementAutomationPeer
     {
         private readonly TextBlockAutomationPeer textBlockAutomationPeer;
 
+        /// <inheritdoc />
         public SettingBlockAutomationPeer([NotNull] TextBlock owner)
             : base(owner)
         {
@@ -17,25 +19,15 @@
         }
 
         /// <inheritdoc/>
-        protected override List<AutomationPeer> GetChildrenCore()
-        {
-            return this.textBlockAutomationPeer.GetChildren();
-        }
+        protected override List<AutomationPeer> GetChildrenCore() => this.textBlockAutomationPeer.GetChildren();
 
         /// <inheritdoc/>
-        protected override AutomationControlType GetAutomationControlTypeCore()
-        {
-            return AutomationControlType.Text;
-        }
+        protected override AutomationControlType GetAutomationControlTypeCore() => AutomationControlType.Text;
 
-        protected override string GetClassNameCore()
-        {
-            return "TextBlock";
-        }
+        /// <inheritdoc />
+        protected override string GetClassNameCore() => "TextBlock";
 
-        protected override bool IsContentElementCore()
-        {
-            return true;
-        }
+        /// <inheritdoc />
+        protected override bool IsContentElementCore() => true;
     }
 }

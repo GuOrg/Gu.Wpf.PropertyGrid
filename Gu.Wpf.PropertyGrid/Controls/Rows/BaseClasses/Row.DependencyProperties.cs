@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
 
@@ -52,30 +52,47 @@
             FocusableProperty.OverrideMetadata(typeof(Row), new FrameworkPropertyMetadata(BooleanBoxes.False));
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether the bond property name should be used as header value.
+        /// </summary>
         public bool UsePropertyNameAsHeader
         {
             get => (bool)this.GetValue(UsePropertyNameAsHeaderProperty);
             set => this.SetValue(UsePropertyNameAsHeaderProperty, BooleanBoxes.Box(value));
         }
 
+        /// <summary>
+        /// Gets or sets the header text.
+        /// </summary>
         public string Header
         {
             get => (string)this.GetValue(HeaderProperty);
             set => this.SetValue(HeaderProperty, value);
         }
 
+        /// <summary>
+        /// Gets or sets the suffix text.
+        /// This can be used for unit.
+        /// </summary>
         public string Suffix
         {
             get => (string)this.GetValue(SuffixProperty);
             set => this.SetValue(SuffixProperty, value);
         }
 
+        /// <summary>
+        /// Gets or sets the old value, can be null.
+        /// This is used when calculating <see cref="IsDirty"/> and for display in the form.
+        /// </summary>
         public object OldValue
         {
             get => this.GetValue(OldValueProperty);
             set => this.SetValue(OldValueProperty, value);
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating if the row has unsaved changes.
+        /// </summary>
         public bool? IsDirty
         {
             get => (bool?)this.GetValue(IsDirtyProperty);

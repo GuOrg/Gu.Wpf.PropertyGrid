@@ -13,15 +13,15 @@ namespace Gu.Wpf.PropertyGrid
 <#
     var propertyMetaDatas = new[]
                      {
-                        new PropertyMetaData("IsReadOnly","bool","false"),
-                        new PropertyMetaData("OldValueStringFormat","string","\"Old value: {0}\""),
-                        new PropertyMetaData("OldDataContext","object","null", "OnOldDataContextChanged"),
+                        new PropertyMetaData("IsReadOnly","bool","false", "Gets or sets a value indicating whether the row is read only."),
+                        new PropertyMetaData("OldValueStringFormat","string","\"Old value: {0}\"", "Gets or sets the string format for the old value."),
+                        new PropertyMetaData("OldDataContext","object","null", "Gets or sets the data context with old values.", "OnOldDataContextChanged"),
                      };
 
     foreach(var propertyMetaData in propertyMetaDatas)
     {
         #>
-        /// <summary>Identifies the <#= propertyMetaData.Name #> attached dependency property.</summary>
+        /// <#= propertyMetaData.Comment #> </summary>
         public static readonly DependencyProperty <#= propertyMetaData.Name #>Property = DependencyProperty.RegisterAttached(
             "<#= propertyMetaData.Name #>",
             typeof(<#= propertyMetaData.Type #>),
@@ -94,7 +94,7 @@ namespace Gu.Wpf.PropertyGrid
         {
              #>
         /// <summary>
-        /// Gets or sets the <#= propertyMetaData.Name #>.
+        /// <#= propertyMetaData.Comment #>
         /// </summary>
         public <#= propertyMetaData.Type #> <#= propertyMetaData.Name #>
         {
@@ -125,13 +125,15 @@ namespace Gu.Wpf.PropertyGrid
        public readonly string Name;
        public readonly string Type;
        public readonly string DefaultValue;
+       public  readonly string Comment;
        public readonly string OnPropertyChanged;
 
-       public PropertyMetaData(string name, string type, string defaultValue, string onPropertyChanged = null)
+       public PropertyMetaData(string name, string type, string defaultValue, string comment, string onPropertyChanged = null)
        {
            this.Name = name;
            this.Type = type;
            this.DefaultValue = defaultValue;
+           this.Comment = comment;
            this.OnPropertyChanged = string.IsNullOrEmpty(onPropertyChanged)
                                         ? ""
                                         : $@",
