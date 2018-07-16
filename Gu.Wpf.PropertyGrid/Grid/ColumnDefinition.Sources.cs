@@ -9,8 +9,15 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows.Controls;
     using System.Windows.Data;
 
+    /// <summary>
+    /// Attached properties for <see cref="System.Windows.Controls.ColumnDefinition"/>
+    /// </summary>
     public static class ColumnDefinition
     {
+        /// <summary>
+        /// Attached property for setting Width, MinWidth, MaxWidth and SharedSizeGroup for a <see cref="System.Windows.Controls.ColumnDefinition"/>
+        /// Similar to <see cref="ContentPresenter.ContentSource"/>
+        /// </summary>
         public static readonly DependencyProperty SourceProperty = DependencyProperty.RegisterAttached(
             "Source",
             typeof(string),
