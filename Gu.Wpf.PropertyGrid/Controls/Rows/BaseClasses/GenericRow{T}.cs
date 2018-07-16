@@ -13,7 +13,7 @@ namespace Gu.Wpf.PropertyGrid
             new FrameworkPropertyMetadata(
                 defaultValue: default(T),
                 flags: FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                propertyChangedCallback: OnValueChanged,
+                propertyChangedCallback: (d, e) => ((GenericRow<T>)d).OnValueChanged(e.OldValue, e.NewValue),
                 coerceValueCallback: null,
                 isAnimationProhibited: true,
                 defaultUpdateSourceTrigger: UpdateSourceTrigger.PropertyChanged));

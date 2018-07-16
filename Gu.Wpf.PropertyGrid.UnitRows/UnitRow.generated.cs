@@ -20,7 +20,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Acceleration?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((AccelerationRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -30,14 +30,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Acceleration?),
             typeof(AccelerationRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AccelerationRow)d).OnMinValueChanged((Acceleration?)e.OldValue, (Acceleration?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Acceleration?),
             typeof(AccelerationRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AccelerationRow)d).OnMaxValueChanged((Acceleration?)e.OldValue, (Acceleration?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -263,16 +263,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Acceleration).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AccelerationRow)d).OnMinValueChanged((Acceleration?)e.OldValue, (Acceleration?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AccelerationRow)d).OnMaxValueChanged((Acceleration?)e.OldValue, (Acceleration?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (AccelerationRow)d;
@@ -302,7 +292,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(AmountOfSubstance?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((AmountOfSubstanceRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -312,14 +302,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(AmountOfSubstance?),
             typeof(AmountOfSubstanceRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AmountOfSubstanceRow)d).OnMinValueChanged((AmountOfSubstance?)e.OldValue, (AmountOfSubstance?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(AmountOfSubstance?),
             typeof(AmountOfSubstanceRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AmountOfSubstanceRow)d).OnMaxValueChanged((AmountOfSubstance?)e.OldValue, (AmountOfSubstance?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -545,16 +535,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(AmountOfSubstance).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AmountOfSubstanceRow)d).OnMinValueChanged((AmountOfSubstance?)e.OldValue, (AmountOfSubstance?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AmountOfSubstanceRow)d).OnMaxValueChanged((AmountOfSubstance?)e.OldValue, (AmountOfSubstance?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (AmountOfSubstanceRow)d;
@@ -584,7 +564,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Angle?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((AngleRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -594,14 +574,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Angle?),
             typeof(AngleRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AngleRow)d).OnMinValueChanged((Angle?)e.OldValue, (Angle?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Angle?),
             typeof(AngleRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AngleRow)d).OnMaxValueChanged((Angle?)e.OldValue, (Angle?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -827,16 +807,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Angle).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngleRow)d).OnMinValueChanged((Angle?)e.OldValue, (Angle?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngleRow)d).OnMaxValueChanged((Angle?)e.OldValue, (Angle?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (AngleRow)d;
@@ -866,7 +836,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(AnglePerUnitless?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((AnglePerUnitlessRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -876,14 +846,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(AnglePerUnitless?),
             typeof(AnglePerUnitlessRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AnglePerUnitlessRow)d).OnMinValueChanged((AnglePerUnitless?)e.OldValue, (AnglePerUnitless?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(AnglePerUnitless?),
             typeof(AnglePerUnitlessRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AnglePerUnitlessRow)d).OnMaxValueChanged((AnglePerUnitless?)e.OldValue, (AnglePerUnitless?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -1109,16 +1079,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(AnglePerUnitless).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AnglePerUnitlessRow)d).OnMinValueChanged((AnglePerUnitless?)e.OldValue, (AnglePerUnitless?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AnglePerUnitlessRow)d).OnMaxValueChanged((AnglePerUnitless?)e.OldValue, (AnglePerUnitless?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (AnglePerUnitlessRow)d;
@@ -1148,7 +1108,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(AngularAcceleration?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((AngularAccelerationRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -1158,14 +1118,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(AngularAcceleration?),
             typeof(AngularAccelerationRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AngularAccelerationRow)d).OnMinValueChanged((AngularAcceleration?)e.OldValue, (AngularAcceleration?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(AngularAcceleration?),
             typeof(AngularAccelerationRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AngularAccelerationRow)d).OnMaxValueChanged((AngularAcceleration?)e.OldValue, (AngularAcceleration?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -1391,16 +1351,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(AngularAcceleration).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngularAccelerationRow)d).OnMinValueChanged((AngularAcceleration?)e.OldValue, (AngularAcceleration?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngularAccelerationRow)d).OnMaxValueChanged((AngularAcceleration?)e.OldValue, (AngularAcceleration?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (AngularAccelerationRow)d;
@@ -1430,7 +1380,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(AngularJerk?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((AngularJerkRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -1440,14 +1390,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(AngularJerk?),
             typeof(AngularJerkRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AngularJerkRow)d).OnMinValueChanged((AngularJerk?)e.OldValue, (AngularJerk?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(AngularJerk?),
             typeof(AngularJerkRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AngularJerkRow)d).OnMaxValueChanged((AngularJerk?)e.OldValue, (AngularJerk?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -1673,16 +1623,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(AngularJerk).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngularJerkRow)d).OnMinValueChanged((AngularJerk?)e.OldValue, (AngularJerk?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngularJerkRow)d).OnMaxValueChanged((AngularJerk?)e.OldValue, (AngularJerk?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (AngularJerkRow)d;
@@ -1712,7 +1652,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(AngularSpeed?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((AngularSpeedRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -1722,14 +1662,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(AngularSpeed?),
             typeof(AngularSpeedRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AngularSpeedRow)d).OnMinValueChanged((AngularSpeed?)e.OldValue, (AngularSpeed?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(AngularSpeed?),
             typeof(AngularSpeedRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AngularSpeedRow)d).OnMaxValueChanged((AngularSpeed?)e.OldValue, (AngularSpeed?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -1955,16 +1895,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(AngularSpeed).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngularSpeedRow)d).OnMinValueChanged((AngularSpeed?)e.OldValue, (AngularSpeed?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AngularSpeedRow)d).OnMaxValueChanged((AngularSpeed?)e.OldValue, (AngularSpeed?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (AngularSpeedRow)d;
@@ -1994,7 +1924,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Area?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((AreaRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -2004,14 +1934,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Area?),
             typeof(AreaRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AreaRow)d).OnMinValueChanged((Area?)e.OldValue, (Area?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Area?),
             typeof(AreaRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AreaRow)d).OnMaxValueChanged((Area?)e.OldValue, (Area?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -2237,16 +2167,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Area).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AreaRow)d).OnMinValueChanged((Area?)e.OldValue, (Area?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AreaRow)d).OnMaxValueChanged((Area?)e.OldValue, (Area?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (AreaRow)d;
@@ -2276,7 +2196,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(AreaDensity?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((AreaDensityRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -2286,14 +2206,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(AreaDensity?),
             typeof(AreaDensityRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AreaDensityRow)d).OnMinValueChanged((AreaDensity?)e.OldValue, (AreaDensity?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(AreaDensity?),
             typeof(AreaDensityRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((AreaDensityRow)d).OnMaxValueChanged((AreaDensity?)e.OldValue, (AreaDensity?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -2519,16 +2439,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(AreaDensity).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AreaDensityRow)d).OnMinValueChanged((AreaDensity?)e.OldValue, (AreaDensity?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((AreaDensityRow)d).OnMaxValueChanged((AreaDensity?)e.OldValue, (AreaDensity?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (AreaDensityRow)d;
@@ -2558,7 +2468,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Capacitance?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((CapacitanceRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -2568,14 +2478,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Capacitance?),
             typeof(CapacitanceRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((CapacitanceRow)d).OnMinValueChanged((Capacitance?)e.OldValue, (Capacitance?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Capacitance?),
             typeof(CapacitanceRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((CapacitanceRow)d).OnMaxValueChanged((Capacitance?)e.OldValue, (Capacitance?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -2801,16 +2711,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Capacitance).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((CapacitanceRow)d).OnMinValueChanged((Capacitance?)e.OldValue, (Capacitance?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((CapacitanceRow)d).OnMaxValueChanged((Capacitance?)e.OldValue, (Capacitance?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (CapacitanceRow)d;
@@ -2840,7 +2740,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(CatalyticActivity?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((CatalyticActivityRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -2850,14 +2750,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(CatalyticActivity?),
             typeof(CatalyticActivityRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((CatalyticActivityRow)d).OnMinValueChanged((CatalyticActivity?)e.OldValue, (CatalyticActivity?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(CatalyticActivity?),
             typeof(CatalyticActivityRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((CatalyticActivityRow)d).OnMaxValueChanged((CatalyticActivity?)e.OldValue, (CatalyticActivity?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -3083,16 +2983,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(CatalyticActivity).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((CatalyticActivityRow)d).OnMinValueChanged((CatalyticActivity?)e.OldValue, (CatalyticActivity?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((CatalyticActivityRow)d).OnMaxValueChanged((CatalyticActivity?)e.OldValue, (CatalyticActivity?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (CatalyticActivityRow)d;
@@ -3122,7 +3012,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Conductivity?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((ConductivityRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -3132,14 +3022,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Conductivity?),
             typeof(ConductivityRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((ConductivityRow)d).OnMinValueChanged((Conductivity?)e.OldValue, (Conductivity?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Conductivity?),
             typeof(ConductivityRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((ConductivityRow)d).OnMaxValueChanged((Conductivity?)e.OldValue, (Conductivity?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -3365,16 +3255,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Conductivity).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ConductivityRow)d).OnMinValueChanged((Conductivity?)e.OldValue, (Conductivity?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ConductivityRow)d).OnMaxValueChanged((Conductivity?)e.OldValue, (Conductivity?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (ConductivityRow)d;
@@ -3404,7 +3284,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Current?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((CurrentRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -3414,14 +3294,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Current?),
             typeof(CurrentRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((CurrentRow)d).OnMinValueChanged((Current?)e.OldValue, (Current?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Current?),
             typeof(CurrentRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((CurrentRow)d).OnMaxValueChanged((Current?)e.OldValue, (Current?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -3647,16 +3527,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Current).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((CurrentRow)d).OnMinValueChanged((Current?)e.OldValue, (Current?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((CurrentRow)d).OnMaxValueChanged((Current?)e.OldValue, (Current?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (CurrentRow)d;
@@ -3686,7 +3556,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Data?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((DataRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -3696,14 +3566,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Data?),
             typeof(DataRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((DataRow)d).OnMinValueChanged((Data?)e.OldValue, (Data?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Data?),
             typeof(DataRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((DataRow)d).OnMaxValueChanged((Data?)e.OldValue, (Data?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -3929,16 +3799,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Data).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((DataRow)d).OnMinValueChanged((Data?)e.OldValue, (Data?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((DataRow)d).OnMaxValueChanged((Data?)e.OldValue, (Data?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (DataRow)d;
@@ -3968,7 +3828,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Density?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((DensityRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -3978,14 +3838,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Density?),
             typeof(DensityRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((DensityRow)d).OnMinValueChanged((Density?)e.OldValue, (Density?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Density?),
             typeof(DensityRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((DensityRow)d).OnMaxValueChanged((Density?)e.OldValue, (Density?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -4211,16 +4071,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Density).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((DensityRow)d).OnMinValueChanged((Density?)e.OldValue, (Density?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((DensityRow)d).OnMaxValueChanged((Density?)e.OldValue, (Density?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (DensityRow)d;
@@ -4250,7 +4100,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(ElectricalConductance?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((ElectricalConductanceRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -4260,14 +4110,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(ElectricalConductance?),
             typeof(ElectricalConductanceRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((ElectricalConductanceRow)d).OnMinValueChanged((ElectricalConductance?)e.OldValue, (ElectricalConductance?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(ElectricalConductance?),
             typeof(ElectricalConductanceRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((ElectricalConductanceRow)d).OnMaxValueChanged((ElectricalConductance?)e.OldValue, (ElectricalConductance?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -4493,16 +4343,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(ElectricalConductance).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ElectricalConductanceRow)d).OnMinValueChanged((ElectricalConductance?)e.OldValue, (ElectricalConductance?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ElectricalConductanceRow)d).OnMaxValueChanged((ElectricalConductance?)e.OldValue, (ElectricalConductance?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (ElectricalConductanceRow)d;
@@ -4532,7 +4372,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(ElectricCharge?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((ElectricChargeRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -4542,14 +4382,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(ElectricCharge?),
             typeof(ElectricChargeRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((ElectricChargeRow)d).OnMinValueChanged((ElectricCharge?)e.OldValue, (ElectricCharge?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(ElectricCharge?),
             typeof(ElectricChargeRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((ElectricChargeRow)d).OnMaxValueChanged((ElectricCharge?)e.OldValue, (ElectricCharge?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -4775,16 +4615,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(ElectricCharge).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ElectricChargeRow)d).OnMinValueChanged((ElectricCharge?)e.OldValue, (ElectricCharge?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ElectricChargeRow)d).OnMaxValueChanged((ElectricCharge?)e.OldValue, (ElectricCharge?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (ElectricChargeRow)d;
@@ -4814,7 +4644,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Energy?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((EnergyRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -4824,14 +4654,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Energy?),
             typeof(EnergyRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((EnergyRow)d).OnMinValueChanged((Energy?)e.OldValue, (Energy?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Energy?),
             typeof(EnergyRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((EnergyRow)d).OnMaxValueChanged((Energy?)e.OldValue, (Energy?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -5057,16 +4887,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Energy).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((EnergyRow)d).OnMinValueChanged((Energy?)e.OldValue, (Energy?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((EnergyRow)d).OnMaxValueChanged((Energy?)e.OldValue, (Energy?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (EnergyRow)d;
@@ -5096,7 +4916,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Flexibility?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((FlexibilityRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -5106,14 +4926,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Flexibility?),
             typeof(FlexibilityRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((FlexibilityRow)d).OnMinValueChanged((Flexibility?)e.OldValue, (Flexibility?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Flexibility?),
             typeof(FlexibilityRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((FlexibilityRow)d).OnMaxValueChanged((Flexibility?)e.OldValue, (Flexibility?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -5339,16 +5159,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Flexibility).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((FlexibilityRow)d).OnMinValueChanged((Flexibility?)e.OldValue, (Flexibility?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((FlexibilityRow)d).OnMaxValueChanged((Flexibility?)e.OldValue, (Flexibility?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (FlexibilityRow)d;
@@ -5378,7 +5188,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Force?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((ForceRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -5388,14 +5198,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Force?),
             typeof(ForceRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((ForceRow)d).OnMinValueChanged((Force?)e.OldValue, (Force?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Force?),
             typeof(ForceRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((ForceRow)d).OnMaxValueChanged((Force?)e.OldValue, (Force?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -5621,16 +5431,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Force).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ForceRow)d).OnMinValueChanged((Force?)e.OldValue, (Force?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ForceRow)d).OnMaxValueChanged((Force?)e.OldValue, (Force?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (ForceRow)d;
@@ -5660,7 +5460,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(ForcePerUnitless?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((ForcePerUnitlessRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -5670,14 +5470,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(ForcePerUnitless?),
             typeof(ForcePerUnitlessRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((ForcePerUnitlessRow)d).OnMinValueChanged((ForcePerUnitless?)e.OldValue, (ForcePerUnitless?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(ForcePerUnitless?),
             typeof(ForcePerUnitlessRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((ForcePerUnitlessRow)d).OnMaxValueChanged((ForcePerUnitless?)e.OldValue, (ForcePerUnitless?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -5903,16 +5703,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(ForcePerUnitless).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ForcePerUnitlessRow)d).OnMinValueChanged((ForcePerUnitless?)e.OldValue, (ForcePerUnitless?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ForcePerUnitlessRow)d).OnMaxValueChanged((ForcePerUnitless?)e.OldValue, (ForcePerUnitless?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (ForcePerUnitlessRow)d;
@@ -5942,7 +5732,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Frequency?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((FrequencyRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -5952,14 +5742,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Frequency?),
             typeof(FrequencyRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((FrequencyRow)d).OnMinValueChanged((Frequency?)e.OldValue, (Frequency?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Frequency?),
             typeof(FrequencyRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((FrequencyRow)d).OnMaxValueChanged((Frequency?)e.OldValue, (Frequency?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -6185,16 +5975,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Frequency).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((FrequencyRow)d).OnMinValueChanged((Frequency?)e.OldValue, (Frequency?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((FrequencyRow)d).OnMaxValueChanged((Frequency?)e.OldValue, (Frequency?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (FrequencyRow)d;
@@ -6224,7 +6004,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Illuminance?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((IlluminanceRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -6234,14 +6014,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Illuminance?),
             typeof(IlluminanceRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((IlluminanceRow)d).OnMinValueChanged((Illuminance?)e.OldValue, (Illuminance?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Illuminance?),
             typeof(IlluminanceRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((IlluminanceRow)d).OnMaxValueChanged((Illuminance?)e.OldValue, (Illuminance?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -6467,16 +6247,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Illuminance).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((IlluminanceRow)d).OnMinValueChanged((Illuminance?)e.OldValue, (Illuminance?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((IlluminanceRow)d).OnMaxValueChanged((Illuminance?)e.OldValue, (Illuminance?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (IlluminanceRow)d;
@@ -6506,7 +6276,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Inductance?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((InductanceRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -6516,14 +6286,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Inductance?),
             typeof(InductanceRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((InductanceRow)d).OnMinValueChanged((Inductance?)e.OldValue, (Inductance?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Inductance?),
             typeof(InductanceRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((InductanceRow)d).OnMaxValueChanged((Inductance?)e.OldValue, (Inductance?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -6749,16 +6519,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Inductance).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((InductanceRow)d).OnMinValueChanged((Inductance?)e.OldValue, (Inductance?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((InductanceRow)d).OnMaxValueChanged((Inductance?)e.OldValue, (Inductance?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (InductanceRow)d;
@@ -6788,7 +6548,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Jerk?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((JerkRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -6798,14 +6558,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Jerk?),
             typeof(JerkRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((JerkRow)d).OnMinValueChanged((Jerk?)e.OldValue, (Jerk?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Jerk?),
             typeof(JerkRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((JerkRow)d).OnMaxValueChanged((Jerk?)e.OldValue, (Jerk?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -7031,16 +6791,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Jerk).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((JerkRow)d).OnMinValueChanged((Jerk?)e.OldValue, (Jerk?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((JerkRow)d).OnMaxValueChanged((Jerk?)e.OldValue, (Jerk?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (JerkRow)d;
@@ -7070,7 +6820,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(KinematicViscosity?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((KinematicViscosityRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -7080,14 +6830,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(KinematicViscosity?),
             typeof(KinematicViscosityRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((KinematicViscosityRow)d).OnMinValueChanged((KinematicViscosity?)e.OldValue, (KinematicViscosity?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(KinematicViscosity?),
             typeof(KinematicViscosityRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((KinematicViscosityRow)d).OnMaxValueChanged((KinematicViscosity?)e.OldValue, (KinematicViscosity?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -7313,16 +7063,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(KinematicViscosity).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((KinematicViscosityRow)d).OnMinValueChanged((KinematicViscosity?)e.OldValue, (KinematicViscosity?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((KinematicViscosityRow)d).OnMaxValueChanged((KinematicViscosity?)e.OldValue, (KinematicViscosity?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (KinematicViscosityRow)d;
@@ -7352,7 +7092,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Length?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((LengthRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -7362,14 +7102,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Length?),
             typeof(LengthRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((LengthRow)d).OnMinValueChanged((Length?)e.OldValue, (Length?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Length?),
             typeof(LengthRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((LengthRow)d).OnMaxValueChanged((Length?)e.OldValue, (Length?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -7595,16 +7335,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Length).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LengthRow)d).OnMinValueChanged((Length?)e.OldValue, (Length?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LengthRow)d).OnMaxValueChanged((Length?)e.OldValue, (Length?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (LengthRow)d;
@@ -7634,7 +7364,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(LengthPerUnitless?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((LengthPerUnitlessRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -7644,14 +7374,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(LengthPerUnitless?),
             typeof(LengthPerUnitlessRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((LengthPerUnitlessRow)d).OnMinValueChanged((LengthPerUnitless?)e.OldValue, (LengthPerUnitless?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(LengthPerUnitless?),
             typeof(LengthPerUnitlessRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((LengthPerUnitlessRow)d).OnMaxValueChanged((LengthPerUnitless?)e.OldValue, (LengthPerUnitless?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -7877,16 +7607,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(LengthPerUnitless).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LengthPerUnitlessRow)d).OnMinValueChanged((LengthPerUnitless?)e.OldValue, (LengthPerUnitless?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LengthPerUnitlessRow)d).OnMaxValueChanged((LengthPerUnitless?)e.OldValue, (LengthPerUnitless?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (LengthPerUnitlessRow)d;
@@ -7916,7 +7636,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(LuminousFlux?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((LuminousFluxRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -7926,14 +7646,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(LuminousFlux?),
             typeof(LuminousFluxRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((LuminousFluxRow)d).OnMinValueChanged((LuminousFlux?)e.OldValue, (LuminousFlux?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(LuminousFlux?),
             typeof(LuminousFluxRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((LuminousFluxRow)d).OnMaxValueChanged((LuminousFlux?)e.OldValue, (LuminousFlux?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -8159,16 +7879,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(LuminousFlux).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LuminousFluxRow)d).OnMinValueChanged((LuminousFlux?)e.OldValue, (LuminousFlux?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LuminousFluxRow)d).OnMaxValueChanged((LuminousFlux?)e.OldValue, (LuminousFlux?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (LuminousFluxRow)d;
@@ -8198,7 +7908,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(LuminousIntensity?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((LuminousIntensityRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -8208,14 +7918,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(LuminousIntensity?),
             typeof(LuminousIntensityRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((LuminousIntensityRow)d).OnMinValueChanged((LuminousIntensity?)e.OldValue, (LuminousIntensity?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(LuminousIntensity?),
             typeof(LuminousIntensityRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((LuminousIntensityRow)d).OnMaxValueChanged((LuminousIntensity?)e.OldValue, (LuminousIntensity?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -8441,16 +8151,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(LuminousIntensity).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LuminousIntensityRow)d).OnMinValueChanged((LuminousIntensity?)e.OldValue, (LuminousIntensity?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((LuminousIntensityRow)d).OnMaxValueChanged((LuminousIntensity?)e.OldValue, (LuminousIntensity?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (LuminousIntensityRow)d;
@@ -8480,7 +8180,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(MagneticFieldStrength?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((MagneticFieldStrengthRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -8490,14 +8190,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(MagneticFieldStrength?),
             typeof(MagneticFieldStrengthRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((MagneticFieldStrengthRow)d).OnMinValueChanged((MagneticFieldStrength?)e.OldValue, (MagneticFieldStrength?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(MagneticFieldStrength?),
             typeof(MagneticFieldStrengthRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((MagneticFieldStrengthRow)d).OnMaxValueChanged((MagneticFieldStrength?)e.OldValue, (MagneticFieldStrength?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -8723,16 +8423,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(MagneticFieldStrength).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MagneticFieldStrengthRow)d).OnMinValueChanged((MagneticFieldStrength?)e.OldValue, (MagneticFieldStrength?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MagneticFieldStrengthRow)d).OnMaxValueChanged((MagneticFieldStrength?)e.OldValue, (MagneticFieldStrength?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (MagneticFieldStrengthRow)d;
@@ -8762,7 +8452,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(MagneticFlux?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((MagneticFluxRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -8772,14 +8462,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(MagneticFlux?),
             typeof(MagneticFluxRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((MagneticFluxRow)d).OnMinValueChanged((MagneticFlux?)e.OldValue, (MagneticFlux?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(MagneticFlux?),
             typeof(MagneticFluxRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((MagneticFluxRow)d).OnMaxValueChanged((MagneticFlux?)e.OldValue, (MagneticFlux?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -9005,16 +8695,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(MagneticFlux).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MagneticFluxRow)d).OnMinValueChanged((MagneticFlux?)e.OldValue, (MagneticFlux?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MagneticFluxRow)d).OnMaxValueChanged((MagneticFlux?)e.OldValue, (MagneticFlux?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (MagneticFluxRow)d;
@@ -9044,7 +8724,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Mass?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((MassRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -9054,14 +8734,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Mass?),
             typeof(MassRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((MassRow)d).OnMinValueChanged((Mass?)e.OldValue, (Mass?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Mass?),
             typeof(MassRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((MassRow)d).OnMaxValueChanged((Mass?)e.OldValue, (Mass?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -9287,16 +8967,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Mass).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MassRow)d).OnMinValueChanged((Mass?)e.OldValue, (Mass?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MassRow)d).OnMaxValueChanged((Mass?)e.OldValue, (Mass?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (MassRow)d;
@@ -9326,7 +8996,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(MassFlow?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((MassFlowRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -9336,14 +9006,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(MassFlow?),
             typeof(MassFlowRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((MassFlowRow)d).OnMinValueChanged((MassFlow?)e.OldValue, (MassFlow?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(MassFlow?),
             typeof(MassFlowRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((MassFlowRow)d).OnMaxValueChanged((MassFlow?)e.OldValue, (MassFlow?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -9569,16 +9239,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(MassFlow).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MassFlowRow)d).OnMinValueChanged((MassFlow?)e.OldValue, (MassFlow?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MassFlowRow)d).OnMaxValueChanged((MassFlow?)e.OldValue, (MassFlow?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (MassFlowRow)d;
@@ -9608,7 +9268,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(MolarHeatCapacity?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((MolarHeatCapacityRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -9618,14 +9278,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(MolarHeatCapacity?),
             typeof(MolarHeatCapacityRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((MolarHeatCapacityRow)d).OnMinValueChanged((MolarHeatCapacity?)e.OldValue, (MolarHeatCapacity?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(MolarHeatCapacity?),
             typeof(MolarHeatCapacityRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((MolarHeatCapacityRow)d).OnMaxValueChanged((MolarHeatCapacity?)e.OldValue, (MolarHeatCapacity?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -9851,16 +9511,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(MolarHeatCapacity).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MolarHeatCapacityRow)d).OnMinValueChanged((MolarHeatCapacity?)e.OldValue, (MolarHeatCapacity?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MolarHeatCapacityRow)d).OnMaxValueChanged((MolarHeatCapacity?)e.OldValue, (MolarHeatCapacity?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (MolarHeatCapacityRow)d;
@@ -9890,7 +9540,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(MolarMass?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((MolarMassRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -9900,14 +9550,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(MolarMass?),
             typeof(MolarMassRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((MolarMassRow)d).OnMinValueChanged((MolarMass?)e.OldValue, (MolarMass?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(MolarMass?),
             typeof(MolarMassRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((MolarMassRow)d).OnMaxValueChanged((MolarMass?)e.OldValue, (MolarMass?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -10133,16 +9783,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(MolarMass).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MolarMassRow)d).OnMinValueChanged((MolarMass?)e.OldValue, (MolarMass?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MolarMassRow)d).OnMaxValueChanged((MolarMass?)e.OldValue, (MolarMass?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (MolarMassRow)d;
@@ -10172,7 +9812,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Momentum?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((MomentumRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -10182,14 +9822,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Momentum?),
             typeof(MomentumRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((MomentumRow)d).OnMinValueChanged((Momentum?)e.OldValue, (Momentum?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Momentum?),
             typeof(MomentumRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((MomentumRow)d).OnMaxValueChanged((Momentum?)e.OldValue, (Momentum?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -10415,16 +10055,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Momentum).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MomentumRow)d).OnMinValueChanged((Momentum?)e.OldValue, (Momentum?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((MomentumRow)d).OnMaxValueChanged((Momentum?)e.OldValue, (Momentum?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (MomentumRow)d;
@@ -10454,7 +10084,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Power?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((PowerRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -10464,14 +10094,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Power?),
             typeof(PowerRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((PowerRow)d).OnMinValueChanged((Power?)e.OldValue, (Power?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Power?),
             typeof(PowerRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((PowerRow)d).OnMaxValueChanged((Power?)e.OldValue, (Power?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -10697,16 +10327,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Power).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((PowerRow)d).OnMinValueChanged((Power?)e.OldValue, (Power?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((PowerRow)d).OnMaxValueChanged((Power?)e.OldValue, (Power?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (PowerRow)d;
@@ -10736,7 +10356,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Pressure?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((PressureRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -10746,14 +10366,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Pressure?),
             typeof(PressureRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((PressureRow)d).OnMinValueChanged((Pressure?)e.OldValue, (Pressure?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Pressure?),
             typeof(PressureRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((PressureRow)d).OnMaxValueChanged((Pressure?)e.OldValue, (Pressure?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -10979,16 +10599,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Pressure).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((PressureRow)d).OnMinValueChanged((Pressure?)e.OldValue, (Pressure?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((PressureRow)d).OnMaxValueChanged((Pressure?)e.OldValue, (Pressure?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (PressureRow)d;
@@ -11018,7 +10628,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Resistance?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((ResistanceRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -11028,14 +10638,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Resistance?),
             typeof(ResistanceRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((ResistanceRow)d).OnMinValueChanged((Resistance?)e.OldValue, (Resistance?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Resistance?),
             typeof(ResistanceRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((ResistanceRow)d).OnMaxValueChanged((Resistance?)e.OldValue, (Resistance?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -11261,16 +10871,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Resistance).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ResistanceRow)d).OnMinValueChanged((Resistance?)e.OldValue, (Resistance?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ResistanceRow)d).OnMaxValueChanged((Resistance?)e.OldValue, (Resistance?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (ResistanceRow)d;
@@ -11300,7 +10900,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(SolidAngle?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((SolidAngleRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -11310,14 +10910,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(SolidAngle?),
             typeof(SolidAngleRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((SolidAngleRow)d).OnMinValueChanged((SolidAngle?)e.OldValue, (SolidAngle?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(SolidAngle?),
             typeof(SolidAngleRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((SolidAngleRow)d).OnMaxValueChanged((SolidAngle?)e.OldValue, (SolidAngle?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -11543,16 +11143,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(SolidAngle).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SolidAngleRow)d).OnMinValueChanged((SolidAngle?)e.OldValue, (SolidAngle?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SolidAngleRow)d).OnMaxValueChanged((SolidAngle?)e.OldValue, (SolidAngle?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (SolidAngleRow)d;
@@ -11582,7 +11172,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(SpecificEnergy?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((SpecificEnergyRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -11592,14 +11182,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(SpecificEnergy?),
             typeof(SpecificEnergyRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((SpecificEnergyRow)d).OnMinValueChanged((SpecificEnergy?)e.OldValue, (SpecificEnergy?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(SpecificEnergy?),
             typeof(SpecificEnergyRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((SpecificEnergyRow)d).OnMaxValueChanged((SpecificEnergy?)e.OldValue, (SpecificEnergy?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -11825,16 +11415,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(SpecificEnergy).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SpecificEnergyRow)d).OnMinValueChanged((SpecificEnergy?)e.OldValue, (SpecificEnergy?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SpecificEnergyRow)d).OnMaxValueChanged((SpecificEnergy?)e.OldValue, (SpecificEnergy?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (SpecificEnergyRow)d;
@@ -11864,7 +11444,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(SpecificVolume?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((SpecificVolumeRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -11874,14 +11454,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(SpecificVolume?),
             typeof(SpecificVolumeRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((SpecificVolumeRow)d).OnMinValueChanged((SpecificVolume?)e.OldValue, (SpecificVolume?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(SpecificVolume?),
             typeof(SpecificVolumeRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((SpecificVolumeRow)d).OnMaxValueChanged((SpecificVolume?)e.OldValue, (SpecificVolume?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -12107,16 +11687,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(SpecificVolume).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SpecificVolumeRow)d).OnMinValueChanged((SpecificVolume?)e.OldValue, (SpecificVolume?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SpecificVolumeRow)d).OnMaxValueChanged((SpecificVolume?)e.OldValue, (SpecificVolume?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (SpecificVolumeRow)d;
@@ -12146,7 +11716,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Speed?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((SpeedRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -12156,14 +11726,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Speed?),
             typeof(SpeedRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((SpeedRow)d).OnMinValueChanged((Speed?)e.OldValue, (Speed?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Speed?),
             typeof(SpeedRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((SpeedRow)d).OnMaxValueChanged((Speed?)e.OldValue, (Speed?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -12389,16 +11959,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Speed).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SpeedRow)d).OnMinValueChanged((Speed?)e.OldValue, (Speed?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((SpeedRow)d).OnMaxValueChanged((Speed?)e.OldValue, (Speed?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (SpeedRow)d;
@@ -12428,7 +11988,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Stiffness?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((StiffnessRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -12438,14 +11998,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Stiffness?),
             typeof(StiffnessRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((StiffnessRow)d).OnMinValueChanged((Stiffness?)e.OldValue, (Stiffness?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Stiffness?),
             typeof(StiffnessRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((StiffnessRow)d).OnMaxValueChanged((Stiffness?)e.OldValue, (Stiffness?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -12671,16 +12231,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Stiffness).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((StiffnessRow)d).OnMinValueChanged((Stiffness?)e.OldValue, (Stiffness?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((StiffnessRow)d).OnMaxValueChanged((Stiffness?)e.OldValue, (Stiffness?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (StiffnessRow)d;
@@ -12710,7 +12260,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Temperature?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((TemperatureRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -12720,14 +12270,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Temperature?),
             typeof(TemperatureRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((TemperatureRow)d).OnMinValueChanged((Temperature?)e.OldValue, (Temperature?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Temperature?),
             typeof(TemperatureRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((TemperatureRow)d).OnMaxValueChanged((Temperature?)e.OldValue, (Temperature?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -12953,16 +12503,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Temperature).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((TemperatureRow)d).OnMinValueChanged((Temperature?)e.OldValue, (Temperature?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((TemperatureRow)d).OnMaxValueChanged((Temperature?)e.OldValue, (Temperature?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (TemperatureRow)d;
@@ -12992,7 +12532,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Time?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((TimeRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -13002,14 +12542,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Time?),
             typeof(TimeRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((TimeRow)d).OnMinValueChanged((Time?)e.OldValue, (Time?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Time?),
             typeof(TimeRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((TimeRow)d).OnMaxValueChanged((Time?)e.OldValue, (Time?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -13235,16 +12775,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Time).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((TimeRow)d).OnMinValueChanged((Time?)e.OldValue, (Time?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((TimeRow)d).OnMaxValueChanged((Time?)e.OldValue, (Time?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (TimeRow)d;
@@ -13274,7 +12804,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Torque?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((TorqueRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -13284,14 +12814,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Torque?),
             typeof(TorqueRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((TorqueRow)d).OnMinValueChanged((Torque?)e.OldValue, (Torque?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Torque?),
             typeof(TorqueRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((TorqueRow)d).OnMaxValueChanged((Torque?)e.OldValue, (Torque?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -13517,16 +13047,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Torque).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((TorqueRow)d).OnMinValueChanged((Torque?)e.OldValue, (Torque?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((TorqueRow)d).OnMaxValueChanged((Torque?)e.OldValue, (Torque?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (TorqueRow)d;
@@ -13556,7 +13076,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Unitless?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((UnitlessRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -13566,14 +13086,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Unitless?),
             typeof(UnitlessRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((UnitlessRow)d).OnMinValueChanged((Unitless?)e.OldValue, (Unitless?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Unitless?),
             typeof(UnitlessRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((UnitlessRow)d).OnMaxValueChanged((Unitless?)e.OldValue, (Unitless?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -13799,16 +13319,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Unitless).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((UnitlessRow)d).OnMinValueChanged((Unitless?)e.OldValue, (Unitless?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((UnitlessRow)d).OnMaxValueChanged((Unitless?)e.OldValue, (Unitless?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (UnitlessRow)d;
@@ -13838,7 +13348,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Voltage?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((VoltageRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -13848,14 +13358,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Voltage?),
             typeof(VoltageRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((VoltageRow)d).OnMinValueChanged((Voltage?)e.OldValue, (Voltage?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Voltage?),
             typeof(VoltageRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((VoltageRow)d).OnMaxValueChanged((Voltage?)e.OldValue, (Voltage?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -14081,16 +13591,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Voltage).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((VoltageRow)d).OnMinValueChanged((Voltage?)e.OldValue, (Voltage?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((VoltageRow)d).OnMaxValueChanged((Voltage?)e.OldValue, (Voltage?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (VoltageRow)d;
@@ -14120,7 +13620,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Volume?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((VolumeRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -14130,14 +13630,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Volume?),
             typeof(VolumeRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((VolumeRow)d).OnMinValueChanged((Volume?)e.OldValue, (Volume?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Volume?),
             typeof(VolumeRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((VolumeRow)d).OnMaxValueChanged((Volume?)e.OldValue, (Volume?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -14363,16 +13863,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(Volume).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((VolumeRow)d).OnMinValueChanged((Volume?)e.OldValue, (Volume?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((VolumeRow)d).OnMaxValueChanged((Volume?)e.OldValue, (Volume?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (VolumeRow)d;
@@ -14402,7 +13892,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(VolumetricFlow?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((VolumetricFlowRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -14412,14 +13902,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(VolumetricFlow?),
             typeof(VolumetricFlowRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((VolumetricFlowRow)d).OnMinValueChanged((VolumetricFlow?)e.OldValue, (VolumetricFlow?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(VolumetricFlow?),
             typeof(VolumetricFlowRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((VolumetricFlowRow)d).OnMaxValueChanged((VolumetricFlow?)e.OldValue, (VolumetricFlow?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -14645,16 +14135,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             return default(VolumetricFlow).ToString(unit, format).Trim('0');
         }
 
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((VolumetricFlowRow)d).OnMinValueChanged((VolumetricFlow?)e.OldValue, (VolumetricFlow?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((VolumetricFlowRow)d).OnMaxValueChanged((VolumetricFlow?)e.OldValue, (VolumetricFlow?)e.NewValue);
-        }
-
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var row = (VolumetricFlowRow)d;
@@ -14684,7 +14164,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(Wavenumber?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((WavenumberRow)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -14694,14 +14174,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(Wavenumber?),
             typeof(WavenumberRow),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((WavenumberRow)d).OnMinValueChanged((Wavenumber?)e.OldValue, (Wavenumber?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(Wavenumber?),
             typeof(WavenumberRow),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((WavenumberRow)d).OnMaxValueChanged((Wavenumber?)e.OldValue, (Wavenumber?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -14925,16 +14405,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         private static string CreateSuffix(SymbolFormat format, WavenumberUnit unit)
         {
             return default(Wavenumber).ToString(unit, format).Trim('0');
-        }
-
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((WavenumberRow)d).OnMinValueChanged((Wavenumber?)e.OldValue, (Wavenumber?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((WavenumberRow)d).OnMaxValueChanged((Wavenumber?)e.OldValue, (Wavenumber?)e.NewValue);
         }
 
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

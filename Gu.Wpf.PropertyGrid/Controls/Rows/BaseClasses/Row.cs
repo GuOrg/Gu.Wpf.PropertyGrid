@@ -42,17 +42,6 @@ namespace Gu.Wpf.PropertyGrid
         /// <inheritdoc />
         protected override IEnumerator LogicalChildren => this.logicalChildren.GetEnumerator();
 
-        /// <summary>
-        /// Called when the Value property changes value.
-        /// </summary>
-        /// <param name="o">The sender.</param>
-        /// <param name="e">The <see cref="DependencyPropertyChangedEventArgs"/></param>
-        protected static void OnValueChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (Row)o;
-            row.OnValueChanged(e.OldValue, e.NewValue);
-        }
-
         /// <inheritdoc/>
         protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer()
         {
@@ -71,6 +60,7 @@ namespace Gu.Wpf.PropertyGrid
 
         protected virtual void OnOldValueChanged(object oldValue, object newValue)
         {
+            this.UpdateLogicalChild(oldValue as DependencyObject, newValue as DependencyObject);
         }
 
         /// <inheritdoc />
@@ -161,9 +151,9 @@ namespace Gu.Wpf.PropertyGrid
 
         private static void OnOldValueChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
-            var sc = (Row)o;
-            sc.UpdateIsDirty();
-            sc.OnOldValueChanged(e.OldValue, e.NewValue);
+            var row = (Row)o;
+            row.UpdateIsDirty();
+            row.OnOldValueChanged(e.OldValue, e.NewValue);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 default(<#= quantityType.Name #>?),
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                OnValueChanged,
+                (d, e) => ((<#= className #>)d).OnValueChanged(e.OldValue, e.NewValue),
                 null,
                 true,
                 UpdateSourceTrigger.LostFocus));
@@ -38,14 +38,14 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             "MinValue",
             typeof(<#= quantityType.Name #>?),
             typeof(<#= className #>),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((<#= className #>)d).OnMinValueChanged((<#= quantityType.Name #>?)e.OldValue, (<#= quantityType.Name #>?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             "MaxValue",
             typeof(<#= quantityType.Name #>?),
             typeof(<#= className #>),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((<#= className #>)d).OnMaxValueChanged((<#= quantityType.Name #>?)e.OldValue, (<#= quantityType.Name #>?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="Unit"/> dependency property.</summary>
         public static readonly DependencyProperty UnitProperty = DependencyProperty.Register(
@@ -269,16 +269,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         private static string CreateSuffix(SymbolFormat format, <#= quantityType.Name#>Unit unit)
         {
             return default(<#= quantityType.Name #>).ToString(unit, format).Trim('0');
-        }
-
-        private static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((<#= className #>)d).OnMinValueChanged((<#= quantityType.Name #>?)e.OldValue, (<#= quantityType.Name #>?)e.NewValue);
-        }
-
-        private static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((<#= className #>)d).OnMaxValueChanged((<#= quantityType.Name #>?)e.OldValue, (<#= quantityType.Name #>?)e.NewValue);
         }
 
         private static void OnUnitChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
