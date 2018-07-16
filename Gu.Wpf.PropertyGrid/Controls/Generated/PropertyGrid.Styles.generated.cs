@@ -1,19 +1,10 @@
-#pragma warning disable SA1402 // File may only contain a single class
+﻿#pragma warning disable SA1402 // File may only contain a single class
 namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
 
     public static partial class PropertyGrid
     {
-        /// <summary>Identifies the HeaderStyle attached dependency property.</summary>
-        public static readonly DependencyProperty HeaderStyleProperty = DependencyProperty.RegisterAttached(
-            "HeaderStyle",
-            typeof(Style),
-            typeof(PropertyGrid),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits));
-
         /// <summary>Identifies the ValueStyle attached dependency property.</summary>
         public static readonly DependencyProperty ValueStyleProperty = DependencyProperty.RegisterAttached(
             "ValueStyle",
@@ -49,28 +40,6 @@ namespace Gu.Wpf.PropertyGrid
             new FrameworkPropertyMetadata(
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
-
-        /// <summary>
-        /// Helper for setting HeaderStyle property on a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to set HeaderStyle property on.</param>
-        /// <param name="value">HeaderStyle property value.</param>
-        public static void SetHeaderStyle(this UIElement element, Style value)
-        {
-            element.SetValue(HeaderStyleProperty, value);
-        }
-
-        /// <summary>
-        /// Helper for reading HeaderStyle property from a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to read HeaderStyle property from.</param>
-        /// <returns>HeaderStyle property value.</returns>
-        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(UIElement))]
-        public static Style GetHeaderStyle(this UIElement element)
-        {
-            return (Style)element.GetValue(HeaderStyleProperty);
-        }
 
         /// <summary>
         /// Helper for setting ValueStyle property on a UIElement.
@@ -163,13 +132,6 @@ namespace Gu.Wpf.PropertyGrid
 
     public partial class Rows
     {
-        /// <summary>Identifies the HeaderStyle dependency property.</summary>
-        public static readonly DependencyProperty HeaderStyleProperty = PropertyGrid.HeaderStyleProperty.AddOwner(
-            typeof(Rows),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits));
-
         /// <summary>Identifies the ValueStyle dependency property.</summary>
         public static readonly DependencyProperty ValueStyleProperty = PropertyGrid.ValueStyleProperty.AddOwner(
             typeof(Rows),
@@ -197,15 +159,6 @@ namespace Gu.Wpf.PropertyGrid
             new FrameworkPropertyMetadata(
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
-
-        /// <summary>
-        /// Gets or sets the HeaderStyle.
-        /// </summary>
-        public Style HeaderStyle
-        {
-            get { return (Style)this.GetValue(HeaderStyleProperty); }
-            set { this.SetValue(HeaderStyleProperty, value); }
-        }
 
         /// <summary>
         /// Gets or sets the ValueStyle.
@@ -246,14 +199,6 @@ namespace Gu.Wpf.PropertyGrid
 
     public abstract partial class Row
     {
-        /// <summary>Identifies the HeaderStyle dependency property.</summary>
-        public static readonly DependencyProperty HeaderStyleProperty = PropertyGrid.HeaderStyleProperty.AddOwner(
-            typeof(Row),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits,
-                OnPartStyleChanged));
-
         /// <summary>Identifies the ValueStyle dependency property.</summary>
         public static readonly DependencyProperty ValueStyleProperty = PropertyGrid.ValueStyleProperty.AddOwner(
             typeof(Row),
@@ -285,15 +230,6 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
-
-        /// <summary>
-        /// Gets or sets the HeaderStyle.
-        /// </summary>
-        public Style HeaderStyle
-        {
-            get { return (Style)this.GetValue(HeaderStyleProperty); }
-            set { this.SetValue(HeaderStyleProperty, value); }
-        }
 
         /// <summary>
         /// Gets or sets the ValueStyle.
@@ -338,14 +274,6 @@ namespace Gu.Wpf.PropertyGrid
 
     public partial class ContentRow
     {
-        /// <summary>Identifies the HeaderStyle dependency property.</summary>
-        public static readonly DependencyProperty HeaderStyleProperty = PropertyGrid.HeaderStyleProperty.AddOwner(
-            typeof(ContentRow),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits,
-                OnPartStyleChanged));
-
         /// <summary>Identifies the ValueStyle dependency property.</summary>
         public static readonly DependencyProperty ValueStyleProperty = PropertyGrid.ValueStyleProperty.AddOwner(
             typeof(ContentRow),
@@ -377,15 +305,6 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
-
-        /// <summary>
-        /// Gets or sets the HeaderStyle.
-        /// </summary>
-        public Style HeaderStyle
-        {
-            get { return (Style)this.GetValue(HeaderStyleProperty); }
-            set { this.SetValue(HeaderStyleProperty, value); }
-        }
 
         /// <summary>
         /// Gets or sets the ValueStyle.

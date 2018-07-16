@@ -10,7 +10,13 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="HeaderStyle" Value="{StaticResource {x:Type propertyGrid:HeaderBlock}}" />
+        <Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
         <Setter Property="SuffixStyle" Value="{StaticResource {x:Type propertyGrid:SuffixBlock}}" />
         <Setter Property="OldValueStyle" Value="{StaticResource DefaultOldValueStyle}" />
         <Setter Property="ErrorStyle" Value="{StaticResource DefaultErrorTextStyle}" />
@@ -45,7 +51,6 @@
     </Style>
 
     <Style TargetType="{x:Type propertyGrid:ContentRow}">
-        <Setter Property="HeaderStyle" Value="{StaticResource {x:Type propertyGrid:HeaderBlock}}" />
         <Setter Property="SuffixStyle" Value="{StaticResource {x:Type propertyGrid:SuffixBlock}}" />
 
         <Setter Property="Template">

@@ -2,7 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:propertyGrid="clr-namespace:Gu.Wpf.PropertyGrid">
     <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type propertyGrid:SuffixBlock}" />
-    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type propertyGrid:HeaderBlock}" />
 
     <Style x:Key="InfoStyle" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="12" />

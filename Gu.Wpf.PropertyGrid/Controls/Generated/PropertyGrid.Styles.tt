@@ -13,7 +13,6 @@ namespace Gu.Wpf.PropertyGrid
 <#
     var styles = new[]
                      {
-                         "HeaderStyle",
                          "ValueStyle",
                          "SuffixStyle",
                          "OldValueStyle",
@@ -141,7 +140,6 @@ namespace Gu.Wpf.PropertyGrid
 
         private static void OnPartStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            ((<#= controlName.Name #>)d).UpdateTemplate();
         }
     }
 <#

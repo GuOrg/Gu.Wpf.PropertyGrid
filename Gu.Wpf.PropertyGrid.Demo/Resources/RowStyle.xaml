@@ -18,11 +18,10 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
                 </Grid.ColumnDefinitions>
-                <propertyGrid:HeaderBlock x:Name="PART_Header"
-                                          Grid.Row="0"
-                                          Grid.Column="0"
-                                          Style="{TemplateBinding HeaderStyle}"
-                                          Text="{TemplateBinding Header}" />
+                <ContentPresenter x:Name="PART_Header"
+                                  Grid.Row="0"
+                                  Grid.Column="0"
+                                  ContentSource="Header" />
 
                 <Border Grid.Row="0"
                         Grid.Column="1"
@@ -95,11 +94,10 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
                 </Grid.ColumnDefinitions>
-                <propertyGrid:HeaderBlock x:Name="PART_Header"
-                                          Grid.Row="0"
-                                          Grid.Column="0"
-                                          Style="{TemplateBinding HeaderStyle}"
-                                          Text="{TemplateBinding Header}" />
+                <ContentPresenter x:Name="PART_Header"
+                                  Grid.Row="0"
+                                  Grid.Column="0"
+                                  ContentSource="Header" />
 
                 <Border Grid.Row="0"
                         Grid.Column="1"
@@ -172,11 +170,10 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Value" />
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
                 </Grid.ColumnDefinitions>
-                <propertyGrid:HeaderBlock x:Name="PART_Header"
-                                          Grid.Row="0"
-                                          Grid.Column="0"
-                                          Style="{TemplateBinding HeaderStyle}"
-                                          Text="{TemplateBinding Header}" />
+                <ContentPresenter x:Name="PART_Header"
+                                  Grid.Row="0"
+                                  Grid.Column="0"
+                                  ContentSource="Header" />
 
                 <Border Grid.Row="0"
                         Grid.Column="1"
