@@ -1,6 +1,7 @@
 namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
+    using System.Windows.Controls;
 
     public abstract partial class Row
     {
@@ -12,13 +13,6 @@ namespace Gu.Wpf.PropertyGrid
                 new FrameworkPropertyMetadata(
                     BooleanBoxes.False,
                     FrameworkPropertyMetadataOptions.Inherits | FrameworkPropertyMetadataOptions.NotDataBindable));
-
-        /// <summary>Identifies the <see cref="Header"/> dependency property.</summary>
-        public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(
-            nameof(Header),
-            typeof(string),
-            typeof(Row),
-            new PropertyMetadata(string.Empty));
 
         /// <summary>Identifies the <see cref="Suffix"/> dependency property.</summary>
         public static readonly DependencyProperty SuffixProperty = DependencyProperty.Register(
@@ -53,15 +47,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             get => (bool)this.GetValue(UsePropertyNameAsHeaderProperty);
             set => this.SetValue(UsePropertyNameAsHeaderProperty, BooleanBoxes.Box(value));
-        }
-
-        /// <summary>
-        /// Gets or sets the header text.
-        /// </summary>
-        public string Header
-        {
-            get => (string)this.GetValue(HeaderProperty);
-            set => this.SetValue(HeaderProperty, value);
         }
 
         /// <summary>

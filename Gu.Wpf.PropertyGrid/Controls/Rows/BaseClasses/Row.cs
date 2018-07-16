@@ -1,6 +1,8 @@
 namespace Gu.Wpf.PropertyGrid
 {
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
@@ -10,6 +12,8 @@ namespace Gu.Wpf.PropertyGrid
     [TemplatePart(Name = ValueBoxName, Type = typeof(FrameworkElement))]
     public abstract partial class Row : Control
     {
+        private readonly List<DependencyObject> logicalChildren = new List<DependencyObject>();
+
         /// <summary>
         /// The name of the template child used to edit the Value property
         /// </summary>
@@ -34,6 +38,9 @@ namespace Gu.Wpf.PropertyGrid
         {
             this.ValueDependencyProperty = valueDependencyProperty;
         }
+
+        /// <inheritdoc />
+        protected override IEnumerator LogicalChildren => this.logicalChildren.GetEnumerator();
 
         /// <summary>
         /// Called when the Value property changes value.
@@ -113,6 +120,27 @@ namespace Gu.Wpf.PropertyGrid
                 };
 
                 _ = BindingOperations.SetBinding(this, OldValueProperty, oldValueBinding);
+            }
+        }
+
+        /// <summary>
+        /// Call <see cref="FrameworkElement.RemoveLogicalChild"/> with <paramref name="oldChild"/> and <see cref="FrameworkElement.AddLogicalChild"/> with <paramref name="newChild"/>
+        /// And update <see cref="FrameworkElement.LogicalChildren"/>
+        /// </summary>
+        /// <param name="oldChild">The old child.</param>
+        /// <param name="newChild">The new child.</param>
+        protected virtual void UpdateLogicalChild(DependencyObject oldChild, DependencyObject newChild)
+        {
+            if (oldChild != null)
+            {
+                this.RemoveLogicalChild(oldChild);
+                this.logicalChildren.Remove(oldChild);
+            }
+
+            if (newChild != null)
+            {
+                this.AddLogicalChild(newChild);
+                this.logicalChildren.Add(newChild);
             }
         }
 
