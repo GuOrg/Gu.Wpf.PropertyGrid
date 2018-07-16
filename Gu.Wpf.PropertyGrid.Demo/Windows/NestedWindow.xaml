@@ -24,7 +24,7 @@
                                         Value="root value" />
 
                 <TextBlock>First nested below</TextBlock>
-                <propertyGrid:Rows Background="GreenYellow" Style="{StaticResource {x:Static propertyGrid:Keys.NestedPropertyGridStyleKey}}">
+                <propertyGrid:Rows Background="GreenYellow" Style="{StaticResource {x:Static propertyGrid:Keys.NestedRowsStyleKey}}">
                     <propertyGrid:StringRow Background="CornflowerBlue"
                                             Header="a"
                                             Suffix="b"
@@ -32,7 +32,7 @@
                 </propertyGrid:Rows>
 
                 <TextBlock>Second nested below</TextBlock>
-                <propertyGrid:Rows Background="BurlyWood" Style="{StaticResource {x:Static propertyGrid:Keys.NestedPropertyGridStyleKey}}">
+                <propertyGrid:Rows Background="BurlyWood" Style="{StaticResource {x:Static propertyGrid:Keys.NestedRowsStyleKey}}">
                     <propertyGrid:StringRow Background="Orange"
                                             Header="long header"
                                             Suffix="really long suffix"
@@ -49,7 +49,7 @@
                                         Value="value" />
 
                 <TextBlock>First nested below</TextBlock>
-                <propertyGrid:Rows Background="OldLace" Style="{StaticResource {x:Static propertyGrid:Keys.NestedPropertyGridStyleKey}}">
+                <propertyGrid:Rows Background="OldLace" Style="{StaticResource {x:Static propertyGrid:Keys.NestedRowsStyleKey}}">
                     <propertyGrid:StringRow Background="PaleGreen"
                                             Header="a"
                                             Suffix="ab"
@@ -57,7 +57,7 @@
                 </propertyGrid:Rows>
 
                 <TextBlock>Second nested below</TextBlock>
-                <propertyGrid:Rows Background="IndianRed" Style="{StaticResource {x:Static propertyGrid:Keys.NestedPropertyGridStyleKey}}">
+                <propertyGrid:Rows Background="IndianRed" Style="{StaticResource {x:Static propertyGrid:Keys.NestedRowsStyleKey}}">
                     <propertyGrid:StringRow Background="LightGoldenrodYellow"
                                             Header="b"
                                             Suffix="bb"

@@ -5,7 +5,7 @@
 
     public static class Keys
     {
-        public static ResourceKey NestedPropertyGridStyleKey { get; } = CreateKey();
+        public static ResourceKey NestedRowsStyleKey { get; } = CreateKey();
 
         public static ResourceKey ValidationErrorRedBorderTemplateKey { get; } = CreateKey();
 
