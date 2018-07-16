@@ -5,7 +5,7 @@ namespace Gu.Wpf.PropertyGrid
     public static partial class PropertyGrid
     {
         /// <summary>
-        /// Setting this to true uses the proprty name as header, similar to DataGrid.AutoGenerateColumns.
+        /// Setting this to true uses the property name as header, similar to DataGrid.AutoGenerateColumns.
         /// Not very useful for other things than debug and quick hax
         /// </summary>
         public static readonly DependencyProperty UsePropertyNameAsHeaderProperty = DependencyProperty.RegisterAttached(

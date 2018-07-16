@@ -148,7 +148,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// To be called from generated codes error eventhandler
+        /// To be called from generated codes error event handler
         /// </summary>
         /// <param name="dependencyObject">error object</param>
         /// <param name="dependencyProperty">error property</param>
