@@ -67,7 +67,6 @@ namespace Gu.Wpf.PropertyGrid
         protected override void OnInitialized(EventArgs e)
         {
             base.OnInitialized(e);
-            this.UpdateTemplate();
             if (string.IsNullOrEmpty(this.Header) && this.UsePropertyNameAsHeader)
             {
                 var binding = BindingOperations.GetBinding(this, this.ValueDependencyProperty);
@@ -77,11 +76,6 @@ namespace Gu.Wpf.PropertyGrid
                     this.SetCurrentValue(HeaderProperty, value);
                 }
             }
-        }
-
-        protected virtual void UpdateTemplate()
-        {
-            this.ControlTemplateSelector?.UpdateCurrentTemplate(this);
         }
 
         /// <summary>

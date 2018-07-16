@@ -1,4 +1,4 @@
-﻿#pragma warning disable SA1402 // File may only contain a single class
+#pragma warning disable SA1402 // File may only contain a single class
 namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
@@ -246,15 +246,6 @@ namespace Gu.Wpf.PropertyGrid
 
     public abstract partial class Row
     {
-        /// <summary>Identifies the ControlTemplateSelector dependency property.</summary>
-        public static readonly DependencyProperty ControlTemplateSelectorProperty = DependencyProperty.Register(
-            nameof(ControlTemplateSelector),
-            typeof(RowControlTemplateSelector),
-            typeof(Row),
-            new PropertyMetadata(
-               default(RowControlTemplateSelector),
-               OnPartStyleChanged));
-
         /// <summary>Identifies the HeaderStyle dependency property.</summary>
         public static readonly DependencyProperty HeaderStyleProperty = PropertyGrid.HeaderStyleProperty.AddOwner(
             typeof(Row),
@@ -294,15 +285,6 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
-
-        /// <summary>
-        /// Gets or sets the RowControlTemplateSelector.
-        /// </summary>
-        public RowControlTemplateSelector ControlTemplateSelector
-        {
-            get { return (RowControlTemplateSelector)this.GetValue(ControlTemplateSelectorProperty); }
-            set { this.SetValue(ControlTemplateSelectorProperty, value); }
-        }
 
         /// <summary>
         /// Gets or sets the HeaderStyle.
@@ -351,21 +333,11 @@ namespace Gu.Wpf.PropertyGrid
 
         private static void OnPartStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            ((Row)d).UpdateTemplate();
         }
     }
 
     public partial class ContentRow
     {
-        /// <summary>Identifies the ControlTemplateSelector dependency property.</summary>
-        public static readonly DependencyProperty ControlTemplateSelectorProperty = DependencyProperty.Register(
-            nameof(ControlTemplateSelector),
-            typeof(RowControlTemplateSelector),
-            typeof(ContentRow),
-            new PropertyMetadata(
-               default(RowControlTemplateSelector),
-               OnPartStyleChanged));
-
         /// <summary>Identifies the HeaderStyle dependency property.</summary>
         public static readonly DependencyProperty HeaderStyleProperty = PropertyGrid.HeaderStyleProperty.AddOwner(
             typeof(ContentRow),
@@ -405,15 +377,6 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
-
-        /// <summary>
-        /// Gets or sets the RowControlTemplateSelector.
-        /// </summary>
-        public RowControlTemplateSelector ControlTemplateSelector
-        {
-            get { return (RowControlTemplateSelector)this.GetValue(ControlTemplateSelectorProperty); }
-            set { this.SetValue(ControlTemplateSelectorProperty, value); }
-        }
 
         /// <summary>
         /// Gets or sets the HeaderStyle.
@@ -462,7 +425,6 @@ namespace Gu.Wpf.PropertyGrid
 
         private static void OnPartStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            ((ContentRow)d).UpdateTemplate();
         }
     }
 }

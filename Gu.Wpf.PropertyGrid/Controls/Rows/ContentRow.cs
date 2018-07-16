@@ -43,11 +43,6 @@ namespace Gu.Wpf.PropertyGrid
             set => this.SetValue(OldValueProperty, value);
         }
 
-        protected virtual void UpdateTemplate()
-        {
-            this.ControlTemplateSelector?.UpdateCurrentTemplate(this);
-        }
-
         [SuppressMessage("ReSharper", "UnusedParameter.Global")]
         protected virtual void OnOldValueChanged(object oldValue, object newValue)
         {
