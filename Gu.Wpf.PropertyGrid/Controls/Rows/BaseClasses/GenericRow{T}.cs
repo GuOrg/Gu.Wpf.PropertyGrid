@@ -18,13 +18,16 @@ namespace Gu.Wpf.PropertyGrid
                 isAnimationProhibited: true,
                 defaultUpdateSourceTrigger: UpdateSourceTrigger.PropertyChanged));
 
+        protected GenericRow()
+            : base(ValueProperty)
+        {
+        }
+
         public T Value
         {
             get => (T)this.GetValue(ValueProperty);
             set => this.SetValue(ValueProperty, value);
         }
-
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         protected override void UpdateIsDirty()
         {

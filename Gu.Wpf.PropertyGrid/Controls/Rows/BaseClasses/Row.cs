@@ -18,7 +18,16 @@ namespace Gu.Wpf.PropertyGrid
         /// <summary>
         /// Gets the dependency property for the value of this row.
         /// </summary>
-        protected abstract DependencyProperty ValueDependencyProperty { get; }
+        protected DependencyProperty ValueDependencyProperty { get; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Row"/> class.
+        /// </summary>
+        /// <param name="valueDependencyProperty">The dependency property containing the value.</param>
+        protected Row(DependencyProperty valueDependencyProperty)
+        {
+            this.ValueDependencyProperty = valueDependencyProperty;
+        }
 
         /// <summary>
         /// Called when the Value property changes value.

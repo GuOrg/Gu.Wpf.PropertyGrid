@@ -60,6 +60,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public AccelerationRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -99,11 +104,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (AccelerationUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -342,6 +342,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public AmountOfSubstanceRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -381,11 +386,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (AmountOfSubstanceUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -624,6 +624,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public AngleRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -663,11 +668,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (AngleUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -906,6 +906,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public AnglePerUnitlessRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -945,11 +950,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (AnglePerUnitlessUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -1188,6 +1188,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public AngularAccelerationRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -1227,11 +1232,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (AngularAccelerationUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -1470,6 +1470,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public AngularJerkRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -1509,11 +1514,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (AngularJerkUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -1752,6 +1752,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public AngularSpeedRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -1791,11 +1796,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (AngularSpeedUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -2034,6 +2034,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public AreaRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -2073,11 +2078,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (AreaUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -2316,6 +2316,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public AreaDensityRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -2355,11 +2360,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (AreaDensityUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -2598,6 +2598,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public CapacitanceRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -2637,11 +2642,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (CapacitanceUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -2880,6 +2880,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public CatalyticActivityRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -2919,11 +2924,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (CatalyticActivityUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -3162,6 +3162,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public ConductivityRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -3201,11 +3206,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (ConductivityUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -3444,6 +3444,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public CurrentRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -3483,11 +3488,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (CurrentUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -3726,6 +3726,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public DataRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -3765,11 +3770,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (DataUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -4008,6 +4008,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public DensityRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -4047,11 +4052,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (DensityUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -4290,6 +4290,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public ElectricalConductanceRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -4329,11 +4334,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (ElectricalConductanceUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -4572,6 +4572,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public ElectricChargeRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -4611,11 +4616,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (ElectricChargeUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -4854,6 +4854,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public EnergyRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -4893,11 +4898,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (EnergyUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -5136,6 +5136,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public FlexibilityRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -5175,11 +5180,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (FlexibilityUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -5418,6 +5418,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public ForceRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -5457,11 +5462,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (ForceUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -5700,6 +5700,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public ForcePerUnitlessRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -5739,11 +5744,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (ForcePerUnitlessUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -5982,6 +5982,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public FrequencyRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -6021,11 +6026,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (FrequencyUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -6264,6 +6264,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public IlluminanceRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -6303,11 +6308,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (IlluminanceUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -6546,6 +6546,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public InductanceRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -6585,11 +6590,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (InductanceUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -6828,6 +6828,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public JerkRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -6867,11 +6872,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (JerkUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -7110,6 +7110,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public KinematicViscosityRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -7149,11 +7154,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (KinematicViscosityUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -7392,6 +7392,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public LengthRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -7431,11 +7436,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (LengthUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -7674,6 +7674,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public LengthPerUnitlessRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -7713,11 +7718,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (LengthPerUnitlessUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -7956,6 +7956,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public LuminousFluxRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -7995,11 +8000,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (LuminousFluxUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -8238,6 +8238,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public LuminousIntensityRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -8277,11 +8282,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (LuminousIntensityUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -8520,6 +8520,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public MagneticFieldStrengthRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -8559,11 +8564,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (MagneticFieldStrengthUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -8802,6 +8802,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public MagneticFluxRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -8841,11 +8846,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (MagneticFluxUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -9084,6 +9084,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public MassRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -9123,11 +9128,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (MassUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -9366,6 +9366,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public MassFlowRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -9405,11 +9410,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (MassFlowUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -9648,6 +9648,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public MolarHeatCapacityRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -9687,11 +9692,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (MolarHeatCapacityUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -9930,6 +9930,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public MolarMassRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -9969,11 +9974,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (MolarMassUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -10212,6 +10212,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public MomentumRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -10251,11 +10256,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (MomentumUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -10494,6 +10494,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public PowerRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -10533,11 +10538,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (PowerUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -10776,6 +10776,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public PressureRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -10815,11 +10820,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (PressureUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -11058,6 +11058,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public ResistanceRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -11097,11 +11102,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (ResistanceUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -11340,6 +11340,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public SolidAngleRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -11379,11 +11384,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (SolidAngleUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -11622,6 +11622,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public SpecificEnergyRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -11661,11 +11666,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (SpecificEnergyUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -11904,6 +11904,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public SpecificVolumeRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -11943,11 +11948,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (SpecificVolumeUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -12186,6 +12186,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public SpeedRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -12225,11 +12230,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (SpeedUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -12468,6 +12468,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public StiffnessRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -12507,11 +12512,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (StiffnessUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -12750,6 +12750,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public TemperatureRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -12789,11 +12794,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (TemperatureUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -13032,6 +13032,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public TimeRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -13071,11 +13076,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (TimeUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -13314,6 +13314,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public TorqueRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -13353,11 +13358,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (TorqueUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -13596,6 +13596,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public UnitlessRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -13635,11 +13640,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (UnitlessUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -13878,6 +13878,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public VoltageRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -13917,11 +13922,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (VoltageUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -14160,6 +14160,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public VolumeRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -14199,11 +14204,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (VolumeUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -14442,6 +14442,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public VolumetricFlowRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -14481,11 +14486,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (VolumetricFlowUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate
@@ -14724,6 +14724,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public WavenumberRow()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -14763,11 +14768,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (WavenumberUnit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate

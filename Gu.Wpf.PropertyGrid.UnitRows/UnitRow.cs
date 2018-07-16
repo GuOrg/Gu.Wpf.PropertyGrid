@@ -66,6 +66,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             DefaultStyleKeyProperty.OverrideMetadata(typeof(UnitRow), new FrameworkPropertyMetadata(typeof(UnitRow)));
         }
 
+        protected UnitRow(DependencyProperty valueDependencyProperty) 
+            : base(valueDependencyProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the Value property as a double.
         /// </summary>

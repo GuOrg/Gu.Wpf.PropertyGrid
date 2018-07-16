@@ -68,6 +68,11 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                     FrameworkPropertyMetadataOptions.NotDataBindable));
         }
 
+        public <#= className #>()
+            : base(ValueProperty)
+        {
+        }
+
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
@@ -107,11 +112,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             get => (<#= quantityType.Name #>Unit)this.GetValue(UnitProperty);
             set => this.SetValue(UnitProperty, value);
         }
-
-        /// <summary>
-        /// Gets the dependency property that corresponds to Value.
-        /// </summary>
-        protected override DependencyProperty ValueDependencyProperty => ValueProperty;
 
         /// <summary>
         /// Overrirde of OnApplyTemplate

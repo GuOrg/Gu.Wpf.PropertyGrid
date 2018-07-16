@@ -13,9 +13,9 @@ namespace Gu.Wpf.PropertyGrid
 <#
     var propertyMetaDatas = new[]
                      {
-                        new PropertyMetaData("IsReadOnly","bool","false", "Gets or sets a value indicating whether the row is read only."),
-                        new PropertyMetaData("OldValueStringFormat","string","\"Old value: {0}\"", "Gets or sets the string format for the old value."),
-                        new PropertyMetaData("OldDataContext","object","null", "Gets or sets the data context with old values.", "OnOldDataContextChanged"),
+                        new PropertyMetaData("IsReadOnly", "bool", "false", "Gets or sets a value indicating whether the row is read only."),
+                        new PropertyMetaData("OldDataContext", "object", "null", "Gets or sets the data context with old values.", "OnOldDataContextChanged"),
+                        new PropertyMetaData("OldValueStringFormat", "string","\"Old value: {0}\"", "Gets or sets the string format for the old value."),
                      };
 
     foreach(var propertyMetaData in propertyMetaDatas)
