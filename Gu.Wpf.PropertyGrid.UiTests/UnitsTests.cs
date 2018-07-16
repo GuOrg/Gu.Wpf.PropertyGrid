@@ -84,7 +84,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
                 Assert.AreEqual("1.23456", textBox.Text);
                 Assert.AreEqual("\u00A0cm", settingControl.Suffix().Text);
 
-                groupBox.FindComboBoxRow("selector").Value().Select("m");
+                _ = groupBox.FindComboBoxRow("selector").Value().Select("m");
 
                 Assert.AreEqual("0.0123456", textBox.Text);
                 Assert.AreEqual("\u00A0m", settingControl.Suffix().Text);

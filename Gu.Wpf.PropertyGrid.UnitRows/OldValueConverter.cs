@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid.UnitRows
+namespace Gu.Wpf.PropertyGrid.UnitRows
 {
     using System;
     using System.Globalization;
@@ -46,7 +46,7 @@
         /// <inheritdoc />
         object[] IMultiValueConverter.ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
-            throw new NotSupportedException();
+            throw new NotSupportedException($"{nameof(OldValueConverter)} can only be used in OneWay bindings");
         }
     }
 }

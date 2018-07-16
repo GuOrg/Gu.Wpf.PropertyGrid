@@ -17,7 +17,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         [SetUp]
         public void SetUp()
         {
-            Application.TryWithAttached(
+            _ = Application.TryWithAttached(
                 ExeFileName,
                 WindowName,
                 app =>

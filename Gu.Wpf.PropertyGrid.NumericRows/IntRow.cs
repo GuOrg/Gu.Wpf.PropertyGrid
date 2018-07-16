@@ -18,8 +18,8 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
 
         public bool CanValueBeNull
         {
-            get { return (bool)this.GetValue(CanValueBeNullProperty); }
-            set { this.SetValue(CanValueBeNullProperty, value); }
+            get => (bool)this.GetValue(CanValueBeNullProperty);
+            set => this.SetValue(CanValueBeNullProperty, value);
         }
     }
 }

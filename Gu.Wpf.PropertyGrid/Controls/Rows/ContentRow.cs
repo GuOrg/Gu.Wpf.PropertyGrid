@@ -67,9 +67,9 @@ namespace Gu.Wpf.PropertyGrid
             }
             else
             {
-                d.Dispatcher.BeginInvoke(
-                    DispatcherPriority.Loaded,
-                    new Action(() => row.OnOldDataContextChanged(e.OldValue, e.NewValue)));
+                _ = d.Dispatcher.BeginInvoke(
+                     DispatcherPriority.Loaded,
+                     new Action(() => row.OnOldDataContextChanged(e.OldValue, e.NewValue)));
             }
         }
     }

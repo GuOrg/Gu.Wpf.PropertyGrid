@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
     using System;
     using System.Windows;
@@ -62,7 +62,7 @@
                     Mode = BindingMode.OneWay,
                 };
 
-                BindingOperations.SetBinding(this, SourceProxyProperty, sourceBinding);
+                _ = BindingOperations.SetBinding(this, SourceProxyProperty, sourceBinding);
 
                 var targetBinding = new Binding()
                 {
@@ -71,9 +71,10 @@
                     Source = source
                 };
 
-                BindingOperations.SetBinding(this, TargetProxyProperty, targetBinding);
+                _ = BindingOperations.SetBinding(this, TargetProxyProperty, targetBinding);
             }
 
+            /// <inheritdoc />
             public void Dispose()
             {
                 BindingOperations.ClearAllBindings(this);

@@ -58,7 +58,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
                 Assert.AreEqual("0,0000", doubleBox.FormattedText());
                 Assert.AreEqual("0,0123", lengthBox.FormattedText());
 
-                cultureBox.Select("en-US");
+                _ = cultureBox.Select("en-US");
                 window.FindButton("lose focus").Click();
 
                 Assert.AreEqual("0.0000", doubleBox.FormattedText());
