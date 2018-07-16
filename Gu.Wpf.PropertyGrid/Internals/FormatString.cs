@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
     using System;
     using System.Collections.Generic;
@@ -14,9 +14,7 @@
         /// <returns>True if the string contains format placeholders.</returns>
         public static bool IsFormatString(string format)
         {
-            int count;
-            bool? anyItemHasFormat;
-            if (IsValidFormat(format, out count, out anyItemHasFormat))
+            if (IsValidFormat(format, out int count, out bool? _))
             {
                 return count != 0;
             }
@@ -40,9 +38,7 @@
                 throw new ArgumentException(nameof(numberOfArguments));
             }
 
-            int indexCount;
-            bool? anyItemHasFormat;
-            if (IsValidFormat(format, out indexCount, out anyItemHasFormat))
+            if (IsValidFormat(format, out int indexCount, out bool? _))
             {
                 return indexCount == numberOfArguments;
             }
@@ -88,10 +84,7 @@
                 {
                     continue;
                 }
-
-                int index;
-                bool? itemHasFormat;
-                if (!TryParseItemFormat(format, ref pos, out index, out itemHasFormat))
+                if (!TryParseItemFormat(format, ref pos, out int index, out bool? itemHasFormat))
                 {
                     indexCount = -1;
                     anyItemHasFormat = null;
