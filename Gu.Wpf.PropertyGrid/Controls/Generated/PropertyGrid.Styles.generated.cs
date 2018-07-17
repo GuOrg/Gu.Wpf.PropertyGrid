@@ -14,15 +14,6 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
 
-        /// <summary>Identifies the SuffixStyle attached dependency property.</summary>
-        public static readonly DependencyProperty SuffixStyleProperty = DependencyProperty.RegisterAttached(
-            "SuffixStyle",
-            typeof(Style),
-            typeof(PropertyGrid),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits));
-
         /// <summary>Identifies the OldValueStyle attached dependency property.</summary>
         public static readonly DependencyProperty OldValueStyleProperty = DependencyProperty.RegisterAttached(
             "OldValueStyle",
@@ -61,28 +52,6 @@ namespace Gu.Wpf.PropertyGrid
         public static Style GetValueStyle(this UIElement element)
         {
             return (Style)element.GetValue(ValueStyleProperty);
-        }
-
-        /// <summary>
-        /// Helper for setting SuffixStyle property on a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to set SuffixStyle property on.</param>
-        /// <param name="value">SuffixStyle property value.</param>
-        public static void SetSuffixStyle(this UIElement element, Style value)
-        {
-            element.SetValue(SuffixStyleProperty, value);
-        }
-
-        /// <summary>
-        /// Helper for reading SuffixStyle property from a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to read SuffixStyle property from.</param>
-        /// <returns>SuffixStyle property value.</returns>
-        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(UIElement))]
-        public static Style GetSuffixStyle(this UIElement element)
-        {
-            return (Style)element.GetValue(SuffixStyleProperty);
         }
 
         /// <summary>
@@ -139,13 +108,6 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
 
-        /// <summary>Identifies the SuffixStyle dependency property.</summary>
-        public static readonly DependencyProperty SuffixStyleProperty = PropertyGrid.SuffixStyleProperty.AddOwner(
-            typeof(Rows),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits));
-
         /// <summary>Identifies the OldValueStyle dependency property.</summary>
         public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
             typeof(Rows),
@@ -167,15 +129,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (Style)this.GetValue(ValueStyleProperty); }
             set { this.SetValue(ValueStyleProperty, value); }
-        }
-
-        /// <summary>
-        /// Gets or sets the SuffixStyle.
-        /// </summary>
-        public Style SuffixStyle
-        {
-            get { return (Style)this.GetValue(SuffixStyleProperty); }
-            set { this.SetValue(SuffixStyleProperty, value); }
         }
 
         /// <summary>
@@ -207,14 +160,6 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
 
-        /// <summary>Identifies the SuffixStyle dependency property.</summary>
-        public static readonly DependencyProperty SuffixStyleProperty = PropertyGrid.SuffixStyleProperty.AddOwner(
-            typeof(Row),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits,
-                OnPartStyleChanged));
-
         /// <summary>Identifies the OldValueStyle dependency property.</summary>
         public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
             typeof(Row),
@@ -238,15 +183,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (Style)this.GetValue(ValueStyleProperty); }
             set { this.SetValue(ValueStyleProperty, value); }
-        }
-
-        /// <summary>
-        /// Gets or sets the SuffixStyle.
-        /// </summary>
-        public Style SuffixStyle
-        {
-            get { return (Style)this.GetValue(SuffixStyleProperty); }
-            set { this.SetValue(SuffixStyleProperty, value); }
         }
 
         /// <summary>
@@ -282,14 +218,6 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
 
-        /// <summary>Identifies the SuffixStyle dependency property.</summary>
-        public static readonly DependencyProperty SuffixStyleProperty = PropertyGrid.SuffixStyleProperty.AddOwner(
-            typeof(ContentRow),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits,
-                OnPartStyleChanged));
-
         /// <summary>Identifies the OldValueStyle dependency property.</summary>
         public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
             typeof(ContentRow),
@@ -313,15 +241,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             get { return (Style)this.GetValue(ValueStyleProperty); }
             set { this.SetValue(ValueStyleProperty, value); }
-        }
-
-        /// <summary>
-        /// Gets or sets the SuffixStyle.
-        /// </summary>
-        public Style SuffixStyle
-        {
-            get { return (Style)this.GetValue(SuffixStyleProperty); }
-            set { this.SetValue(SuffixStyleProperty, value); }
         }
 
         /// <summary>
