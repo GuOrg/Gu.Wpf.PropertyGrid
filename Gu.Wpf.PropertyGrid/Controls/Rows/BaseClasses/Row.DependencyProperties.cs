@@ -14,13 +14,6 @@ namespace Gu.Wpf.PropertyGrid
                     BooleanBoxes.False,
                     FrameworkPropertyMetadataOptions.Inherits | FrameworkPropertyMetadataOptions.NotDataBindable));
 
-        /// <summary>Identifies the <see cref="Suffix"/> dependency property.</summary>
-        public static readonly DependencyProperty SuffixProperty = DependencyProperty.Register(
-            nameof(Suffix),
-            typeof(string),
-            typeof(Row),
-            new PropertyMetadata(string.Empty));
-
         /// <summary>Identifies the <see cref="OldValue"/> dependency property.</summary>
         public static readonly DependencyProperty OldValueProperty = DependencyProperty.Register(
             nameof(OldValue),
@@ -45,16 +38,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             get => (bool)this.GetValue(UsePropertyNameAsHeaderProperty);
             set => this.SetValue(UsePropertyNameAsHeaderProperty, BooleanBoxes.Box(value));
-        }
-
-        /// <summary>
-        /// Gets or sets the suffix text.
-        /// This can be used for unit.
-        /// </summary>
-        public string Suffix
-        {
-            get => (string)this.GetValue(SuffixProperty);
-            set => this.SetValue(SuffixProperty, value);
         }
 
         /// <summary>
