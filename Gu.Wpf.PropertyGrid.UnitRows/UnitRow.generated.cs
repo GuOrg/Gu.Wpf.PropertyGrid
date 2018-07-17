@@ -204,7 +204,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -476,7 +476,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -748,7 +748,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -1020,7 +1020,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -1292,7 +1292,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -1564,7 +1564,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -1836,7 +1836,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -2108,7 +2108,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -2380,7 +2380,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -2652,7 +2652,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -2924,7 +2924,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -3196,7 +3196,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -3468,7 +3468,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -3740,7 +3740,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -4012,7 +4012,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -4284,7 +4284,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -4556,7 +4556,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -4828,7 +4828,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -5100,7 +5100,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -5372,7 +5372,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -5644,7 +5644,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -5916,7 +5916,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -6188,7 +6188,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -6460,7 +6460,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -6732,7 +6732,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -7004,7 +7004,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -7276,7 +7276,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -7548,7 +7548,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -7820,7 +7820,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -8092,7 +8092,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -8364,7 +8364,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -8636,7 +8636,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -8908,7 +8908,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -9180,7 +9180,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -9452,7 +9452,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -9724,7 +9724,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -9996,7 +9996,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -10268,7 +10268,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -10540,7 +10540,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -10812,7 +10812,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -11084,7 +11084,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -11356,7 +11356,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -11628,7 +11628,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -11900,7 +11900,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -12172,7 +12172,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -12444,7 +12444,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -12716,7 +12716,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -12988,7 +12988,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -13260,7 +13260,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -13532,7 +13532,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -13804,7 +13804,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -14076,7 +14076,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }
@@ -14348,7 +14348,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <inheritdoc />
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }

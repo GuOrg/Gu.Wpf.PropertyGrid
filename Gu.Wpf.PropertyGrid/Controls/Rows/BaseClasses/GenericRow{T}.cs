@@ -31,7 +31,7 @@ namespace Gu.Wpf.PropertyGrid
 
         protected override void UpdateIsDirty()
         {
-            if (ReferenceEquals(this.OldValue, OldValueProperty.DefaultMetadata.DefaultValue))
+            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
             {
                 this.IsDirty = null;
             }

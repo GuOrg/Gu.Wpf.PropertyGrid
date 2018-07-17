@@ -5,7 +5,6 @@ namespace Gu.Wpf.PropertyGrid
     public abstract partial class Row
     {
 #pragma warning disable SA1202 // Elements must be ordered by access
-
         /// <summary>Identifies the <see cref="UsePropertyNameAsHeader"/> dependency property.</summary>
         public static readonly DependencyProperty UsePropertyNameAsHeaderProperty = PropertyGrid.UsePropertyNameAsHeaderProperty.AddOwner(
                 typeof(Row),
@@ -25,9 +24,7 @@ namespace Gu.Wpf.PropertyGrid
             nameof(OldValue),
             typeof(object),
             typeof(Row),
-#pragma warning disable WPF0016 // Default value is shared reference type.
-            new PropertyMetadata(new object(), OnOldValueChanged));
-#pragma warning restore WPF0016 // Default value is shared reference type.
+            new PropertyMetadata(null, OnOldValueChanged));
 
         private static readonly DependencyPropertyKey IsDirtyPropertyKey = DependencyProperty.RegisterReadOnly(
             nameof(IsDirty),
