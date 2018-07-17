@@ -1,6 +1,5 @@
 namespace Gu.Wpf.PropertyGrid.UiTests
 {
-    using System.Diagnostics.CodeAnalysis;
     using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
 

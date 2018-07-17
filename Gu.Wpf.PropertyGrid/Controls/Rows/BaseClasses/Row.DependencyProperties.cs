@@ -7,13 +7,6 @@ namespace Gu.Wpf.PropertyGrid
     public abstract partial class Row
     {
 #pragma warning disable SA1202 // Elements must be ordered by access
-        /// <summary>Identifies the <see cref="UsePropertyNameAsHeader"/> dependency property.</summary>
-        public static readonly DependencyProperty UsePropertyNameAsHeaderProperty = PropertyGrid.UsePropertyNameAsHeaderProperty.AddOwner(
-                typeof(Row),
-                new FrameworkPropertyMetadata(
-                    BooleanBoxes.False,
-                    FrameworkPropertyMetadataOptions.Inherits | FrameworkPropertyMetadataOptions.NotDataBindable));
-
         /// <summary>Identifies the <see cref="OldValue"/> dependency property.</summary>
         public static readonly DependencyProperty OldValueProperty = DependencyProperty.Register(
             nameof(OldValue),
@@ -30,15 +23,6 @@ namespace Gu.Wpf.PropertyGrid
         /// <summary>Identifies the <see cref="IsDirty"/> dependency property.</summary>
         public static readonly DependencyProperty IsDirtyProperty = IsDirtyPropertyKey.DependencyProperty;
 #pragma warning restore SA1202 // Elements must be ordered by access
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the bond property name should be used as header value.
-        /// </summary>
-        public bool UsePropertyNameAsHeader
-        {
-            get => (bool)this.GetValue(UsePropertyNameAsHeaderProperty);
-            set => this.SetValue(UsePropertyNameAsHeaderProperty, BooleanBoxes.Box(value));
-        }
 
         /// <summary>
         /// Gets or sets the old value, can be null.

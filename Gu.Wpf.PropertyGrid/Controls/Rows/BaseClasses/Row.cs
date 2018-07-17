@@ -3,10 +3,8 @@ namespace Gu.Wpf.PropertyGrid
     using System;
     using System.Collections;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
-    using System.Windows.Data;
     using System.Windows.Threading;
 
     [TemplatePart(Name = ValueBoxName, Type = typeof(FrameworkElement))]
@@ -46,22 +44,6 @@ namespace Gu.Wpf.PropertyGrid
         protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer()
         {
             return new RowAutomationPeer(this);
-        }
-
-        /// <inheritdoc />
-        protected override void OnInitialized(EventArgs e)
-        {
-            base.OnInitialized(e);
-            if (this.UsePropertyNameAsHeader &&
-                this.ReadLocalValue(HeaderProperty) == DependencyProperty.UnsetValue)
-            {
-                var binding = BindingOperations.GetBinding(this, this.ValueDependencyProperty);
-                if (binding != null)
-                {
-                    var value = binding.Path?.Path.Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries).LastOrDefault();
-                    this.SetCurrentValue(HeaderProperty, value);
-                }
-            }
         }
 
         /// <summary>
