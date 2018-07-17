@@ -19,7 +19,7 @@ namespace Gu.Wpf.PropertyGrid
             nameof(OldValue),
             typeof(object),
             typeof(Row),
-            new PropertyMetadata(null, OnOldValueChanged));
+            new PropertyMetadata(null, (d, e) => ((Row)d).OnOldValueChanged(e.OldValue, e.NewValue)));
 
         private static readonly DependencyPropertyKey IsDirtyPropertyKey = DependencyProperty.RegisterReadOnly(
             nameof(IsDirty),
@@ -90,11 +90,11 @@ namespace Gu.Wpf.PropertyGrid
             {
                 var path = $"{OldDataContextProperty.Name}.{valueBinding.Path.Path}";
                 oldValueBinding = new Binding(path)
-                                  {
-                                      Mode = BindingMode.OneWay,
-                                      Source = this,
-                                      UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
-                                  };
+                {
+                    Mode = BindingMode.OneWay,
+                    Source = this,
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+                };
 
                 _ = BindingOperations.SetBinding(this, OldValueProperty, oldValueBinding);
             }

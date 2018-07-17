@@ -104,11 +104,5 @@ namespace Gu.Wpf.PropertyGrid
                     new Action(() => row.OnOldDataContextChanged(e.OldValue, e.NewValue)));
             }
         }
-
-        private static void OnOldValueChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (Row)o;
-            row.OnOldValueChanged(e.OldValue, e.NewValue);
-        }
     }
 }
