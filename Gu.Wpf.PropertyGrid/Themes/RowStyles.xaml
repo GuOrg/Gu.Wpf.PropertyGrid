@@ -65,7 +65,7 @@
                         <ContentPresenter x:Name="PART_Suffix"
                                           Grid.Row="0"
                                           Grid.Column="2"
-                                          ContentSource="Header" />
+                                          ContentSource="Suffix" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

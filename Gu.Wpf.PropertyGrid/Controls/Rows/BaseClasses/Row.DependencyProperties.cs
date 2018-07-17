@@ -64,10 +64,10 @@ namespace Gu.Wpf.PropertyGrid
         /// </summary>
         /// <param name="oldValue">The old value.</param>
         /// <param name="newValue">The new value.</param>
+        [SuppressMessage("ReSharper", "UnusedParameter.Global")]
         protected virtual void OnValueChanged(object oldValue, object newValue)
         {
             this.UpdateIsDirty();
-            this.UpdateLogicalChild(oldValue as DependencyObject, newValue as DependencyObject);
         }
 
         /// <summary>
@@ -105,10 +105,10 @@ namespace Gu.Wpf.PropertyGrid
         /// </summary>
         /// <param name="oldValue">The old value of <see cref="OldValue"/>.</param>
         /// <param name="newValue">The new value of <see cref="OldValue"/>.</param>
+        [SuppressMessage("ReSharper", "UnusedParameter.Global")]
         protected virtual void OnOldValueChanged(object oldValue, object newValue)
         {
             this.UpdateIsDirty();
-            this.UpdateLogicalChild(oldValue as DependencyObject, newValue as DependencyObject);
         }
     }
 }
