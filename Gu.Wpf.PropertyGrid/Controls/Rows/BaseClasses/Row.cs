@@ -19,11 +19,6 @@ namespace Gu.Wpf.PropertyGrid
         /// </summary>
         public const string ValueBoxName = "PART_Value";
 
-        /// <summary>
-        /// Gets the dependency property for the value of this row.
-        /// </summary>
-        protected DependencyProperty ValueDependencyProperty { get; }
-
         static Row()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Row), new FrameworkPropertyMetadata(typeof(Row)));
@@ -39,6 +34,11 @@ namespace Gu.Wpf.PropertyGrid
             this.ValueDependencyProperty = valueDependencyProperty;
         }
 
+        /// <summary>
+        /// Gets the dependency property for the value of this row.
+        /// </summary>
+        protected DependencyProperty ValueDependencyProperty { get; }
+
         /// <inheritdoc />
         protected override IEnumerator LogicalChildren => this.logicalChildren.GetEnumerator();
 
@@ -48,26 +48,12 @@ namespace Gu.Wpf.PropertyGrid
             return new RowAutomationPeer(this);
         }
 
-        /// <summary>
-        /// Called when the Value property changes value.
-        /// </summary>
-        /// <param name="oldValue">The old value.</param>
-        /// <param name="newValue">The new value.</param>
-        protected virtual void OnValueChanged(object oldValue, object newValue)
-        {
-            this.UpdateIsDirty();
-        }
-
-        protected virtual void OnOldValueChanged(object oldValue, object newValue)
-        {
-            this.UpdateLogicalChild(oldValue as DependencyObject, newValue as DependencyObject);
-        }
-
         /// <inheritdoc />
         protected override void OnInitialized(EventArgs e)
         {
             base.OnInitialized(e);
-            if (string.IsNullOrEmpty(this.Header) && this.UsePropertyNameAsHeader)
+            if (this.UsePropertyNameAsHeader &&
+                this.ReadLocalValue(HeaderProperty) == DependencyProperty.UnsetValue)
             {
                 var binding = BindingOperations.GetBinding(this, this.ValueDependencyProperty);
                 if (binding != null)
@@ -82,30 +68,6 @@ namespace Gu.Wpf.PropertyGrid
         /// Update the value of the <see cref="Row.IsDirty"/> property
         /// </summary>
         protected abstract void UpdateIsDirty();
-
-        protected virtual void OnOldDataContextChanged(object oldValue, object newValue)
-        {
-            var oldValueBinding = BindingOperations.GetBinding(this, OldValueProperty);
-            if (oldValueBinding != null)
-            {
-                // We don't replace any bindings.
-                return;
-            }
-
-            var valueBinding = BindingOperations.GetBinding(this, this.ValueDependencyProperty);
-            if (valueBinding != null)
-            {
-                var path = $"{OldDataContextProperty.Name}.{valueBinding.Path.Path}";
-                oldValueBinding = new Binding(path)
-                {
-                    Mode = BindingMode.OneWay,
-                    Source = this,
-                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
-                };
-
-                _ = BindingOperations.SetBinding(this, OldValueProperty, oldValueBinding);
-            }
-        }
 
         /// <summary>
         /// Call <see cref="FrameworkElement.RemoveLogicalChild"/> with <paramref name="oldChild"/> and <see cref="FrameworkElement.AddLogicalChild"/> with <paramref name="newChild"/>
@@ -146,7 +108,6 @@ namespace Gu.Wpf.PropertyGrid
         private static void OnOldValueChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
             var row = (Row)o;
-            row.UpdateIsDirty();
             row.OnOldValueChanged(e.OldValue, e.NewValue);
         }
     }

@@ -21,7 +21,7 @@ namespace Gu.Wpf.PropertyGrid
     foreach(var propertyMetaData in propertyMetaDatas)
     {
         #>
-        /// <#= propertyMetaData.Comment #> </summary>
+        /// <summary> <#= propertyMetaData.Comment #> </summary>
         public static readonly DependencyProperty <#= propertyMetaData.Name #>Property = DependencyProperty.RegisterAttached(
             "<#= propertyMetaData.Name #>",
             typeof(<#= propertyMetaData.Type #>),

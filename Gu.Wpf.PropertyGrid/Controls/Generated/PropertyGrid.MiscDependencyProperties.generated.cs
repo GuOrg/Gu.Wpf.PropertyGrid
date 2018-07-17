@@ -5,7 +5,7 @@ namespace Gu.Wpf.PropertyGrid
 
     public static partial class PropertyGrid
     {
-        /// Gets or sets a value indicating whether the row is read only. </summary>
+        /// <summary> Gets or sets a value indicating whether the row is read only. </summary>
         public static readonly DependencyProperty IsReadOnlyProperty = DependencyProperty.RegisterAttached(
             "IsReadOnly",
             typeof(bool),
@@ -14,7 +14,7 @@ namespace Gu.Wpf.PropertyGrid
                 false,
                 FrameworkPropertyMetadataOptions.Inherits));
 
-        /// Gets or sets the data context with old values. </summary>
+        /// <summary> Gets or sets the data context with old values. </summary>
         public static readonly DependencyProperty OldDataContextProperty = DependencyProperty.RegisterAttached(
             "OldDataContext",
             typeof(object),
@@ -23,7 +23,7 @@ namespace Gu.Wpf.PropertyGrid
                 null,
                 FrameworkPropertyMetadataOptions.Inherits));
 
-        /// Gets or sets the string format for the old value. </summary>
+        /// <summary> Gets or sets the string format for the old value. </summary>
         public static readonly DependencyProperty OldValueStringFormatProperty = DependencyProperty.RegisterAttached(
             "OldValueStringFormat",
             typeof(string),
