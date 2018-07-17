@@ -114,40 +114,50 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             }
         }
 
-        [Test]
-        public void Bound()
+        [TestCase("string", "new text")]
+        [TestCase("double", "1.23456")]
+        [TestCase("length", "1.23456")]
+        public void BoundFormatNotUsingValue(string rowName, string text)
         {
             using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
                 var groupBox = window.FindGroupBox("bound");
+                groupBox.FindTextBoxRow("old value format").Value().Text = "changed";
+                var row = groupBox.FindTextBoxRow(rowName);
+                row.Value().Text = text;
+                var info = row.Info();
+                Assert.AreEqual("changed", info.Text);
 
-                var stringRow = groupBox.FindTextBoxRow("string");
-                stringRow.Value().Text = "g";
-                var oldStringValue = stringRow.Info();
-                Assert.AreEqual("changed", oldStringValue.Text);
-
-                var doubleRow = groupBox.FindTextBoxRow("double");
-                doubleRow.Value().Text = "1.23";
-                var oldDoubleValue = doubleRow.Info();
-                Assert.AreEqual("changed", oldDoubleValue.Text);
-
-                var lengthRow = groupBox.FindTextBoxRow("length");
-                lengthRow.Value().Text = "2";
-                var oldLengthValue = lengthRow.Info();
-                Assert.AreEqual("changed", oldLengthValue.Text);
-
-                groupBox.FindTextBoxRow("old value format").Value().Text = "before: {0}";
                 window.FindButton("lose focus").Click();
+                Assert.AreEqual("changed", info.Text);
 
-                Assert.AreEqual("before: abc", oldStringValue.Text);
-                Assert.AreEqual("before: 1.2", oldDoubleValue.Text);
-                Assert.AreEqual("before: 2.3\u00A0mm", oldLengthValue.Text);
+                window.FindButton("save").Invoke();
+                Assert.AreEqual(string.Empty, info.Text);
+            }
+        }
+
+        [TestCase("string", "g", "before: abc")]
+        [TestCase("double", "1.23", "before: 1.2")]
+        [TestCase("length", "1.23", "before: 2.3\u00A0mm")]
+        public void BoundFormat(string rowName, string text, string expected)
+        {
+            using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                var groupBox = window.FindGroupBox("bound");
+                groupBox.FindTextBoxRow("old value format").Value().Text = "before: {0}";
+
+                var row = groupBox.FindTextBoxRow(rowName);
+                row.Value().Text = text;
+                var info = row.Info();
+                Assert.AreEqual(expected, info.Text);
+
+                window.FindButton("lose focus").Click();
+                Assert.AreEqual(expected, info.Text);
 
                 window.FindButton("save").Click();
-                Assert.AreEqual(string.Empty, oldStringValue.Text);
-                Assert.AreEqual(string.Empty, oldDoubleValue.Text);
-                Assert.AreEqual(string.Empty, oldLengthValue.Text);
+                Assert.AreEqual(string.Empty, info.Text);
             }
         }
 

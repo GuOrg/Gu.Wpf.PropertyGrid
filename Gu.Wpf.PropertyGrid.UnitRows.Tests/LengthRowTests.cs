@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid.UnitRows.Tests
+namespace Gu.Wpf.PropertyGrid.UnitRows.Tests
 {
     using System.Threading;
     using Gu.Units;
@@ -30,26 +30,30 @@
         }
 
         [Test]
-        public void UnitUpdatesSuffix()
+        public void ChangeUnitUpdatesUnitText()
         {
-            var control = new LengthRow();
-            Assert.AreEqual("\u00A0m", control.Suffix);
+            var control = new LengthRow
+                          {
+                              Unit = LengthUnit.Millimetres
+                          };
+            Assert.AreEqual(null, control.Suffix);
+            Assert.AreEqual("\u00A0mm", control.UnitText);
+
             control.Unit = LengthUnit.Centimetres;
-            Assert.AreEqual("\u00A0cm", control.Suffix);
+            Assert.AreEqual(null, control.Suffix);
+            Assert.AreEqual("\u00A0cm", control.UnitText);
         }
 
         [Test]
         public void UnitUpdatesValueWhenMaxAndMinAreNull()
         {
             var control = new LengthRow { Value = Length.FromCentimetres(1.2) };
-            Assert.AreEqual("\u00A0m", control.Suffix);
             Assert.AreEqual(Length.FromMillimetres(12), control.Value);
             Assert.AreEqual(0.012, control.ScalarValue);
             Assert.AreEqual(null, control.ScalarMinValue);
             Assert.AreEqual(null, control.ScalarMaxValue);
 
             control.Unit = LengthUnit.Centimetres;
-            Assert.AreEqual("\u00A0cm", control.Suffix);
             Assert.AreEqual(Length.FromMillimetres(12), control.Value);
             Assert.AreEqual(1.2, control.ScalarValue);
             Assert.AreEqual(null, control.ScalarMinValue);
@@ -65,14 +69,12 @@
                 MinValue = Length.FromCentimetres(-5),
                 MaxValue = Length.FromCentimetres(5),
             };
-            Assert.AreEqual("\u00A0m", control.Suffix);
             Assert.AreEqual(Length.FromMillimetres(12), control.Value);
             Assert.AreEqual(0.012, control.ScalarValue);
             Assert.AreEqual(-0.050, control.ScalarMinValue);
             Assert.AreEqual(0.050, control.ScalarMaxValue);
 
             control.Unit = LengthUnit.Centimetres;
-            Assert.AreEqual("\u00A0cm", control.Suffix);
             Assert.AreEqual(Length.FromCentimetres(1.2), control.Value);
             Assert.AreEqual(Length.FromCentimetres(-5), control.MinValue);
             Assert.AreEqual(Length.FromCentimetres(5), control.MaxValue);
@@ -90,7 +92,7 @@
                 MinValue = Length.FromCentimetres(-5),
                 MaxValue = Length.FromCentimetres(5),
             };
-            Assert.AreEqual("\u00A0m", control.Suffix);
+
             Assert.AreEqual(Length.FromMillimetres(12), control.Value);
             Assert.AreEqual(0.012, control.ScalarValue);
             Assert.AreEqual(-0.050, control.ScalarMinValue);
@@ -99,7 +101,6 @@
             control.ScalarValue = 0.8;
             control.ScalarMinValue = -1.2;
             control.ScalarMaxValue = 2.3;
-            Assert.AreEqual("\u00A0m", control.Suffix);
             Assert.AreEqual(Length.FromMetres(0.8), control.Value);
             Assert.AreEqual(Length.FromMetres(-1.2), control.MinValue);
             Assert.AreEqual(Length.FromMetres(2.3), control.MaxValue);
@@ -110,7 +111,6 @@
             control.ScalarValue = null;
             control.ScalarMinValue = null;
             control.ScalarMaxValue = null;
-            Assert.AreEqual("\u00A0m", control.Suffix);
             Assert.AreEqual(null, control.Value);
             Assert.AreEqual(null, control.MinValue);
             Assert.AreEqual(null, control.MaxValue);
@@ -128,7 +128,7 @@
                 MinValue = Length.FromCentimetres(-5),
                 MaxValue = Length.FromCentimetres(5),
             };
-            Assert.AreEqual("\u00A0m", control.Suffix);
+
             Assert.AreEqual(Length.FromMillimetres(12), control.Value);
             Assert.AreEqual(Length.FromMillimetres(-50), control.MinValue);
             Assert.AreEqual(Length.FromMillimetres(50), control.MaxValue);
@@ -139,7 +139,7 @@
             control.Value = Length.FromMillimetres(0.8);
             control.MinValue = Length.FromMillimetres(-1.2);
             control.MaxValue = Length.FromMillimetres(2.3);
-            Assert.AreEqual("\u00A0m", control.Suffix);
+
             Assert.AreEqual(Length.FromMillimetres(0.8), control.Value);
             Assert.AreEqual(Length.FromMillimetres(-1.2), control.MinValue);
             Assert.AreEqual(Length.FromMillimetres(2.3), control.MaxValue);
@@ -150,7 +150,6 @@
             control.Value = null;
             control.MinValue = null;
             control.MaxValue = null;
-            Assert.AreEqual("\u00A0m", control.Suffix);
             Assert.AreEqual(null, control.Value);
             Assert.AreEqual(null, control.MinValue);
             Assert.AreEqual(null, control.MaxValue);

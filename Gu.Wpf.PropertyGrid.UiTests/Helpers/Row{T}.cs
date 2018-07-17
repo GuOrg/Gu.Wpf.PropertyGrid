@@ -20,9 +20,14 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             return this.FindFirst(TreeScope.Children, Conditions.ByAutomationId("PART_Value"), x => this.wrap(x));
         }
 
+        public TextBlock Header()
+        {
+            return this.FindAt(TreeScope.Children, Conditions.TextBlock, 0, x => new TextBlock(x), TimeSpan.FromSeconds(1));
+        }
+
         public TextBlock Suffix()
         {
-            return this.FindTextBlock("PART_Suffix");
+            return this.FindAt(TreeScope.Children, Conditions.TextBlock, 1, x => new TextBlock(x), TimeSpan.FromSeconds(1));
         }
 
         public TextBlock Info()

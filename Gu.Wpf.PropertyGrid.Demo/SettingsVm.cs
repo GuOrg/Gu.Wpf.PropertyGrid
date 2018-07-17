@@ -15,6 +15,8 @@ namespace Gu.Wpf.PropertyGrid.Demo
         private static readonly PropertiesSettings PropertiesSettings = PropertiesSettings.Build()
                                                                                           .AddImmutableType<CultureInfo>()
                                                                                           .IgnoreProperty<DummySettings>(nameof(DummySettings.Cultures))
+                                                                                          .IgnoreProperty<DummySettings>(nameof(DummySettings.SymbolFormats))
+                                                                                          .IgnoreProperty<DummySettings>(nameof(DummySettings.LengthUnits))
                                                                                           .CreateSettings();
 
         private bool viewHasErrors;

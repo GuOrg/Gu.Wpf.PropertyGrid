@@ -1,0 +1,115 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:unitRows="clr-namespace:Gu.Wpf.PropertyGrid.UnitRows">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid;component/Themes/Generic.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Gu.Wpf.PropertyGrid.UnitRows;component/Themes/UnitRow.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+  
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:AccelerationRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:AmountOfSubstanceRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:AngleRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:AnglePerUnitlessRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:AngularAccelerationRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:AngularJerkRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:AngularSpeedRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:AreaRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:AreaDensityRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:CapacitanceRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:CatalyticActivityRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:ConductivityRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:CurrentRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:DataRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:DensityRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:ElectricalConductanceRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:ElectricChargeRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:EnergyRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:FlexibilityRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:ForceRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:ForcePerUnitlessRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:FrequencyRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:IlluminanceRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:InductanceRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:JerkRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:KinematicViscosityRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:LengthRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:LengthPerUnitlessRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:LuminousFluxRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:LuminousIntensityRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:MagneticFieldStrengthRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:MagneticFluxRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:MassRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:MassFlowRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:MolarHeatCapacityRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:MolarMassRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:MomentumRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:PowerRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:PressureRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:ResistanceRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:SolidAngleRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:SpecificEnergyRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:SpecificVolumeRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:SpeedRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:StiffnessRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:TemperatureRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:TimeRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:TorqueRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:UnitlessRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:VoltageRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:VolumeRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:VolumetricFlowRow}" />
+
+     <Style BasedOn="{StaticResource {x:Type unitRows:UnitRow}}" TargetType="{x:Type unitRows:WavenumberRow}" />
+
+  </ResourceDictionary>

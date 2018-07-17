@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid.Demo
+namespace Gu.Wpf.PropertyGrid.Demo
 {
     using System;
     using System.Collections;
@@ -25,6 +25,7 @@
         private bool boolValue;
         private bool hasErrors;
         private CultureInfo currentCulture;
+        private SymbolFormat currentSymbolFormat;
         private Length? lengthMin;
         private Length? lengthMax;
 
@@ -36,6 +37,14 @@
         public event PropertyChangedEventHandler PropertyChanged;
 
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+
+        public IReadOnlyList<LengthUnit> LengthUnits { get; } = new[] { LengthUnit.Millimetres, LengthUnit.Centimetres, LengthUnit.Metres };
+
+        public IReadOnlyList<SymbolFormat> SymbolFormats { get; } = Enum.GetValues(typeof(SymbolFormat))
+                                                                        .Cast<SymbolFormat>()
+                                                                        .ToArray();
+
+        public IReadOnlyList<CultureInfo> Cultures { get; } = new[] { CultureInfo.GetCultureInfo("sv-se"), CultureInfo.GetCultureInfo("en-us") };
 
         public bool HasErrors
         {
@@ -248,8 +257,6 @@
             }
         }
 
-        public IReadOnlyList<CultureInfo> Cultures { get; } = new[] { CultureInfo.GetCultureInfo("sv-se"), CultureInfo.GetCultureInfo("en-us"), };
-
         public CultureInfo CurrentCulture
         {
             get => this.currentCulture;
@@ -261,6 +268,21 @@
                 }
 
                 this.currentCulture = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public SymbolFormat CurrentSymbolFormat
+        {
+            get => this.currentSymbolFormat;
+            set
+            {
+                if (value == this.currentSymbolFormat)
+                {
+                    return;
+                }
+
+                this.currentSymbolFormat = value;
                 this.OnPropertyChanged();
             }
         }

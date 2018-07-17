@@ -2,6 +2,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
@@ -15,6 +16,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     /// </summary>
     public abstract class UnitRow : Row
     {
+#pragma warning disable SA1202 // Elements must be ordered by access
         /// <summary>Identifies the <see cref="ScalarValue"/> dependency property.</summary>
         public static readonly DependencyProperty ScalarValueProperty = DependencyProperty.Register(
             nameof(ScalarValue),
@@ -47,7 +49,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             new FrameworkPropertyMetadata(
                 DefaultSymbolFormat,
                 FrameworkPropertyMetadataOptions.Inherits,
-                OnSymbolFormatChanged));
+                (d, e) => (d as UnitRow)?.OnSymbolFormatChanged((SymbolFormat)e.OldValue, (SymbolFormat)e.NewValue)));
 
         /// <summary>Identifies the <see cref="DecimalDigits"/> dependency property.</summary>
         public static readonly DependencyProperty DecimalDigitsProperty = NumericBox.DecimalDigitsProperty.AddOwner(
@@ -59,6 +61,16 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             typeof(UnitRow),
             new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.Inherits));
 
+        private static readonly DependencyPropertyKey UnitTextPropertyKey = DependencyProperty.RegisterReadOnly(
+            nameof(UnitText),
+            typeof(string),
+            typeof(UnitRow),
+            new PropertyMetadata(default(string)));
+
+        /// <summary>Identifies the <see cref="UnitText"/> dependency property.</summary>
+        public static readonly DependencyProperty UnitTextProperty = UnitTextPropertyKey.DependencyProperty;
+#pragma warning restore SA1202 // Elements must be ordered by access
+
         private readonly List<DependencyObject> templateChildren = new List<DependencyObject>();
 
         static UnitRow()
@@ -66,7 +78,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             DefaultStyleKeyProperty.OverrideMetadata(typeof(UnitRow), new FrameworkPropertyMetadata(typeof(UnitRow)));
         }
 
-        protected UnitRow(DependencyProperty valueDependencyProperty) 
+        protected UnitRow(DependencyProperty valueDependencyProperty)
             : base(valueDependencyProperty)
         {
         }
@@ -130,6 +142,15 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         {
             get => (bool)this.GetValue(CanValueBeNullProperty);
             set => this.SetValue(CanValueBeNullProperty, value);
+        }
+
+        /// <summary>
+        /// Gets or sets a string with the current unit formatted according to <see cref="SymbolFormat"/>
+        /// </summary>
+        public string UnitText
+        {
+            get => (string)this.GetValue(UnitTextProperty);
+            protected set => this.SetValue(UnitTextPropertyKey, value);
         }
 
         /// <summary>
@@ -224,7 +245,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                             dependencyObject.SetCurrentValue(ForegroundProperty, Brushes.Red);
                             dependencyObject.SetCurrentValue(
                                 TextBox.TextProperty,
-                                "Binding of value with UpdateSourceTrigger.PropertyChanged does not match the binding for the value by the current controltemplate");
+                                "Binding of value with UpdateSourceTrigger.PropertyChanged does not match the binding for the value by the current control template");
                         }
 
                         Validation.AddErrorHandler(dependencyObject, onTemplateChildError);
@@ -239,7 +260,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// </summary>
         /// <param name="symbolFormat">The symbol format to use.</param>
         /// <returns>The string representation of the unit including leading whitespace if any.</returns>
-        protected abstract string CreateSuffix(SymbolFormat symbolFormat);
+        protected abstract string CreateUnitText(SymbolFormat symbolFormat);
 
         /// <summary>
         /// Called when the <see cref="ScalarValue"/> changes.
@@ -259,6 +280,17 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <param name="newValue">The new value.</param>
         protected abstract void OnScalarMaxValueChanged(double? newValue);
 
+        /// <summary>
+        /// This method is invoked when the <see cref="SymbolFormat"/> changes.
+        /// </summary>
+        /// <param name="oldValue">The old value of <see cref="SymbolFormat"/>.</param>
+        /// <param name="newValue">The new value of <see cref="SymbolFormat"/>.</param>
+        // ReSharper disable once UnusedParameter.Global
+        protected virtual void OnSymbolFormatChanged(SymbolFormat oldValue, SymbolFormat newValue)
+        {
+            this.UnitText = this.CreateUnitText(newValue);
+        }
+
         private static void OnScalarValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((UnitRow)d).OnScalarValueChanged((double?)e.NewValue);
@@ -272,19 +304,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         private static void OnScalarMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ((UnitRow)d).OnScalarMaxValueChanged((double?)e.NewValue);
-        }
-
-        private static void OnSymbolFormatChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var row = (UnitRow)d;
-            var oldSuffix = row.CreateSuffix((SymbolFormat)e.OldValue);
-            if (Equals(row.Suffix, oldSuffix))
-            {
-                // the old suffix was set via code, ok to update it.
-                // if user has set suffix to something localized we don't touch it.
-                // user is responsible for updating then.
-                row.SetCurrentValue(SuffixProperty, row.CreateSuffix((SymbolFormat)e.NewValue));
-            }
         }
     }
 }

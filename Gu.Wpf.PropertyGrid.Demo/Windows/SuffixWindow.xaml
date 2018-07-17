@@ -5,6 +5,7 @@
         xmlns:demo="clr-namespace:Gu.Wpf.PropertyGrid.Demo"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:propertyGrid="http://gu.se/PropertyGrid"
+        xmlns:units="clr-namespace:Gu.Units;assembly=Gu.Units"
         Title="SuffixWindow"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d">
@@ -22,17 +23,37 @@
                                 Suffix="suffix"
                                 Value="abc" />
 
-        <propertyGrid:Rows>
-            <propertyGrid:StringRow Header="explicit suffixblock style"
-                                    Suffix="suffix"
-                                    Value="abc">
-                <propertyGrid:StringRow.SuffixTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding}" Foreground="HotPink" AutomationProperties.ItemStatus="explicit pink"></TextBlock>
-                    </DataTemplate>
-                </propertyGrid:StringRow.SuffixTemplate>
-            </propertyGrid:StringRow>
-        </propertyGrid:Rows>
+        <propertyGrid:StringRow Header="explicit suffix template"
+                                Suffix="suffix"
+                                Value="abc">
+            <propertyGrid:StringRow.SuffixTemplate>
+                <DataTemplate>
+                    <TextBlock AutomationProperties.AutomationId="Suffix"
+                               AutomationProperties.ItemStatus="explicit pink"
+                               Foreground="HotPink"
+                               Text="{Binding}" />
+                </DataTemplate>
+            </propertyGrid:StringRow.SuffixTemplate>
+        </propertyGrid:StringRow>
+
+        <propertyGrid:LengthRow Header="Default length" Value="{Binding EditableCopy.LengthValue}" />
+
+        <propertyGrid:LengthRow Header="Bound length"
+                                SymbolFormat="{Binding EditableCopy.CurrentSymbolFormat}"
+                                Unit="{Binding EditableCopy.CurrentLengthUnit}"
+                                Value="{Binding EditableCopy.LengthValue}" />
+
+        <propertyGrid:ComboBoxRow Header="Unit"
+                                  ItemsSource="{Binding EditableCopy.LengthUnits}"
+                                  Value="{Binding EditableCopy.CurrentLengthUnit}" />
+
+        <propertyGrid:ComboBoxRow Header="SymbolFormat"
+                                  ItemsSource="{Binding EditableCopy.SymbolFormats}"
+                                  Value="{Binding EditableCopy.CurrentSymbolFormat}" />
+
+        <propertyGrid:SpeedRow Header="Bound speed"
+                               SymbolFormat="{Binding EditableCopy.CurrentSymbolFormat}"
+                               Value="{Binding EditableCopy.SpeedValue}" />
     </propertyGrid:Rows>
 </Window>
 

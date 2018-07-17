@@ -8,7 +8,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     using Gu.Wpf.NumericInput;
 
     /// <inheritdoc />
-    public class OldValueConverter : IMultiValueConverter
+    public sealed class OldValueConverter : IMultiValueConverter
     {
         public static readonly OldValueConverter Default = new OldValueConverter();
 

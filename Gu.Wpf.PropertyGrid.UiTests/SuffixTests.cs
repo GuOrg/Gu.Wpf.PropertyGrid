@@ -26,35 +26,50 @@ namespace Gu.Wpf.PropertyGrid.UiTests
         }
 
         [Test]
-        [SuppressMessage("ReSharper", "HeuristicUnreachableCode")]
-        public void UsesResourceStyle()
+        public void ExplicitSuffixTemplate()
         {
             using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                Assert.Inconclusive("not sure how to test this.");
-                Assert.AreEqual("implicit blue", window.FindTextBoxRow("implicit suffixblock style").Suffix().ItemStatus);
+                Assert.AreEqual("explicit pink", window.FindTextBoxRow("explicit suffix template").Suffix().ItemStatus);
             }
         }
 
         [Test]
-        public void ExplicitSuffixStyle()
+        public void LengthRowGetsDefaultUnit()
+        {
+            using (var app = Application.Launch(ExeFileName, WindowName))
+            {
+                var window = app.MainWindow;
+                Assert.AreEqual("\u00A0m", window.FindTextBoxRow("Default length").Suffix().Text);
+            }
+        }
+
+        [Test]
+        public void LengthRowUpdatesWhenUnitChanges()
         {
             using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                Assert.AreEqual("explicit pink", window.FindTextBoxRow("explicit suffixblock style").Suffix().ItemStatus);
+                var row = window.FindTextBoxRow("Bound length");
+                Assert.AreEqual("\u00A0cm", row.Suffix().Text);
+
+                _ = window.FindComboBoxRow("Unit").Value().Select("mm");
+                Assert.AreEqual("\u00A0mm", row.Suffix().Text);
             }
         }
 
         [Test]
         [Ignore("Was [Explicit]")]
-        public void InheritSuffixStyle()
         {
             using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                Assert.AreEqual("inherit khaki", window.FindTextBoxRow("inherit suffixblock style").Suffix().ItemStatus);
+                var row = window.FindTextBoxRow("Bound speed");
+                Assert.AreEqual("\u00A0m/s", row.Suffix().Text);
+
+                _ = window.FindComboBoxRow("SymbolFormat").Value().Select("SignedHatPowers");
+                Assert.AreEqual("\u00A0m*s^-1", row.Suffix().Text);
             }
         }
     }
