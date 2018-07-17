@@ -1,4 +1,4 @@
-﻿<Window x:Class="Gu.Wpf.PropertyGrid.Demo.SuffixWindow"
+<Window x:Class="Gu.Wpf.PropertyGrid.Demo.SuffixWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -13,11 +13,6 @@
             <Setter Property="AutomationProperties.ItemStatus" Value="Green" />
             <Setter Property="Foreground" Value="Green" />
         </Style>
-
-        <Style TargetType="{x:Type propertyGrid:SuffixBlock}">
-            <Setter Property="AutomationProperties.ItemStatus" Value="Blue" />
-            <Setter Property="Foreground" Value="Blue" />
-        </Style>
     </Window.Resources>
     <Window.DataContext>
         <demo:SettingsVm />
@@ -28,52 +23,15 @@
                                 Value="abc" />
 
         <propertyGrid:Rows>
-            <propertyGrid:Rows.Resources>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="AutomationProperties.ItemStatus" Value="Green" />
-                    <Setter Property="Foreground" Value="Green" />
-                </Style>
-            </propertyGrid:Rows.Resources>
-            <propertyGrid:StringRow Header="textblock style"
-                                    Suffix="suffix"
-                                    Value="abc" />
-        </propertyGrid:Rows>
-
-        <propertyGrid:Rows>
-            <propertyGrid:Rows.Resources>
-                <Style TargetType="{x:Type propertyGrid:SuffixBlock}">
-                    <Setter Property="AutomationProperties.ItemStatus" Value="implicit blue" />
-                    <Setter Property="Foreground" Value="Blue" />
-                </Style>
-            </propertyGrid:Rows.Resources>
-            <propertyGrid:StringRow Header="implicit suffixblock style"
-                                    Suffix="suffix"
-                                    Value="abc" />
-        </propertyGrid:Rows>
-
-        <propertyGrid:Rows>
-            <propertyGrid:Rows.Resources>
-                <Style x:Key="SuffixStyle" TargetType="{x:Type propertyGrid:SuffixBlock}">
-                    <Setter Property="AutomationProperties.ItemStatus" Value="explicit pink" />
-                    <Setter Property="Foreground" Value="HotPink" />
-                </Style>
-            </propertyGrid:Rows.Resources>
             <propertyGrid:StringRow Header="explicit suffixblock style"
                                     Suffix="suffix"
-                                    SuffixStyle="{StaticResource SuffixStyle}"
-                                    Value="abc" />
-        </propertyGrid:Rows>
-
-        <propertyGrid:Rows>
-            <propertyGrid:Rows.SuffixStyle>
-                <Style TargetType="{x:Type propertyGrid:SuffixBlock}">
-                    <Setter Property="AutomationProperties.ItemStatus" Value="inherit khaki" />
-                    <Setter Property="Foreground" Value="DarkKhaki" />
-                </Style>
-            </propertyGrid:Rows.SuffixStyle>
-            <propertyGrid:StringRow Header="inherit suffixblock style"
-                                    Suffix="suffix"
-                                    Value="abc" />
+                                    Value="abc">
+                <propertyGrid:StringRow.SuffixTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="HotPink" AutomationProperties.ItemStatus="explicit pink"></TextBlock>
+                    </DataTemplate>
+                </propertyGrid:StringRow.SuffixTemplate>
+            </propertyGrid:StringRow>
         </propertyGrid:Rows>
     </propertyGrid:Rows>
 </Window>

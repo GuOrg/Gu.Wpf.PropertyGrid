@@ -30,11 +30,10 @@
                                    Value="{Binding ScalarValue,
                                                    RelativeSource={RelativeSource TemplatedParent}}" />
 
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
 
             </Grid>
         </Border>
@@ -61,9 +60,9 @@
                     <ColumnDefinition propertyGrid:ColumnDefinition.Source="Suffix" />
                 </Grid.ColumnDefinitions>
                 <ContentPresenter x:Name="PART_Header"
-                                          Grid.Row="0"
-                                          Grid.Column="0"
-                                          ContentSource="Header" />
+                                  Grid.Row="0"
+                                  Grid.Column="0"
+                                  ContentSource="Header" />
 
                 <Border Grid.Row="0"
                         Grid.Column="1"
@@ -82,11 +81,10 @@
                                                        RelativeSource={RelativeSource TemplatedParent}}" />
 
                 </Border>
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
 
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"

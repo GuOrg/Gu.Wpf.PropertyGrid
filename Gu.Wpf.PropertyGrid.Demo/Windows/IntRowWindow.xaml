@@ -52,11 +52,10 @@
                                                         UpdateSourceTrigger=PropertyChanged}" />
 
                     </Border>
-                    <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                              Grid.Row="0"
-                                              Grid.Column="2"
-                                              Style="{TemplateBinding SuffixStyle}"
-                                              Text="{TemplateBinding Suffix}" />
+                    <ContentPresenter x:Name="PART_Suffix"
+                                      Grid.Row="0"
+                                      Grid.Column="2"
+                                      ContentSource="Suffix" />
 
 
                     <propertyGrid:InfoBlock x:Name="PART_Info"

@@ -24,11 +24,10 @@
                          Text="{Binding Value,
                                         RelativeSource={RelativeSource TemplatedParent}}" />
 
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
     
             </Grid>
         </Border> 
@@ -72,11 +71,10 @@
                              Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
     
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
@@ -136,11 +134,10 @@
                                                       RelativeSource={RelativeSource TemplatedParent},
                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
     
             </Grid>
         </Border> 
@@ -188,11 +185,10 @@
                                       Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
     
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
@@ -252,11 +248,10 @@
                                                       RelativeSource={RelativeSource TemplatedParent},
                                                       Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
     
             </Grid>
         </Border> 
@@ -304,11 +299,10 @@
                                       Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
     
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
@@ -365,11 +359,10 @@
                                       IsEnabled="{TemplateBinding IsReadOnly,
                                                                    Converter={x:Static propertyGrid:InvertBoolConverter.Default}}" />
 
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
     
             </Grid>
         </Border> 
@@ -414,11 +407,10 @@
                                           Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
     
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
@@ -476,11 +468,10 @@
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}" />
 
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
     
             </Grid>
         </Border> 
@@ -526,11 +517,10 @@
                                       Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
     
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
@@ -588,11 +578,10 @@
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}" />
 
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
     
             </Grid>
         </Border> 
@@ -638,11 +627,10 @@
                                       Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
     
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"
@@ -700,11 +688,10 @@
                                                          RelativeSource={RelativeSource TemplatedParent},
                                                          UpdateSourceTrigger=PropertyChanged}" />
 
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
     
             </Grid>
         </Border> 
@@ -750,11 +737,10 @@
                                       Validation.ErrorTemplate="{x:Null}" />
 
                 </Border>
-                <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                          Grid.Row="0"
-                                          Grid.Column="2"
-                                          Style="{TemplateBinding SuffixStyle}"
-                                          Text="{TemplateBinding Suffix}" />
+                <ContentPresenter x:Name="PART_Suffix"
+                                  Grid.Row="0"
+                                  Grid.Column="2"
+                                  ContentSource="Suffix" />
     
 
                 <propertyGrid:InfoBlock x:Name="PART_Info"

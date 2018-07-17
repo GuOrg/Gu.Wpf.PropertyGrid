@@ -17,7 +17,13 @@
                 </DataTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="SuffixStyle" Value="{StaticResource {x:Type propertyGrid:SuffixBlock}}" />
+        <Setter Property="SuffixTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
         <Setter Property="OldValueStyle" Value="{StaticResource DefaultOldValueStyle}" />
         <Setter Property="ErrorStyle" Value="{StaticResource DefaultErrorTextStyle}" />
     </Style>
@@ -51,8 +57,6 @@
     </Style>
 
     <Style TargetType="{x:Type propertyGrid:ContentRow}">
-        <Setter Property="SuffixStyle" Value="{StaticResource {x:Type propertyGrid:SuffixBlock}}" />
-
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type propertyGrid:ContentRow}">
@@ -72,10 +76,10 @@
                                           Grid.Column="1"
                                           ContentSource="Content" />
 
-                        <propertyGrid:SuffixBlock x:Name="PART_Suffix"
-                                                  Grid.Row="0"
-                                                  Grid.Column="2"
-                                                  Text="{TemplateBinding Suffix}" />
+                        <ContentPresenter x:Name="PART_Suffix"
+                                          Grid.Row="0"
+                                          Grid.Column="2"
+                                          ContentSource="Header" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
