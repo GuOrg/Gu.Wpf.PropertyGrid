@@ -7,6 +7,13 @@ namespace Gu.Wpf.PropertyGrid
     public abstract partial class Row
     {
 #pragma warning disable SA1202 // Elements must be ordered by access
+        /// <summary>Identifies the IsReadOnly dependency property.</summary>
+        public static readonly DependencyProperty IsReadOnlyProperty = PropertyGrid.IsReadOnlyProperty.AddOwner(
+            typeof(Row),
+            new FrameworkPropertyMetadata(
+                false,
+                FrameworkPropertyMetadataOptions.Inherits));
+
         /// <summary>Identifies the <see cref="OldValue"/> dependency property.</summary>
         public static readonly DependencyProperty OldValueProperty = DependencyProperty.Register(
             nameof(OldValue),
@@ -23,6 +30,15 @@ namespace Gu.Wpf.PropertyGrid
         /// <summary>Identifies the <see cref="IsDirty"/> dependency property.</summary>
         public static readonly DependencyProperty IsDirtyProperty = IsDirtyPropertyKey.DependencyProperty;
 #pragma warning restore SA1202 // Elements must be ordered by access
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the row is read only.
+        /// </summary>
+        public bool IsReadOnly
+        {
+            get { return (bool)this.GetValue(IsReadOnlyProperty); }
+            set { this.SetValue(IsReadOnlyProperty, value); }
+        }
 
         /// <summary>
         /// Gets or sets the old value, can be null.

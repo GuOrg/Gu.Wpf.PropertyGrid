@@ -1,19 +1,10 @@
-﻿#pragma warning disable SA1402 // File may only contain a single class
+#pragma warning disable SA1402 // File may only contain a single class
 namespace Gu.Wpf.PropertyGrid
 {
     using System.Windows;
 
     public static partial class PropertyGrid
     {
-        /// <summary> Gets or sets a value indicating whether the row is read only. </summary>
-        public static readonly DependencyProperty IsReadOnlyProperty = DependencyProperty.RegisterAttached(
-            "IsReadOnly",
-            typeof(bool),
-            typeof(PropertyGrid),
-            new FrameworkPropertyMetadata(
-                false,
-                FrameworkPropertyMetadataOptions.Inherits));
-
         /// <summary> Gets or sets the data context with old values. </summary>
         public static readonly DependencyProperty OldDataContextProperty = DependencyProperty.RegisterAttached(
             "OldDataContext",
@@ -31,28 +22,6 @@ namespace Gu.Wpf.PropertyGrid
             new FrameworkPropertyMetadata(
                 "Old value: {0}",
                 FrameworkPropertyMetadataOptions.Inherits));
-
-        /// <summary>
-        /// Helper for setting IsReadOnly property on a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to set IsReadOnly property on.</param>
-        /// <param name="value">IsReadOnly property value.</param>
-        public static void SetIsReadOnly(this UIElement element, bool value)
-        {
-            element.SetValue(IsReadOnlyProperty, value);
-        }
-
-        /// <summary>
-        /// Helper for reading IsReadOnly property from a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to read IsReadOnly property from.</param>
-        /// <returns>IsReadOnly property value.</returns>
-        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(UIElement))]
-        public static bool GetIsReadOnly(this UIElement element)
-        {
-            return (bool)element.GetValue(IsReadOnlyProperty);
-        }
 
         /// <summary>
         /// Helper for setting OldDataContext property on a UIElement.
@@ -101,13 +70,6 @@ namespace Gu.Wpf.PropertyGrid
 
     public abstract partial class Row
     {
-        /// <summary>Identifies the IsReadOnly dependency property.</summary>
-        public static readonly DependencyProperty IsReadOnlyProperty = PropertyGrid.IsReadOnlyProperty.AddOwner(
-            typeof(Row),
-            new FrameworkPropertyMetadata(
-                false,
-                FrameworkPropertyMetadataOptions.Inherits));
-
         /// <summary>Identifies the OldDataContext dependency property.</summary>
         public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
             typeof(Row),
@@ -122,15 +84,6 @@ namespace Gu.Wpf.PropertyGrid
             new FrameworkPropertyMetadata(
                 "Old value: {0}",
                 FrameworkPropertyMetadataOptions.Inherits));
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the row is read only.
-        /// </summary>
-        public bool IsReadOnly
-        {
-            get { return (bool)this.GetValue(IsReadOnlyProperty); }
-            set { this.SetValue(IsReadOnlyProperty, value); }
-        }
 
         /// <summary>
         /// Gets or sets the data context with old values.
@@ -153,13 +106,6 @@ namespace Gu.Wpf.PropertyGrid
 
     public partial class Rows
     {
-        /// <summary>Identifies the IsReadOnly dependency property.</summary>
-        public static readonly DependencyProperty IsReadOnlyProperty = PropertyGrid.IsReadOnlyProperty.AddOwner(
-            typeof(Rows),
-            new FrameworkPropertyMetadata(
-                false,
-                FrameworkPropertyMetadataOptions.Inherits));
-
         /// <summary>Identifies the OldDataContext dependency property.</summary>
         public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
             typeof(Rows),
@@ -174,15 +120,6 @@ namespace Gu.Wpf.PropertyGrid
             new FrameworkPropertyMetadata(
                 "Old value: {0}",
                 FrameworkPropertyMetadataOptions.Inherits));
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the row is read only.
-        /// </summary>
-        public bool IsReadOnly
-        {
-            get { return (bool)this.GetValue(IsReadOnlyProperty); }
-            set { this.SetValue(IsReadOnlyProperty, value); }
-        }
 
         /// <summary>
         /// Gets or sets the data context with old values.
