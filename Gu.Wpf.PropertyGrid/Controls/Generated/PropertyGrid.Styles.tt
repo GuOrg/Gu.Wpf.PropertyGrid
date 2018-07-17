@@ -13,7 +13,6 @@ namespace Gu.Wpf.PropertyGrid
 <#
     var styles = new[]
                      {
-                         "ValueStyle",
                          "OldValueStyle",
                          "ErrorStyle", 
                      };

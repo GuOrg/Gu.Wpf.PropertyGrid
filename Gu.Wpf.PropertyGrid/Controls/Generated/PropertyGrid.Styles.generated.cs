@@ -5,15 +5,6 @@ namespace Gu.Wpf.PropertyGrid
 
     public static partial class PropertyGrid
     {
-        /// <summary>Identifies the ValueStyle attached dependency property.</summary>
-        public static readonly DependencyProperty ValueStyleProperty = DependencyProperty.RegisterAttached(
-            "ValueStyle",
-            typeof(Style),
-            typeof(PropertyGrid),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits));
-
         /// <summary>Identifies the OldValueStyle attached dependency property.</summary>
         public static readonly DependencyProperty OldValueStyleProperty = DependencyProperty.RegisterAttached(
             "OldValueStyle",
@@ -31,28 +22,6 @@ namespace Gu.Wpf.PropertyGrid
             new FrameworkPropertyMetadata(
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
-
-        /// <summary>
-        /// Helper for setting ValueStyle property on a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to set ValueStyle property on.</param>
-        /// <param name="value">ValueStyle property value.</param>
-        public static void SetValueStyle(this UIElement element, Style value)
-        {
-            element.SetValue(ValueStyleProperty, value);
-        }
-
-        /// <summary>
-        /// Helper for reading ValueStyle property from a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to read ValueStyle property from.</param>
-        /// <returns>ValueStyle property value.</returns>
-        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(UIElement))]
-        public static Style GetValueStyle(this UIElement element)
-        {
-            return (Style)element.GetValue(ValueStyleProperty);
-        }
 
         /// <summary>
         /// Helper for setting OldValueStyle property on a UIElement.
@@ -101,13 +70,6 @@ namespace Gu.Wpf.PropertyGrid
 
     public partial class Rows
     {
-        /// <summary>Identifies the ValueStyle dependency property.</summary>
-        public static readonly DependencyProperty ValueStyleProperty = PropertyGrid.ValueStyleProperty.AddOwner(
-            typeof(Rows),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits));
-
         /// <summary>Identifies the OldValueStyle dependency property.</summary>
         public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
             typeof(Rows),
@@ -121,15 +83,6 @@ namespace Gu.Wpf.PropertyGrid
             new FrameworkPropertyMetadata(
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits));
-
-        /// <summary>
-        /// Gets or sets the ValueStyle.
-        /// </summary>
-        public Style ValueStyle
-        {
-            get { return (Style)this.GetValue(ValueStyleProperty); }
-            set { this.SetValue(ValueStyleProperty, value); }
-        }
 
         /// <summary>
         /// Gets or sets the OldValueStyle.
@@ -152,14 +105,6 @@ namespace Gu.Wpf.PropertyGrid
 
     public abstract partial class Row
     {
-        /// <summary>Identifies the ValueStyle dependency property.</summary>
-        public static readonly DependencyProperty ValueStyleProperty = PropertyGrid.ValueStyleProperty.AddOwner(
-            typeof(Row),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits,
-                OnPartStyleChanged));
-
         /// <summary>Identifies the OldValueStyle dependency property.</summary>
         public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
             typeof(Row),
@@ -175,15 +120,6 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
-
-        /// <summary>
-        /// Gets or sets the ValueStyle.
-        /// </summary>
-        public Style ValueStyle
-        {
-            get { return (Style)this.GetValue(ValueStyleProperty); }
-            set { this.SetValue(ValueStyleProperty, value); }
-        }
 
         /// <summary>
         /// Gets or sets the OldValueStyle.
@@ -210,14 +146,6 @@ namespace Gu.Wpf.PropertyGrid
 
     public partial class ContentRow
     {
-        /// <summary>Identifies the ValueStyle dependency property.</summary>
-        public static readonly DependencyProperty ValueStyleProperty = PropertyGrid.ValueStyleProperty.AddOwner(
-            typeof(ContentRow),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits,
-                OnPartStyleChanged));
-
         /// <summary>Identifies the OldValueStyle dependency property.</summary>
         public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
             typeof(ContentRow),
@@ -233,15 +161,6 @@ namespace Gu.Wpf.PropertyGrid
                 default(Style),
                 FrameworkPropertyMetadataOptions.Inherits,
                 OnPartStyleChanged));
-
-        /// <summary>
-        /// Gets or sets the ValueStyle.
-        /// </summary>
-        public Style ValueStyle
-        {
-            get { return (Style)this.GetValue(ValueStyleProperty); }
-            set { this.SetValue(ValueStyleProperty, value); }
-        }
 
         /// <summary>
         /// Gets or sets the OldValueStyle.
