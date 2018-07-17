@@ -62,6 +62,11 @@ namespace Gu.Wpf.PropertyGrid
         [SuppressMessage("ReSharper", "UnusedParameter.Global")]
         protected virtual void OnOldDataContextChanged(object oldValue, object newValue)
         {
+            if (this.ValueDependencyProperty == null)
+            {
+                return;
+            }
+
             var oldValueBinding = BindingOperations.GetBinding(this, OldValueProperty);
             if (oldValueBinding != null)
             {

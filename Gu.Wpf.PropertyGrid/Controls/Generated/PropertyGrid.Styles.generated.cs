@@ -143,45 +143,4 @@ namespace Gu.Wpf.PropertyGrid
         {
         }
     }
-
-    public partial class ContentRow
-    {
-        /// <summary>Identifies the OldValueStyle dependency property.</summary>
-        public static readonly DependencyProperty OldValueStyleProperty = PropertyGrid.OldValueStyleProperty.AddOwner(
-            typeof(ContentRow),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits,
-                OnPartStyleChanged));
-
-        /// <summary>Identifies the ErrorStyle dependency property.</summary>
-        public static readonly DependencyProperty ErrorStyleProperty = PropertyGrid.ErrorStyleProperty.AddOwner(
-            typeof(ContentRow),
-            new FrameworkPropertyMetadata(
-                default(Style),
-                FrameworkPropertyMetadataOptions.Inherits,
-                OnPartStyleChanged));
-
-        /// <summary>
-        /// Gets or sets the OldValueStyle.
-        /// </summary>
-        public Style OldValueStyle
-        {
-            get { return (Style)this.GetValue(OldValueStyleProperty); }
-            set { this.SetValue(OldValueStyleProperty, value); }
-        }
-
-        /// <summary>
-        /// Gets or sets the ErrorStyle.
-        /// </summary>
-        public Style ErrorStyle
-        {
-            get { return (Style)this.GetValue(ErrorStyleProperty); }
-            set { this.SetValue(ErrorStyleProperty, value); }
-        }
-
-        private static void OnPartStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-        }
-    }
 }

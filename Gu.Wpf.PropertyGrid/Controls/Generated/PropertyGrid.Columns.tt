@@ -69,7 +69,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             new ClassMetaData("Rows", false),
             new ClassMetaData("Row", true),
-            new ClassMetaData("ContentRow", false)
         };
     foreach(var controlName in controlNames)
     {
