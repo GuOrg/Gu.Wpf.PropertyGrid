@@ -14,6 +14,21 @@ namespace Gu.Wpf.PropertyGrid
                 false,
                 FrameworkPropertyMetadataOptions.Inherits));
 
+        /// <summary>Identifies the OldDataContext dependency property.</summary>
+        public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
+            typeof(Row),
+            new FrameworkPropertyMetadata(
+                null,
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnOldDataContextChanged));
+
+        /// <summary>Identifies the OldValueStringFormat dependency property.</summary>
+        public static readonly DependencyProperty OldValueStringFormatProperty = PropertyGrid.OldValueStringFormatProperty.AddOwner(
+            typeof(Row),
+            new FrameworkPropertyMetadata(
+                "Old value: {0}",
+                FrameworkPropertyMetadataOptions.Inherits));
+
         /// <summary>Identifies the <see cref="OldValue"/> dependency property.</summary>
         public static readonly DependencyProperty OldValueProperty = DependencyProperty.Register(
             nameof(OldValue),
@@ -48,6 +63,24 @@ namespace Gu.Wpf.PropertyGrid
         {
             get => this.GetValue(OldValueProperty);
             set => this.SetValue(OldValueProperty, value);
+        }
+
+        /// <summary>
+        /// Gets or sets the data context with old values.
+        /// </summary>
+        public object OldDataContext
+        {
+            get => (object)this.GetValue(OldDataContextProperty);
+            set => this.SetValue(OldDataContextProperty, value);
+        }
+
+        /// <summary>
+        /// Gets or sets the string format for the old value.
+        /// </summary>
+        public string OldValueStringFormat
+        {
+            get => (string)this.GetValue(OldValueStringFormatProperty);
+            set => this.SetValue(OldValueStringFormatProperty, value);
         }
 
         /// <summary>
