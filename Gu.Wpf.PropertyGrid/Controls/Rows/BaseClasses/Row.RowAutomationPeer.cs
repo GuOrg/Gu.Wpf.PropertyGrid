@@ -24,7 +24,7 @@ namespace Gu.Wpf.PropertyGrid
             protected override string GetNameCore()
             {
                 var settingControl = (Row)this.Owner;
-                return settingControl.Header?.ToString();
+                return settingControl.Header;
             }
         }
     }

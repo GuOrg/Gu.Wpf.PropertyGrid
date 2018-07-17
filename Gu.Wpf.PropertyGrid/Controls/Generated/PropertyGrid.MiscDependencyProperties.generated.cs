@@ -202,4 +202,56 @@ namespace Gu.Wpf.PropertyGrid
             set { this.SetValue(OldValueStringFormatProperty, value); }
         }
     }
+
+    public partial class ContentRow
+    {
+        /// <summary>Identifies the IsReadOnly dependency property.</summary>
+        public static readonly DependencyProperty IsReadOnlyProperty = PropertyGrid.IsReadOnlyProperty.AddOwner(
+            typeof(ContentRow),
+            new FrameworkPropertyMetadata(
+                false,
+                FrameworkPropertyMetadataOptions.Inherits));
+
+        /// <summary>Identifies the OldDataContext dependency property.</summary>
+        public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
+            typeof(ContentRow),
+            new FrameworkPropertyMetadata(
+                null,
+                FrameworkPropertyMetadataOptions.Inherits,
+                OnOldDataContextChanged));
+
+        /// <summary>Identifies the OldValueStringFormat dependency property.</summary>
+        public static readonly DependencyProperty OldValueStringFormatProperty = PropertyGrid.OldValueStringFormatProperty.AddOwner(
+            typeof(ContentRow),
+            new FrameworkPropertyMetadata(
+                "Old value: {0}",
+                FrameworkPropertyMetadataOptions.Inherits));
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the row is read only.
+        /// </summary>
+        public bool IsReadOnly
+        {
+            get { return (bool)this.GetValue(IsReadOnlyProperty); }
+            set { this.SetValue(IsReadOnlyProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the data context with old values.
+        /// </summary>
+        public object OldDataContext
+        {
+            get { return (object)this.GetValue(OldDataContextProperty); }
+            set { this.SetValue(OldDataContextProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the string format for the old value.
+        /// </summary>
+        public string OldValueStringFormat
+        {
+            get { return (string)this.GetValue(OldValueStringFormatProperty); }
+            set { this.SetValue(OldValueStringFormatProperty, value); }
+        }
+    }
 }

@@ -10,7 +10,7 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows.Threading;
 
     [TemplatePart(Name = ValueBoxName, Type = typeof(FrameworkElement))]
-    public abstract partial class Row : HeaderedContentControl
+    public abstract partial class Row : Control
     {
         private readonly List<DependencyObject> logicalChildren = new List<DependencyObject>();
 
@@ -75,31 +75,19 @@ namespace Gu.Wpf.PropertyGrid
         /// </summary>
         /// <param name="oldChild">The old child.</param>
         /// <param name="newChild">The new child.</param>
-        protected virtual void UpdateLogicalChildren(object oldChild, object newChild)
+        protected virtual void UpdateLogicalChild(DependencyObject oldChild, DependencyObject newChild)
         {
-            if (oldChild is DependencyObject old)
+            if (oldChild != null)
             {
-                this.logicalChildren.Remove(old);
+                this.RemoveLogicalChild(oldChild);
+                this.logicalChildren.Remove(oldChild);
             }
 
-            if (newChild is DependencyObject @new)
+            if (newChild != null)
             {
-                this.logicalChildren.Add(@new);
+                this.AddLogicalChild(newChild);
+                this.logicalChildren.Add(newChild);
             }
-        }
-
-        /// <inheritdoc />
-        protected override void OnContentChanged(object oldContent, object newContent)
-        {
-            this.UpdateLogicalChildren(oldContent, newContent);
-            base.OnContentChanged(oldContent, newContent);
-        }
-
-        /// <inheritdoc />
-        protected override void OnHeaderChanged(object oldHeader, object newHeader)
-        {
-            this.UpdateLogicalChildren(oldHeader, newHeader);
-            base.OnHeaderChanged(oldHeader, newHeader);
         }
 
         private static void OnOldDataContextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
