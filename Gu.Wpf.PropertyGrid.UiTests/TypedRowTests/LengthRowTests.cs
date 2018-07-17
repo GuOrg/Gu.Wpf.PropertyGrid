@@ -21,6 +21,7 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             {
                 var window = app.MainWindow;
                 window.FindButton("reset").Click();
+                window.WaitUntilResponsive();
                 var saveButton = window.FindButton("save");
                 if (saveButton.IsEnabled)
                 {
