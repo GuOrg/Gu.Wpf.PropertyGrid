@@ -2,6 +2,7 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
@@ -9,6 +10,10 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
     using System.Windows.Media;
     using Gu.Wpf.NumericInput;
 
+    /// <summary>
+    /// Base class for numeric property grid rows.
+    /// </summary>
+    /// <typeparam name="T">The type of the value to edit.</typeparam>
     public abstract class NumericRow<T> : GenericRow<T?>, INumericFormatter
         where T : struct, IComparable<T>
     {
@@ -17,14 +22,14 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
             nameof(MinValue),
             typeof(T?),
             typeof(NumericRow<T>),
-            new PropertyMetadata(null, OnMinValueChanged));
+            new PropertyMetadata(null, (d, e) => ((NumericRow<T>)d).OnMinValueChanged((T?)e.OldValue, (T?)e.NewValue)));
 
         /// <summary>Identifies the <see cref="MaxValue"/> dependency property.</summary>
         public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register(
             nameof(MaxValue),
             typeof(T?),
             typeof(NumericRow<T>),
-            new PropertyMetadata(null, OnMaxValueChanged));
+            new PropertyMetadata(null, (d, e) => ((NumericRow<T>)d).OnMaxValueChanged((T?)e.OldValue, (T?)e.NewValue)));
 
         private readonly List<DependencyObject> templateChildren = new List<DependencyObject>();
 
@@ -134,16 +139,6 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
             }
         }
 
-        protected static void OnMinValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((NumericRow<T>)d).OnMinValueChanged((T?)e.OldValue, (T?)e.NewValue);
-        }
-
-        protected static void OnMaxValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((NumericRow<T>)d).OnMaxValueChanged((T?)e.OldValue, (T?)e.NewValue);
-        }
-
         /// <summary>
         /// Called when the template child bound to the ValueProperty has changes in validation errors.
         /// </summary>
@@ -166,6 +161,7 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
         /// </summary>
         /// <param name="oldValue">The previous value.</param>
         /// <param name="newValue">The new value.</param>
+        [SuppressMessage("ReSharper", "UnusedParameter.Global")]
         protected virtual void OnMinValueChanged(T? oldValue, T? newValue)
         {
         }
@@ -175,6 +171,7 @@ namespace Gu.Wpf.PropertyGrid.NumericRows
         /// </summary>
         /// <param name="oldValue">The previous value.</param>
         /// <param name="newValue">The new value.</param>
+        [SuppressMessage("ReSharper", "UnusedParameter.Global")]
         protected virtual void OnMaxValueChanged(T? oldValue, T? newValue)
         {
         }
