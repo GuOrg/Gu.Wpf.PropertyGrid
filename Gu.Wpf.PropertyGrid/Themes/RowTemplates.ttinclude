@@ -297,9 +297,6 @@
             this.Xaml = xaml;
         }
 
-        public string PrefixedName
-        {
-            get { return this.Prefix + ":" + this.Name; }
-        }
+        public string PrefixedName => this.Prefix + ":" + this.Name;
     }
 #>
