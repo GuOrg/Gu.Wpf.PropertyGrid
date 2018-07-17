@@ -47,14 +47,14 @@ namespace Gu.Wpf.PropertyGrid
 #pragma warning restore SA1202 // Elements must be ordered by access
 
         /// <summary>
-        /// True if Header is non-null, false otherwise.
+        /// Gets a value indicating whether <see cref="Header"/> is non-null, false otherwise.
         /// </summary>
         [Bindable(false)]
         [Browsable(false)]
         public bool HasHeader => (bool)this.GetValue(HasHeaderProperty);
 
         /// <summary>
-        /// Header is the data used to for the header of each item in the control.
+        /// Gets or sets the data used to for the header of each item in the control.
         /// </summary>
         [Bindable(true)]
         [Category("Content")]
@@ -80,7 +80,7 @@ namespace Gu.Wpf.PropertyGrid
         /// Gets or sets the <see cref="DataTemplateSelector"/> used to display the <seealso cref="Header"/>.
         /// </summary>
         /// <remarks>
-        ///     This property is ignored if <seealso cref="HeaderTemplate"/> is set.
+        /// This property is ignored if <seealso cref="HeaderTemplate"/> is set.
         /// </remarks>
         [Bindable(true)]
         [Category("Content")]
@@ -91,8 +91,8 @@ namespace Gu.Wpf.PropertyGrid
         }
 
         /// <summary>
-        ///     HeaderStringFormat is the format used to display the header content as a string.
-        ///     This arises only when no template is available.
+        /// Gets or sets the format used to display the header content as a string.
+        /// This arises only when no template is available.
         /// </summary>
         [Bindable(true)]
         [Category("Content")]
@@ -105,28 +105,28 @@ namespace Gu.Wpf.PropertyGrid
         /// <summary>
         /// This method is invoked when <see cref="Header"/> changes.
         /// </summary>
-        /// <param name="oldHeader">The old value of <see cref="Header"/>.</param>
-        /// <param name="newHeader">The new value of <see cref="Header"/>.</param>
-        protected virtual void OnHeaderChanged(object oldHeader, object newHeader)
+        /// <param name="oldValue">The old value of <see cref="Header"/>.</param>
+        /// <param name="newValue">The new value of <see cref="Header"/>.</param>
+        protected virtual void OnHeaderChanged(object oldValue, object newValue)
         {
-            this.UpdateLogicalChild(oldHeader as DependencyObject, newHeader as DependencyObject);
+            this.UpdateLogicalChild(oldValue as DependencyObject, newValue as DependencyObject);
         }
 
         /// <summary>
         /// This method is invoked when <see cref="HeaderTemplate"/> changes.
         /// </summary>
-        /// <param name="oldTemplate">The old value of <see cref="HeaderTemplate"/>.</param>
-        /// <param name="newTemplate">The new value of <see cref="HeaderTemplate"/>.</param>
-        protected virtual void OnHeaderTemplateChanged(DataTemplate oldTemplate, DataTemplate newTemplate)
+        /// <param name="oldValue">The old value of <see cref="HeaderTemplate"/>.</param>
+        /// <param name="newValue">The new value of <see cref="HeaderTemplate"/>.</param>
+        protected virtual void OnHeaderTemplateChanged(DataTemplate oldValue, DataTemplate newValue)
         {
         }
 
         /// <summary>
         /// This method is invoked when the <see cref="HeaderTemplateSelector"/> property changes.
         /// </summary>
-        /// <param name="oldSelector">The old value of <see cref="HeaderTemplateSelector"/>.</param>
-        /// <param name="newSelector">The new value of <see cref="HeaderTemplateSelector"/>.</param>
-        protected virtual void OnHeaderTemplateSelectorChanged(DataTemplateSelector oldSelector, DataTemplateSelector newSelector)
+        /// <param name="oldValue">The old value of <see cref="HeaderTemplateSelector"/>.</param>
+        /// <param name="newValue">The new value of <see cref="HeaderTemplateSelector"/>.</param>
+        protected virtual void OnHeaderTemplateSelectorChanged(DataTemplateSelector oldValue, DataTemplateSelector newValue)
         {
         }
 
