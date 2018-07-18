@@ -84,6 +84,7 @@ namespace Gu.Wpf.PropertyGrid
                 {
                     continue;
                 }
+
                 if (!TryParseItemFormat(format, ref pos, out int index, out bool? itemHasFormat))
                 {
                     indexCount = -1;

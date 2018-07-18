@@ -13,7 +13,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
     /// <summary>
     /// Base class for unit row.
     /// </summary>
-    public abstract class UnitRow : Row
+    public abstract class UnitRow : ValueRow
     {
 #pragma warning disable SA1202 // Elements must be ordered by access
         /// <summary>Identifies the <see cref="ScalarValue"/> dependency property.</summary>
@@ -75,11 +75,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         static UnitRow()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(UnitRow), new FrameworkPropertyMetadata(typeof(UnitRow)));
-        }
-
-        protected UnitRow(DependencyProperty valueDependencyProperty)
-            : base(valueDependencyProperty)
-        {
         }
 
         /// <summary>

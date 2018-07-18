@@ -58,14 +58,6 @@ namespace Gu.Wpf.PropertyGrid
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ContentRow"/> class.
-        /// </summary>
-        public ContentRow()
-            : base(null)
-        {
-        }
-
-        /// <summary>
         /// Gets a value indicating whether <see cref="Content"/> is non-null, false otherwise.
         /// </summary>
         [Bindable(false)]
@@ -78,7 +70,7 @@ namespace Gu.Wpf.PropertyGrid
         [Bindable(true)]
         [Category("Content")]
         [Localizability(LocalizationCategory.Label)]
-        public string Content
+        public object Content
         {
             get => (string)this.GetValue(ContentProperty);
             set => this.SetValue(ContentProperty, value);
@@ -119,10 +111,6 @@ namespace Gu.Wpf.PropertyGrid
         {
             get => (string)this.GetValue(ContentStringFormatProperty);
             set => this.SetValue(ContentStringFormatProperty, value);
-        }
-
-        protected override void UpdateIsDirty()
-        {
         }
 
         /// <summary>

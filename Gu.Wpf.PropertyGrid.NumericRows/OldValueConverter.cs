@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid.NumericRows
+namespace Gu.Wpf.PropertyGrid.NumericRows
 {
     using System;
     using System.Globalization;
@@ -20,7 +20,7 @@
                 return "first argument must be a IQuantityFormatter";
             }
 
-            var row = values[0] as Row;
+            var row = values[0] as ValueRow;
             if (row == null)
             {
                 return "first argument must be a Row";

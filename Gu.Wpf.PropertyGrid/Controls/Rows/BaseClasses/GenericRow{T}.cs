@@ -3,42 +3,25 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows;
     using System.Windows.Data;
 
-    public abstract class GenericRow<T> : Row
+    public abstract class GenericRow<T> : ValueRow
     {
-        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
-        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-            nameof(Value),
-            typeof(T),
-            typeof(GenericRow<T>),
-            new FrameworkPropertyMetadata(
-                defaultValue: default(T),
-                flags: FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                propertyChangedCallback: (d, e) => ((GenericRow<T>)d).OnValueChanged(e.OldValue, e.NewValue),
-                coerceValueCallback: null,
-                isAnimationProhibited: true,
-                defaultUpdateSourceTrigger: UpdateSourceTrigger.PropertyChanged));
-
-        protected GenericRow()
-            : base(ValueProperty)
+        static GenericRow()
         {
+            ValueProperty.OverrideMetadata(
+                typeof(GenericRow<T>),
+                new FrameworkPropertyMetadata(
+                    defaultValue: default(T),
+                    flags: FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                    propertyChangedCallback: (d, e) => ((GenericRow<T>)d).OnValueChanged(e.OldValue, e.NewValue),
+                    coerceValueCallback: null,
+                    isAnimationProhibited: true,
+                    defaultUpdateSourceTrigger: UpdateSourceTrigger.PropertyChanged));
         }
 
-        public T Value
+        public new T Value
         {
             get => (T)this.GetValue(ValueProperty);
             set => this.SetValue(ValueProperty, value);
-        }
-
-        protected override void UpdateIsDirty()
-        {
-            if (this.ReadLocalValue(OldValueProperty) == DependencyProperty.UnsetValue)
-            {
-                this.IsDirty = null;
-            }
-            else
-            {
-                this.IsDirty = !Equals(this.OldValue, this.Value);
-            }
         }
     }
 }

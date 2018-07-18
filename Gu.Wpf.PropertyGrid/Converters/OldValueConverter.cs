@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
     using System;
     using System.Globalization;
@@ -12,7 +12,7 @@
         /// <inheritdoc />
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            var row = values[0] as Row;
+            var row = values[0] as ValueRow;
             if (row == null)
             {
                 return "first parameter must be a Row";

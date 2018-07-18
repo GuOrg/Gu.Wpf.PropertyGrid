@@ -21,7 +21,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
                 return "first argument must be a IQuantityFormatter";
             }
 
-            var row = values[0] as Row;
+            var row = values[0] as ValueRow;
             if (row == null)
             {
                 return "first argument must be a Row";

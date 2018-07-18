@@ -12,19 +12,6 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         where TQuantity : struct, IQuantity<TUnit>
         where TUnit : IUnit<TQuantity>
     {
-        /// <summary>Identifies the <see cref="Value"/> dependency property.</summary>
-        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-            nameof(Value),
-            typeof(TQuantity?),
-            typeof(UnitRow<TQuantity, TUnit>),
-            new FrameworkPropertyMetadata(
-                defaultValue: default(TQuantity?),
-                flags: FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                propertyChangedCallback: (d, e) => ((UnitRow<TQuantity, TUnit>)d).OnValueChanged(e.OldValue, e.NewValue),
-                coerceValueCallback: null,
-                isAnimationProhibited: true,
-                defaultUpdateSourceTrigger: UpdateSourceTrigger.PropertyChanged));
-
         /// <summary>Identifies the <see cref="MinValue"/> dependency property.</summary>
         public static readonly DependencyProperty MinValueProperty = DependencyProperty.Register(
             nameof(MinValue),
@@ -51,18 +38,23 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         /// <summary>The SI-unit for the TUnit.</summary>
         private bool isUpdatingScalarValue;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UnitRow{TQuantity, TUnit}"/> class.
-        /// </summary>
-        protected UnitRow()
-            : base(ValueProperty)
+        static UnitRow()
         {
+            ValueProperty.OverrideMetadata(
+                typeof(UnitRow<TQuantity, TUnit>),
+                new FrameworkPropertyMetadata(
+                    defaultValue: default(TQuantity?),
+                    flags: FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                    propertyChangedCallback: (d, e) => ((UnitRow<TQuantity, TUnit>)d).OnValueChanged(e.OldValue, e.NewValue),
+                    coerceValueCallback: null,
+                    isAnimationProhibited: true,
+                    defaultUpdateSourceTrigger: UpdateSourceTrigger.PropertyChanged));
         }
 
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
-        public TQuantity? Value
+        public new TQuantity? Value
         {
             get => (TQuantity?)this.GetValue(ValueProperty);
             set => this.SetValue(ValueProperty, value);
@@ -136,7 +128,7 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
         }
 
         /// <summary>
-        /// Called when the <see cref="ValueProperty"/> changes.
+        /// Called when the <see cref="Value"/> changes.
         /// </summary>
         /// <param name="oldValue">The previous value.</param>
         /// <param name="newValue">The new value.</param>
