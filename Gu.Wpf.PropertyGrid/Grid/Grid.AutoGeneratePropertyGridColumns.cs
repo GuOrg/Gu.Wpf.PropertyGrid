@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
     using System;
     using System.Windows;
@@ -31,7 +31,7 @@
         /// <param name="element">Grid to read AutoGeneratePropertyGridColumns property from.</param>
         /// <returns>AutoGeneratePropertyGridColumns property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(Grid))]
+        [AttachedPropertyBrowsableForType(typeof(System.Windows.Controls.Grid))]
         internal static bool GetAutoGeneratePropertyGridColumns(this System.Windows.Controls.Grid element)
         {
             return (bool)element.GetValue(AutoGeneratePropertyGridColumnsProperty);

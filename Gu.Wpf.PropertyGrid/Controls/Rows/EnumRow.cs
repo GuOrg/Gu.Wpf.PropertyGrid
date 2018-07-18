@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
     using System;
     using System.Collections.Generic;
@@ -18,7 +18,7 @@
             typeof(Type),
             typeof(EnumRow),
             new PropertyMetadata(default(Type), OnEnumTypeChanged),
-            EnumTypeValidateValue);
+            ValidateEnumType);
 
         private static readonly DependencyPropertyKey EnumValuesPropertyKey = DependencyProperty.RegisterReadOnly(
             nameof(EnumValues),
@@ -72,7 +72,7 @@
             }
         }
 
-        private static bool EnumTypeValidateValue(object value)
+        private static bool ValidateEnumType(object value)
         {
             return ((Type)value)?.IsEnum != false;
         }

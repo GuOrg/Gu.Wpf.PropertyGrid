@@ -96,7 +96,7 @@ namespace Gu.Wpf.PropertyGrid
         /// <param name="element">Grid to read ColumnDefinitions property from.</param>
         /// <returns>ColumnDefinitions property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(Grid))]
+        [AttachedPropertyBrowsableForType(typeof(System.Windows.Controls.Grid))]
         public static ColumnDefinitions GetColumnDefinitions(System.Windows.Controls.Grid element)
         {
             return (ColumnDefinitions)element.GetValue(ColumnDefinitionsProperty);
