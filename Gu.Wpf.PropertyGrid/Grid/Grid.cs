@@ -36,20 +36,16 @@ namespace Gu.Wpf.PropertyGrid
             typeof(Grid),
             new PropertyMetadata(BooleanBoxes.False));
 
-        /// <summary>
-        /// Helper for setting Cell property on a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to set Cell property on.</param>
+        /// <summary>Helper for setting <see cref="CellProperty"/> on <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="UIElement"/> to set <see cref="CellProperty"/> on.</param>
         /// <param name="value">Cell property value.</param>
         public static void SetCell(UIElement element, GridCell value)
         {
             element.SetValue(CellProperty, value);
         }
 
-        /// <summary>
-        /// Helper for reading Cell property from a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to read Cell property from.</param>
+        /// <summary>Helper for getting <see cref="CellProperty"/> from <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="UIElement"/> to read <see cref="CellProperty"/> from.</param>
         /// <returns>Cell property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
@@ -58,20 +54,16 @@ namespace Gu.Wpf.PropertyGrid
             return (GridCell)element.GetValue(CellProperty);
         }
 
-        /// <summary>
-        /// Helper for setting RowDefinitions property on a Grid.
-        /// </summary>
-        /// <param name="element">Grid to set RowDefinitions property on.</param>
+        /// <summary>Helper for setting <see cref="RowDefinitionsProperty"/> on <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="System.Windows.Controls.Grid"/> to set <see cref="RowDefinitionsProperty"/> on.</param>
         /// <param name="value">RowDefinitions property value.</param>
         public static void SetRowDefinitions(System.Windows.Controls.Grid element, RowDefinitions value)
         {
             element.SetValue(RowDefinitionsProperty, value);
         }
 
-        /// <summary>
-        /// Helper for reading RowDefinitions property from a Grid.
-        /// </summary>
-        /// <param name="element">Grid to read RowDefinitions property from.</param>
+        /// <summary>Helper for getting <see cref="RowDefinitionsProperty"/> from <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="System.Windows.Controls.Grid"/> to read <see cref="RowDefinitionsProperty"/> from.</param>
         /// <returns>RowDefinitions property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(System.Windows.Controls.Grid))]
@@ -80,20 +72,16 @@ namespace Gu.Wpf.PropertyGrid
             return (RowDefinitions)element.GetValue(RowDefinitionsProperty);
         }
 
-        /// <summary>
-        /// Helper for setting ColumnDefinitions property on a Grid.
-        /// </summary>
-        /// <param name="element">Grid to set ColumnDefinitions property on.</param>
+        /// <summary>Helper for setting <see cref="ColumnDefinitionsProperty"/> on <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="System.Windows.Controls.Grid"/> to set <see cref="ColumnDefinitionsProperty"/> on.</param>
         /// <param name="value">ColumnDefinitions property value.</param>
         public static void SetColumnDefinitions(System.Windows.Controls.Grid element, ColumnDefinitions value)
         {
             element.SetValue(ColumnDefinitionsProperty, value);
         }
 
-        /// <summary>
-        /// Helper for reading ColumnDefinitions property from a Grid.
-        /// </summary>
-        /// <param name="element">Grid to read ColumnDefinitions property from.</param>
+        /// <summary>Helper for getting <see cref="ColumnDefinitionsProperty"/> from <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="System.Windows.Controls.Grid"/> to read <see cref="ColumnDefinitionsProperty"/> from.</param>
         /// <returns>ColumnDefinitions property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(System.Windows.Controls.Grid))]

@@ -90,7 +90,7 @@ namespace Gu.Wpf.PropertyGrid
         /// <summary>Identifies the <see cref="IsDirty"/> dependency property.</summary>
         public static readonly DependencyProperty IsDirtyProperty = IsDirtyPropertyKey.DependencyProperty;
 
-        /// <summary>Identifies the OldDataContext dependency property.</summary>
+        /// <summary>Identifies the <see cref="OldDataContext"/> dependency property.</summary>
         public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
             typeof(ValueRow),
             new FrameworkPropertyMetadata(

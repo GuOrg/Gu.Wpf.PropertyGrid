@@ -10,33 +10,26 @@ namespace Gu.Wpf.PropertyGrid
             "Bind",
             typeof(ProxyBinding),
             typeof(OneWayToSource),
-            new PropertyMetadata(default(ProxyBinding), OnBindChanged));
+            new PropertyMetadata(
+                default(ProxyBinding),
+                (d, e) => ((ProxyBinding)e.OldValue)?.Dispose()));
 
-        /// <summary>
-        /// Helper for setting Bind property on a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to set Bind property on.</param>
+        /// <summary>Helper for setting <see cref="BindProperty"/> on <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="UIElement"/> to set <see cref="BindProperty"/> on.</param>
         /// <param name="value">Bind property value.</param>
         public static void SetBind(this UIElement element, ProxyBinding value)
         {
             element.SetValue(BindProperty, value);
         }
 
-        /// <summary>
-        /// Helper for reading Bind property from a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to read Bind property from.</param>
+        /// <summary>Helper for getting <see cref="BindProperty"/> from <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="UIElement"/> to read <see cref="BindProperty"/> from.</param>
         /// <returns>Bind property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
         public static ProxyBinding GetBind(this UIElement element)
         {
             return (ProxyBinding)element.GetValue(BindProperty);
-        }
-
-        private static void OnBindChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((ProxyBinding)e.OldValue)?.Dispose();
         }
 
         public class ProxyBinding : DependencyObject, IDisposable

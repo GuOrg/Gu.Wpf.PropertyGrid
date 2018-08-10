@@ -31,20 +31,16 @@ namespace Gu.Wpf.PropertyGrid
                 "Old value: {0}",
                 FrameworkPropertyMetadataOptions.Inherits));
 
-        /// <summary>
-        /// Helper for setting IsReadOnly property on a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to set IsReadOnly property on.</param>
+        /// <summary>Helper for setting <see cref="IsReadOnlyProperty"/> on <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="UIElement"/> to set <see cref="IsReadOnlyProperty"/> on.</param>
         /// <param name="value">IsReadOnly property value.</param>
         public static void SetIsReadOnly(this UIElement element, bool value)
         {
             element.SetValue(IsReadOnlyProperty, value);
         }
 
-        /// <summary>
-        /// Helper for reading IsReadOnly property from a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to read IsReadOnly property from.</param>
+        /// <summary>Helper for getting <see cref="IsReadOnlyProperty"/> from <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="UIElement"/> to read <see cref="IsReadOnlyProperty"/> from.</param>
         /// <returns>IsReadOnly property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
@@ -53,20 +49,16 @@ namespace Gu.Wpf.PropertyGrid
             return (bool)element.GetValue(IsReadOnlyProperty);
         }
 
-        /// <summary>
-        /// Helper for setting OldDataContext property on a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to set OldDataContext property on.</param>
+        /// <summary>Helper for setting <see cref="OldDataContextProperty"/> on <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="UIElement"/> to set <see cref="OldDataContextProperty"/> on.</param>
         /// <param name="value">OldDataContext property value.</param>
         public static void SetOldDataContext(this UIElement element, object value)
         {
             element.SetValue(OldDataContextProperty, value);
         }
 
-        /// <summary>
-        /// Helper for reading OldDataContext property from a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to read OldDataContext property from.</param>
+        /// <summary>Helper for getting <see cref="OldDataContextProperty"/> from <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="UIElement"/> to read <see cref="OldDataContextProperty"/> from.</param>
         /// <returns>OldDataContext property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]
@@ -75,20 +67,16 @@ namespace Gu.Wpf.PropertyGrid
             return (object)element.GetValue(OldDataContextProperty);
         }
 
-        /// <summary>
-        /// Helper for setting OldValueStringFormat property on a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to set OldValueStringFormat property on.</param>
+        /// <summary>Helper for setting <see cref="OldValueStringFormatProperty"/> on <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="UIElement"/> to set <see cref="OldValueStringFormatProperty"/> on.</param>
         /// <param name="value">OldValueStringFormat property value.</param>
         public static void SetOldValueStringFormat(this UIElement element, string value)
         {
             element.SetValue(OldValueStringFormatProperty, value);
         }
 
-        /// <summary>
-        /// Helper for reading OldValueStringFormat property from a UIElement.
-        /// </summary>
-        /// <param name="element">UIElement to read OldValueStringFormat property from.</param>
+        /// <summary>Helper for getting <see cref="OldValueStringFormatProperty"/> from <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="UIElement"/> to read <see cref="OldValueStringFormatProperty"/> from.</param>
         /// <returns>OldValueStringFormat property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(UIElement))]

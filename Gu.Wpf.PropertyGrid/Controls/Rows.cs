@@ -5,21 +5,21 @@ namespace Gu.Wpf.PropertyGrid
 
     public partial class Rows : ItemsControl
     {
-        /// <summary>Identifies the IsReadOnly dependency property.</summary>
+        /// <summary>Identifies the <see cref="IsReadOnly"/> dependency property.</summary>
         public static readonly DependencyProperty IsReadOnlyProperty = PropertyGrid.IsReadOnlyProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 false,
                 FrameworkPropertyMetadataOptions.Inherits));
 
-        /// <summary>Identifies the OldDataContext dependency property.</summary>
+        /// <summary>Identifies the <see cref="OldDataContext"/> dependency property.</summary>
         public static readonly DependencyProperty OldDataContextProperty = PropertyGrid.OldDataContextProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(
                 null,
                 FrameworkPropertyMetadataOptions.Inherits));
 
-        /// <summary>Identifies the OldValueStringFormat dependency property.</summary>
+        /// <summary>Identifies the <see cref="OldValueStringFormat"/> dependency property.</summary>
         public static readonly DependencyProperty OldValueStringFormatProperty = PropertyGrid.OldValueStringFormatProperty.AddOwner(
             typeof(Rows),
             new FrameworkPropertyMetadata(

@@ -15,20 +15,16 @@ namespace Gu.Wpf.PropertyGrid
                 FrameworkPropertyMetadataOptions.NotDataBindable,
                 OnAutoGeneratePropertyGridColumnsChanged));
 
-        /// <summary>
-        /// Helper for setting AutoGeneratePropertyGridColumns property on a Grid.
-        /// </summary>
-        /// <param name="element">Grid to set AutoGeneratePropertyGridColumns property on.</param>
+        /// <summary>Helper for setting <see cref="AutoGeneratePropertyGridColumnsProperty"/> on <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="System.Windows.Controls.Grid"/> to set <see cref="AutoGeneratePropertyGridColumnsProperty"/> on.</param>
         /// <param name="value">AutoGeneratePropertyGridColumns property value.</param>
         internal static void SetAutoGeneratePropertyGridColumns(this System.Windows.Controls.Grid element, bool value)
         {
             element.SetValue(AutoGeneratePropertyGridColumnsProperty, value);
         }
 
-        /// <summary>
-        /// Helper for reading AutoGeneratePropertyGridColumns property from a Grid.
-        /// </summary>
-        /// <param name="element">Grid to read AutoGeneratePropertyGridColumns property from.</param>
+        /// <summary>Helper for getting <see cref="AutoGeneratePropertyGridColumnsProperty"/> from <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="System.Windows.Controls.Grid"/> to read <see cref="AutoGeneratePropertyGridColumnsProperty"/> from.</param>
         /// <returns>AutoGeneratePropertyGridColumns property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(System.Windows.Controls.Grid))]

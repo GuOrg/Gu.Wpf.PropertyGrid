@@ -31,20 +31,16 @@ namespace Gu.Wpf.PropertyGrid
         private static readonly PropertyPaths ValuePropertyPaths = new PropertyPaths("Value", SharedSizeGroups.ValueColumn);
         private static readonly PropertyPaths SuffixPropertyPaths = new PropertyPaths("Suffix", SharedSizeGroups.SuffixColumn);
 
-        /// <summary>
-        /// Helper for setting Source property on a ColumnDefinition.
-        /// </summary>
-        /// <param name="element">ColumnDefinition to set Source property on.</param>
+        /// <summary>Helper for setting <see cref="SourceProperty"/> on <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="System.Windows.Controls.ColumnDefinition"/> to set <see cref="SourceProperty"/> on.</param>
         /// <param name="value">Source property value.</param>
         public static void SetSource(this System.Windows.Controls.ColumnDefinition element, string value)
         {
             element.SetValue(SourceProperty, value);
         }
 
-        /// <summary>
-        /// Helper for reading Source property from a ColumnDefinition.
-        /// </summary>
-        /// <param name="element">ColumnDefinition to read Source property from.</param>
+        /// <summary>Helper for getting <see cref="SourceProperty"/> from <paramref name="element"/>.</summary>
+        /// <param name="element"><see cref="System.Windows.Controls.ColumnDefinition"/> to read <see cref="SourceProperty"/> from.</param>
         /// <returns>Source property value.</returns>
         [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(System.Windows.Controls.ColumnDefinition))]
