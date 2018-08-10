@@ -1,4 +1,4 @@
-﻿namespace Gu.Wpf.PropertyGrid.Demo.Converters
+namespace Gu.Wpf.PropertyGrid.Demo.Converters
 {
     using System;
     using System.Globalization;
@@ -6,7 +6,7 @@
 
     public class NullableIntToStringConverter : IValueConverter
     {
-        public static readonly NullableDoubleToStringConverter Default = new NullableDoubleToStringConverter();
+        public static readonly IValueConverter Default = new NullableIntToStringConverter();
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
