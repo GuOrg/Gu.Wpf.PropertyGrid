@@ -127,32 +127,26 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.OnTemplateChildErrorBase((DependencyObject)args.Source, ValueProperty);
         }
 
-        /// <summary>
-        /// Called when the <see cref="Value"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The previous value.</param>
-        /// <param name="newValue">The new value.</param>
+        /// <summary>This method is invoked when the <see cref="ValueProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="ValueProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="ValueProperty"/>.</param>
         protected override void OnValueChanged(object oldValue, object newValue)
         {
             this.SetScalarValue(ScalarValueProperty, (TQuantity?)newValue);
             base.OnValueChanged(oldValue, newValue);
         }
 
-        /// <summary>
-        /// Called when the <see cref="MinValueProperty"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The previous value.</param>
-        /// <param name="newValue">The new value.</param>
+        /// <summary>This method is invoked when the <see cref="MinValueProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="MinValueProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="MinValueProperty"/>.</param>
         protected virtual void OnMinValueChanged(TQuantity? oldValue, TQuantity? newValue)
         {
             this.SetScalarValue(ScalarMinValueProperty, newValue);
         }
 
-        /// <summary>
-        /// Called when the <see cref="MaxValueProperty"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The previous value.</param>
-        /// <param name="newValue">The new value.</param>
+        /// <summary>This method is invoked when the <see cref="MaxValueProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="MaxValueProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="MaxValueProperty"/>.</param>
         protected virtual void OnMaxValueChanged(TQuantity? oldValue, TQuantity? newValue)
         {
             this.SetScalarValue(ScalarMaxValueProperty, newValue);
@@ -185,11 +179,9 @@ namespace Gu.Wpf.PropertyGrid.UnitRows
             this.SetQuantityValue(MaxValueProperty, newValue);
         }
 
-        /// <summary>
-        /// This method is invoked when the <see cref="Unit"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="Unit"/>.</param>
-        /// <param name="newValue">The new value of <see cref="Unit"/>.</param>
+        /// <summary>This method is invoked when the <see cref="UnitProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="UnitProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="UnitProperty"/>.</param>
         [SuppressMessage("ReSharper", "UnusedParameter.Global")]
         protected virtual void OnUnitChanged(TUnit oldValue, TUnit newValue)
         {

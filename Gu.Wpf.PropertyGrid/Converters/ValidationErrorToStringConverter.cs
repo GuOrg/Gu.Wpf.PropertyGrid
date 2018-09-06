@@ -1,10 +1,13 @@
-﻿namespace Gu.Wpf.PropertyGrid
+namespace Gu.Wpf.PropertyGrid
 {
     using System;
     using System.Globalization;
     using System.Windows.Controls;
     using System.Windows.Data;
 
+    [ValueConversion(typeof(string), typeof(string))]
+    [ValueConversion(typeof(ValidationResult), typeof(string))]
+    [ValueConversion(typeof(ValidationError), typeof(string))]
     public class ValidationErrorToStringConverter : IValueConverter
     {
         /// <summary> Gets the default instance </summary>

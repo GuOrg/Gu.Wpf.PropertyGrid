@@ -18,7 +18,7 @@ namespace Gu.Wpf.PropertyGrid
             typeof(Type),
             typeof(EnumRow),
             new PropertyMetadata(default(Type), OnEnumTypeChanged),
-            ValidateEnumType);
+            value => ((Type)value)?.IsEnum != false);
 
         private static readonly DependencyPropertyKey EnumValuesPropertyKey = DependencyProperty.RegisterReadOnly(
             nameof(EnumValues),
@@ -70,11 +70,6 @@ namespace Gu.Wpf.PropertyGrid
                     .ToArray();
                 d.SetValue(EnumValuesPropertyKey, values);
             }
-        }
-
-        private static bool ValidateEnumType(object value)
-        {
-            return ((Type)value)?.IsEnum != false;
         }
     }
 }

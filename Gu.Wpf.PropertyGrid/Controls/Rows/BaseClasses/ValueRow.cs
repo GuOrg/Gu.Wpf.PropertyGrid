@@ -224,69 +224,55 @@ namespace Gu.Wpf.PropertyGrid
             }
         }
 
-        /// <summary>
-        /// Called when the Value property changes value.
-        /// </summary>
-        /// <param name="oldValue">The old value.</param>
-        /// <param name="newValue">The new value.</param>
+        /// <summary>This method is invoked when the <see cref="ValueProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="ValueProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="ValueProperty"/>.</param>
         protected virtual void OnValueChanged(object oldValue, object newValue)
         {
             this.UpdateIsDirty();
             this.UpdateLogicalChild(oldValue as DependencyObject, newValue as DependencyObject);
         }
 
-        /// <summary>
-        /// This method is invoked when <see cref="ValueTemplate"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="ValueTemplate"/>.</param>
-        /// <param name="newValue">The new value of <see cref="ValueTemplate"/>.</param>
+        /// <summary>This method is invoked when the <see cref="ValueTemplateProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="ValueTemplateProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="ValueTemplateProperty"/>.</param>
         protected virtual void OnValueTemplateChanged(DataTemplate oldValue, DataTemplate newValue)
         {
         }
 
-        /// <summary>
-        /// This method is invoked when the <see cref="ValueTemplateSelector"/> property changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="ValueTemplateSelector"/>.</param>
-        /// <param name="newValue">The new value of <see cref="ValueTemplateSelector"/>.</param>
+        /// <summary>This method is invoked when the <see cref="ValueTemplateSelectorProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="ValueTemplateSelectorProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="ValueTemplateSelectorProperty"/>.</param>
         protected virtual void OnValueTemplateSelectorChanged(DataTemplateSelector oldValue, DataTemplateSelector newValue)
         {
         }
 
-        /// <summary>
-        /// This method is invoked when <see cref="OldValue"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="OldValue"/>.</param>
-        /// <param name="newValue">The new value of <see cref="OldValue"/>.</param>
+        /// <summary>This method is invoked when the <see cref="OldValueProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="OldValueProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="OldValueProperty"/>.</param>
         protected virtual void OnOldValueChanged(object oldValue, object newValue)
         {
             this.UpdateIsDirty();
             this.UpdateLogicalChild(oldValue as DependencyObject, newValue as DependencyObject);
         }
 
-        /// <summary>
-        /// This method is invoked when <see cref="OldValueTemplate"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="OldValueTemplate"/>.</param>
-        /// <param name="newValue">The new value of <see cref="OldValueTemplate"/>.</param>
+        /// <summary>This method is invoked when the <see cref="OldValueTemplateProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="OldValueTemplateProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="OldValueTemplateProperty"/>.</param>
         protected virtual void OnOldValueTemplateChanged(DataTemplate oldValue, DataTemplate newValue)
         {
         }
 
-        /// <summary>
-        /// This method is invoked when the <see cref="OldValueTemplateSelector"/> property changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="OldValueTemplateSelector"/>.</param>
-        /// <param name="newValue">The new value of <see cref="OldValueTemplateSelector"/>.</param>
+        /// <summary>This method is invoked when the <see cref="OldValueTemplateSelectorProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="OldValueTemplateSelectorProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="OldValueTemplateSelectorProperty"/>.</param>
         protected virtual void OnOldValueTemplateSelectorChanged(DataTemplateSelector oldValue, DataTemplateSelector newValue)
         {
         }
 
-        /// <summary>
-        /// This method is invoked when the <see cref="OldValueStringFormat"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="OldValueStringFormat"/>.</param>
-        /// <param name="newValue">The new value of <see cref="OldValueStringFormat"/>.</param>
+        /// <summary>This method is invoked when the <see cref="OldValueStringFormatProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="OldValueStringFormatProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="OldValueStringFormatProperty"/>.</param>
         protected virtual void OnOldValueStringFormatChanged(string oldValue, string newValue)
         {
         }

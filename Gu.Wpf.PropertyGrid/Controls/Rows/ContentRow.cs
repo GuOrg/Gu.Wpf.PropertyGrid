@@ -113,41 +113,33 @@ namespace Gu.Wpf.PropertyGrid
             set => this.SetValue(ContentStringFormatProperty, value);
         }
 
-        /// <summary>
-        /// This method is invoked when <see cref="Content"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="Content"/>.</param>
-        /// <param name="newValue">The new value of <see cref="Content"/>.</param>
+        /// <summary>This method is invoked when the <see cref="ContentProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="ContentProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="ContentProperty"/>.</param>
         protected virtual void OnContentChanged(object oldValue, object newValue)
         {
             this.UpdateLogicalChild(oldValue as DependencyObject, newValue as DependencyObject);
         }
 
-        /// <summary>
-        /// This method is invoked when <see cref="ContentTemplate"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="ContentTemplate"/>.</param>
-        /// <param name="newValue">The new value of <see cref="ContentTemplate"/>.</param>
+        /// <summary>This method is invoked when the <see cref="ContentTemplateProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="ContentTemplateProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="ContentTemplateProperty"/>.</param>
         [SuppressMessage("ReSharper", "UnusedParameter.Global")]
         protected virtual void OnContentTemplateChanged(DataTemplate oldValue, DataTemplate newValue)
         {
         }
 
-        /// <summary>
-        /// This method is invoked when the <see cref="ContentTemplateSelector"/> property changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="ContentTemplateSelector"/>.</param>
-        /// <param name="newValue">The new value of <see cref="ContentTemplateSelector"/>.</param>
+        /// <summary>This method is invoked when the <see cref="ContentTemplateSelectorProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="ContentTemplateSelectorProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="ContentTemplateSelectorProperty"/>.</param>
         [SuppressMessage("ReSharper", "UnusedParameter.Global")]
         protected virtual void OnContentTemplateSelectorChanged(DataTemplateSelector oldValue, DataTemplateSelector newValue)
         {
         }
 
-        /// <summary>
-        /// This method is invoked when the <see cref="ContentStringFormat"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="ContentStringFormat"/>.</param>
-        /// <param name="newValue">The new value of <see cref="ContentStringFormat"/>.</param>
+        /// <summary>This method is invoked when the <see cref="ContentStringFormatProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="ContentStringFormatProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="ContentStringFormatProperty"/>.</param>
         [SuppressMessage("ReSharper", "UnusedParameter.Global")]
         protected virtual void OnContentStringFormatChanged(string oldValue, string newValue)
         {

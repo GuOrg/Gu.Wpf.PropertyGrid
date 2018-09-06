@@ -7,7 +7,7 @@ namespace Gu.Wpf.PropertyGrid
     public abstract partial class Row
     {
 #pragma warning disable SA1202 // Elements must be ordered by access
-        /// <summary>Identifies the IsReadOnly dependency property.</summary>
+        /// <summary>Identifies the <see cref="IsReadOnly"/> dependency property.</summary>
         public static readonly DependencyProperty IsReadOnlyProperty = PropertyGrid.IsReadOnlyProperty.AddOwner(
             typeof(Row),
             new FrameworkPropertyMetadata(
@@ -51,7 +51,7 @@ namespace Gu.Wpf.PropertyGrid
             typeof(Row),
             new PropertyMetadata(default(string), (d, e) => ((Row)d).OnHeaderStringFormatChanged((string)e.OldValue, (string)e.NewValue)));
 
-                /// <summary>Identifies the <see cref="Suffix"/> dependency property.</summary>
+        /// <summary>Identifies the <see cref="Suffix"/> dependency property.</summary>
         public static readonly DependencyProperty SuffixProperty = DependencyProperty.Register(
             nameof(Suffix),
             typeof(object),
@@ -210,76 +210,60 @@ namespace Gu.Wpf.PropertyGrid
             set => this.SetValue(SuffixStringFormatProperty, value);
         }
 
-                /// <summary>
-        /// This method is invoked when <see cref="Header"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="Header"/>.</param>
-        /// <param name="newValue">The new value of <see cref="Header"/>.</param>
+        /// <summary>This method is invoked when the <see cref="HeaderProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="HeaderProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="HeaderProperty"/>.</param>
         protected virtual void OnHeaderChanged(object oldValue, object newValue)
         {
             this.UpdateLogicalChild(oldValue as DependencyObject, newValue as DependencyObject);
         }
 
-        /// <summary>
-        /// This method is invoked when <see cref="HeaderTemplate"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="HeaderTemplate"/>.</param>
-        /// <param name="newValue">The new value of <see cref="HeaderTemplate"/>.</param>
+        /// <summary>This method is invoked when the <see cref="HeaderTemplateProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="HeaderTemplateProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="HeaderTemplateProperty"/>.</param>
         protected virtual void OnHeaderTemplateChanged(DataTemplate oldValue, DataTemplate newValue)
         {
         }
 
-        /// <summary>
-        /// This method is invoked when the <see cref="HeaderTemplateSelector"/> property changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="HeaderTemplateSelector"/>.</param>
-        /// <param name="newValue">The new value of <see cref="HeaderTemplateSelector"/>.</param>
+        /// <summary>This method is invoked when the <see cref="HeaderTemplateSelectorProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="HeaderTemplateSelectorProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="HeaderTemplateSelectorProperty"/>.</param>
         protected virtual void OnHeaderTemplateSelectorChanged(DataTemplateSelector oldValue, DataTemplateSelector newValue)
         {
         }
 
-        /// <summary>
-        /// This method is invoked when the <see cref="HeaderStringFormat"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="HeaderStringFormat"/>.</param>
-        /// <param name="newValue">The new value of <see cref="HeaderStringFormat"/>.</param>
+        /// <summary>This method is invoked when the <see cref="HeaderStringFormatProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="HeaderStringFormatProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="HeaderStringFormatProperty"/>.</param>
         protected virtual void OnHeaderStringFormatChanged(string oldValue, string newValue)
         {
         }
 
-        /// <summary>
-        /// This method is invoked when <see cref="Suffix"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="Suffix"/>.</param>
-        /// <param name="newValue">The new value of <see cref="Suffix"/>.</param>
+        /// <summary>This method is invoked when the <see cref="SuffixProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="SuffixProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="SuffixProperty"/>.</param>
         protected virtual void OnSuffixChanged(object oldValue, object newValue)
         {
             this.UpdateLogicalChild(oldValue as DependencyObject, newValue as DependencyObject);
         }
 
-        /// <summary>
-        /// This method is invoked when <see cref="SuffixTemplate"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="SuffixTemplate"/>.</param>
-        /// <param name="newValue">The new value of <see cref="SuffixTemplate"/>.</param>
+        /// <summary>This method is invoked when the <see cref="SuffixTemplateProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="SuffixTemplateProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="SuffixTemplateProperty"/>.</param>
         protected virtual void OnSuffixTemplateChanged(DataTemplate oldValue, DataTemplate newValue)
         {
         }
 
-        /// <summary>
-        /// This method is invoked when the <see cref="SuffixTemplateSelector"/> property changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="SuffixTemplateSelector"/>.</param>
-        /// <param name="newValue">The new value of <see cref="SuffixTemplateSelector"/>.</param>
+        /// <summary>This method is invoked when the <see cref="SuffixTemplateSelectorProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="SuffixTemplateSelectorProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="SuffixTemplateSelectorProperty"/>.</param>
         protected virtual void OnSuffixTemplateSelectorChanged(DataTemplateSelector oldValue, DataTemplateSelector newValue)
         {
         }
 
-        /// <summary>
-        /// This method is invoked when the <see cref="SuffixStringFormat"/> changes.
-        /// </summary>
-        /// <param name="oldValue">The old value of <see cref="SuffixStringFormat"/>.</param>
-        /// <param name="newValue">The new value of <see cref="SuffixStringFormat"/>.</param>
+        /// <summary>This method is invoked when the <see cref="SuffixStringFormatProperty"/> changes.</summary>
+        /// <param name="oldValue">The old value of <see cref="SuffixStringFormatProperty"/>.</param>
+        /// <param name="newValue">The new value of <see cref="SuffixStringFormatProperty"/>.</param>
         protected virtual void OnSuffixStringFormatChanged(string oldValue, string newValue)
         {
         }

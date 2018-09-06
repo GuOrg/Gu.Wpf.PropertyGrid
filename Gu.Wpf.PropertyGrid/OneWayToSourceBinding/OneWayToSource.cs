@@ -38,7 +38,7 @@ namespace Gu.Wpf.PropertyGrid
                 "SourceProxy",
                 typeof(object),
                 typeof(ProxyBinding),
-                new PropertyMetadata(default(object), OnSourceProxyChanged));
+                new PropertyMetadata(default(object), (d, e) => d.SetCurrentValue(TargetProxyProperty, e.NewValue)));
 
             private static readonly DependencyProperty TargetProxyProperty = DependencyProperty.Register(
                 "TargetProxy",
@@ -71,11 +71,6 @@ namespace Gu.Wpf.PropertyGrid
             public void Dispose()
             {
                 BindingOperations.ClearAllBindings(this);
-            }
-
-            private static void OnSourceProxyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-            {
-                d.SetCurrentValue(TargetProxyProperty, e.NewValue);
             }
         }
     }
