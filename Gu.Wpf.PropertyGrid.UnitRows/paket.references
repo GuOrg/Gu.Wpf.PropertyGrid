@@ -1,5 +1,6 @@
 Gu.Units.Wpf
 Gu.Wpf.NumericInput
+
 group Analyzers
 AsyncUsageAnalyzers
 IDisposableAnalyzers
