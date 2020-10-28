@@ -4,15 +4,13 @@ namespace Gu.Wpf.PropertyGrid
     using System.Windows.Automation.Peers;
     using System.Windows.Controls;
 
-    using JetBrains.Annotations;
-
     /// <inheritdoc />
     internal class SettingBlockAutomationPeer : FrameworkElementAutomationPeer
     {
         private readonly TextBlockAutomationPeer textBlockAutomationPeer;
 
         /// <inheritdoc />
-        public SettingBlockAutomationPeer([NotNull] TextBlock owner)
+        public SettingBlockAutomationPeer(TextBlock owner)
             : base(owner)
         {
             this.textBlockAutomationPeer = new TextBlockAutomationPeer(owner);
