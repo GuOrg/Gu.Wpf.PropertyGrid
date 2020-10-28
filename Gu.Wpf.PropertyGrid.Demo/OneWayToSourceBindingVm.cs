@@ -1,11 +1,10 @@
-﻿namespace Gu.Wpf.PropertyGrid.Demo
+namespace Gu.Wpf.PropertyGrid.Demo
 {
     using System;
     using System.Collections;
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
-    using JetBrains.Annotations;
 
     public class OneWayToSourceBindingVm : INotifyDataErrorInfo, INotifyPropertyChanged
     {
@@ -70,7 +69,6 @@
                  : Enumerable.Empty<string>();
         }
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
