@@ -2,7 +2,6 @@
   <PropertyGroup>
     <OutputType>library</OutputType>
     <TargetFramework>net45</TargetFramework>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWpf>true</UseWpf>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
