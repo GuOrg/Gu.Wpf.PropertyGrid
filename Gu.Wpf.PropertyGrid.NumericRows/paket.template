@@ -1,8 +1,0 @@
-﻿type project
-
-tags wpf xaml propertygrid styles numeric
-projectUrl https://github.com/JohanLarsson/Gu.Wpf.PropertyGrid
-licenseUrl http://opensource.org/licenses/MIT
-
-excludedgroups
-  Analyzers
