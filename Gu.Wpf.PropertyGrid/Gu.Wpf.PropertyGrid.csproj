@@ -15,7 +15,6 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>3.0.0.0</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Authors>Johan Larsson</Authors>
