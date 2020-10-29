@@ -20,11 +20,11 @@ namespace Gu.Wpf.PropertyGrid.UiTests
             using (var app = Application.AttachOrLaunch(ExeFileName, WindowName))
             {
                 var window = app.MainWindow;
-                window.FindButton("reset").Invoke();
+                window.FindButton("reset").Click();
                 var saveButton = window.FindButton("save");
                 if (saveButton.IsEnabled)
                 {
-                    saveButton.Invoke();
+                    saveButton.Click();
                 }
             }
         }
