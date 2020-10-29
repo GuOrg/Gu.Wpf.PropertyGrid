@@ -31,37 +31,49 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
 
-    <None Include="Controls\Generated\PropertyGrid.Columns.tt">
+    <None Update="Controls\Generated\PropertyGrid.Columns.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PropertyGrid.Columns.generated.cs</LastGenOutput>
     </None>
-    
-    <None Include="Controls\Generated\PropertyGrid.MiscDependencyProperties.tt">
+
+    <Compile Update="Controls\Generated\PropertyGrid.Columns.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PropertyGrid.Columns.tt</DependentUpon>
+    </Compile>
+
+    <None Update="Controls\Generated\PropertyGrid.MiscDependencyProperties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PropertyGrid.MiscDependencyProperties.generated.cs</LastGenOutput>
     </None>
 
-    <None Include="Controls\Generated\PropertyGrid.Styles.tt">
+    <Compile Update="Controls\Generated\PropertyGrid.MiscDependencyProperties.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PropertyGrid.MiscDependencyProperties.tt</DependentUpon>
+    </Compile>
+
+    <None Update="Controls\Generated\PropertyGrid.Styles.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PropertyGrid.Styles.generated.cs</LastGenOutput>
     </None>
 
-    <Content Include="Themes\RowTemplates.tt">
+    <Compile Update="Controls\Generated\PropertyGrid.Styles.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PropertyGrid.Styles.tt</DependentUpon>
+    </Compile>
+
+    <None Update="Themes\RowTemplates.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RowTemplates.generated.xaml</LastGenOutput>
-    </Content>
+    </None>
 
-    <None Update="Themes\RowTemplates.generated.xaml">
+    <Page Update="Themes\RowTemplates.xaml">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>RowTemplates.tt</DependentUpon>
-    </None>
-
-    <Resource Include="Themes\RowTemplates.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RowTemplates.ttinclude</DependentUpon>
-    </Resource>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
