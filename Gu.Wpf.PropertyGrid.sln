@@ -1,29 +1,30 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{BDA08917-18E6-497A-9E7A-8FA395BF2741}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".sln", ".sln", "{BDA08917-18E6-497A-9E7A-8FA395BF2741}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
-		paket.dependencies = paket.dependencies
-		paket.lock = paket.lock
-		.paket\Readme.paket.md = .paket\Readme.paket.md
+		Settings.XamlStyler = Settings.XamlStyler
+		stylecop.json = stylecop.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.Demo", "Gu.Wpf.PropertyGrid.Demo\Gu.Wpf.PropertyGrid.Demo.csproj", "{917C1338-E809-43D8-A10D-AA2629891258}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Wpf.PropertyGrid.Demo", "Gu.Wpf.PropertyGrid.Demo\Gu.Wpf.PropertyGrid.Demo.csproj", "{917C1338-E809-43D8-A10D-AA2629891258}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.Tests", "Gu.Wpf.PropertyGrid.Tests\Gu.Wpf.PropertyGrid.Tests.csproj", "{3E9EF147-E92A-46EE-8A4A-886935AD1560}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Wpf.PropertyGrid.Tests", "Gu.Wpf.PropertyGrid.Tests\Gu.Wpf.PropertyGrid.Tests.csproj", "{3E9EF147-E92A-46EE-8A4A-886935AD1560}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.UiTests", "Gu.Wpf.PropertyGrid.UiTests\Gu.Wpf.PropertyGrid.UiTests.csproj", "{E4310685-84DB-4C44-87C2-ECF8E8BE337E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Wpf.PropertyGrid.UiTests", "Gu.Wpf.PropertyGrid.UiTests\Gu.Wpf.PropertyGrid.UiTests.csproj", "{E4310685-84DB-4C44-87C2-ECF8E8BE337E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid", "Gu.Wpf.PropertyGrid\Gu.Wpf.PropertyGrid.csproj", "{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Wpf.PropertyGrid", "Gu.Wpf.PropertyGrid\Gu.Wpf.PropertyGrid.csproj", "{7DDAB84F-2416-413B-AE7A-6F2D75B2882D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.NumericRows", "Gu.Wpf.PropertyGrid.NumericRows\Gu.Wpf.PropertyGrid.NumericRows.csproj", "{AABF74D2-2282-4899-915D-409B1A6735C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.UnitRows", "Gu.Wpf.PropertyGrid.UnitRows\Gu.Wpf.PropertyGrid.UnitRows.csproj", "{CEAFB9FB-D606-4A98-B8DF-81A14AE6EE35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Wpf.PropertyGrid.UnitRows.Tests", "Gu.Wpf.PropertyGrid.UnitRows.Tests\Gu.Wpf.PropertyGrid.UnitRows.Tests.csproj", "{4B86294B-EAD2-42CD-B78C-9F47FDE34456}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Wpf.PropertyGrid.UnitRows.Tests", "Gu.Wpf.PropertyGrid.UnitRows.Tests\Gu.Wpf.PropertyGrid.UnitRows.Tests.csproj", "{4B86294B-EAD2-42CD-B78C-9F47FDE34456}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{95550FCF-F50D-449F-B665-9D527BFB57EF}"
 	ProjectSection(SolutionItems) = preProject
