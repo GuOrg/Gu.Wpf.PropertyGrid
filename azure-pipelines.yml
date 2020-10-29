@@ -1,0 +1,18 @@
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+
+- task: VSBuild@1
+  displayName: build
+  inputs:
+    configuration: '$(buildConfiguration)'
+    msbuildArgs: '/restore'
+
+- task: VSTest@2
+  displayName: test
+  inputs:
+    configuration: '$(buildConfiguration)'
