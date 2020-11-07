@@ -3,7 +3,6 @@
     <OutputType>library</OutputType>
     <TargetFramework>net45</TargetFramework>
     <UseWpf>true</UseWpf>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -21,7 +20,8 @@
     <PackageReleaseNotes>
     </PackageReleaseNotes>
     <PackageTags>wpf xaml propertygrid styles numeric</PackageTags>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
