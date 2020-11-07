@@ -33,49 +33,17 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
 
-    <None Update="Controls\Generated\PropertyGrid.Columns.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PropertyGrid.Columns.generated.cs</LastGenOutput>
-    </None>
+    <None Update="Controls\Generated\PropertyGrid.Columns.tt" Generator="TextTemplatingFileGenerator" LastGenOutput="PropertyGrid.Columns.generated.cs" />
+    <Compile Update="Controls\Generated\PropertyGrid.Columns.cs" DesignTime="True" AutoGen="True" DependentUpon="PropertyGrid.Columns.t" />
 
-    <Compile Update="Controls\Generated\PropertyGrid.Columns.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>PropertyGrid.Columns.tt</DependentUpon>
-    </Compile>
+    <None Update="Controls\Generated\PropertyGrid.MiscDependencyProperties.tt" Generator="TextTemplatingFileGenerator" LastGenOutput="PropertyGrid.MiscDependencyProperties.cs" />
+    <Compile Update="Controls\Generated\PropertyGrid.MiscDependencyProperties.generated.cs" DesignTime="True" AutoGen="True" DependentUpon="PropertyGrid.MiscDependencyProperties.t" />
 
-    <None Update="Controls\Generated\PropertyGrid.MiscDependencyProperties.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PropertyGrid.MiscDependencyProperties.generated.cs</LastGenOutput>
-    </None>
+    <None Update="Controls\Generated\PropertyGrid.Styles.tt" Generator="TextTemplatingFileGenerator" LastGenOutput="PropertyGrid.Styles.generated.cs" />
+    <Compile Update="Controls\Generated\PropertyGrid.Styles.cs" DesignTime="True" AutoGen="True" DependentUpon="PropertyGrid.Styles.tt" />
 
-    <Compile Update="Controls\Generated\PropertyGrid.MiscDependencyProperties.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>PropertyGrid.MiscDependencyProperties.tt</DependentUpon>
-    </Compile>
-
-    <None Update="Controls\Generated\PropertyGrid.Styles.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PropertyGrid.Styles.generated.cs</LastGenOutput>
-    </None>
-
-    <Compile Update="Controls\Generated\PropertyGrid.Styles.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>PropertyGrid.Styles.tt</DependentUpon>
-    </Compile>
-
-    <None Update="Themes\RowTemplates.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RowTemplates.generated.xaml</LastGenOutput>
-    </None>
-
-    <Page Update="Themes\RowTemplates.xaml">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>RowTemplates.tt</DependentUpon>
-    </Page>
+    <None Update="Themes\RowTemplates.tt" Generator="TextTemplatingFileGenerator" LastGenOutput="RowTemplates.xaml" />
+    <Page Update="Themes\RowTemplates.xaml" DesignTime="True" AutoGen="True" DependentUpon="RowTemplates.tt" />
   </ItemGroup>
 
   <ItemGroup>
